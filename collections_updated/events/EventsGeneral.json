@@ -1,0 +1,589 @@
+{
+  "info": {
+    "_postman_id": "f9179f9e-4d0c-4508-a21e-d4b056b374ef",
+    "name": "EventsGeneral",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Events - General - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"categoryId\": \"eventCategoryId\",\n    \"subCategoryId\": \"eventSubCategoryId\",\n    \"title\": \"Invisible Luggage Exhibition\",\n    \"description\": \"An exhibition exploring the unseen burdens of social justice, gender identity, and immigration.\",\n    \"tags\": \"Art,Exhibition,SocialJustice,GenderIdentity,Immigration\",\n    \"date\": \"2024-12-31\",\n    \"time\": \"01:00:00\",\n    \"details\": {\n        \n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "create"
+          ]
+        },
+        "description": "This endpoint is labeled \"Events - General - Create\". It uses the HTTP POST method to create a new event with various details. \n\n1. Authentication Method:\nThis endpoint uses Bearer authentication. You are required to provide a valid bearer token in the 'token' field for successful authentication.\n\n2. Request Method: \nIt uses the POST request method which is specifically purposed to send data to the server to create a new resource.\n\n3. URL: \nThis HTTP request is directed to 'http://localhost:3000/api/events/general/create'. This is the API's endpoint for creating a new event.\n\n4. Headers:\nThis API call contains no additional headers other than the authorization token.\n\n5. Body - Formatted as raw JSON:\n   - `accountId`: This field requires the account ID establishing the event.\n   - `sessionId`: This field is for providing the session ID.\n   - `categoryId`: This is where you specify the main category of the event. It needs to be filled with the event Category ID.\n   - `subCategoryId`: Similarly, you needs to fill in the event subcategory ID here.\n   - `title`: Specify the title of the event here. In the example, the title is \"Invisible Luggage Exhibition\".\n   - `description`: Detail the event in this field. The current text describes a social justice art exhibition.\n   - `tags`: This field tags any relevant topics or categories to the event, such as \"Art, Exhibition, SocialJustice, GenderIdentity, Immigration\".\n   - `date`: Input the date of the event in 'YYYY-MM-DD' format. The example date given is \"2024-12-31\".\n   - `time`: Enter the time of the event in 'HH:MM:SS' format. The example time given is \"01:00:00\".\n   - `details`: This is for any additional details about the event. \n\n6. Options:\nThe endpoint receives the body data in JSON format, as specified by the 'language' field under options."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Create Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"category\": \"My New Category\",\n    \"subCategory\": \"My Shiny SubCategory\",\n    \"title\": \"Invisible Luggage Exhibition\",\n    \"description\": \"An exhibition exploring the unseen burdens of social justice, gender identity, and immigration.\",\n    \"tags\": \"Art,Exhibition,SocialJustice,GenderIdentity,Immigration\",\n    \"date\": \"2024-12-31\",\n    \"time\": \"01:00:00\",\n    \"details\": {\n        \n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "create"
+          ]
+        },
+        "description": "1. `name`: This is the title of the API endpoint. This endpoint is labeled as \"Events - General - Create Auto\".\n\n2. `request`: This section contains all the details necessary to make a network request.\n\n3. `auth`: This part encloses information about the authentication type required by the API endpoint. This particular endpoint requires `Bearer` type authentication. You need to input the `BearerToken` to access this endpoint successfully. The type of the value is a string.\n\n4. `method`: It specifies the HTTP method used for the request. This particular request requires the `POST` method.\n\n5. `url`: This is the actual URL where the request will be sent. For this endpoint, it's \"http://localhost:3000/api/events/general/create\".\n\n6. `headers`: This section comprises the headers to be sent along with the request. Currently, the default headers value is disabled and not defined.\n\n7. `body`: This is where the actual data to be sent with the request is defined. For the current request, the \"raw\" mode is used and is defined with certain fields in a JSON format. Here, the following list of attributes are defined:\n   - `accountId`: Identifies the account. Replace it with your actual account ID.\n   - `sessionId`: Represents the session ID. You should replace this with your actual session ID.\n   - `category`: Specifies the category of the event. Replace it with the desired category.\n   - `subCategory`: Provides details about the event's subcategory.\n   - `title`: This is the title of the event.\n   - `description`: It is a short summary of the event, explaining what it's about.\n   - `tags`: Contains the tags for the event, divided by comma. This labels the event for easy searching and classification.\n   - `date`: Indicates the date of the event in the format YYYY-MM-DD.\n   - `time`: Specifies the time of the event in the format HH:MM:SS.\n   - `details`: Could hold additional, more detailed information. For this instance, it's left empty but could be populated if required.\n\n8. `options`: Specifies additional particulars about the request body. It's set to JSON language for the format of the raw input."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"eventId\": \"eventId\",\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"categoryId\": \"eventCategoryId\",\n    \"subCategoryId\": \"eventSubCategoryId\",\n    \"title\": \"New Years Celebration\",\n    \"description\": \"An exhibition exploring the unseen burdens of social justice, gender identity, and immigration.\",\n    \"tags\": \"Art,Exhibition,SocialJustice,GenderIdentity,Immigration\",\n    \"date\": \"2024-12-31\",\n    \"time\": \"01:00:00\",\n    \"details\": {\n        \"startDate\": \"2024-12-02\",\n        \"endDate\": \"2024-12-15\",\n        \"location\": \"Historic Hampton House, Miami, FL\",\n        \"featuredArtists\": [\n            \"Beth Rudin DeWoody\",\n            \"Zoe Lukov\",\n            \"Laura Dvorkin\",\n            \"Maynard Monrow\"\n        ],\n        \"collections\": [\n            \"Rubell Family Collection\",\n            \"Bernard Lumpkin Collection\",\n            \"Joy Simmons Collection\"\n        ],\n        \"events\": [\n            {\n                \"type\": \"Opening Night\",\n                \"date\": \"2024-12-02\",\n                \"time\": \"18:00\",\n                \"activities\": [\"Cocktails\", \"Preview Dinner\", \"Artist Introductions\"]\n            },\n            {\n                \"type\": \"Panel Discussion\",\n                \"date\": \"2024-12-05\",\n                \"time\": \"15:00\",\n                \"topic\": \"Art and Social Justice\"\n            },\n            {\n                \"type\": \"VIP Dinner\",\n                \"date\": \"2024-12-10\",\n                \"time\": \"19:00\",\n                \"chef\": \"Jessica Harris\"\n            }\n        ]\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Events - General - Update\". \n\nThe use of bearer token authentication is noted, which requires a 'token' field carrying the value 'BearerToken'.\n\nThe method used for this request is 'PUT', commonly used for updating data on a specified resource.\n\nYour request will be sent to \"http://localhost:3000/api/events/general/update\". \n\nA header is included in the request with the key 'Client-UUID', using a default type value, 'ClientUUID'.\n\nThe body includes specific data about the event being updated. This data is in a raw format, using JSON language. These details include:\n\n- \"eventId\": Unique identifier for the event.\n- \"accountId\": Unique identifier for the account tied to the event.\n- \"sessionId\": Unique identifier for the session tied to the event.\n- \"categoryId\" and \"subCategoryId\": Both identifiers for the event's category.\n- \"title\": The title of the event.\n- \"description\": A detailed description of the event.\n- \"tags\": Descriptive tags associated with the event.\n- \"date\" and \"time\": Strings representing the overall event date and time.\n\nAdditionally, it contains \"details\" which includes:\n\n- \"startDate\" and \"endDate\": Dates indicating the event duration.\n- \"location\": Physical location of the event.\n- \"featuredArtists\": An array listing any associated artists.\n- \"collections\": An array listing any associated collections.\n- \"events\": An array containing details of sub-events within the main event. This includes event type, date, time, activities for 'Opening Night', a topic for 'Panel Discussion', and chef for 'VIP Dinner'. \n\nEach detail included in the request body is crucial to provide a complete update to the event in question comprehensively."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Update Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"eventId\": \"eventId\",\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"category\": \"My New Category\",\n    \"subCategory\": \"My Shiny SubCategory\",\n    \"title\": \"New Years Celebration\",\n    \"description\": \"An exhibition exploring the unseen burdens of social justice, gender identity, and immigration.\",\n    \"tags\": \"Art,Exhibition,SocialJustice,GenderIdentity,Immigration\",\n    \"date\": \"2024-12-31\",\n    \"time\": \"01:00:00\",\n    \"details\": {\n        \"startDate\": \"2024-12-02\",\n        \"endDate\": \"2024-12-15\",\n        \"location\": \"Historic Hampton House, Miami, FL\",\n        \"featuredArtists\": [\n            \"Beth Rudin DeWoody\",\n            \"Zoe Lukov\",\n            \"Laura Dvorkin\",\n            \"Maynard Monrow\"\n        ],\n        \"collections\": [\n            \"Rubell Family Collection\",\n            \"Bernard Lumpkin Collection\",\n            \"Joy Simmons Collection\"\n        ],\n        \"events\": [\n            {\n                \"type\": \"Opening Night\",\n                \"date\": \"2024-12-02\",\n                \"time\": \"18:00\",\n                \"activities\": [\"Cocktails\", \"Preview Dinner\", \"Artist Introductions\"]\n            },\n            {\n                \"type\": \"Panel Discussion\",\n                \"date\": \"2024-12-05\",\n                \"time\": \"15:00\",\n                \"topic\": \"Art and Social Justice\"\n            },\n            {\n                \"type\": \"VIP Dinner\",\n                \"date\": \"2024-12-10\",\n                \"time\": \"19:00\",\n                \"chef\": \"Jessica Harris\"\n            }\n        ]\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named 'Events - General - Update Auto', allows you to update the details of an event. The request requires several pieces of information categorized into four main sections: 'auth', 'method', 'url', and 'body'.\n\n1. Authentication ('auth'): It uses the bearer token authentication method, taking in a string type token under the key 'token'.\n\n2. Method: The HTTP method being used is PUT, indicating this endpoint is used to update existing data.\n\n3. URL: The URL where the request is sent is 'http://localhost:3000/api/events/general/update'.\n\n4. Headers: There is an additional header provided via the 'Client-UUID', which presumably carries a unique identifier for the client sending the request.\n\n5. Request Body: The body of the request contains the information being updated. It's written in raw JSON, with the following fields:\n   \n   -  'eventId': The unique identifier for the event you want to update.\n   \n   -  'accountId': The unique identifier of the account associated with this event.\n   \n   -  'sessionId': The unique identifier of the session associated with this operation.\n   \n   -  'category' and 'subCategory': The new event's overall category and specific subcategory, respectively.\n   \n   -  'title': The title of the event.\n   \n   -  'description': A brief description of what the event is about.\n   \n   -  'tags': List of keywords associated with the the event, separated by commas.\n   \n   -  'date' and 'time': The date and exact time of the event.\n   \n   -  'details': More detailed properties associated with the event represented as objects, including:\n      \n      -  'startDate' and 'endDate': The starting and ending date of the event, respectively.\n      \n      -  'location': Where the event will take place.\n      \n      -  'featuredArtists': A list of featured artists at the event.\n      \n      -  'collections': The collections featured at the event.\n      \n      -  'events': List of auxiliary events taking place, each with its 'type', 'date', 'time', and its unique fields like 'activities', 'topic', or 'chef'.\n\nPlease note that all these details are required in the exact order as mentioned above. Make sure to replace the placeholder values with your data for a successful update."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Get By Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/get?name=invisible-luggage-exhibition",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "invisible-luggage-exhibition"
+            }
+          ]
+        },
+        "description": "1. `name`: This field refers to the name of the endpoint. The value provided, 'Events - General - Get By Name', implies that this endpoint retrieves general events based on their name.\n\n2. `request`: All information about the HTTP request is contained within this key.\n\n    a. `auth`: This key details about the authentication required for the HTTP request.\n        - `type`: This refers to the type of authentication required. Here 'bearer' signifies bearer token authentication.\n        - `bearer`: This is an array of bearer tokens to authenticate the user.\n            - `key`: The key under each bearer token. In this case, it is 'token'.\n            - `value`: The value that the key refers to. For this endpoint the value to use is 'BearerToken'.\n            - `type`: Denotes the data type of the \"value\" in the bearer token. It is a string in this scenario.\n\n    b. `method`: This key represents the HTTP verb for the request. 'GET' means to fetch data from the specified resource.\n\n    c. `url`: Specifies the URL where the API request is sent. This particular URL retrieves general events by name from http://localhost:3000/api/events/general/get?name=invisible-luggage-exhibition\n\n    d. `headers`: This key provides details on the HTTP headers. An empty key, value, and a disabled status denote that no specific headers are required for this request.\n\n    e. `body`: This key tells us what type of body the HTTP request expects. The 'mode' field within the body refers to the format of the data in the body. It's set to 'raw' which means raw data can be sent in the body. As 'raw' field is kept empty here, no special data is sent in the body of this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Get By Event ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/get?eventId=eventId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "eventId",
+              "value": "eventId"
+            }
+          ]
+        },
+        "description": "The endpoint \"Events - General - Get By Event ID\" is structured as follows\n\n1. **Name**: \"Events - General - Get By Event ID\" -This is the name of the endpoint, precisely describing its main function, which is retrieving the details of a General Event by its unique identification number, referred to as the Event ID.\n\n2. **Request**: This includes all the components of the HTTP request sent to the server.\n\n   i. **Auth**: This is the authorization method used to authenticate the request.\n\n   ii. **Type**: \"bearer\" - It indicates the type of authorization used in the request. In this case, it is 'Bearer authentication' which involves sending the token in the \"Authorization\" header of the HTTP request.\n\n   iii. **Bearer**: This is an array of objects. Each object contains three properties, the key, the value, and the type. The key is \"token\" and the value is \"BearerToken\". The type for this key-value pair is \"string\", indicating that the BearerToken should be included as a string value.\n\n3. **Method**: \"GET\" - It is the HTTP method used for the request. Since this is a 'GET' request, it retrieves data from a specific resource.\n\n4. **URL**: This is the request URL, which indicates where the request is sent. In this case, it is \"http://localhost:3000/api/events/general/get?eventId=eventId\". The \"eventId\" is a query parameter for specifying the event ID for which the request is to fetch information.\n\n5. **Headers**: This is an array of headers that can be sent with the request. However, it appears that the header field is currently empty and disabled.\n\n6. **Body**: This portion of the request contains any additional data that needs to be sent to the server. In this case, the 'Raw' mode is selected, which allows you to send data without any encoding. However, it appears that no raw data is being sent with this request as the 'Raw' field is empty."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Get By Short ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/get?shortId=eventShortId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "shortId",
+              "value": "eventShortId"
+            }
+          ]
+        },
+        "description": "The provided data describes an HTTP GET request under the name \"Events - General - Get By Short ID\". This suggests an API endpoint that fetches data related to a general event via its unique Short ID.\n\n1. `\"name\"`: It's the title of your API endpoint. The name specifies what this endpoint is meant for. It's called \"Events - General - Get By Short ID\" which implies this endpoint is for fetching the details of a general event by its short ID.\n\n2. `\"request\"`: This contains the specifications for the HTTP request being made.\n\n3. `\"auth\"`: This describes the authentication type used for the request. The `type` is \"bearer\", it means the request needs a bearer token to get authorized access.\n\n   - `\"bearer\"`: This is a list where each object consists of a `key`, `value` and `type`. The `key` here is \"token\", the `value` is placeholder for the actual bearer token, and the `type` is \"string\" indicating the data type of the token.\n\n4. `\"method\"`: The HTTP method used for the request. It is a \"GET\" method, meaning this request is attempting to retrieve data from the server.\n\n5. `\"url\"`: The URL to which the request is directed. It's \"http://localhost:3000/api/events/general/get\" with a query parameter `shortId=eventShortId` which is a placeholder for a specific event's short identifier.\n\n6. `\"headers\"`: This contains the headers to be attached to the request. A list of objects but the provided object is empty and has default type which is flagged as disabled. This indicates there are no additional headers required for the request.\n\n7. `\"body\"`: Describes the body of the request. The mode is \"raw\", which implies that the body of the request will be sent as raw data. However, the `raw` field is an empty string, suggesting that this GET request does not require a request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "all"
+          ]
+        },
+        "description": "Endpoint Label: `Events - General - Get All`\n\n1. **Name**: The name data element identifies the title or label of the API endpoint. In this case, \"Events - General - Get All\" signifies that this endpoint is used for retrieving all the general type events.\n\n2. **Request**: The request portion of the data structure contains information about the type of the request, authentication means, URL, headers, and body of the request.\n\n    - **Auth**: This specifies the form of authentication that is needed for the request. Here, it is of type 'bearer'. A bearer token named 'token' of type string is needed to authenticate the request.\n\n         - **Type**: This part provides information on what type of authentication is to be followed. 'Bearer' authentication is employed here.\n\n         - **Bearer**: It is a list that holds the keys for bearer authentication. Each element of the list consists of key, value, and type.\n\n             - **Key**: It is the label of the authentication data. Here, the key is 'token'.\n\n             - **Value**: 'BearerToken' is the actual token value used for authentication.\n\n             - **Type**: It represents the datatype of token, here it is a 'string'.\n\n    - **Method**: This is the HTTP method used for the API request. In the case of this endpoint, the GET method is used, which is typically used for retrieving data.\n\n    - **URL**: It represents the HTTP URL where the API request is sent. In this context, the endpoint is located at `http://localhost:3000/api/events/general/all`.\n\n    - **Headers**: Headers allow the client to pass additional information about the request or about itself, to the server. In this case, there is a default header field, but it is disabled and does not contain a value.\n\n    - **Body**: The body section holds the actual data that needs to be sent in the API request. As this is a GET request, there is no data to be sent.\n    \n       - **Mode**: It indicates the mode of body data. Here, it is 'raw' which denotes the data present in non-binary form.\n\n       - **Raw**: It contains the raw data to be included in body while making API request. Here, as there is no data to be sent in a GET request, it is empty."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Get All By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/all?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Endpoint Name**: _Events - General - Get All By Account ID_\n\nThis endpoint retrieves all general events associated with a given account ID.\n\n**Request**: \n\n- **Authentication Type**: \n\n   Bearer Token. This is an authentical approach where the consumer sends a request with an HTTP Authorization header with the word Bearer followed by a token. In this case, the key is \"token\" and the value should be replaced with the actual bearer token that is provided. It is a string data type.\n\n- **Method**: \n\n   GET. This means that data is being retrieved from a resource. \n\n- **URL**: \n\n   http://localhost:3000/api/events/general/all?accountId=accountId. This is the address to which the request should be sent. In this case, it is a local address. The \"accountId\" at the end is a query parameter where you should replace \"accountId\" with the actual account ID for which you're trying to retrieve events.\n\n- **Headers**: \n\n   There is a default empty header, but it is disabled. Headers are typically used to provide information about the data sent in the request, such as its format. In this case, no additional information is provided or needed.\n   \n- **Body**: \n\n   The Body is in \"raw\" mode, however it is empty, as the GET method doesn't require to send any data into the body, instead it fetches data from the server based on the account ID specified in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Get All By Category ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/all?categoryId=eventCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "eventCategoryId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Events - General - Get All By Category ID\" and serves to retrieve all events within a specific category, determined by the provided Category ID.\n\n1. \"name\": The name denotes the title of the endpoint. In this case, it signifies that this endpoint is used to get all the events by a certain category ID within the general events.\n\n2. \"request\": This field contains details about the type of HTTP request being made. \n\n3. \"auth\": This indicates the authentication method required for this endpoint. In this case, it requires 'bearer' type authentication.\n\n    - \"type\": Specifies the type of authorization used, which is 'bearer' in this instance. This type generally indicates that the sender has been authenticated and has a bearer token.\n    \n    - \"bearer\": This is a list of elements involved in bearer authorization. It contains the 'key' which is the name of the token, the 'value' which would be filled with the bearer token value, and the 'type' which shows that the token is of the type 'string'.\n\n4. \"method\": Specifies the HTTP method of the request. For this endpoint, the method is 'GET'. This method is used to retrieve resource from the server.\n\n5. \"url\": The URL shows the specific address where this API endpoint can be found. The \"categoryId\" is a query parameter in the URL that should be replaced with the actual Category ID of the events to be fetched.\n\n6. \"headers\": Details the HTTP headers that must be included with the HTTP request. In this instance, no headers are specified.\n\n7. \"body\": Details the body of the HTTP request. As this is a 'GET' request, the body is empty thus the 'raw' mode is empty. The 'raw' mode indicates that the request is sent as it is without any encoding or form parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Get All By Sub Category ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/all?subCategoryId=eventSubCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "subCategoryId",
+              "value": "eventSubCategoryId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Events - General - Get All By Sub Category ID\". It is utilized to fetch all events belonging to a specific sub-category.\n\nLet's take a deeper look at its elements:\n\n1. `name`- This is the name of endpoint which communicates its purpose, in this case, to retrieve all general events by their sub category ID.\n\n2. `request`- This section describes the details of the HTTP request. Here's what each data means:\n\n    - `auth`: This speaks about the authorization method used for the request. The type is `bearer`. A bearer token named \"BearerToken\" is used for authorization.\n\n    - `method`: The HTTP method used for this request is `GET`, which is usually used for retrieving data.\n\n    - `url`: This is the URL endpoint to which the request is sent. It consists of subCategoryId as a query parameter to filter events by their sub-category. Replace `eventSubCategoryId` with the actual sub-category ID for which you want to fetch the events.\n\n    - `headers`: This is an array of headers required by the request. There are no specific headers required for this request as it's empty and disabled by default.\n\n    - `body`: This is the body of the request. However, for this GET request, the body mode is set to `raw`, which means you can send unstructured data. But in this case, there's no data to send so the raw field is empty.\n\nIn conclusion, this endpoint uses a GET method to fetch all general events under a specific sub-category identified by its sub-category ID from the specified URL. It uses a Bearer Token for authorization. The response will contain all the general events data related to the sub-category.\n\n\n\n\n\n\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Events - General - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"eventId\":\"eventId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/general/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "general",
+            "delete"
+          ]
+        },
+        "description": "The given data specifies details of an HTTP endpoint:\n\n1. **Name**: The unique identifier of the endpoint. In this case, the name is \"Events - General - Delete,\" indicating this endpoint is used to delete general event data.\n\n2. **Request**: This represents the details of the HTTP request made to this endpoint.\n\n    - **Auth**: This field describes the authorization type that the endpoint uses. In this case, the `type` is set to \"bearer\", meaning that it uses Bearer Authentication. Bearer Authentication is a schema where the sender and the recipient of an HTTP request can authenticate to each other by a bearer token. Here, the key for the token is named \"token\" and its value is \"sessionId\".\n    \n    - **Method**: This describes the HTTP method used for the request. Here, the method is \"POST\", which is typically used to send data to a server to create a new resource.\n\n    - **URL**: This field contains the access link of the API. The present URL is \"http://localhost:3000/api/events/general/delete\", which indicates the server is currently running locally on port 3000.\n\n    - **Headers**: This is typically used to provide additional information about the request. In this case, it is not utilized; the `key` and `value` fields are empty, and its `type` is set as \"default\", but it is `disabled`.\n\n    - **Body**: This contains the data that is sent to the server. The mode here is \"raw,\" meaning that the data is sent in a string format. The raw string contains a JSON string with keys \"sessionId\", \"accountId\", and \"eventId\" whose values would need to be instantiated by the user.\n\nIn summary, this endpoint, \"Events - General - Delete\", is a POST Request that uses Bearer Authentication. It deletes events for the account specified by the \"accountId\", and the event specified by the \"eventId\". The session is specified by \"sessionId\". The API is currently hosted locally on port 3000."
+      },
+      "response": []
+    }
+  ]
+}

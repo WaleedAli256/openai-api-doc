@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "e1a8bb1c-5a81-441a-b88f-44cfaa51183b",
+    "name": "ConnectContact",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Connect - Contact - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeContact\",\"description\":\"This contact is my second contact\",\"tags\":\"second,contact\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":1,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isContactPrivate\":true,\"isTournamentOnly\":false,\"isContactDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/contact/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "contact",
+            "create"
+          ]
+        },
+        "description": "This API endpoint, `Connect - Contact - Create`, creates a new contact using the `POST` method. The URL of the endpoint is `http://localhost:3000/api/connect/contact/create`.\n\nThe `auth` object specifies the type of authentication: Bearer Token. The `token` key needs to hold the value of the Bearer Token. This should be of `string` data type.\n\nIn `request headers`, there's a default key-value pair which is disabled. You can add necessary headers if needed.\n\nThe `body` of the request contains raw JSON data, specified by the `mode`. It contains several key-value pairs:\n\n- `sessionId`: This should hold the session id.\n- `accountId`: This should hold the account id.\n- `name`: This represents the name of the contact we are trying to create.\n- `description`: A short description about the contact.\n- `tags`: Labels or keywords related to the contact.\n- `profilePhotoUrl`: The URL of the profile photo.\n- `coverPhotoUrl`: The URL of the cover photo.\n- `minimumTipAmount`: The minimum amount of tip that can be given to the contact.\n- `unlockAmount`: The amount required to unlock something regarding the contact.\n- `category`: The general category of the contact.\n- `subCategory`: The more specific category inside the general category.\n- `searchType`: The type of search associated with the contact.\n- `isEnabled`: A boolean indicating whether the contact is enabled.\n- `isContactPrivate`: A boolean indicating whether the contact is private.\n- `isTournamentOnly`: A boolean indicating whether the contact is only for tournaments.\n- `isContactDefault`: A boolean indicating whether the contact is set as default.\n- `isPreLiveConnectAds`: A boolean indicating whether pre-live connect ads are enabled.\n- `isPostLiveConnectAds`: A boolean indicating whether post-live connect ads are enabled.\n- `breakPreLiveConnectUrl`: The URL to the pre-live connect ad break content.\n- `breakLivePauseConnectUrl`: The URL to the paused-live connect ad break content.\n- `breakPostLiveConnectUrl`: The URL to the post-live connect ad break content.\n\nYou should format the body as JSON before sending the request, as indicated by the `language` option inside the `options` object of the `body`."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Contact - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"contactId\":\"contactId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeContact\",\"description\":\"This contact is my second contact\",\"tags\":\"second,contact\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":100,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isContactPrivate\":true,\"isTournamentOnly\":false,\"isContactDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/contact/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "contact",
+            "update"
+          ]
+        },
+        "description": "1. **name**: The name of the function or endpoint. Here, it represents an operation to update contact in the 'Connect' functionality.\n\n2. **request**: This object contains data relevant to making HTTP requests.\n\n3. **auth**: The authorization method to be used. Here, it is 'bearer' token-based auth.\n\n   - **type**: The type of authorization used. In this case, it is 'bearer'.\n   - **bearer**: An array that includes the token details to be sent along with an API request.\n     - **key**: The label of the auth token that we are sending. Here it is \"token\".\n     - **value**: This is the actual auth token which is called 'BearerToken'.\n     - **type**: Specifies the data type of the value, here it is 'string'.\n\n4. **method**: The HTTP method to be used for the request. Here it is PUT, which means we're updating existing data.\n\n5. **url**: The URL to hit for the API endpoint. The given endpoint is for updating contact in the 'Connect' functionality.\n\n6. **headers**: An array that includes additional data to be sent along with an API request.\n   - **key**: The label of the header that we are sending. Here it is \"Client-UUID\".\n   - **value**: This is the actual header value which is 'ClientUUID'.\n   - **type**: Specifies how the header is to be utilized, here it is 'default'.\n\n7. **body**: This provides data that is sent as the body of the request.\n   - **mode**: Specifies how the body data is presented, here it is 'raw'.\n   - **raw**: The raw format of the data to be sent. It is in JSON format and contains various keys describing the contact's details like 'contactId', 'sessionId', 'accountId'.\n   - **options**: This provides additional settings for how the body data should be handled.\n     \n     Following are some of the essential parameters in the body you should be mindful of:\n     \n     - **contactId**: Uniquely identifies a contact to be updated.\n     - **sessionId**: Represents the unique Id for current session.\n     - **accountId**: The unique identifier of the user making the request.\n     - **name**: The name of the contact.\n     - **description**: Gives a brief about the contact.\n     - **tags**: Comma-separated values to categorize contacts. \n     - **profilePhotoUrl**: URL of the profile image of the contact.\n     - **coverPhotoUrl**: URL of the cover image of the contact.\n     - **minimumTipAmount**: Smallest amount a user can tip the contact.\n     - **unlockAmount**: The amount required to unlock the contact.\n     - **category**: The general category under which the contact falls.\n     - **subCategory**: More specific category of the contact.\n     - **searchType**: Specifies the search type for the contact.\n     - **isContactPrivate**: A boolean indicating if the contact is private or not.\n     - **isTournamentOnly**: A boolean indicating if the contact is only for tournaments.\n     - **isEnabled**: A boolean indicating if the contact is enabled or not.\n     - **isContactDefault**: A boolean indicating if the contact is a default contact or not.\n     - **isPreLiveConnectAds**: A boolean indicating if pre-live connect ads are enabled for this contact.\n     - **breakPreLiveConnectUrl**: URL of the break pre-live connect video.\n     - **breakLivePauseConnectUrl**: URL of the break live pause connect video.\n     - **breakPostLiveConnectUrl**: URL of the break post-live connect video."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Contact - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/contact/get/?contactId=contactId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "contact",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "contactId",
+              "value": "contactId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This contains the descriptive name of the API request. Here, the name is \"Connect - Contact - Get\" which signifies the functionality of this specific endpoint. This endpoint is used to establish a connection, specifically targeting the 'contact' part of an application/database to get information related to it.\n\n2. \"request\": This object encapsulates all the details of the API request.\n\n    a. \"auth\": This represents the type of authorization used for transactions. It is an object that specifies the authorization type and the required credentials. Here, bearer authentication is used where the type is marked as \"bearer\".\n    \n        i. \"type\": This field describes the type of authorization being used. In this case, it is 'bearer'.\n        \n        ii. \"bearer\": This is an array of objects where each object represents an authorization parameter. Here, there's only one authorization parameter.\n        \n            - \"key\": It is the name of the authorization parameter, in this case, it's 'token'.\n            \n            - \"value\": It represents the value of the authorization parameter, in this case, it indicates 'BearerToken'.\n            \n            - \"type\": This is the type of the authorization parameter, and here, it is a string.\n    \n    b. \"method\": This parameter refers to the HTTP method used for the request. Here the method is 'GET', which is typically used to retrieve data.\n    \n    c. \"url\": This is the link to the resource you are trying to access. Here, 'http://localhost:3000/api/connect/contact/get/?contactId=contactId' is the url.\n    \n    d. \"headers\": This is an array used for passing additional information to the server. There is one header object that doesn't contain any data and it is disabled by default.\n    \n        i. \"key\": The header’s name/key. In this case, it's empty.\n        \n        ii. \"value\": The value assigned to the specified key. This field is also empty.\n        \n        iii. \"type\": Describes the type of header, with 'default' as a common example. Here, it is 'default'.\n        \n        iv. \"disabled\": A switch indicating the state of the header. If 'true', the header is not applied during API requests. Here it is set to 'true', indicating that this header is disabled.\n    \n    e. \"body\": This object contains details of what data to send in the API request.\n    \n        i. \"mode\": This parameter describes the format the body data is sent as. In this case, it is 'raw'.\n        \n        ii. \"raw\": This field is used to include raw input (when 'mode' is 'raw'). Currently, it is blank, indicating no raw data is included in the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Contact - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/contact/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "contact",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint `Connect - Contact - Get All` is a GET Request which retrieves all the contact information tied to the specified `accountId`. Below is the detailed description of each element in the endpoint:\n\n- `name`: The title of the endpoint. It's called \"Connect - Contact - Get All\", which suggests that we are retrieving all the contact details associated with an account in the Connect service.\n\n- `request`: This is the main part that defines what the request does.\n\n  - `auth`: This section represents the type of authentication required for this endpoint. The \"auth\" stands for \"authentication\".\n    \n    - `type`: The type of the token used for the authentication. In this case, it is a \"bearer\" which is a method to send authentication data to the server.\n    \n    - `bearer`: This is an array that holds the authentication token details. The `key` attribute indicates how this token is referred in the headers - as 'token'. While the `value` attribute holds the variable 'BearerToken' which stores the actual token value. The `type` must always be a string.\n\n  - `method`: This refers to the HTTP verb used for this request. Here, it's a \"GET\" request, meaning you are retrieving information from the server.\n\n  - `url`: It contains the location to which the request is sent. `http://localhost:3000/api/connect/contact/all/?accountId=accountId` indicates that request is sending to the localhost on port 3000. The path `/api/connect/contact/all` indicates that we are accessing the 'all' operation in the 'contact' resource of the 'connect' service. The `accountId` is a query parameter that should hold the actual id of the account for which we want to fetch the contact information. \n\n  - `headers`: The headers that should be included in the HTTP request. In this case, there's a `key` and `value` pair which is set to empty by default and has been `disabled`. It means, we can disregard this from request headers as it has no impact on the current request\n\n  - `body`: This is usually where you specify the content of your request. However, for this GET Request, the body has `mode` set to 'raw' and `raw` set to an empty string, meaning, it doesn't need to send any additional data in the request body.\n  \nThis endpoint will respond with all the contact information related to the provided `accountId`."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Contact - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"contactId\":\"contactId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/contact/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "contact",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Contact - Delete\". It's a POST request intended to delete a contact in the system. The detailed description for each field in the endpoint is as follows:\n\n1. **`name`**: The name of the endpoint, i.e., \"Connect - Contact - Delete\". It describes the operation performed by the endpoint.\n\n2. **`request`**: This object contains all the information needed to make the HTTP request. It is divided into several fields:\n   \n    a. **`auth`**: The method of authorization required to access this endpoint is set in this object.\n   \n        - **`type`**: The value \"bearer\" indicates the type of authorization is Bearer Token Authentication.\n         \n        - **`bearer`**: A list of objects specifying the details of the bearer token.\n          \n            - **`key`**: This is the term used in the header for the authentication token; in this case it's \"token\".\n          \n            - **`value`**: The value to be replaced by the actual session Id.\n            \n            - **`type`**: The data type of the value, in this case, it is \"string\".\n   \n    b. **`method`**: This field denotes the HTTP method to be used for the request. \"POST\" allows data to be sent as a body of the request.\n\n    c. **`url`**: This represents the endpoint where the request will be sent. In this case, it's http://localhost:3000/api/connect/contact/delete.\n\n    d. **`headers`**: A list of objects specifying the HTTP headers to be sent to the request. In this case, all fields are empty or default indicating no additional headers are needed for the request.\n\n    e. **`body`**: This contains the actual data to be sent with the request.\n\n        - **`mode`**: The mode of the body content, in this case, it's \"raw\", meaning the content will be sent as a raw string.\n        \n        - **`raw`**: The raw request payload, composed of key-value pairs represented as a string. The keys are: \"sessionId\", \"accountId\", and \"contactId\". Their values need to be replaced with the actual session id, account id, and contact id respectively."
+      },
+      "response": []
+    }
+  ]
+}

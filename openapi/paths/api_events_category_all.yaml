@@ -1,0 +1,46 @@
+get:
+  tags:
+    - EventsCategory
+  summary: Events - Category - Get All
+  description: >-
+    This endpoint, "Events - Category - Get All", is a GET request used to
+    retrieve all categories of events. This is how each component is used:
+
+
+    1. `name`: This is the title or alias of the endpoint. "Events - Category -
+    Get All" is a human-friendly name referring to the operation serving to
+    fetch all event categories.
+
+
+    2. `auth`: It refers to the method by which the service authenticates the
+    user. This endpoint uses bearer token authentication (`type: "bearer"`). A
+    bearer token is a type of access token that allows the holder of the token
+    to access the API. It is supplied under the `value` key as a string datatype
+    in the `bearer` array. Replace `"BearerToken"` with your actual bearer token
+    when making the request.
+
+
+    3. `method`: Refers to HTTP methods. In this case, "GET" is the HTTP method
+    used. It is used to request data from a specified resource.
+
+
+    4. `url`: This is the Server URL or API's endpoint.
+    "http://localhost:3000/api/events/category/all" is the address we are making
+    the request to. It should be replaced with the actual server's URL when
+    deployed.
+
+
+    5. `headers`: In this collection, the headers field has no key-value pair;
+    therefore, it's disabled and does not have any effect on the request.
+
+
+    6. `body`: Here, the body mode is set to "raw" which means that the HTTP
+    request body contains data as a raw string. However, there is no raw data
+    being sent in this request.
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}

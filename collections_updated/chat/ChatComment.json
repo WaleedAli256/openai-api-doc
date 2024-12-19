@@ -1,0 +1,273 @@
+{
+  "info": {
+    "_postman_id": "a021ae94-aafe-4980-8c46-990a802d5583",
+    "name": "ChatComment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Chat - Comment - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"commentText\": \"Hello, this is a comment!\",\"threadId\": \"threadId\",\"replyToId\": \"replyToId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/comment/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "comment",
+            "create"
+          ]
+        },
+        "description": "This endpoint, named \"Chat - Comment - Create\", is used to create a new comment in a chat. It is a HTTP POST request to the URL http://localhost:3000/api/chat/comment/create. Here is a deeper look at the different pieces of data provided in this endpoint:\n\n1. **auth**: This contains the authorization method which is of type \"bearer\". The bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens called bearer tokens. \n\n   **key**: The key field contains the name of the header, which is \"token\".\n\n   **value**: The value field contains the actual Bearer token that needs to be added in the header for access.\n\n   **type**: This defines the data type of the value, in this case, it is a string.\n\n2. **method**: The HTTP method used for this request is POST. HTTP POST requests are used to send data to the server, like when you fill out a form and hit 'submit'. In this case, it is used to create a new chat comment.\n\n3. **url**: This is the endpoint where the POST request is to be sent. \n\n4. **headers**: This is currently empty but would typically contain any extra headers that need to be added to the request.\n\n5. **body**: This is the data that is sent with the POST request. The data is in raw format and the mode type is \"raw\" under the body field.\n\n   **raw**: This is the actual data being sent in the request. It contains:\n   \n  - `commentText`: The text of the comment that is being created.\n  \n  - `threadId`: The unique identifier for the thread where the comment is being posted.\n  \n  - `replyToId`: The id of the comment this new comment is responding to, in case the new comment is a reply.\n  \n  - `accountId`: The id of the account creating the comment.\n  \n  - `sessionId`: The id of the current session.\n\n   **options**: In the options field, raw is defined with language as json. It means that the raw data is written in JSON format.\n\nRemember to replace \"BearerToken\", \"threadId\", \"replyToId\", \"accountId\", and \"sessionId\" with actual values when using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Comment - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"commentId\": \"commentId\",\"commentText\": \"Updated comment text\",\"threadId\": \"threadId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/comment/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "comment",
+            "update"
+          ]
+        },
+        "description": "This endpoint \"Chat - Comment - Update\" is used to update an existing comment in a chat thread.\n\nIt uses the `PUT` method indicating that it's used to update existing resources.\n\nHere is a detailed breakdown of each data in this endpoint:\n\n1. `auth`: This is the way your API handles authentication. In this endpoint, it is using `Bearer Token` authentication.\n   - `type`: The type of authentication used. Here, it's `bearer`.\n   - `bearer`: An array holding bearer token data.\n       - `key`: The keyword `token` used to identify this authentication method.\n       - `value`: The bearer token which should be replaced with an actual bearer access token.\n   \n2. `method`: This is the HTTP method used for the request. The endpoint uses `PUT`, which is used to update existing resources.\n\n3. `url`: This is the endpoint URL to which the request will be sent. Here, the URL is `http://localhost:3000/api/chat/comment/update`.\n\n4. `headers`: This array will hold any headers that need to be sent with the request. In this case, no headers are specified.\n\n5. `body`: This contains the data sent to the server. It is written in raw mode.\n   - `mode`: Defines how the body will be sent. Here, it is sent in `raw`.\n   - `raw`: This is the raw request body which contains the comment details that are to be updated.\n      - `commentId`: The ID of the comment to be updated.\n      - `commentText`: The updated text for the comment.\n      - `threadId`: The ID of the thread in which this comment is present.\n      - `accountId`: The ID of the account making the update.\n      - `sessionId`: The ID of the session in which the request is made.\n   \n6. `options`: Options for how the data in `raw` should be interpreted.\n   - `raw`: Options specific to when the data is sent as `raw`.\n       - `language`: The language in which the `raw` data is written. In this case, it's `json`."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Comment - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"commentId\": \"commentId\",\"threadId\":\"threadId\",\"accountId\":\"accountId\",\"sessionId\": \"sessionId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/comment/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "comment",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is known as \"Chat - Comment - Delete\". It's used to delete a specific comment from a chat. There are several parameters to understand in this endpoint:\n\n1. \"name\" - A unique identifier for the endpoint. This endpoint's name is \"Chat - Comment - Delete\", referring to the task it is specifically designed to perform.\n\n2. \"auth\" - This section specifies the authentication method required to access this endpoint. In this case, it uses bearer authentication (\"type\": \"bearer\"), meaning you need to provide a token (Bearer token) in the request header to authenticate yourself.\n\n3. \"request\" - This is the actual command sent when the API is called. \n\n4. \"method\" - This refers to the type of HTTP request method used. In this case, it's a POST method, which is typically used when you want to send data to be processed to a specified resource.\n\n5. \"url\" - The URL is the specific address where the request will be sent. For this endpoint, the request will be sent to \"http://localhost:3000/api/chat/comment/delete\".\n\n6. \"headers\" - Headers let the client and the server pass additional information with an HTTP request or response. This endpoint does not require any additional headers.\n\n7. \"body\" - This is the part of the request where you specify the data you want to send. In this endpoint, a raw JSON object is sent in the body, containing following fields:\n    - \"commentId\": The ID of the comment to be deleted.\n    - \"threadId\": The ID of the thread where the comment resides.\n    - \"accountId\": The account ID related to the session making the request.\n    - \"sessionId\": It is the unique id of the session attempting to delete the comment.\n\n8. \"options\" - This section provides additional details about how the body of the request is formatted. It specifies that the body is raw data and the language used is JSON.\n\nPlease ensure you replace \"BearerToken\", \"commentId\", \"threadId\", \"accountId\" and \"sessionId\" with actual values in your request."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Comment - Get",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/chat/comment/get?commentId=commentId&threadId=threadId&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "comment",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "commentId",
+              "value": "commentId"
+            },
+            {
+              "key": "threadId",
+              "value": "threadId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "1. **name**: This data point contains the name of the transactions that we are performing. In this case, the name is \"Chat - Comment - Get\". This is essentially denoting that this API call is to get comments of a chat.\n\n2. **request**: This data point represents the HTTP request information including the authentication method, HTTP method, URL, and the headers.\n\n   - **auth**: This object includes information about the authorization needed to execute this API call. \n        - **type**: This defines the type of authorization being used. Here, it is \"bearer\", which suggests that we are using bearer token for authorization.\n        - **bearer**: This is an array carrying information about the bearer token\n          - **key**: This is the key used for bearer token. In this case, the key is \"token\".\n          - **value**: This is the value of the aforementioned key. Here, the value is \"BearerToken\".\n          - **type**: This defines the data type of the key. Here, it is a string.\n\n   - **method**: This data point tells us about the HTTP method being used for the request. Here, it directs us to use the GET method.\n\n   - **url**: This field contains the URL for the call. The URL is followed by a string of parameters added to the end of the actual URL in the form of a query string. The parameters are `commentId`, `threadId`, `accountId`, and `sessionId`. These parameters represent the comment's id, thread's id, user's account id, and session id respectively.\n\n   - **headers**: This field represents the headers used in your HTTP request. Headers let the client and the server pass additional information with an HTTP request or response. Currently, it is an empty array indicating no header data is added to the request.\n\nPlease note that the `BearerToken` and the values in the `url` query string are placeholders and should be replaced with actual data for the API call to be successful."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Comment - Get All",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/chat/comment/all?threadId=threadId&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "comment",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "threadId",
+              "value": "threadId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Chat - Comment - Get All\". It is a GET method used for retrieving all chat comments related to a specific thread. \n\nThe endpoint requires:\n1) Authentication: This is of the 'Bearer' type. To authenticate, a token needs to be provided as a string in the 'BearerToken' value.\n   \n2) Parameters: The request URL requires three parameters:\n    - threadId: This is an identifier for the specific chat thread for which you want to retrieve the comments. Replace 'threadId' with the actual thread ID.\n    - accountId: This is the identifier for an individual user's account. Replace 'accountId' with the actual account ID. \n    - sessionId: This is the identifier for the user's current session. Replace 'sessionId' with the actual session ID.\n   \n3) Headers: No specific headers have been defined for this request. \n\nThe endpoint's URL is \"http://localhost:3000/api/chat/comment/all\", running on the port number 3000 on your local server. Ensure that your service is running and listening on this port before making the request.\n\nRemember to replace 'BearerToken', 'threadId', 'accountId', and 'sessionId' with actual values for your specific use-case to ensure a successful request."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Comment - Get All With Deleted",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/chat/comment/all?threadId=threadId&accountId=accountId&sessionId=sessionId&deleted=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "comment",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "threadId",
+              "value": "threadId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "deleted",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "The endpoint, Chat - Comment - Get All With Deleted, fetches all chat comments including the deleted ones from the server. It comprises the following elements:\n\n1. \"name\": This is the name of the endpoint that's used to describe its purpose. For this endpoint, the name is \"Chat - Comment - Get All With Deleted\", implying its function to retrieve all chat comments, including those deleted.\n\n2. \"request\": This object consists of the specifications for the HTTP request that's made to the endpoint. \n\n   \ti. \"auth\": This object signifies an authorization method is used for the endpoint, the \"type\" indicates it's a bearer token authentication. \n\n   \tii. \"bearer\": This array holds an object containing details about the bearer token used for authentication. The \"key\" is the identifier for the token found in the request header. The \"type\" field specifies the data type of the token, here it is of \"string\" type. The \"value\", is the actual token value; \"BearerToken\" is just a placeholder indicating where the token should go.\n\n   \tiii. \"method\": This field specifies the HTTP method associated with the request. The value \"GET\" implies data is being fetched from the server.\n\n   \tiv. \"url\": This is the URL of the endpoint where the request is being sent. It is formatted as follows: \n\"localhost:3000/api/chat/comment/all?threadId=threadId&accountId=accountId&sessionId=sessionId&deleted=1\". The parameters after \"?\" are called query parameters and are used to filter the results. Here, \"threadId\", \"accountId\", \"sessionId\" are used to specify which thread's, account's, session's chat comments you want to retrieve, while \"deleted=1\" indicates also to include deleted comments.\n\n   \tv. \"headers\": This is an empty array, which signifies no additional HTTP headers are included in the request.\n\nPlease replace \"BearerToken\", \"threadId\", \"accountId\", \"sessionId\" with actual values before making a request."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,1129 @@
+{
+  "info": {
+    "_postman_id": "a44903cc-84bd-4a28-94ad-57bd95afd83e",
+    "name": "ConnectPost",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14216399"
+  },
+  "item": [
+    {
+      "name": "Connect - Post- Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"sessionId\": \"sessionId\",\r\n    \"accountId\": \"accountId\",\r\n    \"provider\": \"blogger\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"title\": \"test title\",\r\n    \"isEnabled\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/post/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "post",
+            "create"
+          ]
+        },
+        "description": "1. \"name\" - This field represents the name of the endpoint. In this case, the name is \"Connect - Post- Create\", which indicates that it might be an endpoint used for creating a new post in a connection.\n\n2. \"request\" - This field contains all the information related to the request being made to the endpoint.\n\n3. \"auth\" - Represents the authorization needed to make a request to the endpoint. It has a \"type\" field which indicates the type of authorization, in this case, \"bearer\". The \"bearer\" field contains an array of objects each containing a \"key\", \"value\", and \"type.\" Here, the key is \"token\", and it requires a string value which is \"BearerToken\".\n\n4. \"method\" - Specifies the HTTP method used for the request. Here, \"POST\" method is used which is typically used for sending data to a server to create/update a resource.\n\n5. \"url\" - This is the URL of the endpoint where the request will be made. \n\n6. \"headers\" - Contain additional information that the client needs to pass along with the request. In this case, no headers are mentioned, just an empty default header is given which is also disabled.\n\n7. \"body\" - It includes the actual data that has to be sent in the request. Here, the \"mode\" is \"raw\" which specifies that the data is sent in raw text and the language used is JSON. It contains fields like \"sessionId\", \"accountId\", \"provider\", \"postText\", \"title\", and \"isEnabled\" which need to be passed in the request body. \n\nLet's know about data in the body section:\n- \"sessionId\": An identifier for the current user session.\n- \"accountId\": Identifier for the user account.\n- \"provider\": The blog provider's name, in this example it is mentioned as 'blogger'.\n- \"postText\": The text of the blog post.\n- \"title\": The title of the blog post.\n- \"isEnabled\": A flag to specify whether the post is enabled or not. This is a boolean field that accepts either true or false."
+      },
+      "response": [
+        {
+          "name": "instagram",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"instagram\",\r\n    \"path\":\"C:/Users/dell-ssd/Downloads/1726918241_img3.jpg\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "facebook page",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"facebookpage\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"isEnabled\": true,\r\n    \"pageName\": \"unpictures\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "facebook profile",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"facebook\",\r\n    \"postText\": \"This message is my post added through automation for testing Beladed Automation\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Facebook Group",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"facebookgroup\",\r\n    \"path\": \"https://www.facebook.com/groups/1683333712207933\",\r\n    \"postText\": \"This message is sponsored by beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "linkedIn",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"linkedin\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "medium",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"medium\",\r\n    \"title\": \"title\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "google review",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"google\",\r\n    \"postText\": \"This review is from Beladed.\",\r\n    \"businessUrl\":\"https://www.google.com/search?q=savour+foods+pwd\",\r\n    \"stars\": \"Four\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "pinterest",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"pinterest\",\r\n    \"board\": \"Software Testing\",\r\n    \"title\": \"Testing Auto Posting\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"isEnabled\": true,\r\n    \"fileupload\": \"C:/Users/dell-ssd/Downloads/1726918241_img3.jpg\",\r\n    \"link\": \"https://live.beladed.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "reddit",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"reddit\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"subreddit\": \"beladeddev01\",\r\n    \"title\":\"automation testing\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "slack",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"slack\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"channelName\": \"beladed-post-automation\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "threads",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"threads\",\r\n    \"postText\": \"This post is sponsored by Beladed\",\r\n    \"path\": \"C:/Users/dell-ssd/Downloads/beladed_logo.jpeg\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "tumblr",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"tumblr\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"title\":\"title testing\",\r\n    \"tags\": \"beladed, live, automation,\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "whatsapp",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"whatsapp\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"groupName\": \"Beladed Demo\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "weebly",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"weebly\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "wordpress",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"wordpress\",\r\n    \"postText\": \"This message is my second test message\",\r\n    \"title\": \"posting from beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "x",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"x\",\r\n    \"postText\": \"This message is my second test post for Beladed automation\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "patreon",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"patreon\",\r\n    \"title\": \"new title\",\r\n    \"price\": \"9\",\r\n    \"sellPost\": false,\r\n    \"audience\": \"public\",\r\n    \"postText\": \"This message is my second test post for Beladed automation\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "g2",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"g2\",\r\n    \"title\": \"new title\",\r\n    \"postText\": \"This message is my second test post for Beladed automation\",\r\n    \"isEnabled\": true,\r\n    \"likes\": \"It is the ease to use and comprehensive programming language with alot of opputunities\",\r\n    \"dislikes\": \"Typical complaints about Java are about perceived poor performance (which is demonstrably false or at least exaggerated - in most use cases Java performs as well as most compiled languages) and verbosity with the embarkment.\",\r\n    \"businessproblemstext\": \" Memory Management: Java handles memory management automatically through garbage collection, but inefficient memory usage or memory leaks can still occur, leading to performance issues and reliability.\",\r\n    \"noofEmployees\": \"2-10 employees\",\r\n    \"industryname\": \"Accounting\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "trustpilot",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"trustpilot\",\r\n    \"title\": \"new title\",\r\n    \"postText\": \"This message is my second test post for Beladed automation\",\r\n    \"date\": \"02/25/2024\",\r\n    \"stars\": 5,\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "yelp",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"trustpilot\",\r\n    \"postText\": \"This message is my second test post for Beladed automation\",\r\n    \"location\": \"San Francisco, CA\",\r\n    \"place\": \"Delivery\",\r\n    \"stars\": 5,\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/post/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "post",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Connect - Post - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"postId\":\"postId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikePost\",\"description\":\"This post is my second post\",\"tags\":\"second,post\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":100,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isPostPrivate\":true,\"isTournamentOnly\":false,\"isPostDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/post/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "post",
+            "update"
+          ]
+        },
+        "description": "This API endpoint \"Connect - Post - Update\" is used to update an existing post. The update method uses the HTTP PUT verb. The URL of this API endpoint is \"http://localhost:3000/api/connect/post/update\".\n\nThe API uses \"Bearer\" type authentication. Bearer token is passed in the \"BearerToken\" key as a string type value.\n\nIt includes the \"Client-UUID\" in the headers. The client Universally Unique Identifier (UUID) is used to uniquely identify a client. The value for \"Client-UUID\" goes in the \"ClientUUID\" key.\n\nThe request body contains information about the post that needs to be updated. This information includes:\n- postId : The unique identifier of the post.\n- sessionId : Identifier of the session\n- accountId : Identifier of the account\n- name : Name of the post\n- description : Brief description of the post\n- tags : Tags associated with the post for better searchability, separated by commas.\n- profilePhotoUrl : URL of the profile photo\n- coverPhotoUrl : URL of the cover photo\n- minimumTipAmount : Minimum tip amount for the post\n- unlockAmount : Amount needed to unlock the post\n- category : Category to which the post belongs\n- subCategory : Specific sub-category within the main category\n- searchType : Type of search (\"Game\" in this case).\n- isEnabled : Flag indicating whether the post is enabled or not\n- isPostPrivate : Flag indicating whether the post is private or not\n- isTournamentOnly : Flag indicating whether the post is only for tournament or not\n- isPostDefault : Flag indicating whether the post is default or not\n- isPreLiveConnectAds : Flag indicating whether connect ads are established pre-live or not\n- isPostLiveConnectAds : Flag indicating whether connect ads are established post-live or not\n- breakPreLiveConnectUrl: URL for pre-live break video\n- breakLivePauseConnectUrl: URL for paused live break video\n- breakPostLiveConnectUrl : URL for post-live break video\n\nThe request body is sent in raw mode and the raw data is in JSON language. This is specified in the options field of the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Post- Get Settings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/connect/post/getsettings?accountId=accountId&sessionId=sessionId&providerName=pinterest",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "post",
+            "getsettings"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "providerName",
+              "value": "pinterest"
+            }
+          ]
+        },
+        "description": "1. \"name\": This is the name of endpoint that is being called. In this case, the endpoint name is \"Connect - Post- Get Settings\".\n\n2. \"request\": This value contains all the information required to make the HTTP request. It includes authentication details, the HTTP method, the URL of the request, and any headers.\n\n3. \"auth\": This is the authentication structure used for this endpoint. It specifies the type of authentication and the authentication details.\n   \n    a. \"type\": This field specifies the type of authorization required for this endpoint. In this case, it uses 'bearer' authorization.\n   \n    b. \"bearer\": This is an array of bearer tokens required for this endpoint.\n       \n       i. \"key\": The key for the bearer token needed for authorization - here, it is named 'token'.\n       \n       ii. \"value\": The value of the bearer token, defined here as 'BearerToken'.\n       \n       iii. \"type\": The type of bearer token used, which is a 'string'.\n\n4. \"method\": It specifies the HTTP method to be used for this request, which is 'GET'.\n\n5. \"url\": This is the URL where the request will be sent. It is 'http://localhost:3000/api/connect/post/getsettings?accountId=accountId&sessionId=sessionId&providerName=pinterest'. In this URL:\n    \n    a. 'accountId': The account ID used for this request.\n    b. 'sessionId': The session ID used for this request.\n    c. 'providerName': The provider name used in this request, which is 'pinterest' in this case.\n\n6. \"headers\": These are extra details sent with the request to provide additional information. In this case, the headers are not defined (empty) and are disabled."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Post - Create Settings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\r\n\"accountId\":\"accountId\",\r\n\"name\": \"Usama Nasir\",\r\n  \"displayName\": \"usamanasir\",\r\n  \"tags\": \"example, test, api\",\r\n  \"title\": \"Developer\",\r\n  \"website\": \"https://www.globalexpressdelivery.org\",\r\n  \"description\": \"This is a sample description for John Doe.\",\r\n  \"identifierKey\": \"id123456\",\r\n  \"apiKey\": \"api_key_1234567890\",\r\n  \"apiSecret\": \"api_secret_0987654321\",\r\n  \"apiClientId\": \"client_id_abcdef123456\",\r\n  \"authToken\": \"auth_token_abcdef123456\",\r\n  \"refreshToken\": \"refresh_token_123456abcdef\",\r\n  \"providerName\": \"wordpress\",\r\n  \"providerId\": \"beladed_id_123456\",\r\n  \"uniqueKey\": \"unique_key_abcdef123456\",\r\n  \"authUsername\": \"beladeddev\",\r\n  \"authPassword\": \"Demopass1?\",\r\n  \"authEmail\": \"beladeddev\",\r\n  \"authSecurity\": null,\r\n  \"recaptchaCode\": \"recaptcha_code_abcdef123456\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/post/createsettings",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "post",
+            "createsettings"
+          ]
+        },
+        "description": "This is the description of each data in the endpoint:\n\n1. \"name\": This is the identifier of the endpoint, in this case it is \"Connect - Post - Create Settings\".\n2. \"request\": This holds the details about the http request sent to the server.\n3. \"auth\": This section contains information about the authorization, where \"bearer\" authorization type is used in this case. The bearer token is passed as a string in the \"token\" field.\n4. \"method\": This is the http method used to send the request to the server. In this case, the \"POST\" method is used.\n5. \"url\": This is the URL of the server where the request will be sent.\n6. \"headers\": These are the additional information sent with the http request. Here, a default empty header is being sent which is currently disabled.\n7. \"body\": This contains the payload that is sent with the http request. Here, body is sent in \"raw\" format.\n8. \"raw\": This contains the JSON payload which includes various parameters like `sessionId`, `accountId`, `name`, `displayName`, `tags`, `title`, `website`, `description`, `identifierKey`, `apiKey`, `apiSecret`, `apiClientId`, `authToken`, `refreshToken`, `providerName`, `providerId`, `uniqueKey`, `authUsername`, `authPassword`, `authEmail`, `authSecurity`, `recaptchaCode`.\n9. \"options\": Contain settings for the body of the http request. The \"language\" option is set to \"json\" for this request, since JSON data is being sent in the body.\n\nPlease ensure that the appropriate values are put in place of placeholders for all the parameters in the body of the request before making the request. Also, the `authSecurity` field currently holds a null value and should be filled with a suitable value if required."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Post - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/post/get/?postId=postId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "post",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "postId",
+              "value": "postId"
+            }
+          ]
+        },
+        "description": "1. \"name\": The \"name\" field refers to the title or alias for the API endpoint which is \"Connect - Post - Get\". It is a string that typically indicates the purpose of this endpoint.\n\n2. \"request\": This section contains data related to the API request itself. \n\n3. \"request.auth\": This part specifies the type of authorization needed to access this endpoint. Authorization can vary depending on the security standards of the API.\n\n   - \"type\": \"bearer\" means the authorization requires a Bearer token which must be sent in the header of the HTTP request.\n   \n   - \"bearer\": This is an array of bearer tokens needed for the authentication.\n   \n   - \"key\": \"token\", signifies the key of the bearer token which is \"token\" in this case.\n   \n   - \"value\": \"BearerToken\", This field contains the actual value of the API token. Replace \"BearerToken\" with the real valid token.\n   \n   - \"type\": \"string\", It indicates that the bearer token value should be of string type.\n   \n4. \"request.method\": The HTTP method used for this API request. In this case, it is \"GET\" which means retrieving data from the server.\n\n5. \"request.url\": This is the URL where the API request will be sent. \"http://localhost:3000/api/connect/post/get/?postId=postId\" is the base URL followed by the specific endpoint and query parameter.\n\n6. \"request.headers\": This section contains information that helps the server route the request, determine what response to provide, and other metadata. In this case, empty key-value pair suggests no additional headers are required.\n\n7. \"request.body\": The body of the HTTP request. Given the method of this request is \"GET\" and not \"POST\", the body might be blank.\n   \n   - \"mode\": \"raw\", specifies the type of data in the body.\n   \n   - \"raw\": \"\", since this is a GET request, there is no additional data provided in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Post - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/post/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "post",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This field represents the title or identifier of the endpoint, which in this case is \"Connect - Post - Get All\". This is a descriptive title which gives an idea about the functionality of this endpoint.\n\n2. \"request\": This field contains all the essential data needed to make the API request.\n\n3. \"auth\": This field defines the authorization method utilized for the API request. Here, the \"bearer\" token authentication type is used.\n\n  i. \"type\": The authorization type. It is set to \"bearer\" in this context.\n  \n  ii. \"bearer\": This is an array of bearer tokens. It contains \"key-value\" pairs. Here, the key is \"token\" and its value is \"BearerToken\".\n\n  iii. \"key\": This denotes the type of token used to authenticate the request. It's set to \"token\".\n  \n  iv. \"value\": It's the actual token used to authenticate the request, Its provided value here is \"BearerToken\".\n  \n  v. \"type\": It denotes the type of value. In this case, it's a \"string\".\n\n4. \"method\": This field defines the HTTP method used for the request. Here, it's a \"GET\" request, typically used to retrieve data.\n\n5. \"url\": The URL where the request will be sent. It's set to \"http://localhost:3000/api/connect/post/all/?accountId=accountId\", where \"accountId\" is an expected parameter.\n\n6. \"headers\": An array containing all the headers that will be sent along with the request. In this case, the headers field is empty and \"disabled\" is set to \"true\", meaning no additional headers will be sent with this request.\n\n7. \"body\": This field represents the body of the HTTP request.\n\n  i. \"mode\": The formatting type of the request body, which is \"raw\" in this case, indicating that no specific format is applied to the body data.\n  \n  ii. \"raw\": The actual content of the request body. Here, it's empty as there's no body data to be sent for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Post - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"postId\":\"postId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/post/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "post",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is called 'Connect - Post - Delete'. It's a POST method, meaning it is used to send data to the server to create a resource.\n\nThe 'auth' field indicates the type of authentication being used, which is 'bearer' type. The 'bearer' array contains a 'token' key needing a 'sessionId' value. It's of 'string' type, which indicates that the 'sessionId' must be a sequence of characters.\n\nThe 'method' is 'POST', which is typically used to submit data to be processed by the identified resource.\n\nThe 'url' is the web address where the POST request is sent. In this case, it's 'http://localhost:3000/api/connect/post/delete', which is an API related to deleting a post on a server running on your own machine (or localhost) at port 3000.\n\nThe 'headers' field includes a default key-value pair that is currently empty and disabled. Headers are used for additional parameters that need to be sent with the API request. \n\nThe 'body' field contains the Data that will be sent with the POST request, which is in 'raw' mode. 'Raw' mode in Postman allows you to send data as a string in the format that you choose. This requires an object containing sessionId, accountId, and postId as strings in a JSON format. \n\n'sessionId' is an unique identifier for a browser session and can be used to manage a user's interaction with the application. 'accountId' refers to the unique identifier of a user's account while 'postId' is the unique identifier of a specific post on the platform. All of these identifiers are sent in the request body indicating the specific user, session and post involved in the interaction."
+      },
+      "response": []
+    }
+  ]
+}

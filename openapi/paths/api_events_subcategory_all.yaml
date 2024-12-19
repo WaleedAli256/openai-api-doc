@@ -1,0 +1,40 @@
+get:
+  tags:
+    - EventsSubCategory
+  summary: Events - SubCategory - Get All
+  description: >-
+    This endpoint 'Events - SubCategory - Get All', retrieves all subcategories
+    of events from your service. 
+
+
+    1. Authentication of this endpoint is set to 'Bearer'. This means it
+    requires a bearer token for authorization. So, you need to provide a 'token'
+    in the bearer field that is of the string type to validate your request for
+    authorization.
+
+
+    2. As the method for this endpoint is 'GET', it implies that this endpoint
+    is used for retrieving data from the server.
+
+
+    3. The URL 'http://localhost:3000/api/events/subcategory/all', indicates the
+    location where the server responds to a specific service, in this case it
+    means it will respond to the request of retrieving all event subcategories.
+
+
+    4. There's an array defined for headers. However, it is kept empty and is
+    disabled by default, indicating that no additional headers are required for
+    this request.
+
+
+    5. In this endpoint, the body field has both mode and raw defined. The mode
+    is set to 'raw', which is generally used when you want to send unstructured
+    data. However, the 'raw' field here has no value indicating no requirement
+    for sending data in the body of the request for this endpoint.
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}

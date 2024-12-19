@@ -1,22 +1,324 @@
 openapi: 3.0.0
 info:
-  title: ActionEarn
+  title: Combined API Documentation
   version: 1.0.0
 servers:
   - url: http://localhost:3000
 security:
   - bearerAuth: []
 paths:
-  /api/action/earn/create:
-    $ref: paths/api_action_earn_create.yaml
-  /api/action/earn/update:
-    $ref: paths/api_action_earn_update.yaml
-  /api/action/earn/get:
-    $ref: paths/api_action_earn_get.yaml
-  /api/action/earn/all:
-    $ref: paths/api_action_earn_all.yaml
-  /api/action/earn/delete:
-    $ref: paths/api_action_earn_delete.yaml
+  /api/account/general/create:
+    $ref: paths/api_account_general_create.yaml
+  /api/account/general/login:
+    $ref: paths/api_account_general_login.yaml
+  /api/account/general/forgot:
+    $ref: paths/api_account_general_forgot.yaml
+  /api/account/general/session:
+    $ref: paths/api_account_general_session.yaml
+  /api/account/general/reset:
+    $ref: paths/api_account_general_reset.yaml
+  /api/account/general/logout:
+    $ref: paths/api_account_general_logout.yaml
+  /api/account/keys/create:
+    $ref: paths/api_account_keys_create.yaml
+  /api/account/keys/update:
+    $ref: paths/api_account_keys_update.yaml
+  /api/account/keys/get:
+    $ref: paths/api_account_keys_get.yaml
+  /api/account/keys/all:
+    $ref: paths/api_account_keys_all.yaml
+  /api/account/keys/delete:
+    $ref: paths/api_account_keys_delete.yaml
+  /api/account/location/create:
+    $ref: paths/api_account_location_create.yaml
+  /api/account/location/update:
+    $ref: paths/api_account_location_update.yaml
+  /api/account/location/get:
+    $ref: paths/api_account_location_get.yaml
+  /api/account/location/all:
+    $ref: paths/api_account_location_all.yaml
+  /api/account/location/delete:
+    $ref: paths/api_account_location_delete.yaml
+  /api/account/send/accountCreated:
+    $ref: paths/api_account_send_accountCreated.yaml
+  /api/account/send/verificationEmail:
+    $ref: paths/api_account_send_verificationEmail.yaml
+  /api/account/send/verificationSMS:
+    $ref: paths/api_account_send_verificationSMS.yaml
+  /api/account/send/emailAddressChanged:
+    $ref: paths/api_account_send_emailAddressChanged.yaml
+  /api/account/send/phoneNumberChanged:
+    $ref: paths/api_account_send_phoneNumberChanged.yaml
+  /api/account/send/passwordChanged:
+    $ref: paths/api_account_send_passwordChanged.yaml
+  /api/account/send/passwordResetEmail:
+    $ref: paths/api_account_send_passwordResetEmail.yaml
+  /api/account/send/passwordResetSMS:
+    $ref: paths/api_account_send_passwordResetSMS.yaml
+  /api/account/send/newMessage:
+    $ref: paths/api_account_send_newMessage.yaml
+  /api/account/send/newFollowers:
+    $ref: paths/api_account_send_newFollowers.yaml
+  /api/account/send/streamerNewComment:
+    $ref: paths/api_account_send_streamerNewComment.yaml
+  /api/account/send/streamerTeamDraftRequest:
+    $ref: paths/api_account_send_streamerTeamDraftRequest.yaml
+  /api/account/send/userNewComment:
+    $ref: paths/api_account_send_userNewComment.yaml
+  /api/account/send/userTeamDraftRequest:
+    $ref: paths/api_account_send_userTeamDraftRequest.yaml
+  /api/account/settings/create:
+    $ref: paths/api_account_settings_create.yaml
+  /api/account/settings/update:
+    $ref: paths/api_account_settings_update.yaml
+  /api/account/settings/get:
+    $ref: paths/api_account_settings_get.yaml
+  /api/account/settings/all:
+    $ref: paths/api_account_settings_all.yaml
+  /api/account/settings/delete:
+    $ref: paths/api_account_settings_delete.yaml
+  /api/account/update/account:
+    $ref: paths/api_account_update_account.yaml
+  /api/account/update/display:
+    $ref: paths/api_account_update_display.yaml
+  /api/account/update/email:
+    $ref: paths/api_account_update_email.yaml
+  /api/account/update/language:
+    $ref: paths/api_account_update_language.yaml
+  /api/account/update/phone:
+    $ref: paths/api_account_update_phone.yaml
+  /api/account/update/type:
+    $ref: paths/api_account_update_type.yaml
+  /api/account/update/username:
+    $ref: paths/api_account_update_username.yaml
+  /api/account/update/password:
+    $ref: paths/api_account_update_password.yaml
+  /api/account/verify/account:
+    $ref: paths/api_account_verify_account.yaml
+  /api/account/verify/email:
+    $ref: paths/api_account_verify_email.yaml
+  /api/account/verify/phone:
+    $ref: paths/api_account_verify_phone.yaml
+  /api/account/verify/unlock:
+    $ref: paths/api_account_verify_unlock.yaml
+  /api/account/verify/link:
+    $ref: paths/api_account_verify_link.yaml
+  /api/account/verify/code:
+    $ref: paths/api_account_verify_code.yaml
+  /api/account/verify/username:
+    $ref: paths/api_account_verify_username.yaml
+  /api/article/category/create:
+    $ref: paths/api_article_category_create.yaml
+  /api/article/category/createBulk:
+    $ref: paths/api_article_category_createBulk.yaml
+  /api/article/category/update:
+    $ref: paths/api_article_category_update.yaml
+  /api/article/category/get:
+    $ref: paths/api_article_category_get.yaml
+  /api/article/category/all:
+    $ref: paths/api_article_category_all.yaml
+  /api/article/category/alll:
+    $ref: paths/api_article_category_alll.yaml
+  /api/article/category/delete:
+    $ref: paths/api_article_category_delete.yaml
+  /api/article/general/create:
+    $ref: paths/api_article_general_create.yaml
+  /api/article/general/createBulk:
+    $ref: paths/api_article_general_createBulk.yaml
+  /api/article/general/update:
+    $ref: paths/api_article_general_update.yaml
+  /api/article/general/get:
+    $ref: paths/api_article_general_get.yaml
+  /api/article/general/all:
+    $ref: paths/api_article_general_all.yaml
+  /api/article/general/delete:
+    $ref: paths/api_article_general_delete.yaml
+  /api/article/subcategory/create:
+    $ref: paths/api_article_subcategory_create.yaml
+  /api/article/subcategory/createBulk:
+    $ref: paths/api_article_subcategory_createBulk.yaml
+  /api/article/subcategory/update:
+    $ref: paths/api_article_subcategory_update.yaml
+  /api/article/subcategory/get:
+    $ref: paths/api_article_subcategory_get.yaml
+  /api/article/subcategory/all:
+    $ref: paths/api_article_subcategory_all.yaml
+  /api/article/subcategory/alll:
+    $ref: paths/api_article_subcategory_alll.yaml
+  /api/article/subcategory/delete:
+    $ref: paths/api_article_subcategory_delete.yaml
+  /api/article/topic/create:
+    $ref: paths/api_article_topic_create.yaml
+  /api/article/topic/createBulk:
+    $ref: paths/api_article_topic_createBulk.yaml
+  /api/article/topic/update:
+    $ref: paths/api_article_topic_update.yaml
+  /api/article/topic/get:
+    $ref: paths/api_article_topic_get.yaml
+  /api/article/topic/all:
+    $ref: paths/api_article_topic_all.yaml
+  /api/article/topic/alll:
+    $ref: paths/api_article_topic_alll.yaml
+  /api/article/topic/delete:
+    $ref: paths/api_article_topic_delete.yaml
+  /api/chat/comment/create:
+    $ref: paths/api_chat_comment_create.yaml
+  /api/chat/comment/update:
+    $ref: paths/api_chat_comment_update.yaml
+  /api/chat/comment/delete:
+    $ref: paths/api_chat_comment_delete.yaml
+  /api/chat/comment/get:
+    $ref: paths/api_chat_comment_get.yaml
+  /api/chat/comment/all:
+    $ref: paths/api_chat_comment_all.yaml
+  /api/chat/message/create:
+    $ref: paths/api_chat_message_create.yaml
+  /api/chat/message/update:
+    $ref: paths/api_chat_message_update.yaml
+  /api/chat/message/delete:
+    $ref: paths/api_chat_message_delete.yaml
+  /api/chat/message/get:
+    $ref: paths/api_chat_message_get.yaml
+  /api/chat/message/all:
+    $ref: paths/api_chat_message_all.yaml
+  /api/chat/thread/create:
+    $ref: paths/api_chat_thread_create.yaml
+  /api/chat/thread/update:
+    $ref: paths/api_chat_thread_update.yaml
+  /api/chat/thread/get:
+    $ref: paths/api_chat_thread_get.yaml
+  /api/chat/thread/all:
+    $ref: paths/api_chat_thread_all.yaml
+  /api/chat/thread/delete:
+    $ref: paths/api_chat_thread_delete.yaml
+  /api/connect/ad/create:
+    $ref: paths/api_connect_ad_create.yaml
+  /api/connect/ad/update:
+    $ref: paths/api_connect_ad_update.yaml
+  /api/connect/ad/get:
+    $ref: paths/api_connect_ad_get.yaml
+  /api/connect/ad/all:
+    $ref: paths/api_connect_ad_all.yaml
+  /api/connect/ad/delete:
+    $ref: paths/api_connect_ad_delete.yaml
+  /api/connect/comment/create:
+    $ref: paths/api_connect_comment_create.yaml
+  /api/connect/comment/update:
+    $ref: paths/api_connect_comment_update.yaml
+  /api/connect/comment/get:
+    $ref: paths/api_connect_comment_get.yaml
+  /api/connect/comment/all:
+    $ref: paths/api_connect_comment_all.yaml
+  /api/connect/comment/delete:
+    $ref: paths/api_connect_comment_delete.yaml
+  /api/connect/contact/create:
+    $ref: paths/api_connect_contact_create.yaml
+  /api/connect/contact/update:
+    $ref: paths/api_connect_contact_update.yaml
+  /api/connect/contact/get:
+    $ref: paths/api_connect_contact_get.yaml
+  /api/connect/contact/all:
+    $ref: paths/api_connect_contact_all.yaml
+  /api/connect/contact/delete:
+    $ref: paths/api_connect_contact_delete.yaml
+  /api/connect/event/create:
+    $ref: paths/api_connect_event_create.yaml
+  /api/connect/event/update:
+    $ref: paths/api_connect_event_update.yaml
+  /api/connect/event/get:
+    $ref: paths/api_connect_event_get.yaml
+  /api/connect/event/all:
+    $ref: paths/api_connect_event_all.yaml
+  /api/connect/event/delete:
+    $ref: paths/api_connect_event_delete.yaml
+  /api/connect/message/create:
+    $ref: paths/api_connect_message_create.yaml
+  /api/connect/message/search:
+    $ref: paths/api_connect_message_search.yaml
+  /api/connect/message/update:
+    $ref: paths/api_connect_message_update.yaml
+  /api/connect/message/get:
+    $ref: paths/api_connect_message_get.yaml
+  /api/connect/message/createsettings:
+    $ref: paths/api_connect_message_createsettings.yaml
+  /api/connect/message/getsettings:
+    $ref: paths/api_connect_message_getsettings.yaml
+  /api/connect/message/all:
+    $ref: paths/api_connect_message_all.yaml
+  /api/connect/message/delete:
+    $ref: paths/api_connect_message_delete.yaml
+  /api/connect/post/create:
+    $ref: paths/api_connect_post_create.yaml
+  /api/connect/post/update:
+    $ref: paths/api_connect_post_update.yaml
+  /api/connect/post/getsettings:
+    $ref: paths/api_connect_post_getsettings.yaml
+  /api/connect/post/createsettings:
+    $ref: paths/api_connect_post_createsettings.yaml
+  /api/connect/post/get:
+    $ref: paths/api_connect_post_get.yaml
+  /api/connect/post/all:
+    $ref: paths/api_connect_post_all.yaml
+  /api/connect/post/delete:
+    $ref: paths/api_connect_post_delete.yaml
+  /api/connect/profile/create:
+    $ref: paths/api_connect_profile_create.yaml
+  /api/connect/profile/update:
+    $ref: paths/api_connect_profile_update.yaml
+  /api/connect/profile/get:
+    $ref: paths/api_connect_profile_get.yaml
+  /api/connect/profile/all:
+    $ref: paths/api_connect_profile_all.yaml
+  /api/connect/profile/delete:
+    $ref: paths/api_connect_profile_delete.yaml
+  /api/connect/video/create:
+    $ref: paths/api_connect_video_create.yaml
+  /api/connect/video/createsettings:
+    $ref: paths/api_connect_video_createsettings.yaml
+  /api/connect/video/update:
+    $ref: paths/api_connect_video_update.yaml
+  /api/connect/video/getsettings:
+    $ref: paths/api_connect_video_getsettings.yaml
+  /api/connect/video/get:
+    $ref: paths/api_connect_video_get.yaml
+  /api/connect/video/all:
+    $ref: paths/api_connect_video_all.yaml
+  /api/connect/video/delete:
+    $ref: paths/api_connect_video_delete.yaml
+  /api/events/category/create:
+    $ref: paths/api_events_category_create.yaml
+  /api/events/category/update:
+    $ref: paths/api_events_category_update.yaml
+  /api/events/category/get:
+    $ref: paths/api_events_category_get.yaml
+  /api/events/category/all:
+    $ref: paths/api_events_category_all.yaml
+  /api/events/category/alll:
+    $ref: paths/api_events_category_alll.yaml
+  /api/events/category/delete:
+    $ref: paths/api_events_category_delete.yaml
+  /api/events/general/create:
+    $ref: paths/api_events_general_create.yaml
+  /api/events/general/update:
+    $ref: paths/api_events_general_update.yaml
+  /api/events/general/get:
+    $ref: paths/api_events_general_get.yaml
+  /api/events/general/all:
+    $ref: paths/api_events_general_all.yaml
+  /api/events/general/delete:
+    $ref: paths/api_events_general_delete.yaml
+  /api/events/subcategory/create:
+    $ref: paths/api_events_subcategory_create.yaml
+  /api/events/subcategory/update:
+    $ref: paths/api_events_subcategory_update.yaml
+  /api/events/subcategory/get:
+    $ref: paths/api_events_subcategory_get.yaml
+  /api/events/subcategory/all:
+    $ref: paths/api_events_subcategory_all.yaml
+  /api/events/subcategory/alll:
+    $ref: paths/api_events_subcategory_alll.yaml
+  /api/events/subcategory/delete:
+    $ref: paths/api_events_subcategory_delete.yaml
 components:
   securitySchemes:
     bearerAuth:

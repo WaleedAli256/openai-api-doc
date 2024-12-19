@@ -1,0 +1,1138 @@
+{
+  "info": {
+    "_postman_id": "3a60bc84-fce7-4350-aebb-c1887a3c2a89",
+    "name": "ConnectMessage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14216399"
+  },
+  "item": [
+    {
+      "name": "Connect - Message - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"provider\":\"whatsapp\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"Usama AUH\", \"isEnabled\":true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/message/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "message",
+            "create"
+          ]
+        },
+        "description": "Here's a detailed description of each data in this endpoint:\n\n- \"name\": This field represents the name of the endpoint, in this case, it is \"Connect - Message - Create\".\n\n- \"request\": This field contains all the details regarding the http request. It includes authentication details, the request method, the URL for the request, headers, and the body of the request.\n\n- \"auth\": This field contains the details about the authentication. Here, the authentication type is 'bearer'.\n\n- \"type\" under \"auth\": This signifies the type of authentication. In this case it is a bearer authentication.\n\n- \"bearer\": This field contains a list of bearer tokens used for authentication. It consists of a key-value pair, where the key is 'token' and the value will be the bearer token string.\n\n- \"method\": This field signifies the HTTP request method. In this case, it is 'POST'.\n\n- \"url\": This field is the endpoint to which the request will be sent.\n\n- \"headers\": This field contains a list of all headers sent with the request. Each header is represented by a key-value pair. Here, no header information is provided.\n\n- \"body\": This field contains the data sent along with the request. The payload is in raw format.\n\n- \"mode\" under \"body\": It signifies in which format the payload/body is provided. It is in 'raw' format in this case.\n\n- \"raw\" under \"body\": This is the actual payload or body of the request which needs to be sent to the server. It consists of multiple key-value pairs, which include sessionId, accountId, provider, messageText, findUsername, and isEnabled. \n\n    - \"sessionId\": This corresponds to a unique identifier for the session.\n  \n    - \"accountId\": This corresponds to a unique identifier for a specific account.\n  \n    - \"provider\": This indicates the provider of the service. In this case, the provider is 'whatsapp'.\n  \n    - \"messageText\": This field contains the actual text of the message to be sent.\n  \n    - \"findUsername\": This field holds the username. In this case, it is 'Usama AUH'.\n  \n    - \"isEnabled\": This is a boolean value indicating whether the service is enabled or not.\n\n- \"options\" under \"body\": These are additional configurations for the payload. Here, the language option is set to 'json' specifying that the raw data provided in the body should be interpreted as a JSON object."
+      },
+      "response": [
+        {
+          "name": "slack",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"slack\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"usama-nasir\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "facebook page",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"facebookpage\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"Usama Nasir\", \"isEnabled\":true, \"pageName\":\"unpictures\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "facebook profile",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"facebook\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"ahsan.khalid.90834\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "google chat",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"google\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"Usama Nasir\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "linkedIn",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"linkedin\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"Ahsan Khalid\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "snapchat",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"snapchat\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"BFF\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "telegram",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"telegram\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"complicated667\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "x",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"x\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"realusamanasir\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "tiktok",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"tiktok\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"esportspakistan\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Connect - Message - Search",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"provider\":\"facebook\",\"findUsername\":\"ahsan\", \"isEnabled\":true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/message/search",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "message",
+            "search"
+          ]
+        },
+        "description": "The endpoint named \"Connect - Message - Search\" is designed to search for messages using various filtering criteria. It is a POST method API that sends requests to the URL \"http://localhost:3000/api/connect/message/search\". \n\nIn the request, the user will need to be authenticated with the backend server via the 'bearer' auth type. A token must be provided with the key as \"token\" and its respective value as \"BearerToken\". This token is a string type of data which is usually generated by the server upon successful login and sent to the client.\n\nIn the headers section, no specific values are required and the default is shown as being disabled.\n\nWithin the \"body\" section, a \"raw\" mode with JSON language set is used This raw body content should be a JSON string containing several items. \n\n- The \"sessionId\" key requires the corresponding ID of the session.\n- The \"accountId\" key requires the given account's ID. \n- The \"provider\" key requires the name of the social media provider like 'facebook' for this example. \n- The \"findUsername\" key is used to specify the username that you're trying to find messages for, like 'ahsan' as shown in the example. \n- The \"isEnabled\" key is a boolean field which, when set to true, indicates that this search operation is currently enabled.\n\nRemember that each key-value pair in the raw body content needs to be wrapped in double quotes (\"\") to adhere to the JSON format. It will help avoiding errors while parsing the data on the server side."
+      },
+      "response": [
+        {
+          "name": "slack",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"slack\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"usama-nasir\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "facebook page",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"facebookpage\",\"findUsername\":\"Usama Nasir\", \"isEnabled\":true, \"pageName\":\"unpictures\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/search",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "search"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "facebook profile",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"facebook\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"ahsan.khalid.90834\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "google chat",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"google\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"Usama Nasir\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/search",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "search"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "linkedIn",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"linkedin\",\"findUsername\":\"Ahsan\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/search",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "search"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "snapchat",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"snapchat\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"BFF\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "telegram",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"telegram\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"complicated667\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "x",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"x\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"realusamanasir\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Youtube",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"youtube\",\r\n    \"findUsername\": \"mrbeast\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/search",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "search"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "tiktok",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"sessionId\":\"{{sessionId}}\",\"accountId\":\"{{accountId}}\",\"provider\":\"tiktok\",\"messageText\":\"This message is my second test message\",\"findUsername\":\"esportspakistan\", \"isEnabled\":true}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/message/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "message",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Connect - Message - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"messageId\":\"messageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeMessage\",\"description\":\"This message is my second message\",\"tags\":\"second,message\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":100,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isMessagePrivate\":true,\"isTournamentOnly\":false,\"isMessageDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/message/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "message",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Message - Update\" and it uses the HTTP PUT method. Its purpose is to update a message in the \"Connect\" system. This operation needs Authorization, which is a Bearer token, passed in the Authorization header of the request.\n\nThe request URL is \"http://localhost:3000/api/connect/message/update\". It communicates with the api on the localhost server at port 3000.\n\nThere's a unique identifier for the client making the request, labeled as \"Client-UUID\". This refers to a unique identifier for the client application and it's passed as a default type header in the request.\n\nThe body of the request needs to be a raw JSON object with the specific properties as follows:\n\n1. messageId : Unique identifier of the message that needs to be updated.\n2. sessionId: Unique identifier for the current session.\n3. accountId: ID associated with the account.\n4. name: Name of the message, as a string.\n5. description: Description related to the message.\n6. tags: A string of tags related to the message.\n7. profilePhotoUrl: A URL leading to the profile picture associated with this message.\n8. coverPhotoUrl: A URL to a cover photo related to this message.\n9. minimumTipAmount: This is the minimum amount of tip that can be given.\n10. unlockAmount: The necessary amount to unlock.\n11. category: The general category the message falls under.\n12. subCategory: A more specific category within the general category for the message.\n13. searchType: This is the type of search.\n14. isEnabled: Flag indicating if the message is enabled or not.\n15. isMessagePrivate: A boolean indicating if the message is private.\n16. isTournamentOnly: This field determines if the message is only for tournament.\n17. isMessageDefault: Flag showing whether this message is set as default.\n18. isPreLiveConnectAds: This flag indicates if there are ads before live connect.\n19. isPostLiveConnectAds: Flag indicating if there are ads after live connect.\n20. breakPreLiveConnectUrl: This is the URL for pre-live break ads.\n21. breakLivePauseConnectUrl: URL for break ads during paused live session.\n22. breakPostLiveConnectUrl: URL for post-live break ads.\n\nThose details in the JSON body of the request provide information about the message being updated in the system. The request body also has language option set to JSON as it accepts JSON formatted data."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Message - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/message/get/?messageId=messageId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "message",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "messageId",
+              "value": "messageId"
+            }
+          ]
+        },
+        "description": "\"Connect - Message - Get\" is the name of the API endpoint. This name is used to identify the specific API operation.\n\nThe \"request\" object stands for the details of the HTTP request being made to the endpoint. \n\nUnder the \"request\" object, \"auth\" specifies the authentication method for the API request. The \"type\" is set to \"bearer\", which means that it uses bearer token authentication. The \"bearer\" array contains an object with \"key\" as \"token\" and \"value\" as \"BearerToken\". The \"type\" is set to \"string\". This means a token string called \"BearerToken\" is expected as a part of the API access token for authentication.\n\nThe \"method\" denotes that this HTTP request is a \"GET\" method. \n\nThe \"url\" is the actual endpoint where the request will hit. In this case, it's \"http://localhost:3000/api/connect/message/get/?messageId=messageId\". The \"messageId\" is a dynamic value which you can replace with the actual message Id you want to fetch.\n\nUnder \"headers\", the \"key\" and \"value\" fields are empty in the provided object, and it is currently disabled. This typically serves to provide additional information for HTTP requests.\n\nLastly, \"body\" is used for the data sent by a HTTP request. In this case, the \"mode\" is set to \"raw\", and the \"raw\" field is empty. This implies there is no data body being sent with the request. This is not unusual for a GET request as these usually retrieve data from the specified URL, rather than sending information to it."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Message - Create Settings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\r\n\"accountId\":\"accountId\",\r\n\"name\": \"Usama Nasir\",\r\n  \"displayName\": \"usamanasir\",\r\n  \"tags\": \"example, test, api\",\r\n  \"title\": \"Developer\",\r\n  \"website\": \"https://www.johndoe.com\",\r\n  \"description\": \"This is a sample description for John Doe.\",\r\n  \"identifierKey\": \"id123456\",\r\n  \"apiKey\": \"api_key_1234567890\",\r\n  \"apiSecret\": \"api_secret_0987654321\",\r\n  \"apiClientId\": \"client_id_abcdef123456\",\r\n  \"authToken\": \"auth_token_abcdef123456\",\r\n  \"refreshToken\": \"refresh_token_123456abcdef\",\r\n  \"providerName\": \"linkedin\",\r\n  \"providerId\": \"beladed_id_123456\",\r\n  \"uniqueKey\": \"unique_key_abcdef123456\",\r\n  \"authUsername\": \"usamanasir052@gmail.com\",\r\n    \"authPassword\": \"hearti001\",\r\n    \"authEmail\": \"usamanasir052@gmail.com\",\r\n  \"authSecurity\": null,\r\n  \"recaptchaCode\": \"recaptcha_code_abcdef123456\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/message/createsettings",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "message",
+            "createsettings"
+          ]
+        },
+        "description": "This API endpoint is titled \"Connect - Message - Create Settings\". It is primarily used to create settings for messages in the connection.\n\nAuthentication for this API is implemented via the bearer authentication scheme. You will need a bearer token for authentication. \n\nThe bearer token is a string and is passed in the 'token' field in the authorization section.\n\nThis is a POST method API and is expected to receive a payload in the body part of the request. This endpoint's URL is - http://localhost:3000/api/connect/message/createsettings\n\nThere is a default header provided for this POST call. However, it is disabled and does not need to be filled with any data.\n\nIn the body of the request, there are numerous data fields, summarized below:\n\n- \"sessionId\" should be the Session ID of the user.\n- \"accountId\" holds the Account ID of the user.\n- \"name\" refers to the name of the user.\n- \"displayName\" is the username or the other form of user's name.\n- \"tags\" can contain tags related to this user setting.\n- \"title\" is the user's professional title (like 'Developer').\n- \"website\" is the link to the user's personal or professional website.\n- \"description\" field holds a brief description about the user.\n- \"identifierKey\" refers to the user's unique identifier key.\n- \"apiKey\", \"apiSecret\", and \"apiClientId\" are user's API access credentials.\n- \"authToken\" is the user's authentication token.\n- \"refreshToken\" is the token to refresh the authToken after it's expired.\n- \"providerName\" and \"providerId\" fields are to establish OAuth, api connection or other relevant sources.\n- \"uniqueKey\" is an additional unique identifier key for user.\n- \"authUsername\", \"authPassword\", \"authEmail\" are for user authentication.\n- \"authSecurity\" may be used for any additional security measure, currently, it's null.\n- \"recaptchaCode\" is for user validation process.\n\nPlease note that the 'body mode' has been set to 'raw', meaning it will accept a stringified JSON and also note that request-body content type is expected to be in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Message - Get Settings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/connect/message/getsettings?accountId=accountId&sessionId=sessionId&providerName=meetup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "message",
+            "getsettings"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "providerName",
+              "value": "meetup"
+            }
+          ]
+        },
+        "description": "1. \"name\": This field indicates the name of the operation that is being performed. In this case, the name is \"Connect - Message - Get Settings\", implying that the operation intends to get settings from a connect message.\n\n2. \"request\": This field encapsulates all the information pertaining to the actual request to be made to the target URL.\n\n    a. \"auth\": This field represents the authentication mechanism in use. Currently, it is set to \"bearer\" denoting bearer authentication.\n    \n        i. \"type\": The authentication type, which here is \"bearer\". Bearer authentication (also known as token authentication) is an HTTP authentication scheme that involves security tokens called bearer tokens.\n      \n        ii. \"bearer\": Contains the bearer token for authenticating the request.\n        \n            - \"key\": This field specifies the key for the authentication header field. Here, it is set as \"token\".\n            \n            - \"value\": This is the actual token used for bearer authentication. It is named as \"BearerToken\" in this instance.\n            \n            - \"type\": Here, the type indicates the datatype of the value. In this case, it is a string.\n\n    b. \"method\": This field refers to the HTTP method to be used for making the request. In this case, it is \"GET\", which would get data from the server.\n\n    c. \"url\": It specifies the target endpoint where the request is to be sent. In this case, the URL is \"http://localhost:3000/api/connect/message/getsettings?accountId=accountId&sessionId=sessionId&providerName=meetup\". This endpoint is expected to fetch the respective settings pertaining to a given accountId, sessionId, and providerName.\n\n    d. \"headers\": It's an array of headers that can be sent along with a request. In this case, the array has only one object which is empty with no headers defined for this request as the \"disabled\" property is set to true.\n\nTake note that the URL contains parameters that need to be replaced with appropriate values like 'accountId', 'sessionId', and 'providerName' for successful requests. Further, an appropriate 'BearerToken' needs to be provided."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Message - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/message/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "message",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Message - Get All\". It is designed to retrieve all messages related to a specific account ID from the 'Connect' application. \n\nHere are details of each data point: \n\n1. `name`: \"Connect - Message - Get All\" - This defines the custom name of the endpoint. Its purpose is for humans to easily identify what the endpoint does.\n\n2. `request`: This object includes concrete details on what the request should contain and how it will be made.\n\n3. `auth`: Inside the `request` object, the `auth` key mentions that the request type is a bearer token authentication. This type of authentication uses security tokens called bearer tokens.\n\n   - `type`: Specifies the type of authentication required. In this case, it is 'bearer'.\n   - `key`: This represents the token name \"token\" which will be used for authentication.\n   - `value`: This should be the valid bearer token provided to be authenticated against the server. The placeholder here is 'BearerToken'.\n   - `type`: Specifies the datatype of the key-value pair, which is a string in this case.\n\n4. `method`: The HTTP method used for this request is \"GET\". It is used to fetch or get the data from a specified resource.\n\n5. `url`: This is the route where the request will be sent. In this case, it's \"http://localhost:3000/api/connect/message/all/?accountId=accountId\" where the accountId in the URL will be replaced by the actual account Id for which we want to retrieve messages.\n\n6. `headers`: In this case, it is an empty header and is disabled by default. If enabled and assigned with valid 'key' and corresponding 'value', it would provide additional information about the client or the request body.\n\n7. `body`: For this 'GET' request, the body is 'raw' and empty, as data is not sent via the body in this case. 'GET' requests usually contain all information in the URL itself."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Message - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"messageId\":\"messageId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/message/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "message",
+            "delete"
+          ]
+        },
+        "description": "This endpoint corresponds to the deletion of a message in a connection. The details for each data are as follows:\n\n1. `\"name\"`: This is the name of the endpoint. In this case, it is named \"Connect - Message - Delete\", meaning it's used to delete a message within a connection.\n\n2. `\"request\"`: This object contains the details of the request to be sent to the server.\n\n3. `\"auth\"`: This object houses the type and details of the authorization required for this endpoint. This uses bearer token authentication. The bearer token is typically generated by the server and must be sent with every request. \n\n   `\"key\"`: This is the key for the bearer token, which is 'token' in this case.\n   \n   `\"value\"`: This contains the placeholder value for the bearer token, 'sessionId'.\n   \n   `\"type\"`: This signifies the type of data for the bearer token, which in this case is a string.\n\n4. `\"method\"`: This is the HTTP method used for the request. Here it's 'POST', which is typically used for sending data to create/update a resource.\n\n5. `\"url\"`: This is the URL where the HTTP request will be sent. Here it is 'http://localhost:3000/api/connect/message/delete'.\n\n6. `\"headers\"`: This array represents any custom HTTP headers to be sent with the request. Currently it's empty and disabled. \n\n7. `\"body\"`: This object contains information that will be sent to the server. In this endpoint, it's sending raw JSON data.\n\n   `\"mode\"`: This refers to the format of the data being sent. In this case, it's 'raw' - the data will be sent exactly as it is.\n\n   `\"raw\"`: The raw field contains the raw data to be sent in the request. It's a JSON string with `sessionId`, `accountId` and `messageId`. Every field in the JSON string signifies -\n   - `sessionId`: The ID of the current session.\n   - `accountId`: The ID of the account from which the message is to be deleted.\n   - `messageId`: The ID of the message to be deleted.\n\nEach of these data points are integral in making an appropriate call to this endpoint."
+      },
+      "response": []
+    }
+  ]
+}

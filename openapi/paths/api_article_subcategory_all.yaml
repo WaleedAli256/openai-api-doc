@@ -1,0 +1,41 @@
+get:
+  tags:
+    - ArticleSubcategory
+  summary: Article - SubCategory - Get All
+  description: >-
+    This endpoint is titled "Article - SubCategory - Get All". As the name
+    suggests, it provides functionality to retrieve all the subcategories for
+    articles in the database.
+
+
+    1. "name": 'Article - SubCategory - Get All' : This refers to the title or
+    name of the API endpoint. It signifies what the API endpoint will do.
+
+
+    2. "request": This represents the details of the HTTP request that will be
+    executed. 
+
+
+    Within the "request" object:
+
+       2.1 "auth": This section is for authentication and authorizing the request.
+           "auth" includes an authentication type 'bearer' and its value - a token as a string labeled "BearerToken". Bear in mind, you would need to replace 'BearerToken' with an actual token. In the context of HTTP, Bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens.
+
+       2.2 "method": 'GET'. This denotes the HTTP method being used for the request. 'GET' is used to retrieve information from the given URL.
+
+       2.3 "url": This is the URL endpoint where the request will be sent. It targets localhost on port 3000 and specifically the route '/api/article/subcategory/all', which is likely to return a collection of all subcategories of articles.
+
+       2.4 "headers": This part includes additional HTTP headers that you want to include in your request. Here, the header is disabled and the key-value pair is empty, and will thus not be playing any role in the request.
+
+       2.5 "body": This section contains the details about the data sent in the HTTP body. Since the 'GET' method is being used here which does not include a body, this section, in this case, has the "mode" as "raw", but does not include any actual data ("raw": ""). Therefore, no body data will be sent with this request.
+
+    3. Lastly, do note for a successful request, your server must be running on
+    'localhost' with the port '3000' and your API should be set up to return all
+    subcategories of articles for this '/api/article/subcategory/all' endpoint.
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}

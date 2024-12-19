@@ -1,0 +1,1248 @@
+{
+  "info": {
+    "_postman_id": "68f651e8-7c9b-4cd7-9f3a-5102d9ed9244",
+    "name": "ChatThread",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Chat - Thread - Create Account",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Account Support\",\"threadType\": \"account\",\"threadTypeId\": \"accountId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "- **name**: This represents the name of the operation being performed. In this case, it's \"Chat - Thread - Create Account\" which implies that this operation is used to create a chat thread for an account. \n\n- **request**: This object holds all the information related to the request being made to the API endpoint.\n\n     - **auth**: This object holds the authorization method and credentials needed to access this endpoint.\n      \n         - **type**: This indicates the type of authorization. Here, it is \"bearer\" which is a type of HTTP authentication scheme.\n         - **bearer**: This array stores one or more bearer tokens that are needed for authentication. Each token in the array is an object with a key-value pair.\n             - **key**: This is the identifier for a specific token. Here, it's \"token\".\n             - **value**: This holds the actual token value. Here, it's \"BearerToken\".\n             - **type**: This describes the data type of the value. Here, it's \"string\".\n     \n     - **method**: This refers to the HTTP method being used. For this operation, it's \"POST\" which is generally used to create new data.\n  \n     - **url**: This string holds the API endpoint where the request is sent.\n\n     - **headers**: This is an empty array, so no additional HTTP headers are sent with this request.\n\n     - **body**: This object encompasses the body of the HTTP request.\n         - **mode**: It indicates the format in which the request body is sent. The mode here is \"raw\".\n         - **raw**: This string will be sent as the actual body of the POST request. It has to be a string but it seems to represent a JSON object with several properties – ownerId, accountId, sessionId, threadName, threadType, and threadTypeId - all of which have to be filled with suitable values.\n         - **options**: This houses optional configurations you can include with the HTTP request.\n             - **raw**: This object presents the raw format options.\n                 - **language**: This specifies the language format of the raw data. Here, it's \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Blog",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Blog Comments\",\"threadType\": \"blog\",\"threadTypeId\": \"blogId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Chat - Thread - Create Blog\". It's a POST method which indicates data is being sent to the server to create new resources. The URL for this endpoint is \"http://localhost:3000/api/chat/thread/create\". \n\nThis endpoint requires a bearer token for authentication. The token key is \"token\". The value for the token is represented as \"BearerToken\", but in the actual usage, it will be replaced with the valid token you have been issued.\n\nPlease note, the authentication type is \"bearer\". Bearer authentication is an HTTP authentication scheme that involves security tokens called bearer tokens. \n\nThe body of the endpoint request needs to be in raw JSON format. This means that the data must be a string in JSON format, not as form-data or x-www-form-urlencoded.\n\nInside the body, you have:\n- \"ownerId\", which would uniquely identify the account id of the user who owns the chat.\n- \"accountId\", which represents the account id of either the sender or recipient depending on the context.\n- \"sessionId\", which is used for identifying a unique session.\n- \"threadName\" performs as an identifier for the thread. In this scenario, it is indicated as \"Blog Comments\".\n- \"threadType\" is to express the type of the thread and in this instance it is \"blog\".\n- \"threadTypeId\", it's essentially the unique identifier for the type of the thread. Here, \"blogId\" works as that unique identifier for a blog type of chat.\n\nHeaders key is empty since there are no additional headers to be sent in this particular request.\n\nFor the \"options\" key, we merely indicate the language of the request body, which is set to \"json\".\n\nThis endpoint essentially creates a new chat thread related to the blog."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Channel",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"General Discussion\",\"threadType\": \"channel\",\"threadTypeId\": \"channelId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This data represents an API endpoint named \"Chat - Thread - Create Channel\". The endpoint is used to create a new chat channel in a certain thread. It is hosted at \"http://localhost:3000/api/chat/thread/create\". Below is a detailed explanation of all the data in the endpoint.\n\n1. `name`: This is the name of the endpoint, which is \"Chat - Thread - Create Channel\".\n\n2. `request`: This object contains all needed information to make a request to the API.\n\n3. `auth`: It represents the API authorization type, which in our case is \"bearer\". This is a method for an HTTP user agent to provide a bearer token.\n\n4. `bearer`: This array contains the information about the bearer token required to authenticate the request. It includes:\n   - `key`: This refers to the key name \"token\" in the authorization header.\n   - `value`: This contains the actual token value, represented here by the placeholder \"BearerToken\".\n   - `type`: This defines the type of the value. It is \"string\" in this case.\n\n5. `method`: The HTTP method for exporting the endpoint data, which is \"POST\".\n\n6. `url`: The API's Uniform Resource Locator (URL) which is \"http://localhost:3000/api/chat/thread/create\".\n\n7. `headers`: This list contains the HTTP headers to be included in the request. Here it's empty and disabled by default.\n\n8. `body` : This represents the HTTP request payload. It consists of:\n   - `mode`: Specifies the format of the data being sent, which is raw in this situation.\n   - `raw`: Contains the request payload written in raw mode. The data includes `ownerId`, `accountId`, `sessionId`, `threadName`, `threadType`, `threadTypeId` representing the owner of the account, account id, session id, name of the thread, type of the thread, and type id of the thread respectively. The content is written in JSON format.\n   - `options`: Specifies the properties of the payload data. In this example, the language of the raw data is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Education",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Education Q&A\",\"threadType\": \"education\",\"threadTypeId\": \"videoId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "Endpoint name: \"Chat - Thread - Create Education\"\n\nThis endpoint focuses on creating an \"Education\" chat-thread within the application. Here's an explanation of all the data fields:\n\n- **Auth:** The authentication method used for this endpoint is 'Bearer Authentication' which will authenticate the user who's making requests to this endpoint. A bearer token, provided in the 'value' field, is needed for the authentication. The token is a string type data.\n\n- **Request Method:** 'POST' method is used, indicating this endpoint creates data on your server.\n\n- **URL:** The URL for the endpoint is 'http://localhost:3000/api/chat/thread/create'. The request will be made to this URL.\n\n- **Headers:** The 'headers' field is empty which implies no additional data are sent in the header of the request.\n\n- **Body:** The request body must contain the following data in raw JSON format:\n    - **ownerId:** The account ID of the thread owner. This should match the authenticated user.\n    - **accountId:** It pertains to the account of the individual who's initiating the creation of the thread.\n    - **sessionId:** This field expects the ID of the current session.\n    - **threadName:** The name of the thread. Here it's being set to 'Education Q&A'.\n    - **threadType:** The type of the thread. In this case, it's set to 'education'.\n    - **threadTypeId:** The ID that represents the type of thread. In this case, it's a 'videoId'. It can be assumed that there will be a video associated with this chat thread.\n\n- **Options:** It details how the body of the request will be interpreted by the server. This endpoint expects the body content to be in 'json' language format.\n\nMake sure to replace placeholder data (like \"BearerToken\", \"accountId\", \"sessionId\", and \"videoId\") with actual values while using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Event",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Event Discussion\",\"threadType\": \"event\",\"threadTypeId\": \"channelId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This endpoint helps in creating an event within a chat thread. Here's what each piece of data in this endpoint stands for:\n\n- `name: \"Chat - Thread - Create Event\"`: This is the title or name of the API. It indicates the functionality that this API endpoint is providing, which in this case, is creating an event in a chat thread.\n\n- `request`: This object contains all the necessary data for creating a chat thread.\n\n- `auth`: The \"auth\" field is for the authorization needed to make the post request to this endpoint.\n\n    - `type: \"bearer\"`: This indicates the type of authorization which is Bearer Token.\n   \n    - `bearer`: This array holds object of bearer tokens. In the given object:\n\n        - `key: \"token\"`: Name or Key of the token.\n        - `value: \"BearerToken\"`: This is where the actual bearer token should go.\n        - `type: \"string\"`: This denotes the data type of the bearer token value.\n\n- `method: \"POST\"`: This is the HTTP method of the request. A POST request is used when you want to send some data to the server, like inserting data into a database, submitting form data, etc.\n\n- `url: \"http://localhost:3000/api/chat/thread/create\"`: Is the destination where the request will be sent to.\n\n- `headers`: The \"headers\" field is an array for providing any additional parameters that need to be sent in the headers of the request.\n\n- `body`: The body field contains the payload data that is to be sent with the request.\n\n   - `mode: \"raw\"`: This denotes the mode of data that is being sent in the body.\n   \n   - `raw`: This contains the actual data that is to be sent with the request.\n   \n        - `ownerId`: `accountId` of the user creating the thread.\n        - `accountId`: `accountId` of the user creating the thread.\n        - `sessionId`: Current active session id of the user.\n        - `threadName`: The desired name of the chat thread.\n        - `threadType`: Denotes which type of thread is being created, in this case, it's an 'event'.\n        - `threadTypeId`: The id of the event or channel where chat thread is being created.\n\n   - `options`:\n        - `raw`: This field contains additional options for the raw payload data.\n            - `language: \"json\"`: This denotes the language in which the payload is written. In this case, json."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Forum",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Forum Discussion\",\"threadType\": \"forum\",\"threadTypeId\": \"forumId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Chat - Thread - Create Forum\". It is used to create a new forum thread within a chat system. Here is a detailed description of each data field:\n\n1. \"name\": This represents the name of the endpoint. \n\n2. \"request\": This object that represents the details of the API request. \n\n3. \"auth\": It is an object that contains details about any authentication required to access the endpoint.\n   - \"type\": This indicates the type of authentication - it's a bearer type meaning it uses bearer tokens for authentication.\n   - \"bearer\": This an array of bearer tokens used for authentication. This array has an object with three properties:\n     - \"key\": Defines the name of the token, in this case, 'token'.\n     - \"value\": Holds the actual bearer token the user needs to provide.\n     - \"type\": Specifies the data type of the value, which here is a string.\n\n4. \"method\": It indicates the HTTP method for the request - in this case, a POST method, which means this endpoint is used to send data to the server.\n\n5. \"url\": This defines where the API request will be sent.\n\n6. \"headers\": This is an empty array showing that there aren't any additional headers required for this request.\n\n7. \"body\": This consists of details necessary to create a forum thread in the chat system.\n   - \"mode\": Determines how the body content is processed. It is set to 'raw' meaning the data is sent as it is in the 'raw' field.\n   - \"raw\": Contains the raw Json data to be sent to the server. The properties are as follows:\n     - \"ownerId\": The account id of the user who is creating the forum thread.\n     - \"accountId\": The account id of the user as well.\n     - \"sessionId\": The session id of the current user session.\n     - \"threadName\": The title or name of the forum thread being created.\n     - \"threadType\": The type of the thread (\"forum\" in this context).\n     - \"threadTypeId\": The specific id of the type of thread being created, in this case 'forumId'.\n\n8. \"options\": Defines additional settings for processing the body of the request.\n   - \"raw\": Contains configurations specific to 'raw' mode.\n     - \"language\": Indicates the language in which data is sent, in this case, JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Game",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Game Comments\",\"threadType\": \"game\",\"threadTypeId\": \"videoId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This endpoint named \"Chat - Thread - Create Game\" is a POST request used to create a new game thread in a chat. It makes use of HTTP bearer authentication and can be used to run the request with a specific user token. Here is a description of each key:\n\n1. **name:** This is the name of the API request and is used to identify the specific API request amongst many.\n\n2. **request.auth.type:** This defines the type of authentication method used. Here it uses the \"bearer\" authentication. \n\n3. **request.auth.bearer:** This is an array containing bearer authentication information. In this case, it contains an object that provides the key-value pair for 'token'.\n\n   - **key:** The key string, which is \"token\" in this case, defines the type of value which must be sent.\n   - **value:** This the value for the defined key. This is where the bearer token is filled in.\n   - **type:** This defines the data type of the value, which is \"string\".\n\n4. **request.method:** This indicates the HTTP method that is to be used for the request. In this case, it's \"POST\". \n\n5. **request.url:** This is the URL of the endpoint where the request is sent.\n\n6. **request.headers:** This is an array where headers of the request may be defined. \n\n7. **request.body:** This contains the body of the request where data are contained.\n\n   - **mode:** This specifies the mode in which the body data are sent. Here it's in \"raw\" mode.\n   - **raw:** This contains the data to be sent in the request body. The data is sent in JSON format containing keys such as 'ownerId', 'accountId', 'sessionId', 'threadName', 'threadType', 'threadTypeId' which are tailored to the requirements of creating a game thread.\n   - **options:** This provides options for the raw body of the request. The language for the raw body is specified here, in this case, JSON. \n\nEach key in the raw body has its purpose:\n\n   - **ownerId:** This is the ID of the account owning the game thread.\n   - **accountId:** This is the ID of the account tied to the game session.\n   - **sessionId:** This is the session ID for the game session.\n   - **threadName:** This specifies the name of the thread.\n   - **threadType:** This specifies the type of thread, here it is 'game'.\n   - **threadTypeId:** This is the ID associated with the type of the thread, in this case, the 'videoId'.\n   \nPlease ensure to replace placeholder values with actual values within your application."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Loyalty",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Loyalty Program\",\"threadType\": \"loyalty\",\"threadTypeId\": \"loyaltyId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This endpoint's name is \"Chat - Thread - Create Loyalty\". It is used to create a new loyalty program thread in a chat.\n\nThe request requires \"bearer\" type authorization, which means a Bearer token needs to be provided to authenticate the request. This token should be entered as a string in the field named \"token\".\n\nThe request method is \"POST\", which is used to submit or update data to be processed to a specified resource.\n\nThe endpoint URL for this request is \"http://localhost:3000/api/chat/thread/create\", indicating that the request will be sent to a local server on port 3000, to the path /api/chat/thread/create.\n\nHeaders are empty for this request, meaning no additional data is being sent in the header of the HTTP request.\n\nThe request body contains raw data in JSON format, with a number of key-value pairs:\n\n- \"ownerId\" specifies the ID of the owner of the account.\n- \"accountId\" corresponds to a specific account identifiable by its ID.\n- \"sessionId\" represents the ID of the current session.\n- \"threadName\" sets the name of the thread, in this case, \"Loyalty Program\".\n- \"threadType\" denotes the type of the thread, here defined as \"loyalty\".\n- \"threadTypeId\" is the ID that refers to the type of the thread, in this case, \"loyaltyId\".\n\nThe \"options\" field specifies the language as \"json\", telling the system that the raw text should be treated as JSON.\n\nEssentially, when using this endpoint, ensure you provide an appropriate bearer token for authorization, then send the specified key-value pairs in the body as a JSON. This will create a new thread of type \"loyalty\" in the chat."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create News",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"News Updates\",\"threadType\": \"news\",\"threadTypeId\": \"newsId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "The endpoint \"Chat - Thread - Create News\" is used to create a new thread in the chat application. Here are the essential data fields you need to know:\n\n- \"name\": The name of the endpoint. In this case, it's used to denote the functionality, which is creating a new chat thread with a news update.\n\n- \"request\": This indicates the type of HTTP request this endpoint requires. There are several elements nested under this.\n\n  - \"auth\": The authorization method required by this endpoint. Here, it is a \"bearer\" type which means you need a bearer token to access this.\n\n    - \"key\": It's the name of the service that issues the bearer token.\n    \n    - \"value\": This is where the actual bearer token should be inserted.\n    \n    - \"type\": Indicates the datatype of this item, in this case, it's a string.\n\n  - \"method\": This is the HTTP method required for the request. Here, the method required is POST.\n\n  - \"url\": The actual URL where the request will be sent. You're using localhost running on port 3000 and the path to the endpoint is /api/chat/thread/create.\n\n  - \"headers\": This list would include any required headers, but it's currently empty.\n\n  - \"body\": This is where you specify the information that you're sending to the server.\n\n    - \"mode\": This specifies the format of the request payload. In this case, it's \"raw\", indicating that the request payload hasn't been processed and is in its original format.\n   \n    - \"raw\": This is the actual request payload that you're sending to the server. This should be a JSON object containing:\n\n      - \"ownerId\": The id of the account creating the thread.\n\n      - \"accountId\": The same account id confirming the ownership of the thread.\n\n      - \"sessionId\": The current session's identification.\n\n      - \"threadName\": The name of the thread being created. Here, it's titled \"News Updates\".\n\n      - \"threadType\": The type of thread being created, in this case, it's \"news\".\n\n      - \"threadTypeId\": A unique identifier for the type of thread being created, which is the \"newsId\" in this case.\n\n    - \"options\": The additional settings for payload. Here it is set to interpret the \"raw\" data as \"json\" language.\n\nBy properly forming your POST request with the above parameters and authorization token, you can successfully create a new chat thread for sharing news updates. Each parameter unless optional, is significant and should be populated with appropriate values. Make note to replace placeholder values with actual data, like BearerToken, accountId, sessionId, etc."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Shop",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Shop Discussion\",\"threadType\": \"shop\",\"threadTypeId\": \"shopId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This endpoint allows you to create a shop thread in the chat. It uses the \"POST\" method and the path URL is http://localhost:3000/api/chat/thread/create.\n\nHere's the breakdown of each data in the endpoint:\n\n1. `name`: This is the name assigned to the endpoint, which is \"Chat - Thread - Create Shop\". It indicates the operation of this endpoint.\n\n2. `request`: It outlines all the details required for the request.\n\n\t- `auth`: This block is used for authorization. It uses the Bearer Authentication scheme.\n\t\t- `type`: Simply indicates the authentication type employed, which is \"bearer\".\n\t\t- `bearer`: This is the array containing the bearer token details as the key-value pair.\n\t\t\t- `key`: The keyword representing the token in the request. It is \"token\" in this case.\n\t\t\t- `value`: The placeholder name for the Token. Replace \"BearerToken\" with the actual token value while using this collection.\n\t\t\t- `type`: Represents the type of the value for \"key\". In this case, the type is \"string\".\n\n\t- `method`: The HTTP method used for the request. This is a \"POST\" method, indicating that data is sent to the server to create a new resource.\n\t\n\t- `url`: This is the URL where the request will be sent.\n\n\t- `headers`: It is currently empty indicating that no additional HTTP headers are being sent with this request.\n\t\n\t- `body`: Contains the data to be sent to create a Shop Thread:\n\t\t- `mode`: Indicates how the request body is sent. Here it is sent as \"raw\" data.\n\t\t- `raw`: Contains the JSON formatted raw data for creating a new Shop Thread.\n\t\t\t- `ownerId`: The identifier of the thread owner.\n\t\t\t- `accountId`: The identifier of the account.\n\t\t\t- `sessionId`: The identifier for the session.\n\t\t\t- `threadName`: The name given to the thread. The given name is \"Shop Discussion\" in this case.\n\t\t\t- `threadType`: The type of the thread. Here it is \"shop\".\n\t\t\t- `threadTypeId`: The unique identifier of the type of thread. Replace \"shopId\" with the actual ID for the shop thread.\n\t\t- `options`: Additional options for the raw data format. It specifies that the \"language\" is JSON. \n\nPlease replace placeholder values with legitimate data."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Show",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Show Comments\",\"threadType\": \"show\",\"threadTypeId\": \"videoId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Chat - Thread - Create Show\". It's a POST method, meaning it's utilized to submit data to be processed to a specified resource. Below is the detailed description of each data:\n\n1. **Auth (Authorization)** - Uses a 'bearer' type authorization, which means it uses a Bearer token for authorization. The bearer token is a string. The 'key' is the field name for the authorization token, in this case, it's 'token'. The 'value' is the actual token used for authorization which here is 'BearerToken'.\n\n2. **URL** - The provided URL is \"http://localhost:3000/api/chat/thread/create\". This is the endpoint to which the request will be sent to create a new chat thread.\n\n3. **Headers** - The 'headers' field is currently empty indicating no additional metadata needs to be sent with the request. \n\n4. **Body** - The 'body' contains the actual data that needs to be sent to the specified endpoint.\n   - **mode** - The 'mode' property is set to \"raw\" which means you can write the request body manually.\n   - **raw** - The 'raw' property contains the actual JSON formatted request data. The data includes the following parameters:\n        - \"ownerId\": Represents the account Id of the owner of the chat. \n        - \"accountId\": It is the ID of the account that is creating this chat thread.\n        - \"sessionId\": Represents the session ID in which chat is initiated.\n        - \"threadName\": The name of the chat thread, in this case, it is \"Show Comments\".\n        - \"threadType\": Describes the type of thread being created. The thread type here is \"show\".\n        - \"threadTypeId\": It is an ID that is unique to the show (video), referenced here as \"videoId\".\n\n5. **Options** - The options property is used here to specify the language of raw body, in this case, it's JSON. \n\nThis endpoint basically allows you to create a new chat thread associated with a specific show (video). You will need to provide the relevant ownerId, accountId, sessionId, threadName, threadType, and threadTypeId in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Team Coordination\",\"threadType\": \"team\",\"threadTypeId\": \"teamId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "Here is a detailed description of the given API endpoint data:\n\n1. \"name\": This is the label or title of the API endpoint, in this case, it is \"Chat - Thread - Create Team\". Name is used for quick identification or reference of the endpoint in a collection.\n\n2. \"request\": This holds all the information pertaining to the HTTP request that needs to be sent to the server. It encapsulates data related to authorization, method, URL, headers, and body of the request.\n\n3. \"auth\": This specifies the authorization method required for gaining access to the API and has two attributes - \"type\" and \"bearer\". The \"type\" attribute is \"bearer\" indicating the bearer token method of authorization is used. The bearer attribute contains an array with details about the token - \"key\", \"value\" and \"type\". The token value is specified as \"BearerToken\" and the type as string. The key \"token\" is typically used to store the access token.\n\n4. \"method\": This represents the HTTP verb. In this case, \"POST\" indicates the method used to send data to the server.\n\n5. \"url\": This provides the API's endpoint URL to which the request is being sent. In this instance, it's \"http://localhost:3000/api/chat/thread/create\".\n\n6. \"headers\": This field is currently empty, meaning no extra headers are being sent with the request.\n\n7. \"body\": This contains the data or payload that needs to be sent to the server. The \"mode\" is set to \"raw\" indicating raw data is being sent.\n\n8. \"raw\": This contains the JSON payload of the request body. It holds details such as \"ownerId\", \"accountId\", \"sessionId\", \"threadName\", \"threadType\", and \"threadTypeId\". This is the data that will be processed by the server.\n\n9. \"options\": This specifies additional configuration settings for the request body. In this case, it specifies that the \"language\" used for raw data is \"json\".\n\n- \"ownerId\": This is the ID of the account which owns the thread.\n- \"accountId\": This is the ID of the user account which is pertinent to the thread.\n- \"sessionId\": This identifier is unique for each session.\n- \"threadName\": This is the name of the thread being created, in this case, \"Team Coordination\".\n- \"threadType\": This specifies the type of thread, in this case, it's a \"team\" type.\n- \"threadTypeId\": This is the ID that corresponds to the thread type, in this case, \"teamId\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Tournament",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Tournament Comments\",\"threadType\": \"tournament\",\"threadTypeId\": \"tournamentId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This endpoint is used to create a new thread within a chat for a specific tournament. The thread creation requires authentication through a bearer token and uses a POST method to send the data. \n\nFields Description:\n\n- `name`: Represents the name of the API endpoint. In this case, it's \"Chat - Thread - Create Tournament\" which means this endpoint is used to create a new thread in a tournament chat.\n\n- `auth`: Contains authentication information to give necessary permissions to the user for the operation.\n\n    - `type`: Indicates the type of authentication used. \"Bearer\" type is used here.\n    \n    - `bearer`: An array containing bearer token information. The bearer token represents the authenticated user who makes the request.\n    \n        - `key`: Represents the type of value that is being provided. Here 'token' is the key.\n        \n        - `value`: The actual token value for authorization. \"BearerToken\" is a placeholder and should be replaced with the actual API user's token.\n        \n        - `type`: Indicates the data type of `value`, in this case, it's string data type.\n\n- `method`: Specifies the HTTP method used for the request. Here \"POST\" method is used indicating data will be sent to the server.\n\n- `url`: The URL of the API endpoint where request is being sent. \n\n- `headers`: An array that contains any optional HTTP headers that you want to send with your request.\n\n- `body`: Contains the details of the request body. \n\n    - `mode`: Indicates how the data is being sent. In this case, it's being sent as \"raw\".\n\n    - `raw`: This includes the actual data being sent in the body of the request. Data includes:\n    \n         - `ownerId`: The ID of the account creating the thread.\n          \n         - `accountId`: The ID of the account for which the tournament chat thread is being created.\n         \n         - `sessionId`: The ID indicating the specific session for which the thread is being created.\n         \n         - `threadName`: The intended name of the thread being created. For instance, 'Tournament Comments'.\n         \n         - `threadType`: Type of the thread, here it is 'tournament'.\n         \n         - `threadTypeId`: The ID specific to the type of thread, here it would be the ID of the tournament.\n\n    - `options`: Contains additional configuration for raw data. Here, it's indicating that the raw data language is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Create Video",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"ownerId\": \"accountId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"Video Comments\",\"threadType\": \"video\",\"threadTypeId\": \"videoId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "create"
+          ]
+        },
+        "description": "This endpoint is labeled \"Chat - Thread - Create Video.\" It's used to create a new chat thread for video comments using a POST request.\n\n1. `auth`: This indicates the type of authentication used for this endpoint. The auth type is \"bearer\", which usually involves a bearer token provided in the headers of the HTTP request for user identification. Its key is \"token,\" which holds the value \"BearerToken.\"\n\n2. `method`: It states the HTTP request method that we're using. In this case, \"POST,\" which is generally used for sending data to the API server to create a new resource.\n\n3. `url`: This is the URL to where the API request is sent. This particular endpoint is \"http://localhost:3000/api/chat/thread/create\".\n\n4. `headers`: Headers allow the client and server to share additional information with the HTTP request or response. The request doesn't include any specific headers in this case. \n\n5. `body`: This contains the data we're sending with our POST request. In this case, it's in the \"raw\" mode, meaning the data is sent as a string in JSON format. \n\n   Included in the request body are: \n    - `ownerId`: A string that refers to the account ID of the owner of this chat thread. \n    - `accountId`: A string that specifies the account ID attempting to create this chat thread.\n    - `sessionId`: This could be a unique identifier for the specific session during which this chat thread is created.\n    - `threadName`: A string that provides the name for this chat thread. For this endpoint, it seems to be specified as \"Video Comments.\"\n    - `threadType`: This indicates the type of thread being created. In this case, it's a \"video\".\n    - `threadTypeId`: A string that refers to the ID of the video associated with this thread.\n\n6. `options`: This contains extra payload options for the \"raw\" request body. They're set to indicate the language of the request body is JSON. Note this doesn't affect the API request itself, but can make it easier for people to understand the data if they're reading it."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"threadId\":\"threadId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"General Discussion 3\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Chat - Thread - Update\". It uses the HTTP method PUT and is used to update the information in a chat thread.\n\nThe endpoint requires bearer authentication, specified through a token. The \"auth\" field requires an object with the \"type\" field as \"bearer\". Under the \"bearer\" array, a key-value pair is given, with the \"key\" as \"token\" and its relevant value being \"BearerToken\".\n\nThe request is made to the URL: \"http://localhost:3000/api/chat/thread/update\".\n\nThe request carries with it headers. One such header is \"Client-UUID\", with its value being \"ClientUUID\". This UUID represents a universal identifier for the client using this API endpoint.\n\nThe request also includes a body with the \"mode\" key set to \"raw\", indicating that the data being sent in raw format(i.e., just a sequence of characters). The raw data being sent in the body is in JSON format {\"threadId\":\"threadId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"threadName\": \"General Discussion 3\"} which includes:\n\n- \"threadId\": The unique identifier of the thread that you want to update\n- \"accountId\": The unique identifier of the user account making the update\n- \"sessionId\": The unique identifier of the session within which the update is made\n- \"threadName\": The new name that you want to assign to the thread\n\nThe \"options\" key in the body contains an object, with \"raw\" key containing another object {\"language\": \"json\"} which is specifying the format of data that we have in the body, which in this case is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get By Thread",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/get/?threadId=threadId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "threadId",
+              "value": "threadId"
+            }
+          ]
+        },
+        "description": "The data provided represents an API endpoint and includes a number of specific fields each serving a unique purpose. Here is a detailed description of each field:\n\n1. \"name\": This is the name of the endpoint. For this particular endpoint, the name is \"Chat - Thread - Get By Thread\". This implies that the purpose of this API call is to retrieve thread data from a chat.\n\n2. \"request\": This contains the technical details for the requested API call, including the authentication method, the HTTP method, the URL, the headers, and the body of the request.\n\n3. \"auth\": This part deals with the authentication needed to access the endpoint. The type of authentication is Bearer token.\n\n   a) \"type\": The authentication type for this API request is \"bearer\". This represents a Bearer token authentication method which uses token-based security for validating requests.\n\n   b) \"bearer\": The bearer list contains an object with details about the used authenticator.\n   \n      - \"key\": The key here is set to \"token\". It represents the specific type of value that will be used for authentication.\n   \n      - \"value\": The value 'BearerToken' given here is the placeholder value for the actual bearer token that will be used in an API call.\n\n      - \"type\": It specifies the type of input 'BearerToken' is, which, in this instance, is of \"string\" type.\n\n4. \"method\": This is the HTTP method used for the request, in this case, \"GET\". GET methods are used to retrieve data from the server.\n\n5. \"url\": This is the URL where the request will be sent. The endpoint is running on localhost at port 3000 and falls under the route of \"/api/chat/thread/get\". Also, this is a parameterised URL, which expects a threadId as a parameter.\n\n6. \"headers\": This is a list of headers that can be sent along with the request. In this instance, it is empty and is set to \"default\", which means no specific headers will be sent.\n\n7. \"body\": This denotes the body content of the request. In this instance the body is in \"raw\" form but it is empty. The API does not require any data in the body for this request since it is a GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get By Thread With Deleted",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/get/?threadType=account&threadTypeId=accountId&ownerId=accountId&deleted=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "threadType",
+              "value": "account"
+            },
+            {
+              "key": "threadTypeId",
+              "value": "accountId"
+            },
+            {
+              "key": "ownerId",
+              "value": "accountId"
+            },
+            {
+              "key": "deleted",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Chat - Thread - Get By Thread With Deleted\". It serves the purpose of fetching chat threads, including the deleted ones, based on specific thread type and ID. Here are descriptions of each data provided in this endpoint:\n\n1. \"name\": It is a string value referring to the specific name of the endpoint. In this case, it is \"Chat - Thread - Get By Thread With Deleted\", which means this endpoint is used to get chat threads, including those that are deleted.\n\n2. \"request\": This is an object detailing the request information to be made for the endpoint. It includes information about the authorization, request method, URL, and any headers and body.\n\n3. \"auth\": This is an object that holds the type and details of authentication necessary to successfully make a call to this endpoint. In our example, a bearer token is required. \n\n4. \"bearer\": This is an array of objects that contain the details of the bearer token. It provides a \"token\" as the key with a \"BearerToken\" as its value. It is a string type and is necessary for gaining secure access to the endpoint.\n\n5. \"method\": This is the HTTP method used for the endpoint call. Here, it is set to \"GET\", which means this endpoint only retrieves data.\n\n6. \"url\": This is the specific URL where the request will be sent. The URL also shows query parameters required for the request including \"threadType\", \"threadTypeId\", \"ownerId\", and \"deleted\".\n\n7. \"headers\": This is an array representing any headers that should be included in the request. In this case, there is a single, default empty key-value pair that is designated as disabled.\n\n8. \"body\": This object in the request specifies what data to send to the API when making a request. Here, the mode is set to \"raw\", and no actual raw data is specified. \n\n9. \"threadType\", \"threadTypeId\", \"ownerId\", and \"deleted\": These query parameters in the URL are used to specify the thread type, ID of the thread, owner's ID, and whether you want to fetch deleted threads or not, respectively. For \"deleted\", if its value is \"1\", then it fetches deleted threads as well; otherwise, it doesn't."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get By Owner",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/get/?threadType=account&threadTypeId=accountId&ownerId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "threadType",
+              "value": "account"
+            },
+            {
+              "key": "threadTypeId",
+              "value": "accountId"
+            },
+            {
+              "key": "ownerId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. `name`: This value represents the title or the name of the endpoint and helps to identify what particular function the endpoint performs. It's also used for labeling and navigation purposes in your collection. Here, 'Chat - Thread - Get By Owner' indicates that this endpoint fetches chat thread details based on the owner.\n\n2. `request`: This contains all the essential data required to make the HTTP request.\n\n3. `auth`: This section contains the type and details of authorization required to access the endpoint. For this endpoint, 'bearer' token authorization is required. \n\n4. `type`: This indicates the method of authorization which is 'bearer' in this case, an HTTP authentication scheme that involves security tokens called bearer tokens.\n\n5. `bearer`: This array contains a single object with a 'key' and 'value'. It holds the actual bearer token that must be supplied with the API request. \n\n6. `key`: This field refers to the type of the value. For bearer auth, it is 'token'.\n\n7. `value`: The actual authorization token goes here. \n\n8. `method`: This value indicates the HTTP verb associated with the request. In this API request, the method used is 'GET', which retrieves data from a specified resource.\n\n9. `url`: The provided URL is the endpoint's location on the server from where the client will make the API request.\n\n10. `headers`: This is an array that would contain the details of any additional headers that might be required for the request. In this request, no particular header needs to be sent as the fields are left empty and the 'disabled' property is set to true.\n\n11. `body`: Here, the 'mode' field is set to 'raw', which indicates that the body of the request will not include any data. The 'raw' field is also empty, further confirming that no data will be sent in the body of the request. \n\nRemember, for this particular API request, the thread type, thread ID, and owner ID need to be provided in the URL parameters to fetch the required chat thread details."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get By Owner With Deleted",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/get/?threadType=account&threadTypeId=accountId&deleted=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "threadType",
+              "value": "account"
+            },
+            {
+              "key": "threadTypeId",
+              "value": "accountId"
+            },
+            {
+              "key": "deleted",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This endpoint, called \"Chat - Thread - Get By Owner With Deleted,\" is designed to allow you retrieve chat threads from the database. It specifically fetches chat threads that are owned by a specific user and considers both active and deleted threads. \n\nHere's a breakdown of the components:\n\n1. **name**: This is the title or name of the endpoint, which describes what the endpoint does. In this case, \"Chat - Thread - Get By Owner With Deleted\" suggests that this endpoint retrieves chat threads (both deleted and active) owned by a user.\n\n2. **request**: This details the actual request that will be made to the endpoint.\n\n3. **auth**: This section contains authentication details required to get access to the endpoint. It's using Bearer authentication, which expects a token to be provided. \n\n   - **type**: It indicates the type of authorization being used which is \"bearer\" in this case.\n   \n   - **bearer**: This is an array containing a single object that describes the token needed for authorization:\n     - **key**: This field indicates that a \"token\" is required.\n     - **value**: It shows the placeholder for the value of the bearer token.\n     - **type**: The data type of the \"token\", which is a \"string\".\n\n4. **method**: The type of HTTP request that is being made. In this case, it's a \"GET\" request, meaning it retrieves data from the server.\n\n5. **url**: This is the actual URL where the request will be sent. It includes three query parameters: threadType, threadTypeId, and deleted, which respectively represent the type of thread, ID related with the thread, and the status of deletion.\n\n6. **headers**: The headers field is currently empty and disabled. When enabled, it can contain additional information which will be sent with the HTTP request. For now, no additional information is being passed.\n\n7. **body**: The body carries essential data needed in processing the request. However, for a GET request, no additional body data is required, hence it remains empty.\n\nRemember to replace the \"BearerToken\" with a valid token while making an actual API call. Also, replace the query parameters in the URL with valid threadType, threadTypeId and deleted status to get the desired result."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get All By Type",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/all/?threadType=account&threadTypeId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "threadType",
+              "value": "account"
+            },
+            {
+              "key": "threadTypeId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Chat - Thread - Get All By Type\", retrieves all chat threads based on a specified type.\n\nThe authorization (auth) type for this request is 'bearer'. Meaning, it requires a bearer token to provide authentication. The token is of string data type and labeled \"BearerToken\". It's crucial to add your assigned bearer token in place of \"BearerToken\" to successfully authenticate.\n\nThis endpoint uses the GET method. The GET method is used to retrieve information from the given server using a given URI. GET requests should only receive data and not have any other effect.\n\nThe URL to hit this endpoint is \"http://localhost:3000/api/chat/thread/all/?threadType=account&threadTypeId=accountId\". This endpoint resides locally on your machine at port 3000. This API fetches all chat threads in a specific account. The \"threadType\" query parameter specifies the type of thread, which in this case is 'account'. The \"threadTypeId\" refers to the ID of the account.\n\nThere is also a \"headers\" field, which currently has no key-value pairs hence marked \"disabled\". \n\nLastly, there is a \"body\" field with mode set to \"raw\", meaning any kind of text or text file can be sent in the body of the request. However, for this GET request, the \"raw\" body is empty. This is because GET requests mostly send data in the URL and headers, not in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get All By Type With Deleted",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/all/?threadType=account&threadTypeId=accountId&deleted=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "threadType",
+              "value": "account"
+            },
+            {
+              "key": "threadTypeId",
+              "value": "accountId"
+            },
+            {
+              "key": "deleted",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Chat - Thread - Get All By Type With Deleted\", is used to retrieve all chat threads of a specific type, including those that have been deleted.\n\n1. **Authentication**: The endpoint uses bearer authentication. The 'token' key should be provided with the actual bearer token as its value. The data type for this should be a string.\n\n2. **Method**: The HTTP method used for this request is GET. This implies that data is being retrieved from the server.\n\n3. **URL**: The requested URL is 'http://localhost:3000/api/chat/thread/all'. This is the base URL to which certain parameters will be attached based on the thread you want to retrieve. \n\n   The parameters appended at the end of the URL are:\n   - 'threadType=account': This specifies the type of chat thread that should be retrieved. In this case, 'account' is used meaning we are looking for chat threads related to account activities.\n   - 'threadTypeId=accountId': This is used to specify the unique identifier (ID) for the 'account' thread type that should be fetched.\n   - 'deleted=1': This parameter when set to '1' indicates that deleted threads should be included in the response.\n\n4. **Headers**: By default, there is an unspecified key-value pair in the headers. This key-value pair is disabled and doesn't affect the request, as it wouldn't be sent to the server.\n\n5. **Body**: The body of the request is set to 'raw' mode, but it doesn't contain any data. For a GET request, this is the standard configuration as the main information is carried in the URL and headers.  \n\nPlease replace 'BearerToken' and 'accountId' with actual values when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get All By User",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/all/?accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "The endpoint provided corresponds to \"Chat - Thread - Get All By User\", which is used to retrieve all chat threads associated with a particular user.\n\nThe request's authorization type (`auth.type`) is set to `bearer`, indicating a Bearer token is to be used for authentication. This Bearer token is provided in the `bearer` array, under the `key` as `token` with the value `BearerToken`.\n\nThe request method is `GET`, meaning that data is being fetched, not sent or modified. \n\nThe URL is `\"http://localhost:3000/api/chat/thread/all/?accountId=accountId&sessionId=sessionId\"`. This points to the `chat/thread/all` API on the local server (running on port 3000). Two query parameters are included in this request: \n\n1. `accountId`: This probably corresponds to the unique ID of the user account requesting the threads. Replace this placeholder with the actual account Id.\n2. `sessionId`: This likely refers to the active session ID for the user. Replace this placeholder with the actual session Id.\n\nThere are no headers in the request (`headers` array) - there is an empty default header prepared, but it is currently disabled (`disabled: true`). If you need to add headers in future, you can enable it and provide `key` and `value`.\n\nAs it's a `GET` request, no body data (`body`) is included - `mode` is set to `raw` and `raw` is an empty string. For `GET` requests we typically don't include a body as we are retrieving data, not sending it."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get All By User With Deleted",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/all/?accountId=accountId&sessionId=sessionId&deleted=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "deleted",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "The endpoint \"Chat - Thread - Get All By User With Deleted\" is a GET request made to fetch all chat threads associated with a specific user account, including the ones that have been deleted. Here are the details of each data:\n\n1. `name`: This is the name of the endpoint that is used for easier identification and is titled \"Chat - Thread - Get All By User With Deleted\".\n\n2. `auth`: This represents the authentication protocol being used for this endpoint. It is of the 'bearer' type, meaning it uses bearer authentication which provides security for HTTP services. It requires a bearer token to be included in the request.\n\n3. `bearer`: This array consists of the details for the bearer token.\n  - `key`: \"token\" - The keyword to identify the bearer token.\n  - `value`: \"BearerToken\" - The actual token used for bearer authentication (In actual use, replace \"BearerToken\" with your bearer token)\n  - `type`: \"string\" - Describes the data type of the authentication value, which in this case is a string.\n\n4. `method`: This indicates that a GET request is being made, which is used to retrieve data from a specified resource.\n\n5. `url`: This is the URL to which the HTTP request is being made. It follows the pattern: \"http://localhost:3000/api/chat/thread/all/?accountId=accountId&sessionId=sessionId&deleted=1\" \n  - `accountId` is the unique identifier for the user account whose chat threads are to be retrieved.\n  - `sessionId` is the unique identifier for the session in which the request is made. \n  - `deleted` is a flag for including deleted chat threads. A value of 1 indicates that deleted threads are to be included.\n\n6. `headers`: This field is currently empty but is typically used to provide additional parameters that the request header may need. The `disabled` field is set to `true`, meaning that it is deactivated for this request.\n\n7. `body`: This is the data that is sent to the server with the request. The `mode` is set to 'raw', indicating that the body contains raw data. Currently, no body data is sent with this request (represented by the `raw` field being empty), as GET requests typically don’t send data in the body but in the URL parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get All By Thread",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/all/?threadId=threadId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "threadId",
+              "value": "threadId"
+            }
+          ]
+        },
+        "description": "This endpoint named \"Chat - Thread - Get All By Thread\" enables the retrieval of all chat threads.\n\n1. \"name\": This field represents the name of the endpoint. In this case, it's \"Chat - Thread - Get All By Thread\".\n\n2. \"request\": This field encapsulates all the request details:\n\n3. \"auth\": This field contains authentication details:\n    - \"type\": Indicates the type of authentication, which is \"bearer\" in this case.\n    - \"bearer\": An array that holds objects containing bearer token details:\n      - \"key\": Set as \"token\", it indicates the type of bearer token used for authentication.\n      - \"value\": Set as \"BearerToken\", this is a placeholder for the actual bearer token.\n      - \"type\": Indicates that the value of the bearer token is a string.\n\n4. \"method\": Represents the HTTP method used for the request. For this endpoint, it is \"GET\".\n\n5. \"url\": This is the URL where the request will be sent. It contains a placeholder \"threadId\" in the query parameters which should be replaced by the actual thread identifier.\n\n6. \"headers\": An array of objects containing details of any HTTP headers to be included in the request. Currently, it is set to an empty default header which is disabled.\n\n7. \"body\": Contains details about the request body:\n    - \"mode\": It is set as \"raw\", indicating the request body contains raw data.\n    - \"raw\": Since this is a GET request, the body doesn't contain any data, so this field is empty.\n\nRemember to replace \"BearerToken\" and \"threadId\" placeholders with actual bearer token and thread ID before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Get All By Thread With Deleted",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/all/?threadId=threadId&deleted=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "threadId",
+              "value": "threadId"
+            },
+            {
+              "key": "deleted",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This endpoint, \"Chat - Thread - Get All By Thread With Deleted\", allows you to retrieve all threads, including deleted ones, associated with a specific chat. There are different components of the data in this endpoint.\n\n1. \"auth\": This represents the authentication section. It uses bearer token authentication. \n   - \"type\" denotes the type of the authorization, here it is \"bearer\".\n   - \"bearer\" denotes the array containing authentication token, with three properties: \"key\", \"value\", and \"type\". \n   - \"key\" is \"token\".\n   - \"value\" - This should hold the value of the bearer token required for authorization.\n   - \"type\" indicates the data type of token, which is \"string\".\n\n2. \"method\": This property denotes the HTTP method used for the request. Here, \"GET\" method is used which is typically for retrieving data.\n\n3. \"url\": This is the URL for the API endpoint. It points to the specific location in your application where the request should go. Here, it's \"http://localhost:3000/api/chat/thread/all/?threadId=threadId&deleted=1\". The URL contains two query parameters \"threadId\" and \"deleted\". \n   - \"threadId\" is parameter used to specify the particular Thread you're looking to access.\n   - \"deleted\" parameter is set to 1, indicating that deleted messages are also to be fetched.\n\n4. \"headers\": Contains an array of objects with information to be sent as headers with the request. Currently, it is empty and disabled. \n\n5. \"body\": Contains the format and content of the body of the request. In this endpoint, it's indicated as 'raw' mode, which means you can send whatever data you wish. But here the raw data is empty string denoting no additional data is sent with this request. \n\nPlease remember to replace 'BearerToken' and 'threadId' with your actual bearer token and thread ID while using it."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Thread - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"threadId\":\"threadId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/thread/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "thread",
+            "delete"
+          ]
+        },
+        "description": "Endpoint Name: Chat - Thread - Delete\n\n1. Authentication: This API request requires a bearer token for authentication. The token should be a session ID which is to be provided as a string data type.\n\n2. Method: This API uses a POST method. POST is used to send data to the server to create/update a resource.\n\n3. URL: This is the uniform resource locator (URL) to which the API request is sent. In this case, it is \"http://localhost:3000/api/chat/thread/delete\". It suggests that this API endpoint is used to delete a chat thread.\n\n4. Headers: In this request, there aren't any additional headers required as suggested by the empty key-value pair. The \"disabled\" field set as true signifies that this property is not currently in use.\n\n5. Body: This contains the information that needs to be sent to the server. The mode is set as \"raw\" which suggests the format of the body content is in raw JSON format. The raw JSON is a stringified object that needs three properties to perform the operation.\n\n    - sessionId: The session ID for which the chat thread will be deleted. This should be a string that corresponds to a valid session in your application.\n    \n    - accountId: The account ID who is a part of this thread. This ID helps ensure that the requester has the authority to delete the thread.\n    \n    - threadId: The specific ID of the chat thread that is to be deleted. This should correspond to a valid thread in your application.\n\nPlease ensure your request adheres to this specification for successful operation."
+      },
+      "response": []
+    }
+  ]
+}

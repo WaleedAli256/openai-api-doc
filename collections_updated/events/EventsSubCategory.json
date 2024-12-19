@@ -1,0 +1,544 @@
+{
+  "info": {
+    "_postman_id": "a1c0716a-fb14-42dc-a53f-ea003cc04ab9",
+    "name": "EventsSubCategory",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Events - SubCategory - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"name\": \"Historic Hampton House 3\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\",\n    \"categoryId\": \"eventCategoryId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Events - SubCategory - Create\" which is used to create a new subcategory within the Events system, using HTTP POST method. \n\nHere is the description of each input parameter available in this endpoint:\n\n1. **URL**: http://localhost:3000/api/events/subcategory/create - This is the endpoint URL which points to the application function that creates new subcategories under Events. \n\n2. **Bearer Token**: Under the authorization section, a bearer token type is used where you need to provide an authorization token. This token is likely used for identifying and authorizing the authenticated user who is trying to access this particular endpoint.\n\n3. **Headers**: The headers could be utilized to provide additional information with each request. The template has a default disabled key-value pair. You would likely leave this section blank unless you need to include additional headers.\n\n4. **Body**: This is where you will provide the actual data to create a subcategory. \n   \n   - **sessionId**: A unique identifier tied to the session of the user making the request.\n    \n   - **accountId**: The unique ID of the account under which the subcategory will be created. \n\n   - **name**: The actual name of the subcategory that you want to create.\n   \n   - **displayName**: The front-facing name that users will see for the subcategory. \n\n   - **description**: A brief summary explaining the purpose or context of the subcategory.\n\n   - **tags**: Keywords or tags associated with the subcategory.\n\n   - **categoryId**: The unique ID of the event category to which this subcategory belongs.\n\nThe body of the request is being sent as 'raw' data structured in JSON format. Remember to replace the placeholder values with actual value while making request."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Create Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"name\": \"Historic Hampton House 13\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\",\n    \"category\": \"A Special New Category 2\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "create"
+          ]
+        },
+        "description": "This endpoint is titled \"Events - SubCategory - Create Auto\". It uses POST method which typically implies creation of new data on the backend system.\n\nHere is a description of each data:\n\n1. **\"name\"**: The name of the endpoint, it represents the functionality of creating subcategory automatically in an Events system.\n\n2. **\"request\"**: Contains all the necessary details required to make a request.\n\n3. **\"auth\"**: Holds the authentication type and detail necessary to gain access to the API. It uses 'bearer' type authentication and expects a 'token' - a string which must be valid for successful access.\n\n4. **\"method\"**: The HTTP method used for request, in this case, it's a 'POST' method used for creating data.\n\n5. **\"url\"**: The URL where the request will hit to perform desired operation. Here, the request will hit 'http://localhost:3000/api/events/subcategory/create' to create an event subcategory.\n\n6. **\"headers\"**: Headers can contain additional information for the request. In this case, no headers are being sent, this field is left blank and disabled.\n\n7. **\"body\"**: It contains the information that will be attached to the request when sent. The mode 'raw' is used here which facilitates sending of data in unprocessed form, and the language used is 'json'.\n\n8. Within the body, some important parameters are passed:\n\n   - **\"sessionId\"**: The session ID currently active.\n   - **\"accountId\"**: The account ID of the user/session.\n   - **\"name\"**: The name of the new subcategory that is to be created. \n   - **\"displayName\"**: The display name of the new subcategory that will be visible to users.\n   - **\"description\"**: A brief description of the new subcategory.\n   - **\"tags\"**: Tags associated with the new subcategory, separated by commas.\n   - **\"category\"**: The parent category to which the new subcategory belongs.\n   \nRemember to change these parameters as per the business or application scenario when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"subCategoryId\":\"eventSubCategoryId\",\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"name\": \"Miami Art Week 2\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\",\n    \"categoryId\": \"eventCategoryId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "update"
+          ]
+        },
+        "description": "1. \"name\": This is the name of the endpoint, and in this case, it signifies that this API endpoint is used for updating subcategories in events.\n\n2. \"request\": Encapsulates all the necessary fields required for making an API request.\n\n3. \"auth\": Specifies the type of authentication to be used for the API request.\n    \n    a. \"type\": The type of the authentication method. It is set to \"bearer\" which indicates that the authentication will be performed using a bearer token.\n    \n    b. \"bearer\": An array containing the authentication details.\n       \n       i. \"key\": Denotes the type of value. It is set to \"token\", signifying that a token is to be provided.\n       \n       ii. \"value\": This will hold the actual bearer token that should be inserted in the place of 'BearerToken'.\n       \n       iii. \"type\": Specifies the data type of the key. In this case, it's a \"string\".\n\n4. \"method\": This is the HTTP method used for making the API request, and in this case, it is \"PUT\" which is most commonly used for update operations.\n\n5. \"url\": This is the URL where the request will be sent. \n\n6. \"headers\": This is an array of headers that are to be included in the request.\n    \n    a. \"key\": The header field name. It's set to \"Client-UUID\" meaning it should carry the unique identifier of the client making the request.\n    \n    b. \"value\": The value for corresponding Key, which should be replaced with actual ClientUUID.\n    \n    c. \"type\": Specifies the key type. It's set to \"default\".\n\n7. \"body\": Includes data to be sent in the API request.\n\n    a. \"mode\": Indicates how the body content is structured. It's set to \"raw\", meaning data in the body is not separated by any special characters.\n   \n    b. \"raw\": Contains raw data that needs to be sent. It includes subCategoryId, sessionId, accountId, name, displayName, description, tags, and categoryId. These fields provide various information about the event subcategory to be updated.\n\n    c. \"options\": Specifies additional formatting options for the body.\n       \n       i. \"raw\":\n          \n           ii. \"language\": Specifies the data format of the raw body. It's set to 'json', indicating the body's content is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Update Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"subCategoryId\":\"eventSubCategoryId\",\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"name\": \"Miami Art Week 3\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\",\n    \"category\":\"A Special Shiny Category\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Events - SubCategory - Update Auto\", is designed to handle HTTP PUT requests to update an existing sub-category of events. This is achieved by sending a PUT request to the endpoint url \"http://localhost:3000/api/events/subcategory/update\".\n\nAuthentication for the request is handled using bearer token authentication, with the key \"token\" and the value is a \"BearerToken\" string. This security layer ensures that only authorized users can interact with the API.\n\nThe request also includes a unique client identifier baked into the headers with 'key' as \"Client-UUID\" and 'value' as the 'ClientUUID' to trace requests back to the clients that made them. This value is of \"default\" type.\n\nThe request payload or body is presented in raw mode using JSON language containing all the necessary information to update the sub-category of an event:\n\n- \"subCategoryId\": A unique identifier for the sub-category that you wish to update.\n- \"sessionId\": A unique identifier associated with the session of the user making this request.\n- \"accountId\": A unique identifier associated with the account of the user making this request.\n- \"name\": The new name you want to assign to the sub-category.\n- \"displayName\": A more user-friendly title for the sub-category that will be shown to users (different from the main 'name').\n- \"description\": A brief explanation or summary of what this sub-category represents.\n- \"tags\": A set of keywords associated with the sub-category to aid searchability or categorization of the sub-category. Tags are provided in string form, separated by commas.\n- \"category\": The main category to which this sub-category belongs. This could be any meaningful string that describes the type of events the sub-category belongs to. \n\nPlease input appropriate values for each key before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Get By SubCategory ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/get/?subCategoryId=eventSubCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "subCategoryId",
+              "value": "eventSubCategoryId"
+            }
+          ]
+        },
+        "description": "This endpoint is called \"Events - SubCategory - Get By SubCategory ID\". It is used to retrieve events by a specific sub-category ID. \n\nFirstly, it requires authentication which you will provide in the form of a bearer token. The bearer token is a string value, named \"BearerToken\" that needs to be passed in the \"auth\" field of the request. \n\nThe request method is GET, which means you're requesting data from a specified resource.\n\nThe URL to hit this endpoint is \"http://localhost:3000/api/events/subcategory/get/?subCategoryId=eventSubCategoryId\". As you can see from the URL, it is anticipating a query parameter named \"subCategoryId\". Replace \"eventSubCategoryId\" with the actual ID of the subcategory that you wish to get events for.\n\nIt also contains a header field, but there are no keys or values provided and it is disabled by default, therefore it's not vital for the current request.\n\nLastly, in executing the request, there's no need for any form of body payload. The \"body\" section doesn't contain anything, as the \"mode\" is \"raw\" and the \"raw\" section is empty, which suggests that data retrieval depends solely on the \"subCategoryId\" specified in the URL request.\n\nTherefore, to use this endpoint, simply make a GET request with the authenticated bearer token and provide the sub-category ID in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Get By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/get/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. \"name\": \"Events - SubCategory - Get By Account ID\" - This data field represents the description of the endpoint. It signifies that the endpoint is aimed at fetching events' subcategories related to a specific account ID.\n\n2. \"request\": This is the main section that includes all the necessary details for making a particular API request.\n\n3. \"auth\": This section provides authentication details. It is using a Bearer token method for authorization.\n\n  - \"type\": Describes the authentication type, which is 'bearer' in this case.\n\n  - \"bearer\": This is an array of objects that holds key-value pairs of token \"BearerToken\". It's of string type.\n\n4. \"method\": Shows the HTTP method for the request. Here, \"GET\" denotes this request is used for retrieving data from the specified URL.\n\n5. \"url\": This is the endpoint URL where the GET request will be made. The URL will fetch subcategories of events for the given accountId. A real accountId value should replace \"accountId\" at the end of the URL.\n\n6. \"headers\": Contains information about the request headers. It is an array of objects, with each object providing details about a header.\n  \n  - \"key\": The name of the HTTP header.\n  \n  - \"value\": The value of the HTTP header.\n\n  - \"type\": The type of header, which is 'default'.\n  \n  - \"disabled\": A boolean that indicates the disabling status of the header. Here, the header is disabled as its value is true.\n\n7. \"body\": This section contains the body of the HTTP request. \n\n  - \"mode\": The mode of the request body is 'raw', which allows sending arbitrary data.\n\n  - \"raw\": It's an empty string which indicates no additional data is sent in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Get By Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/get/?name=eventSubCategoryName",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "eventSubCategoryName"
+            }
+          ]
+        },
+        "description": "This endpoint, which is titled \"Events - SubCategory - Get By Name\", is responsible for retrieving subcategories of events by their particular names. Here's a detailed description of each field and its data.\n\n1. \"name\" : This field denotes the name of the API endpoint which is \"Events - SubCategory - Get By Name\". This is useful for identifying and categorizing the endpoint in the collection.\n\n2. \"request\" : This field contains all the information needed to make a request to this endpoint.\n\n3. \"auth\": This section deals with the authorization needed to access the endpoint. It has three sub-fields:\n  - \"type\": The type of authorization used, which in this case is a \"bearer\" token.\n  - \"bearer\": This is an array of tokens required for bearer authorization:\n    - \"key\": The name of the bearer token which is \"token\" in this case.\n    - \"value\": The value of the bearer token.\n    - \"type\": Specifies the datatype of the bearer token, as \"string\".\n\n4. \"method\": It indicates the HTTP verb that should be used when accessing this endpoint. Here, you should use a \"GET\" request.\n\n5. \"url\": It describes the address where the request should be sent. For this endpoint, the URL is \"http://localhost:3000/api/events/subcategory/get/?name=eventSubCategoryName\". Here, \"eventSubCategoryName\" parameter is passed along with the URL to fetch the specific subcategory data by name.\n\n6. \"headers\" : This is a list of headers that should be sent along with the request. The default header key and value are left empty and set to disabled as it's not necessary for this request.\n\n7. \"body\": This section concerns the body of the request. \n  - \"mode\": Indicates how the body should be sent. In this case, it has the value \"raw\", which means the body should be sent as a raw data string.\n  - \"raw\": This sub-field is used to send raw data. However, as it's a GET request, there's no need to send any data in the body and hence it is left as an empty string.\n\nPlease ensure to replace the \"BearerToken\" and \"eventSubCategoryName\" values with valid information before making the request to the endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "all",
+            ""
+          ]
+        },
+        "description": "This endpoint 'Events - SubCategory - Get All', retrieves all subcategories of events from your service. \n\n1. Authentication of this endpoint is set to 'Bearer'. This means it requires a bearer token for authorization. So, you need to provide a 'token' in the bearer field that is of the string type to validate your request for authorization.\n\n2. As the method for this endpoint is 'GET', it implies that this endpoint is used for retrieving data from the server.\n\n3. The URL 'http://localhost:3000/api/events/subcategory/all', indicates the location where the server responds to a specific service, in this case it means it will respond to the request of retrieving all event subcategories.\n\n4. There's an array defined for headers. However, it is kept empty and is disabled by default, indicating that no additional headers are required for this request.\n\n5. In this endpoint, the body field has both mode and raw defined. The mode is set to 'raw', which is generally used when you want to send unstructured data. However, the 'raw' field here has no value indicating no requirement for sending data in the body of the request for this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Get All By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Events - SubCategory - Get All By Account ID\". It utilizes the GET method to retrieve all sub-categories of a certain event associated with a specific account ID.\n\n1. `name`: A label for this endpoint as \"Events - SubCategory - Get All By Account ID\". It signifies that this endpoint will fetch all event subcategories related to a particular account ID.\n\n2. `request`: The main object encapsulating all properties needed for the request.\n    - `auth`: Contains information related to the authorization method used. Here, a Bearer Token is used for authentication.\n        - `type`: The authentication type, which is \"bearer\".\n        - `bearer`: An array containing bearer tokens.\n            - `key`: Identifier for the bearer token, labelled as \"token\".\n            - `value`: Contains the actual token value. The placeholder here suggests that a \"BearerToken\" must be provided.\n            -  `type`: Refers to the data type of the value i.e., \"string\".\n    - `method`: This indicates that the \"GET\" method is being used. The \"GET\" method is typically used to retrieve data from a given URL.\n    - `url`: The URL where the request will be made. Here, it's expected that the \"accountId\" placeholder is replaced with the actual Account ID for the request.\n    - `headers`: Area reserved for any required headers to be sent along with the request. For this endpoint, the headers are currently disabled and set as default. \n    - `body`: This contains the relevant data that needs to be sent in the body of the HTTP Request. For this particular endpoint, there's no data included in the body as this is a GET request and data is not typically sent in the body of a GET request.\n        - `mode`: Specifies the mode of the data in the body of the HTTP Request. Here, it is set to \"raw\", implying that the body content should contain unprocessed data.\n        - `raw`: An empty field for raw data. There's no data in this field, indicative that the GET request doesn't require a request body. \n\nThe endpoint will respond with all event sub-categories that belong to the specified account ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Get All By Category ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/all/?categoryId=eventCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "eventCategoryId"
+            }
+          ]
+        },
+        "description": "Name: This is the label of the endpoint, which in this case is \"Events - SubCategory - Get All By Category ID\". This label is used to identify the endpoint in the API collection.\n\nAuth: This pertains to the authentication method required for the endpoint. In this case, a bearer token is needed for authentication. The 'key' specifies the type of token, which is a 'BearerToken'. The 'type' tells you that the token should be a string.\n\nMethod: This field shows the HTTP method used by the endpoint. Here it is 'GET'. This method is usually used to retrieve data from the server.\n\nURL: This field specifies the URL where the request is sent. In this case, it is \"http://localhost:3000/api/events/subcategory/all/?categoryId=eventCategoryId\". This URL gets all sub categories by Category ID.\n\nHeaders: Headers can be used to provide additional information about the request. In this case a default header is included but it is disabled and both the 'key' and 'value' fields are empty. \n\nBody: This field contains the data that is sent to the server in a 'raw' format. However, for this endpoint the 'raw' body is empty as the data required ('categoryId') is passed as a parameter within the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Events - SubCategory - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"subCategoryId\":\"eventSubCategoryId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/events/subcategory/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "events",
+            "subcategory",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is titled \"Events - SubCategory - Delete\". Its primary function is to delete a particular sub-category from the events category.\n\nKey details about this endpoint are listed below:\n\n1. Auth Type: This endpoint uses Bearer Token authentication. The specific token required in this case is referred to as a 'sessionId', and it must be of type 'string'.\n\n2. Request Method: The request method used for this endpoint is 'POST'.\n\n3. URL: The specific URL that needs to be hit for accessing this endpoint is \"http://localhost:3000/api/events/subcategory/delete\".\n\n4. Headers: The endpoint includes an empty, disabled default header. If needed, headers such as Content-Type could be added, but be aware that the current configuration does not require any.\n\n5. Body: The body of this request carries raw data. The raw data needs to have three key-value pairs:\n\n    - \"sessionId\" which should correspond to the active session's ID.\n    - \"accountId\" which corresponds to the account ID where the command is to be exercised.\n    - \"subCategoryId\", which corresponds to the ID of the sub-category to be deleted from the events.\n\nIt is important to ensure that the data is properly structured and all fields are filled in correctly before the request is sent to the designated URL.\n\nIn summary, this represents a request to delete an events sub-category using the provided account and session details. The request is executed via POST method, and it requires Bearer Token authorization."
+      },
+      "response": []
+    }
+  ]
+}

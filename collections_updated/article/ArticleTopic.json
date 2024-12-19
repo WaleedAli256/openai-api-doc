@@ -1,0 +1,746 @@
+{
+  "info": {
+    "_postman_id": "678d702d-6fc2-4fbc-8da0-c623bb61a672",
+    "name": "ArticleTopic",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Article - Topic - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"categoryId\":\"articleCategoryId\",\n    \"subCategoryId\":\"articleSubCategoryId\",\n    \"name\": \"Miami Art Week 4\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Article - Topic - Create\", it is designed to facilitate the creation of an article topic. Here is the detailed description of each data:\n\n- \"auth\": This parameter includes authentication details. The 'type' field indicates that it uses \"bearer\" authentication. The key is \"token\" which should be substituted with your actual bearer token, where the 'type' is string.\n\n- \"method\": This parameter specifies the HTTP method to be used, which in this case is \"POST\". This means that the call is designed to send data to the server.\n\n- \"url\": This parameter specifies the endpoint URL where the API request will be sent. The URL to be used here is \"http://localhost:3000/api/article/topic/create\".\n\n- \"headers\": This parameter specifies HTTP headers. By default, the key-value pair is empty. The 'disabled' field set to true implies that this header information is not required in the API call.\n\n- \"body\": This parameter provides the actual content to be sent in the API call. It is in \"raw\" mode, carrying a JSON-formatted string.\n  - \"sessionId\": Your current session ID.\n  - \"accountId\": Your account ID.\n  - \"categoryId\": The ID of the category under which the article falls.\n  - \"subCategoryId\": The ID of the subcategory, under the main category, to which the article belongs.\n  - \"name\": The name of the article.\n  - \"displayName\": A friendly or more casual name to display for the article.\n  - \"description\": A brief of the article content or topic.\n  - \"tags\": Keywords associated with the article, separated by commas.\n\n- \"options\": These parameters specify additional settings for the body content. The 'raw' field indicates that the structure of the 'raw' data content is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Create Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"category\":\"My Brand New Category\",\n    \"subCategory\":\"My Brand New Sub Category\",\n    \"name\": \"Miami Art Week 8\",\n    \"displayName\": \"Miami Art Week 2028\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "create"
+          ]
+        },
+        "description": "1. `name`: This is the name of the endpoint, which in this case is \"Article - Topic - Create Auto\". It is used to give a description of the action being carried out by this endpoint.\n\n2. `request`: The request object consists of several key properties:\n\n    - `auth`: This object provides information about the authentication method used for this API endpoint. The authentication type here is Bearer token authentication which typically involves sending a token in the authorization header of the HTTP request.\n        - `type`: It describes the type of authentication used. Here, 'bearer' authentication is used.\n        - `bearer`: This array contains the bearer token details.\n            - `key`: The key is \"token\" which is the standard key value when using bearer token authentication.\n            - `value`: This stands for the actual token value which is to be replaced with the actual bearer token.\n            - `type`: The type of the token. Here, it is a string.\n\n    - `method`: HTTP method being used for the request. Here it is \"POST\" which is used to send data to a server to create a resource.\n\n    - `url`: It is the endpoint URL where the HTTP request is sent. Here the URL is \"http://localhost:3000/api/article/topic/create\".\n\n    - `headers`: This is an object that contains all the HTTP headers that you want to include in your request. Here, no specific headers have been provided and the disabled property set to true indicating that there's no active header being used for this API request.\n\n    - `body`: Contains the actual content/data you're sending with the request. Here, it is in raw JSON format and contains the following fields:\n        - `sessionId`: This is most likely a unique identifier for the current user session.\n        - `accountId`: Possibly the account ID of the user creating the article or the topic.\n        - `category`: This contains the category for the new article or topic.\n        - `subCategory`: This contains the sub category for the new article or topic.\n        - `name`: This is the name of the new article or topic.\n        - `displayName`: The human-readable name for the new article or topic.\n        - `description`: A brief description of the new article or topic.\n        - `tags`: These are the tags related to the new article or topic. They seem to be a comma-separated list of words related to the article or topic. \n\n    - `options`: Contains additional options related to the body of the request.\n          - `raw`: It possesses an object which states the language format of the raw data, in this instance, the language choice is JSON.\n\nIn summary, this endpoint is for creating a new article or topic within a certain category and sub-category using their account ID and session ID, as well as providing a name, display name, description and related tags. The bearer token used for authenticated requests is expected to be provided."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Create Bulk Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"topics\": [\n        {\n            \"sessionId\": \"sessionId\",\n            \"accountId\": \"accountId\",\n            \"category\": \"My Brand New Category\",\n            \"subCategory\": \"My Brand New Sub Category\",\n            \"name\": \"Miami Art Week 8\",\n            \"displayName\": \"Miami Art Week 2028\",\n            \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n            \"tags\": \"Art,Exhibition,Miami,Culture\"\n        },\n        {\n            \"sessionId\": \"sessionId\",\n            \"accountId\": \"accountId\",\n            \"category\": \"Technology Innovations\",\n            \"subCategory\": \"AI and Machine Learning\",\n            \"name\": \"Tech Trends 2028\",\n            \"displayName\": \"Technology Trends 2028\",\n            \"description\": \"An exploration of cutting-edge technology trends.\",\n            \"tags\": \"Tech,AI,Innovation\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "createBulk"
+          ]
+        },
+        "description": "This endpoint, named \"Article - Topic - Create Bulk Auto\", is a POST method used for creating multiple topics under an article in a single request. It requires bearer token authorization and is located at \"http://localhost:3000/api/article/topic/createBulk\".\n\nThe authorization field includes \"auth\" which is of type \"bearer\". This includes the \"key\" which should be called \"token\", and its \"value\" should be your Bearer access token. This token should be of \"string\" type.\n\nThe \"request\" element includes the HTTP method type which is \"POST\" in this case as well as the \"url\" for the API endpoint. Headers for the request are included in the \"headers\" object but they are currently blank and disabled.\n\nThe \"body\" of the request contains the data that will be sent to the server. The \"mode\" is set to \"raw\", so raw input data can be provided. The \"language\" key in \"options\" is set to \"json\", meaning the body data should be in JSON format. \n\nThe \"raw\" string contains a JSON object, which includes:\n- \"sessionId\": This is a special identifier for the session, replace it with your session ID.\n- \"accountId\": This denotes the account id for the user, replace it with the user's account ID.\n- \"topics\": This is an array of objects where each object represents a unique article topic that is to be created. Each topic object includes the following:\n  - \"sessionId\" & \"accountId\": Similar to above.\n  - \"category\": This represents the category of the article topic.\n  - \"subCategory\": This represents the sub-category within the main category.\n  - \"name\": This is the name of the topic.\n  - \"displayName\": This is the displayed name of the topic.\n  - \"description\": This is a brief summary of the topic.\n  - \"tags\": Comma-separated keywords related to the topic for search optimization. \n\nNote: Replace the placeholders \"sessionId\" and \"accountId\" with real values for all instances inside the topics array."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"topicId\":\"articleTopicId\",\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"categoryId\":\"articleCategoryId\",\n    \"subCategoryId\":\"articleSubCategoryId\",\n    \"name\": \"Miami Art Week\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "update"
+          ]
+        },
+        "description": "Here's a detailed description of each component in this endpoint:\n\n1. `name:` This is the name of the endpoint, \"Article - Topic - Update\", probably used for updating articles or topics.\n\n2. `request:` This is the actual request that is being sent including the authentication, url, method, headers and body of the request.\n\n3. `auth:` The type of authentication used here is 'Bearer' and the token value to authenticate the request is stored in 'BearerToken'. This follows the standard Bearer Token authentication pattern.\n\n4. `method:` The HTTP verb is PUT, which is commonly used for updates.\n\n5. `url:` Contains the endpoint URL. It looks like it's to be used for updating article topics on a local server.\n\n6. `headers:` These hold additional parameters that the server needs for processing the request. Here, the \"Client-UUID\" is set which might be unique per client-device and could be used to track requests from specific devices or clients.\n\n7. `body:` This contains the actual payload of the request. The mode is 'raw' which means the content is being sent as a string in the request body. The object within 'raw' contains all the parameters needed to update an article or topic.\n\n   - `topicId:` An ID unique to each topic. It will be used for identifying which topic to update.\n   - `sessionId:` This might be a session unique to each user and each login.\n   - `accountId:` This could be an identifier for user's account.\n   - `categoryId:` It's likely an ID that specifies the category under which the topic falls.\n   - `subCategoryId:` This might specify the subcategory under the selected category.\n   - `name:` The actual name of the topic or article.\n   - `displayName:` The name that will be displayed on the screen for this topic.\n   - `description:` A detailed text elaborating what the topic or article is about.\n   - `tags:` These are keywords related to the topic or article.\n\n8. `options:` It specifies the format of the data in the body payload. Here it tells that the data type is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Update Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"topicId\":\"articleTopicId\",\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"category\":\"My Brand New Category\",\n    \"subCategory\":\"My Brand New Sub Category\",\n    \"name\": \"Miami Art Week\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "update"
+          ]
+        },
+        "description": "\"name\": This is the endpoint's name, \"Article - Topic - Update Auto\". It's mainly used for identification purposes.\n\n\"request\": This includes all the details required to make a HTTP request. \n\nInside \"request\":\n   \"auth\": Contains authentication details required for authorizing the request.\n   \"type\": The auth type, which is \"bearer\" in this case. It means the authorization is following the Bearer scheme.\n   \"bearer\": An array containing the bearer token details which are key-value pairs with the key named \"token\" and value named \"BearerToken\"\n\n\"method\": This is the HTTP verb to use for the request. Here we are using the \"PUT\" method, which is generally used for updating resources.\n\n\"url\": This is the web address to which the request will be sent. \"http://localhost:3000/api/article/topic/update\" is the endpoint URL.\n\n\"headers\": This is an array containing all the header information required for processing the HTTP request. \"Client-UUID\" is a unique client identifier that's being passed here.\n\n\"body\": The data to be sent with the request comes under this. The mode is set as \"raw\", indicating that we are sending raw bytes in the body of our request.\n  \nInside \"body\":\n   \"raw\": Raw text to be included in the body of the request. This contains all the basic information required to update an article topic. It includes fields such as \"topicId\", \"sessionId\", \"accountId\", \"category\", \"subCategory\", \"name\", \"displayName\", \"description\", \"tags\".\n   \"options\": Parameters to configure the way raw data is interpreted. Here it's set to \"json\", meaning that the raw text included must be written in json format."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Get By ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/get/?topicId=articleTopicId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "topicId",
+              "value": "articleTopicId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Article - Topic - Get By ID\". It retrieves specific data related to an article topic based on the provided ID. This description is elaborated in the following sections:\n\n1. **auth**: This field represents authorization details. You need a bearer token to access this endpoint. The token needs to be replaced with the actual \"BearerToken\" at runtime for successfully authorizing the request.\n\n2. **request.method**: This field indicates that the HTTP method for this request is \"GET\". As per RESTful conventions, a GET method is used to retrieve resource representations.\n\n3. **request.url**: This URL is the location where the request is made. It is currently set to \"http://localhost:3000/api/article/topic/get/?topicId=articleTopicId\". The \"articleTopicId\" in the URL must be replaced with the actual Topic ID to retrieve the respective data. The endpoint is hosted locally (localhost) and runs on port 3000.\n\n4. **request.headers**: This endpoint assumes a default value of header. However, the specified key-value pair for the header is empty and also disabled indicated by \"disabled\": true. This means no additional data is sent to the server during this request in the header.\n\n5. **request.body**: The body of this request has its mode set to \"raw\", but no actual raw data is provided as it's set to an empty string. This is likely because GET requests often don't require a request body as all necessary data is provided in the URL and headers.\n  \nPlease note, this brief explanation does not replace the need for knowledge about your API usage guidelines, access requirements, and data privacy rules that should have been provided elsewhere."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Get By Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/get/?name=articleTopicName",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "articleTopicName"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Article - Topic - Get By Name\" and it's used for retrieving an article's topic based on its name. \n\nThe request is sent as an authenticated GET request. The authentication method is 'Bearer', the popular method to secure HTTP services. This method consists of a bearer token (\"BearerToken\" in this case) which should be included in the 'token' field.\n\nThe request URL is http://localhost:3000/api/article/topic/get/?name=articleTopicName. Replace 'articleTopicName' query parameter with the actual name of the topic that you want to retrieve. The domain (i.e. http://localhost:3000) is a placeholder and should be replaced with the actual server's domain or IP address. The endpoint path is /api/article/topic/get/.\n\nHeaders are currently empty for the request. Headers usually contain metadata about the request or response, or other necessary information. The set header is of \"default\" type but currently disabled and serves no specific purpose.\n\nLastly, the body of the request is sent in 'raw' mode but is currently empty. For GET requests, the body of the request is usually empty as all necessary information is included in the URL itself."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Get By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/get/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Article - Topic - Get By Account ID\", is used to retrieve all articles on a given topic from a specific account based on the provided Account ID. It uses the GET method to serve this purpose. \n\nThe authentication for this endpoint is the Bearer token method. It takes a key-value pair where the key must be \"token\" and its corresponding value should be the actual Bearer Token used for authorization. Both the key and the value are strings. \n\nThe API url for the request is http://localhost:3000/api/article/topic/get/?accountId=accountId. Here, you can replace \"accountId\" at the end of the URL with the actual ID of the account you want to retrieve the articles from.\n \nThe headers are default and disabled, so no extra information needs to be provided there. \n\nAs it's a GET request, there's no need for payload data in the body, so the \"mode\" is set to \"raw\" and the \"raw\" field is empty.\n\nPlease replace \"BearerToken\" and \"accountId\" with your actual valid bearer token and Account ID when you make the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Get By Category ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/get/?categoryId=articleCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "articleCategoryId"
+            }
+          ]
+        },
+        "description": "This endpoint named \"Article - Topic - Get By Category ID\", is used to fetch article topics based on a specific category ID.\n\n- \"name\": The name of the endpoint.\n- \"auth\": Contains the authentication details required for this request.\n  - \"type\": This API uses Bearer Token type authorization.\n  - \"bearer\": This is the array containing the bearer token details.\n    - \"key\": The key which represents the bearer token.\n    - \"value\": The value corresponding to the token key is \"BearerToken\". Replace \"BearerToken\" with your actual token value.\n    - \"type\": Specifies that the token value is a string.\n\n- \"request\": It encapsulates all the information regarding the request.\n  - \"method\": Specifies the HTTP method to be used when the request is sent. In this case, it's a GET request.\n  - \"url\": It's the request URL for the API. The \"categoryId\" query parameter is appended to the base URL to fetch articles by \"categoryId\". Replace \"articleCategoryId\" with the actual category ID.\n  - \"headers\": It's an array containing information concerning the request header.\n    - \"key\": The name or identification of the header field. Here, it is not specified.\n    - \"value\": The corresponding value for the header field. Here, it is also not specified.\n    - \"type\": Specifies the type of the header field. Set default.\n    - \"disabled\": A Boolean which determines if the header field is to be disabled. Set true, meaning it is currently disabled.\n\n- \"body\": Contains any data that must be included in the body of the request.\n  - \"mode\": This represents how the data in the body should be structured. Here it is set to \"raw\", but no actual raw data is provided.\n  - \"raw\": This field is used to insert raw data into request body. In this case, raw body data is not required, so it is empty."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Get By Short ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/get/?shortId=articleTopicShortId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "shortId",
+              "value": "articleTopicShortId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This field represents the name of the API endpoint, which in this case is \"Article - Topic - Get By Short ID\". This name is used to identify the API endpoint within the collection.\n\n2. \"request\": This field is an object containing information about the HTTP request to be made to the server.\n\n3. \"auth\": This is a part of the request object specifying authorization details to be sent along with the request. The \"type\" field under \"auth\" represents the type of Authorization which in this case is \"bearer\".\n\n4. \"bearer\": This field is part of the auth object that contains an array of bearer tokens. Each bearer token object has three properties:\n\n    - \"key\": It represents the attribute name or identifier of the token. In this case, it's \"token\".\n    - \"value\": It holds the actual value of the key. Here, it is \"BearerToken\".\n    - \"type\": It represents the data type of the value. In this case, it's a \"string\".\n\n5. \"method\": This is a part of the request object and specifies the HTTP method to be used when making a request to the server. The HTTP method here is \"GET\".\n\n6. \"url\": This is the URL to which the request is to be sent. Here, it is \"http://localhost:3000/api/article/topic/get/?shortId=articleTopicShortId\".\n\n7. \"headers\": This field is an array of objects representing the headers to be sent along with the request. Each object has four properties: \"key\", \"value\", \"type\", and \"disabled\". In this case, they are all empty or set to default, meaning no additional headers are required for the request.\n\n8. \"body\": This object specifies the body of the request. It has two properties: \"mode\" and \"raw\". The \"mode\" specifies the format in which the data is sent in the body of the request. Here, the mode is \"raw\", meaning the data is sent as is. The \"raw\" field, which is empty, is where the raw data to be sent in the body would be entered.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "all"
+          ]
+        },
+        "description": "- \"name\": This is the name of the endpoint. In this case, the name given is \"Article - Topic - Get All\", which implies that this endpoint probably fetches all topic-related articles.\n\n- \"request\": A descriptor for the type of HTTP request being made. The properties that follow within this hierarchy present more specific details about the request.\n\n- \"auth\": This is an authorization object. In this case, it's of type 'bearer', which is a method of authentication that involves sending a bearer token.\n\n    - \"type\": Specifies the authentication method used. Here, the \"Bearer\" HTTP authentication scheme is being used.\n  \n    - \"bearer\": This array contains the information for bearer authentication which includes:\n      - \"key\": This is the header field name used to pass the bearer token, in this instance it's 'token' \n      - \"value\": This is where the actual bearer token is placed. In this instance, the placeholder is 'BearerToken'.\n      - \"type\": The data type of the 'value'. In this case, it's a string.\n\n- \"method\": The type of HTTP method used for the request. Here, it's a \"GET\" method, used to retrieve data from a server.\n\n- \"url\": The URL to where the request is being sent. Here, the request is being sent to \"http://localhost:3000/api/article/topic/all\", which is likely to be an API endpoint for getting all topics of articles.\n\n- \"headers\": HTTP headers that will be included in the request. In this example, no specific headers are included as the key-value field is kept empty and it is disabled. If it was enabled, the listed key-value pair would have been sent as an HTTP header.\n\n- \"body\": Defines the body of the request. In this case, the \"mode\" is set to \"raw\", meaning the HTTP request body will contain raw (unprocessed) data. However, no raw content has been provided in this endpoint, so it's left as an empty string. This makes sense since, for a \"GET\" request, you usually do not need a request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Get All By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "The data provided is for the endpoint named \"Article - Topic - Get All By Account ID\". \n\nHere is the detailed breakdown of the data:\n\n1. `\"name\": \"Article - Topic - Get All By Account ID\"`: This describes the name of the endpoint you are accessing. In this case, the endpoint is used to fetch all articles tied to a specific topic for a specified account ID.\n\n2. `\"request\"`: This field includes all the details about the request the endpoint needs to process.\n\n    -  `auth`: This indicates the type of authentication that is required for the request. Here, a 'bearer' authentication is required which suggests that you will need to include a bearer token in your request to properly authenticate. \n    \n        - `key`: This is the key for the bearer token. An API expects this to match exactly so it knows where to look for your data. In this case, the key is \"token\".\n        \n        - `value`: This will hold your authentication token. Here, it's placeholder value is \"BearerToken\"\n        \n        - `type`: This is the datatype of the bearer token. It's a string.\n    \n    - `method`: This is the HTTP method used to send the request. In this case, the `GET` method is being used which retrieves data from a web server based on your request. \n\n    - `url`: It specifies the server address or domain to which the request will be sent. The URL \"http://localhost:3000/api/article/topic/all/?accountId=accountId\" implies that you are fetching all the articles by topic for a specific account ID on the local server running on port 3000.\n    \n    - `headers`: It's currently an empty array with disabled default type where usually information about the request or additional instructions for processing the request are given.\n\n    - `body`: This contains the actual request payload. In this case, the `mode` is set to `raw` but there's no data provided yet. A raw request can include anything, you'll have the option to include unsupported data types or structure your data in a way that's convenient to you.\n   \nThis endpoint, therefore, provides a way to retrieve all articles related to a specific topic for an account holder from a local server using a bearer token for authorization, by the means of a GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Get All By Category ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/all/?categoryId=articleCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "articleCategoryId"
+            }
+          ]
+        },
+        "description": "The following attributes are present in this endpoint:\n\n- `name`: The name signifies the title of the endpoint. In this case, \"Article - Topic - Get All By Category ID\" suggests that this endpoint retrieves all topics under a specific article category.\n\n- `request`: This is an object containing detailed attributes describing the necessary steps needed to make a successful HTTP request.\n\n   - `auth`: This field shows the authentication type required to access the endpoint. Here it's `bearer`, indicating that the endpoint requires a bearer token for authorization.\n   \n       - `bearer`: It's an array of bearer credentials needed. Here, a single object is present with `key`, `value`, and `type`.\n              - `key`: Represents the type of credential. It is \"token\".\n              - `value`: This is the actual token to authenticate the request, described as \"BearerToken\".\n              - `type`: This explains the data type of `key`, which is a \"string\" in this case.\n         \n  - `method`: The HTTP method used to reach the endpoint. Here it's `GET`, showing that this endpoint retrieves information.\n  \n  - `url`: This is the URL for accessing the endpoint. \"http://localhost:3000/api/article/topic/all/?categoryId=articleCategoryId\" suggests that a category ID query parameter must be passed to access the appropriate topics.\n  \n  - `headers`: An array that could contain headers to send with the request. Here, an empty object is present which is disabled, which suggests any specific headers aren't required for this request.\n  \n  - `body`: This object shows any requirements for the body of the request.\n  \n     - `mode`: Refers to the type of body input. Here, it's 'raw', meaning the body content is provided verbatim without any specific encoding.\n      \n     - `raw`: Shows the actual content for the request body. Here, it's empty, so no content needs to be sent within the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Get All By SubCategory ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/all/?subCategoryId=articleSubCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "subCategoryId",
+              "value": "articleSubCategoryId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Article - Topic - Get All By SubCategory ID\". It basically gets all articles under a specific topic identified by its subcategory ID. Here's the breakdown:\n\n1. **name**: The name of this endpoint is \"Article - Topic - Get All By SubCategory ID\", which explains the primary function of this endpoint. It's designed to fetch all articles within a specified topic that falls under a certain subcategory.\n\n2. **auth**: This section outlines the expected authentication mechanism. The `type` is \"bearer\", indicating that bearer token authentication is required. The bearer token itself should be supplied as the value of the `token` key. Here, \"BearerToken\" is a placeholder for the actual token you need to provide.\n\n3. **method**: This endpoint uses the \"GET\" HTTP method, which is typically used to retrieve information.\n\n4. **url**: This is the URL where the request should be sent. This example uses a local server running on port 3000. The route is \"/api/article/topic/all\". A query parameter `subCategoryId` is required where you are supposed to provide the subcategory ID (`articleSubCategoryId`) of the articles that you want to retrieve.\n\n5. **headers**: This is usually where you define any necessary HTTP headers for your request. However, in this case, a default header without a key-value pair is defined, but it is disabled.\n\n6. **body**: This outlines the structure and mode of the body of your request. However, since we're using a GET method, the body is not required and thus the `raw` field is empty. The `mode` is set to \"raw\", but it won't be used here.\n\nPlease remember to replace placeholders with real values when using this endpoint. Specifically, you should provide a valid bearer token and a valid subcategory ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - Topic - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"topicId\":\"articleTopicId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/topic/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "topic",
+            "delete"
+          ]
+        },
+        "description": "This endpoint named \"Article - Topic - Delete\" allows you to delete a specific topic from an article. Here is a detailed description for each datum:\n\n1. \"name\": It signifies the identifier of this endpoint which is \"Article - Topic - Delete\".\n   \n2. \"request\": This is an object which contains multiple properties under it. Let's consider each one.\n\n   - \"auth\": This property is used for handling authentication. It uses bearer token authentication where you need to provide a token.\n      \n     - \"type\": The type of the provided token which is \"bearer\".\n      \n     - \"bearer\": This is an array of objects containing bearer's key, type and value. \n         - \"key\": This denotes the token name. Here, the key is \"token\".\n         - \"value\": This stands for the passed value for the key which in this case is \"sessionId\".\n         - \"type\": Identifies the datatype of value (i.e., \"sessionId\"). It is a \"string\". \n\n   - \"method\": An HTTP method used. This endpoint uses \"POST\" method.\n      \n   - \"url\": It provides the URL where this endpoint hits, which is \"http://localhost:3000/api/article/topic/delete\".\n   \n   - \"headers\": This is an array primarily meant for passing additional information while sending requests. It's set to empty here, and being ignored as it's \"disabled\": True.\n\n   - \"body\": It carries the data which needs to be processed in the HTTP request. Here, the data is in \"raw\" mode.\n\n       - \"mode\": Since the mode is set to \"raw\", you can write JSON or XML directly in the text input field.\n\n       - \"raw\": It holds JSON string which contains sessionId, accountId and topicId.\n           - \"sessionId\": It is the session identity of the user. Replace the placeholder \"sessionId\" with a valid one.\n           - \"accountId\": It represents the account identity that is associated with this action. Replace \"accountId\" with actual account identifier.\n           - \"topicId\": It is the specific identifier to an article's topic that you wish to delete. Enter the actual topicId instead of \"articleTopicId\".\n           \nPlease replace all placeholders with actual values while using this endpoint."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "e1a8bb1c-5a81-441a-b88f-44cfaa51183b",
+    "name": "ConnectProfile",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Connect - Profile - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeProfile\",\"description\":\"This profile is my second profile\",\"tags\":\"second,profile\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":1,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isProfilePrivate\":true,\"isTournamentOnly\":false,\"isProfileDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/profile/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "profile",
+            "create"
+          ]
+        },
+        "description": "Here's a detailed description of each of the data points in this endpoint:\n\n- `name`: Identifies the name of the endpoint. In this case, it's used for the creation of a profile in Connect.\n- `auth`: Object defining the type of the authorization required for the endpoint. Bearer token authorization is used here.\n  - `type`: Specifies the type of the authorization, which is \"bearer\" in this case.\n  - `bearer`: Array containing information about the token.\n    - `key`: Field for specifying the key of bearer token.\n    - `value`: The value of the bearer token is represented here.\n    - `type`: Represents the format of the bearer token value, which is a string in this case.\n\n- `request`: It's an object that contains necessary information to make a request to the API.\n  - `method`: Specifies the HTTP method for the request, which is \"POST\" in this case.\n  - `url`: The endpoint URL where the request will be sent.\n\n- `headers`: Array used to send additional information with the HTTP request. In this case, no key-value pairs are defined; it's an empty default object.\n\n- `body`: Contains the details sent with the request.\n  - `mode`: The mode of the request body, which is \"raw\" in this case.\n  - `raw`: Contains the raw data to be sent with the request, constructed as JSON format.\n  - `options`: Object contains extra configuration for the body.\n    - `raw`:  Choose the programming language used to display the request's raw body. In this case, JSON is used.\n\nThe `raw` key covers the main profile details:\n- `sessionId`: User's session identifier.\n- `accountId`: The user's account identifier.\n- `name`: The name of the profile.\n- `description`: A brief description of the profile.\n- `tags`: Additional tags associated with the profile.\n- `profilePhotoUrl`: URL link for the profile photo.\n- `coverPhotoUrl`: URL link for the cover photo.\n- `minimumTipAmount`: The minimum tip amount for the user.\n- `unlockAmount`: The unlock amount associated with the profile.\n- `category`: The category of the profile.\n- `subCategory`: A more specific subcategory of the profile, if applicable.\n- `searchType`: The method used for searching the profile.\n- `isEnabled`: A boolean indicating if the profile is enabled.\n- `isProfilePrivate`: A boolean indicating if the profile is private.\n- `isTournamentOnly`: A boolean indicating whether the profile is for tournament use only.\n- `isProfileDefault`: A boolean specifying if this is the default account profile.\n- `isPreLiveConnectAds`: Boolean indicating if there are ads before live connection.\n- `isPostLiveConnectAds`: Boolean indicating if there are ads after live connection.\n-  `breakPreLiveConnectUrl`: A link to the video advert playing before the live connection.\n-  `breakLivePauseConnectUrl`: A link to the video advert playing during live pauses.\n-  `breakPostLiveConnectUrl`: A link to the video advert playing after the live connection ends."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Profile - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"profileId\":\"profileId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeProfile\",\"description\":\"This profile is my second profile\",\"tags\":\"second,profile\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":100,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isProfilePrivate\":true,\"isTournamentOnly\":false,\"isProfileDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/profile/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "profile",
+            "update"
+          ]
+        },
+        "description": "\"Connect - Profile - Update\" is the name of the endpoint. It is designed to update user profiles. \n\n1. \"request\" - It encapsulates the details of the request made to this endpoint.\n     \n2. \"auth\" - Specifies the authentication type the API uses, here it’s bearer token authentication.\n   \n3. \"bearer\" - An array containing details about the bearer token used.\n   \n4. \"key\" - Represents the name of a particular bearer token required for authorization, here it’s \"token\".\n\n5. \"value\" - Represents the value of the bearer token which is \"BearerToken\".\n\n6. \"type\" - Specifies the type of the bearer token which is a string.\n\n7. \"method\" - Specifies the HTTP method used, here method is \"PUT\".\n\n8. \"url\" - Specifies the URL of the API endpoint which is \"http://localhost:3000/api/connect/profile/update\".\n\n9. \"headers\" - Contains all headers required by this endpoint with its corresponding value. Here, \"Client-UUID\" (the unique identifier for the client making the request).\n\n10. \"body\" - Contains the details to be passed in the request body. The \"mode\" is set to \"raw\" which accepts a string containing data in JSON format.\n\nWithin the \"raw\" field, we have different pieces of information to be updated:\n\n- \"profileId\": Unique identifier for the profile.\n- \"sessionId\": Unique identifier for the current session.\n- \"accountId\": Unique identifier for account.\n- \"name\": Name of the profile.\n- \"description\": Descriptive information about the profile.\n- \"tags\": Tags associated with the profile.\n- \"profilePhotoUrl\": Link to the profile's photo.\n- \"coverPhotoUrl\": Link to the profile's cover photo.\n- \"minimumTipAmount\": Minimum amount for tips.\n- \"unlockAmount\": Amount to unlock something.\n- \"category\": Category field for profile.\n- \"subCategory\": Specific sub-category for profile.\n- \"searchType\": Type of search related to profile.\n- \"isEnabled\": Whether the profile is enabled.\n- \"isProfilePrivate\": Status of the profile. If it’s set to true, it’s private.\n- \"isTournamentOnly\": Whether the profile is for tournament only.\n- \"isProfileDefault\": Status of profile's default setting.\n- \"isPreLiveConnectAds\": Whether to display Ads before live connection.\n- \"isPostLiveConnectAds\": Whether to display Ads after disconnected.\n- \"breakPreLiveConnectUrl\": Link to the video to be displayed during break before connecting live.\n- \"breakLivePauseConnectUrl\": Link to the paused video during live streaming.\n- \"breakPostLiveConnectUrl\": Link to the video to be displayed during break after live connection finished.\n   \n11. \"options\" - Specifies other options. Here, we are specifying the language of the raw data, which is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Profile - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/profile/get/?profileId=profileId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "profile",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "profileId",
+              "value": "profileId"
+            }
+          ]
+        },
+        "description": "This endpoint is identified as \"Connect - Profile - Get\". It is a GET method which is principally utilized for retrieving data.\n\nThe Request:\n1. \"auth\" - This specifies the type of authentication required for this API. It uses a bearer token, which is a common method for authorizing API calls.\n\n     \"type\": \"bearer\" - This specifies that the type of authentication to be implemented is a bearer token. \n     \n     \"bearer\": [{\"key\": \"token\",\"value\": \"BearerToken\",\"type\": \"string\"}] - This contains the token information where the \"key\" is 'token', and the value of this 'token' is 'BearerToken'. The type is a string, which implies that the value must be provided in a text format.\n\n2. \"method\": \"GET\" - It's the HTTP Method, and in this case, it's a GET method which is used to retrieve resources.\n\n3. \"url\": \"http://localhost:3000/api/connect/profile/get/?profileId=profileId\" - It is the API's URL. In this endpoint, it fetches data from the 'profile' resource of the 'connect' API which resides locally on port 3000. The 'profileId' is passed as a query parameter which is used to retrieve specific profile data.\n\n4. \"headers\": [{\"key\": \"\", \"value\": \"\", \"type\": \"default\", \"disabled\": true}] - This part comprises the request headers. This is currently disabled and empty by default, hence it doesn't contain any additional instructions or information for the request.\n\n5. \"body\": {\"mode\": \"raw\", \"raw\": \"\"} - This refers to the body of the API request. As it's a GET request, typically there will be no request body. The 'mode' is set to 'raw' but no data (raw: \"\") is sent across in the body.\n   \nThis sums up each part of the data in this endpoint, providing a comprehensive understanding for users who intend to use this API."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Profile - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/profile/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "profile",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This field indicates the name of the API endpoint, which in this case is \"Connect - Profile - Get All\". This will help users understand the purpose of this API endpoint.\n\n2. \"request\": This field contains information about the HTTP request that is sent to the endpoint.\n\n3. \"auth\": This nested field under request specifies the authentication method and the necessary details for accessing the endpoint.\n\n    a. \"type\": The type of authentication used. Here, it's a \"bearer\" token.\n    \n    b. \"bearer\": A list of tokens used for bearer authentication.\n    \n    c. \"key\": The key for the token is set to \"token\".\n    \n    d. \"value\": The value field of the bearer token is set to \"BearerToken\".\n    \n    e. \"type\": This indicates the data type of the bearer token, which is \"string\".\n\n4. \"method\": This field defines the HTTP method used to send requests to the server. In this case, it is a \"GET\" request, which retrieves information from the server.\n\n5. \"url\": The URL field provides the exact address where the API request is being sent. Here, it includes a placeholder 'accountId' which should be replaced with the actual account Id.\n\n6. \"headers\": This is an array of headers that are being sent along with the API request. There is a default header which is currently disabled in the provided data.\n\n7. \"body\": This field represents the data being sent with the request. \n\n    a. \"mode\": It describes the format of the data being sent in \"body\". In this case, the data format is \"raw\" meaning that no specific formatting is being utilized.\n    \n    b. \"raw\": This field contains the raw body content sent with the request. Currently, it is empty implying no specific content is being sent with the body of the request.\n   \nRemember to replace placeholders like \"BearerToken\" and \"accountId\" with actual values before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Profile - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"profileId\":\"profileId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/profile/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "profile",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is called \"Connect - Profile - Delete\". It's responsible for deleting a profile in the application. This endpoint expects a POST request and uses Bearer token authentication. Detailed description of each part is as follows:\n\n1. \"name\": The name of the endpoint. This is used for identifying and sorting the endpoint in the collection.\n\n2. \"request\": Contains all the necessary details for making the request.\n\n3. \"auth\": Specifies the authentication type to be used in the request.\n   \n   a. \"type\": The type of authentication. Here, it's \"bearer\".\n   \n   b. \"bearer\": It's an array containing the bearer token details.\n      \n      i. \"key\": The name of the key. Here it is \"token\".\n      \n      ii. \"value\": The value for the key. Here it is \"sessionId\".\n      \n      iii. \"type\": Specifies the type of data. It's a \"string\" in this case.\n\n4. \"method\": The HTTP method to be used when making the request. For this endpoint, \"POST\" method is used.\n\n5. \"url\": The URL where the request will be sent. Here, it's \"http://localhost:3000/api/connect/profile/delete\".\n\n6. \"headers\": An array holding the headers for the request. In this case, it's default and is disabled. Meaning, no additional headers are sent with the request.\n\n7. \"body\": Describes the body of the request.\n   \n   a. \"mode\": Shows the mode of the body in the request. Here it's \"raw\", which means that the body contains raw data.\n   \n   b. \"raw\": The actual data in the body as a raw string. This string should be a JSON object and it contains \"sessionId\", \"accountId\", and \"profileId\".\n\nIn summary, to use this endpoint, you should have a valid session Id, account Id, and profile Id (all of type string). The endpoint then takes these details, included as raw data in the body of the request, and uses it to delete a profile within the application."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "info": {
+    "_postman_id": "3fc4f1cb-fbb5-4a46-8289-d499a93f7b47",
+    "name": "AccountGeneral",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Account - General - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"email\",\"phone\":\"phone\",\"accountType\":\"User\",\"password\":\"password\",\"zipcode\":\"95126\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/create?locale=en-US",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "create"],
+          "query": [
+            {
+              "key": "locale",
+              "value": "en-US"
+            }
+          ]
+        },
+        "description": "1. \"name\": This specifies the name of the endpoint that is being used. Here \"Account - General - Create\" conveys that this endpoint is used to create a general account.\n\n2. \"request\" - This object contains all the necessary details to make the request to the server.\n\n   - \"auth\" - This details about the type of authentication used for the request. It specifies the 'bearer' token type of authentication.\n     - \"type\" - Specifies the type of authentication. In this case, it's 'bearer'.\n     - \"bearer\" - This is an array of bearer tokens to authenticate the request. Each object in this array has:\n       - \"key\" - The key of the bearer token. Should be 'token' in this case.\n       - \"value\" - The value of the bearer token or the BearerToken itself. \n       - \"type\" - The datatype of the bearer token. Should be 'string'.\n\n   - \"method\" - Represents the HTTP method to be used when making the request. Here, it's \"POST\" method which implies we are sending data to be processed to a specified resource.\n\n   - \"url\" - This is the link to the API endpoint. This is where the request will be made.\n\n   - \"headers\" - This is an array of headers to be included in the request. Here It's empty and disabled.\n\n   - \"body\" - This contains the body of the request.\n     - \"mode\" - Specifies that the raw data type is being sent.\n     - \"raw\" - Contains the raw data in JSON format to be sent along with the request.\n       - \"email\" - The email of the user who is creating the account.\n       - \"phone\" - The phone number of the user.\n       - \"accountType\" - The type of the account. In this case, it's 'User'.\n       - \"password\" - The password for the account.\n       - \"zipcode\" - The zipcode of the area where the user is located. This information may be used for regional services or account recovery."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Login Email",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"email\",\"password\":\"password\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/login",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "login"]
+        },
+        "description": "This endpoint is named \"Account - General - Login Email\". It's designed to handle user login requests using an email address and password. Here's a breakdown of what each part of this endpoint's data represents:\n\n- \"auth\": This field contains the authorization method to be used. In this case, it is set to \"bearer\", indicating that a bearer token will be used for authorization.\n    - \"type\": It shows the type of authorization being used in the request. In this case, it's \"bearer\".\n    - \"bearer\": It is an array having one object that contains the bearer token information. The bearer token provides the authentication needed for this API call.\n        - \"key\": The key of this object is \"token\".\n        - \"value\": The value of the bearer token key is \"BearerToken\".\n        - \"type\": Indicates the data type of the bearer token. It's \"string\" in this case.\n\n- \"method\": Specifies the HTTP method used for this endpoint. It's \"POST\" in this case, which means data is sent to the resource mentioned in the url.\n\n- \"url\": This is the URL where the API request will be sent. In this case, it's a local server running on port 3000. The endpoint is \"/api/account/general/login\". \n\n- \"headers\": This field contains the metadata sent with the API request. In this case, there is one header.\n    - \"key\": The key of the header is \"Client-UUID\".\n    - \"value\": The value assigned to this key is \"ClientUUID\".\n    - \"type\": The type of data being sent in the header. Here, it's set to \"default\".\n\n- \"body\": This contains the data that you want to send with the API request. \n    - \"mode\": Specifies the format of the body data. In this case, it's \"raw\", meaning the data is sent as a plain text string rather than form data.\n    - \"raw\": The raw data being sent with the request is an object with \"email\" and \"password\" fields. This is where the user would enter their own email and password to log in. \n\nSummary: This endpoint is for logging in the user with their email and password. It sends a POST request to the given URL, providing a bearer token for authorization and includes client UUID in the headers. The body of the request contains the email and password of the user in raw format."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Login Phone",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"phone\":\"phone\",\"password\":\"password\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/login",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "login"]
+        },
+        "description": "This endpoint is named \"Account - General - Login Phone\". It is a POST request used for authenticating a user's phone-based login on the account/general resource.\n\nThe endpoint uses Bearer Authentication. The bearer token is denoted by the \"token\" key with the string type value \"BearerToken\". This token is passed as a header in the format: Bearer (Access token).\n\nThe URL for the endpoint is http://localhost:3000/api/account/general/login. It represents a local server environment which receives the request, handles it by checking the account's general data, and authenticates login.\n\nThis endpoint doesn't require any additional headers as highlighted in the headers field with the key and value set as default and empty, but it's not active as the disabled property is set to true.\n\nThe request body is in JSON format, and it should be sent in raw mode. The data in the body should include two properties: \"phone\" and \"password\". Both are strings that represent a user's phone number and password respectively. These inputs are essential for the phone-based login protocol.\n\nPlease note that this endpoint's functionality, response, or actions will vary depending on the handled data server-side. Make sure to replace the placeholders (\"BearerToken,\" \"phone,\" and \"password\") with actual user-specific values while testing or using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Forgot Email",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"email\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/forgot",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "forgot"]
+        },
+        "description": "This endpoint is named \"Account - General - Forgot Email\". A description of each data parameter is as follows:\n\n1. **name**: This indicates the name of the API identifier, which is \"Account - General - Forgot Email\". This name is descriptive of the API endpoint, typically suggesting that it is used when a user has forgotten their email associated with the account.\n\n2. **request**: This includes all the parameters included in the API request. Each parameter of the request is outlined below:\n\n   - **auth**: This outlines the type of authentication required by the endpoint. In this case, it is a \"bearer\" authentication, meaning you need to include a token in the request header.\n        - **type**: The type of authentication used, which is \"bearer\".\n        - **bearer**: This is an array that includes:\n            - **key**: The key to include in the request header, which is \"token\".\n            - **value**: The value of the key, which should be your \"BearerToken\".\n            - **type**: Defines the datatype of the token, which is a string.\n            \n   - **method**: This defines the method of the HTTP request. For this API, it is \"POST\", meaning you are requesting the server to accept/store data enclosed in the request.\n\n   - **url**: This is the URL of the API endpoint, where http://localhost:3000/api/account/general/forgot should be targeted for the API request.\n   \n   - **headers**: These are additional details sent with the API request. This API request requires a \"Client-UUID\". Each header property includes:\n        - **key**: The name of the header field, which is \"Client-UUID\".\n        - **value**: The value of the field, which should be your \"ClientUUID\".\n        - **type**: This indicates the header type, which is \"default\" in this case.\n   \n   - **body**: This is the main contents of the request. For this API, you need to send the data in \"raw\" format, with a JSON including an \"email\".\n        - **mode**: This indicates how to input the data, which is \"raw\" in this case.\n        - **raw**: This is the raw data you send to the server. It is written in JSON format. Replace \"email\" with the email you want to send to the server.\n\n   Each of these details needs to be carefully followed to make a successful request to the \"Account - General - Forgot Email\" API."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Forgot Phone",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"phone\":\"phone\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/forgot",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "forgot"]
+        },
+        "description": "1. \"name\": This represents the label given to the particular endpoint. Here, it's named as \"Account - General - Forgot Phone\", plainly indicating this endpoint is related to a feature where a user can recover their account if they forgot their phone.\n\n2. \"request\": This object contains all information for making the HTTP request. \n\n3. \"auth\": This object holds the authorization method and token. \n   - \"type\": This field represents the type of the authentication. Here, it's bearer authentication.\n   - \"bearer\": This array contains information about the bearer token.\n     - \"key\": This is the name of the key, which is \"token\".\n     - \"value\": This is the placeholder for the actual token value, denoted as \"BearerToken\".\n     - \"type\": This represents the datatype of the token, which is a string.\n\n4. \"method\": This key represents the HTTP method to be used. For this endpoint, POST method should be used.\n\n5. \"url\": This is the URL where HTTP request should be made, i.e., \"http://localhost:3000/api/account/general/forgot\".\n\n6. \"headers\": This is an array of objects where each object represents a custom HTTP header. \n   - \"key\": This represents the name of the HTTP header, which is \"Client-UUID\"\n   - \"value\": This is the placeholder for the actual headers' value, represented as \"ClientUUID\".\n   - \"type\": This is set to \"default\" indicating this is a standard header.\n\n7. \"body\": This object holds data that will be sent with the HTTP request.\n   - \"mode\": This defines how data will be sent. In this case, it is raw, meaning the data is sent as it is, without any encoding.\n   - \"raw\": This holds the actual data that will be sent. Here, a JSON object containing a phone key with a placeholder value \"phone\" is being sent.\n   \nPlease replace placeholder values (like \"BearerToken\", \"ClientUUID\", and \"phone\") with actual data when performing API calls."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Session",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/session?accountId=accountId&sessionId=sessionId",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "session"],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint displays information related to the Account - General - Session. \n\n1. \"name\": This represents the name or ID of the endpoint, in this case, \"Account - General - Session\". It's essentially the identifier for this particular data request.\n\n2. \"request\": This object contains all the details related to how the request to the API should be made. This includes authorization data, request method, URL, headers, and body of the request.\n\n3. \"auth\": This object contains data related to authorization for the API call. \n   - \"type\": indicating it is a \"bearer\" type of authentication. \n   - \"bearer\": This is an array that holds bearer token authentication parameters. In this case, it has a single item with \"key\" as \"token\", \"value\" as \"BearerToken\" and \"type\" as \"string\".\n\n4. \"method\": It specifies the HTTP method used for the API call; here it is a \"GET\" method which is used for retrieving data.\n\n5. \"url\": This is the URL which will be hit when making the API call. Here, it's a local endpoint at 'http://localhost:3000/api/account/general/session' which includes query parameters for \"accountId\" and \"sessionId\".\n\n6. \"headers\": This is an array that contains the details about the headers included in the API request. Currently, it includes a default header which is disabled.\n\n7. \"body\": This object includes parameters or data that would be sent within the body of the HTTP request to the API. Here, the \"mode\" is set to \"raw\", however there's no raw data specified to be sent as per this object."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Session [Testing]",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/session?accountId=accountId&sessionId=sessionId&test=1",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "session"],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "test",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Account - General - Session [Testing]\", is structured to fire a GET request to obtain session data for a specific account. \n\nIt has several components:\n\n1. \"auth\" - This represents the authorization method required by the endpoint. A bearer token is the expected authorization type. A bearer token is a type of HTTP authentication that involves security tokens called bearer tokens. The key is \"token\", the value is \"BearerToken\", and the type is a String. This means that you need to use a valid bearer token (provided as 'BearerToken' here) for successful authentication.\n\n2. \"method\" - This corresponds to the HTTP method used by the request, which is \"GET\" in this case. A GET request is used to request data from a specified resource.\n\n3. \"url\" - This is the URL which the request will be sent to. It makes a call to the \"/api/account/general/session\" path on the server running on \"http://localhost:3000\". It includes three query parameters: accountId, sessionId, which should be replaced with your actual data and test that has a fixed value of 1.\n\n4. \"headers\" - This endpoint includes a default header object. Right now, the key and value are empty, and this specific header is disabled. This means that additional headers can be added if needed, but the current setup does not require any headers.\n\n5. \"body\" - In this case, the body of this endpoint is empty. The mode is set to \"raw\", which enables users to send data without any processing or modification. Since no 'raw' data is provided, it doesn't contribute to the request's functionality. However, you can add your own raw data if needed."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Session - Get Email Phone",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/session?accountId=accountId&sessionId=sessionId&get=email,phone",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "session"],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "get",
+              "value": "email,phone"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Account - General - Session - Get Email Phone\". Here is a detailed description of the data in this endpoint:\n\n1. `name`: The endpoint's name, which describes its function i.e., retrieving email and phone information related to a particular account and session.\n\n2. `request`: This field contains various sub-fields defining the request structure.\n\n    a. `auth`: Describes the authentication method for the API call. In this case, the type is `bearer`, which means it uses bearer token authentication. Inside the `bearer` array, details of the Bearer Token's field `token` is given with it's value as \"BearerToken\".\n\n    b. `method`: Outlines the HTTP method for the endpoint — here, the method is `GET`.\n\n    c. `url`: This defines the API endpoint URL. It includes parameters for `accountId` and `sessionId`, as well as `get=email,phone` which instructs the API to return only the email and phone information.\n\n    d. `headers`: Defines any headers sent with the request. In this case, a default value is specified, but it's marked as `disabled`.\n\n    e. `body`: Provides information about the request body. In this case, the mode is `raw`, but no specific raw value is provided (\"\").\n\nThis particular endpoint is used to retrieve the email and phone information associated with a specific account and session using a GET request. Users are required to provide a bearer token for validation, and the endpoint parameters allow users to specify the `accountId` and `sessionId` for the data retrieval."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Session - Get Account Type",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/session?accountId=accountId&sessionId=sessionId&get=accountType",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "session"],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "get",
+              "value": "accountType"
+            }
+          ]
+        },
+        "description": "1. `name`: This field specifies the name of the endpoint which is \"Account - General - Session - Get Account Type\". This indicates that the endpoint is used to fetch the type of an account, and it is generally related to a session.\n\n2. `request`: This field contains information about the type of request, authorization required, the URL to be hit, header information and body content.\n\n3. `request.auth`: This section outlines the type of authentication needed to make the request to this endpoint. The `type` is \"bearer\" which means it uses bearer authentication. \n\n4. `request.auth.bearer`: This is an array that carries information about the bearer token required for authentication. The `key` is \"token\" and its respective `value` should be the BearerToken to be provided.\n\n5. `request.method`: This stands for the HTTP method type the endpoint uses. Here it is a \"GET\" request, which is used for retrieving data from the specified resource.\n\n6. `request.url`: This shows the URL or the location of the resource where the request will be sent. In this description, it is specified to hit \"http://localhost:3000/api/account/general/session\" with query parameters for `accountId`,`sessionId` & `get`.\n\n7. `request.headers`: This is an array of objects and every object contains information about a header that should be sent with the request. In this description, the key and value of the header aren't specifically set and thus, the header is disabled.\n\n8. `request.body`: This field contains information about the body of the request. The `mode` is set to \"raw\", however, the `raw` field is empty indicating no specific data needs to be sent in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Reset Password",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"email\":\"email\",\"password\":\"helloworld\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/reset",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "reset"]
+        },
+        "description": "This endpoint is related to account management, specifically the functionality of resetting passwords. Here are the details:\n\n1. **Endpoint Name:** The name of this endpoint is \"Account - General - Reset Password\". It indicates that this endpoint supports resetting of account passwords.\n\n2. **Authentication:** The endpoint uses Bearer Token authentication. You should include a Bearer Token in the 'token' field in the header for valid authentication. The value provided here is just a placeholder (i.e., \"BearerToken\").\n\n3. **HTTP Method:** This endpoint uses the PUT HTTP method, which is typically used for updating resources.\n\n4. **URL:** This is the URL that you need to call in order to access this function.\n\n5. **Headers:** Headers for the request are mentioned, but the key and value are both blank and it's disabled. Based on the current data this is not required and you could remove it from the request.\n\n6. **Request Body:** The request contains three parameters to be included in the body of the request:\n\n   - **sessionId:** Representing session identification, to keep track of the user's interaction with the API.\n   \n   - **email:** The user's email address associated with the account.\n   \n   - **password:** The new password that the user wants to set for the account. The example value provided in JSON format is \"helloworld\". \n\nPlease replace placeholder values with actual values when making a request to this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Account - General - Logout",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/account/general/logout",
+          "host": ["localhost:3000"],
+          "path": ["api", "account", "general", "logout"]
+        },
+        "description": "The provided data includes the details of the \"Account - General - Logout\" endpoint request:\n\n1. `name`: This indicates the name of the endpoint. Here, it is \"Account - General - Logout\". This corresponds to user's logging out from a general account.\n\n2. `request`: This includes all the information needed to make the request.\n\n    - `auth`: Specifies the authentication type and details required for accessing the endpoint.\n    - `type`: \"bearer\" indicates that the authentication scheme implemented in this API requires a Bearer token to be sent in headers. This token is usually generated during the login process.\n    - `key` and `value`: \"token\" and \"sessionId\" respectively represent the actual token key-value pair that needs to be passed with the authentication. Type defines the data type of the token, here, it is a string.\n    \n3. `method`: Indicates the HTTP method to be used when making a request to this endpoint. Here, it is a \"POST\" request, which is mostly used when we want to send some data to the server, like, in this case, to logout from an account.\n\n4. `url`: This specifies the endpoint URL where the request is to be sent. Here, it is \"http://localhost:3000/api/account/general/logout\".\n\n5. `headers`: They define the operating parameters of an HTTP transaction. In this case, an empty default header is set, which is disabled. \n\n6. `body`: This contains the data that needs to be sent as the body of the POST request.\n    - `mode`: The value \"raw\" indicates that the contents are sent as is, without any specific structuring or encoding like form-data or x-www-form-urlencoded.\n    - `raw`: This field includes raw request body data which contains two parameters \"sessionId\" and \"accountId\". They represent the unique session ID and account ID associated with the user which will be used to logout from the account."
+      },
+      "response": []
+    }
+  ]
+}

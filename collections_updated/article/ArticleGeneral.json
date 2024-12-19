@@ -1,0 +1,738 @@
+{
+  "info": {
+    "_postman_id": "8fff3c56-2a97-47b0-800a-c98fb9eeb0c8",
+    "name": "ArticleGeneral",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Article - General - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"categoryId\": \"articleCategoryId\",\n    \"subCategoryId\": \"articleSubCategoryId\",\n    \"topicId\": \"articleTopicId\",\n    \"title\": \"Invisible Luggage Exhibition\",\n    \"author\": \"Fortune Vieyra\",\n    \"estimatedTime\": \"5 minutes\",\n    \"date\":\"2024-12-02\",\n    \"image\": \"https://www.beladed.com/img/logo.png\",\n    \"tags\": [\"Art\",\"Exhibition\",\"SocialJustice\",\"GenderIdentity\",\"Immigration\"],\n    \"content\": {\n        \"startDate\": \"2024-12-02\",\n        \"endDate\": \"2024-12-15\",\n        \"location\": \"Historic Hampton House, Miami, FL\",\n        \"featuredArtists\": [\n            \"Beth Rudin DeWoody\",\n            \"Zoe Lukov\",\n            \"Laura Dvorkin\",\n            \"Maynard Monrow\"\n        ],\n        \"collections\": [\n            \"Rubell Family Collection\",\n            \"Bernard Lumpkin Collection\",\n            \"Joy Simmons Collection\"\n        ],\n        \"article\": [\n            {\n                \"type\": \"Opening Night\",\n                \"date\": \"2024-12-02\",\n                \"time\": \"18:00\",\n                \"activities\": [\"Cocktails\", \"Preview Dinner\", \"Artist Introductions\"]\n            },\n            {\n                \"type\": \"Panel Discussion\",\n                \"date\": \"2024-12-05\",\n                \"time\": \"15:00\",\n                \"topic\": \"Art and Social Justice\"\n            },\n            {\n                \"type\": \"VIP Dinner\",\n                \"date\": \"2024-12-10\",\n                \"time\": \"19:00\",\n                \"chef\": \"Jessica Harris\"\n            }\n        ]\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "create"
+          ]
+        },
+        "description": "Endpoint: \"Article - General - Create\"\n\n\"auth\" object: This is for authenticating the request, where the type of authentication is 'Bearer Token'. Here, 'BearerToken' value is supposed to replace with actual bearer token.\n\n\"method\": Here, the method of HTTP request is 'POST'.\n\n\"url\": This is the url where the POST request should be made, http://localhost:3000/api/article/general/create\n\n\"headers\": It's an array of headers to be included with the request. Here, it is set as empty.\n\nIn the \"body\" object:\n\n\"mode\": 'raw' indicates that the request body is not encoded and is sent as it is.\n\n\"raw\" string: This encloses a JSON object data payload that includes all the details needed to create an Article.\n\n- \"accountId\" & \"sessionId\": It refer respective account and session id related to the operation being performed.\n- \"categoryId\" and \"subCategoryId\": These keys hold the id of the category and subcategory, under which the new article would fall.\n- \"topicId\": Id of the topic that the new article is discussing.\n- \"title\": The title of the article that will be created.\n- \"author\": Author's name of the new article.\n- \"estimatedTime\": It is the estimated time to read the article.\n- \"date\": It is the date when the article was created.\n- \"image\": A url-string pointing to the image for the article.\n- \"tags\": It is an array of tags relevant to the article.\n- \"content\": This is an object that comprises event details including \"startDate\", \"endDate\", location\", \"featuredArtists\", \"collections\", and a list (array) of \"article\" objects that provide more event details, such as \"type\" of event, \"date\", \"time\", and specific details based on the event type.\n\nIn \"options\" object:\n\n\"raw\": Here the language is specified (\"json\"), which means JSON rules are being followed while sending the request in raw format."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Create Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"category\": \"My New Shiny Category\",\n    \"subCategory\": \"My New Shiny Sub Category\",\n    \"topic\": \"My New Interesting Topic\",\n    \"title\": \"Invisible Luggage Exhibition\",\n    \"author\": \"Fortune Vieyra\",\n    \"estimatedTime\": \"5 minutes\",\n    \"date\":\"2024-12-02\",\n    \"image\": \"https://www.beladed.com/img/logo.png\",\n    \"tags\": [\"Art\",\"Exhibition\",\"SocialJustice\",\"GenderIdentity\",\"Immigration\"],\n    \"content\": {\n        \"startDate\": \"2024-12-02\",\n        \"endDate\": \"2024-12-15\",\n        \"location\": \"Historic Hampton House, Miami, FL\",\n        \"featuredArtists\": [\n            \"Beth Rudin DeWoody\",\n            \"Zoe Lukov\",\n            \"Laura Dvorkin\",\n            \"Maynard Monrow\"\n        ],\n        \"collections\": [\n            \"Rubell Family Collection\",\n            \"Bernard Lumpkin Collection\",\n            \"Joy Simmons Collection\"\n        ],\n        \"article\": [\n            {\n                \"type\": \"Opening Night\",\n                \"date\": \"2024-12-02\",\n                \"time\": \"18:00\",\n                \"activities\": [\"Cocktails\", \"Preview Dinner\", \"Artist Introductions\"]\n            },\n            {\n                \"type\": \"Panel Discussion\",\n                \"date\": \"2024-12-05\",\n                \"time\": \"15:00\",\n                \"topic\": \"Art and Social Justice\"\n            },\n            {\n                \"type\": \"VIP Dinner\",\n                \"date\": \"2024-12-10\",\n                \"time\": \"19:00\",\n                \"chef\": \"Jessica Harris\"\n            }\n        ]\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "create"
+          ]
+        },
+        "description": "This endpoint is titled \"Article - General - Create Auto\". It is used to create a new article through an HTTP POST request, with the URL specified as \"http://localhost:3000/api/article/general/create\".\n\nThe authentication used for this endpoint is \"Bearer Authentication\". It requires a bearer token provided in the format: \"BearerToken\".\n\nThere's also a placeholder for potential additional headers, although it's currently disabled by default.\n\nThe input body of the endpoint request is in raw JSON format. These are:\n\n1. \"accountId\" - The account identifier string representing the user.\n2. \"sessionId\" - The session identifier string representing the session.\n3. \"category\" - Represents the main categorization of the article.\n4. \"subCategory\" - Represents the sub categorization under the main category.\n5. \"topic\" - The primary discussion point of the article.\n6. \"title\" - The title of the article.\n7. \"author\" - The name of the author of the article.\n8. \"estimatedTime\" - The estimated time to read the article.\n9. \"date\" - The date the article was written.\n10. \"image\" - A URL string to an image related to the article.\n11. \"tags\" - An array of strings including various tags related to the article.\n12. \"content\" - An object containing extended content for the article like:\n     - \"startDate\" and \"endDate\": Event duration for the article feature\n     - \"location\": Where the event of the featured article takes place\n     - \"featuredArtists\": Artists who are highlighted in the article\n     - \"collections\": The collections featured or mentioned in the article.\n     - \"article\": An array of objects where each object represents an event related to the article with fields like:\n        - \"type\": Type of the event\n        - \"date\": Date of the event\n        - Various other fields depending on the type of event (like \"time\", \"activities\", \"chef\" based on context)\n\nThe language type of the input request body is set to JSON. This confirms that the server expects the body content to be in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Create Bulk Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sessionId\": \"sessionId\",\n  \"accountId\": \"accountId\",\n  \"articles\": [\n    {\n      \"title\": \"how to change your email address on beladed\",\n      \"category\": \"Account Management\",\n      \"subCategory\": \"Account and Security\",\n      \"topic\": \"Update my account\",\n      \"date\": \"15 May 2024\",\n      \"author\": \"Alex Johnson\",\n      \"estimatedTime\": \"5 mins\",\n      \"image\": \"https://www.bldcdn.com/images/articles/how%20to%20change%20your%20email%20address%20on%20beladed.webp\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"content\": \"Keeping your email address up-to-date on Beladed is crucial for account security and communication. Follow these steps to change your email address quickly and securely.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 1: Log In to Your Beladed Account\",\n          \"content\": \"Start by logging into your Beladed account using your current credentials at beladed.com.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 2: Navigate to Account Settings\",\n          \"content\": \"Once logged in, click on your profile icon in the top-right corner and select 'Account Settings' from the dropdown menu.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 3: Locate Email Settings\",\n          \"content\": \"In the Account Settings page, find the 'Email' or 'Contact Information' section.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 4: Enter New Email Address\",\n          \"content\": \"Click on the 'Change Email' button and enter your new email address in the provided field. You may need to enter your current password for security verification.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 5: Verify New Email\",\n          \"content\": \"Beladed will send a verification link to your new email address. Check your inbox (and spam folder) for this email and click the verification link to confirm the change.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 6: Confirmation\",\n          \"content\": \"Once verified, log out and log back in to ensure the change has taken effect. You should now receive all Beladed communications at your new email address.\"\n        },\n        {\n          \"type\": \"text\",\n          \"content\": \"Remember to update your email on any linked accounts or services to maintain seamless integration with your Beladed account.\"\n        }\n      ],\n      \"tags\": [\n        \"Account Management\",\n        \"Email\",\n        \"Security\",\n        \"Profile Settings\"\n      ]\n    },\n    {\n      \"title\": \"resetting your password on beladed\",\n      \"category\": \"Account Management\",\n      \"subCategory\": \"Account and Security\",\n      \"topic\": \"Update my account\",\n      \"date\": \"20 May 2024\",\n      \"author\": \"Sam Lee\",\n      \"estimatedTime\": \"4 mins\",\n      \"image\": \"https://www.bldcdn.com/images/articles/resetting%20your%20password%20on%20beladed.webp\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"content\": \"Forgot your password? Don't worry! Beladed makes it easy to reset your password and regain access to your account. Follow these simple steps to create a new, secure password.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 1: Access the Login Page\",\n          \"content\": \"Go to the Beladed login page at beladed.com/login.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 2: Click 'Forgot Password'\",\n          \"content\": \"Look for the 'Forgot Password?' link below the login form and click on it.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 3: Enter Your Email\",\n          \"content\": \"On the password reset page, enter the email address associated with your Beladed account and click 'Submit' or 'Reset Password'.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 4: Check Your Email\",\n          \"content\": \"Beladed will send a password reset link to your email. Check your inbox (and spam folder) for an email from Beladed support.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 5: Click the Reset Link\",\n          \"content\": \"Open the email and click on the password reset link provided. This will take you to a page where you can create a new password.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 6: Create a New Password\",\n          \"content\": \"Enter your new password. Make sure it's strong and unique. Beladed may have specific requirements for password strength, so follow the guidelines provided.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 7: Confirm and Log In\",\n          \"content\": \"After setting your new password, you'll be redirected to the login page. Use your email and new password to log in to your account.\"\n        },\n        {\n          \"type\": \"text\",\n          \"content\": \"Remember to use a unique, strong password for your Beladed account to ensure the best security. Consider using a password manager to keep track of your passwords securely.\"\n        }\n      ],\n      \"tags\": [\n        \"Account Management\",\n        \"Password\",\n        \"Security\",\n        \"Login\"\n      ]\n    },\n    {\n      \"title\": \"updating your profile information on beladed\",\n      \"category\": \"Account Management\",\n      \"subCategory\": \"Profile Customization\",\n      \"topic\": \"Updating profile picture and banner\",\n      \"date\": \"25 May 2024\",\n      \"author\": \"Jamie Smith\",\n      \"estimatedTime\": \"6 mins\",\n      \"image\": \"https://www.bldcdn.com/images/articles/updating%20your%20profile%20information%20on%20beladed.webp\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"content\": \"Keeping your Beladed profile up-to-date helps viewers find and connect with you more easily. This guide will walk you through the process of updating your profile information to ensure your Beladed presence is current and engaging.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 1: Log In to Beladed\",\n          \"content\": \"Start by logging into your Beladed account at beladed.com using your email and password.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 2: Access Your Profile Settings\",\n          \"content\": \"Click on your profile icon in the top-right corner of the page, then select 'Profile Settings' from the dropdown menu.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 3: Edit Basic Information\",\n          \"content\": \"In the profile settings, you can update your display name, bio, and profile picture. Click on the 'Edit' button next to each section to make changes.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 4: Update Your Stream Information\",\n          \"content\": \"Scroll down to find sections for updating your stream title, game category, and tags. Keep these current to help viewers find your content.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 5: Manage Social Media Links\",\n          \"content\": \"Look for the 'Social Links' section where you can add or update links to your other social media profiles. This helps viewers connect with you on other platforms.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 6: Customize Your Channel Appearance\",\n          \"content\": \"Beladed offers options to customize your channel's look. Explore the 'Channel Appearance' settings to update your banner image, accent colors, and other visual elements.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 7: Save Your Changes\",\n          \"content\": \"After making all desired updates, scroll to the bottom of the page and click the 'Save Changes' button to apply your updates.\"\n        },\n        {\n          \"type\": \"text\",\n          \"content\": \"Remember to review and update your profile regularly to keep your information fresh and relevant. A well-maintained profile can help attract and retain viewers on Beladed.\"\n        }\n      ],\n      \"tags\": [\n        \"Profile Management\",\n        \"Customization\",\n        \"Account Settings\"\n      ]\n    },\n    {\n      \"title\": \"recovering a hacked beladed account\",\n      \"category\": \"Account Management\",\n      \"subCategory\": \"Account and Security\",\n      \"topic\": \"Account issues\",\n      \"date\": \"30 May 2024\",\n      \"author\": \"Chris Taylor\",\n      \"estimatedTime\": \"8 mins\",\n      \"image\": \"https://www.bldcdn.com/images/articles/recovering%20a%20hacked%20beladed%20account.webp\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"content\": \"If you suspect your Beladed account has been hacked, it's crucial to act quickly to regain control and secure your account. Follow these steps to recover your hacked account.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 1: Reset Your Password\",\n          \"content\": \"Immediately change your password by using the 'Forgot Password' feature on the login page. This will help prevent further unauthorized access.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 2: Enable Two-Factor Authentication\",\n          \"content\": \"After regaining access, enable two-factor authentication (2FA) to add an extra layer of security to your account.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 3: Review Account Activity\",\n          \"content\": \"Check your account's recent activity, including stream history, chat logs, and any changes to your profile or settings.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 4: Update Email and Recovery Options\",\n          \"content\": \"Ensure your email address is up-to-date and add additional recovery options like a phone number or backup email.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Step 5: Contact Beladed Support\",\n          \"content\": \"If you're still experiencing issues or notice unauthorized changes you can't reverse, contact Beladed support for further assistance.\"\n        },\n        {\n          \"type\": \"text\",\n          \"content\": \"Remember to use strong, unique passwords for all your accounts and be cautious about phishing attempts to prevent future hacking incidents.\"\n        }\n      ],\n      \"tags\": [\n        \"Account Security\",\n        \"Hacking\",\n        \"Recovery\",\n        \"Security\"\n      ]\n    },\n    {\n      \"title\": \"creating engaging stream overlays\",\n      \"category\": \"Streaming Essentials\",\n      \"subCategory\": \"Getting Started with Streaming\",\n      \"topic\": \"Streaming software setup\",\n      \"date\": \"1 June 2024\",\n      \"author\": \"David Park\",\n      \"estimatedTime\": \"12 mins\",\n      \"image\": \"https://www.bldcdn.com/images/articles/creating%20engaging%20stream%20overlays.webp\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"content\": \"Learn how to design and implement professional-looking stream overlays that enhance viewer experience.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Essential Overlay Elements\",\n          \"content\": \"Discover the key components that make up an effective stream overlay, from alerts to social media displays.\"\n        }\n      ],\n      \"tags\": [\n        \"Stream Design\",\n        \"Overlays\",\n        \"Customization\",\n        \"Branding\"\n      ]\n    },\n    {\n      \"title\": \"maximizing revenue through channel memberships\",\n      \"category\": \"Monetization\",\n      \"subCategory\": \"Earning Revenue\",\n      \"topic\": \"Channel Subscriptions\",\n      \"date\": \"3 June 2024\",\n      \"author\": \"Rachel Kim\",\n      \"estimatedTime\": \"15 mins\",\n      \"image\": \"https://www.bldcdn.com/images/articles/maximizing%20revenue%20through%20channel%20memberships.webp\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"content\": \"Explore strategies to create valuable membership tiers and increase subscriber retention.\"\n        },\n        {\n          \"type\": \"section\",\n          \"title\": \"Designing Membership Tiers\",\n          \"content\": \"Learn how to structure your membership levels to provide value at every price point.\"\n        }\n      ],\n      \"tags\": [\n        \"Monetization\",\n        \"Memberships\",\n        \"Revenue\",\n        \"Subscriber Benefits\"\n      ]\n    },\n    {\n      \"title\": \"setting up streamlabs alerts effectively\",\n      \"category\": \"Technical Troubleshooting\",\n      \"subCategory\": \"Software Issues\",\n      \"topic\": \"Integration Issues\",\n      \"date\": \"5 June 2024\",\n      \"author\": \"Marcus Chen\",\n      \"estimatedTime\": \"8 mins\",\n      \"image\": \"https://www.bldcdn.com/images/articles/setting%20up%20streamlabs%20alerts%20effectively.webp\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"content\": \"Configure your Streamlabs alerts to enhance viewer engagement and show appreciation for support.\"\n        }\n      ],\n      \"tags\": [\n        \"Streaming Tools\",\n        \"Alerts\",\n        \"Streamlabs\",\n        \"Stream Setup\"\n      ]\n    },\n    {\n      \"title\": \"building a moderation team for your channel\",\n      \"category\": \"Safety and Community Guidelines\",\n      \"subCategory\": \"Community Standards\",\n      \"topic\": \"Moderation Tools\",\n      \"date\": \"7 June 2024\",\n      \"author\": \"Sophie Martinez\",\n      \"estimatedTime\": \"10 mins\",\n      \"image\": \"https://www.bldcdn.com/images/articles/building%20a%20moderation%20team%20for%20your%20channel.webp\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"content\": \"Learn how to recruit, train, and manage effective moderators for your streaming community.\"\n        }\n      ],\n      \"tags\": [\n        \"Moderation\",\n        \"Community Management\",\n        \"Safety\",\n        \"Team Building\"\n      ]\n    },\n    {\n      \"title\": \"optimizing your stream for mobile viewers\",\n      \"category\": \"Mobile Streaming\",\n      \"subCategory\": \"Mobile Setup\",\n      \"topic\": \"Technical Requirements\",\n      \"date\": \"9 June 2024\",\n      \"author\": \"James Wilson\",\n      \"estimatedTime\": \"7 mins\",\n      \"image\": \"https://www.bldcdn.com/images/articles/optimizing%20your%20stream%20for%20mobile%20viewers.webp\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"content\": \"Ensure your stream looks great on all devices with these mobile-friendly optimization tips.\"\n        }\n      ],\n      \"tags\": [\n        \"Mobile Streaming\",\n        \"Optimization\",\n        \"Technical Setup\"\n      ]\n    },\n    {\n      \"title\": \"creating compelling channel panels\",\n      \"category\": \"Content Creation\",\n      \"subCategory\": \"Stream Planning\",\n      \"topic\": \"Stream Preparation\",\n      \"date\": \"11 June 2024\",\n       \"Content Rights\"\n      ]\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "createBulk"
+          ]
+        },
+        "description": "The endpoint `Article - General - Create Bulk Auto` is a HTTP `POST` request used to create multiple (\"bulk\") articles in the system.\n\nThe `auth` object is how the API handles authentication. It uses a `type` of \"bearer\", which means it's expecting a bearer token in the request header. The `bearer` array holds key-value pair objects, where the `key` is the \"token\" and its corresponding `value` is the \"BearerToken\" we provide.\n\nThe `url` is the path where the request is sent. In this case, it's a local development server (`localhost`) on port `3000`.\n\nThe `headers` object in the request is currently empty and has `disabled` set to `true`, which means no specific HTTP headers are set for this request.\n\nThe `body` encompasses the actual content of the request. It is sent as `raw` JSON. \n\nThe data in the `body` includes:\n\n- `sessionId`: The unique identifier for the ongoing session.\n- `accountId`: The unique identifier for the user's account.\n- `articles`: An array of objects, with each object representing an individual article and containing:\n  - `title`: The article's title.\n  - `category`: The category the article belongs to.\n  - `subCategory`: Subcategory of the article.\n  - `topic`: Topic of the article.\n  - `date`: The date of the article.\n  - `author`: Author of the article.\n  - `estimatedTime`: Estimated reading time of the article.\n  - `image`: URL of the image related to the article.\n  - `content`: An array representing sections of the article's content. Each section is an object that includes a `type` (either \"text\" or \"section\"), `title` (for \"section\" type), and `content`.\n  - `tags`: An array of tags associated with the article.\n\nNote: The `title` of each article must be unique in the bulk creation. The `date` needs to be in a recognized format like \"DD MM YYYY\". The `image` URL needs to be a valid, publicly accessible URL.\n\nThe `options` object (inside `body`) defines the language of the `raw` input as `json`.\n\nIn summary, this endpoint allows the bulk creation of articles based on the provided JSON data, including details as article title, category, sub-category, author, estimated reading time, image URL, content, and tags. It requires a bearer token for authentication.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"articleId\": \"articleId\",\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"categoryId\": \"articleCategoryId\",\n    \"subCategoryId\": \"articleSubCategoryId\",\n    \"topicId\": \"articleTopicId\",\n    \"title\": \"Invisible Luggage Exhibition 3.0\",\n    \"author\": \"Fortune Vieyra\",\n    \"estimatedTime\": \"5 minutes\",\n    \"date\":\"2024-12-02\",\n    \"image\": \"https://www.beladed.com/img/logo.png\",\n    \"tags\": [\"Art\",\"Exhibition\",\"SocialJustice\",\"GenderIdentity\",\"Immigration\"],\n    \"content\": {\n        \"startDate\": \"2024-12-02\",\n        \"endDate\": \"2024-12-15\",\n        \"location\": \"Historic Hampton House, Miami, FL\",\n        \"featuredArtists\": [\n            \"Beth Rudin DeWoody\",\n            \"Zoe Lukov\",\n            \"Laura Dvorkin\",\n            \"Maynard Monrow\"\n        ],\n        \"collections\": [\n            \"Rubell Family Collection\",\n            \"Bernard Lumpkin Collection\",\n            \"Joy Simmons Collection\"\n        ],\n        \"article\": [\n            {\n                \"type\": \"Opening Night\",\n                \"date\": \"2024-12-02\",\n                \"time\": \"18:00\",\n                \"activities\": [\"Cocktails\", \"Preview Dinner\", \"Artist Introductions\"]\n            },\n            {\n                \"type\": \"Panel Discussion\",\n                \"date\": \"2024-12-05\",\n                \"time\": \"15:00\",\n                \"topic\": \"Art and Social Justice\"\n            },\n            {\n                \"type\": \"VIP Dinner\",\n                \"date\": \"2024-12-10\",\n                \"time\": \"19:00\",\n                \"chef\": \"Jessica Harris\"\n            }\n        ]\n    }\n}\n\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "update"
+          ]
+        },
+        "description": "1. \"name\": The name of the API endpoint. In this case, the name is \"Article - General - Update\", which indicates that this endpoint is used to update a general article.\n\n2. \"auth\": This section describes the authorization method used to access the API endpoint. The authentication type is 'bearer', which means the authorization is based on the bearer token. The key and value pair \"token\": \"BearerToken\" represents the access token in the header request, which is a unique string to authenticate the user to the server. The value would be replaced by actual Bearer token while making API calls.\n\n3. \"method\": Indicates the HTTP request method. In this case, it is \"PUT\", which means it is used to update an existing resource.\n\n4. \"url\": The URL of the API endpoint. In this case, the API endpoint is \"http://localhost:3000/api/article/general/update\" which is the path where the server expects to receive API calls.\n\n5. \"headers\": Additional headers sent with the request. In this case, we have a header with the key \"Client-UUID\" which is used to uniquely identify each client.\n\n6. \"body\": This contains the payload or the data that you are sending with the request. The mode is \"raw\", which means it contains unprocessed data. The raw payload is a JSON object which includes various key-value pairs. Each key-value pair refers to a unique piece of data that needs to be updated for an article, including the article id, account id, session id, category id, sub-category id, topic id, title, author, estimated reading time, date, image, tags, and actual content of the article. \n\n7. \"options\": Defines additional configuration for the body payload and indicates the body data type. In this case, the payload data type is JSON as per the \"language\": \"json\". The server will use this information to correctly parse the body payload."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Update Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"articleId\": \"articleId\",\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"category\": \"My New Shiny Category\",\n    \"subCategory\": \"My New Shiny Sub Category\",\n    \"topic\": \"My New Interesting Topic\",\n    \"title\": \"Invisible Luggage Exhibition 3.0\",\n    \"author\": \"Fortune Vieyra\",\n    \"estimatedTime\": \"5 minutes\",\n    \"date\":\"2024-12-02\",\n    \"image\": \"https://www.beladed.com/img/logo.png\",\n    \"tags\": [\"Art\",\"Exhibition\",\"SocialJustice\",\"GenderIdentity\",\"Immigration\"],\n    \"content\": {\n        \"startDate\": \"2024-12-02\",\n        \"endDate\": \"2024-12-15\",\n        \"location\": \"Historic Hampton House, Miami, FL\",\n        \"featuredArtists\": [\n            \"Beth Rudin DeWoody\",\n            \"Zoe Lukov\",\n            \"Laura Dvorkin\",\n            \"Maynard Monrow\"\n        ],\n        \"collections\": [\n            \"Rubell Family Collection\",\n            \"Bernard Lumpkin Collection\",\n            \"Joy Simmons Collection\"\n        ],\n        \"article\": [\n            {\n                \"type\": \"Opening Night\",\n                \"date\": \"2024-12-02\",\n                \"time\": \"18:00\",\n                \"activities\": [\"Cocktails\", \"Preview Dinner\", \"Artist Introductions\"]\n            },\n            {\n                \"type\": \"Panel Discussion\",\n                \"date\": \"2024-12-05\",\n                \"time\": \"15:00\",\n                \"topic\": \"Art and Social Justice\"\n            },\n            {\n                \"type\": \"VIP Dinner\",\n                \"date\": \"2024-12-10\",\n                \"time\": \"19:00\",\n                \"chef\": \"Jessica Harris\"\n            }\n        ]\n    }\n}\n\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "update"
+          ]
+        },
+        "description": "The given endpoint updates a general-type article. Here are the data details:\n\n- **name**: The name is \"Article - General - Update Auto\", which indicates that this endpoint is used for updating general articles automatically.\n\n- **request**: This is the main configuration for making the request.\n\n  - **auth**: The \"auth\" field is used for API authentication. It is using bearer token authentication. The \"token\" key should be replaced with a valid bearer token for successful authentication.\n\n  - **method**: The request method is \"PUT\", which means it is used to update an existing resource.\n\n  - **url**: The URL for this request is \"http://localhost:3000/api/article/general/update\".\n\n  - **headers**: In the headers, we have the \"Client-UUID\" that is a unique identifier for the client making the request.\n\n  - **body**: The content of the request with mode as \"raw\" and language as \"json\". This body needs to be filled with proper data for updating the article. Here are the body fields:\n    \n    - **articleId**: The unique identifier of the article\n    - **accountId**: The unique identifier for the account\n    - **sessionId**: The unique identifier for a session\n    - **category, subCategory, and topic**: Category and subcategory of the article, and the topic it refers to.\n    - **title and author**: Title of the article and the author's name.\n    - **estimatedTime**: An estimate of how long it will take to read the article.\n    - **date**: Publication date of the article\n    - **image**: URL of the article image\n    - **tags**: Tags associated with the article\n    - **content**: It contains further details like start date, end date, location, featured artists, collections, details about each event in the article like event type, date, time, and specific details about the event like activities, topic, chef etc.\n    \n  - **options**: It specifies that the raw body language is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Get By ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/get?articleId=articleId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "articleId",
+              "value": "articleId"
+            }
+          ]
+        },
+        "description": "This endpoint is named 'Article - General - Get By ID'. It retrieves a general article based on the unique identifier specified.\n\nIt uses a 'GET' method, one of the HTTP methods, which is mostly used to request data from a specified resource.\n\nThe URL (http://localhost:3000/api/article/general/get?articleId=articleId) is the network address where the request is sent. Within this URL, 'localhost:3000' is the server-domain where you are hosting your backend. '/api' represents the base of your API, '/article' denotes the section of the API dealing with articles, '/general' indicates a subdivision for general articles, and '/get' suggests that you are getting data.\n\nThe '?articleId=articleId' part of the URL indicates a query string. You're to replace 'articleId' with the actual ID of the article you want to retrieve.\n\nThe endpoint uses 'bearer' token for authorization. A bearer token, represented here as 'BearerToken', is a security measure that authenticates the identity of the user making the request. Replace 'BearerToken' with your actual token.\n\nPlease note, the 'auth' field describes the security scheme applied to the endpoint. The 'key' (named 'token') indicates what the security scheme is identifying, while 'type' gives the datatype of the 'value', which in this case is a 'string'.\n\nHeaders are optional and are disabled in this case. However, headers generally carry descriptive information (like metadata) about the request or response message.\n\nThe body of the request is left 'raw' and empty. For a 'GET' request, it generally doesn't need to publish or send any data, it merely retrieves it. However, for other kinds of requests (like 'POST' or 'PUT'), the body typically contains data that needs to be sent to the server."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Get By Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/get?name=articleName",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "articleName"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Article - General - Get By Name\". It is designed to fetch information about a general article based on its name. \n\nIn terms of authorization, it uses the \"bearer\" method. This means you need to provide a bearer token as part of your request. The key for this token should be \"token\" and its value should be the token you've been granted. The token is of type \"string\".\n\nThe request method is \"GET\", which means you're fetching data from a server. \n\nThe URL for this request is \"http://localhost:3000/api/article/general/get?name=articleName\". This suggests that the endpoint is located on a server running on your own machine (localhost), on port 3000. \nWithin this URL, \"/api/article/general/get\" is the path to the endpoint, and the \"?name=articleName\" part denotes a query parameter. This query parameter is used to specify the name of the article you want to fetch.\n\nRegarding headers, a default one is provided but it's disabled (as \"disabled\" is set to true). This means you won't have to include any headers in your request unless you enable and define this one.\n\nFinally, the 'body' of the request has two parameters - 'mode' and 'raw'. Here, 'mode' is set to \"raw\", which means the body of the request won't be formatted in any specific way like JSON or XML. The 'raw' field currently holds an empty string, meaning that no additional data is being sent in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Get By Short ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/get?shortId=articleShortId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "shortId",
+              "value": "articleShortId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Article - General - Get By Short ID\". As the name suggests, this endpoint is used to retrieve a general article using a short ID.\n\n- `name`: This field specifies the name of the endpoint. The name is self-explanatory; it tells us that it is used to get a general article using its short ID.\n\n- `request` : This represents the details of the HTTP request.\n\n    - `auth`: This field is used for the authorization required to access this endpoint. The authorization method used here is Bearer authentication. You need to provide a bearer token in the request to authenticate yourself.\n        - `key`: This is the key for your authorization bearer token.\n        - `value`: The value of the bearer token goes here.\n        - `type`: This indicates the type of the key's value, which for this API is a string.\n\n    - `method`: This represents the HTTP method used for the request. For this endpoint, it's a GET request, meaning it is used to retrieve information.\n\n    - `url`: This is the URL of the endpoint. It specifies the location where the request will be sent. In this case, it is \"http://localhost:3000/api/article/general/get\". Additionally, there is a query parameter \"shortId\" appended to the URL, which is used to specify the short ID of the article that you want to retrieve.\n\n    - `headers`: This field is used to send additional information in your request header. In this endpoint, there are no headers being sent which is indicated by the `\"key\": \"\"` and `\"value\": \"\"` with disabled header.\n\n    - `body`: This contains the body of the request. In this case, the body mode is \"raw\", indicating that you can send unstructured data. However, since this is a GET request, there is no data to send in the body, and thus the \"raw\" field is empty. \n\nPlease note that to successfully use this endpoint, you should replace 'BearerToken' in the 'auth' field and 'articleShortId' in the 'url' with actual values."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Get By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/get?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This API endpoint is titled \"Article - General - Get By Account ID\". \n\n1. Request Type: It is a GET request used to fetch data.\n\n2. Authentication: The authentication type is 'Bearer'. It uses a bearer token to authenticate the request. You need to replace \"BearerToken\" with your valid token for access.\n\n3. URL: The URL for the request is http://localhost:3000/api/article/general/get?accountId=accountId. In this URL, replace \"accountId\" query parameter with the actual account id whose articles you want to retrieve.\n\n4. Headers: No additional headers are required for this API request. Default headers will automatically be added when the request is made.\n\n5. Body: The body part is empty, as it's not needed in a GET request. \n\nIn a nutshell, this endpoint fetches the articles related to a specific account based on its ID. This is done through a GET request, which requires the use of a bearer token for authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "all"
+          ]
+        },
+        "description": "This endpoint is named \"Article - General - Get All\". Its primary function is to retrieve all general articles from the provided URL.\n\nBelow are the individual data elements within this endpoint:\n\n1. \"auth\": This is the authentication method used by the endpoint to verify the identity of the client making the request. It uses the 'bearer' type authentication, which essentially requires the client to send a token in the authorization header. \n   - \"key\": The name of the data value here is \"token\". The token usually consists of encoded security data which allows access to the server resources.\n   - \"value\": Here, it is \"BearerToken\". This is a placeholder for the real token you're going to use in production.\n   - \"type\": This refers to the data type of the token in the bearer auth setup. In this case, it's a string.\n\n2. \"method\": It signifies the HTTP method used for the request. In this case, it's \"GET\". GET is used when you want to retrieve data from the server.\n\n3. \"url\": This is the URL where the request will be sent to fetch all general articles. In this case, the URL is \"http://localhost:3000/api/article/general/all\"\n\n4. \"headers\": Headers often contain additional information needed by the server or client. In this case, an empty header object is presented with a disabled status, which means it's not being used, and no extra header information is being transmitted with the request.\n\n5. \"body\": This represents the data to be sent to the server. In this case, the mode is set to \"raw\", and no data is intended to be sent in the body ('raw' is empty), aligning with commonly used practices for GET requests, where data is not sent in the body, but appended in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Get All By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/all?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint named \"Article - General - Get All By Account ID\" retrieves all the general articles related to a particular account ID. \n\n1. `name`: The title of this endpoint, which clearly explains its purpose. Here the \"Article - General - Get All By Account ID\" represents the functionality, which is fetching all general type articles by using an account ID.\n\n2. `request`: This field determines the method and details of the API request.\n\n3. `auth`: This parameter sets the type of authentication for the endpoint. Here the auth type is set to \"bearer\", which typically use a Bearer Token for authorization.\n\n   - `key`: This field is set to \"token\" indicating the type of value expected.\n   - `value`: \"BearerToken\" is the placeholder for your bearer token value. You need to replace \"BearerToken\" with your actual Bearer token.\n   - `type`: It denotes the data type of key. In this case, it's a \"string\".\n\n4. `method`: This represents the HTTP method being used for the request. In this case, it's a \"GET\" method, which is used for retrieving data.\n\n5. `url`: This field contains the URL of the API. The URL is \"http://localhost:3000/api/article/general/all?accountId=accountId\". The accountId should be replaced by the actual user's account ID.\n\n6. `headers`: The headers field contains any headers that need to be included in the API request. Although a blank header is included in this request, it's disabled and can be ignored or removed.\n\n7. `body`: The body contains any data that needs to be sent with the API request. Here, the `mode` is set to \"raw\", indicating that the data should be sent as-is and not manipulated or encoded in any way. But as the method type is GET, which doesn't usually carry a payload, the `raw` field is set to an empty string."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Get All By Category ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/all?categoryId=articleCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "articleCategoryId"
+            }
+          ]
+        },
+        "description": "The endpoint 'Article - General - Get All By Category ID' is used to retrieve all general articles that belong to a specific category. The data elements in this endpoint comprise of the following:\n\n1. \"name\" - This represents the name of the endpoint. For this case, the endpoint is named 'Article - General - Get All By Category ID'. The name serves as a unique identifier for the endpoint in the API collection.\n\n2. \"request\" - This object contains detailed information that defines the API request. This includes authentication, method, URL, headers, and body data.\n\n    - \"auth\" - In 'auth', you see the authentication method required to successfully call the API. In this case, the type is 'bearer', which requires a bearer token for the server to authorize the client's request. \"BearerToken\" is to be replaced with your actual Bearer token.\n\n    - \"method\" - This refers to the HTTP method used for the API request. Here, 'GET' is used, which is responsible for reading a specific representation of a resource or collection of resources.\n\n    - \"url\" - This is the endpoint or path to the API on the server. The entire URL here is \"http://localhost:3000/api/article/general/all?categoryId=articleCategoryId\". This URL includes the query parameter 'categoryId', which will need to be replaced with an actual category ID to fetch the articles of that category.\n\n    - \"headers\" - Headers allow the client and the server to pass additional information along with the request or the response. This data field contains an empty key, value pair which is currently disabled. \n\n    - \"body\" - It consists of the details that need to be sent with the API request, but for this 'GET' request, no body content is required, therefore it is set to \"raw\" with an empty raw value.\n   \nEach of these data elements plays a critical role in defining the API request and should be used properly to retrieve the desired data successfully."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Get All By SubCategory ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/all?subCategoryId=articleSubCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "subCategoryId",
+              "value": "articleSubCategoryId"
+            }
+          ]
+        },
+        "description": "1. name: \"Article - General - Get All By SubCategory ID\" - This is the name of the endpoint. The name indicates that this endpoint is used to fetch all articles from a general category based on a specific sub-category ID.\n\n2. request: This object contains information needed to format and send the API request.\n\n   a. auth: This property contains the authorization method and details necessary for accessing this endpoint.\n      \n      i. type: \"bearer\" - This indicates that a bearer token is used for authentication.\n      \n      ii. bearer: This is an array that contains the key-value pair of the authentication.\n        \n        I. key: \"token\" - This is the name of the field for the bearer token.\n        \n        II. value: \"BearerToken\" - This is where the actual bearer token would be placed.\n        \n        III. type: \"string\" - This indicates that the bearer token should be a string.\n\n   b. method: \"GET\" - This shows that the HTTP method for this request is GET. The GET method retrieves data from the server.\n\n   c. url: Contains the server URL where the request will be sent. The URL includes an endpoint '/api/article/general/all' and a query parameter named 'subCategoryId', whose value should be replaced with the actual 'articleSubCategoryId' when making the request.\n\n   d. headers: These are additional details added to an HTTP request. In this case, no specific request headers are provided and the default headers are disabled.\n\n   e. body: This object contains the data that will be sent with the request. In this case, no request body is required as it's a GET request. The 'mode' is set to 'raw' but no 'raw' data is provided."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Get All By Topic ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/all?topicId=articleTopicId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "topicId",
+              "value": "articleTopicId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Article - General - Get All By Topic ID\". Here is a detailed explanation of each field:\n\n- `name`: This is the title of the endpoint. It is an essential brief description used to identify the endpoint's purpose. In this case, it is used to retrieve all general articles associated with a given topic ID.\n\n- `request`: This field contains the details of the API request to be made.\n\n   - `auth`: This part specifies the authentication required for making the API request.\n        - `type`: Shows the type of authentication. Here it is \"bearer\" authentication.\n        - `bearer`: Contains an array with information about the bearer token. \n            - `key`: This is the name of the field required for the token, which in this case is \"token\".\n            - `value`: This is the placeholder for the token value.\n            - `type`: Shows the type of the field. For the \"token\" field, the type is \"string\".\n        \n   - `method`: Describes the type of API request. For this endpoint, a \"GET\" method is used, meaning it retrieves information from the server without modifying any data.\n\n   - `url`: This specifies the URL to which the API request is made. It includes a parameter, \"topicId\", where the topic ID to filter articles by should be inputted.\n\n   - `headers`: This section contains details regarding the headers to be sent with the request. In this case, it's an empty field, disabled, and set to the default type.\n\n   - `body`: This section contains information about the body of the request.\n       - `mode`: Represents how the data in the body is being sent. In this case, it is set to \"raw\", indicating that the data must be sent exactly as provided, but it's empty in this request since \"GET\" method is used.\n\nNote: The bearer token should be replaced by a real token when sending the request for authentication. Furthermore, a real topic ID should be included in the URL instead of the placeholder \"articleTopicId\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Article - General - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"article\":\"article\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/article/general/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "article",
+            "general",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is called \"Article - General - Delete\". As the name suggests, it is used to delete a general article. This is what each part of the endpoint does:\n\n1. `auth`: This section deals with authentication. This endpoint uses `bearer` authentication. Here, `token` is the key, `sessionId` is the value and the type of the `bearer token` is a `string`. This means you need to input a valid session ID as your bearer token to be able to successfully access this endpoint.\n\n2. `method`: The method used here is `POST`. This means you're sending data to the server with the request to delete a specific general article.\n\n3. `url`: This is the URL you must send your request to. In this case, it is http://localhost:3000/api/article/general/delete.\n\n4. `headers`: The headers are set to `default` and `disabled`, which means no extra HTTP headers are included in the request.\n\n5. `body`: This section specifies the data you send to the server. The `mode` specified here is `raw`, which means you're sending a string of text.\n   \n   Inside the `raw` string, there are three properties:\n   - `sessionId`: This is where you input the ID of the session.\n   - `accountId`: This is where you input the ID of the account that wants to delete the article.\n   - `article`: This is where you input the article that you want to delete.\n\nMake sure to replace `sessionId`, `accountId` and `article` with the actual information during your request."
+      },
+      "response": []
+    }
+  ]
+}

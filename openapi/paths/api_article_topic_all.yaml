@@ -1,0 +1,53 @@
+get:
+  tags:
+    - ArticleTopic
+  summary: Article - Topic - Get All
+  description: >-
+    - "name": This is the name of the endpoint. In this case, the name given is
+    "Article - Topic - Get All", which implies that this endpoint probably
+    fetches all topic-related articles.
+
+
+    - "request": A descriptor for the type of HTTP request being made. The
+    properties that follow within this hierarchy present more specific details
+    about the request.
+
+
+    - "auth": This is an authorization object. In this case, it's of type
+    'bearer', which is a method of authentication that involves sending a bearer
+    token.
+
+        - "type": Specifies the authentication method used. Here, the "Bearer" HTTP authentication scheme is being used.
+      
+        - "bearer": This array contains the information for bearer authentication which includes:
+          - "key": This is the header field name used to pass the bearer token, in this instance it's 'token' 
+          - "value": This is where the actual bearer token is placed. In this instance, the placeholder is 'BearerToken'.
+          - "type": The data type of the 'value'. In this case, it's a string.
+
+    - "method": The type of HTTP method used for the request. Here, it's a "GET"
+    method, used to retrieve data from a server.
+
+
+    - "url": The URL to where the request is being sent. Here, the request is
+    being sent to "http://localhost:3000/api/article/topic/all", which is likely
+    to be an API endpoint for getting all topics of articles.
+
+
+    - "headers": HTTP headers that will be included in the request. In this
+    example, no specific headers are included as the key-value field is kept
+    empty and it is disabled. If it was enabled, the listed key-value pair would
+    have been sent as an HTTP header.
+
+
+    - "body": Defines the body of the request. In this case, the "mode" is set
+    to "raw", meaning the HTTP request body will contain raw (unprocessed) data.
+    However, no raw content has been provided in this endpoint, so it's left as
+    an empty string. This makes sense since, for a "GET" request, you usually do
+    not need a request body.
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}

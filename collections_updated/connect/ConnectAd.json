@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "e1a8bb1c-5a81-441a-b88f-44cfaa51183b",
+    "name": "ConnectAds",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Connect - Ads - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeAds\",\"description\":\"This ad is my second ad\",\"tags\":\"second,ad\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":1,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isAdsPrivate\":true,\"isTournamentOnly\":false,\"isAdsDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/ad/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "ad",
+            "create"
+          ]
+        },
+        "description": "This is a 'POST' request named \"Connect - Ads - Create\", used for creating advertisement data. \n\n1. **Authentication:** Uses 'Bearer' token authentication. You have to provide a 'token' in the bearer authorization field. The value of this token is 'BearerToken' string.\n\n2. **Headers:** There's a header field provided in the request, but it's disabled by default, so it won't have any effect on your request.\n\n3. **Request Body:** The needed data with their types and typical values are:\n\n    - **sessionId (String):** The ID of the session. \n    - **accountId (String):** The ID of the account creating the advertisement.\n    - **name (String):** The name of the advertisement e.g., 'MyNikeAds'.\n    - **description (String):** A brief description about the advertisement.\n    - **tags (String):** Tags associated with the advertisement separated by commas.\n    - **profilePhotoUrl (String):** The URL of the profile picture for the advertisement.\n    - **coverPhotoUrl (String):** The URL of the cover picture for the advertisement.\n    - **minimumTipAmount (Number):** The minimum tip amount for the advertisement.\n    - **unlockAmount (Number):** The amount to unlock the advertisement.\n    - **category (String):** The category for the advertisement.\n    - **subCategory (String):** The subcategory of the advertisement.\n    - **searchType (String):** The type of search to be made.\n    - **isEnabled (Boolean):** Indicating if the advertisement is enabled or not.\n    - **isAdsPrivate (Boolean):** Indicating if the advertisement is private or not.\n    - **isTournamentOnly (Boolean):** True if the advertisement is only for tournaments else false.\n    - **isAdsDefault (Boolean):** If true, makes this advertisement the default one.\n    - **isPreLiveConnectAds (Boolean):** Check if this is a pre-live ad.\n    - **isPostLiveConnectAds (Boolean):** Check if this is a post-live ad.\n    - **breakPreLiveConnectUrl (String):** URL for the pre-live break media.\n    - **breakLivePauseConnectUrl (String):** URL for the paused-live break media.\n    - **breakPostLiveConnectUrl (String):** URL for the post-live break media.\n\nThe request body is JSON formatted. Please make sure you input the correct types against each key. \n\nFinally, you can send the request to the provided URL: 'http://localhost:3000/api/connect/ad/create'."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Ads - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"adId\":\"adId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeAds\",\"description\":\"This ad is my second ad\",\"tags\":\"second,ad\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":100,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isAdsPrivate\":true,\"isTournamentOnly\":false,\"isAdsDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/ad/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "ad",
+            "update"
+          ]
+        },
+        "description": "1. \"name\": This is the name of the API endpoint. For this particular endpoint, the name is \"Connect - Ads - Update\". This indicates that the endpoint is used to update ads within a connect feature.\n  \n2. \"request\": This specifies the details needed to make the HTTP request. \n\n3. \"auth\": This indicates the type of authorization used to access this endpoint. This endpoint uses Bearer Token for authorization.\n\n4. \"bearer\": This contains the bearer token details. The \"key\" is \"token\", the \"value\" is \"BearerToken\", and the \"type\" is \"string\".\n\n5. \"method\": This denotes the HTTP method to be used for the request. The endpoint uses the PUT method, used for updating the resource.\n\n6. \"url\": This is where the request will be sent. The API link is \"http://localhost:3000/api/connect/ad/update\".\n\n7. \"headers\": This contains additional parameters sent with the request. There's one header where the \"key\" is \"Client-UUID\", the \"value\" is \"ClientUUID\", and the \"type\" is \"default\".\n\n8. \"body\": This is the data to be sent as the request body. The request body should be sent in the raw format.\n\n9. \"mode\": This indicates the format of the body data. The \"mode\" is \"raw\".\n\n10. \"raw\": This contains the data to be sent for an update. The data to be sent here includes adId, sessionId, accountId, name, description, tags, profilePhotoUrl, coverPhotoUrl, minimumTipAmount, unlockAmount, category, subCategory, searchType, isEnabled, isAdsPrivate, isTournamentOnly, isAdsDefault, isPreLiveConnectAds, isPostLiveConnectAds, breakPreLiveConnectUrl, breakLivePauseConnectUrl, and breakPostLiveConnectUrl. All these parameters are contained in a JSON object.\n\n11. \"options\": This indicates the options for processing the body data. In this case, only the \"raw\" option is specified and the \"language\" is \"json\". This means the incoming data is expected to be a raw JSON. \n\nPlease note: All bool parameters (isEnabled, isAdsPrivate, etc.) accept true or false. URL parameters (profilePhotoUrl, etc.) accept valid URL strings. Other parameters accept mostly string values. Numeric parameters like minimumTipAmount and unlockAmount accept integer values.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Ads - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/ad/get/?adId=adId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "ad",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "adId",
+              "value": "adId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Ads - Get\". This is a call to fetch specific advertisement data based upon the adId provided. Here is a more detailed explanation of its components:\n\n1. `name`: The name of the endpoint. It is denoted as \"Connect - Ads - Get\". It indicates the operation of connecting and fetching data related to ads.\n\n2. `request`: This indicates an HTTP request that is to be sent. \n\n3. `auth`: The authentication type used for this request. It is using 'bearer' authentication which means that a bearer token will be used to validate the request. The `token` key is the actual location where the bearer token must be inserted. The token value should be of string type.\n\n4. `method`: This is the HTTP method type. The \"GET\" method is used which means this request fetches data from the server at the specified resource.\n\n5. `url`: This is the URL where the request will be sent. The base URL is `http://localhost:3000/api/connect/ad/get/` and it should be appended by `?adId=` followed by the actual id of the ad you want to retrieve.\n\n6. `headers`: This section is for specifying additional HTTP request options. No key-value pair is provided in this request so, by default, no additional headers will be included in the request.\n\n7. `body`: This is the part of HTTP request where additional data is sent along with the request. In this case, `mode` is set to 'raw' but no actual data is being sent as the `raw` field is empty. So, 'raw' body mode will not affect this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Ads - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/ad/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "ad",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Connect - Ads - Get All\", is designed to fetch all ads associated with a specified account. \n\nBelow are the details of the endpoint parameters:\n\n- The `name` field signifies the title of the endpoint, here it is \"Connect - Ads - Get All\", indicating that this endpoint is used to retrieve all the ads from a destination (typically a server or cloud).\n\n- The `request` field contains the characteristics of the API request. This request type is a \"GET\" method as indicated in the `method` field. A GET request is used to retrieve data from a server. \n\nIn the `auth` subfield:  \n\n- `type` indicates which type of authorization is used. Here it's \"bearer\", which represents Bearer Authentication, often used for authentication requests with tokens.\n  \n- Under `bearer`:\n     - `key`: Refers to what kind of authorization detail is required. In this case, it is a \"token\".\n     - `value`: Displays the value of the authorization detail required; place your Bearer token here (represented by \"BearerToken\").\n     - `type`: Defines the data type of the `value`, it's a \"string\" in this case.  \n\n- The `url` field provides the endpoint for the API request, here it is \"http://localhost:3000/api/connect/ad/all/?accountId=accountId\". This is the link to your local server or cloud where the request will fetch all the ads based on the 'accountId' provided.\n\n- The `headers` subfield contains an array of objects where you can specify additional HTTP headers. In this case, the input is blank and set to \"default\" with the disabled status set to true. It indicates that the header is not participating in the current API request.\n\n- The `body` field is used for data that needs to be sent to the server. Since this is a GET request, there is typically no need to send a body. Here, `mode` is set to \"raw\", indicating that unprocessed data will be sent, however its `raw` value is currently set to an empty string (\"\")."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Ads - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"adId\":\"adId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/ad/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "ad",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Ads - Delete\". It is designed to delete specific advertisements using a specific URL and requires a bearer authentication type. Here are detailed descriptions of each of its data components:\n\n1. `name`: This parameter determines the endpoint's name. In this case, the name is \"Connect - Ads - Delete\". This name indicates that the action supported by this endpoint is the deletion of ads.\n\n2. `request`: This object envelops all the necessary information required to make a valid request to the endpoint.\n\n3. `auth`: This is a security configuration that enforces the type of authentication required by this endpoint. The current authorization type is \"bearer\". It necessitates you to provide a token in order to access the endpoint.\n\n   - `type`: Specifies the type of authentication. Value is \"bearer\".\n   - `bearer`: This is an array that contains all the bearer token details:\n        - `key`: Specifies the name of the token, which in this case is \"token\".\n        - `value`: The actual placeholder for the token value. The current placeholder is \"sessionId\".\n        - `type`: The type of value the key holds, which in this case is string.\n\n4. `method`: The HTTP method that this endpoint uses. It currently uses the \"POST\" method, implying that this endpoint is used to send data to be processed to the specified resource.\n\n5. `url`: This is the actual URL at which the endpoint resides. The current URL is \"http://localhost:3000/api/connect/ad/delete\".\n\n6. `headers`: This is an array that would typically hold any additional header elements required by the endpoint. Currently, there are no additional headers needed, and hence everything has been set to blank or disabled.\n\n7. `body`: This marks where the payload of the request should be defined.\n   - `mode`: Relevantly indicates the format of the body payload. It's set to \"raw\", which means you can send anything in the body, but most often it is used to send JSON formatted string in unprocessed format.\n   - `raw`: Contains the actual information payload that will be sent to the server. This needs to be a string. The included information are \"sessionId\", \"accountId\" and \"adId\".\n\nIn summary, this endpoint deletes an ad by taking the adId from the user, and it authorizes using bearer tokens. The endpoint URL is \"http://localhost:3000/api/connect/ad/delete\", and it follows a POST HTTP method."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "e1a8bb1c-5a81-441a-b88f-44cfaa51183b",
+    "name": "ConnectEvent",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Connect - Event - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeEvent\",\"description\":\"This event is my second event\",\"tags\":\"second,event\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":1,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isEventPrivate\":true,\"isTournamentOnly\":false,\"isEventDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/event/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "event",
+            "create"
+          ]
+        },
+        "description": "This endpoint, \"Connect - Event - Create\", is a Postman request for creating an event in application.\n\n1. \"name\": This is the name of the endpoint being defined.\n\n2. \"request\": Which includes the main properties of the request.\n\n   - \"auth\": The section that contains the security parameters required for the connection.\n     - \"type\": This specifies the used authorization type which is a \"bearer\" in this case.\n     - \"bearer\": This is an array that contains the bearer token needed for authentication.\n       - \"key\": This specifies the header field name for the token, which is \"token\".\n       - \"value\": This specifies the value of the token as \"BearerToken\".\n       - \"type\": The format of the token specified here, which is a \"string\".\n  \n   - \"method\": This specifies the HTTP method being used, which is \"POST\" in this case.\n   \n   - \"url\": The URL where the request will be sent, specifically: \"http://localhost:3000/api/connect/event/create\".\n\n   - \"headers\": Additional headers to be sent as part of the request. In this case, it's empty and is disabled.\n\n   - \"body\": The body of the request.\n     - \"mode\": This specifies the format of the body, which is \"raw\" in this case.\n     - \"raw\": It includes the raw JSON data to be sent in the request body.\n         The different properties include: sessionId, accountId, name, description, tags, profile photo URL, cover photo URL, minimum tip amount, unlock amount, category, subcategory, search type, and various boolean flags.\n     - \"options\": further options for body processing.\n       - \"raw\": Allows specifying the language to be used when processing the raw body, which is \"json\" in this case."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Event - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"eventId\":\"eventId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeEvent\",\"description\":\"This event is my second event\",\"tags\":\"second,event\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":100,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isEventPrivate\":true,\"isTournamentOnly\":false,\"isEventDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/event/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "event",
+            "update"
+          ]
+        },
+        "description": "This API endpoint, titled \"Connect - Event - Update\", is used to update the details of a specific event in your application. It is a PUT request, which typically is used to update existing resources.\n\nThis endpoint requires Bearer token authentication. The \"BearerToken\" is expected to be provided in the request header as the \"token\". \n\nThe request is sent to the following URL: \"http://localhost:3000/api/connect/event/update\". Alongside the standard headers, there is an additional header with the key \"Client-UUID\" which can be changed to the specific Client UUID.\n\nIn the body of the request, property values are provided in raw JSON format. Let's break down each of these:\n\n- \"eventId\": This is the unique identifier of the event that is to be updated.\n- \"sessionId\": This is the session ID associated with the user or event.\n- \"accountId\": This is the user account ID associated with the event.\n- \"name\": This refers to the name of the event.\n- \"description\": This is the description of the event.\n- \"tags\": This field can be used to apply searchable tags to the event.\n- \"profilePhotoUrl\" & \"coverPhotoUrl\": These are URLs of the event's profile and cover pictures.\n- \"minimumTipAmount\": This is the minimum tip amount for this event.\n- \"unlockAmount\": This is the amount required to unlock the event.\n- \"category\" & \"subCategory\": This categorizes the event within the system.\n- \"searchType\": This specifies the search type for the event.\n- \"isEnabled\" & \"isEventPrivate\" & \"isTournamentOnly\" & \"isEventDefault\" & \"isPreLiveConnectAds\" & \"isPostLiveConnectAds\": These boolean flags enable or disable certain features of the event.\n- \"breakPreLiveConnectUrl\", \"breakLivePauseConnectUrl\" & \"breakPostLiveConnectUrl\": These are the URLs where the break clips for pre-live, live paused, and post-live moments of the event are located.\n\nAll of these details are provided in raw JSON format, as specified in the \"options\" property."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Event - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/event/get/?eventId=eventId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "event",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "eventId",
+              "value": "eventId"
+            }
+          ]
+        },
+        "description": "The given data is essentially the structure and details of an API endpoint named 'Connect - Event - Get'. It is broken down as follows:\n\n- **name**: A string value, which represents the name of the endpoint. In this case, the name of the endpoint is \"Connect - Event - Get\". \n\n- **request**: An object containing the details of the request that will be sent to the API endpoint. \n\n  - **auth**: The authentication method used for the API request. Here, it is set to \"bearer\", which is a popular method used for API authentication.\n    \n      - **bearer**: An array where each element is an object representing the authentication token. \n          - **key**: Describes what sort of value the system should expect, here it is \"token\".\n          - **value**: The actual value for the key parameter is \"BearerToken\". The type of the value is a string, as indicated by the \"type\" field.\n\n  - **method**: A string that represents the HTTP method to use for the request. The method of this request is \"GET\", meaning this request is used to retrieve data from the server.\n\n  - **url**: Specifies the server URL that will receive the API request. Here, it's retrieving from an API 'event' with a query parameter of 'eventId' on a local server (http://localhost:3000/api/connect/event/get/).\n\n  - **headers**: An array that can contain multiple objects that represent the API request headers. Here, though, there is a single, blank, object within the array. The 'key', 'value' are empty, the 'type' is 'default', and this header is 'disabled'.\n\n  - **body**: Contains the details of the body contents of the HTTP request. In this case, the 'mode' is set to 'raw', meaning the contents of the 'body' would normally be presented in plain text format. However, the 'raw' field is empty, indicating that no body data is being sent with this request.\n  \nAll these fields contribute to the configuration of this API and have an integral part in the successful sending and receiving of data."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Event - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/event/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "event",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint refers to \"Connect - Event - Get All\", implying that it aims to retrieve all events related to a particular account. Here's detailed information on each data:\n\n- `name`: This field represents the name of the endpoint. In this case, the endpoint name is \"Connect - Event - Get All\".\n\n- `request`: This is where we specify details about the HTTP request that is to be sent.\n\n    - `auth`: This indicates the type of authentication required to access the endpoint. The shown type here is \"bearer\", denoting bearer token authentication. A bearer token is a security token that gives the holder access to the API.\n        - `bearer`: An array of bearer tokens. A bearer token is represented as an object having a \"key\", \"value\", and \"type\". The \"key\" is `token`, the bearer token's value is going to replace \"BearerToken\", and the \"type\" which is `string`.\n\n    - `method`: This stipulates the type of HTTP method used for this request. In this case, it is a \"GET\" method which is used to fetch data from the server.\n\n    - `url`: This refers to the endpoint that the request will be sent to. The specified url is `http://localhost:3000/api/connect/event/all/?accountId=accountId`. The `accountId` will be replaced by a specific account ID to fetch all related events.\n\n   - `headers`: An array containing the information that the client (or browser) needs to send to the server in the header of the HTTP request. In the provided data, there are no explicit headers set, as both \"key\" and \"value\" are empty strings and \"disabled\" is set to true.\n\n   - `body`: This houses the content that you want to send to the API. Given that we're dealing here with a \"GET\" method, the body is typically not needed, and as shown here, the \"mode\" is set to \"raw\" but the \"raw\" value is provided as an empty string. There isn't any particular content sent within the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Event - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"eventId\":\"eventId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/event/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "event",
+            "delete"
+          ]
+        },
+        "description": "\"name\": This field, with the value \"Connect - Event - Delete\", represents the name of the endpoint. It signifies the operation carried out by this API, which is deleting an event in the \"Connect\" module. \n\n\"request\": This field is an object containing all the necessary data to make the API request.\n\nWithin \"request\":\n\n  \"auth\": This is an object specifying the authorization method required for the API request. \n    \"type\": This is the type of authentication used, \"bearer\" in this case. Bearer authentication scheme is where the sender and receiver of an HTTP request agree on a secret key. \n    \"bearer\": This is an array containing the details of the bearer authentication, in this case, the token. \n\n  \"key\": This represents the name of the authentication parameter, in this case, \"token\". \n  \"value\": This contains the value of the authentication parameter. For our discussion, the value is \"sessionId\". \n  \"type\": This specifies the data type of the value of the authentication parameter, which is \"string\" in our case. \n\n\"method\": This field represents the HTTP method used for the request. For our case, the method is \"POST\". \n\n\"url\": This is the URL where the API request will be sent. For our case, the URL is \"http://localhost:3000/api/connect/event/delete\".\n\n\"headers\": This is an array that holds an object of key-value pairs of all header requests. In our case there is a single header object which is empty and disabled.\n\n\"body\": This object holds the details of the body of the request. In this case, the body is sent in 'raw' mode and contains a JSON string.\n\n\"mode\": This tells how the body data will be sent with the request. Possible values are \"raw\", \"urlencoded\" etc and in this case, it's \"raw\". \n\n\"raw\": This field holds the actual raw string data that is going to be sent in the body of the request. In our case, it consists of \"sessionId\", \"accountId\", and \"eventId\" fields that are crucial in deleting an event for a particular account."
+      },
+      "response": []
+    }
+  ]
+}

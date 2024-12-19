@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "e1a8bb1c-5a81-441a-b88f-44cfaa51183b",
+    "name": "ConnectComment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Connect - Comment - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeComment\",\"description\":\"This comment is my second comment\",\"tags\":\"second,comment\",\"commentPhotoUrl\":\"https://example.com/comment.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":1,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isCommentPrivate\":true,\"isTournamentOnly\":false,\"isCommentDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/comment/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "comment",
+            "create"
+          ]
+        },
+        "description": "\"Connect - Comment - Create\" API endpoint:\n\nThis endpoint is given a name \"Connect - Comment - Create\". This suggests the API endpoint is used for creating a new comment in the connect section of the application.\n\nAuthentication:\n\nThe \"auth\" field defines the type of authorization required to access this API endpoint. Authentication is done through a \"bearer\" token that has a key-value format, with a key of \"token\" and a string value of the actual token.\n\nRequest Type:\n\nThe \"method\" field defines the HTTP method used for this API endpoint. In this case, the POST method is used which means that the client is sending data to the server to create a new resource.\n\nAPI URL:\n\nThe \"url\" field explains the address where a request is being sent. For this endpoint, it is \"http://localhost:3000/api/connect/comment/create\". The 'localhost' suggests that the API is local to the server.\n\nHeaders:\n\nIn the \"headers\" array, it's specified that no additional headers are provided for the request. The default headers are disabled.\n\nRequest Body:\n\nThe API receives the request body in a \"raw\" format, meaning the body content is presented as a string. The language of the raw string content is JSON.\n\nThe raw data contains information necessary to create a new comment, including:\n- User's session and account IDs.\n- Comment's name, description, tags, photo URL, and cover photo URL.\n- Minimum tip amount and unlock amount for the comment.\n- The category and subcategory of the comment.\n- Type of search associated with the comment.\n- Various state flags suggesting if the comment is enabled, private, part of a tournament only, default, has pre/post/live ads.\n- The URLs for pre-live, paused-live, and post-live breaks for the comment.\n\nOptions:\n\nThe \"options\" field indicates optional configurations for request body. It specifies that the raw data uses \"json\" language format."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Comment - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"commentId\":\"commentId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeComment\",\"description\":\"This comment is my second comment\",\"tags\":\"second,comment\",\"commentPhotoUrl\":\"https://example.com/comment.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":100,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isCommentPrivate\":true,\"isTournamentOnly\":false,\"isCommentDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/comment/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "comment",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Comment - Update\". It uses the PUT method, suggesting that it's used for updating existing records. The URL for this endpoint is \"http://localhost:3000/api/connect/comment/update\". \n\nIt requires Bearer token authentication, where the token needs to be provided as a string in the 'token' key.\n\nThe 'Client-UUID' which is of default type needs to be provided in the headers. It uniquely identifies the client making the request.\n\nIn the body of the request, the data needs to be in raw JSON format. Below is a description of each field that is expected in the request body:\n\n- `commentId`: The unique identifier of the comment that is being updated.\n- `sessionId`: The unique identifier of the session.\n- `accountId`: The unique identifier of the account.\n- `name`: The name of the comment.\n- `description`: A descriptive text about the comment.\n- `tags`: Related tags for the comment separated by commas.\n- `commentPhotoUrl`: The URL of the photo related to the comment.\n- `coverPhotoUrl`: The URL of the cover photo.\n- `minimumTipAmount`: The minimum amount for tipping.\n- `unlockAmount`: The amount required to unlock.\n- `category`: The category of the comment.\n- `subCategory`: A more specific category under the main category.\n- `searchType`: The type of game related to the comment.\n- `isEnabled`: A boolean field to indicate if the comment is enabled or not.\n- `isCommentPrivate`: A boolean field to indicate if the comment is private or not.\n- `isTournamentOnly`: A boolean field to indicate if the comment is for tournaments only.\n- `isCommentDefault`: A boolean field to indicate if the comment is the default.\n- `isPreLiveConnectAds`: A boolean field to indicate if ads should be displayed before the live connect.\n- `isPostLiveConnectAds`: A boolean field to indicate if ads should be displayed after the live connect.\n- `breakPreLiveConnectUrl`: The URL where the break pre-live connect would be directed.\n- `breakLivePauseConnectUrl`: The URL where the paused live connect would be directed.\n- `breakPostLiveConnectUrl`: The URL where the break post-live connect would be directed.\n\nThe language used for raw data in options is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Comment - Get",
+      "protocolCommentBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/comment/get/?commentId=commentId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "comment",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "commentId",
+              "value": "commentId"
+            }
+          ]
+        },
+        "description": "This endpoint is labeled \"Connect - Comment - Get\". It provides a functionality to retrieve a comment from the connect API. \n\n1. \"auth\": This is the authorization method required for the API. It uses a 'bearer token' for authorization. A bearer token is a type of access token that is sent as a part of the header in API requests to authenticate the user making the request. \n    - \"type\": Is \"bearer\", indicating the type of authorization method in use.\n    - \"bearer\": This is an array containing bearer token information.\n        - \"key\": Specifies \"token\" as the key.\n        - \"value\": The value is expected to be the actual \"BearerToken\" to authenticate the request.\n        - \"type\": Is \"string\", specifying that the value of the token will be a string.\n\n2. \"method\": The method to be used to request the particular endpoint. In this case, it is \"GET\", meaning the request will retrieve information from the API.\n\n3. \"url\": This is the address where the API is located. Here it is \"http://localhost:3000/api/connect/comment/get/?commentId=commentId\". It also includes a parameter \"commentId\", which allows users to specify the comment they want to retrieve information about.\n\n4. \"headers\": This field is used to send additional information in the request header. In this endpoint, it is set to empty (both key and value) and is also disabled.\n\n5. \"body\": This section contains any data that needs to be sent with a request. Here, the \"mode\" is set to \"raw\", indicating that the body content should be taken 'as is'. In this endpoint, no body data (raw content) should be sent as it's a GET request and so, \"raw\" is set to an empty string."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Comment - Get All",
+      "protocolCommentBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/comment/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "comment",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Comment - Get All\". It is designed to retrieve all comments associated with a specified account ID from a Connect application. The request sent to this endpoint involves several data components:\n\n- \"auth\": This required field specifies the authentication method for accessing this endpoint. For this case, it uses bearer authentication, where the credentials are sent in the HTTP header. The bearer token is expected to be a string data type. A valid token is required to access this resource.\n\n- \"method\": This endpoint utilizes the GET method. It's primarily designed to retrieve data from a server.\n\n- \"url\": This is where the server needs to send the request. The URL is 'http://localhost:3000/api/connect/comment/all/?accountId=accountId'. It is designed to run on the local server on port 3000. The path '/api/connect/comment/all' indicates it's accessing the Connect application's comment feature to get all comments. It requires an 'accountId' query parameter representing the user's account ID.\n\n- \"headers\": Headers can be used to pass additional information to/from a server. In this case, the field is left empty and disabled, indicating no extra header information is transmitted with the request.\n\n- \"body\": Defines the data to be sent to the server. The 'mode' signifies how the information is sent, 'raw' means the information is sent unformatted. However, in this case, the 'raw' data is empty, indicating this GET request does not send any data in the body since it's only retrieving comments."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Comment - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"commentId\":\"commentId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/comment/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "comment",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is called \"Connect - Comment - Delete\". \n\n1. **name**: This field denotes the name of the endpoint. It indicates that this API endpoint is used to manage (delete) comments within a connect feature set.\n\n2. **request**: This field contains all the necessary components to make a HTTP request such as the authentication process, the HTTP method, the URL of the request, headers (if any), and the body of the request.\n\n3. **auth**: This is part of the request that deals with the authentication process to access the endpoint. Here, it uses Bearer Token authentication. This type of authentication is an HTTP authentication scheme that involves security tokens called Bearer Tokens.\n    - **type**: The type of token required is called a \"bearer\".\n    - **bearer**: An array containing an object that holds information about the token.\n    - **key**: The name of the token which is \"token\".\n    - **value**: The value of the token is \"sessionId\", which indicates that a session id will be used for the authentication process.\n    - **type**: Indicates that the field requires a string value.\n\n4. **method**: This specifies the HTTP method for the request, which is 'POST' in this case. It is used here because we are deleting information on the server. \n\n5. **url**: This the URL where the server will receive the HTTP request. Here, the request is sent to a local server 'http://localhost:3000/api/connect/comment/delete'.\n\n6. **headers**: This is an array that contains an object which could potentially hold information to be sent as part of the request header. Though in this case, there is no key-value pair provided and has been disabled.\n\n7. **body**: This is the part where additional information or data that is needed to complete the HTTP request is provided.\n    - **mode**: Tells the mode of the data/input sent with the request. Here it is 'raw', which indicates that the data/input is not processed and is sent as is.\n    - **raw**: This is actual data being sent with the request. For this endpoint, the raw data includes a JSON object containing a \"sessionId\", \"accountId\", and a \"commentId\" all of which have respective values. The values need to be replaced with a valid session id, account id, and comment id respectively before sending the request.\n  \nNote: It is very important that you have the necessary authorization and follow the description precisely to successfully make a request to this endpoint.\n"
+      },
+      "response": []
+    }
+  ]
+}

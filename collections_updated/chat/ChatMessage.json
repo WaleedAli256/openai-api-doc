@@ -1,0 +1,273 @@
+{
+  "info": {
+    "_postman_id": "da879614-7eb7-4048-9399-85195c6d3eb8",
+    "name": "ChatMessage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Chat - Message - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"messageText\": \"Hello, this is a message!\",\"messagePriority\": \"0\",\"fromAccountId\": \"fromAccountId\",\"toAccountId\": \"toAccountId\",\"threadId\": \"threadId\",\"replyToId\": \"replyToId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/message/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "message",
+            "create"
+          ]
+        },
+        "description": "This endpoint, named \"Chat - Message - Create\", is a method to create a new chat message on the server. \n\nIt uses the 'POST' method, aiming at the URL \"http://localhost:3000/api/chat/message/create\". The authentication type required for this endpoint is \"bearer\". We use the BearerToken as the authentication token provided under \"auth\" property with key \"token\".\n\nThe body of the request contains raw JSON data with the following fields:\n\n1. \"messageText\": This should contain the text of the chat message being sent. Type for this field is a string.\n   \n2. \"messagePriority\": This is to mark the priority of the message. It's a string where \"0\" could perhaps denote a standard message.\n   \n3. \"fromAccountId\": This refers to the account id from which the message is originating. It should be a string presenting an accountId.\n   \n4. \"toAccountId\": This is the account id to which the message should be sent. A string is expected here as well.\n   \n5. \"threadId\": This could be used for threading or grouping messages. The current message will belong to this thread. It's expected to be represented as a string.\n   \n6. \"replyToId\": If the current message is a reply to any other message, that message's id should be specified here. This field should be a string.\n   \n7. \"accountId\": This could denote the user who is currently logged in and performing the action. The representation of this field is a string.\n   \n8. \"sessionId\": It may be used to maintain the session of the user who is making the request. The value here is expected to be a string.\n\nAll these fields are marked as strings wrapped in JSON format, according to \"options -> raw -> language\". This endpoint doesn't require any specific headers to be set."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Message - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"messageId\": \"messageId\",\"messageText\": \"Updated message text\",\"messagePriority\": \"2\",\"threadId\": \"threadId\",\"accountId\": \"accountId\",\"sessionId\": \"sessionId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/message/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "message",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Chat - Message - Update\", is used to update an existing message in the chat. Details of this endpoint are:\n\n1. Authentication: It uses 'bearer' authentication, which requires a token. This token is a string and should be passed in the 'BearerToken' field.\n\n2. Request Method: PUT is the HTTP method used. PUT is used to update an existing resource.\n\n3. URL: The URL where this request will be sent is 'http://localhost:3000/api/chat/message/update'. It is the location of the server that will process the request.\n\n4. Headers: There are no additional headers required in this request.\n\n5. Request Body: The body of the request contains the data to be updated and it should be in 'raw' mode. The data should be provided as a JSON object with the following properties:\n\n    - messageId : The unique identifier of the message to be updated.\n    - messageText : The updated text for the message.\n    - messagePriority : The new priority of the message. This is represented as a string, such as \"2\".\n    - threadId : The unique identifier of the chat thread to which the message belongs.\n    - accountId : The unique identifier of the account initiating the update.\n    - sessionId : The unique identifier of the user session in which the update is being made.\n\nThe format of the request body is JSON, as specified under the 'options' section of the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Message - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"messageId\": \"messageId\",\"threadId\":\"threadId\",\"accountId\":\"accountId\",\"sessionId\": \"sessionId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/chat/message/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "message",
+            "delete"
+          ]
+        },
+        "description": "This API endpoint is called \"Chat - Message - Delete\". It facilitates the deletion of a specific chat message from a thread. Below are the detailed descriptions of each data:\n\n1. **Name**: The name of the endpoint, which signifies its purpose. Here, \"Chat - Message - Delete\" suggests that it is used for deleting a chat message.\n\n2. **Request**: This contains all the information required to make an API call. \n\n   - **Auth**: The \"Auth\" field specifies the type of authentication used. It has a \"type\" sub-field that denotes the kind of authorization, which in this case is a \"Bearer\" token authorization. The \"bearer\" sub-field is an array that holds the token information. Each array element has a \"key\", a \"value\", and a \"type\". The \"key\" is \"token\", the \"value\" is \"BearerToken\", which should be replaced with the actual bearer token for authentication, and the \"type\" is \"string\", indicating the data type of the token.\n\n   - **Method**: The HTTP method used for sending the request. Here, the method is \"POST\", denoting that it is requesting to create or update the resources.\n\n   - **URL**: This is the address to which the request is to be sent. In this case, the request will be sent to \"http://localhost:3000/api/chat/message/delete\".\n   \n   - **Headers**: An array for specifying HTTP headers to send with the request. It is empty here, which means no additional headers are required.\n   \n   - **Body**: This contains the actual content or data to send in the request.\n   \n     - **Mode**: The setting that defines how to interpret the body of the request. In this case, the mode is \"raw\", denoting that raw data is sent in the request.\n\n     - **Raw**: It represents the actual data to be sent in the body of the request which is in the raw JSON format. It includes \"messageId\", \"threadId\", \"accountId\", and \"sessionId\". These are identifiers for the message to be deleted, the thread where the message resides, the account that owns the message, and the active session, respectively.\n\n     - **Options**: It is used to specify any additional options. For instance, the \"raw\" option specifies that the language of the body content is JSON.\n\nNote: All the string placeholders in this data should be replaced with actual values when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Message - Get",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/chat/message/get?messageId=messageId&threadId=threadId&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "message",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "messageId",
+              "value": "messageId"
+            },
+            {
+              "key": "threadId",
+              "value": "threadId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is called \"Chat - Message - Get\". It retrieves a specific chat message from the server. Here's a detailed description of each data included in the endpoint:\n\n1. \"**name**\": This represents the name of the API endpoint, in this case - \"Chat - Message - Get\".\n\n2. \"**request**\": This contains all the details related to the API request to be made.\n\n3. \"**auth**\": This object is used for providing authorization details that are sent with the request.\n  - \"**auth.type**\": It indicates the type of authorization used for the radio request. In this case, it is set to \"bearer\".\n  - \"**auth.bearer**\": This is an array containing information about the bearer token.\n    - \"**auth.bearer[0].key**\": The key for the bearer token, here it is \"token\".\n    - \"**auth.bearer[0].value**\": The value of the bearer token that you have generated.\n    - \"**auth.bearer[0].type**\": The datatype of the bearer token, in this case, it's a string.\n\n4. \"**method**\": This is the HTTP method used for the request. For this API endpoint, the GET method is being used. This means it is intended to retrieve data from the server.\n\n5. \"**url**\": This represents the URL endpoint where the request is sent. It involves server address, API path, and query parameters. In this case, these parameters include:\n  - \"**messageId**\": The unique identifier of the message.\n  - \"**threadId**\": The unique identifier for the thread in which the message is located.\n  - \"**accountId**\": The unique identifier associated with the user account. \n  - \"**sessionId**\": The unique identifier representing the session.\n\n6. \"**headers**\": This is a list containing any headers that should be included with the request. In this API endpoint, there are no additional headers set."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Message - Get All",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/chat/message/all?threadId=threadId&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "message",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "threadId",
+              "value": "threadId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Chat - Message - Get All\", is designed for retrieving all chat messages. Here is a detailed breakdown of the provided data:\n\n1. **name:** This signifies the name of the endpoint. In this case, it's titled \"Chat - Message - Get All\". The purpose of this endpoint is to get all chat messages.\n\n2. **auth:** Contains information about the authorization method used for this endpoint.\n\n   - **type:** Defines the authorization type used for the request. Here, \"Bearer\" is the type, which is a popular method used for API authentication.\n  \n   - **bearer:** This array holds the information required for bearer authentication. A key-value pair is needed with the key being 'token'. The bearer token should be provided in the value field. As per the provided data, the bearer token is \"BearerToken\". Note that 'BearerToken' is a placeholder, and should be replaced with the actual bearer token string when the API is called.\n\n3. **method:** This signifies the HTTP method used for the endpoint. The \"GET\" method is used here, which is employed to retrieve data from a server.\n\n4. **url:** This is the URL where the request is sent. The specified URL is \"http://localhost:3000/api/chat/message/all\". The URL consists of query parameters that need to be replaced with actual values during the API call. These parameters include:\n\n   - **threadId:** This query parameter represents the ID of the thread from where the messages will be retrieved.\n  \n   - **accountId:** This is the ID of the account related to the chat. Replace this with the exact accountId.\n  \n   - **sessionId:** This parameter identifies the session for the chat. Replace this with the required sessionId.\n\n5. **headers:** Headers pass extra information with the HTTP request to the server. Currently, no such header information is passed as it's an empty array. However, header values can be added as per requirement in future."
+      },
+      "response": []
+    },
+    {
+      "name": "Chat - Message - Get All With Deleted",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/chat/message/all?threadId=threadId&accountId=accountId&sessionId=sessionId&deleted=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "message",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "threadId",
+              "value": "threadId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "deleted",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This API endpoint is named `Chat - Message - Get All With Deleted`. It is designed for retrieving all chat messages in a given thread, including those messages that have been deleted.\n\n1. `Auth`: This section describes the type of authorization used by this endpoint i.e., Bearer Authentication. This type of authorization validates requests based on the bearer token included in the header. A bearer token must be provided, the key should be `token`, and the value must be the assigned `BearerToken` for the current session.\n\n2. `Method`: The HTTP method used for this request is `GET`. This method is typically used for retrieving data from a server.\n\n3. `URL`: The URL where the endpoint is available is `http://localhost:3000/api/chat/message/all`. Note that some query parameters are required in the URL:\n\n    - `threadId`: This parameter is expected to be replaced with the real ID of the thread of interest.\n  \n    - `accountId`: This represents the ID of an account or user. You need to replace this with the actual account ID.\n  \n    - `sessionId`: This represents the ID of a chat session. You must replace this with the valid session ID.\n  \n    - `deleted`: This query parameter is a flag which specifies whether to include deleted messages in the response or not. If it's set to `1`, deleted messages will be included.\n\n4. `Headers`: This field is currently empty, which means that there are no additional headers required for this request. In case of changes, new headers such as `Content-Type` or `Accept` may be needed in future."
+      },
+      "response": []
+    }
+  ]
+}

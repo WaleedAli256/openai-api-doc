@@ -1,0 +1,1012 @@
+{
+  "info": {
+    "_postman_id": "63c1f733-18b8-4fb5-9948-dae48b4e6fcd",
+    "name": "ConnectVideo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14216399"
+  },
+  "item": [
+    {
+      "name": "Connect - Video - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"sessionId\": \"sessionId\",\r\n    \"accountId\": \"accountId\",\r\n    \"provider\": \"facebookpage\",\r\n    \"streamAction\": \"details\",\r\n    // \"streamAction\": \"start\",\r\n    // \"streamAction\": \"stop\",\r\n    \"streamTitle\": \"test\",\r\n    // \"url\": \"facebook.com/provider/live\",\r\n    \"pageName\": \"unpictures\",\r\n    \"description\": \"this is to test live streaming automation on beladed\",\r\n    \"isEnabled\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "video",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Video - Create\". The purpose of this endpoint is to create a new video connection. It functions through a POST method, signifying data being sent to the server to create a new resource.\n\n1. \"auth\": This part of the endpoint specifies the type of authentication to be used. In this case, it's \"bearer\", which means it uses bearer tokens for authentication. There's a key named \"token\" and its value is expected to be a string, typically an encrypted string unique to each user session.\n\n2. \"method\": This refers to the HTTP method used. Here, it's a POST request that is used when you want to send some data to the server, like when you submit a form. \n\n3. \"url\": This is the specific URL at which the request is to be made. Here, it is to 'http://localhost:3000/api/connect/video/create'.\n\n4. \"headers\": These are the request headers which contain aspects regarding the request and its requirements. In this case, the headers have been left blank and are disabled, indicating that no additional metadata is required in the headers for the request.\n\n5. \"body\": This section contains the data that is being sent to the URL. It's in 'raw' mode, which means the text will be sent as it is with no additional formatting. It's written in JSON format. \n\nThe request body contains several items:\n\n   a. \"sessionId\": This is presumably a unique identifier for the given user's session.\n\n   b. \"accountId\": A unique identifier for the user's account.\n\n   c. \"provider\": Here, the provider is stated as 'facebookpage'. It signifies the video provider platform.\n\n   d. \"streamAction\": Represents the action to be taken on the stream, it takes arguments such as 'details', 'start', or 'stop'.\n\n   e. \"streamTitle\": Title for the video stream. In this case, it's 'test'.\n\n   f. \"pageName\": Name of the page where the video will be streamed, here it's 'unpictures'.\n\n   g. \"description\": This data contains a brief about the live stream and here it says, 'this is to test live streaming automation on belading'.\n\n   h. \"isEnabled\": This is a boolean flag used for enabling or disabling the body. Here, its value is true which means the body is enabled.\n\n6. \"options\": This is where you would specify any additional options for the 'body'. Here, the 'raw' body data is specified to be in 'json' language."
+      },
+      "response": [
+        {
+          "name": "Afreecatv",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"afreecatv\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "BreakersTv",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"breakerstv\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Facebook",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"facebook\",\r\n    \"streamAction\": \"details\",\r\n    // \"streamAction\": \"start\",\r\n    // \"streamAction\": \"stop\",\r\n    \"streamTitle\": \"test\",\r\n    // \"url\": \"facebook.com/provider/live\",\r\n    \"description\": \"this is to test live streaming automation on beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Instagram",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"instagram\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n     \"streamAction\": \"details\",\r\n     // \"streamAction\": \"start\",\r\n    // \"streamAction\": \"stop\",\r\n    // \"url\": \"facebook.com/provider/live\",\r\n    \"audience\": \"Practice\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Kick",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"kick\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Linkedin",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"linkedin\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Mixcloud",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"mixcloud\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "picarto",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"picartotv\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "restream",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"restream\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Rumble",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"rumble\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "steam",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"steam\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "telegram",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"telegram\",\r\n    \"streamAction\": \"details\",\r\n    // \"streamAction\": \"start\",\r\n    // \"streamAction\": \"stop\",\r\n    \"url\": \"https://web.telegram.org/k/#-2164237472\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "trovo",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"trovo\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "vaughn",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"vaughnlive\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "vimeo",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"vimeo\",\r\n    \"streamAction\": \"details\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "x",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"x\",\r\n    \"streamAction\": \"details\",\r\n    // \"streamAction\": \"stop\",\r\n    \"category\": \"Digital Creators\",\r\n    \"sourceName\": \"Beladed\",\r\n    \"streamTitle\": \"Live from Beladed\",\r\n    // \"url\":\"https://studio.x.com/producer/broadcasts/1DXxydEVnqeJM\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Youtube",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "default",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"sessionId\": \"{{sessionId}}\",\r\n    \"accountId\": \"{{accountId}}\",\r\n    \"provider\": \"youtube\",\r\n    \"streamTitle\": \"test\",\r\n    \"isEnabled\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{endpoint}}/api/connect/video/create",
+              "host": [
+                "{{endpoint}}"
+              ],
+              "path": [
+                "api",
+                "connect",
+                "video",
+                "create"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Connect - Video - Create Settings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"sessionId\": \"sessionId\",\r\n  \"accountId\": \"accountId\",\r\n  \"name\": \"My Video Stream\",\r\n  \"displayName\": \"My Stream Display Name\",\r\n  \"tags\": \"live,streaming,video\",\r\n  \"title\": \"Live Streaming Event\",\r\n  \"website\": \"https://example.com\",\r\n  \"description\": \"This is a live streaming event for our new product launch.\",\r\n  \"identifierKey\": \"uniqueIdentifier123\",\r\n  \"apiKey\": \"API_KEY_ABC123\",\r\n  \"apiSecret\": \"SECRET_KEY_DEF456\",\r\n  \"apiClientId\": \"CLIENT_ID_XYZ789\",\r\n  \"authToken\": \"AUTH_TOKEN_123456\",\r\n  \"refreshToken\": \"REFRESH_TOKEN_789012\",\r\n  \"providerName\": \"rumble\",\r\n  \"providerId\": \"yt_provider_001\",\r\n  \"uniqueKey\": \"uniqueKey_001\",\r\n  \"authUsername\": \"labourkamail69@gmail.com\",\r\n  \"authPassword\": \"Demopass1?\",\r\n  \"authEmail\": \"labourkamail69@gmail.com\",\r\n  \"authSecurity\": \"securityCode123\",\r\n  \"recaptchaCode\": \"recaptcha123\",\r\n  \"rtmpUrl\": \"rtmp://stream.example.com/live\",\r\n  \"streamKey\": \"streamKey_ABC123\",\r\n  \"region\": \"us-west-1\",\r\n  \"channelUrl\": \"https://youtube.com/channel/xyz\",\r\n  \"server\": \"server_001\",\r\n  \"createdAt\": \"2024-08-31T12:34:56Z\",\r\n  \"updatedAt\": \"2024-08-31T12:34:56Z\",\r\n  \"createdBy\": \"user123\",\r\n  \"updatedBy\": \"user123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/video/createsettings",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "video",
+            "createsettings"
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Video - Create Settings\". It uses the POST method to save new video settings. The request URL for the endpoint is \"http://localhost:3000/api/connect/video/createsettings\".\n\nA bearer token is required for authentication.\n\nThe body of the request needs to be a RAW JSON object with the following fields:\n\n1. \"sessionId\": This is required and should be the session ID string for the user.\n2. \"accountId\": This is required and should be the account ID string for the user.\n3. \"name\": A string to represent the name of the video stream.\n4. \"displayName\": The name that will be displayed for the stream.\n5. \"tags\": A comma-separated string of keywords related to the stream.\n6. \"title\": The title of the streaming event.\n7. \"website\": The URL where the stream will be hosted.\n8. \"description\": A brief description of the streaming event.\n9. \"identifierKey\": A unique identifier key.\n10. \"apiKey\": The API key for the streaming server.\n11. \"apiSecret\": The secret key paired with the API key.\n12. \"apiClientId\": Client ID for the API.\n13. \"authToken\": An authorization token for streaming server authentication.\n14. \"refreshToken\": Token used to refresh the authorisation token.\n15. \"providerName\": Name of the video streaming service provider.\n16. \"providerId\": Unique identifier for the video streaming service provider.\n17. \"uniqueKey\": A unique key specific to the video stream.\n18. \"authUsername\": Username needed for the authentication process.\n19. \"authPassword\": Password needed for the authentication process.\n20. \"authEmail\": Email used for authentication process.\n21. \"authSecurity\": Security code for authentication.\n22. \"recaptchaCode\": The re-captcha validation code.\n23. \"rtmpUrl\": The URL of the RTMP server where the stream is broadcasted.\n24. \"streamKey\": A unique key for the video stream.\n25. \"region\": The geographic region of the RTMP server.\n26. \"channelUrl\": The URL for the video streaming channel.\n27. \"server\": The specific server used to handle the stream.\n28. \"createdAt\": Timestamp representing when the video stream settings were created.\n29. \"updatedAt\": Timestamp representing when the video stream settings were last updated.\n30. \"createdBy\": Identifier for the user who created the video stream settings.\n31. \"updatedBy\": Identifier for the user who last updated the video stream settings.\n\nEnsure that all date and time values are represented in a valid ISO 8601 format (i.e., \"YYYY-MM-DDTHH:mm:ssZ\"). All keys must be enclosed by double quotes as per the JSON standard, and all string values must also be enclosed by double quotes.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Video - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"connectId\":\"connectId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeConnect\",\"description\":\"This connect is my second connect\",\"tags\":\"second,connect\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":100,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isConnectPrivate\":true,\"isTournamentOnly\":false,\"isConnectDefault\":true,\"isPreLiveConnectAds\":true,\"isPostLiveConnectAds\":true,\"breakPreLiveConnectUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseConnectUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveConnectUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "video",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Connect - Video - Update\". It's used to update video connect details with the method PUT. \n\n1. \"auth\": Represents the authentication part of the request.\n  - \"type\": The type of authentication used. In this case, it's \"bearer\" which means it uses bearer token authentication.\n  - \"bearer\": An array with the authentication information bearing the key, value, and type. The key is the \"token\", the value should be the actual \"BearerToken\", and the type is \"string\".\n\n2. \"method\": Represents the HTTP method used which is \"PUT\" in this case.\n\n3. \"url\": The URL where the request will be sent. Here, it is \"http://localhost:3000/api/connect/video/update\".\n\n4. \"headers\": An array of objects that represents any custom headers to be sent along with the request. A \"Client-UUID\" header is given which should have the client's UUID as the value.\n\n5. \"body\": Contains the data to be sent along with the request.\n  - \"mode\": The mode of sending body data. \"raw\" indicates data will be sent in a string format.\n  - \"raw\": The actual data. It contains multiple parameters to update connect information like connectId, sessionId, accountId, name, description, tags, profilePhotoUrl, coverPhotoUrl, minimumTipAmount, unlockAmount, category, subCategory, searchType, isEnabled, isConnectPrivate, isTournamentOnly, isConnectDefault, isPreLiveConnectAds, isPostLiveConnectAds, breakPreLiveConnectUrl, breakLivePauseConnectUrl, breakPostLiveConnectUrl. All parameters are represented as keys in JSON format.\n  - \"options\": Specifies that the raw body contains JSON data.\n\nPlease ensure to replace key values in \"bearer\" authentication and \"headers\", as well as all the parameters in \"raw\" body with actual values."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Video - Get Settings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/connect/video/getsettings?accountId=accountId&sessionId=sessionId&providerName=youtube",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "video",
+            "getsettings"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "providerName",
+              "value": "youtube"
+            }
+          ]
+        },
+        "description": "This endpoint description details the \"Connect - Video - Get Settings\" API request. Here's what you need to know about the data provided:\n\n- `name`: This is the name of the endpoint, which is \"Connect - Video - Get Settings\". It uniquely identifies this endpoint for any function or operation it might serve in a given API.\n\n- `request`: This is a JSON object containing all the details of the HTTP request to be made. Said request is broken down into several components as follows:\n\n- `auth`: The authentication method used for this API endpoint. It employs Bearer Authentication (token-based) method, which is a type of HTTP authentication.\n  - `type`: It is \"bearer\" denoting the Bearer Authentication being used.\n  - `bearer`: An array that holds the authentication token. The `key` is \"token\" and its `value` contains the Bearer Token needed for accessing this endpoint. The `type` indicates that the token is a string.\n\n- `method`: This indicates the type of HTTP method used for the request. Here it is \"GET\", that means data is being retrieved from the server at the provided URL.\n\n- `url`: This is the endpoint's URL and holds the server address and path where the Get request will be sent. It includes query parameters for `accountId`, `sessionId`, and `providerName` whose values need to be supplied when making the API request.\n\n- `headers`: This is an array of header fields to be included in the HTTP request. The descriptions of the properties are as below.\n  - `key`: The name of the header field.\n  - `value`: The value of the header field.\n  - `type`: This indicates the type of the header. Here it is a \"default\" header.\n  - `disabled`: It denotes whether or not the header is disabled. In this case, the value is set as \"true\" which means the header is disabled and it will not be sent with the HTTP request. \n\nBear in mind that the token's value in 'auth', 'accountId', 'sessionId', and 'providerName' in the URL, are placeholders and need to be replaced with real values when making a request to the API."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Video - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/video/get/?connectId=connectId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "video",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "connectId",
+              "value": "connectId"
+            }
+          ]
+        },
+        "description": "This endpoint is used to retrieve video related data on a specific connection. The endpoint's description is as follows:\n\n- **name**: Represents the name of the endpoint. In this case, it is \"Connect - Video - Get\". This name shows the purpose of the endpoint, which is to fetch video data for a specific connection.\n\n- **request**: Contains all the requirements for making a request to the server. \n\n    - **auth**: This field is for authenticating the request. In this case, the type of authentication required is a bearer token. The bearer token needs to be placed within this field with the key `token` and the value `BearerToken`. It must be a string.\n\n    - **method**: This represents the HTTP method used for this endpoint. In this case, the 'GET' method is used which retrieves data from the server.\n\n    - **url**: This is the URL to which the request is made. In this case, it is `http://localhost:3000/api/connect/video/get/?connectId=connectId`. The `connectId` should be replaced with the actual connection ID for which the video data needs to be fetched.\n\n    - **headers**: Here you can place any additional information needed for the request, but currently there is a default empty header set which is disabled.\n\n    - **body**: This is where the content of the request is stored. In some endpoints, you would place additional information needed for a successful request. For this 'GET' method, there isn't any body present, hence 'mode' is set to 'raw' and 'raw' is kept empty."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Video - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/video/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "video",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This field denotes the name of the API endpoint. In this case, it is named \"Connect - Video - Get All\". It signifies that this API is used to fetch all video connections.\n\n2. \"request\": It contains all the information related to the HTTP request that will be sent.\n\n3. \"auth\": It contains the authentication data, which is used to authenticate the request.\n\n   a. \"type\": This signifies the type of authentication. Here, it is \"bearer\", which represents bearer token authentication.\n   \n   b. \"bearer\": This field represents an array of bearer tokens that will be used for authentication.\n    \n   c. \"key\": Represents the key name. Here the key used is \"token\".\n   \n   d. \"value\": This field contains the actual token value. Here it is \"BearerToken\".\n   \n   e. \"type\": Specify the data type of the value. In this case, the data type is \"string\".\n\n4. \"method\": This field specifies the HTTP method used for the request. Here, the \"GET\" method means the request is trying to retrieve data from specified URL.\n\n5. \"url\": This field holds the URL to which the HTTP request will be sent. \"http://localhost:3000/api/connect/video/all/?accountId=accountId\" is the API's endpoint.\n\n6. \"headers\": This field is an array that contains the headers that needs to be sent along with the HTTP request. In this particular example, an empty default header is defined, with a \"disabled\" field set to true, hence it's not used in the request.\n\n7. \"body\": This section contains the body of the HTTP request.  Here the \"mode\" is set to \"raw\", which means the request body data is sent as it is. The \"raw\" field is empty, which indicates there is no data sent in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Connect - Video - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"connectId\":\"connectId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/connect/video/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "connect",
+            "video",
+            "delete"
+          ]
+        },
+        "description": "1. \"name\": This field represents the name of the endpoint. Here, the endpoint is named as \"Connect - Video - Delete\", indicating it is related to deleting a video connection within some service.\n\n2. \"request\": This field includes all the necessary details for making the API request.\n\n3. \"auth\": The auth section contains details about the authorization required for the endpoint. The type indicates it's a Bearer token system. A bearer token is required to authenticate each request to this endpoint. \n\n4. \"bearer token\": The token is a property of the bearer authentication method. Here, the key for the token is \"token\", indicating you pass the token under this key. The value is the sessionId, which means the sessionId is used as token. The type tells us the token is a string.\n\n5. \"method\": The request method used by this API endpoint is \"POST\". The POST method is typically used to send data to a server to create a resource.\n\n6. \"url\": It refers to the specific address on the internet where the request is being sent. This API request is pointing to \"http://localhost:3000/api/connect/video/delete\".\n\n7. \"headers\": Headers let the client and the server pass additional information along with an HTTP request or response. The given header here is disabled and there are no key-value pairs.\n\n8. \"body\": The body field is intended for the additional data you want to send with your request. Here, it's in raw JSON format with \"sessionId\", \"accountId\", and \"connectId\" as keys.\n\n    - \"sessionId\": Represents the id of the user's session.\n    \n    - \"accountId\": Specifies the user's account id.\n    \n    - \"connectId\": Denotes the id of the connect feature/module within the service."
+      },
+      "response": []
+    }
+  ]
+}

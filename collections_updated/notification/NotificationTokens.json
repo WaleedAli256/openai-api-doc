@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationTokens",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Tokens - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Tokens\",\"description\":\"This tokens is my second tokens\",\"tags\":\"second,tokens\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTokensPrivate\":true,\"isTournamentOnly\":false,\"isTokensDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tokens/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tokens",
+            "create"
+          ]
+        },
+        "description": "Title of Endpoint: \"Notification - Tokens - Create\"\n\nThis endpoint is responsible for creating a new notification token. \n\nAuthentication:\nThe authentication uses a bearer token that requires the \"token\" key and its value, specified as \"BearerToken\".\n\nRequest Method: `POST`\n\nURL: http://localhost:3000/api/notification/tokens/create\n\nHeaders: This endpoint currently does not require any additional headers as the key and value fields are disabled.\n\nBody: The body of the request is a raw JSON object with the following properties:\n\n- \"sessionId\": It represents the session identifier. \n- \"accountId\": It represents the account identifier.\n- \"name\": This refers to the name of the notification token.\n- \"description\": This holds a description of the notification token.\n- \"tags\": This is used to tag the tokens with certain categories or labels.\n- \"profilePhotoUrl\": This contains the URL of the profile photo associated with the token.\n- \"coverPhotoUrl\": This contains the URL of the cover photo associated with the token.\n- \"minimumTipAmount\": Specifies the minimum tip amount required.\n- \"categoryId\": Represents the category ID for the token.\n- \"category\": Represents the name of the category the token belongs to.\n- \"subCategoryId\": Represents the sub category ID.\n- \"subCategory\": Represents the name of the sub category.\n- \"isTokensPrivate\": It's a boolean value that indicates if the token is private.\n- \"isTournamentOnly\": It's a boolean value that indicates if the token is only for the tournament.\n- \"isTokensDefault\": It's a boolean value that indicates if it's a default token.\n- \"isPreLiveNotificationAds\": This boolean indicates if there are ads before live notification.\n- \"isPostLiveNotificationAds\": This boolean indicates if there are ads after live notification.\n- \"breakPreLiveNotificationUrl\": This URL is used for pre-live break notification.\n- \"breakPostLiveNotificationUrl\": This URL is used for post-live break notification.\n\nOptions: The language used to write the raw data in the body is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Tokens - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"tokensId\":\"tokensId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Tokens 2.0\",\"description\":\"This tokens is my second tokens\",\"tags\":\"second,tokens\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTokensPrivate\":true,\"isTournamentOnly\":false,\"isTokensDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tokens/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tokens",
+            "update"
+          ]
+        },
+        "description": "The \"Notification - Tokens - Update\" endpoint is used for updating notification tokens details. This endpoint requires \"Bearer\" token for authentication and utilizes the PUT method.\n\nThe main keys in this endpoint are:\n\n- `name`: Name of the endpoint.\n\n- `request`: The actual request to be made.\n\n- `auth`: The method to be used for authentication. Its type is `bearer` which uses bearer token for authentication. The object contains `key`, `value` and `type` fields. \n\n  - `key` is the identifier which in this case is `token`.\n  \n  - `value` is the token string. Replace \"BearerToken\" with your actual bearer token.\n  \n  - `type` is the data type of the value. Here, it's a string.\n\n- `method`: HTTP method to use for the request. Here, it's `PUT`.\n\n- `url`: The URL to make the request. Replace `http://localhost:3000/api/notification/tokens/update` with your server URL.\n\n- `headers`: Additional headers to send with the request. In this case, there's a `Client-UUID` header with a value denoted as \"ClientUUID\" which needs to be replaced with an actual Client UUID.\n\n- `body`: The body of the request. \n\n  - `mode`: This refers to the type of the data in the body. Here, it's `raw`.\n\n  - `raw`: This contains a JSON string with multiple properties that need to be updated:\n\n     - `tokensId`: Unique identifier for your Tokens.\n\n     - `sessionId`: Session ID.\n\n     - `accountId`: Account ID.\n\n     - `name`: Name of your Tokens.\n\n     - `description`: Description of your Tokens.\n  \n     - `tags`: Tags related to your Tokens.\n\n     - `profilePhotoUrl`: URL of the profile photo.\n\n     - `coverPhotoUrl`: URL of the cover photo.\n\n     - `minimumTipAmount`: Minimum tipping amount.\n\n     - `categoryId` and `category`: ID and name of the parent category.\n\n     - `subCategoryId` and `subCategory`: ID and name of the sub-category.\n  \n     - `isTokensPrivate`: Boolean to indicate if the Tokens is private.\n \n     - `isTournamentOnly`: Boolean to indicate if the Tokens is only for tournaments.\n\n     - `isTokensDefault`: Boolean to indicate if the Tokens is default.\n  \n     - `isPreLiveNotificationAds`, `isPostLiveNotificationAds`: Booleans to indicate if Ads will be shown before or after the live notification.\n  \n     - `breakPreLiveNotificationUrl`, `breakPostLiveNotificationUrl`: URLs where the break pre-live and post-live notifications are hosted.\n\nAll of the above-mentioned fields are enclosed in a JSON object and will form the body of the 'PUT' request. Replace each of these placeholder values with actual values."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Tokens - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tokens/get/?tokensId=tokensId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tokens",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tokensId",
+              "value": "tokensId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Notification - Tokens - Get\". It describes a `GET` request to retrieve Notification Tokens.\n\nHere is a detailed description of its structure:\n\n1. **Name**: This is the identifier of the endpoint, known as \"Notification - Tokens - Get\". This is used as a reference for the specific action the endpoint is designed to perform.\n\n2. **Request**: The main component of the endpoint, encompassing the functionality and parameters of the HTTP request.\n   \n   - **Auth**: Specifies the authentication method required. In this case, a \"Bearer\" token is used which must be supplied in the header of the HTTP request.\n        \n        - **Key**: Refers to the field identifier for the authentication method, which is \"token\" here.\n        \n        - **Value**: This should be filled with the specific bearer token value - \"BearerToken\" here. The data type for this value is string.\n            \n   - **Method**: This indicates the HTTP method. It is a `GET` request, meaning data is being retrieved from the server based on the parameters passed in the URL.\n    \n   - **URL**: This is the specific endpoint on the server where the request will go. It includes placeholders for the \"tokensId\", \"sessionId\", and \"accountId\". These values should be replaced with the user's specific data when the request is made.\n\n   - **Headers**: These are default headers needed for the request, in this case, it is disabled. If further headers are required, they can be added here.\n\n   - **Body**: The body of the request contains additional data sent to the server. In this endpoint, the body is in \"raw\" mode, meaning it can be any kind of text. However, there's no specific data for the body here, it's left empty.\n\nEach of these parameters needs to be filled out appropriately by users based on their context to ensure the endpoint works as expected."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Tokens - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tokens/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tokens",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "The provided endpoint fetches all notification tokens. Here's a detailed description of each data point:\n\n1. `\"name\"`: This specifies the name of the API endpoint. In this case, \"Notification - Tokens - Get All\" indicates that this endpoint will retrieve all notification tokens.\n\n2. `\"request\"`: Request block holds the information about the type of the request to be sent.\n\n3. `\"auth\"`: This is used for authentication. This API uses bearer authentication which is specified in the `\"type\"` field as `\"bearer\"`. \n\n4. `\"bearer\"`: This is an array that stores the list of bearer tokens required for authentication.\n  \n    - `\"key\"`: Specifies the key related to the bearer token which is `\"token\"`.\n  \n    - `\"value\"`: Here, `\"BearerToken\"` is placeholder for the actual bearer token to be used in request.\n  \n    - `\"type\"`: This field specifies the data type of the `\"value\"` field which is of the `\"string\"` data type.\n  \n5. `\"method\"`: This parameter indicates the HTTP method to be used for the request. In this case, `\"GET\"` method will be used for the request.\n\n6. `\"url\"`: Specifies the URL to which the request will be sent. It includes the base URL, route, and query parameters. \n\n   - `\"http://localhost:3000/api/notification/tokens/all/\"` is the base URL with specific route.\n\n   - `?sessionId=sessionId&accountId=accountId` are query parameters which include `sessionId` and `accountId` you need to add in the request.\n\n7. `\"headers\"`: This is an array that would usually contain any additional headers required for the request. No headers are sent in this request as the only array object is disabled, that's why `\"key\"` and `\"value\"` fields are empty.\n\n8. `\"body\"`: Contains necessary information required for processing the request.\n\n   - `\"mode\"`: The mode of the request body, in this case, it's `\"raw\"`, which means raw data can be written directly in the body.\n\n   - `\"raw\"`: This is the actual data to be sent along with the request. `\"raw\"` data is empty for this request because it's a GET request; GET requests do not typically use the request body to send data to the server."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Tokens - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tokensId\":\"tokensId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tokens/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tokens",
+            "delete"
+          ]
+        },
+        "description": "This endpoint's name is \"Notification - Tokens - Delete\". \n\nThe Request section contains the following data:\n\n- **auth**: This is where the authentication method is described. The type of authentication used here is \"bearer\". This typically involves sending a token in the HTTP headers to authenticate requests. Here, a token with the key 'token' is used as a bearer token. The value associated with this key is 'sessionId' and its type is a string.\n\n- **method**: The HTTP method used for this request is 'POST', which is usually used to send data to the server.\n\n- **url**: This is the URL for the service that handles this request. In this case, it's \"http://localhost:3000/api/notification/tokens/delete\".\n\nFor the **headers** of this request, the key and value are both empty, and the type is default. This header is disabled, which means it does not add any additional data to the request.\n\nThe **body** contains the actual content of the message. Here, the mode is 'raw', indicating that no special formatting is applied to the data. It includes a raw JSON string that contains three key-value pairs:\n1. \"sessionId\": The session identifier. This is usually used to recognize the user on subsequent requests.\n2. \"accountId\": The account identifier, used to specify for which account the notification tokens should be deleted.\n3. \"tokensId\": The tokens identifier, representing the specific notification tokens to be deleted."
+      },
+      "response": []
+    }
+  ]
+}

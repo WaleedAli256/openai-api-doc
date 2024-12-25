@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "417b9c43-6d48-49df-96aa-54ba11b349cc",
+    "name": "ActionSuggest",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Suggest - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didSuggest\": true,\n    \"category\": \"feature\",\n    \"subcategory\": \"uI improvements\",\n    \"subject\": \"Dark mode req\",\n    \"title\": \"add dark mode\",\n    \"description\": \"It would be helpful to have a dark mode option.\",\n    \"tags\": \"feature request,dark mode\",\n    \"didReply\": true,\n    \"didReview\": true,\n    \"replyText\": \"Dark mode is in our roadmap\",\n    \"reviewStars\": 5,\n    \"name\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suggest/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suggest",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Action - Suggest - Create\n\n#### Request Details\n\n- **Auth**: This section specifies the authorization method used for the API request. It uses a bearer token for authentication.\n  - **Type**: Indicates the type of authentication being used, which is \"bearer\".\n  - **Bearer**: This is an array that contains objects with authentication details.\n    - **Key**: The key used for the token, labeled as \"token\".\n    - **Value**: The actual bearer token value, marked as \"BearerToken\".\n    - **Type**: The data type of the token, which is \"string\".\n\n- **Method**: Specifies the HTTP method to be used for this request, which is \"POST\". This method is typically used to submit data to be processed to a specified resource.\n\n- **URL**: The endpoint URL where the request is sent. In this case, it is `http://localhost:3000/api/action/suggest/create`.\n\n- **Headers**: This section allows you to define any additional headers for your request. \n  - The header is currently empty (with no key or value) and is marked as disabled, meaning it won't be sent with the request.\n\n#### Body Data\n\nThe body of the request is formatted as raw JSON and contains the following fields:\n\n- **sessionId**: A unique identifier for the session in which the action is taking place. This helps in tracking user actions associated with a specific session.\n\n- **accountId**: The identifier for the user account that is making the suggestion. \n\n- **path**: The path to the specific resource or context related to the suggestion. In this example, it points to a video resource.\n\n- **targetType**: Defines the type of the target for the suggestion. In this case, it is specified as \"videoId\".\n\n- **targetId**: The unique identifier of the target item (video) related to the suggestion.\n\n- **sourceType**: Indicates where the suggestion originates from. Here, it is specified as \"accountId\" indicating that the source is a user account.\n\n- **sourceId**: The unique identifier of the source that is making the suggestion, mirroring the accountId.\n\n- **didSuggest**: A boolean value indicating whether this user has made a suggestion. This is set to `true`.\n\n- **category**: The broader category under which the suggestion falls. In this case, it is categorized as \"feature\".\n\n- **subcategory**: A more specific classification of the category. Here, it is specified as \"UI improvements\".\n\n- **subject**: A brief description of what the suggestion is about, labeled as \"Dark mode req\".\n\n- **title**: A concise title summarizing the suggestion, which is \"add dark mode\".\n\n- **description**: A more detailed explanation of the suggestion, providing context. In this case, it notes that having a dark mode option would be helpful.\n\n- **tags**: A comma-separated list of tags related to the suggestion for better categorization and searchability. In this example, the tags are \"feature request\" and \"dark mode\".\n\n- **didReply**: A boolean indicating whether a reply has been made regarding this suggestion. This is set to `true`.\n\n- **didReview**: A boolean indicating whether the suggestion has been reviewed. This is set to `true`.\n\n- **replyText**: The text of the reply provided for the suggestion. Here, it states that dark mode is part of the development roadmap.\n\n- **reviewStars**: A numeric rating given during the review of the suggestion, with a value of 5 indicating a high rating.\n\n- **name**: An optional field, currently left empty, that could hold a name related to the suggestion if needed. \n\nThis detailed breakdown should provide clarity on each field in the API request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Suggest - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didSuggest\": true,\n    \"category\": \"feature\",\n    \"subcategory\": \"uI improvements\",\n    \"subject\": \"Dark mode req\",\n    \"title\": \"add dark mode\",\n    \"description\": \"It would be helpful to have a dark mode option.\",\n    \"tags\": \"feature request,dark mode\",\n    \"didReply\": true,\n    \"didReview\": true,\n    \"replyText\": \"Dark mode is in our roadmap\",\n    \"reviewStars\": 1,\n    \"name\": \"\",\n    \"suggestId\": \"suggestId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suggest/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suggest",
+            "update"
+          ]
+        },
+        "description": "### Detailed Description of Each Data in the Endpoint\n\n1. **name**: \n   - This is the title of the request. It indicates that this endpoint is responsible for updating a suggestion action.\n\n2. **request**: \n   - This object encapsulates all elements required to make the API call.\n\n   - **auth**: \n     - Contains authentication details.\n     - **type**: \"bearer\"\n       - Indicates that the request utilizes Bearer Token authentication.\n     - **bearer**: \n       - An array that holds the authentication token.\n       - **key**: \"token\"\n         - Represents the key used to authenticate.\n       - **value**: \"BearerToken\"\n         - Placeholder for the actual Bearer token that will be used for authentication.\n       - **type**: \"string\"\n         - Specifies that the value type is a string.\n\n   - **method**: \n     - \"PUT\"\n       - This indicates that the HTTP method used for the request will be PUT, typically used for updating resources.\n\n   - **url**: \n     - \"http://localhost:3000/api/action/suggest/update\"\n       - This is the endpoint where the request is sent. The base URL follows with the specific path for updating a suggestion.\n\n   - **headers**: \n     - Contains the additional headers to be sent with the request.\n     - **key**: \"Client-UUID\"\n       - This header is used to identify the client making the request.\n     - **value**: \"ClientUUID\"\n       - Placeholder for the actual Client UUID that will be included in the request.\n     - **type**: \"default\"\n       - Indicates that this is a standard header.\n\n   - **body**: \n     - This section includes the payload sent with the PUT request.\n     - **mode**: \"raw\"\n       - Indicates that the body is being sent in a raw format.\n     - **raw**: \n       - This is the actual JSON data being sent to the server for the update.\n       - **sessionId**: \"sessionId\"\n         - Identifies the specific session during which the action is made.\n       - **accountId**: \"accountId\"\n         - Represents the ID of the user account making the suggestion.\n       - **path**: \"/live/channel/video123\"\n         - Specifies the URI path related to the suggestion.\n       - **targetType**: \"videoId\"\n         - Defines what type of item the suggestion is related to.\n       - **targetId**: \"videoId\"\n         - The identifier for the specific target (video) related to the suggestion.\n       - **sourceType**: \"accountId\"\n         - Indicates the type of source from which the suggestion originated.\n       - **sourceId**: \"accountId\"\n         - The identifier for the source account related to the suggestion.\n       - **didSuggest**: true\n         - A boolean indicating if the user made a suggestion.\n       - **category**: \"feature\"\n         - Categorizes the suggestion type (e.g., feature request).\n       - **subcategory**: \"uI improvements\"\n         - Further classifies the suggestion under a specific subcategory.\n       - **subject**: \"Dark mode req\"\n         - A brief title summarizing the suggestion.\n       - **title**: \"add dark mode\"\n         - A more descriptive title reflecting what the suggestion entails.\n       - **description**: \"It would be helpful to have a dark mode option.\"\n         - Provides detailed information and rationale behind the suggestion.\n       - **tags**: \"feature request,dark mode\"\n         - Keywords associated with the suggestion that may help in categorization or search functionalities.\n       - **didReply**: true\n         - Indicates whether a response to the suggestion has been provided.\n       - **didReview**: true\n         - Shows if the suggestion has been reviewed by the appropriate party.\n       - **replyText**: \"Dark mode is in our roadmap\"\n         - The text response provided regarding the suggestion.\n       - **reviewStars**: 1\n         - Indicates the rating given to the suggestion during the review process.\n       - **name**: \"\"\n         - Placeholder for the name of the individual or entity making the suggestion which is currently left empty.\n       - **suggestId**: \"suggestId\"\n         - A unique identifier for the suggestion being updated.\n\n   - **options**:\n     - This object specifies details about the raw body content.\n     - **raw**: \n       - Indicates that the format of the raw data being sent is JSON.\n\nThis structure provides the necessary information to understand how to interact with the API endpoint for updating suggestions effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Suggest - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suggest/get/?suggestId=suggestId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suggest",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "suggestId",
+              "value": "suggestId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Suggest - Get\n\n- **Name**: Action - Suggest - Get  \n  This is the identifier for the API request and hints at its purpose, which is to retrieve suggestions.\n\n- **Request**:  \n  This section contains details about how to make the API request.\n\n  - **Auth**:  \n    Details the authentication method required to access this endpoint.\n    \n    - **Type**:  \n      The type of authentication being used.\n      - **Bearer**: This indicates that bearer token authentication is required.\n    \n    - **Bearer**:  \n      Contains information about the bearer token used for authentication.\n      \n      - **Key**:  \n        This is the identifier for the token.\n        - **Token**: The key used to pass the authentication token.\n      \n      - **Value**:  \n        The actual token string needed for authentication.\n        - **BearerToken**: Placeholder for the actual bearer token that must be provided when making the request.\n      \n      - **Type**:  \n        Specifies that the value type of the token is a string.\n\n  - **Method**:  \n    Specifies the HTTP method to be used for the API request.\n    - **GET**: The request should use the GET method to retrieve data.\n\n  - **URL**:  \n    This is the endpoint address to which the GET request is sent.\n    - `http://localhost:3000/api/action/suggest/get/?suggestId=suggestId&sessionId=sessionId&accountId=accountId`: This is the endpoint where the request is directed. It includes query parameters for:\n      - **suggestId**: Represents the ID of the suggestion being requested.\n      - **sessionId**: Represents the current session ID.\n      - **accountId**: Represents the ID of the account for which suggestions are being retrieved.\n\n  - **Headers**:  \n    Contains any additional parameters to be included in the request.\n    - **Key**:  \n      Currently empty, indicating there are no specific header keys set.\n      \n    - **Value**:  \n      Also currently empty, showing no specific header values.\n      \n    - **Type**:  \n      This suggests the type of header, set to ‘default’.\n      \n    - **Disabled**:  \n      Set to true, indicating that this header is currently inactive and will not be sent with the request.\n\n  - **Body**:  \n    Details the structure of the body of the request.\n    \n    - **Mode**:  \n      Indicates how the body of the request is structured.\n      - **Raw**: Specifies that the body of the request will be sent as raw data.\n    \n    - **Raw**:  \n      This is the content of the request body.\n      - Currently empty, indicating that no body content is needed or provided for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Suggest - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suggest/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suggest",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Suggest - Get All\n\n**Name**: Action - Suggest - Get All  \nThis is the name of the API request, indicating that it is used to retrieve all suggestions related to actions.\n\n**Request**:  \nThis section contains the details of how to make the API request.\n\n- **Auth**:  \n  Contains information about the authentication method used for this request.\n  \n  - **Type**:  \n    Specifies the authentication type as \"bearer\", which indicates that a bearer token will be used for authentication.\n    \n  - **Bearer**:  \n    This is an array containing details about the bearer token required to authorize the request.\n    \n    - **Key**:  \n      Indicates the name of the bearer token parameter. In this case, it's labeled \"token\".\n      \n    - **Value**:  \n      Represents the actual authorization token that needs to be sent with the request. Here it is shown as \"BearerToken\", and users should replace this with their actual token.\n      \n    - **Type**:  \n      Shows that the token should be sent as a string.\n\n- **Method**:  \n  The HTTP method to be used for this request is \"GET\". This means that the request is intended to retrieve data from the server.\n\n- **URL**:  \n  The endpoint URL where the request will be sent. In this case:\n  `http://localhost:3000/api/action/suggest/all/?sessionId=sessionId&accountId=accountId`. Users should replace `sessionId` and `accountId` with actual values relevant to their session and account.\n\n- **Headers**:  \n  This section allows for additional data to be sent along with the request, which can help facilitate the communication between the client and server.\n  \n  - **Key**:  \n    A string intended for the header's name. This is currently empty.\n    \n  - **Value**:  \n    The value associated with the header's key, which is also empty. Together, this header is disabled and does not contribute to the request.\n\n- **Body**:  \n  This section contains data that can be sent with the request, although for a GET request, a body is typically not used.\n  \n  - **Mode**:  \n    Specifies the mode of the request body, which is set to \"raw\". This means the body is intended to carry raw data.\n    \n  - **Raw**:  \n    This is the area where the raw body data would be entered. Currently, it is empty since a GET request does not usually include a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Suggest - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"suggestId\":\"suggestId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suggest/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suggest",
+            "delete"
+          ]
+        },
+        "description": "### Action - Suggest - Delete\n\n#### Request Overview\nThis endpoint is designed to delete a suggestion associated with a specific account and session. It utilizes a POST request to execute the deletion action.\n\n#### Authentication\n- **Auth Type**: Bearer Token\n  - This endpoint requires a bearer token for authentication. The token must be provided in the request header to authorize the user.\n  - **Token Details**:\n    - **Key**: `token`\n    - **Value**: `sessionId`\n    - **Type**: String\n  - The `sessionId` represents the unique identifier for the user's current session.\n\n#### HTTP Method\n- **Method**: POST\n  - This indicates that the request is sending data to the server to perform an action (in this case, deleting a suggestion).\n\n#### URL\n- **Endpoint URL**: `http://localhost:3000/api/action/suggest/delete`\n  - This is the local development URL where the API can be accessed.\n\n#### Headers\n- **Headers**: \n  - Currently, there are no additional headers required for this request, as indicated by the empty key and value fields. The header is also disabled, meaning it is not currently in use.\n\n#### Body\n- **Body Mode**: Raw\n  - The request body is sent in raw format as a JSON string.\n  \n- **Body Content**:\n  - The body includes the following fields:\n    - **sessionId**: This is the identifier for the user's current session. It is used to validate the request.\n    - **accountId**: This represents the unique identifier for the user's account. It links the action to the correct account.\n    - **suggestId**: This is the identifier of the suggestion that is to be deleted. It specifies which suggestion to remove from the database.\n\nThis structure allows users to easily understand how to use this endpoint and what data needs to be provided for successful operation."
+      },
+      "response": []
+    }
+  ]
+}

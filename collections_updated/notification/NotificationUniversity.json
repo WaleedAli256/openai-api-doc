@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationUniversity",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - University - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second University\",\"description\":\"This university is my second university\",\"tags\":\"second,university\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isUniversityPrivate\":true,\"isTournamentOnly\":false,\"isUniversityDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/university/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "university",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Notification - University - Create\". \n\nThe authentication required is of type \"bearer\", and it uses a token which is expected to be of string type and assigned to the \"Authorization\" field in the request headers.\n\nThe request method is a POST, meaning it sends data to the server to create a new resource.\n\nThe URL where the request is sent to is \"http://localhost:3000/api/notification/university/create\".\n\nThe body type is raw and the data is structured in JSON. \n\nLet's walk through each field in the JSON body:\n\n- \"sessionId\": This would typically be a unique identifier for the current session.\n- \"accountId\": This field is likely used for specifying the user's account.\n- \"name\": It seems this field is used to set the university name.\n- \"description\": This field is for providing some details about the university.\n- \"tags\": These are keywords or labels that categorize and identify the university.\n- \"profilePhotoUrl\": This is the URL of the profile photo of the university.\n- \"coverPhotoUrl\": The URL of the cover photo of the university.\n- \"minimumTipAmount\": This appears to set the minimum tip amount. \n- \"categoryId\" & \"category\": These fields are used to set the category for the university.\n- \"subCategoryId\" & \"subCategory\": The sub-category to which the university belongs to.\n- \"isUniversityPrivate\": A boolean indicating whether the university is private or not.\n- \"isTournamentOnly\": Indicates whether the university is only for tournaments.\n- \"isUniversityDefault\": Specifies whether the university setting is at its default.\n- \"isPreLiveNotificationAds\" & \"isPostLiveNotificationAds\": These fields appear to dictate whether there will be ads shown in notifications.\n- \"breakPreLiveNotificationUrl\" & \"breakPostLiveNotificationUrl\": These fields would be used to define the media files to be used during the pre-live and post-live break notifications.\n\nIn the headers, a key-value pair is mentioned, but it's currently disabled and empty. Likely, you would fill in the appropriate header information you need for your request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - University - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"universityId\":\"universityId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second University 2.0\",\"description\":\"This university is my second university\",\"tags\":\"second,university\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isUniversityPrivate\":true,\"isTournamentOnly\":false,\"isUniversityDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/university/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "university",
+            "update"
+          ]
+        },
+        "description": "This endpoint is titled \"Notification - University - Update\" and facilitates updating a University notification. It utilizes the PUT method indicating that it is for updating information. Here is a breakdown of each data:\n\n- **auth**: This part deals with the authentication details, specifically using bearer token authorization provided in the string format.\n\n- **url**: This is the URL where the request is to be sent. It is pointing to a local host and appears to be for a localhost development environment.\n\n- **headers**: Contains additional information (metadata) to be sent along with the request. A \"Client-UUID\" header is included in the request.\n\n- **body**: This is where the actual content to be sent with the request is contained. The mode specified is \"raw\", which means the data included is not encoded. A JSON object is sent in string format. This object includes:\n\n    - **universityId, sessionId, accountId**: These are identifiers related to the university, session, and account respectively.\n\n    - **name**: Represents the updated name of the university.\n\n    - **description**: Holds the updated description of the university.\n\n    - **tags**: It indicates the tag values associated with the university.\n\n    - **profilePhotoUrl, coverPhotoUrl**: The URLs for the university's profile and cover photos.\n\n    - **minimumTipAmount**: The minimum acceptable tip amount for the university.\n\n    - **categoryId, category, subCategoryId, subCategory**: These are identifiers and names of the category and sub-category, where this university belongs.\n\n    - **isUniversityPrivate, isTournamentOnly, isUniversityDefault, isPreLiveNotificationAds, isPostLiveNotificationAds**: These are boolean values that specify certain attributes or options relevant to the university.\n\n    - **breakPreLiveNotificationUrl, breakPostLiveNotificationUrl**: These variables are URLs which point to resources of Pre-Live and Post-Live notification break videos respectively.\n\nThis endpoint indicates a detailed update setup for a university notification where all aspects related to a university can be updated."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - University - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/university/get/?universityId=universityId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "university",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "universityId",
+              "value": "universityId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint represents a GET request titled 'Notification - University - Get'. Here's a detailed description about each data:\n\n1. 'name': This is the name assigned to the endpoint. It's used for identifying and organizing the different requests inside your collection.\n\n2. 'request': This indicates the type of request being made. In this case, it is a GET request which is normally used for read-only operations.\n\n3. 'auth': This has to do with the authorization required to make the request. It employs a 'bearer' token method of authorization. You must provide a valid 'bearer' token as part of your authorization.\n\n    - 'key': The key for the authorization parameter, which in this case is 'token'.\n \n    - 'value': This signifies the value of the bearer token which needs to be replaced with the actual token value while making a request.\n\n    - 'type': This signifies the value type which is string in this case.\n\n4. 'method': This is the HTTP method used to send the request. This is a GET method which is used to fetch a specific resource from the server.\n\n5. 'url': This is the URL of the API you are making a request to. This endpoint features query parameters such as 'universityId', 'sessionId', and 'accountId'. Replace these with actual values before making the request.\n\n6. 'headers': These are additional information about the request. For this particular request, the header is set to 'default' and is disabled. No additional header values are required here.\n\n7. 'body': This contains data that should be sent along with the request. For this request, there is no data to send, hence the mode is 'raw' and the value is empty. \n\nPlease replace all the placeholders with appropriate values while trying to use this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - University - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/university/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "university",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint named \"Notification - University - Get All\" serves as a GET request to retrieve all university notifications.\n\n1. **Auth**: This endpoint utilizes bearer token authentication. It requires a \"token\" key in which the assigned value should be a \"BearerToken\". A bearer token is a type of access token which grants the bearer or holder of the token, the authorization to access this endpoint. The value is a string datatype.\n\n2. **Method**: The type of HTTP request method used is \"GET\". This method retrieves data from a particular URL. It does not modify or add to the data on the server, it only requests and receives data.\n\n3. **URL**: This is the unique address where the request will be sent. It's designed for a local server running on port 3000. The full URL structure includes two query string parameters; localhost:3000/api/notification/university/all/?sessionId={sessionId}&accountId={accountId}. \n    - `sessionId` is a parameter which holds the value of the current session. This is mainly used for state management.\n    - `accountId` is the unique identifier for a user account. This could be used to retrieve notifications related only to this specific account.\n\n4. **Headers**: In this case, there are default headers attached to the request that are currently disabled - meaning these headers are not sent along with the request. Since both key and value are not provided, these headers do not carry any additional information for the request.\n\n5. **Body**: As a GET request, this endpoint does not send any data (raw or form data) in the request body. Hence, the \"mode\" key is set to \"raw\" with an empty \"raw\" key."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - University - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"universityId\":\"universityId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/university/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "university",
+            "delete"
+          ]
+        },
+        "description": "This endpoint represents an operation related to the deletion of a university notification. Here is a detailed explanation of the data contained in this endpoint:\n\n1. \"name\": This field indicates the title or identifier for this endpoint. The provided string \"Notification - University - Delete\" suggests that this API allows the user to delete notifications related to universities.\n\n2. \"request\": This group of data comprises all the necessary information that the API needs to successfully execute a request.\n\n3. \"auth\": This section includes the authentication scheme for the request. The \"type\" field, having a value of \"bearer\", tells us this API uses Bearer Token Authentication. \n\n   - \"bearer\": An array that holds the token information. \n   - \"key\" field with the value \"token\" suggests that the client must send a 'token' field as part of the authentication. \n   - \"value\" field with the value \"sessionId\" implies that the value for 'token' should be the session Id. \n   - \"type\" denotes the data type of the \"token\" which is in this case, a string.\n\n4. \"method\": The HTTP method employed for this request is \"POST\" which indicates that this API sends data to the server to create a resource.\n\n5. \"url\": This string is the URL where the API request is sent. Here, it is specifically directed to the \"notification/university/delete\" path of the local server running on port 3000.\n\n6. \"headers\": This is an array to specify any custom HTTP headers for the request. Currently, it contains a disabled default key-value pair, which implies no additional headers are required for this request.\n\n7. \"body\": The body of the request contains the actual data that needs to be sent to the server.\n\n   - \"mode\": This field defines how the body data should be treated. Its value \"raw\" explains that the body data will be taken as it is, without further transformation.\n   \n   - \"raw\": Contains a JSON formatted string specifying the data to be included in the request. It consists of the \"sessionId\", \"accountId\", and \"universityId\" fields, signifying the session, account, and university identifiers respectively, required for this delete operation."
+      },
+      "response": []
+    }
+  ]
+}

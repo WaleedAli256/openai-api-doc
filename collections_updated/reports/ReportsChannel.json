@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "ReportsChannel",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Reports - Channel - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Channel\",\"description\":\"This channel is my second channel\",\"tags\":\"second,channel\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isChannelPrivate\":true,\"isTournamentOnly\":false,\"isChannelDefault\":true,\"isPreLiveReportsAds\":true,\"isPostLiveReportsAds\":true,\"breakPreLiveReportsUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveReportsUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/channel/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "channel",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Reports - Channel - Create\" and its main function is to create a new channel within a reporting system.\n\n1. **Authentication** - This endpoint uses bearer token authentication. This means that you will need to pass the bearer token in the headers of the request. The placeholder for this is \"BearerToken\". Remember to replace this placeholder with a valid token.\n\n2. **Request Method** - The request method for this endpoint is POST, implying that this API will be used to send data to the server to create a new resource.\n\n3. **URL** - The URL to which the request is to be sent is \"http://localhost:3000/api/reports/channel/create\". This endpoint is located on a local server, specifically on port 3000.\n\n4. **Headers** - An empty default header structure is included in the endpoint description. Unless there are specific headers that need to be included, you will not need to use these.\n\n5. **Body** - The body of the request includes all the data required to create a new channel. This data should be sent in raw format in the body of the request and is formatted in JSON language. It contains a number of fields, each of which is described below:\n    - `sessionId` - The identifier for the session. Replace \"sessionId\" with the actual value.\n    - `accountId` - The identifier for the account. Replace \"accountId\" with the actual value.\n    - `name` - The name of the channel.\n    - `description` - A description of the channel.\n    - `tags` - Associated tags for the channel, separated by commas.\n    - `profilePhotoUrl` - The URL of the profile photo for the channel.\n    - `coverPhotoUrl` - The URL of the cover photo for the channel.\n    - `minimumTipAmount` - The minimum amount for tips on the channel.\n    - `categoryId` & `category` - The identifier and name of the category to which the channel belongs.\n    - `subCategoryId` & `subCategory` - The identifier and name of the sub-category to which the channel belongs.\n    - `isChannelPrivate` - A Boolean flag indicating whether the channel is private.\n    - `isTournamentOnly` - A Boolean flag indicating whether the channel is for tournaments only.\n    - `isChannelDefault` - A Boolean flag indicating whether the channel is the default channel.\n    - `isPreLiveReportsAds` & `isPostLiveReportsAds` - Boolean flags indicating whether the channel enables pre-live reports ads and post-live reports ads respectively.\n    - `breakPreLiveReportsUrl` & `breakPostLiveReportsUrl` - The URLs of the break pre-live report and break post-live report respectively.\n\nPlease ensure all the JSON keys and corresponding values are properly filled out according to your requirements."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Channel - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"channelId\":\"channelId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Channel 2.0\",\"description\":\"This channel is my second channel\",\"tags\":\"second,channel\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isChannelPrivate\":true,\"isTournamentOnly\":false,\"isChannelDefault\":true,\"isPreLiveReportsAds\":true,\"isPostLiveReportsAds\":true,\"breakPreLiveReportsUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveReportsUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/channel/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "channel",
+            "update"
+          ]
+        },
+        "description": "This endpoint is called \"Reports - Channel - Update\". You can use it to update an existing report channel using a \"PUT\" request. \n\nIn the request, there are several parts that you need to carefully fill out:\n\n- \"auth\": This part requires a bearer token for authorization. It is used to verify your identity, based on the \"token\" provided in the key-value pair. Type should be set as \"string\".\n\n- \"url\": This is the URL where you will be making the request. This needs to point to the server where the API is hosted.\n\n- \"headers\": This contains a \"Client-UUID\" key. The UUID is a unique identifier issued for each client.\n\nIn the body of the request, you'll provide the details of the report channel that you wish to update:\n\n- \"channelId\": Unique identifier for the channel.\n\n- \"sessionId\": Unique session identifier.\n\n- \"accountId\": Unique account identifier.\n\n- \"name\": Updated name for the channel.\n\n- \"description\": Provides a detailed explanation about the channel.\n\n- \"tags\": Keywords associated with the channel.\n\n- \"profilePhotoUrl\": URL link to the profile photo.\n\n- \"coverPhotoUrl\": URL link to the cover photo.\n\n- \"minimumTipAmount\": Minimum tip amount allowed in the channel.\n\n- \"categoryId\" and \"category\": Unique identifier and name for the channel's main category.\n\n- \"subCategoryId\" and \"subCategory\": Unique identifier and name for the channel's subcategory.\n\n\"IsChannelPrivate\" This is a boolean flag to indicate if the channel is private or not.\n\n- \"isTournamentOnly\": Boolean flag to indicate whether the channel is only for tournaments.\n\n- \"isChannelDefault\": Boolean flag indicating whether the channel is the default one.\n\n- \"isPreLiveReportsAds\" and \"isPostLiveReportsAds\": Boolean flags that if true, indicate that ads should play before and after live reports.\n\n- \"breakPreLiveReportsUrl\" and \"breakPostLiveReportsUrl\": URLs for the break pre-live and post-live reports.\n\nPlease make sure to replace all placeholder values with actual data."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Channel - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/channel/get/?channelId=channelId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "channel",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channelId",
+              "value": "channelId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "Here is the detailed description of each component in the provided data:\n\n1. `name`: This represents the label or description of the API call. In this case, the name is \"Reports - Channel - Get\", which suggests this API call is related to getting reports for a particular channel.\n\n2. `request`: This object encapsulates the details about an API request.\n   \n   a. `auth`: This object contains details related to authentication.\n     \n      i. `type`: Here \"bearer\" specifies the type of authentication which is based on Bearer Authentication (token-based) method.\n         \n      ii. `bearer`: This array contains information about the bearer token. \n\n         `key`: This represents the name of the token. Here, the key is \"token\". \n\n         `value`: The actual bearer token value. Here, it's represented as \"BearerToken\".\n\n         `type`: The data type of value. In this case, it's a \"string\".\n\n   b. `method`: This string indicates the HTTP method used for the API request. Here it is \"GET\", which means this API request is used to retrieve data.\n   \n   c. `url`: This string represents the endpoint URL where the API request should be sent. It also includes various parameters like `channelId`, `sessionId`, and `accountId`.\n\n   d. `headers`: This is an array of objects containing key-value pairs for the HTTP headers to be included in the request. Here, the key and value are both empty, and it is disabled, suggesting this header doesn't affect the API request.\n\n   e. `body`: This object contains details about the request's body.\n\n      i. `mode`: Here, the mode is \"raw\". It means the request body is sent as it is and isn't processed in any way.\n\n      ii. `raw`: This key would normally contain the raw request data. Here, it is empty indicating that there is no data to be sent in the request body.\n   \nThis endpoint essentially fetches reports for a specific channel identified by the channelId, sessionId, and accountId parameters, using a bearer token for authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Channel - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/channel/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "channel",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This field indicates the name or title of the endpoint. In this case, the name \"Reports - Channel - Get All\" suggests that this endpoint is used to get all channel reports.\n\n2. \"request\": This field contains all the information required to make a particular API request.\n\n3. \"auth\": This field specifies the type of authorization needed to access this API endpoint. It is of type \"bearer,\" indicating that a bearer token must be provided. \n\n    i. \"type\": Specifies the authorization type as \"bearer\".\n    \n    ii. \"bearer\": Contains the key-value pair for bearer token.\n\n       a. \"key\": The key is set to \"token\" indicating that this value represents the bearer token.\n       \n       b. \"value\": It is set to \"Bearer Token\" where the actual token will be pasted. \n\n       c. \"type\": Specifies the data type of the value, which is \"string\" in this case.\n\n4. \"method\": Specifies the HTTP method used for the API request. In this case, the \"GET\" method indicates that it is retrieving data from the server.\n\n5. \"url\": This field holds the address of the API endpoint. The query parameters \"sessionId\" and \"accountId\" are appended to this URL and their values need to be provided as part of the request.\n\n6. \"headers\": Headers allow the client to pass additional information about the request or about itself to the server. In this case, no headers are required as the \"key\" and \"value\" fields are empty and this header is disabled.\n\n7. \"body\": This field represents the data that is sent to the API endpoint. The \"mode\" is set to \"raw\", indicating that the request body is sent as it is entered. No specific data (\"raw\": \"\") is needed in the body for this endpoint as it's a GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Channel - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/channel/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "channel",
+            "delete"
+          ]
+        },
+        "description": "- **name**: This field signifies the name of the API endpoint. In this case, the name is \"Reports - Channel - Delete\" indicating that this API is to delete a report of a specific channel.\n\n- **request**: This is the main part of the API. It includes all the details required to make an API call.\n\n- **auth**: This part details the authentication method of the API call. The API uses Bearer authentication. \n\n    - **type**: It denotes the type of authentication being used. Here, \"bearer\" is used. \n\n    - **bearer**: This is an array that contains an object, specifying the \"key\" as \"token\", \"value\" as \"sessionId\", and \"type\" as \"string\" denoting the type of value.\n\n- **method**: This signifies the HTTP method used for the API call. Since this is \"POST\", it means that this API call is used to send data to the server.\n\n- **url**: This is the URL endpoint that will be hit when this API call is made. The URL includes the base URL (http://localhost:3000) as well as the specific endpoint (/api/reports/channel/delete).\n\n- **headers**: This is an array that can include various headers needed for the API call. As the key and value fields are empty and disabled here, no additional HTTP headers are set in this request.\n\n- **body**: This section holds the data to be sent along with the \"POST\" request. It can be in different modes like \"formdata\", \"urlencoded\", \"raw\", etc. Here, \"raw\" mode is used and JSON data is sent.\n\n    - **mode**: It indicates how the API call will be sent. Here, it is set to \"raw\", meaning the body of the request will contain raw data.\n\n    - **raw**: This part holds the actual data string to be sent with the API call. It is set to contain JSON string with keys as \"sessionId\", \"accountId\", \"channelId\" and their respective values.\n\nNote: The values of \"sessionId\", \"accountId\" and \"channelId\" in the \"raw\" field need to be replaced with actual session ID, account ID, and channel ID to make a successful API call."
+      },
+      "response": []
+    }
+  ]
+}

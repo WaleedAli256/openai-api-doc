@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "3531dc6f-0ad0-4225-9151-5aef71776efb",
+    "name": "ActionAnnounce",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Announce - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"title\": \"My birtday\",\n    \"description\": \"Please wish me a happy birthday. Today is my birthday\",\n    \"tokenAmount\": 100,\n    \"category\": \"Birthday\",\n    \"country\": \"United States\",\n    \"scheduleDate\": \"2024-05-15\",\n    \"scheduleTime\": \"13:00:00\",\n    \"duration\": 15000,\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/announce/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "announce",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Announce - Create\n\n**Endpoint Name**: Action - Announce - Create\n\n**Request Method**: POST\n\n**Request URL**: \n- `http://localhost:3000/api/action/announce/create`\n\n#### Authentication\n- **Auth Type**: Bearer\n  - **Bearer Token**: \n    - **Key**: `token` - This is the key used for authorization.\n    - **Value**: `BearerToken` - Placeholder for the actual bearer token to authorize the request.\n    - **Type**: string - Specifies the type of value for the token.\n\n#### Request Headers\n- **Headers**: Currently, there are no headers specified in this request, as the header key and value are both empty and the header is disabled.\n\n#### Request Body\nThe body of the request is in raw JSON format and contains the following parameters:\n\n1. **sessionId**: \n   - Type: string\n   - Description: A unique identifier for the session in which the announcement is being made. This could represent a specific user session or event.\n\n2. **accountId**: \n   - Type: string\n   - Description: The unique identifier for the user account submitting the announcement. This helps in associating the announcement with a specific user.\n\n3. **title**: \n   - Type: string\n   - Description: The title of the announcement. It provides a brief statement about the nature of the announcement, e.g., a birthday celebration.\n\n4. **description**: \n   - Type: string\n   - Description: A detailed explanation of the announcement. This could include additional context or instructions related to the announcement.\n\n5. **tokenAmount**: \n   - Type: number\n   - Description: The amount of tokens associated with the announcement. Tokens could represent a form of currency or points within the application.\n\n6. **category**: \n   - Type: string\n   - Description: The category under which the announcement falls. This helps in organizing announcements, e.g., \"Birthday\", \"Event\", etc.\n\n7. **country**: \n   - Type: string\n   - Description: The country associated with the announcement. This could define the geographical relevance of the announcement.\n\n8. **scheduleDate**: \n   - Type: string (date format)\n   - Description: The date on which the announcement is scheduled to take place, formatted as YYYY-MM-DD.\n\n9. **scheduleTime**: \n   - Type: string (time format)\n   - Description: The time at which the announcement is scheduled, formatted as HH:MM:SS.\n\n10. **duration**: \n    - Type: number\n    - Description: The duration for which the announcement will be active. This is typically expressed in milliseconds.\n\n11. **path**: \n    - Type: string\n    - Description: The path to the live channel or media where the announcement is to be displayed. This identifies the medium through which users can access the announcement.\n\n12. **targetType**: \n    - Type: string\n    - Description: Indicates the type of target that the announcement applies to, e.g., \"videoId\".\n\n13. **targetId**: \n    - Type: string\n    - Description: The unique identifier for the target item, such as a video or content piece related to the announcement.\n\n14. **sourceType**: \n    - Type: string\n    - Description: This indicates the type of source from which the announcement is originating, for example, \"accountId\".\n\n15. **sourceId**: \n    - Type: string\n    - Description: The unique identifier for the source of the announcement, generally matching the user account ID.\n\n16. **name**: \n    - Type: string\n    - Description: Placeholder field; currently not specified. This could later be used to provide a custom name for the announcement.\n\n17. **tags**: \n    - Type: string\n    - Description: Placeholder field; currently empty. This could be used to associate specific tags with the announcement for easier tracking or categorization.\n\nThis information allows users to understand what data is required for creating an announcement through the API endpoint effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Announce - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"announceId\": \"announceId\",\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"title\": \"My birtday\",\n    \"description\": \"Please wish me a happy birthday. Today is my birthday\",\n    \"tokenAmount\": 100,\n    \"category\": \"Birthday\",\n    \"country\": \"United States\",\n    \"scheduleDate\": \"2022-11-12\",\n    \"scheduleTime\": \"13:00:00\",\n    \"duration\": 15000,\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/announce/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "announce",
+            "update"
+          ]
+        },
+        "description": "### Action - Announce - Update\n\n**Request Details:**\n\n- **Auth**: \n  - **Type**: Bearer token authentication is used.\n  - **Bearer**: \n    - **Key**: `token` - This is the key used to send the bearer token.\n    - **Value**: `BearerToken` - This represents the actual bearer token that authenticates the request.\n    - **Type**: String - The token is expected to be in string format.\n\n- **Method**: \n  - **PUT** - The HTTP method used for the request; it updates existing data at the specified URL.\n\n- **URL**: \n  - **Endpoint**: `http://localhost:3000/api/action/announce/update` - This is the API endpoint where the update request is sent.\n\n- **Headers**: \n  - **Client-UUID**: \n    - **Key**: `Client-UUID` - Identifies a specific client making the request.\n    - **Value**: `ClientUUID` - This is a placeholder for the unique identifier of the client.\n    - **Type**: Default - Indicates this is a standard header key-value pair.\n\n- **Body**: \n  - **Mode**: \n    - **Raw** - The body of the request is sent as raw JSON data.\n    \n  - **Raw JSON**: \n    ```json\n    {\n        \"announceId\": \"announceId\",\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"title\": \"My birthday\",\n        \"description\": \"Please wish me a happy birthday. Today is my birthday\",\n        \"tokenAmount\": 100,\n        \"category\": \"Birthday\",\n        \"country\": \"United States\",\n        \"scheduleDate\": \"2022-11-12\",\n        \"scheduleTime\": \"13:00:00\",\n        \"duration\": 15000,\n        \"path\": \"/live/channel/video123\",\n        \"targetType\": \"videoId\",\n        \"targetId\": \"videoId\",\n        \"sourceType\": \"accountId\",\n        \"sourceId\": \"accountId\",\n        \"name\": \"\",\n        \"tags\": \"\"\n    }\n    ```\n\n### Detailed Descriptions of Body Parameters:\n\n- **announceId**: \n  - Unique identifier for the announcement being updated.\n\n- **sessionId**: \n  - Identifier for the session associated with the announcement.\n\n- **accountId**: \n  - Identifier for the user account associated with the announcement.\n\n- **title**: \n  - The title of the announcement, e.g., \"My birthday\".\n\n- **description**: \n  - A detailed message describing the announcement, e.g., \"Please wish me a happy birthday. Today is my birthday\".\n\n- **tokenAmount**: \n  - Number of tokens associated with the announcement; denotes the reward or incentive related to it.\n\n- **category**: \n  - The category assigned to the announcement, e.g., \"Birthday\".\n\n- **country**: \n  - The country from where the announcement is made, e.g., \"United States\".\n\n- **scheduleDate**: \n  - Date when the announcement is scheduled to occur, formatted as \"YYYY-MM-DD\".\n\n- **scheduleTime**: \n  - Time when the announcement is scheduled to occur, formatted as \"HH:MM:SS\".\n\n- **duration**: \n  - Duration of the announcement in milliseconds; e.g., 15000 milliseconds equals 15 seconds.\n\n- **path**: \n  - Path to the specific resource, e.g., a live video channel, represented as \"/live/channel/video123\".\n\n- **targetType**: \n  - Type of target being referenced, e.g., \"videoId\".\n\n- **targetId**: \n  - Identifier for the target of the announcement, e.g., \"videoId\".\n\n- **sourceType**: \n  - Type of source associated with the announcement, e.g., \"accountId\".\n\n- **sourceId**: \n  - Identifier for the source account, e.g., \"accountId\".\n\n- **name**: \n  - Placeholder for any additional name associated with the announcement; currently empty.\n\n- **tags**: \n  - Placeholder for any tags associated with the announcement; currently empty."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Announce - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/announce/get/?announceId=announceId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "announce",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "announceId",
+              "value": "announceId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Announce - Get\n\n**Request Information:**\n- **Method:** GET  \n  This specifies that the request is a GET request, which is typically used to retrieve data from the server.\n\n- **URL:**  \n  `http://localhost:3000/api/action/announce/get/?announceId=announceId&sessionId=sessionId&accountId=accountId`  \n  This is the endpoint where the request is sent. It includes query parameters for `announceId`, `sessionId`, and `accountId`, which are essential for retrieving specific announcement details.\n\n**Authorization:**\n- **Auth Type:** Bearer  \n  This indicates that the request requires authorization using a bearer token.\n\n- **Bearer Token:**  \n  - **Key:** token  \n    This is the parameter name that holds the bearer token used for authentication.\n  - **Value:** BearerToken  \n    This is a placeholder value representing the actual token needed to authenticate the request.\n  - **Type:** string  \n    Indicates that the token is in string format.\n\n**Headers:**\n- **Key:** (empty)  \n  No specific header key is defined in the request.  \n- **Value:** (empty)  \n  No specific value is defined for headers.  \n- **Type:** default  \n  Indicates that the header is of the default type.  \n- **Disabled:** true  \n  This header is currently disabled and will not be sent with the request.\n\n**Body:**\n- **Mode:** raw  \n  This indicates that the body data is sent in a raw format rather than a structured format like JSON or form data.\n\n- **Raw:**  \n  The body is empty, meaning there is no additional data being sent with the request. \n\n**Query Parameters:**  \n- **announceId:**  \n  This parameter is used to identify the specific announcement to retrieve.\n  \n- **sessionId:**  \n  This parameter is used to identify the session associated with the announcement.\n\n- **accountId:**  \n  This parameter is used to specify the account related to the announcement.\n\nEach of these components is crucial for successfully executing the API request to fetch the announcement details."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Announce - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/announce/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "announce",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Announce - Get All\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"This specifies that the request uses Bearer token authentication, which is a common method for securing APIs. The user must provide a valid token to access the endpoint.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This represents the name of the authentication key that must be included in the header of the request.\",\n            \"value\": \"BearerToken\": \"This is a placeholder for the actual Bearer token that should be included in the request. It should be replaced with a valid token for authentication.\",\n            \"type\": \"string\": \"This indicates that the value of the token must be a string type.\"\n          }\n        ]\n      },\n      \"method\": \"GET\": \"This specifies that the request uses the HTTP GET method, which is typically used to retrieve data from a specified resource.\",\n      \"url\": \"http://localhost:3000/api/action/announce/all/?sessionId=sessionId&accountId=accountId\": \"This is the endpoint URL where the GET request will be sent. The URL includes query parameters 'sessionId' and 'accountId', which are placeholders that must be replaced with actual session and account identifiers to successfully retrieve data from the server.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"This indicates that no specific headers are currently set for the request.\",\n          \"value\": \"\": \"This is empty as well, implying that no additional header values are being defined.\",\n          \"type\": \"default\": \"This denotes that the type of header is default, but since both key and value are empty, this header is effectively not in use.\",\n          \"disabled\": true: \"This indicates that this header is disabled and will not be included in the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"This specifies the format of the request body. In this case, it's set to 'raw', meaning that the body will contain raw text data.\",\n        \"raw\": \"\": \"This indicates that no raw data is being sent in the request body, as it is currently empty.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Announce - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"announceId\":\"announceId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/announce/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "announce",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Announce - Delete\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"sessionId\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"method\": \"POST\",\n    \"url\": \"http://localhost:3000/api/action/announce/delete\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"announceId\\\":\\\"announceId\\\"}\"\n    }\n  }\n}\n\n### Description of Each Data\n\n- **name**: This represents the title of the request, indicating that it is an action to delete an announcement.\n\n- **request**: This is the primary object containing all the details needed to make the API call.\n\n  - **auth**: This section specifies the type of authentication required for the request.\n  \n    - **type**: Indicates that the authentication method is bearer token based.\n    \n    - **bearer**: This includes an array of bearer authentication tokens.\n      \n      - **key**: A descriptive label for the token, here it's set to \"token\".\n      \n      - **value**: The variable representing the actual bearer token, denoted as \"sessionId\".\n      \n      - **type**: Specifies that the type of value is a string.\n\n  - **method**: Indicates the HTTP method used for the request. In this case, it is a POST request.\n\n  - **url**: The endpoint where the request is sent. It specifies the route to delete an announcement.\n\n  - **headers**: This is an array of headers that might be included in the request.\n  \n    - **key**: The name of the header, which is empty in this case.\n    \n    - **value**: The value associated with the header, which is also empty here.\n    \n    - **type**: Specifies the type of header, which is set to default.\n    \n    - **disabled**: A boolean indicating if the header is inactive; it is true, meaning the header won't be sent.\n\n  - **body**: This section contains the data to be sent with the request.\n  \n    - **mode**: Indicates how the body content is structured; here it is set to \"raw\".\n    \n    - **raw**: This holds the actual data being sent in JSON format. The keys here are:\n    \n      - **sessionId**: Represents the identifier for the user session.\n      \n      - **accountId**: Represents the unique identifier for the user's account.\n      \n      - **announceId**: Represents the unique identifier for the announcement to be deleted."
+      },
+      "response": []
+    }
+  ]
+}

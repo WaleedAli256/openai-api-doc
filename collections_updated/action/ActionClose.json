@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionClose",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Close - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"close1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/close/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "close",
+            "create"
+          ]
+        },
+        "description": "### Action - Close - Create\n\nThis API endpoint is used to create a close action in the system. Below is a detailed description of each data point utilized in this request:\n\n#### Request Details\n\n- **Authentication**: \n  - **Type**: Bearer\n    - This endpoint requires bearer token authentication. You must provide a token in the request header to be authorized.\n\n- **Method**: POST\n  - The request method used for this API call is POST, which means you are sending data to the server to create a new resource.\n\n- **URL**: \n  - `http://localhost:3000/api/action/close/create`\n    - This is the endpoint where the request is sent. It is hosted on the local server.\n\n#### Request Body\n\nThis API expects a JSON body that contains several key-value pairs:\n\n- **sessionId**: \n  - A unique identifier for the session. This helps in tracking the session related to the close action.\n  \n- **accountId**: \n  - The identifier for the user's account that is associated with this request. It specifies which user's data is being manipulated.\n\n- **path**: \n  - A string that signifies the location of the resource involved in the action. In this case, it is a path to a channel/video on the platform (e.g., `/live/channel/video123`).\n\n- **targetType**: \n  - This denotes the type of target for the close action. It can specify categories like 'streamer', which identifies the target as a streamer in this context.\n\n- **targetId**: \n  - The unique identifier for the target resource, such as the specific video that is involved in this request (e.g., `videoId`).\n\n- **sourceType**: \n  - This field indicates the type of source that is generating this request; in this case, it is tied to the `accountId`.\n\n- **sourceId**: \n  - Similar to `accountId`, this serves as the unique identifier for the source related to the close action, which in this case is also the `accountId`.\n\n- **tokenAmount**: \n  - An integer representing the amount of tokens involved in this action. It could refer to a currency or point system where the value is set to 20.\n\n- **name**: \n  - A string that provides a name for the close action. It is useful for identification purposes (e.g., `close1`).\n\n- **description**: \n  - A string for adding a description of the close action. This field can be left empty if there is no additional information to provide.\n\n- **tags**: \n  - A string for any tags that may be relevant to the close action. This can help in categorizing or filtering actions but can also be left empty.\n\n### Summary\nThis endpoint is designed for creating a close action with specific parameters related to users, sessions, and resources. Proper authentication and correctly structured JSON data are required to successfully make a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Close - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"closeId\":\"closeId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/close/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "close",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Action - Close - Update\n\n#### Request Details:\n- **Method**: PUT\n  - This endpoint uses the PUT method for updating existing resources.\n\n- **URL**: `http://localhost:3000/api/action/close/update`\n  - This is the endpoint where the request will be sent to perform the update action.\n\n#### Authentication:\n- **Auth Type**: Bearer\n  - Requires a bearer token for authentication. The token is included in the request to validate the user.\n\n- **Bearer Token**: \n  - **Key**: `token`\n    - This identifies the type of authentication being used.\n  - **Value**: `BearerToken`\n    - This is where the actual token value should be inserted for authentication. It should be of string type.\n\n#### Headers:\n- **Header**: Client-UUID\n  - **Key**: `Client-UUID`\n    - Uniquely identifies the client making the request.\n  - **Value**: `ClientUUID`\n    - This is a placeholder for the unique client identifier. It should be replaced with the actual UUID of the client.\n\n#### Body:\n- **Body Mode**: Raw\n  - The request body is in raw format.\n\n- **Content**: \n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"closeId\": \"closeId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}\n```\n- **Fields**:\n  - **sessionId**: \n    - A unique identifier for the session related to the action.\n  - **accountId**: \n    - Identifies the account associated with the action being taken.\n  - **closeId**: \n    - This ID refers to the specific close action that is being updated.\n  - **path**: \n    - The path associated with the video channel, specified here as `/live/channel/video123`.\n  - **targetType**: \n    - Indicates the type of target being addressed, which in this case is a streamer.\n  - **targetId**: \n    - The identifier for the target, represented as `videoId`.\n  - **sourceType**: \n    - This indicates the type of source involved in the action, which is an account in this case.\n  - **sourceId**: \n    - The identifier for the source, mirrored as `accountId`.\n  - **tokenAmount**: \n    - Specifies the amount of tokens to be involved in the action, set to 20.\n  - **name**: \n    - This is a name associated with the action, currently set to \"Farooq\".\n  - **description**: \n    - A brief description of the action, mentioned here as \"this is description\".\n  - **tags**: \n    - Tags associated with the action for categorization, specified as \"xyz\". \n\n### Summary:\nThis endpoint serves to update an existing close action, utilizing authentication, specific headers, and a structured body to relay necessary information. Users must ensure that all placeholder values are replaced with actual data prior to making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Close - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/close/get/?closeId=closeId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "close",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "closeId",
+              "value": "closeId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Close - Get\n\n- **Name**: Action - Close - Get\n  - This is the name of the API endpoint that is designed to retrieve details related to a 'close' action.\n\n- **Request**: This section describes the details of the API request.\n\n  - **Auth**: This part outlines the authentication method used to access the endpoint.\n    - **Type**: \"bearer\"\n      - Indicates that bearer token authentication is used.\n    - **Bearer**: This is an array containing the authentication data.\n      - **Key**: \"token\"\n        - This is the identifier for the authentication token.\n      - **Value**: \"BearerToken\"\n        - This is a placeholder value for the actual bearer token that will be used in the request for authentication.\n      - **Type**: \"string\"\n        - Specifies that the token is a string data type.\n\n  - **Method**: \"GET\"\n    - This indicates that the HTTP method used for this request is GET, which is typically used to retrieve data from the server.\n\n  - **URL**: \n    - \"http://localhost:3000/api/action/close/get/?closeId=closeId&sessionId=sessionId&accountId=accountId\"\n      - This is the full URL for the API endpoint.\n      - The URL includes query parameters:\n        - **closeId**: A placeholder for the unique identifier of the close action being fetched.\n        - **sessionId**: A placeholder for the session identifier related to the request.\n        - **accountId**: A placeholder for the account identifier associated with the close action.\n\n  - **Headers**: This section is for any HTTP headers that may need to be sent with the request.\n    - **Key**: (empty)\n      - Indicates that there are currently no custom headers specified for this request.\n    - **Value**: (empty)\n      - As with the key, there is currently no value provided.\n    - **Type**: \"default\"\n      - Specifies the default type for header handling.\n    - **Disabled**: true\n      - This indicates that this header is currently disabled and will not be sent with the request.\n\n  - **Body**: This section provides information about the body of the request.\n    - **Mode**: \"raw\"\n      - This indicates that the body is being sent in raw format.\n    - **Raw**: \"\"\n      - There is no data included in the body for this GET request, as GET requests typically do not require a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Close - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/close/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "close",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Close - Get All Endpoint Description\n\n- **Name**: This is the name of the API request, indicating that it pertains to retrieving all records associated with closing actions.\n\n- **Request**: This section contains the details needed to make the API call.\n\n  - **Auth**: Specifies the authentication method used for the request.\n    - **Type**: The authentication method is \"bearer,\" meaning it uses a token to verify the identity of the user.\n    - **Bearer**: Contains the token information needed for authentication.\n      - **Key**: This specifies what the bearer contains; in this case, it is labeled as \"token.\"\n      - **Value**: Placeholder value represented as \"BearerToken.\" This should be replaced with an actual bearer token in real use to authenticate the request.\n      - **Type**: Indicates that the token is of string type.\n\n  - **Method**: The HTTP method used for this request, which is \"GET.\" This means the request is retrieving data from the server without modifying it.\n\n  - **URL**: The endpoint being accessed. It consists of:\n    - **Base URL**: `http://localhost:3000/api/action/close/all/` which points to the local server.\n    - **Query Parameters**:\n      - `sessionId=sessionId`: Replace `sessionId` with the actual session identifier for which the closing actions are being retrieved.\n      - `accountId=accountId`: Replace `accountId` with the actual account identifier relating to the actions being fetched.\n\n  - **Headers**: Additional information sent with the request to provide context or metadata.\n    - **Key**: An empty string indicates no specific header key is being utilized.\n    - **Value**: An empty string indicates no specific header value is being utilized.\n    - **Type**: Marked as \"default,\" indicating a standard header type.\n    - **Disabled**: Set to true, which means that this header will not be sent in the request.\n\n  - **Body**: Contains the data sent with the request.\n    - **Mode**: Set to \"raw,\" indicating that the body is raw text or data.\n    - **Raw**: Empty, meaning there is no body content included in the request.\n\nThis description provides a clear understanding of the various components involved in using this API request to obtain all closing actions for specified session and account identifiers."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Close - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"closeId\":\"closeId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/close/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "close",
+            "delete"
+          ]
+        },
+        "description": "### Action - Close - Delete Endpoint Description\n\n- **Name**: Action - Close - Delete\n  - This is the identifier for the API endpoint, indicating the purpose of the action being performed, which is to delete a close action.\n\n- **Request**: This section outlines the details of the HTTP request that will be made to the API.\n\n  - **Auth**: Authentication mechanism to access the endpoint.\n    - **Type**: Bearer\n      - Indicates that the request will use token-based authentication.\n    - **Bearer**: Provides the token needed for authentication.\n      - **Key**: token\n        - The identifier for the authentication token.\n      - **Value**: sessionId\n        - A placeholder representing the session ID that will be used for authentication.\n      - **Type**: string\n        - Specifies that the value should be treated as a string.\n\n  - **Method**: POST\n    - This indicates that the API request will use the POST HTTP method, typically used to send data to the server.\n\n  - **URL**: http://localhost:3000/api/action/close/delete\n    - The endpoint to which the request will be sent. In this case, it's a local server address indicating that the action of closing and deleting will occur.\n\n  - **Headers**: Additional information sent with the request.\n    - **Key**: (empty)\n      - No specific header key is provided in this configuration.\n    - **Value**: (empty)\n      - No specific header value is provided in this configuration.\n    - **Type**: default\n      - Indicates the default type for the header, but since the header is disabled, it will not be sent with the request.\n    - **Disabled**: true\n      - The header is currently turned off and will not be included in the API request.\n\n  - **Body**: The content of the request.\n    - **Mode**: raw\n      - Indicates that the body content will be sent in raw format.\n    - **Raw**: \n      ```json\n      {\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"closeId\": \"closeId\"\n      }\n      ```\n      - This is a JSON object containing the details required for the delete action:\n        - **sessionId**: Represents the session ID for authentication and context.\n        - **accountId**: Represents the ID of the account which is associated with the action being closed.\n        - **closeId**: Indicates the specific ID of the close action that you wish to delete."
+      },
+      "response": []
+    }
+  ]
+}

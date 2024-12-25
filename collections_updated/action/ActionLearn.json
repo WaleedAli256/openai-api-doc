@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "48bdbd3d-3485-41b2-b77b-22533a39d0dd",
+    "name": "ActionLearn",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Learn - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didLearn\": true,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/learn/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "learn",
+            "create"
+          ]
+        },
+        "description": "### Description of Data in the API Endpoint\n\n**Endpoint Name**: Action - Learn - Create\n\n**Request Details**:\n- **Auth**:\n  - **Type**: Bearer\n    - **Bearer Token**: This is a security token that must be included in the request to authenticate the user. Replace \"BearerToken\" with your actual bearer token.\n  \n- **Method**: POST\n  - This specifies that the request is intended to create a new resource or perform an action.\n\n- **URL**: \n  - `http://localhost:3000/api/action/learn/create`\n    - This is the endpoint where the request is sent. It is running on a local server on port 3000 and is intended for creating learning actions.\n\n- **Headers**:\n  - The headers section currently does not contain any active headers, as it is marked as disabled. You may add necessary headers as needed for your API request.\n\n**Body**:\n- **Mode**: Raw\n  - The request body is sent in raw format.\n\n- **Raw Content**:\n  ```json\n  {\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didLearn\": true,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n  }\n  ```\n\n  - **sessionId**: \n    - Unique identifier for the current session. This helps in tracking user sessions.\n\n  - **accountId**: \n    - Unique identifier for the user's account. This identifies which user's action is being recorded.\n\n  - **path**: \n    - The specific path to the content that is being referred to, such as a video or a channel. Here, it points to a live channel for a specific video.\n\n  - **targetType**: \n    - Specifies the type of the target item being learned. In this case, it indicates that the target is a video identified by a video ID.\n\n  - **targetId**: \n    - Unique identifier for the targeted video. This is the ID of the video that the user has interacted with.\n\n  - **sourceType**: \n    - Specifies the type of the source item. Here, it is set to 'accountId', indicating that the action is associated with the user's account.\n\n  - **sourceId**: \n    - Unique identifier for the source, which corresponds to the user’s account ID. This links the action back to the user's account.\n\n  - **didLearn**: \n    - A boolean value indicating whether learning has taken place (true or false). This marks the action as a learning experience.\n\n  - **name**: \n    - A field for naming the action or experience. Currently, it is blank and can be filled as needed.\n\n  - **description**: \n    - A field for providing additional details about the action. It is currently empty and can be elaborated on as needed.\n\n  - **tags**: \n    - A field for adding relevant tags to the action. This is also currently blank and can be populated with relevant keywords or phrases.\n\n### Summary\nThis endpoint is designed for recording learning actions associated with a user's account. It requires a bearer token for authentication and accepts specific parameters in the request body. Users can track sessions and interactions with content using the provided identifiers."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Learn - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didLearn\": false,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"learnId\":\"learnId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/learn/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "learn",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Learn - Update\n\nThis endpoint allows users to update learning actions associated with a specific session and account. Below is a detailed description of each piece of data involved in this request.\n\n#### Request Method:\n- **PUT**: This method is used to update existing resources on the server.\n\n#### URL:\n- **http://localhost:3000/api/action/learn/update**: This is the endpoint where the update request is sent.\n\n#### Authentication:\n- **Auth Type**: Bearer\n  - **Token**: A bearer token is used for authentication, which ensures that the request is made by a verified user. The value \"BearerToken\" should be replaced with a valid token.\n\n#### Headers:\n- **Client-UUID**: A unique identifier for the client making the request. It helps in identifying the source of the API call. The value \"ClientUUID\" should be replaced with the actual client UUID.\n\n#### Body:\nThe body of the request is sent in JSON format and contains the following fields:\n\n1. **sessionId**: \n   - Type: String\n   - Description: A unique identifier for the current session. This helps to associate the learning action with a specific session.\n\n2. **accountId**: \n   - Type: String\n   - Description: A unique identifier for the account associated with the learning action. This indicates which account the action belongs to.\n\n3. **path**: \n   - Type: String\n   - Description: The path or URL of the resource that is being interacted with. In this case, it indicates the location of the video (e.g., \"/live/channel/video123\").\n\n4. **targetType**: \n   - Type: String\n   - Description: The type of target that is being learned from. For example, it could be a video ID.\n\n5. **targetId**: \n   - Type: String\n   - Description: The unique identifier for the target resource (e.g., the ID of the video being updated).\n\n6. **sourceType**: \n   - Type: String\n   - Description: The type of source from where the learning action is initiated, which is likely an account ID.\n\n7. **sourceId**: \n   - Type: String\n   - Description: The unique identifier for the source account that is initiating the action.\n\n8. **didLearn**: \n   - Type: Boolean\n   - Description: A flag that indicates whether the learning action was successfully completed or not. It takes a value of `true` or `false`.\n\n9. **name**: \n   - Type: String\n   - Description: An optional field to provide a name for the learning action. This can be left empty if not needed.\n\n10. **description**: \n    - Type: String\n    - Description: An optional field to give a description of the learning action. This can also be left empty if not applicable.\n\n11. **tags**: \n    - Type: String\n    - Description: An optional field for tags associated with the learning action. This helps in categorizing or filtering actions based on certain keywords.\n\n12. **learnId**: \n    - Type: String\n    - Description: A unique identifier for the learning record being updated. This ensures the correct record is modified.\n\nThis structured request allows for comprehensive updates to the learning action data, ensuring proper identification of sessions, accounts, and resources."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Learn - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/learn/get/?learnId=learnId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "learn",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "learnId",
+              "value": "learnId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: This represents the name of the API request. In this case, it is labeled \"Action - Learn - Get,\" indicating that this request is related to retrieving information about a learning action.\n\n- **request**: This object contains all the details required to make the API request.\n\n  - **auth**: This specifies the type of authentication that is being used for this request.\n\n    - **type**: Indicates the type of authentication. Here, it is set to \"bearer,\" which means that a bearer token is needed to authorize the request.\n\n    - **bearer**: This array holds the information required for the bearer token.\n\n      - **key**: Identifies the parameter being sent. In this case, it is labeled \"token.\"\n\n      - **value**: This is the actual authentication token required to access the API. It is displayed as \"BearerToken,\" a placeholder indicating where the user's actual token should go.\n\n      - **type**: Indicates the data type of the token, which is set to \"string.\"\n\n  - **method**: This specifies the HTTP method to be used for the request. Here, it is \"GET,\" indicating that this request will retrieve data from the server.\n\n  - **url**: This is the endpoint's URL to which the request will be sent. The URL contains query parameters for `learnId`, `sessionId`, and `accountId`. These parameters need to be replaced with actual values when making the request.\n\n  - **headers**: This array would typically include any additional HTTP headers that need to be sent with the request.\n\n    - **key**: This field is currently empty, meaning no custom headers are being sent.\n\n    - **value**: As with the key, this is empty, indicating that no specific value for headers is provided.\n\n    - **type**: Indicates the type of header being used. It is marked as \"default.\"\n\n    - **disabled**: This boolean indicates whether the header is currently active or not. Here, it is set to true, meaning that it is disabled and will not be sent with the request.\n\n  - **body**: This object specifies the content to be sent with the request. \n\n    - **mode**: This indicates the format of the body content. It is set to \"raw,\" meaning the content is provided as raw text.\n\n    - **raw**: This is where the actual body content would be placed if it were being sent. The field is currently empty, indicating that no body content is necessary for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Learn - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/learn/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "learn",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Learn - Get All\",\n  \"description\": \"This API endpoint is designed to retrieve a list of all learning actions available. It requires authentication via a bearer token and does not include any additional headers or a request body. The endpoint accepts two query parameters: sessionId and accountId, which are necessary to specify the session and account context for the request. This is a GET request, meaning it is primarily used to retrieve data rather than modify it.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"description\": \"The authentication type used for the request. This specifies that a bearer token is required to access this endpoint.\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\",\n          \"description\": \"The actual bearer token that must be included in the authorization header to authenticate the request.\"\n        }\n      ]\n    },\n    \"method\": \"GET\",\n    \"description\": \"The HTTP method used for the request. This indicates that the operation will retrieve data from the server.\",\n    \"url\": \"http://localhost:3000/api/action/learn/all/?sessionId=sessionId&accountId=accountId\",\n    \"description\": \"The URL for the API endpoint. It is structured to include query parameters for sessionId and accountId, which should be replaced with actual values when making a request.\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true,\n        \"description\": \"This section allows for additional headers to be specified. In this case, no headers are provided and the feature is disabled.\"\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"The body of the request. Since this is a GET request, no body is required or included.\",\n      \"raw\": \"\",\n      \"description\": \"The raw representation of the request body. It remains empty for this endpoint as no data is being sent.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Learn - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"learnId\":\"learnId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/learn/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "learn",
+            "delete"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: Action - Learn - Delete  \n  This is the name of the request, indicating that it is related to deleting a learning action.\n\n- **request**:  \n  This section contains various details about the request being made to the API.\n\n  - **auth**:  \n    This specifies the type of authentication used for the request.\n    \n    - **type**: bearer  \n      This indicates that the request uses Bearer Token authentication.\n\n    - **bearer**:  \n      This array contains the details of the bearer token used for authentication.\n      \n      - **key**: token  \n        This is the name of the key used for the authentication token.\n\n      - **value**: sessionId  \n        This indicates the placeholder for the session ID that should be used as the value for the token.\n\n      - **type**: string  \n        This describes the data type of the token value, which is a string.\n\n  - **method**: POST  \n    This specifies the HTTP method used for the request. In this case, it is a POST request.\n\n  - **url**: http://localhost:3000/api/action/learn/delete  \n    This is the endpoint URL where the request is sent. It indicates that the delete action for learning is being accessed at this location.\n\n  - **headers**:  \n    This section is used for specifying any additional headers for the request.\n\n    - **key**: (empty)  \n      The key for the header is empty, indicating that no custom headers are being sent.\n\n    - **value**: (empty)  \n      The value for the header is also empty, confirming that there are no custom headers in this request.\n\n    - **type**: default  \n      This indicates that the header type is set as default.\n\n    - **disabled**: true  \n      This indicates that this header is currently disabled and will not be sent with the request.\n\n  - **body**:  \n    This section contains the data that is sent with the request.\n\n    - **mode**: raw  \n      This indicates that the body data is in raw format, allowing for plain text input.\n\n    - **raw**:  \n      This is the actual raw JSON data sent in the body of the request. It contains placeholders for the following keys:\n      \n      - **sessionId**: \"sessionId\"  \n        This is a placeholder for the session ID. It must be replaced with an actual session ID for the request to be valid.\n\n      - **accountId**: \"accountId\"  \n        This is a placeholder for the account ID. This value should be replaced with the actual account ID relevant to the deletion.\n\n      - **learnId**: \"learnId\"  \n        This is a placeholder for the learning ID. It must be replaced with the actual ID of the learn action that is to be deleted.  \n\nThis detailed description provides clarity on each component of the endpoint request for users who will utilize the Postman API collection."
+      },
+      "response": []
+    }
+  ]
+}

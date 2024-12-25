@@ -1,0 +1,1024 @@
+{
+  "info": {
+    "_postman_id": "aead8456-65ad-454c-8408-f387effe2964",
+    "name": "VideoCategory",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Video - Category - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Category\",\"description\":\"This category is my second category\",\"tags\":\"second,category\",\"searchType\":\"Game\",\"isEnabled\":true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "create"
+          ]
+        },
+        "description": "### Video - Category - Create\n\n- **Name**: This is the title of the API request, which describes the purpose of the endpoint - creating a video category.\n\n- **Request**: This section contains all the details required to make the API call.\n\n  - **Auth**: This specifies the authentication method used for the request.\n    - **Type**: Indicates that bearer token authentication is required.\n    - **Bearer**: This is an array that includes:\n      - **Key**: This is a label for the token; in this case, it is simply \"token.\"\n      - **Value**: This represents the actual authentication token that must be provided, formatted as \"BearerToken.\"\n      - **Type**: Defines the data type of the key. Here, it is a string.\n\n  - **Method**: This specifies the HTTP method used for the API call. In this instance, it is a POST request, which is commonly used to create new resources.\n\n  - **URL**: This is the endpoint where the API request will be sent. Here, it is pointing to `http://localhost:3000/api/video/category/create`, indicating that the request is being sent to a local server.\n\n  - **Headers**: Headers may contain additional information with the request. In this example, there are no custom headers provided, and the header section is disabled.\n\n  - **Body**: This is the main content of the request, which contains the data you want to send.\n    - **Mode**: Indicates the format of the body; it is set to \"raw,\" meaning we are sending a raw data payload.\n    - **Raw**: This is the actual data being sent in JSON format. The content includes:\n      - **sessionId**: A unique identifier for the session, placeholder is provided.\n      - **accountId**: A unique identifier for the user account, placeholder is provided.\n      - **name**: This specifies the name of the category being created, which in this example is \"My Second Category.\"\n      - **description**: A textual description of the category, detailed as \"This category is my second category.\"\n      - **tags**: Keywords associated with the category, in this case, \"second\" and \"category.\"\n      - **searchType**: Describes the type of content the category is related to; here, it is specified as \"Game.\"\n      - **isEnabled**: A boolean value indicating whether the category is enabled (`true` means it is active)."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"categoryId\":\"categoryId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Category 2.0\",\"description\":\"This category is my second category\",\"tags\":\"second,category\",\"searchType\":\"Game\",\"isEnabled\":true}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "update"
+          ]
+        },
+        "description": "### Video - Category - Update\n\nThis API endpoint allows users to update an existing video category.\n\n#### Request Details:\n\n- **Authentication:**\n  - **Type:** Bearer Token\n  - **Description:** Users must provide a valid bearer token for authentication. The token is included in the request header and is crucial for authorizing access to the API.\n  \n- **Method:** \n  - **Description:** This endpoint accepts the `PUT` method, which is used to update the information of an existing video category.\n\n- **URL:** \n  - **Description:** The endpoint for this request is `http://localhost:3000/api/video/category/update`. This URL should be accessed to perform the update operation.\n\n- **Headers:**\n  - **Client-UUID:**\n    - **Description:** This header must include a unique identifier for the client making the request. It helps distinguish between different clients or applications using the API.\n\n#### Request Body:\n\nThe request body must be sent in JSON format and includes the following fields:\n\n- **categoryId:** \n  - **Description:** The unique identifier of the category that is being updated. This field is required to specify which category is targeted for the update.\n\n- **sessionId:** \n  - **Description:** A unique identifier for the current session. This can be used for tracking or validation purposes.\n\n- **accountId:** \n  - **Description:** The identifier for the account associated with the request. This field is used to link the category update to a specific user account.\n\n- **name:** \n  - **Description:** The new name for the video category. It should accurately represent the category’s content and purpose.\n\n- **description:** \n  - **Description:** A brief description of the category. This field provides additional context or details about what the category represents.\n\n- **tags:** \n  - **Description:** A comma-separated list of tags associated with the category. Tags help in categorizing and searching for video content effectively.\n\n- **searchType:** \n  - **Description:** Indicates the type of search being performed for this category. This could refer to the type of content (e.g., Game).\n\n- **isEnabled:** \n  - **Description:** A boolean value that specifies whether the category is enabled or disabled. Setting this to `true` means the category is active and can be used; `false` disables it.\n\nMake sure to populate the fields with the appropriate values to successfully perform the category update operation."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/get/?categoryId=categoryId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "categoryId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Video - Category - Get\",\n  \"description\": {\n    \"endpoint\": \"This is the GET endpoint used to retrieve video details based on a specified category.\",\n    \n    \"auth\": {\n      \"type\": \"bearer\": \"This indicates that authentication is required via a bearer token. A valid token must be supplied in the request for successful access.\",\n      \n      \"bearer\": {\n        \"key\": \"token\": \"This is the key used to pass the authentication token.\",\n        \n        \"value\": \"BearerToken\": \"This placeholder represents the actual bearer token that must be included in the request. Replace 'BearerToken' with your valid token.\",\n        \n        \"type\": \"string\": \"This indicates that the value of the token should be formatted as a string.\"\n      }\n    },\n    \n    \"method\": \"GET\": \"This specifies that the request method to be used is GET, which is typically used to retrieve data from a specified resource.\",\n    \n    \"url\": \"http://localhost:3000/api/video/category/get/?categoryId=categoryId&sessionId=sessionId&accountId=accountId\": \"This is the URL to access the endpoint. It includes three query parameters: 'categoryId', 'sessionId', and 'accountId'. Replace 'categoryId', 'sessionId', and 'accountId' with the actual values to specify the category of the videos you wish to retrieve, as well as the session and account identifiers.\",\n    \n    \"headers\": [\n      {\n        \"key\": \"\": \"This field is currently empty, indicating that no custom headers are required for this request.\",\n        \n        \"value\": \"\": \"This field is empty, as there are no custom values to provide in the header.\",\n        \n        \"type\": \"default\": \"Specifies that the header type is default. Note that this header is disabled and will not be included in the request.\"\n      }\n    ],\n    \n    \"body\": {\n      \"mode\": \"raw\": \"This indicates that the body of the request is not used since it's a GET method, which typically does not require a body.\",\n      \n      \"raw\": \"\": \"This field is empty as there is no raw data to send in the body for a GET request.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Category - Get All\n\n- **Name**: Video - Category - Get All\n  - This is the identifier for the API request designed to retrieve a list of all video categories.\n\n#### Request Details\n- **Auth**:\n  - **Type**: bearer\n    - The authentication method used for this API request is a bearer token. This means that the request must include a token that grants access to the API.\n\n  - **Bearer**: \n    - This section details the bearer token used for authentication.\n    - **Key**: token\n      - This is the identifier for the token.\n    - **Value**: BearerToken\n      - This represents the actual token value that is required to authenticate the user.\n    - **Type**: string\n      - Indicates that the token is of string type.\n\n- **Method**: GET\n  - This specifies the HTTP method used for the request. In this case, it is a GET request, which is used to retrieve data from the server.\n\n- **URL**: \n  - **http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId**\n    - This is the endpoint URL for accessing all video categories.\n    - **sessionId**: This parameter should be replaced with the actual session ID associated with the user's session.\n    - **accountId**: This parameter should be replaced with the actual account ID of the user making the request.\n\n- **Headers**:\n  - There are no custom headers specified in this request. One header section is present but is disabled.\n    - **Key**: [empty]\n      - This indicates that there is no specific header key provided.\n    - **Value**: [empty]\n      - This indicates that there is no specific value provided for the header key.\n    - **Type**: default\n      - This denotes the default type of the header.\n    - **Disabled**: true\n      - This means that this header section is disabled and will not be sent with the request.\n\n- **Body**:\n  - **Mode**: raw\n    - The body of the request is set to raw mode.\n  - **Raw**: [empty]\n    - There is no body content since this is a GET request, which typically does not send a request body.\n\n### Summary\nThis API endpoint is designed to fetch all video categories from the server, requiring a valid bearer token for authentication. It utilizes a GET method to request the necessary data, and includes session and account parameters in the URL for context. The endpoint does not send additional headers or a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Game",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Game",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Game"
+            }
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n- **Name**: \"Video - Category - Get All - Game\"  \n  This represents the title of the API endpoint, indicating that it retrieves all video categories related to gaming.\n\n- **Request**:  \n  The details pertaining to the HTTP request to be made to the endpoint.\n\n  - **Auth**:  \n    This section specifies the authentication method required to access the endpoint.\n\n    - **Type**: \"bearer\"  \n      Indicates that the endpoint uses Bearer Token authentication, which requires a token to be provided for access.\n\n    - **Bearer**:  \n      This is an array that contains the authentication details.\n\n      - **Key**: \"token\"  \n        The name of the authentication parameter used in the request.\n\n      - **Value**: \"BearerToken\"  \n        A placeholder for the actual Bearer Token that should be replaced with a valid token when making the request.\n\n      - **Type**: \"string\"  \n        Specifies that the value of the token is expected to be a string.\n\n  - **Method**: \"GET\"  \n    This indicates that the HTTP method used for the request is GET, which is typically used for fetching data from the server.\n\n  - **URL**: \"http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Game\"  \n    The endpoint URL is where the request will be sent. It includes query parameters:\n    \n    - **sessionId=sessionId**: A placeholder for the unique session identifier; replace with the actual session ID.\n    - **accountId=accountId**: A placeholder for the account identifier; replace with the actual account ID.\n    - **searchType=Game**: This parameter is set to \"Game\" to filter the results specifically for gaming-related categories.\n\n  - **Headers**:  \n    An array of headers to be sent with the request. In this case:\n\n    - **Key**: \"\"  \n      Currently empty, meaning no additional headers are specified.\n\n    - **Value**: \"\"  \n      Also empty, indicating there is no value associated with the header.\n\n    - **Type**: \"default\"  \n      The type of header, which in this instance is a default setting.\n\n    - **Disabled**: true  \n      Indicates that the header is disabled and will not be sent with the request.\n\n  - **Body**:  \n    This section represents the body of the request.\n\n  - **Mode**: \"raw\"  \n    Indicates that the data is being sent in raw format rather than as form data or x-www-form-urlencoded.\n\n  - **Raw**: \"\"  \n    An empty string, meaning no data is included in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Game Category",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Game&category=Party",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Game"
+            },
+            {
+              "key": "category",
+              "value": "Party"
+            }
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n- **name**: This specifies the name of the request, which is \"Video - Category - Get All - Game Category\". It indicates that this request is meant to retrieve all video categories for games, focusing specifically on the \"Party\" category.\n\n- **request**: This section contains all the details necessary to make the API request.\n\n  - **auth**: This object defines the authentication method used for the request.\n  \n    - **type**: Indicates the authentication type, which is \"bearer\". This means that a bearer token is required to access the endpoint.\n    \n    - **bearer**: This is an array where the bearer token details are provided.\n    \n      - **key**: This specifies the key for the token, which is labeled as \"token\".\n      \n      - **value**: This indicates the actual value of the bearer token. In this case, it is set as \"BearerToken\", which should be replaced with a valid token when making the request.\n      \n      - **type**: Indicates the type of the value, which is \"string\", meaning the token is expected to be a string.\n\n  - **method**: The HTTP method used for the request, which is \"GET\". This indicates that the request is meant to retrieve data rather than modify it.\n\n  - **url**: The endpoint URL for the API request. It is structured as follows:\n    \n    - The base URL is \"http://localhost:3000/api/video/category/all/\".\n    \n    - The query parameters include:\n      - **sessionId**: A parameter representing the user's session ID. This should be replaced with an actual session ID.\n      - **accountId**: A parameter representing the user's account ID. This should be replaced with an actual account ID.\n      - **searchType**: This parameter is set to \"Game\", indicating that the search is focused on game categories.\n      - **category**: This parameter is set to \"Party\", specifying that the request is looking for video categories within the Party genre.\n\n  - **headers**: This is an array containing any additional headers that may be included with the request. In this case, there is an empty object with default settings, indicating that no extra headers are currently set or enabled.\n\n  - **body**: This section describes the body of the request.\n  \n    - **mode**: Indicates the body mode, which is \"raw\". This means that the body of the request is not formatted in a typical structured way like JSON or form data.\n    \n    - **raw**: This is the actual content of the body, which is currently an empty string, indicating that no body content is required for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Game SubCategory",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Game&category=Party&subCategory=Outdoor%20Party",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Game"
+            },
+            {
+              "key": "category",
+              "value": "Party"
+            },
+            {
+              "key": "subCategory",
+              "value": "Outdoor%20Party"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Category - Get All - Game SubCategory\n\n- **Name**: Video - Category - Get All - Game SubCategory\n  - This is the title of the API endpoint, indicating that it retrieves all video categories specifically for the \"Game\" search type, with a focus on the \"Party\" category and \"Outdoor Party\" subcategory.\n\n- **Request**:\n  - **Auth**:\n    - **Type**: Bearer\n      - This authentication method uses a bearer token for secure access to the API.\n    - **Bearer**:\n      - **Key**: token\n        - Represents the authentication token required to access the resources.\n      - **Value**: BearerToken\n        - Placeholder for the actual bearer token that needs to be provided during the request for authentication.\n      - **Type**: string\n        - Indicates that the token must be a string value.\n\n  - **Method**: GET\n    - This specifies that the request type is a GET request, which is typically used to retrieve data from the server.\n\n  - **URL**: \n    - `http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Game&category=Party&subCategory=Outdoor%20Party`\n      - The base URL points to the API endpoint on a local server.\n      - **Query Parameters**:\n        - **sessionId**: sessionId\n          - A placeholder for the user's session identifier, which may be used to track the user's interactions with the server.\n        - **accountId**: accountId\n          - A placeholder for the user's account identifier, used to associate the request with a specific user account.\n        - **searchType**: Game\n          - Specifies that the search is filtered to the \"Game\" type.\n        - **category**: Party\n          - Indicates that the category of interest is \"Party\".\n        - **subCategory**: Outdoor Party\n          - Further refines the category to the \"Outdoor Party\" subcategory.\n\n  - **Headers**:\n    - An empty header is defined, which is currently disabled and not in use for this request. \n      - **Key**: \"\"\n        - There is no specific key defined.\n      - **Value**: \"\"\n        - There is no specific value defined.\n      - **Type**: default\n        - Indicates the default type of header, but since it is empty, it has no effect.\n\n  - **Body**:\n    - **Mode**: raw\n      - Indicates that the body of the request will be sent in raw format.\n    - **Raw**: \"\"\n      - The body is empty, which is typical for GET requests as they usually do not include a body.\n\nThis endpoint is structured to provide a list of video categories based on specific filtering criteria related to games and party themes, requiring valid authentication for access."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Show",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Show",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Show"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Category - Get All - Show\n\n- **Name**: This is the identifier for the API request, indicating that it is used to retrieve all video categories related to television shows.\n\n- **Request**: Contains the details of how to make the API request.\n\n  - **Auth**: Defines the authentication method used to access the API.\n    - **Type**: Specifies that the authentication method is a bearer token.\n    - **Bearer**: An array containing the bearer token details.\n      - **Key**: The name of the token parameter.\n      - **Value**: A placeholder for the actual bearer token, which is required for authorization.\n      - **Type**: Indicates the type of the value, which is a string.\n\n  - **Method**: Specifies the HTTP method to be used for the request. In this case, it is a GET method, which is used to retrieve data from the server.\n\n  - **URL**: The endpoint URL where the request will be sent. It includes the following query parameters:\n    - **sessionId**: A parameter to identify the user's session for tracking purposes. Placeholder value is `sessionId`.\n    - **accountId**: This parameter identifies the user's account. Placeholder value is `accountId`.\n    - **searchType**: This parameter specifies the type of content being searched for, in this case, it is set to \"Show\".\n\n  - **Headers**: This section allows adding custom HTTP headers to the request.\n    - **Key**: The name of the header (currently not set).\n    - **Value**: The value for the header (currently not set).\n    - **Type**: Indicates it is a default type header.\n    - **Disabled**: Indicates that this header is currently disabled and will not be sent with the request.\n\n  - **Body**: Contains the body of the request.\n    - **Mode**: Specifies the format of the request body; set to \"raw\".\n    - **Raw**: The actual content of the body; currently empty as this request does not require a body for a GET request. \n\nThis structure provides a complete overview to help users understand how to interact with the API endpoint for retrieving all video categories of shows."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Show Category",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Show&category=Comedy",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Show"
+            },
+            {
+              "key": "category",
+              "value": "Comedy"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Category - Get All - Show Category\n\n**Name:** Video - Category - Get All - Show Category  \nThis endpoint is used to retrieve all video categories available in the system, specifically for displaying categories.\n\n**Request Details:**\n\n1. **Auth:** \n   - **Type:** Bearer \n   - This request requires authorization via a bearer token. \n\n   - **Bearer Token:**\n     - **Key:** token \n       - This is the identifier for the bearer token in the request.\n     - **Value:** BearerToken \n       - Replace \"BearerToken\" with your actual bearer token for authentication.\n     - **Type:** string \n       - The token should be a string data type.\n\n2. **Method:** \n   - **GET**\n   - This specifies the HTTP method used to retrieve data from the server.\n\n3. **URL:** \n   - **http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Show&category=Comedy**\n   - This is the endpoint for retrieving all video categories. \n   - **Query Parameters:**\n     - **sessionId:** \n       - This parameter should be replaced with the actual session ID for the user session.\n     - **accountId:** \n       - This parameter should be replaced with the actual account ID of the user.\n     - **searchType:** \n       - This parameter specifies the type of search being performed. In this case, it is set to \"Show\", indicating that categories associated with shows are being requested.\n     - **category:** \n       - This parameter is used to filter the results to only include categories that match the specified type. In this case, it is set to \"Comedy\".\n\n4. **Headers:** \n   - An empty header is listed but is currently disabled. No additional headers are required for this request.\n\n5. **Body:**\n   - **Mode:** raw \n   - The body of the request is not used (empty) since this is a GET request.\n\nThis metadata effectively supports users in understanding how to properly utilize this API endpoint to retrieve and display video categories based on specified parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Show SubCategory",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Show&category=Comedy&subCategory=Improv",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Show"
+            },
+            {
+              "key": "category",
+              "value": "Comedy"
+            },
+            {
+              "key": "subCategory",
+              "value": "Improv"
+            }
+          ]
+        },
+        "description": "### Endpoint Overview\nThis endpoint is used to retrieve a list of all video categories along with their subcategories, specifically focused on a given category and subcategory. \n\n### Detailed Description of Each Field\n\n- **name**: This is a descriptive label for the API request, indicating that it retrieves all video categories and shows subcategories related to a specific category.\n\n- **request**: This object encapsulates all the details needed to make the API request.\n\n  - **auth**: This section specifies the authentication type required to access the API.\n  \n    - **type**: Specifies that the authentication method is 'bearer', indicating that the request will use a bearer token for authorization.\n    \n    - **bearer**: This is an array that includes the details necessary for bearer token authentication.\n    \n      - **key**: This is the identifier for the token. It is set as 'token'.\n      \n      - **value**: This is where the actual token value should be placed. It is currently a placeholder ('BearerToken') that must be replaced with a valid token.\n      \n      - **type**: This indicates the data type of the value, which is 'string'.\n    \n  - **method**: The HTTP verb used for the request. Here, it is set to 'GET', indicating that data will be retrieved from the server.\n\n  - **url**: The endpoint URL for the API request. The provided URL is formatted to include query parameters for the session ID, account ID, search type, category, and subcategory.\n  \n    - **sessionId**: This is a query parameter that should contain a unique identifier for the user session.\n    \n    - **accountId**: This parameter holds the ID of the user’s account, which is needed to fetch personalized results.\n    \n    - **searchType**: Set to 'Show', this parameter tells the API that the request is intended to retrieve video categories for display.\n    \n    - **category**: This query parameter is specifically looking for videos categorized under 'Comedy'.\n    \n    - **subCategory**: This is further specifying that the focus is on the 'Improv' subcategory within Comedy.\n\n  - **headers**: This array is meant for any additional headers that may need to be included in the request.\n  \n    - **key**: Currently left blank, which suggests that no custom headers are being used.\n    \n    - **value**: Also left blank, indicating that there are no values to provide.\n    \n    - **type**: This is set to 'default', showing that no special type of header formatting is required.\n    \n    - **disabled**: This boolean flag is set to true, meaning that this header section is not active and will not be included in the request.\n  \n  - **body**: This section represents the content to be sent with the request. \n\n    - **mode**: The mode of the request body. It is set to 'raw', indicating that the body will contain raw data.\n    \n    - **raw**: Currently, this is an empty string, meaning that there is no payload being sent with the request body. \n\nThis endpoint thus allows users to fetch a structured list of video categories along with specific subcategories based on the parameters provided in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Education",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Education",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Education"
+            }
+          ]
+        },
+        "description": "### API Description for \"Video - Category - Get All - Education\"\n\n**Endpoint Name:** Video - Category - Get All - Education\n\n**Request Method:** GET  \nThis indicates that the request is intended to retrieve data.\n\n**Request URL:**  \n`http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Education`  \nThis is the URL where the request is sent. It consists of a base URL followed by query parameters:\n- `sessionId`: Represents the unique identifier for the user's session. Replace `sessionId` with the actual session ID.\n- `accountId`: Indicates the unique identifier for the user's account. Replace `accountId` with the actual account ID.\n- `searchType`: Specifies the type of videos to search for, which in this case is set to \"Education\".\n\n**Authentication:**  \n**Type:** Bearer Token  \nThe request requires authentication via a bearer token. This is a common method of providing secure access to an API.\n\n- **Token:**  \n  - **Key:** token  \n    This is the identifier for the authentication token that will be included in the request header.\n  - **Value:** BearerToken  \n    Replace `BearerToken` with the actual token provided for authentication.\n  - **Type:** string  \n    Indicates that the value of the token is of string type.\n\n**Request Headers:**  \nThis section allows you to define any additional headers to be included in your request. Currently, there's a disabled header placeholder that does not have any key or value specified. You can uncomment or add headers if needed.\n\n- **Key:** \"\"  \n  - The key is empty and has been marked as disabled.\n  \n- **Value:** \"\"  \n  - No value is provided for the empty key.\n\n**Request Body:**  \nThe body of the request is not used for a GET request, as it is intended to be empty.\n\n- **Mode:** raw  \n  Specifies that the body is in raw format.\n  \n- **Raw:** \"\"  \n  Indicates that there is no content within the body as it is empty.\n\n### Summary\nThis API endpoint retrieves all education-related video categories. It requires the session ID, account ID, and uses a bearer token for authentication. No headers or body content are necessary for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Education Category",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Education&category=Classroom",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Education"
+            },
+            {
+              "key": "category",
+              "value": "Classroom"
+            }
+          ]
+        },
+        "description": "### Description of the Data in the Endpoint\n\n**Name:**  \n- This is the name of the API request, which is \"Video - Category - Get All - Education Category\". It indicates that the request is to retrieve all videos in the education category.\n\n**Request:**\n- This section describes the details needed to make the API request.\n\n  **Auth:**  \n  - **Type:** Specifies that the authentication method used is a bearer token. Bearer tokens are commonly used for authenticating API requests, ensuring that the user has the right to access the requested resources.\n  - **Bearer:** This includes an array with the bearer token details.\n    - **Key:** The name of the token parameter, which is \"token\".\n    - **Value:** The actual token used for authorization, which in this case is represented as \"BearerToken\". Users need to replace this placeholder with their actual bearer token.\n    - **Type:** Indicates the type of the token, which is a string.\n\n  **Method:**  \n  - This specifies the HTTP method used for the request. In this case, it is a \"GET\" method, which is typically used to retrieve data from the server.\n\n  **URL:**  \n  - This is the endpoint to which the request will be sent. The URL provided is:\n    ```\n    http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Education&category=Classroom\n    ```\n    - It includes several query parameters:\n      - `sessionId`: A placeholder for the user's session ID, which is required for the request.\n      - `accountId`: A placeholder for the user's account ID, needed to identify the user's account.\n      - `searchType`: Set to \"Education\" to filter the videos based on the education category.\n      - `category`: Set to \"Classroom\" to specify a subset of the education category.\n\n  **Headers:**  \n  - This is an array that includes HTTP headers for the request. In this case, the array is present but contains a single header with no key or value and is marked as disabled. This suggests that no additional headers are needed beyond what is provided in the authorization section.\n\n  **Body:**  \n  - This section is where data can be sent in a request body. It specifies:\n    - **Mode:** The mode of the body, which is set to \"raw\". This means that the body will contain raw data instead of form or JSON data.\n    - **Raw:** This is where the actual data would go when the body is sent, but it is currently empty in this instance. Since this is a GET request, typically no body is needed.\n\nThis detailed description should help users understand the purpose and structure of the API endpoint when using your Postman collection."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Education SubCategory",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Education&category=Classroom&subCategory=Political%20Science",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Education"
+            },
+            {
+              "key": "category",
+              "value": "Classroom"
+            },
+            {
+              "key": "subCategory",
+              "value": "Political%20Science"
+            }
+          ]
+        },
+        "description": "**Description of Endpoint Data:**\n\n1. **Name**: This specifies the name of the API request, which is \"Video - Category - Get All - Education SubCategory\". It indicates that this endpoint is used to retrieve all videos related to the Education category, focusing specifically on subcategories.\n\n2. **Request**: This section contains all the details required to make the API request.\n\n   - **Auth**: This section describes the authentication method used for the API. It requires bearer token authentication.\n      - **Type**: Specifies that the authentication type is \"bearer\".\n      - **Bearer**: This is an array that holds the details of the bearer token.\n         - **Key**: This represents the identifier for the token, labeled \"token\".\n         - **Value**: This is where the actual token is placed, denoted as \"BearerToken\". This token is to be replaced with an actual token string needed for authentication.\n         - **Type**: Indicates that the value is a type \"string\".\n\n   - **Method**: This specifies the HTTP method used for the request. In this case, it is \"GET\", indicating that the endpoint retrieves data.\n\n   - **URL**: This is the endpoint's URL where the request will be sent. It is formatted as follows:\n     - The base URL is \"http://localhost:3000/api/video/category/all/\".\n     - It includes query parameters:\n       - **sessionId**: Placeholder for the session identifier, to be replaced with an actual session ID.\n       - **accountId**: Placeholder for the account identifier, to be replaced with an actual account ID.\n       - **searchType**: Set to \"Education\", indicating the type of videos relevant to education.\n       - **category**: Set to \"Classroom\", specifying the overarching category of the videos.\n       - **subCategory**: Set to \"Political Science\", focusing on a specific area within the education category.\n\n   - **Headers**: This section can include additional headers required for the request. \n      - In this case, there's an entry with empty key and value, which is disabled. It indicates that no additional headers are currently being used, but the structure is in place for future use.\n\n   - **Body**: This section is used to define the body of the request.\n      - **Mode**: Set to \"raw\", indicating that the body content will be sent as plain text.\n      - **Raw**: An empty string, indicating that no body content is needed for the GET request.\n\nThis summary provides a clear breakdown of the endpoint's data structure, parameters, and their intended use for anyone utilizing the API collection."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Tournament",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Tournament",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Tournament"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Category - Get All - Tournament\n\n- **Name**: Video - Category - Get All - Tournament  \n  This endpoint retrieves all video categories associated with tournaments.\n\n- **Request**:  \n  This section outlines the details of the request needed to access the endpoint.\n\n  - **Auth**:  \n    This includes the authentication type and details required to access the endpoint. \n    - **Type**: Bearer  \n      This indicates that the endpoint requires a bearer token for authentication.\n    - **Bearer**:  \n      This array provides the details of the bearer token.\n      - **Key**: token  \n        This is the name of the bearer token parameter.\n      - **Value**: BearerToken  \n        This is where the actual bearer token string should be placed.\n      - **Type**: string  \n        This specifies that the token should be a string.\n\n  - **Method**: GET  \n    This indicates that the request will use the GET method, which is used to retrieve data from the server.\n\n  - **URL**:  \n    This is the endpoint URL used to access the resource.\n    - **Format**: `http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Tournament`  \n      - **localhost:3000**: This denotes that the server is running locally on port 3000.\n      - **/api/video/category/all/**: This path indicates the specific resource being accessed.\n      - **Query Parameters**:  \n        - **sessionId**: This parameter should be replaced with the actual session identifier.\n        - **accountId**: This parameter should be replaced with the actual account identifier.\n        - **searchType**: Set to \"Tournament\", specifying that the search is limited to video categories related to tournaments.\n\n  - **Headers**:  \n    This section includes headers that can be sent with the request.\n    - **Key**: (empty)  \n      There are currently no custom headers defined for this request. \n    - **Value**: (empty)  \n      No values are set for the headers.\n    - **Type**: default  \n      Indicates that the header type is default.\n    - **Disabled**: true  \n      This indicates that the header settings are currently disabled and will not be sent with the request.\n\n  - **Body**:  \n    This section describes the body of the request.\n    - **Mode**: raw  \n      This signifies that the body of the request will consist of raw data instead of URL-encoded or form data.\n    - **Raw**: \"\"  \n      The raw body content is currently empty, meaning no data is sent in the body for this GET request. \n\nThis detailed description provides clarity on how to use the endpoint to fetch all video categories for tournaments by using the appropriate authentication and parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Tournament Category",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Tournament&category=Dance",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Tournament"
+            },
+            {
+              "key": "category",
+              "value": "Dance"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Video - Category - Get All - Tournament Category\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ],\n        \"description\": \"This specifies that authentication is done using a bearer token. The provided token ('BearerToken') is required to authorize the request.\"\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Tournament&category=Dance\",\n      \"description\": \"This is the endpoint URL used to retrieve all video categories related to tournaments. The URL parameters include sessionId, accountId, searchType, and category.\"\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"description\": \"No custom headers are set for this request, and the header field is disabled.\"\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      },\n      \"description\": \"The body of the request is empty since this is a GET request, which typically does not send any data in the request body.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Get All - Tournament SubCategory",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Tournament&category=Dance&subCategory=Bboy%20Dance%20Battle",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "searchType",
+              "value": "Tournament"
+            },
+            {
+              "key": "category",
+              "value": "Dance"
+            },
+            {
+              "key": "subCategory",
+              "value": "Bboy%20Dance%20Battle"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Category - Get All - Tournament SubCategory\n\n**Name:**  \nThis describes the purpose of the API call, which retrieves all videos in a specified category and subcategory related to tournaments.\n\n**Request:**\n\n- **Auth:**\n  - **Type:** Bearer\n    - This specifies that the authentication method used is a Bearer token, which is a common way to ensure secure access to APIs.\n  - **Bearer:**\n    - **Key:** Token\n      - This is the name given to the Bearer token required for authorization.\n    - **Value:** BearerToken\n      - This is a placeholder for the actual token value used for authentication. Users will need to replace this with their valid token.\n    - **Type:** String\n      - Indicates that the value of the token is a string data type.\n\n- **Method:** GET\n  - This indicates that the HTTP method used for this request is GET, which is used to retrieve data from the server.\n\n- **URL:**  \n  This is the endpoint used to get the video data. \n  ```\n  http://localhost:3000/api/video/category/all/?sessionId=sessionId&accountId=accountId&searchType=Tournament&category=Dance&subCategory=Bboy%20Dance%20Battle\n  ```\n  - The URL consists of several query parameters:\n    - **sessionId:** The ID representing the user's current session.\n    - **accountId:** The ID associated with the user's account.\n    - **searchType:** The type of search being conducted, which in this case is set to \"Tournament\".\n    - **category:** The overall category of the videos, which is set to \"Dance\".\n    - **subCategory:** A more specific subgroup of the selected category, here defined as \"Bboy Dance Battle\".\n\n- **Headers:**\n  - This section shows any additional HTTP headers that might be sent with the request.\n  - Currently, there is an empty header entry that is disabled, indicating no additional headers are required.\n\n- **Body:**\n  - **Mode:** Raw\n    - The body is in raw format, which means that there are no data parameters being sent with the request.\n  - **Raw:** \n    - An empty string is provided here since this GET request does not require a body.\n\n### Summary\nThis endpoint allows users to fetch all videos related to a specific tournament subcategory under the broader category of dance. Authentication is necessary via a Bearer token, and the request requires various identifiers to filter the results accordingly."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Category - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"categoryId\":\"categoryId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/category/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "category",
+            "delete"
+          ]
+        },
+        "description": "### Video - Category - Delete\n\nThis endpoint is used to delete a specific category of videos associated with a user's account. Below is a detailed description of each data element involved in this API request:\n\n- **name**: This indicates the name of the API request. In this case, it is \"Video - Category - Delete\", which clearly describes the action being performed.\n\n- **request**: This section contains all the necessary information required to make the API call.\n\n  - **auth**: This specifies the type of authentication to be used for the request. \n\n    - **type**: Indicates that the authentication type is \"bearer\", which means an authorization token is needed.\n    \n    - **bearer**: This is an array of objects that contains the details of the bearer token needed for authorization.\n    \n      - **key**: This specifies the name of the token. Here, it is labeled as \"token\".\n      \n      - **value**: This represents the value of the token that will be used for authentication. The placeholder \"sessionId\" indicates where the actual session ID should be provided.\n      \n      - **type**: This indicates the type of value, which is set as \"string\".\n\n  - **method**: This indicates the HTTP method used for the request. In this case, it is a \"POST\" method, which is commonly used for actions that change the state on the server, such as deleting resources.\n\n  - **url**: This is the endpoint URL where the request will be sent. The specified URL is \"http://localhost:3000/api/video/category/delete\", indicating that this API is hosted locally on port 3000.\n\n  - **headers**: This section can include any additional headers that need to be sent with the request.\n\n    - **key**: This is a placeholder for any header key that may be needed. Currently, it is empty as no custom headers are required.\n    \n    - **value**: This is the corresponding value for the header key, which is also empty.\n    \n    - **type**: This indicates the type of header. It is set as \"default\".\n    \n    - **disabled**: This is a boolean that indicates whether this header is active or not. Here, it is set to true, meaning this header will not be sent in the request.\n\n  - **body**: This part of the request contains the data that will be sent to the server.\n\n    - **mode**: Specifies the format of the body content. It is set to \"raw\", indicating the body will contain a raw JSON string.\n    \n    - **raw**: This is the actual content sent in the request body. It includes three key-value pairs in JSON format:\n    \n      - **sessionId**: Placeholder for the ID of the session that is currently active for the user.\n      \n      - **accountId**: Placeholder for the unique identifier of the user's account from which the category should be deleted.\n      \n      - **categoryId**: Placeholder for the unique identifier of the video category that is to be deleted.\n\nThis API request allows users to specify which video category they wish to delete by providing the relevant session ID, account ID, and category ID.\n"
+      },
+      "response": []
+    }
+  ]
+}

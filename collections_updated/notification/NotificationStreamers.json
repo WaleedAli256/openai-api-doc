@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationStreamers",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Streamers - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Streamers\",\"description\":\"This streamers is my second streamers\",\"tags\":\"second,streamers\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isStreamersPrivate\":true,\"isTournamentOnly\":false,\"isStreamersDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/streamers/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "streamers",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Notification - Streamers - Create\". It's a HTTP POST request that is used to create new streamers.\n\n1. `\"auth\"`: This object contains authentication information. The authentication type used is Bearer token authentication.\n   - `\"type\"` : The type of authentication which is bearer in this case.\n   - `\"key\"` : The key value for the bearer auth token.\n   - `\"value\"` : The actual token used for bearer authentication.\n\n2. `\"method\"` : The HTTP method used for the request which is POST.\n\n3. `\"url\"` : The URL of the API endpoint. This endpoint resides on localhost at port 3000.\n\n4. `\"headers\"` : The headers object is currently empty and disabled.\n\n5. `\"body\"`: The request body is in raw JSON format and contains the following keys:\n   - `\"sessionId\"` : The unique identifier for the session.\n   - `\"accountId\"` : The unique identifier for the account.\n   - `\"name\"` : The name of the streamer.\n   - `\"description\"` : Brief description of the streamers.\n   - `\"tags\"` : Tags associated with the streamers.\n   - `\"profilePhotoUrl\"` : The URL for the profile photo of the streamers.\n   - `\"coverPhotoUrl\"` : The URL for the cover photo of the streamers.\n   - `\"minimumTipAmount\"` : The minimum tip amount for the streamers.\n   - `\"categoryId\"` and `\"category\"` : The unique identifier and name of the category.\n   - `\"subCategoryId\"` and `\"subCategory\"` : The unique identifier and name of the sub category.\n   - `\"isStreamersPrivate\"` : A boolean to determine if the streamers is private.\n   - `\"isTournamentOnly\"` : A boolean to determine if the streamers is for tournament-only.\n   - `\"isStreamersDefault\"` : A boolean to determine if these settings should be the default for the streamers.\n   - `\"isPreLiveNotificationAds\"` : A boolean to determine if there are pre-live notification ads.\n   - `\"isPostLiveNotificationAds\"` : A boolean to determine if there are post-live notification ads.\n   - `\"breakPreLiveNotificationUrl\"` : The URL for the pre-live notification break advertisement.\n   - `\"breakPostLiveNotificationUrl\"` : The URL for the post-live notification break advertisement.\n\nThese fields are provided in a raw JSON object in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Streamers - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"streamersId\":\"streamersId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Streamers 2.0\",\"description\":\"This streamers is my second streamers\",\"tags\":\"second,streamers\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isStreamersPrivate\":true,\"isTournamentOnly\":false,\"isStreamersDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/streamers/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "streamers",
+            "update"
+          ]
+        },
+        "description": "Endpoint Name: \"Notification - Streamers - Update\" - This endpoint updates streamers details in the notifications.\n\nAuthentication: \nThe request requires Bearer Token authentication. \n\nRequest Method: PUT \n\nURL: The endpoint URL is http://localhost:3000/api/notification/streamers/update.\n\nHeaders: There's one header key (\"Client-UUID\") which should hold a default type value known as ClientUUID.\n\nRequest Payload:\nThe payload should be a raw JSON with below keys -\n\n1. streamersId: A unique identifier for the streamer.\n2. sessionId: Session identifier for the current user session.\n3. accountId: Identifier for the account associated with the streamer.\n4. name: The updated name of the streamer.\n5. description: An updated description about the streamer.\n6. tags: Updated, comma-separated tags associated with the streamer.\n7. profilePhotoUrl: The URL of the streamer's updated profile photo.\n8. coverPhotoUrl: The URL of the streamer's updated cover photo.\n9. minimumTipAmount: The minimum amount of tip that can be given to the streamer.\n10. categoryId: The identifier of the new category the streamer belongs to.\n11. category: The name of the new category the streamer belongs to.\n12. subCategoryId: The identifier of the new sub-category the streamer belongs to.\n13. subCategory: The name of the new sub-category the streamer belongs to.\n14. isStreamersPrivate: A boolean indicating whether the streamer's stream is private.\n15. isTournamentOnly: A boolean indicating whether the streamer only participates in tournaments.\n16. isStreamersDefault: A boolean indicating whether the streamer is set as the default streamer.\n17. isPreLiveNotificationAds: A boolean indicating whether ads will be shown in pre-live notifications of the streamer.\n18. isPostLiveNotificationAds: A boolean indicating whether ads will be shown in post-live notifications of the streamer.\n19. breakPreLiveNotificationUrl: The URL from where the pre-live notification ads video can be fetched.\n20. breakPostLiveNotificationUrl: The URL from where the post-live notification ads video can be fetched."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Streamers - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/streamers/get/?streamersId=streamersId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "streamers",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "streamersId",
+              "value": "streamersId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Notification - Streamers - Get\". It is designed to pull out or \"get\" notification data related to streamers from the server. Here are the different data components of this endpoint:\n\n1. **Name**: The name of this endpoint is 'Notification - Streamers - Get'. This is just an identifier to help you remember what this endpoint does.\n\n2. **Request**: This property holds the information regarding the HTTP request made to the server.\n\n   - **Auth**: The 'auth' attribute suggests that user must have valid authorization to access this endpoint. It requires 'Bearer Token' type authorization. Users should replace string 'BearerToken' with a valid bearer token value to authenticate the request.\n\n   - **Method**: 'GET' is the HTTP request method used. GET is used to request data from a specified resource.\n\n   - **URL**: 'http://localhost:3000/api/notification/streamers/get/?streamersId=streamersId&sessionId=sessionId&accountId=accountId' is the URL which will be hit by the API call. It includes query parameters that need to be replaced with actual 'streamersId', 'sessionId' and 'accountId' based on the user's requirements.\n\n   - **Headers**: These can be used to provide additional information about the request. In this case, the key and value fields are empty, and the 'disabled' field is set to 'true', which means that this header is not actually sent with the request.\n\n   - **Body**: Defines the body of the HTTP request. In this case, it is set to 'raw' mode with the raw field being empty. As it's a GET request, typically there wouldn't be need for any content in the body.\n\n3. Note: All query parameters ('streamersId', 'sessionId', 'accountId') are required, so please ensure you replace placeholders with valid values before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Streamers - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/streamers/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "streamers",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Notification - Streamers - Get All\". It is designed to retrieve all streamer notifications.\n\nThe authentication method for this request is a bearer token. This is specified in the 'auth' field. \nThe `\"type\": \"bearer\"` indicates the type of authorization used and `\"key\": \"token\"`is the keyword that needs to be included in the headers of the API requests. This is accompanied by `\"value\": \"BearerToken\"`, which is the actual token value used for authorization and `\"type\": \"string\"` specifying the data type of the token.\n\nThe `\"method\": \"GET\"` signifies that this request uses the GET HTTP method, which is typically utilized to retrieve data.\n\nThe `\"url\": \"http://localhost:3000/api/notification/streamers/all/?sessionId=sessionId&accountId=accountId\"` field indicates the API endpoint URL. The 'sessionId' and 'accountId' are the parameters included in the URL, used to specify the session and account for which notifications are being retrieved.\n\nThe `\"headers\"` array is currently empty with `\"key\": \"\"`, `\"value\": \"\"` and `\"type\": \"default\"`. This means that by default no additional information is passed in the header of the request and this particular header is `\"disabled\": true`.\n\nLastly, the `\"body\"` of the request is set to `\"mode\": \"raw\"` and `\"raw\": \"\"`. This indicates that the request does not contain a body payload, making it unnecessary to include any additional information in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Streamers - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"streamersId\":\"streamersId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/streamers/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "streamers",
+            "delete"
+          ]
+        },
+        "description": "This API endpoint is named \"Notification - Streamers - Delete.\" As the name suggests, it's intended to be used for deleting streamer notifications in the system.\n\nTo authorize this endpoint, a 'Bearer token' is required. The 'token' is represented by 'sessionId' which should be a string value. You need to replace 'sessionId' with the actual session ID value.\n\nThe method used for this API endpoint is 'POST' and the URL is 'http://localhost:3000/api/notification/streamers/delete'. This means it'll delete streamer notifications when this API endpoint is called.\n\nThere are no additional headers required for this API endpoint as shown in 'headers' attribute. The key and value fields are empty and this header field is marked as 'disabled', hence it won't impact your API request.\n\nThe request payload or body should be in 'raw' format. In the raw JSON object, three parameters are required:\n1. 'sessionId': You have to replace this with your actual session ID for valid authorization.\n2. 'accountId': Replace this placeholder with the actual account ID for which you want to delete the streamer notifications.\n3. 'streamersId': Replace this placeholder with the actual ID of the streamer whose notifications you want to delete.\n\nMake sure the value you replace these placeholders with correspond to the correct data type and are valid in your application context."
+      },
+      "response": []
+    }
+  ]
+}

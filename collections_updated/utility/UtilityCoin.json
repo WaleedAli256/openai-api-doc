@@ -1,0 +1,1110 @@
+{
+  "info": {
+    "_postman_id": "4acbe110-c445-41a0-a8d0-c6cc4cd57160",
+    "name": "UtilityCoin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Utility - Coin - Create for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"MPC\",\n    \"description\": \"My Profile Coin\",\n    \"type\": \"platform\",\n    \"action\": \"sell\",\n    \"rate\": 4,\n    \"amount\": 2000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Utility - Coin - Create for User\n\n#### Request Information\n\n- **Auth Type**: Bearer \n  - This indicates that a bearer token is required for authentication. It must be included in the request header to authorize the user.\n\n- **Bearer Token**: \n  - The token is passed in the request as a string. It is required for accessing the API securely.\n\n- **Method**: POST\n  - This indicates that the request is intended to create a new resource (in this case, a coin for a user).\n\n- **URL**: \n  - `http://localhost:3000/api/utility/coin/create`\n  - This is the endpoint where the request is sent. It specifically handles the creation of a coin for a user within the utility service.\n\n#### Headers\n\n- **Headers**: \n  - Currently, there are no custom headers included in this request. One default header exists but is disabled. Users can add additional headers as needed for their specific use case.\n\n#### Body\n\n- **Body Mode**: Raw\n  - The body of the request is sent in raw format, specifically as JSON. This allows for structured data to be passed along with the request.\n\n- **Raw Data**: \n  - The request body is structured as follows:\n  \n  ```json\n  {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"targetType\": \"accountId\",\n      \"name\": \"MPC\",\n      \"description\": \"My Profile Coin\",\n      \"type\": \"platform\",\n      \"action\": \"sell\",\n      \"rate\": 4,\n      \"amount\": 2000\n  }\n  ```\n\n  - **sessionId**: \n    - This field represents the unique identifier for the user's session. It is used to associate the coin creation request with the correct user session.\n\n  - **accountId**: \n    - This field holds the unique identifier for the user’s account. It signifies which user's coin is being created.\n\n  - **targetType**: \n    - This specifies the type of target for the coin. In this case, it indicates that the target is another account (i.e., \"accountId\").\n\n  - **name**: \n    - This is the name that will be assigned to the newly created coin. It is a string value representing the coin's identity (e.g., \"MPC\").\n\n  - **description**: \n    - A textual description of the coin, providing more context about its purpose. For example, \"My Profile Coin\".\n\n  - **type**: \n    - This describes the category of the coin. In the example, it is specified as \"platform,\" indicating that it belongs to a particular platform.\n\n  - **action**: \n    - This indicates the intended action for the coin. The action specified here is \"sell,\" meaning the user will be able to sell this coin.\n\n  - **rate**: \n    - This is a numeric value that indicates the conversion rate for the coin. In the provided example, the rate is set to 4.\n\n  - **amount**: \n    - This indicates the quantity of the coin to be created. In this example, the amount is set to 2000, representing the total number of coins.\n\nThis detailed description provides an overview of each element involved in the creation of a coin for a user, assisting other users in understanding the purpose and requirements of the API endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Create Bulk for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"MPC\",\n            \"description\": \"My Profile Coin\",\n            \"type\": \"platform\",\n            \"action\": \"sell\",\n            \"rate\": 4,\n            \"amount\": 2000\n        },\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"MPC\",\n            \"description\": \"My Profile Coin\",\n            \"type\": \"platform\",\n            \"action\": \"sell\",\n            \"rate\": 4,\n            \"amount\": 1000\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "createBulk"
+          ]
+        },
+        "description": "### Endpoint: Utility - Coin - Create Bulk for User\n\n**Description:** This endpoint allows for the bulk creation of coins for a specified user. It accepts a POST request containing necessary details to generate multiple coins at once.\n\n#### Request Details:\n\n- **Auth:** \n  - **Type:** Bearer Token authorization is required. \n  - **Bearer:** \n    - **Key:** token \n    - **Value:** Should be replaced with a valid bearer token to authenticate the request.\n\n- **Method:** \n  - **POST:** This indicates that data will be sent to the server to create new resources.\n\n- **URL:** \n  - The endpoint to send the request to is `http://localhost:3000/api/utility/coin/createBulk`. This is the local development URL and should be updated for production.\n\n- **Headers:** \n  - This request currently has no custom headers set. The header field is disabled but can be enabled if additional headers are needed for the request.\n\n- **Body:** \n  - The body of the request is sent in raw JSON format. Below are the required fields:\n\n  - **sessionId:** \n    - **Description:** Unique identifier for the user session. This is used to track the user's session and link the transactions to it.\n  \n  - **accountId:** \n    - **Description:** The unique identifier for the user's account that is receiving the coins. This must be specified to ensure that the coins are attributed to the correct user.\n\n  - **list:** \n    - **Description:** An array of objects representing the coins to be created. Each object contains specific details about a coin.\n\n    Each object in the list contains the following fields:\n\n    - **targetType:** \n      - **Description:** Specifies the type of target to which the action applies. In this case, it is set to \"accountId\" which indicates that the action is directed toward the user's account.\n\n    - **name:** \n      - **Description:** The name of the coin. In this example, it is set to \"MPC,\" which stands for My Profile Coin.\n\n    - **description:** \n      - **Description:** A brief description of the coin, which in this case refers to its function or use. The example provided is \"My Profile Coin\".\n\n    - **type:** \n      - **Description:** Specifies the category of the coin. It indicates that this coin is a \"platform\" coin, which may suggest that it is intended for use within a specific platform or service.\n\n    - **action:** \n      - **Description:** The action that will be performed on the coins created. In this case, it is set to \"sell,\" indicating that the coins will be available for sale.\n\n    - **rate:** \n      - **Description:** The rate at which the coin is being sold. In the example, it is set to 4. This could represent a price or a conversion rate depending on the context.\n\n    - **amount:** \n      - **Description:** The quantity of coins to be created. Examples in the request show two different amounts (2000 and 1000), indicating the number of coins for each transaction.\n\nThis structured approach enables the bulk creation of user-specific coins in a consistent and efficient manner."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Create for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"MPC\",\n    \"description\": \"My Profile Coin\",\n    \"type\": \"platform\",\n    \"action\": \"buy\",\n    \"rate\": 1,\n    \"amount\": 100000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Coin - Create for Team\n\nThis endpoint allows the creation of a coin for a specific team within the utility service. The request must be made using the POST method and requires authentication via a bearer token.\n\n#### Request Details:\n\n- **Auth**: \n  - **Type**: The method by which the request is authenticated. In this case, it is set to `bearer`, meaning a Bearer Token is used for authorization.\n  - **Bearer**: Contains the authorization token:\n    - **Key**: Indicates what type of token is provided, which is \"token\".\n    - **Value**: Placeholder for the actual Bearer Token that needs to be used for authentication. It should be replaced with a valid token in the format \"BearerToken\".\n    - **Type**: The data type of the token, which is a string.\n\n- **Method**: \n  - **POST**: This specifies that the request will create new information on the server.\n\n- **URL**: \n  - `http://localhost:3000/api/utility/coin/create`: This is the endpoint where the request will be sent. It indicates the local server running on port 3000 and the specific API path for creating the coin.\n\n- **Headers**: \n  - An array of header objects. In this case, there is currently an empty header object, which is indicated as disabled. Additional headers may be added depending on requirements.\n\n- **Body**: \n  - **Mode**: The format of the body content, which is set to `raw`, allowing for the direct input of JSON data.\n  - **Raw**: Contains the payload that must be sent with the POST request. The JSON object includes:\n    - **sessionId**: A unique identifier for the session during which the request is made, replace with actual session ID.\n    - **accountId**: Identifies the account for which the coin is being created, replace with real account ID.\n    - **targetType**: Specifies the type of the target entity, in this case, it is set to `teamId`, indicating that the coin is associated with a team.\n    - **targetId**: The ID of the team for which the coin is being created, replace with actual team ID.\n    - **name**: The name of the coin being created, which is set to \"MPC\" as a placeholder.\n    - **description**: A brief description of the coin, here it is set to \"My Profile Coin\".\n    - **type**: Indicates the platform for which this coin is designated, set to \"platform\".\n    - **action**: Specifies the action associated with the coin, which is \"buy\" in this case.\n    - **rate**: The exchange rate or value of the coin, currently set to `1` as a placeholder.\n    - **amount**: The total amount of the coin being created, which is set to `100000` as an example. \n\n- **Options**: \n  - **Raw**: Specifies the language format for the request body, which is \"json\", indicating that the raw data is in JSON format.\n\nThis endpoint is crucial for managing coin creation within a team context, and it is important to ensure that all required fields are filled with appropriate values before making the API request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Create Bulk for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"list\": [\n        {\n            \"name\": \"MPC\",\n            \"description\": \"My Profile Coin\",\n            \"type\": \"platform\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 100000\n        },\n        {\n            \"name\": \"MPC\",\n            \"description\": \"My Profile Coin\",\n            \"type\": \"platform\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 100000\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "createBulk"
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Coin - Create Bulk for Team\n\nThis endpoint is used to create multiple coin entries for a specific team in bulk. Below is a detailed description of each data element required in the request.\n\n#### Request Data\n\n- **Authentication**:\n  - **Type**: Bearer\n    - This specifies that the request requires bearer token authentication.\n  - **Bearer Token**:\n    - **Key**: `token`\n    - **Value**: `BearerToken`\n    - **Type**: `string`\n    - Description: This is the authentication token needed to authorize the request. It should be replaced with a valid bearer token provided by the authentication service.\n\n- **Method**:\n  - **Value**: `POST`\n  - Description: This indicates that the HTTP method to be used for the request is POST, which is typically used for creating new resources.\n\n- **URL**:\n  - **Value**: `http://localhost:3000/api/utility/coin/createBulk`\n  - Description: This is the endpoint URL where the request will be sent. It targets the service responsible for creating bulk coins.\n\n- **Headers**:\n  - **Key**: `\"\"`\n  - **Value**: `\"\"`\n  - **Type**: `default`\n  - **Disabled**: `true`\n  - Description: Currently, there are no specific headers needed for this request, and this field is disabled. However, you may add headers if required by the backend service.\n\n- **Body**:\n  - **Mode**: `raw`\n  - **Raw**:\n    ```json\n    {\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"targetType\": \"teamId\",\n        \"targetId\": \"teamId\",\n        \"list\": [\n            {\n                \"name\": \"MPC\",\n                \"description\": \"My Profile Coin\",\n                \"type\": \"platform\",\n                \"action\": \"buy\",\n                \"rate\": 1,\n                \"amount\": 100000\n            },\n            {\n                \"name\": \"MPC\",\n                \"description\": \"My Profile Coin\",\n                \"type\": \"platform\",\n                \"action\": \"buy\",\n                \"rate\": 1,\n                \"amount\": 100000\n            }\n        ]\n    }\n    ```\n  - Description: The body of the request contains the following fields:\n    - **sessionId**:\n      - Value: `sessionId`\n      - Description: This is an identifier for the session under which the operation is being performed. It should be replaced with the actual session ID.\n\n    - **accountId**:\n      - Value: `accountId`\n      - Description: This represents the ID of the account associated with the request. It should be replaced with the actual account ID.\n\n    - **targetType**:\n      - Value: `teamId`\n      - Description: This signifies the type of target for which the coins are being created. In this case, it is set to 'teamId', indicating that the coins are aimed at a specific team.\n\n    - **targetId**:\n      - Value: `teamId`\n      - Description: This is the unique identifier for the target team. It should be replaced with the actual team ID.\n\n    - **list**:\n      - Description: This is an array containing individual coin entries to be created. Each object within the list has the following properties:\n        - **name**:\n          - Value: `MPC`\n          - Description: The name of the coin being created.\n        - **description**:\n          - Value: `My Profile Coin`\n          - Description: A brief description of the coin.\n        - **type**:\n          - Value: `platform`\n          - Description: This indicates the type of coin and in this case represents that the coin is based on a platform.\n        - **action**:\n          - Value: `buy`\n          - Description: The action associated with the coin. Here, it indicates that the action related to the coin is buying.\n        - **rate**:\n          - Value: `1`\n          - Description: This represents the rate or value of the coin.\n        - **amount**:\n          - Value: `100000`\n          - Description: This signifies the number of coins to be created or the total amount in the transaction.\n\nNote: The list contains multiple entries, and each entry should have its own specifications as illustrated."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Convert Coin",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"rate\": 2,\n    \"amount\": 5,\n    \"type\": \"platform\",\n    \"target\": \"token\",\n    \"toType\": \"platform\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/convert",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "convert"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n#### Endpoint Name\n- **Utility - Coin - Convert Coin**: This is the name of the API endpoint responsible for converting a specific amount of one type of coin to another.\n\n#### Request Details\n- **Authentication**: \n  - **Type**: Bearer. This indicates that the endpoint requires a bearer token for authorization.\n  - **Bearer Token**: Represents the token used for authentication, which should be replaced with a valid token. Here it's represented as \"BearerToken\".\n\n- **Method**: \n  - **POST**: The HTTP method used to send data to the server in order to execute the conversion request.\n\n- **URL**: \n  - **URL**: `http://localhost:3000/api/utility/coin/convert`. This is the endpoint where the conversion request is sent. The localhost indicates it's for local testing.\n\n- **Headers**:\n  - **Client-UUID**: A unique identifier for the client making the request. This should be replaced with an actual UUID representing the client, here marked as \"ClientUUID\".\n\n#### Body of the Request\n- **Mode**: \n  - **raw**: This indicates the request body is sent as raw data.\n  \n- **Body Content**: \n  - **Raw JSON**: The data sent in the body of the request, formatted in JSON. Below are the specific fields included in the body:\n    - **sessionId**: A unique identifier for the user's session. This should be replaced with an actual session ID.\n    - **accountId**: The identifier for the account from which the funds are being converted. Replace with the actual account ID.\n    - **rate**: A numeric value representing the conversion rate for the coin to be converted.\n    - **amount**: The amount of coins to be converted. This is a numeric value indicating how many coins to convert.\n    - **type**: Describes the type of conversion; in this case, it is set as \"platform\".\n    - **target**: Specifies the target currency or token to convert the amount into; indicated as \"token\" here.\n    - **toType**: The type of the result after conversion; also set to \"platform\".\n\nThis information contributes to the overall understanding of how to use the endpoint for coin conversion effectively. Users should ensure they replace placeholders with actual values before making requests."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Update Coin for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"coinId\" : \"coinId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"MPCT\",\n    \"description\": \"My Profile Coin Two\",\n    \"type\": \"platform\",\n    \"action\": \"buy\",\n    \"rate\": 2,\n    \"amount\": 1000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "update"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: This is the name of the API endpoint. It describes the function of the endpoint, which is to update the user's coin information.\n\n- **request**: This section contains all the details needed to make a request to the API.\n\n  - **auth**: This specifies the authentication method required to access the endpoint.\n    - **type**: Indicates the type of authentication used, which is \"bearer\".\n    - **bearer**: This is an array containing authentication details.\n      - **key**: This indicates the name of the authentication token used for the request.\n      - **value**: This is a placeholder representing the actual bearer token that should be used.\n      - **type**: This indicates the data type of the token, which is \"string\".\n\n  - **method**: This indicates the HTTP method used for the request. In this case, it is a \"PUT\" request, which is typically used to update existing resources.\n\n  - **url**: This is the endpoint URL where the request is sent. In this instance, it points to the local server running on port 3000 for the coin update functionality.\n\n  - **headers**: This section contains the headers to include with the request.\n    - **key**: This is the name of the header. Here, it is \"Client-UUID\", which is used to identify the client making the request.\n    - **value**: This is a placeholder for the actual UUID of the client.\n    - **type**: This indicates the type of the header, which is set to \"default\".\n\n  - **body**: This contains the data payload being sent with the request.\n  \n    - **mode**: Indicates the format of the body. In this case, it is set to \"raw\", meaning the body will contain raw data.\n  \n    - **raw**: This contains the actual data being sent in JSON format. The fields within this JSON include:\n      - **sessionId**: A unique identifier for the user session; used to track the state of the user.\n      - **accountId**: The unique identifier for the user account that is being updated.\n      - **coinId**: The unique identifier for the specific coin being updated.\n      - **targetType**: The type of entity that the action will affect. In this case, it indicates that the target is identified by \"accountId\".\n      - **name**: The name of the coin being updated. Here, it is set to \"MPCT\".\n      - **description**: A brief description of the coin, which provides additional context. This example uses \"My Profile Coin Two\".\n      - **type**: Indicates the type of coin; in this case, it is categorized as \"platform\".\n      - **action**: Describes the action being performed with respect to the coin. In this example, the action is \"buy\".\n      - **rate**: The rate at which the coin can be purchased; here, it is set to 2.\n      - **amount**: The total amount of the currency or value being used in the transaction; in this case, it is 1000.\n\n    - **options**: Additional settings for the body.\n      - **raw**: Contains details about the raw data format being used.\n        - **language**: Indicates the language of the raw data. Here, it is specified as \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Update Coin for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"coinId\" : \"coinId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"MPCT\",\n    \"description\": \"My Profile Coin Two\",\n    \"type\": \"platform\",\n    \"action\": \"buy\",\n    \"rate\": 2,\n    \"amount\": 10\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "update"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n#### Name\n- **Utility - Coin - Update Coin for Team**\n  - This is the name of the API endpoint, indicating that it is used for updating a coin associated with a team.\n\n#### Request\n- **Auth**\n  - **Type**: Specifies the type of authentication required to access this endpoint.\n    - **Bearer**\n      - Uses a bearer token for authentication.\n      - **Bearer Token**: \n        - **Key**: This is the name of the token property.\n        - **Value**: Replace \"BearerToken\" with the actual token required for authentication.\n        - **Type**: Indicates that this value should be a string.\n\n- **Method**\n  - **PUT**\n    - This HTTP method is used to update an existing resource. In this case, it updates details for a coin.\n\n- **URL**\n  - **http://localhost:3000/api/utility/coin/update**\n    - This is the endpoint URL for updating the coin. It is specified to run locally on port 3000.\n\n- **Headers**\n  - Contains metadata that provides information about the request.\n  - **Client-UUID**\n    - **Key**: The name of the header.\n    - **Value**: Replace \"ClientUUID\" with the actual client UUID being used to identify the client making the request.\n    - **Type**: Specifies that the value is a default type header.\n\n#### Body\n- **Mode**\n  - **raw**\n    - Indicates that the body of the request will be sent as raw data.\n\n- **Raw**\n  - This is the actual content of the request body formatted in JSON. The parameters to update the coin are specified here:\n  ```json\n  {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"coinId\": \"coinId\",\n      \"targetType\": \"teamId\",\n      \"targetId\": \"teamId\",\n      \"name\": \"MPCT\",\n      \"description\": \"My Profile Coin Two\",\n      \"type\": \"platform\",\n      \"action\": \"buy\",\n      \"rate\": 2,\n      \"amount\": 10\n  }\n  ```\n  - **sessionId**: Identifier for the current session.\n  - **accountId**: Identifier for the user's account.\n  - **coinId**: Identifier for the specific coin being updated.\n  - **targetType**: Indicates the type of entity that the coin is associated with, in this case, a team.\n  - **targetId**: Identifier for the specific team the coin is being updated for.\n  - **name**: The name of the coin being updated (e.g., \"MPCT\").\n  - **description**: A brief description of the coin (e.g., \"My Profile Coin Two\").\n  - **type**: Describes the type of coin (e.g., \"platform\").\n  - **action**: The action being performed with the coin, which is \"buy\" in this case.\n  - **rate**: The rate at which the coin is being bought.\n  - **amount**: The amount of the coin being bought.\n\n- **Options**\n  - **Raw**\n    - **Language**: Specifies the programming language or format of the request body (JSON in this case)."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get By ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?coinId=coinId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "coinId",
+              "value": "coinId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Coin - Get By ID\n\n**Description:** This endpoint retrieves information about a specific coin based on its unique identifier.\n\n#### Request Details:\n\n- **Authentication:**\n  - **Type:** Bearer Token\n    - This endpoint requires authentication via a bearer token. Ensure that you include a valid token in the authorization header to access this information.\n\n- **Method:**\n  - **GET**\n    - The method used to access this endpoint is GET, indicating that this request is for retrieving data rather than modifying it.\n\n- **URL:**\n  - `http://localhost:3000/api/utility/coin/get/?coinId=coinId&sessionId=sessionId&accountId=accountId`\n    - This is the endpoint URL where the request will be sent. The query parameters include:\n      - **coinId:** The unique identifier for the coin you want to retrieve.\n      - **sessionId:** An identifier for the session associated with the request.\n      - **accountId:** The identifier of the account related to the coin being queried.\n\n- **Headers:**\n  - An empty header section is provided, suggesting that no specific additional headers are required for this request, and this section is currently disabled.\n  \n- **Body:**\n  - **Mode:** Raw\n    - Since this is a GET request, there is no request body required. Therefore, the body is specified as empty. \n\n### Overall Purpose:\nThis endpoint is used to fetch detailed information about a specific coin by specifying its ID, along with the session and account identifiers."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Balance",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?balance=1&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "balance",
+              "value": "1"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Coin - Get Balance\n\n- **Name**: Utility - Coin - Get Balance\n  - This is the title of the API endpoint that retrieves the balance for a specific coin.\n\n- **Request**:\n  - This section outlines how to make a request to the API.\n\n  - **Auth**:\n    - **Type**: Bearer\n      - This indicates that the endpoint requires authentication using a bearer token.\n    \n    - **Bearer**:\n      - **Key**: token\n        - This is the name of the authentication key used for the bearer token.\n      - **Value**: BearerToken\n        - This is a placeholder for the actual bearer token required for authentication. Users must replace this with a valid token.\n      - **Type**: string\n        - This specifies that the token should be provided as a string data type.\n\n  - **Method**: GET\n    - This is the HTTP method used to retrieve data from the endpoint.\n\n  - **URL**: \n    - `http://localhost:3000/api/utility/coin/get/?balance=1&sessionId=sessionId&accountId=accountId`\n      - This is the endpoint's URL. Users need to append relevant parameters to the URL to get the desired balance.\n      - **Parameters**:\n        - **balance**: 1\n          - This parameter is used to indicate that the user wants to retrieve the balance.\n        - **sessionId**: sessionId \n          - This is a placeholder for the user's session identifier. It needs to be replaced with the actual session ID.\n        - **accountId**: accountId\n          - This is a placeholder for the account identifier. Users must replace this with the actual account ID.\n\n  - **Headers**:\n    - This section allows for additional HTTP headers to be specified.\n      - **Key**: (empty)\n        - This field is currently empty and not specified, meaning no additional headers are required for this request.\n      - **Value**: (empty)\n        - Like the key, this field is currently empty and is disabled, indicating that no extra values are needed.\n      - **Type**: default\n        - This indicates the type of header configuration, which is set to default.\n      - **Disabled**: true\n        - This indicates that this header is disabled and will not be sent with the request.\n\n  - **Body**:\n    - **Mode**: raw\n      - This specifies that the request body format is raw.\n    - **Raw**: \"\"\n      - The body of the request is empty for this GET request, as no data needs to be sent in the body for retrieving the balance.\n\nThis endpoint is designed for users to easily retrieve their coin balance using the appropriate parameters and authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Stats",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?log=stats&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "stats"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Coin - Get Stats\n\n**1. Name:**\n   - *Utility - Coin - Get Stats*: This indicates the purpose of the API endpoint, which is to retrieve statistics related to a coin utility.\n\n**2. Request:**\n   This section outlines the details needed to make a request to the API.\n\n   **a. Auth:**\n   - *Type*: Specifies that the authentication method used is \"bearer,\" meaning that a token will be required for access.\n   - *Bearer*: This field contains the authentication details.\n     - *Key*: The designation of the token field.\n     - *Value*: A placeholder for the format of the authentication token. Here, \"BearerToken\" is indicated as the token that must be provided when accessing the endpoint.\n     - *Type*: Indicates the data type for the key, which is a string.\n\n   **b. Method:**\n   - *GET*: This specifies that the request method used to access the endpoint is \"GET,\" which is typically used to retrieve information.\n\n   **c. URL:**\n   - *http://localhost:3000/api/utility/coin/get/?log=stats&sessionId=sessionId&accountId=accountId*: This is the full endpoint URL where the request should be sent. \n     - **Log Parameter**: *log=stats* indicates that the request is intended to log stats.\n     - **Session ID Parameter**: *sessionId=sessionId* is a placeholder for the actual session ID, which uniquely identifies the user's session.\n     - **Account ID Parameter**: *accountId=accountId* is a placeholder for the actual account ID that is associated with the request.\n\n   **d. Headers:**\n   - *Key*: This field represents HTTP headers that may be sent along with the request.\n   - *Value*: This is where the corresponding value for the header key would be specified.\n   - *Type*: The type of header, where \"default\" indicates a standard header.\n   - *Disabled*: Indicates that the header is currently not active (set to true), hence it will not be sent with the request.\n\n   **e. Body:**\n   - *Mode*: The mode of the request body, which is \"raw,\" indicating that the body content is sent as plain text without any specific formatting type.\n   - *Raw*: This part indicates the content of the body, which is currently empty. There will be no additional data included in the request body for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Ledger",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?log=ledger&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "ledger"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Coin - Get Ledger\n\n#### Name\n- **Utility - Coin - Get Ledger**: This is the name of the API endpoint used to retrieve ledger information related to a specific coin utility.\n\n#### Request\n- **Auth**: Authentication for this endpoint is handled through a Bearer token.\n  - **Type**: This indicates the authentication method used, which is \"bearer.\"\n  - **Bearer**: This section contains the bearer token information.\n    - **Key**: The name of the authentication parameter, which is \"token.\"\n    - **Value**: This is where you input the actual bearer token needed for authentication, formatted as \"BearerToken.\" Replace \"BearerToken\" with your actual token.\n    - **Type**: Specifies the data type, which is \"string.\"\n\n- **Method**: \n  - This endpoint uses the HTTP method \"GET\" to request data.\n\n- **URL**: \n  - The endpoint URL is `http://localhost:3000/api/utility/coin/get/?log=ledger&sessionId=sessionId&accountId=accountId`. \n    - **log**: The query parameter set to \"ledger,\" indicating the type of log information to retrieve.\n    - **sessionId**: A placeholder for the session ID associated with the user’s session. This should be replaced with the actual session ID when making a request.\n    - **accountId**: A placeholder for the account ID. This should be replaced with the actual account ID for which you want to retrieve the ledger.\n\n- **Headers**: \n  - This section includes any HTTP headers that might be used in the request.\n    - **Key**: Currently there are no headers specified (empty key).\n    - **Value**: No value is provided for the header.\n    - **Type**: The type is set to \"default.\"\n    - **Disabled**: This header is marked as disabled, meaning it will not be included in the request.\n\n- **Body**: \n  - The body of the request is set to \"raw.\"\n    - **Mode**: Indicates the format of the body, which is \"raw.\"\n    - **Raw**: Currently, there is no raw data present in the body of the request.\n\n#### Summary\nThis endpoint is designed to fetch ledger entries pertaining to a specific coin utility based on a session ID and account ID provided in the query parameters. The request requires bearer token authentication and utilizes the HTTP GET method to retrieve the data."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Platform Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?log=type&type=platform&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "platform"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Coin - Get Platform Logs\n\n#### Request\n- **Auth**: \n  - **Type**: Specifies the authentication method used, which is Bearer token in this case.\n  - **Bearer**: An array containing an object for the Bearer token.\n    - **Key**: Represents the name of the token, which is \"token\".\n    - **Value**: The actual token value, prefixed with \"Bearer\", which is a placeholder (\"BearerToken\") indicating where to insert your real token.\n    - **Type**: Indicates that the value is of type string.\n\n- **Method**: \n  - This is a GET request, indicating that you are retrieving data from the specified URL.\n\n- **URL**: \n  - This is the endpoint to which the request is made. The format is as follows:\n    ```\n    http://localhost:3000/api/utility/coin/get/?log=type&type=platform&sessionId=sessionId&accountId=accountId\n    ```\n    - **log**: Query parameter to specify the log type you want to retrieve. In this case, it is set to \"type\".\n    - **type**: Another query parameter indicating the type of logs being requested, set to \"platform\".\n    - **sessionId**: A placeholder for the unique identifier of the session whose logs you want.\n    - **accountId**: A placeholder for the account identifier associated with the logs.\n\n- **Headers**: \n  - This section allows for custom headers to be added to the request. Currently, it contains an empty key and value, and the header is disabled, meaning it will not be sent in the request.\n\n- **Body**: \n  - This section describes the body of the request.\n    - **Mode**: Set to \"raw\", indicating that the body will contain raw content.\n    - **Raw**: Currently empty, meaning no body content is being sent with the request. \n\n### Summary\nThis endpoint is designed to retrieve logs specifically related to the platform for a given session and account. Ensure to replace the placeholders in the URL and the Bearer token with actual values before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Network Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?log=type&type=network&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "network"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Coin - Get Network Logs\n\nThis endpoint retrieves network logs related to coin utility functions. \n\n#### Request Details:\n\n- **Auth**: This endpoint requires bearer token authentication.\n  - **Type**: Specifies the authentication method, which is \"bearer\".\n  - **Bearer**: This array contains the authentication token.\n    - **Key**: The key for the bearer authentication, labeled as \"token\".\n    - **Value**: Placeholder for the actual bearer token, indicated as \"BearerToken\".\n    - **Type**: Specifies that the token type is a string.\n\n- **Method**: The HTTP method used for this request is \"GET\", which is used to request data from the specified resource.\n\n- **URL**: The endpoint URL where the GET request is made.\n  - `http://localhost:3000/api/utility/coin/get/?log=type&type=network&sessionId=sessionId&accountId=accountId`\n    - **log**: A query parameter indicating the type of log being requested, set to \"type\".\n    - **type**: Another query parameter specifying the log type as \"network\".\n    - **sessionId**: Query parameter for the session ID, used to track the session associated with the request.\n    - **accountId**: Query parameter for the account ID, which identifies the account for which the network logs are being fetched.\n\n- **Headers**: This section includes any headers that may need to be sent with the request.\n  - **Key**: Currently no key is specified.\n  - **Value**: Currently no value is specified.\n  - **Type**: The type is set to \"default\" indicating no special treatment, but this header is marked as disabled.\n\n- **Body**: The request body is configured as follows:\n  - **Mode**: The body mode is set to \"raw\", meaning the body content is not formatted in a specific way.\n  - **Raw**: Currently, there is no content in the body, which is typical for GET requests since they usually do not require a request body. \n\nThis endpoint is utilized for fetching network-related logs for coin utility applications, ensuring access is secured through bearer token authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Universe Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?log=type&type=universe&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "universe"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Coin - Get Universe Logs\n\n- **Name**: This is the name of the endpoint, indicating that it is used for retrieving universe logs related to coins in the utility category.\n\n- **Request**:\n  - **Auth**: \n    - **Type**: Specifies the type of authentication required for this request, which is a bearer token.\n    - **Bearer**: Contains an array with authentication details.\n      - **Key**: This is the identifier for the token; in this case, it is labeled as \"token\".\n      - **Value**: Represents the actual bearer token required for access, written as \"BearerToken\" in this example.\n      - **Type**: Describes the data type of the token, noted here as a string.\n\n  - **Method**: Indicates that this request uses the HTTP GET method to retrieve data from the server.\n\n  - **URL**: This is the endpoint's URL used for the request. It consists of:\n    - **Base URL**: `http://localhost:3000/api/utility/coin/get/` - The local server path for accessing the utility coin logs.\n    - **Query Parameters**:\n      - `log`: This parameter accepts a value to specify the log type, set to \"type\" here.\n      - `type`: Indicates the type of logs to retrieve, set to \"universe\".\n      - `sessionId`: A placeholder for a unique session identifier, which must be replaced with an actual session ID during the request.\n      - `accountId`: A placeholder for the account identifier, which should be replaced with an actual account ID when executing the API call.\n\n  - **Headers**: \n    - This section can contain additional HTTP headers to be sent with the request. In this representation, the header is present but disabled and does not have a key-value pair specified.\n\n  - **Body**:\n    - **Mode**: Specifies the body format, which is set to \"raw\" indicating that the request does not require any body data.\n    - **Raw**: Contains the actual data for the request body in raw format, which is empty in this case."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Accumulation Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?log=accumulation&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "accumulation"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Coin - Get Accumulation Logs\n\n#### Name:\n- This is the name of the API endpoint which is focused on retrieving accumulation logs related to a utility coin.\n\n#### Request:\n- This section outlines the specifics of the API request to be made.\n\n##### Auth:\n- **Type**: Specifies the authentication method being used. In this case, bearer token authentication is required.\n- **Bearer**: \n  - **Key**: The key for the bearer token which is labeled as \"token\".\n  - **Value**: This is where the actual bearer token should be placed, prefixed by the keyword \"Bearer\". The placeholder \"BearerToken\" indicates that the user needs to replace it with a valid token.\n  - **Type**: Denotes the type of the value, which is a string.\n\n##### Method:\n- Indicates the HTTP method that should be used for this request. Here, it is a GET method, implying that data will be retrieved from the server.\n\n##### URL:\n- This is the endpoint to which the request is sent. It consists of:\n  - Base URL: `http://localhost:3000`\n  - Path: `/api/utility/coin/get/`\n  - Query Parameters:\n    - `log`: Specifies the type of log to be retrieved, which in this case is \"accumulation\".\n    - `sessionId`: A unique identifier for the user session to track their activities.\n    - `accountId`: The identifier for the account from which the accumulation logs are being requested. \n\n##### Headers:\n- This section is meant for additional HTTP headers that can be passed along with the request.\n- The current header object is disabled and empty, indicating no headers are being sent with this request at the moment.\n\n##### Body:\n- **Mode**: Indicates that the request body is configured to be \"raw\".\n- **Raw**: The body of the request is empty, meaning no additional data needs to be sent with this GET request.\n\nThis endpoint allows the retrieval of specific logs related to the accumulation of coins tied to a user's session and account, employing bearer token authentication for security."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Deduction Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?log=deduction&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "deduction"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of the Endpoint Data\n\n- **name**: This is the title of the API request, indicating that it is used to retrieve deduction logs related to a coin utility.\n\n- **request**: This object contains all the details necessary for making the API call.\n\n  - **auth**: This part specifies the authentication method used for the request.\n    \n    - **type**: Represents the type of authentication. In this case, it is a \"bearer\" token which is commonly used for accessing secured endpoints.\n\n    - **bearer**: This is an array that contains details about the bearer token.\n      \n      - **key**: This denotes the identifier for the token, set as \"token\".\n      \n      - **value**: The actual token value that should be used for the authentication. It is represented as \"BearerToken\", which should be replaced with a valid token when making requests.\n      \n      - **type**: Specifies the data type of the token, which is a string.\n\n  - **method**: This indicates the type of HTTP request method being used. In this case, it is a \"GET\" method, meaning the request is intended to retrieve data from the server.\n\n  - **url**: The endpoint URL for making the API request. It contains query parameters that specify what data to retrieve.\n    \n    - `http://localhost:3000/api/utility/coin/get/`: The base URL pointing to the API service running on the local server.\n    \n    - `?log=deduction`: A query parameter that specifies the type of log to retrieve, indicating that only deduction logs are needed.\n    \n    - `&sessionId=sessionId`: A placeholder for a session identifier. This should be replaced with an actual session ID to filter logs related to a specific session.\n    \n    - `&accountId=accountId`: A placeholder for the account identifier. This should be replaced with an actual account ID to retrieve logs associated with that account.\n  \n  - **headers**: This section is meant for any additional HTTP headers that may need to be sent with the request.\n    \n    - **key**: Usually defines the name of the header.\n    \n    - **value**: Specifies the value for that header.\n    \n    - **type**: Indicates the type of header, which is set to \"default\" in this case.\n    \n    - **disabled**: A boolean that indicates whether the header is currently disabled (set to true here, meaning this header is not included in the request).\n\n  - **body**: This part represents the payload sent with the request. Since this is a \"GET\" request, the body is usually empty.\n    \n    - **mode**: Indicates the mode of the body. Set to \"raw\", meaning the body can be sent in a raw format, although no content is supplied here.\n    \n    - **raw**: This field contains the actual body data. In this case, it is empty, as GET requests typically do not contain a body.\n\nThis detailed breakdown provides clarity on each component used for the API request, facilitating better understanding and usage for users of the Postman collection."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Conversion Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?log=conversion&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "conversion"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Coin - Get Conversion Logs\n\n#### Overview\nThis endpoint is used to retrieve logs related to currency conversions. The request requires authentication and utilizes a GET method to fetch data from the specified URL.\n\n#### Request Details\n- **Authorization**\n  - **Type**: Bearer\n  - **Bearer Token**: A token needs to be provided for authentication to access the endpoint. This is typically passed in the request header as `Authorization: Bearer <token>`.\n\n- **HTTP Method**: \n  - **GET**: This method is used to request data from the specified resource.\n\n- **URL**: \n  - The request is directed to the following endpoint:\n    ```\n    http://localhost:3000/api/utility/coin/get/?log=conversion&sessionId=sessionId&accountId=accountId\n    ```\n  - **Parameters**:\n    - `log`: This parameter is set to `conversion`, specifying that you want to retrieve conversion logs.\n    - `sessionId`: A unique identifier for the user session. Replace `sessionId` with the actual session ID when making the request.\n    - `accountId`: The identifier for the user account. Replace `accountId` with the actual account ID when making the request.\n\n- **Headers**: \n  - Currently set to an empty key and value and is marked as disabled. This implies no additional headers are required for this request at this time, but this may be subject to change based on future requirements.\n\n- **Body**: \n  - The request body is set to raw mode and is empty. Since this is a GET request, no body is necessary. \n\nThis endpoint is designed to allow users to access logs related to currency conversions easily, using their session and account identifiers along with a valid bearer token for authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get Neutral Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/get/?log=category&category=neutrals&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "category"
+            },
+            {
+              "key": "category",
+              "value": "neutrals"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Utility - Coin - Get Neutral Logs\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/utility/coin/get/?log=category&category=neutrals&sessionId=sessionId&accountId=accountId\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    },\n    \"description\": {\n      \"name\": \"This is the name of the API request which indicates its purpose.\" \n      \"auth.type\": \"This specifies the type of authentication used, which in this case is bearer token authentication.\"\n      \"auth.bearer.key\": \"This is the key used in the authorization header for the bearer token.\"\n      \"auth.bearer.value\": \"This is where the actual bearer token value should be placed.\"\n      \"auth.bearer.type\": \"This indicates the type of data for the bearer token, which is a string.\"\n      \"method\": \"This specifies the HTTP method to be used for the request, which is GET. This method retrieves data from the specified resource.\"\n      \"url\": \"This is the endpoint url that will be called. It includes query parameters such as log type, category, session ID, and account ID.\"\n      \"headers.key\": \"This is where you can add any additional headers required for the request. Currently, it is empty and disabled.\"\n      \"headers.value\": \"This corresponding value for the header key which is also currently empty and disabled.\"\n      \"body.mode\": \"This indicates the mode of the body for the API request, which is set to 'raw.'\"\n      \"body.raw\": \"This is the raw body of the request. Since it's a GET request, the body is empty.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Coin - Get All\n\nThis endpoint is designed to retrieve a list of all available coins from the utility service. Below is a detailed description of each component involved in the request.\n\n- **Name**: \"Utility - Coin - Get All\"\n  - This is the name of the API request that indicates it is used for fetching all coins from the utility service.\n\n- **Request**:\n  - **Auth**: This section describes the authentication method used for the API request.\n    - **Type**: \"bearer\"\n      - This indicates that the API requires bearer token authentication.\n    - **Bearer**:\n      - An array containing authentication details:\n        - **Key**: \"token\"\n          - Specifies the name of the authentication parameter.\n        - **Value**: \"BearerToken\"\n          - This value should be replaced with a valid token to authenticate the request.\n        - **Type**: \"string\"\n          - Indicates that the value provided for the token is a string.\n\n  - **Method**: \"GET\"\n    - This indicates the HTTP method used for the request. In this case, it is a GET request, which is used to retrieve data from the server.\n\n  - **URL**: \"http://localhost:3000/api/utility/coin/all/?sessionId=sessionId&accountId=accountId\"\n    - This is the endpoint URL that specifies where the request is sent. It includes:\n      - **Base URL**: \"http://localhost:3000\"\n        - This indicates the local server address where the API is hosted.\n      - **Path**: \"/api/utility/coin/all/\"\n        - This is the specific path for accessing all coins in the utility service.\n      - **Query Parameters**:\n        - **sessionId**: This should be replaced with the actual session identifier to track the user session.\n        - **accountId**: This should be replaced with the actual account identifier to specify the user's account.\n\n  - **Headers**:\n    - A list of HTTP headers that may be sent with the request. In this case:\n      - An empty header field is shown:\n        - **Key**: \"\"\n        - **Value**: \"\"\n        - **Type**: \"default\"\n        - **Disabled**: true\n          - This indicates that this particular header is not active or used in the current request.\n\n  - **Body**:\n    - This section defines the body content of the request.\n      - **Mode**: \"raw\"\n        - Indicates that the body content type is set to raw format.\n      - **Raw**: \"\"\n        - This indicates that there is no body content sent with the request, as GET requests typically do not include a body.\n\nOverall, this endpoint is utilized to fetch all coins from the utility service, and it requires a valid bearer token for authentication along with necessary session and account identifiers in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Coin - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"coinId\":\"coinId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/coin/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "coin",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint: Utility - Coin - Delete\n\n- **Name**: Utility - Coin - Delete  \n  This denotes the purpose of the API request, which is to delete a specific coin from a utility service associated with a user.\n\n#### Request Details\n\n- **Authentication**:  \n  This API requires bearer token authentication.\n  - **Type**: Bearer  \n    Indicates that the request must include a bearer token.\n  - **Bearer Token**:  \n    - **Key**: token  \n      This represents the key used in the authorization header.\n    - **Value**: sessionId  \n      Placeholder for the actual session identifier used to authenticate the user. This should be replaced with a real session ID issued during user login.\n    - **Type**: string  \n      Specifies that the value is a string.\n\n- **Method**: POST  \n  This indicates that the request type is POST, which is typically used for creating or modifying data on the server.\n\n- **URL**: http://localhost:3000/api/utility/coin/delete  \n  This is the endpoint where the delete request is sent. The URL suggests that the API is hosted locally on port 3000, and the specific path indicates that it is meant for deleting a coin.\n\n- **Headers**:  \n  - **Key**: (empty)  \n    There are no additional headers included in this request as indicated by the empty key, and this header field is disabled.\n\n- **Body**:  \n  This is where the data for the delete operation is specified.\n  - **Mode**: raw  \n    The body content is sent in raw format.\n  - **Raw Content**:  \n    This is a JSON string that contains the fields required for the delete operation:\n    - **sessionId**: \"sessionId\"  \n      This placeholder should be replaced with the real session ID of the user making the request.\n    - **accountId**: \"accountId\"  \n      Placeholder for the unique identifier of the user's account from which the coin is to be deleted. This should be replaced with a real account ID.\n    - **coinId**: \"coinId\"  \n      Placeholder for the unique identifier of the coin that is to be deleted. This should be replaced with a real coin ID.\n\n### Summary\nThis API endpoint allows users to delete a specific coin from their account in a utility service by sending a POST request with the necessary authentication token and identifying information in the request body."
+      },
+      "response": []
+    }
+  ]
+}

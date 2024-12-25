@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "d919eaac-99d8-41aa-ac71-3afb2ba27d25",
+    "name": "IncentivePromotion",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Incentive - Promotion - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"title\": \"Summer Special Promotion\",\n    \"description\": \"Enjoy exclusive discounts during our Summer Sale!\",\n    \"tags\": \"sale,summer,discount\",\n    \"category\": \"Retail & E-Commerce\",\n    \"price\": \"19.99\",\n    \"tokenAmount\": 50,\n    \"redirectUrl\": \"https://example.com/special-promotion\",\n    \"couponCode\": \"SUMMER2024\",\n    \"websiteUrl\": \"https://example.com\",\n    \"buttonText\": \"Shop Now\",\n    \"releaseDate\": \"2024-06-01\",\n    \"releaseTime\": \"08:00:00\",\n    \"expiresDate\": \"2024-08-31\",\n    \"expiresTime\": \"23:59:59\",\n    \"activationType\": \"auto\",\n    \"profilePhotoUrl\": \"https://example.com/images/profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/images/cover.jpg\",\n    \"videoPlaybackUrl\": \"https://example.com/videos/promotion.mp4\",\n    \"audioPlaybackUrl\": \"https://example.com/audio/promotion.mp3\",\n    \"quantityTotal\": 1000,\n    \"quantityLeft\": 900,\n    \"livestreamsNeeded\": 50,\n    \"subscribersNeeded\": 500,\n    \"followersNeeded\": 600,\n    \"connectAccountsNeeded\": 300,\n    \"tournamentsPlaysNeeded\": 20,\n    \"tournamentsWinsNeeded\": 10,\n    \"universityToursNeeded\": 5,\n    \"sharesNeeded\": 400,\n    \"votesNeeded\": 800,\n    \"isActive\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/promotion/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "promotion",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Incentive - Promotion - Create\" and it is used to create a new incentive promotion. It is a POST method which requires bearer authentication with the key as \"token\" and the value would be the allocated BearerToken.\n\nThe URL for this endpoint is \"http://localhost:3000/api/incentive/promotion/create\". The request can also contain headers, if required.\n\nThe body of this request is in raw JSON format and contains various fields:\n\n1. \"sessionId\" - A unique identifier for the session.\n2. \"accountId\" - A unique identifier for the account.\n3. \"title\" - The title of the promotion.\n4. \"description\" - Brief details about the promotion.\n5. \"tags\" - Keywords associated with the promotion.\n6. \"category\" - The promotion's relevance industry/sector.\n7. \"price\" - The price included in the promotion.\n8. \"tokenAmount\" - Number of promotion specific tokens.\n9. \"redirectUrl\" - The URL where users are redirected after clicking.\n10. \"couponCode\" - The promotional coupon code.\n11. \"websiteUrl\" - The main webpage for the promotion.\n12. \"buttonText\" - The text displayed on the promotion's action button.\n13. \"releaseDate\" - When the promotion is to start.\n14. \"releaseTime\" - The time for the promotion to start on releaseDate.\n15. \"expiresDate\" - The date when the promotion ends.\n16. \"expiresTime\" - The exact time when the promotion, which is scheduled for the expiresDate, will finish.\n17. \"activationType\" - The method by which the promotion is activated.\n18. \"profilePhotoUrl\" - The URL of the promotion's profile photo.\n19. \"coverPhotoUrl\" - The URL of the promotion's cover photo.\n20. \"videoPlaybackUrl\" - The URL of any promotional video.\n21. \"audioPlaybackUrl\" - The URL of any promotional audio.\n22. \"quantityTotal\" - The total amount of promotions available.\n23. \"quantityLeft\" - How many promotions are left.\n24. \"livestreamsNeeded\" - Number of live streams required for redeeming the incentive.\n25. \"subscribersNeeded\" - Number of subscribers required for redeeming the incentive.\n26. \"followersNeeded\" - Number of followers required for redeeming the incentive.\n27. \"connectAccountsNeeded\" - Number of interconnected accounts necessary for redeeming the incentive.\n28. \"tournamentsPlaysNeeded\" - The number of tournament plays required for the incentive.\n29. \"tournamentsWinsNeeded\" - The number of tournament wins required for the incentive.\n30. \"universityToursNeeded\" - Number of university tours needed to redeem the incentive.\n31. \"sharesNeeded\" - Necessary shares for redeeming the incentive.\n32. \"votesNeeded\" - The required votes for the incentive.\n33. \"isActive\" - Denoting if the promotion is currently active or not.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Promotion - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"promotionId\": \"promotionId\",\n    \"title\": \"Summer Special Promotion\",\n    \"description\": \"Enjoy exclusive discounts during our Summer Sale 2.0!\",\n    \"tags\": \"sale,summer,discount\",\n    \"category\": \"Retail & E-Commerce\",\n    \"price\": \"19.99\",\n    \"tokenAmount\": 50,\n    \"redirectUrl\": \"https://example.com/special-promotion\",\n    \"couponCode\": \"SUMMER2024\",\n    \"websiteUrl\": \"https://example.com\",\n    \"buttonText\": \"Shop Now\",\n    \"releaseDate\": \"2024-06-01\",\n    \"releaseTime\": \"08:00:00\",\n    \"expiresDate\": \"2024-08-31\",\n    \"expiresTime\": \"23:59:59\",\n    \"activationType\": \"auto\",\n    \"profilePhotoUrl\": \"https://example.com/images/profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/images/cover.jpg\",\n    \"videoPlaybackUrl\": \"https://example.com/videos/promotion.mp4\",\n    \"audioPlaybackUrl\": \"https://example.com/audio/promotion.mp3\",\n    \"quantityTotal\": 1000,\n    \"quantityLeft\": 900,\n    \"livestreamsNeeded\": 50,\n    \"subscribersNeeded\": 500,\n    \"followersNeeded\": 600,\n    \"connectAccountsNeeded\": 300,\n    \"tournamentsPlaysNeeded\": 20,\n    \"tournamentsWinsNeeded\": 10,\n    \"universityToursNeeded\": 5,\n    \"sharesNeeded\": 400,\n    \"votesNeeded\": 800,\n    \"isActive\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/promotion/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "promotion",
+            "update"
+          ]
+        },
+        "description": "This endpoint, `Incentive - Promotion - Update`, is designed to update an existing promotion incentive in the system using the `PUT` HTTP method. The endpoint URL is `http://localhost:3000/api/incentive/promotion/update`. \n\nThe request requires `Bearer Token` authentication, which should be provided in the `token` parameter in the `auth` object. \n\nThere is one mandatory header, `Client-UUID`, which should have the UUID of the client making the request.\n\nThe body of the request must be a raw JSON object which contains following parameters:\n\n- `sessionId`: A string representing the session ID.\n- `accountId`: A string representing user's account ID.\n- `promotionId`: A string representing the ID of the promotion.\n- `title`: The title of the promotion.\n- `description`: Brief details about the promotion.\n- `tags`: Tag the promotion using relevant keywords (separated with commas).\n- `category`: The category of the promotion.\n- `price`: The price details of the promotion.\n- `tokenAmount`: Number of tokens involved in promotion.\n- `redirectUrl`: URL to which users will be directed.\n- `couponCode`: A string representing the code for any coupon active in the promotion.\n- `websiteUrl`: The URL of the website hosting the promotion details.\n- `buttonText`: Text that should be displayed on the button.\n- `releaseDate`: The date when the promotion will be released.\n- `releaseTime`: The time when the promotion will be released. \n- `expiresDate`: The date when the promotion will expire.\n- `expiresTime`: The time when the promotion will expire. \n- `activationType`: The type of promotion activation (auto or manual).\n- `profilePhotoUrl`: URL of profile photo of promotion.\n- `coverPhotoUrl`: URL of cover photo of promotion.\n- `videoPlaybackUrl`: URL of promotion video.\n- `audioPlaybackUrl`: URL of promotion audio.\n- `quantityTotal`: Total quantity available for the promotion.\n- `quantityLeft`: Quantity left for the promotion.\n- `livestreamsNeeded`: Number of livestreams needed to qualify for the promotion.\n- `subscribersNeeded`: Number of subscribers needed to qualify for the promotion.\n- `followersNeeded`: Number of followers needed to qualify for the promotion.\n- `connectAccountsNeeded`: Number of connected accounts needed to qualify for the promotion.\n- `tournamentsPlaysNeeded`: Number of tournament plays needed to qualify for the promotion.\n- `tournamentsWinsNeeded`: Number of tournament wins needed to qualify for the promotion.\n- `universityToursNeeded`: Number of university tours needed to qualify for the promotion.\n- `sharesNeeded`: Number of shares needed to qualify for the promotion.\n- `votesNeeded`: Number of votes needed to qualify for the promotion.\n- `isActive`: A boolean indicating whether the promotion is currently active.\n\nThe JSON has to be submitted in raw format."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Promotion - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/promotion/get/?promotionId=promotionId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "promotion",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "promotionId",
+              "value": "promotionId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This is the \"Incentive - Promotion - Get\" endpoint. It's structured as follows:\n\n1. `name`: It's the name used to identify this endpoint. For this case, it's called \"Incentive - Promotion - Get\".\n\n2. `request`: This section contains all the information about the HTTP request that will be sent to this endpoint.\n\n- `auth`: This part stores the authentication details. The type of authentication used here is the bearer. You have to pass a token as the bearer authorization header.\n    - `key`: It's the way the value is referred to in the authentication protocol. Here, it's the string \"token\".\n    - `value`: It refers to the actual value that is required for authorization. It should be replaced with the actual Bearer Token value when sending the request.\n    - `type`: Indicates what data type the \"value\" should have. In this case, it's a string.\n\n- `method`: This represents the HTTP method used for the request. For this instance, \"GET\" is used, which retrieves whatever information in the form of an entity which is identified by the `url`.\n\n- `url`: It's the network address where the request will be sent. In this case, it's \"http://localhost:3000/api/incentive/promotion/get\". Additional parameters are also included such as `promotionId`, `sessionId` and `accountId` which need to be replaced with actual values when sending the request.\n\n- `headers`: These are HTTP headers you can use to provide additional information about the request. In this endpoint, the header is currently disabled and contains no key or value.\n\n- `body`: Contains any additional data you want to send with your request. In this scenario, the `mode` is set as \"raw\", meaning you can include raw data (like a string of JSON) in your request. Currently, no `raw` data is provided."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Promotion - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/promotion/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "promotion",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. `name`: This is the title or label for this API endpoint. It provides a short brief of what the endpoint does. Here, the name `Incentive - Promotion - Get All` suggests that this endpoint retrieves all the promotions under an incentive.\n\n2. `request`: This is the main part of the endpoint where the request details are defined.\n\n3. `request.auth`: This section contains the type of authentication needed to access the endpoint. \n\n    - `type`: The type of authentication. In this case, `bearer` type implies that the API uses bearer authentication.\n  \n    - `bearer.token`: This is where you provide your bearer token to authenticate your request. Bearer token is like a password in the form of a token sent to the server to authenticate the user. Here, `BearerToken` should be replaced with the actual bearer token.\n\n4. `request.method`: This defines the HTTP method used for the request. It is `GET` in this case which means the request will retrieve information from the server.\n\n5. `request.url`: This is the URL to which the request is made. `http://localhost:3000/api/incentive/promotion/all/?sessionId=sessionId&accountId=accountId` is the URL of the promotion to get all incentives and it requires `sessionId` and `accountId` as parameters.\n\n6. `request.headers`: This is an array where additional parameters can be added to further customize the request if needed.\n\n7. `request.body`: This section is used to specify the request payload. In this case, it is set to `raw`, meaning that the request doesn't contain any data payload. The `raw` field is left empty as it's a `GET` request which usually does not need a request body.\n\nRemember that the bearer token must be replaced with an actual valid token for successful authentication. Please replace `sessionId` and `accountId` in the URL with actual session ID and account ID values respectively, as these are placeholders."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Promotion - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"promotionId\":\"promotionId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/promotion/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "promotion",
+            "delete"
+          ]
+        },
+        "description": "The data includes information about an API endpoint named 'Incentive - Promotion - Delete'. Here's what each part of the data indicates:\n\n1. \"name\": This field indicates the name of the endpoint, which in this case, is 'Incentive - Promotion - Delete'.\n\n2. \"request\": Information regarding the request to the endpoint is contained in this object. \n\n   - \"auth\": The type of authentication required for this endpoint is specified here. In this case, it uses 'bearer' token authentication. You'll need to provide a token in the 'bearer' array and the value of the key 'value' should be passed as \"sessionId\". This session ID is a string type data.\n\n   - \"method\": This indicates the HTTP method that's used to make the request. Here, the 'POST' method is chosen.\n\n   - \"url\": This is the URL to make the request to. Here, it's 'http://localhost:3000/api/incentive/promotion/delete'.\n\n   - \"headers\": This represents the additional information that you can send with your request through HTTP headers. Currently, it's empty and disabled.\n\n   - \"body\": Specifies the data that you are sending to the endpoint in the request body. In this case, the 'mode' field's value 'raw' indicates the body contains raw data in the form of a JSON object. The 'raw' field contains detailed JSON with keys as \"sessionId\", \"accountId\", and \"promotionId\" that you are expected to substitute with their respective values before making the request.\n   \nPlease make sure you update all the placeholders with the correct information pertaining to your application before sending out the requests."
+      },
+      "response": []
+    }
+  ]
+}

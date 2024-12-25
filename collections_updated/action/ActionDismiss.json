@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "651bd23f-b9cd-42df-ba38-5cf44fba8fb0",
+    "name": "ActionDismiss",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Dismiss - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didDismiss\": true,\n    \"name\": \"this is name\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dismiss/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dismiss",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description\n\n**Name:** Action - Dismiss - Create  \nThis API call is designed to create a dismiss action for a specific video or content based on provided parameters.\n\n#### Request Details\n\n- **Auth:**\n  - **Type:** Bearer\n    - This specifies that the request uses Bearer Token authentication. \n  - **Bearer:**\n    - **Key:** token\n      - This is the key used for the authentication token.\n    - **Value:** BearerToken\n      - This placeholder should be replaced with an actual Bearer token that authorizes the request.\n    - **Type:** string\n      - Indicates that the token should be sent as a string.\n\n- **Method:** \n  - **POST**\n    - This indicates that the request is a POST request, which is typically used to create new resources on the server.\n\n- **URL:** \n  - `http://localhost:3000/api/action/dismiss/create`\n    - This is the endpoint where the request is sent. In this case, it is a local server URL.\n\n- **Headers:**\n  - An empty headers array is provided, which indicates that no additional headers are included in the request. The entry is marked as disabled.\n\n#### Body Details\n\n- **Mode:** \n  - **raw**\n    - The body of the request is in raw format, meaning it will be sent as plain text and interpreted as JSON.\n\n- **Raw Content:**\n  - The raw body being sent with the request is a JSON object that contains the following fields:\n  \n  - **sessionId:** \n    - `\"sessionId\"`\n      - A unique identifier for the session in which the dismiss action is taking place. Should be replaced with the actual session ID.\n\n  - **accountId:**\n    - `\"accountId\"`\n      - The identifier for the account that is associated with this action. Should be replaced with the actual account ID.\n  \n  - **path:** \n    - `\"/live/channel/video123\"`\n      - The path to the video or content being dismissed. This is typically a URL path format and should point to the specific resource.\n\n  - **targetType:**\n    - `\"videoId\"`\n      - Indicates the type of the target resource being dismissed. In this case, it refers to a video ID.\n\n  - **targetId:** \n    - `\"videoId\"`\n      - The unique identifier for the target resource (the video) being dismissed. Should be replaced with the actual video ID.\n\n  - **sourceType:** \n    - `\"accountId\"`\n      - Specifies the type that identifies the source of the action. Here it refers back to the account ID.\n\n  - **sourceId:** \n    - `\"accountId\"`\n      - The unique identifier for the source account from which the dismiss action originates. Should be replaced with the actual account ID.\n\n  - **didDismiss:** \n    - `true`\n      - A boolean value that indicates whether the dismiss action was performed. In this case, it is set to true.\n\n  - **name:** \n    - `\"this is name\"`\n      - A string representing the name of the action or context for the dismissal. Should be replaced with a descriptive name.\n\n  - **description:** \n    - `\"\"`\n      - A string for additional description about the action. Currently empty but can be used to provide more context.\n\n  - **tags:** \n    - `\"\"`\n      - A string for any tags associated with the action. Currently empty, but can be utilized for categorization or identification purposes. \n\n### Summary\nThis POST request creates a dismiss action for a specified video source based on the supplied parameters. It requires a valid Bearer token for authorization and expects certain details such as session ID, account IDs, target IDs, and additional metadata in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Dismiss - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"dismissId\": \"dismissId\",\n    \"didDismiss\": false,\n    \"name\": \"this update\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dismiss/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dismiss",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Action - Dismiss - Update\n\n#### Request Overview\nThis endpoint is used to update a dismissal action for a specific video. It requires authentication via a Bearer token and expects a PUT request with specific parameters in the request body.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - **Token**: This is a security token required for authorization. It should be provided in the header of the request in the format `Bearer your_token_here`.\n\n#### Request Method\n- **Method**: PUT\n  - This indicates that the request is used to update an existing resource.\n\n#### URL\n- **Endpoint URL**: `http://localhost:3000/api/action/dismiss/update`\n  - This is the endpoint where the update request is sent.\n\n#### Headers\n- **Client-UUID**: \n  - This header should contain a unique identifier for the client making the request. It is essential for tracking and managing client-specific operations.\n\n#### Request Body\nThe body of the request should be structured as a JSON object with the following properties:\n\n- **sessionId**: \n  - A unique identifier for the user session. It helps track the actions performed during that specific session.\n\n- **accountId**: \n  - This represents the unique identifier of the account that is being updated or referenced in this action.\n\n- **path**: \n  - The specific path for the resource, typically a URL that points to the video being dismissed. In this case, it might look like `/live/channel/video123`.\n\n- **targetType**:\n  - This indicates the type of the target resource being acted upon. In this instance, it is specified as `videoId`.\n\n- **targetId**: \n  - The unique identifier for the target resource (video) that is being dismissed, referred to as `videoId`.\n\n- **sourceType**: \n  - This field indicates the type of the source resource. It is set as `accountId` in this case.\n\n- **sourceId**: \n  - The unique identifier for the source resource. Here it refers to the account ID of the source.\n\n- **dismissId**: \n  - This field contains the unique identifier for the dismissal action. It helps in tracking and referencing the specific dismissal event.\n\n- **didDismiss**: \n  - A boolean value indicating whether the action of dismissal has occurred. It can be set to `true` or `false`.\n\n- **name**: \n  - A descriptive name for the update action, which can help in identifying or categorizing the update.\n\n- **description**: \n  - An optional field where additional details about the update can be provided. It can be left empty if not necessary.\n\n- **tags**: \n  - A field for including any relevant tags that could aid in categorization or retrieval of the update. It can also be left empty if not applicable.\n\nThis endpoint is critical for updating the state of video dismissal in a user session, requiring careful attention to the identifiers and boolean flags presented in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Dismiss - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dismiss/get/?dismissId=dismissId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dismiss",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "dismissId",
+              "value": "dismissId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Dismiss - Get\n\nThis endpoint is designed to retrieve information related to a specific dismissal action.\n\n#### Request Details:\n\n- **Auth Type**: \n  - The authentication method used is Bearer Token. This means that access to this endpoint requires a valid token to be provided in the request header.\n  \n  - **Bearer Token**: \n    - A string that contains the token, represented here as \"BearerToken.\" This token should be replaced with an actual token for authentication.\n\n- **HTTP Method**: \n  - The method used to make the request is GET. This implies that the endpoint is utilized to retrieve data without affecting the state of any resources.\n\n- **URL**: \n  - The endpoint's URL is structured as follows:\n    ```\n    http://localhost:3000/api/action/dismiss/get/?dismissId=dismissId&sessionId=sessionId&accountId=accountId\n    ```\n    - **Base URL**: `http://localhost:3000/api/action/dismiss/get/`\n    - **Query Parameters**:\n      - `dismissId`: This is a placeholder for the unique identifier of the dismissal you wish to retrieve information about.\n      - `sessionId`: This is a placeholder for the identifier associated with the session during which the dismissal action occurred.\n      - `accountId`: This is a placeholder for the identifier associated with the account related to the dismissal.\n\n- **Headers**: \n  - There is a header section included in the request, but it appears to be disabled and empty. Typically, here you would add any additional headers required by the API, like custom content types or security headers.\n\n- **Body**:\n  - The body of the request is set to \"raw\" mode but is left empty. Since this is a GET request, a body is generally not included. Thus, no data needs to be sent in the body.\n\nThis endpoint, with the correct parameters and a valid bearer token, will return details about the dismissal action specified by the `dismissId`."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Dismiss - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dismiss/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dismiss",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Dismiss - Get All\n\n**Description:**\nThis endpoint is used to retrieve all dismissal actions for a specific session and account. The request is made using the GET method, and it requires a valid bearer token for authentication.\n\n---\n\n**Request Details:**\n\n1. **Auth:**\n   - **Type:** Bearer\n     - This indicates the authentication method used. The bearer token will be included in the request to validate the user's identity and permissions.\n   - **Bearer Token:**\n     - **Key:** token\n     - **Value:** BearerToken\n       - This is a placeholder for the actual bearer token that should be used for authenticating the request.\n     - **Type:** string\n       - The token is represented as a string.\n\n2. **Method:**\n   - **Type:** GET\n     - This specifies that the request is a GET request, which is used to retrieve data from the server.\n\n3. **URL:**\n   - **URL:** `http://localhost:3000/api/action/dismiss/all/?sessionId=sessionId&accountId=accountId`\n     - This is the URL endpoint where the request is sent. It includes two query parameters:\n       - **sessionId:** This is a placeholder for the session identifier for which the dismissals are to be fetched.\n       - **accountId:** This is a placeholder for the account identifier associated with the dismissals.\n\n4. **Headers:**\n   - **Key:** (No key specified)\n   - **Value:** (No value specified)\n   - **Type:** default\n   - **Disabled:** true\n     - This indicates that there are currently no additional headers being sent with the request, and the header section is disabled. Users can enable and modify this section if necessary.\n\n5. **Body:**\n   - **Mode:** raw\n   - **Raw:** (Empty)\n     - The body is set to raw mode but currently has no content. Since this is a GET request, the body is typically not used in this context and can remain empty.\n\n---\n\nThis endpoint is primarily used to fetch all dismissal actions related to a specific session and account using the necessary authentication methods."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Dismiss - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"dismissId\":\"dismissId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dismiss/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dismiss",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Dismiss - Delete\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"sessionId\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"method\": \"POST\",\n    \"url\": \"http://localhost:3000/api/action/dismiss/delete\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"dismissId\\\":\\\"dismissId\\\"}\"\n    }\n  }\n}\n\n### Endpoint Description\n\n- **Name**: The name of the endpoint is \"Action - Dismiss - Delete\". This signifies that the function of this endpoint is related to dismissing or deleting some action.\n\n- **Request**: This section contains details about how to make the API request.\n\n  - **Auth**: \n    - **Type**: The authorization method used is a bearer token. This is a standard way of ensuring that the request is coming from a verified user.\n    - **Bearer**: A list containing authentication details. In this case, it involves a key for the token called \"sessionId\". The value associated with the key should be replaced with an actual session ID when making the request.\n\n  - **Method**: The HTTP method used for this request is POST. This indicates that data is being sent to the server to perform an action, rather than retrieving data.\n\n  - **URL**: The endpoint URL is \"http://localhost:3000/api/action/dismiss/delete\". This is the address on the server where the request will be sent. It is currently set to a local server, which means it is intended for testing or development purposes.\n\n  - **Headers**: \n    - There is a placeholder for request headers, but currently, no specific headers are defined or enabled in the request. This section is marked as disabled, meaning that no headers are being sent along with this request.\n\n  - **Body**: \n    - **Mode**: The body of the request is indicated to be in \"raw\" mode, which means that the data is sent as a raw JSON string.\n    - **Raw**: The content of the body is a JSON string containing three fields:\n      - **sessionId**: This should contain the user’s session ID, making it necessary for validation purposes.\n      - **accountId**: This field is to be populated with the account ID that is associated with the action being dismissed or deleted.\n      - **dismissId**: This field should contain the ID of the specific action or item that needs to be dismissed or deleted. \n\nEach of these fields is crucial for the server to process the request properly and execute the intended action."
+      },
+      "response": []
+    }
+  ]
+}

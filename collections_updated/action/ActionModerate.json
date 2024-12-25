@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "d5bc6be2-81bf-4e6c-a2b6-0dc6cddc3979",
+    "name": "ActionModerate",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Moderate - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"didModerate\": true,\n    \"moderationType\": \"remove\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/moderate/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "moderate",
+            "create"
+          ]
+        },
+        "description": "### Action - Moderate - Create\n\nThis endpoint is designed to create a moderate action related to a specified video channel. Below are the details for each piece of data that is included in the request.\n\n#### Request Method\n- **Method**: POST\n  - This indicates that the endpoint is used to send data to the server to create a new resource.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/action/moderate/create`\n  - This is the endpoint where the POST request is made, typically used for creating a moderation action.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - This indicates that the request uses Bearer Token authentication. The token must be included in the request to authorize access.\n\n- **Bearer Token**: \n  - **Key**: `token`\n    - This is the key used to identify the token in the authorization header.\n  - **Value**: `BearerToken`\n    - This is a placeholder for the actual token that would need to be provided for authentication.\n  - **Type**: string\n    - Specifies that the value is of type string.\n\n#### Headers\n- **Headers**: \n  - This section may include additional headers for the request, but all entries are currently disabled and empty.\n  - **Key**: `\"\"` \n    - There are no specific headers being passed in this example, indicated by empty quotes.\n  - **Value**: `\"\"`\n    - As with the key, the value is also empty.\n  - **Disabled**: true\n    - This means that the header configuration is turned off and not used in the request.\n\n#### Request Body\n- **Body Mode**: raw\n  - The request body will be sent in a raw format, specifically JSON.\n\n- **Raw Content**:\n  - The following JSON structure is included in the request body:\n  \n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"didModerate\": true,\n    \"moderationType\": \"remove\"\n}\n```\n\n- **Field Descriptions**:\n  - **sessionId**: A unique identifier for the session during which the moderation action is being performed. Placeholder value is provided.\n  - **accountId**: The ID of the account initiating the moderation action. Placeholder value is provided.\n  - **path**: The path that specifies the location of the video on the server. In this case, it refers to a video in a live channel.\n  - **targetType**: Indicates the type of the target being moderated, which in this case is a video ID.\n  - **targetId**: The unique identifier of the target video that is being moderated.\n  - **sourceType**: Indicates the type of source from which the moderation request is initiated. This refers to an account ID.\n  - **sourceId**: The unique identifier for the account that is making the request.\n  - **name**: A placeholder for the name associated with the moderation action.\n  - **description**: A placeholder for any additional information about the moderation action.\n  - **tags**: Placeholder for any tags that might relate to the moderation action.\n  - **didModerate**: A boolean indicating whether the moderation action was executed. Set to true, indicating that moderation should take place.\n  - **moderationType**: Specifies the type of moderation action to be taken, such as \"remove\" which indicates a removal action.\n\nThis endpoint will facilitate adding moderation actions for videos by specifying various attributes that define the context and type of action taken."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Moderate - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"didModerate\": false,\n    \"moderationType\": \"none\",\n    \"moderateId\":\"moderateId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/moderate/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "moderate",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Moderate - Update\n\nThis endpoint allows the user to update moderation actions for a specific video or content. Below is a detailed description of each data field included in the request.\n\n#### Request Fields:\n\n- **Auth**: \n  - **Type**: The type of authentication used for the request, which is \"bearer\".\n  - **Bearer**: This section contains the authentication token that must be included in the request.\n    - **Key**: This field represents the name of the token in the request. \n    - **Value**: This is the actual token string that will authenticate the user. It should be replaced with a valid Bearer token when making a request.\n    - **Type**: Specifies that the data type for the token value is a string.\n\n- **Method**: \n  - The HTTP method used for the request, which is \"PUT\". This indicates that this endpoint is being used to update existing resources.\n\n- **URL**: \n  - The endpoint URL where the request will be sent. In this case, it’s `http://localhost:3000/api/action/moderate/update`.\n\n- **Headers**: \n  - This section includes additional metadata sent with the request.\n    - **Key**: \"Client-UUID\" is used to identify the client making the request.\n    - **Value**: This field should contain the unique Client UUID, which helps in tracking and managing client requests.\n    - **Type**: Describes the nature of the header, here it is \"default\".\n\n#### Body Fields:\n\nThe body of the request contains the data required for updating the moderation action:\n\n- **sessionId**: \n  - A unique identifier for the session during which the action is being moderated.\n\n- **accountId**: \n  - The ID of the account associated with the moderation action.\n\n- **path**: \n  - The path to the content that is being moderated, typically in a specific format such as `/live/channel/video123`.\n\n- **targetType**: \n  - Indicates the type of target being moderated. In this case, it is set to \"videoId\", suggesting that the moderation is specifically for a video.\n\n- **targetId**: \n  - The unique identifier for the target, which corresponds to the video being moderated.\n\n- **sourceType**: \n  - Specifies the source type for the action. It is set to \"accountId\", indicating that the action is coming from an account.\n\n- **sourceId**: \n  - The unique identifier for the source, which should match the account ID.\n\n- **name**: \n  - An optional field to provide a name or title for the moderation action.\n\n- **description**: \n  - An optional field for additional information or context regarding the moderation action.\n\n- **tags**: \n  - A field for specifying any relevant tags that can aid in categorizing or describing the moderation action.\n\n- **didModerate**: \n  - A boolean value indicating whether the moderation action was actually performed or not. It can be either true or false.\n\n- **moderationType**: \n  - Specifies the type of moderation applied (e.g., \"none\", \"strict\"). This indicates how the content was moderated.\n\n- **moderateId**: \n  - A unique identifier for the moderation action itself, allowing it to be tracked or referenced in the system.\n\n### Summary:\nSending a PUT request to this endpoint with the specified parameters allows for the update of existing moderation actions associated with a video or content, supporting functionalities such as tracking, auditing, and managing content moderation."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Moderate - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/moderate/get/?moderateId=moderateId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "moderate",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "moderateId",
+              "value": "moderateId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Moderate - Get\n\n- **Name**: Action - Moderate - Get\n  - This is the name of the API request that retrieves moderate action data based on specified parameters.\n\n- **Request**: \n  - This section details the configuration of the request being made to the API.\n\n  - **Auth**: \n    - **Type**: bearer \n      - This indicates that bearer token authentication is being used to authorize the request. The server checks the token provided to verify that the user has permission to access the endpoint.\n\n    - **Bearer**: \n      - This section contains the details for the bearer token used in authorization.\n      - **Key**: token\n        - This is the key name for the bearer token in the authentication process.\n      - **Value**: BearerToken\n        - This is a placeholder for the actual bearer token that must be provided for authentication. This token is used to validate the user's session and permissions.\n      - **Type**: string\n        - This indicates that the value of the bearer token is a string.\n\n  - **Method**: GET\n    - The HTTP method used for this request is GET, indicating that the request is intended to retrieve data from the specified resource.\n\n  - **URL**: \n    - `http://localhost:3000/api/action/moderate/get/?moderateId=moderateId&sessionId=sessionId&accountId=accountId`\n      - This is the endpoint URL where the GET request is sent. \n      - The URL contains query parameters:\n        - **moderateId**: This parameter should be replaced with the actual ID of the moderation action you are querying.\n        - **sessionId**: This parameter should be replaced with the session ID relevant to the request.\n        - **accountId**: This parameter should be replaced with the account ID you want to retrieve data for.\n\n  - **Headers**: \n    - This section is where headers can be specified to be sent along with the request. \n      - **Key**: \n        - This is where the name of the header would typically be specified, but it is currently empty.\n      - **Value**: \n        - Similarly, this is where the value for the header would be specified, but it is also currently empty.\n      - **Type**: default \n        - This indicates that the header type is default; however, this entry is disabled, meaning it will not be sent with the request.\n\n  - **Body**: \n    - **Mode**: raw \n      - This indicates the format of the request body. In this case, the body content type is raw.\n    - **Raw**: \n      - This is where the raw body content would be specified. Currently, it is empty, meaning no additional data is sent in the request body. \n\nThis API request is primarily designed to retrieve moderation action data based on specified identifiers, utilizing bearer token authentication to ensure that only authorized users can access the information."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Moderate - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/moderate/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "moderate",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Moderate - Get All\n\n#### Request Details\n\n- **Auth**\n  - **Type:** This specifies the type of authentication required for the request. In this case, it is \"bearer\" authentication.\n  - **Bearer Token:**\n    - **Key:** This indicates the key for the authorization token, which is simply labeled as \"token\".\n    - **Value:** This is the actual token value needed to authenticate the request. Here it is represented as \"BearerToken\", which is a placeholder for the actual token.\n    - **Type:** The data type of the token is specified as \"string\".\n\n- **Method**\n  - This indicates the HTTP method to be used for the request. In this case, it is a \"GET\" method, which is used to retrieve data from the specified resource.\n\n- **URL**\n  - This is the endpoint where the request is sent. The URL is structured as follows:\n    - `http://localhost:3000/api/action/moderate/all/` is the base endpoint.\n    - `?sessionId=sessionId&accountId=accountId` are query parameters included in the URL. This allows the client to pass specific data:\n      - **sessionId:** A placeholder for a unique identifier representing the current session.\n      - **accountId:** A placeholder for the unique identifier for the account being accessed.\n\n- **Headers**\n  - This section is meant for adding additional metadata to the request. Currently, there are no headers specified:\n    - **Key:** Left empty, indicating that no specific header key is being used.\n    - **Value:** Left empty, showing that there is no corresponding value for the header key.\n    - **Type:** Default type, which means it is the standard header type.\n    - **Disabled:** Set to true, indicating that this header is not active and will not be sent with the request.\n\n- **Body**\n  - This defines the body of the request. The body is specified as:\n    - **Mode:** \"raw\" indicates that the request body is sent as a raw string format.\n    - **Raw:** The raw body content is empty in this case, meaning no additional data is being sent with the request.\n\nThis summary captures the essential details of the \"Action - Moderate - Get All\" endpoint, providing a clear understanding of the API request structure."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Moderate - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"moderateId\":\"moderateId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/moderate/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "moderate",
+            "delete"
+          ]
+        },
+        "description": "### Action - Moderate - Delete\n\nThis endpoint is designed to handle the deletion of a moderation action. Below is a detailed description of each component of the request:\n\n- **Name**: Action - Moderate - Delete  \n  This is the title of the API endpoint, indicating that it is used for deleting a moderation action.\n\n- **Request**:  \n  This section contains the details related to the request that will be sent to the API.\n\n  - **Auth**:  \n    This specifies the authentication method used for the request.\n    \n    - **Type**: `bearer`  \n      This indicates that the bearer token authentication method is being used.\n      \n    - **Bearer**:  \n      This section contains details about the bearer token.\n      \n      - **Key**: `token`  \n        This is the identifier for the token.\n        \n      - **Value**: `sessionId`  \n        This represents the actual session identifier that will be used for authentication.\n        \n      - **Type**: `string`  \n        This indicates that the value is of string type.\n\n  - **Method**: `POST`  \n    This specifies the HTTP method being used for the request. In this case, it is a POST request to send data to the server.\n\n  - **URL**: `http://localhost:3000/api/action/moderate/delete`  \n    This is the endpoint URL where the request will be sent. It points to the local server running on port 3000.\n\n  - **Headers**:  \n    This section allows for specifying additional HTTP headers for the request.\n    \n    - **Key**: `\"\"`  \n      There are no specific headers set in this example (key is empty).\n      \n    - **Value**: `\"\"`  \n      Corresponding value for the header is also empty.\n      \n    - **Type**: `default`  \n      This indicates that the header is of the default type.\n      \n    - **Disabled**: `true`  \n      This indicates that the header is currently disabled and will not be sent with the request.\n\n  - **Body**:  \n    This section contains the data that will be sent in the body of the request.\n\n    - **Mode**: `raw`  \n      This specifies that the body content is in raw format. \n\n    - **Raw**:  \n      This contains the actual JSON data that will be sent to the server.\n\n      - **sessionId**: `sessionId`  \n        This field holds the session identifier used for the user session.\n        \n      - **accountId**: `accountId`  \n        This field holds the identifier for the account which is associated with the moderation action being deleted.\n        \n      - **moderateId**: `moderateId`  \n        This field holds the identifier for the specific moderation action that is to be deleted.\n\nThis endpoint is useful for developers who need to remove moderation actions and requires proper authentication along with the relevant identifiers in the request body."
+      },
+      "response": []
+    }
+  ]
+}

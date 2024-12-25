@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "ManageAdmin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Manage - Admin - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second General\",\"description\":\"This admin is my second admin\",\"tags\":\"second,admin\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isGeneralPrivate\":true,\"isTournamentOnly\":false,\"isGeneralDefault\":true,\"isPreLiveManageAds\":true,\"isPostLiveManageAds\":true,\"breakPreLiveManageUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveManageUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/admin/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "admin",
+            "create"
+          ]
+        },
+        "description": "This is the description of each data on the `Manage - Admin - Create` endpoint:\n\n1. `name`: This denotes the name of the endpoint, which is 'Manage - Admin - Create'.\n\n2. `request`: This object contains the actual details of the HTTP request.\n\n3. Within `request`:\n    - `auth`: Specifies the authentication method and details. The `type` is 'Bearer' indicating Bearer token authentication.\n   \n       - `bearer`: Array containing details of the bearer token. \n          - `key`: This is the key which is supposed to be 'token' in this case.\n          - `value`: The value of the key is 'BearerToken'. It should be your actual bearer token.\n          - `type`: The type of the value, which is 'string' in this case.\n   \n    - `method`: The HTTP method to be used. Here, 'POST' method is used meaning that it is used to send data to a server to create a resource.\n   \n    - `url`: The endpoint of the API where the request will be sent. In this case, it is 'http://localhost:3000/api/manage/admin/create'.\n   \n    - `headers`: An array that is meant to contain any headers to be sent with the request. In this case, no additional headers are sent thus its `disabled` status is `true`.\n\n    - `body`: The details of the request body.\n       \n       - `mode`: The mode of the body data. Here, it is 'raw', meaning it is presented as is, and not as form data or file.\n       - `raw`: Represents the JSON data to be sent with the API request. It contains several key-value pairs including session ID, account ID, name, description, tags, profile photo URL, cover photo URL, minimum tip amount, category ID, category, subcategory ID, subcategory, privacy feature, tournament option, default settings,  ad management settings, URLs for pre- and post-live ad breaks.\n       - `options`: Details about the 'raw' data.\n           \n           - `language`: The language in which the data is written. In this case it is 'json'.\n\nPlease replace placeholders with actual values (like 'sessionId', 'accountId', 'BearerToken') to make this endpoint work correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Manage - Admin - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"adminId\":\"adminId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second General 2.0\",\"description\":\"This admin is my second admin\",\"tags\":\"second,admin\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isGeneralPrivate\":true,\"isTournamentOnly\":false,\"isGeneralDefault\":true,\"isPreLiveManageAds\":true,\"isPostLiveManageAds\":true,\"breakPreLiveManageUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveManageUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/admin/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "admin",
+            "update"
+          ]
+        },
+        "description": "This endpoint updates an admin's information in the management system.\n\nHere are the details of each data:\n\n1. `\"name\"`: This depicts the name of the endpoint which is \"Manage - Admin - Update\". It signifies that the endpoint is for updating admin details.\n\n2. `\"request\"`: The outer block that holds all of the HTTP request information.\n\n3. `\"auth\"`: Details of the authorization needed to access this endpoint. It uses the bearer token authorization type indicated by `\"type\": \"bearer\"`. The `\"bearer\"` array contains a `\"token\"` key, the value `\"BearerToken\"` should be replaced with the actual auth token you want to use when making a request.\n\n4. `\"method\"`: The HTTP method used for this request. `\"PUT\"` indicates that this endpoint is used to update existing information.\n\n5. `\"url\"`: The URL where the API request is sent. In this case, the request is sent to http://localhost:3000/api/manage/admin/update.\n\n6. `\"headers\"`: This array contains the necessary headers to make a request. In this case, it includes `\"Client-UUID\"`, which should be replaced with the unique identifier for the client making the request.\n\n7. `\"body\"`: The data sent with the HTTP request. It uses raw JSON data. Each key-value pair in `\"raw\"` field represents a different data point related to the admin being updated. Replace these with the respective value each key indicates.\n\n- `\"adminId\"`: The unique identifier for the admin that needs to be updated.\n- `\"sessionId\"` and `\"accountId\"`: The session and account identifiers, respectively.\n- `\"name\"`: The updated name of the admin.\n- `\"description\"`, `\"tags\"`, `\"profilePhotoUrl\"`, and `\"coverPhotoUrl\"`: The updated information about the admin's description, tags, and image URLs for profile and cover respectively.\n- `\"minimumTipAmount\"`: It suggests the minimum tip amount that can be applied.\n- `\"categoryId\"`, `\"category\"`, `\"subCategoryId\"` and `\"subCategory\"`: These represent the category and sub-category identifiers and names the admin falls under.\n- `\"isGeneralPrivate\"`: This boolean field shows whether the admin has a private setting applied.\n- `\"isTournamentOnly\"`, `\"isGeneralDefault\"`, `\"isPreLiveManageAds\"` and `\"isPostLiveManageAds\"`: These are boolean fields that indicate whether the admin is only for tournament, set as default, allowed to manage ads pre-live or post-live.\n- `\"breakPreLiveManageUrl\"` and `\"breakPostLiveManageUrl\"`: URLs for the pre-live and post-live break times.\n\nPlease replace the corresponding key values with actual data when making a request. The changes will be committed once the request is successfully processed."
+      },
+      "response": []
+    },
+    {
+      "name": "Manage - Admin - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/admin/get/?adminId=adminId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "admin",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "adminId",
+              "value": "adminId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is named 'Manage - Admin - Get'. It is a HTTP 'GET' request used to retrieve administrator data from the server. Below is the detailed description of each data field included in this endpoint:\n\n1. `auth`: This is the authorization method for this request. Here, the system uses a token authorization by Bearer. You need to include the Bearer token in the header to authenticate and authorize the outgoing request.\n\n2. `type`: This specifies the type of authorization, which in this case is Bearer.\n   \n3. `bearer`: This holds an array of key-value pairs used for the token authorization. \n   \n   - `key`: The key is 'token' which confirms that the authorization uses a token.\n   \n   - `value`: The value is 'BearerToken' which should be replaced with the actual bearer token for authenticating the request.\n   \n   - `type`: The type here is a string which tells that the authentication token will be a type of string.\n\n4. `method`: This defines the HTTP method used for the request, which in this case is 'GET'. A 'GET' method is used to retrieve data from a server.\n\n5. `url`: This is the server URL where the 'GET' request is made. It includes parameters for 'adminId', 'sessionId', and 'accountId', which have to be replaced with actual values to fetch the specific details from the server.\n\n6. `headers`: These are the default headers sent with the HTTP request. It appears these headers have no value currently and are disabled.\n\n7. `body`: This refers to the body of the HTTP request. \n   \n   - `mode`: The mode is set to 'raw', indicating that the body contains data that hasn't been processed in any specific manner. \n\n   - `raw`: The raw field is currently empty indicating that no extra data is being sent along with the request.\n\nEnsure to replace all placeholders (like 'BearerToken' and the parameters in the 'url') with actual values according to your application's needs before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Manage - Admin - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/admin/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "admin",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint named \"Manage - Admin - Get All\" is designed to retrieve specific information related to the admin from the local server.\n\n- `name`: This key suggests the specific name of the endpoint. The given name here is \"Manage - Admin - Get All\".\n\n- `request`: A container for everything that makes up an HTTP request, this section includes fields like `auth`, `method`, `url`, `headers`, and `body`.\n\n- `auth`: Defines the authentication method and details required to connect with the service. \n\n    - `type`: Indicates which kind of authentication is used. In this case, it uses the \"bearer\" authentication type.\n  \n    - `bearer`: Contains the bearer token details.\n  \n        - `key`: Indicates the key field of the bearer token. The key field here is \"token\".\n  \n        - `value`: Defines the value of the bearer token. Here, \"BearerToken\" is the placeholder value.\n  \n        - `type`: It specifies the data type of the value. The type here is \"string\".\n\n- `method`: This key signifies HTTP method used for the request. The value \"GET\" indicates that it retrieves information.\n\n- `url`: The URL field describes the endpoint where the request will be sent. Here, it's \"http://localhost:3000/api/manage/admin/all/?sessionId=sessionId&accountId=accountId\", with query parameters `sessionId` and `accountId`.\n\n- `headers`: Defines HTTP headers key-value pairs to include in the request.\n\n  - `key`: The name of the header field. Currently, it's kept empty.\n  \n  - `value`: The corresponding value of the header key. Currently, it's also empty.\n  \n  - `type`: Describes the type of the header. Here, it's \"default\".\n  \n  - `disabled`: A boolean to toggle the header on or off. Here, it is set as 'true' making it non-functional.\n\n- `body`: This is the data sent by the request. There are no specific details provided in this request since 'body' type is set as 'raw', but no raw data is provided. 'Mode' describes how the data is sent; in this instance, it is raw data."
+      },
+      "response": []
+    },
+    {
+      "name": "Manage - Admin - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"adminId\":\"adminId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/admin/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "admin",
+            "delete"
+          ]
+        },
+        "description": "This API endpoint is named \"Manage - Admin - Delete\". It's designed for managing the deletion of admins in your application.\n\nThe API uses the `POST` method to delete information. This action is performed by sending a request to this URL: `http://localhost:3000/api/manage/admin/delete`.\n\nThe endpoint is secured using Bearer Authentication. This means the client must send a Bearer token, which is typically a cryptic string, associated with the request. The key for this token is \"token\" and the value is \"sessionId\". The value will need to be replaced with an actual sessionId for it to work.\n\nThe headers object has been left empty for now but is there in case you need to include required headers in the future.\n\nThe part of the API that does the heavy lifting is the \"body\". Here, the mode is set to \"raw\", meaning that the JSON payload will be sent as a raw block of data. This block includes three pieces of information:\n- \"sessionId\": a unique identifier for your session\n- \"accountId\": a unique identifier for the account under which the admin resides\n- \"adminId\": a unique identifier for the specific admin you want to delete\n\nEach field takes a string as a value and these strings need to be replaced with actual values in order to send the request properly. Also, during the deletion, the system uses these identifiers to ensure that the correct admin is deleted from the right account and session.\n\nPlease replace `\"sessionId\"`, `\"accountId\"`, and `\"adminId\"` with actual values when using this API endpoint."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,1681 @@
+{
+  "info": {
+    "_postman_id": "c86d8c3d-07ce-4729-9776-0af32d0c5227",
+    "name": "PaymentCard",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2560458"
+  },
+  "item": [
+    {
+      "name": "Card - Square - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\":{\r\n        \"paymentId\": \"D9kDsYIqprluE2rqn2dhjmW4bo5YY\",\r\n        \"customerId\": \"EQ0ZQW60RE4ZXA5JVDVGWV9B3R\"\r\n    },\r\n    \"isSaveCard\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"square\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "This API endpoint is used to create a payment card using the Square payment provider. Here is a detailed description of each field in the JSON body of the request:\n\n1. `accountId`: This is a unique identifier for the account associated with the card creation request. The user must provide this value.\n\n2. `sessionId`: This unique identifier is used to maintain a session between the client and the server. This value is specific to the particular session of the user.\n\n3. `source`: This object contains information regarding the payment source which includes:\n   - `paymentId`: This refers to the unique identifier of the payment that is being made. This string value must be provided to identify the specific payment.\n   - `customerId`: This is a unique identifier for the customer associated with the payment and card creation request. This value must be sent to identify the customer making the request.\n\n4. `isSaveCard`: This boolean value is used to determine whether the client wants to save the card details for future transactions. If true, the card is saved, if false, the card details will not be stored after the transaction.\n\n5. `isPrimary`: This boolean value determines whether the new card should be set as the primary card for the user's account. If set to true, it changes this card to be the main card for all transactions, if false, it just adds the card to the user's account.\n\n6. `provider`: This value shows the name of the payment provider that will be used to process the payment. In this case, the provider is Square.\n\nThus, while making a POST request to this API, provide all this information in the described format for a successful card creation. The endpoint url for the POST request is `http://localhost:3000/api/payment/card/create`."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Square - Update",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\":{\r\n        \"paymentId\": \"D9kDsYIqprluE2rqn2dhjmW4bo5YY\",\r\n        \"customerId\": \"EQ0ZQW60RE4ZXA5JVDVGWV9B3R\"\r\n    },\r\n    \"isSaveCard\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"square\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "This endpoint, 'Card - Square - Update', is used to update the details of an existing card on the Square payment platform. The following describes the individual pieces of data passed in this request.\n\n1. `name`: This field specifies the name of the API endpoint. Here, the name is 'Card - Square - Update', indicating an update related to a card in the Square payment system.\n\n2. `request`: This object holds all the information related to the API request.\n\n    * `method`: This field indicates the HTTP verb that is used for the API call. Here, 'POST' is used, which is typically used when you want to send some data to the server.\n\n    * `url`: This is the URL where the API request will be made. In this case, the endpoint is 'http://localhost:3000/api/payment/card/update'.\n\n    * `headers`: This is an empty array, implying that no additional HTTP headers are being sent with this request.\n\n    * `body`: This encapsulates the data sent by a POST request.\n\n        * `mode`: It indicates how the request body is formatted. Here, 'raw' signifies that the body content is unprocessed.\n        \n        * `raw`: This field includes the raw string of the data to be sent in the body of the HTTP request. This data is structured in the JSON format.\n\n            * `accountId`: This is a unique identifier for the account.\n\n            * `sessionId`: This is a unique identifier for a user session.\n\n            * `source`: This object contains information about the payment source.\n\n                * `paymentId`: This represents a unique identifier for a particular payment.\n\n                * `customerId`: This field represents a unique identifier for the customer who made the payment.\n\n            * `isSaveCard`: This is a boolean value to indicate whether to save the card for future use. If true, the card will be saved.\n\n            * `isPrimary`: This boolean value indicates whether the card is the primary card. If false, the card is not the primary card.\n\n            * `provider`: This indicates the payment provider. Here, the provider is 'square'.\n\n        * `options`: This field contains additional settings for the request body.\n\n            * `raw`: This defines the language setting for the raw data in the body section of the request.\n\n                * `language`: This specifies the programming language for formatting the raw data. Here, it is set to 'json', indicating that the raw data is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Square - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/?provider=square&accountId=accountId&sessionId=sessionId&cardId=ccof:CA4SEFZspcQ7Py9BTX_j4-bnUPooAg",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "square"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "cardId",
+              "value": "ccof:CA4SEFZspcQ7Py9BTX_j4-bnUPooAg"
+            }
+          ]
+        },
+        "description": "This API endpoint retrieves card payment information from the Square payment gateway. \n\n1. `name`: This specifies the name of the endpoint. In this case, \"Card - Square - Get\" indicates that this endpoint is used to get card information from the Square provider.\n\n2. `request`: This field includes all the necessary information for the HTTP request, such as the method, URL, headers, etc.\n   \n   a. `method`: This specifies the HTTP method used for this request. The \"GET\" method is used to retrieve data from a server.\n\n   b. `url`: This field includes the entire URL required to hit this endpoint. In the provided example, the base URL is `http://localhost:3000/api/payment/card/get/` .\n\n       The URL also includes certain query parameters:\n     \n       - `provider`: This is a required parameter specifying the payment gateway provider. In this example, Square is the provider.\n\n       - `accountId`: This parameter represents the unique identifier of the user/account in your system for which you want to retrieve the card information.\n\n       - `sessionId`: This parameter is used to identify a session. This can be used to maintain a state between the server and a specific client. \n\n       - `cardId`: This parameter represents the unique identifier of the card that you want to retrieve. This ID is prefixed by \"ccof:\" which stands for Card on File in Square's terminology, indicating the card is saved in the Square system and can be referred to for future payments without needing to input the card data again.\n\n3. `headers`: This is an array which should contain any necessary headers required by the API call. In this case, no headers are defined. \n\nPlease replace `localhost:3000`, `accountId`, `sessionId` and `ccof:CA4SEFZspcQ7Py9BTX_j4-bnUPooAg` with actual respective values when calling this API."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Square - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/?provider=square&accountId=accountId&sessionId=sessionId&customerId=EQ0ZQW60RE4ZXA5JVDVGWV9B3R",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "square"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "customerId",
+              "value": "EQ0ZQW60RE4ZXA5JVDVGWV9B3R"
+            }
+          ]
+        },
+        "description": "This endpoint is associated with the name \"Card - Square - Get All\". It is responsible for retrieving all the Square Card data.\n\nThe request method for this endpoint is \"GET\", indicating that it is used to read resource representations and denoting safe operations, i.e. operations that do not change the state of the server resources.\n\nThe URL for this endpoint is \"http://localhost:3000/api/payment/card/getAll/\". It is the server location where the request for obtaining all the Square Card data is sent. It also includes a number of parameters that the API accepts:\n\n1. \"provider=square\" - This is a query parameter where \"square\" likely represents the payment provider in this context. It specifies the source from where the card data should be fetched.\n\n2. \"accountId=accountId\" - This query parameter might be used to identify the account from where the card data should be collected. You need to replace \"accountId\" with the actual account identifier.\n\n3. \"sessionId=sessionId\" - An optional query parameter intended for tracing the session in which the request to get the card data was made. Replace \"sessionId\" with the actual session identifier.\n\n4. \"customerId=EQ0ZQW60RE4ZXA5JVDVGWV9B3R\" - This query parameter, set with a fixed value in this case, is used to identify the unique customer whose card data should be retrieved. Replace it with the actual customer ID if it's needed to be dynamic.\n\nThe request does not include headers, indicating that no additional metadata in the form of HTTP headers is required to process this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Square - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"cardId\": \"ccof:CA4SEFZspcQ7Py9BTX_j4-bnUPooAg\",\r\n    \"provider\": \"square\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is titled \"Card - Square - Delete\". As the name suggests, it is used to delete a card from a 'Square' payment provider.\n\nIt makes a 'POST' request to the URL \"http://localhost:3000/api/payment/card/delete\". There are no headers required in this request.\n\nThe body of the request requires 4 pieces of data:\n\n1. \"accountId\" : This is the unique identifier for your account. You'll need to replace the placeholder \"accountId\" with your actual account ID. The account ID usually consists of alphanumeric characters.\n\n2. \"sessionId\" : This is the unique identifier for your current session. Replace the placeholder \"sessionId\" with your active session ID. This ID is typically generated when you start a session on the application. \n\n3. \"cardId\" : This represents the unique identifier for the card that you wish to delete. In the example provided, the cardId is \"ccof:CA4SEFZspcQ7Py9BTX_j4-bnUPooAg\". This ID is typically generated by the Square payment gateway when a new card is added.\n\n4. \"provider\" : This field defines the provider of the payment gateway. In this case, the provider is 'Square'. \n\nThe body content is sent in 'Raw' mode with 'JSON' language. You may need to adjust the settings in your request to send the body content in this format, if your tool or programming language does not do it by default."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Checkout - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"number\": \"4242424242424242\",\n        \"expiry_month\": 12,\n        \"expiry_year\": 2024,\n        \"cvv\": \"100\",\n        \"name\": \"John Doe\"\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": false,\n    \"provider\": \"checkout\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Card - Checkout - Create ++\" and requires a POST request.\n\nThe base URL for this endpoint is \"http://localhost:3000/api/payment/card/create\". From this URL, we can deduce that this endpoint is responsible for creating a payment card on a local server.\n\nThe request does not require any headers. \n\nThe body of the request is in raw format and needs to be sent as a JSON object, which includes the following data:\n\n1. \"accountId\": This is a string type field which represents the account identity in which a card is being created.\n\n2. \"sessionId\": This field represents the identity of the current session. It's a string typed field.\n\n3. \"source\": This is an object which includes several fields related to the credit/debit card details.\n    - \"number\" is the credit card number field. Here we are using a test card number \"4242424242424242\".\n    - \"expiry_month\" signifies the month when the card will expire. It is of integer type and accepts values from 1 to 12.\n    - \"expiry_year\" signifies the year when the card will expire. Accepts integer values representing the future years such as 2024.\n    - \"cvv\": This is the security code of the card. A string of usually 3 digits.\n    - \"name\": The cardholder's name. A string that typically contains a first and last name such as 'John Doe'.\n\n4. \"isSaveCard\": This is a Boolean field indicating whether the card details need to be saved for future transactions. `true` means it will be saved, `false` means it won't. \n\n5. \"isPrimary\": This is another Boolean field that indicates whether this card should be set as the primary card for the corresponding account. If `true`, it will be set as primary; if `false`, it won't.\n\n6. \"provider\": This is a string field which indicates the name of the payment gateway provider. Here, \"checkout\" is mentioned as the provider. It might likely be accepting other gateway providers based on the implementation.\n\nRemember to replace the example values, such as the card number, CVV, and others when you are using this endpoint in a real-world scenario."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Checkout - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"cardId\": \"1f9a9651-b4d4-41d0-88aa-bc8b93a01c0d\",\n    \"source\": {\n        \"number\": \"222222\"\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": true,\n    \"provider\": \"checkout\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Card - Checkout - Update\". It's used to update information related to a card which is used during a checkout process.\n\nThe endpoint is accessed via the \"PUT\" HTTP method, indicating that existing data is being updated. The target URL for the endpoint is `http://localhost:3000/api/payment/card/update`.\n\nNo specific HTTP headers are required to be sent with the request according to the provided data, however authentication headers may be assumed based on usage context.\n\nThe request payload needs to be supplied in raw mode format with JSON language option enforced. Here is a description of each field within the request body payload:\n\n- `accountId`: Represents the id of the account associated with the card. It's a string type and should be replaced with a real account id.\n\n- `sessionId`: Also a string type, represents the specific session associated with the updating process of the card. Replace \"sessionId\" with an actual session id.\n\n- `cardId`: This is the unique identifier of the card that is being updated. The sample provided here is a UUID.\n\n- `source`: This object encompasses all the information coming from the original source. Currently it consists of `number`, which holds the new card number that will replace the old card number.\n\n- `isSaveCard`: It's a boolean field that indicates whether the card should be stored for future transactions. If it's \"true\", the card will be saved, else not.\n\n- `isPrimary`: This boolean field shows if the card is primary or not. If it's \"true\", the card becomes the account's primary card.\n\n- `provider`: It's a string identifying the card provider. In this context, \"checkout\" is shown as the provider of this card service.\n\nPlease replace all placeholder values like \"accountId\", \"sessionId\", \"cardId\" and \"222222\" with real values before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Checkout - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/?cardId=58af6541-c921-49d5-b6e0-9a69d6738402&provider=checkout&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "58af6541-c921-49d5-b6e0-9a69d6738402"
+            },
+            {
+              "key": "provider",
+              "value": "checkout"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Card - Checkout - Get\". It is used to retrieve information about a specific card during a checkout process.\n\nThis endpoint's request type is `GET` meaning it is used to request data from a resource.\n\nThe URL for the endpoint is `http://localhost:3000/api/payment/card/get/`. It serves the purpose of interfacing with the local payment card services to fetch card details.\n\nThe request URL has several parameters passed as query strings:\n\n- `cardId`: This is a unique identifier for a card. The value is a string in the form of a UUID (Universally Unique Identifier), for example: \"58af6541-c921-49d5-b6e0-9a69d6738402\". It is used to specify which card data to retrieve.\n  \n- `provider`: This specifies the payment provider, in this case it's 'checkout'. This lets the server know which payment service provider's API it should interface with when processing payments.\n  \n- `accountId`: This is expected to hold the unique identifier of the user account associated with the card. This is typically used for user identification and authorization.\n  \n- `sessionId`: This parameter holds the information about a user's specific session. This could be used for tracking, maintaining, or validating a user's session.\n\nThe request doesn't require any specific headers, as indicated by the empty `headers` array. This implies that no extra metadata needs to be sent along with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Checkout - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/?provider=checkout&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "checkout"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This data field specifies the name of the API endpoint. In this case, the name \"Card - Checkout - Get All\" suggests that this endpoint is used to retrieve all the card information related to a checkout process.\n\n2. \"request\": This data field contains information about the HTTP request that is to be made. \n\n3. \"method\": Inside the 'request' data, the 'method' field refers to the kind of HTTP request to be made. Here, 'GET' means that the request made to the server will read or retrieve data.\n\n4. \"url\": Again, inside the 'request' data, 'url' is the URL of the API endpoint where the GET request will be sent. \"http://localhost:3000/api/payment/card/getAll/?provider=checkout&accountId=accountId&sessionId=sessionId\" is the full path of the URL.\n\n5. Query Parameters:\n   \n   a. \"provider\": This query parameter indicates the checkout service provider. Here, its value is set to 'checkout'.  \n   \n   b. \"accountId\": This query parameter references the account id of the user making the payment. Replace 'accountId' with actual user's accountId.\n   \n   c. \"sessionId\": This query parameter references the unique session id for a particular checkout process. Replace 'sessionId' with actual user's sessionId.\n\n6. \"headers\": This data field is designed to hold a list of headers (additional optional parameters that could be included in the HTTP request). In this case, the list is empty, meaning that no additional headers are required for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Checkout - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"cardId\": \"58af6541-c921-49d5-b6e0-9a69d6738402\",\n    \"provider\": \"checkout\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint consists of the following data fields:\n\n1. `name`: It is a descriptive name for this particular API endpoint. In this instance, it is \"Card - Checkout - Delete\", which implies that the API is used to delete a card from the user's checkout.\n\n2. `request`: This object contains all the details about the API request - \n\n    a. `method`: The HTTP method of the API request. In this case, \"POST\" method signifies that it sends information to the API to create a new resource or update existing ones. \n  \n    b. `url`: This is the URL to which the API request is made. Currently, it is pointing to a local host and the path signifies that this API endpoint is related to payment card deletion. \n  \n    c. `headers`: Headers let the client and the server pass additional information with the HTTP request or the HTTP response. At the moment, there are no additional headers.\n   \n    d. `body`: This is the main part of the request which contains the data being sent to the server.\n        \n      i. `mode`: It tells us how the request body will be formatted. The \"raw\" mode allows you to send data as is.\n        \n      ii. `raw`: This contains the actual values that are sent in the request body. There are four attributes within this section: \n            \n            - `accountId`: Represents the account id of a user.\n            \n            - `sessionId`: Represents the session id of a user.\n            \n            - `cardId`: The unique ID of the card the user wants to delete.\n            \n            - `provider`: Specifies the name of the payment gateway provider, in this case, it is \"checkout\".\n        \n      iii. `options`: It provides extra information about how the body data is processed. In this case, it states that the language used for the \"raw\" data is JSON.\n   \nThis endpoint represents a POST request to an API that facilitates the deletion of a card from a user's checkout. The user's account id and session id are required for verification, along with the specific card id to be deleted and the provider name."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - AuthorizeNet - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"amount\": \"5\",\n        \"payment\": {\n            \"cardNumber\": \"5424000000000016\",\n            \"expirationDate\": \"2025-12\",\n            \"cardCode\": \"999\"\n        },\n        \"lineItems\": [\n            {\n                \"itemId\": \"1\",\n                \"name\": \"vase\",\n                \"description\": \"Cannes logo\",\n                \"quantity\": \"18\",\n                \"unitPrice\": \"45.00\"\n            }\n        ],\n        \"tax\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"duty\": {\n            \"amount\": \"8.55\",\n            \"name\": \"duty name\",\n            \"description\": \"duty description\"\n        },\n        \"shipping\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"poNumber\": \"456654\",\n        \"customer\": {\n            \"id\": \"99999456654\"\n        },\n        \"billTo\": {\n            \"firstName\": \"Ellen\",\n            \"lastName\": \"Johnson\",\n            \"company\": \"Souveniropolis\",\n            \"address\": \"14 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"shipTo\": {\n            \"firstName\": \"China\",\n            \"lastName\": \"Bayles\",\n            \"company\": \"Thyme for Tea\",\n            \"address\": \"12 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"userFields\": [\n            {\n                \"name\": \"MerchantDefinedFieldName1\",\n                \"value\": \"MerchantDefinedFieldValue1\"\n            },\n            {\n                \"name\": \"favorite_color\",\n                \"value\": \"blue\"\n            }\n        ]\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": false,\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "This endpoint \"Card - AuthorizeNet - Create ++\" in the API is used to create a new card for payment. It's a POST method which means it sends data to the server to create a new resource. The URL for this endpoint is \"http://localhost:3000/api/payment/card/create\". \n\nThe body of the request is sent in raw JSON format. Here's a brief description of each field you encounter in the raw JSON payload:\n\n1. \"accountId\": It represents the account ID of the user making the payment.\n2. \"sessionId\": The ID identifying the current session.\n3. \"source\": This object contains information about the payment source.\n    - \"amount\": The amount to be paid.\n    - \"payment\": This object contains card details.\n    - \"cardNumber\": The number of the card being used for payment.\n    - \"expirationDate\": The expiration date of the card.\n    - \"cardCode\": The security code of the card.\n    - \"lineItems\": An array containing information about line items being purchased.\n    - \"itemId\": The item's ID.\n    - \"name\": Name of the item.\n    - \"description\": The description of the item.\n    - \"quantity\": Quantity of items.\n    - \"unitPrice\": The unit price of the item.\n    - \"tax\": This object contains information about the tax applicable.\n    - \"duty\": This object contains information regarding the duty fees.\n    - \"shipping\": This object provides shipping charge details.\n    - \"poNumber\": The purchase order number.\n    - \"customer\": This object represents the customer's information. \n       - \"id\": The customer's ID.\n    - \"billTo\": This object contains the billing address details.\n    - \"shipTo\": This includes the shipping address details. \n    - \"userFields\": This is an array that contains custom user field objects.\n4. \"isSaveCard\": This boolean field indicates whether or not to save the card details for future use.\n5. \"isPrimary\": This boolean field indicates whether this card is the user's primary card.\n6. \"provider\": The name of the card provider.\n\nRemember to replace placeholders with actual values when making the request. Headers and options are currently empty. The options field suggests that the raw body is to be interpreted as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - AuthorizeNet - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"amount\": \"5\",\n        \"payment\": {\n            \"cardNumber\": \"5424000000000015\",\n            \"expirationDate\": \"2025-12\",\n            \"cardCode\": \"999\"\n        },\n        \"lineItems\": [\n            {\n                \"itemId\": \"1\",\n                \"name\": \"vase\",\n                \"description\": \"Cannes logo\",\n                \"quantity\": \"18\",\n                \"unitPrice\": \"45.00\"\n            }\n        ],\n        \"tax\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"duty\": {\n            \"amount\": \"8.55\",\n            \"name\": \"duty name\",\n            \"description\": \"duty description\"\n        },\n        \"shipping\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"poNumber\": \"456654\",\n        \"customer\": {\n            \"id\": \"99999456654\"\n        },\n        \"billTo\": {\n            \"firstName\": \"Ellen\",\n            \"lastName\": \"Johnson\",\n            \"company\": \"Souveniropolis\",\n            \"address\": \"14 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"shipTo\": {\n            \"firstName\": \"China\",\n            \"lastName\": \"Bayles\",\n            \"company\": \"Thyme for Tea\",\n            \"address\": \"12 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"userFields\": [\n            {\n                \"name\": \"MerchantDefinedFieldName1\",\n                \"value\": \"MerchantDefinedFieldValue1\"\n            },\n            {\n                \"name\": \"favorite_color\",\n                \"value\": \"blue\"\n            }\n        ]\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": false,\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Card - AuthorizeNet - Update\". It is meant to update the payment card details of a user using the \"PUT\" method, pointing at \"http://localhost:3000/api/payment/card/update\".\n\nThe request body payload parameters are:\n1. **accountId**: This is the identity of the user's account.\n2. **sessionId**: This refers to the current session of the user.\n3. **source**: This contains the detailed description of the transaction.\n   - **amount**: This is the total amount to be charged.\n   - **payment**: This comprises of the card details such as card number, expiration date and card code.\n   - **lineItems**: This is an array that contains the items details such as item's id, name, description, quantity and unit price.\n   - **tax**: This object details out the tax related information like tax amount, tax name and its description.\n   - **duty**: This represents the duty charges if any. It contains duty amount, name and its description.\n   - **shipping**: This possesses shipping-related information like shipping amount, shipping name and its description.\n   - **poNumber**: This is presumably the purchase order number.\n   - **customer**: It contains the customer id.\n   - **billTo**: This is the billing address of the customer.\n   - **shipTo**: This is the shipping address of the customer.\n   - **userFields**: This is an array of objects that contains custom fields with their respective values initialized by the user.\n4. **isSaveCard**: This is a boolean field indicating whether to save the card for future transactions.\n5. **isPrimary**: This is a boolean field indicating whether the payment card is the primary card.\n6. **provider**: This signifies the name of the payment provider, in this case, \"authorizenet\".\n\nPlease ensure all the fields are accurately filled in a valid JSON format as suggested by the Request's body raw options. Going against these instructions can lead to failed requests or errors."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - AuthorizeNet - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/?cardId=e58ed9ff-61ca-4c40-9021-100c1f0a81c5&provider=authorizenet&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "e58ed9ff-61ca-4c40-9021-100c1f0a81c5"
+            },
+            {
+              "key": "provider",
+              "value": "authorizenet"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is labeled as \"Card - AuthorizeNet - Get\". It's designed to retrieve card details from an Authorize.Net's payment system.\n\nThe request method used here is GET, indicating this endpoint is utilized to retrieve or read data from the server based on provided parameters.\n\nThe URL is the endpoint's address. It's written as \"http://localhost:3000/api/payment/card/get/\". In this case, when executing this API call, the actual server URL will replace 'localhost:3000'. The '/api/payment/card/get/' part of the URL is the path which is usually defined by the API developers and unique to each endpoint.\n\nThe URL includes query parameters:\n1. \"cardId\": It's a unique identifier for card details retrieval. It should contain a valid cardId.\n2. \"provider\": The payment service provider, which is Authorize.Net in this instance. \n3. \"accountId\": It's the account identifier used in the payment system. Replace 'accountId' with an actual account id.\n4. \"sessionId\": This is a unique session identifier. Replace 'sessionId' with a valid session id.\n\nThere are no additional headers foreseen for this specific request. Headers could provide supplementary control information such as Authorization credentials, but in this case, none are needed. \n\nRemember to replace all placeholder details with real values when using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - AuthorizeNet - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/?provider=authorizenet&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "authorizenet"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Card - AuthorizeNet - Get All\" and it uses the GET method to retrieve all cards associated with the AuthorizeNet provider.\n\n- `name: \"Card - AuthorizeNet - Get All\"`: This represents the name of the endpoint. It is a user-friendly identifier that explains the purpose of the endpoint - fetching all card details related to AuthorizeNet.\n\n- `request`: This object contains details of the HTTP request to be made.\n\n  - `method: \"GET\"`: This indicates the HTTP method used for this request. A \"GET\" method implies fetching or retrieving data from the server.\n\n  - `url: \"http://localhost:3000/api/payment/card/getAll/?provider=authorizenet&accountId=accountId&sessionId=sessionId\"`: This is the URL where the request is sent. It includes:\n  \n    - `http://localhost:3000/api/payment/card/getAll/`: This is the base API path where the GET request is called to retrieve all cards.\n    \n    - `?provider=authorizenet&accountId=accountId&sessionId=sessionId`: This part of the URL is the query parameters. The `provider` parameter indicates the payment gateway provider, which in this case is AuthorizeNet. The `accountId` and `sessionId` parameters should be replaced with the actual account ID and session ID respectively for the request to work correctly.\n\n- `headers`: This is an array that should include any additional HTTP headers that the request requires. Currently, it is empty, indicating no additional headers are required for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - AuthorizeNet - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"cardId\": \"02991e85-ff29-4d1f-b5c4-3d6568967bad\",\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint, \"Card - AuthorizeNet - Delete\", serves the purpose of deleting a card from Authorize.net, a payment gateway service provider.\n\n1. **Name**: The name of the endpoint. It is \"Card - AuthorizeNet - Delete\". This name serves a descriptive purpose to let the users know at a glance what type of operation this endpoint facilitates. In this case, deleting a card information associated with AuthorizeNet.\n\n2. **Request Method**: The HTTP verb for this API endpoint is POST. This method is used to send data to be processed to a specified resource. Here it is utilized for deleting data.\n\n3. **URL**: The path to reach the API endpoint. It is http://localhost:3000/api/payment/card/delete. The first part \"http://localhost:3000\" is the base URL, \"/api\" is the entry point to the API, \"/payment\" signifies the domain of the API that we are interacting with, \"/card/delete\" specifies the operation to delete a card.\n\n4. **Headers**: It is currently blank, but this is where you would pass any additional metadata not provided in the URL or the body of the request. This can include authentication tokens, or information about the nature of the request.\n\n5. **Body**: The body contains the actual data that you want to send to the server. This data should be written in a form that the server can understand. The mode for our body here is raw, which usually requires the content type to be manually set, but since we don't have headers it's not needed. \n\n    The raw payload contains parameters in JSON format:\n\n    - **accountId**: The account to which the card deletion request pertains.\n    \n    - **sessionId**: The unique session identifier during which the card deletion request was made.\n    \n    - **cardId**: The unique card identifier which specifies the card to be deleted.\n    \n    - **provider**: The payment gateway provider, in this case, it’s 'authorizenet'.\n\n6. **Options**: The options section specifies how the contents of the body should be interpreted. In this case, it indicates the format of our raw body as 'json', meaning it's an object-based data format. Generally, APIs may support multiple options for formatting data in the body of a request such as 'text', 'HTML', 'javascript', 'CSS', 'XML', and so on. The appropriate options can be selected based on your specific use case."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - NowPayments - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"payment_source\": {\n            \"walletId\": \"1234567890\",\n            \"userId\": \"0987654321\",\n            \"type\": \"credit_card\",\n            \"number\": \"4111111111111111\",\n            \"expirationMonth\": 12,\n            \"expirationYear\": 2024,\n            \"cvv\": \"123\",\n            \"holderName\": \"John Weak\",\n            \"holderEmail\": \"john.doe@example.com\",\n            \"holderPhone\": \"1234567890\",\n            \"holderAddress\": \"123 Main St.\",\n            \"holderCity\": \"Cityville\",\n            \"holderState\": \"Stateville\",\n            \"holderCountry\": \"US\",\n            \"holderPostalCode\": \"12345\",\n            \"holderIp\": \"192.168.1.1\",\n            \"holderBrowser\": \"Chrome\",\n            \"holderFingerprint\": \"abcdef1234567890\",\n            \"holderDevice\": \"Desktop\",\n            \"holderUserAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36\",\n            \"holderPlatform\": \"Windows\",\n            \"holderOs\": \"Windows 10\",\n            \"holderDeviceType\": \"Desktop\",\n            \"holderMetadata\": {\n                \"key\": \"value\"\n            },\n            \"status\": \"pending\",\n            \"date\": \"2024-08-23T14:00:00.000Z\",\n            \"meta\": {\n                \"key\": \"value\"\n            }\n        }\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": false,\n    \"provider\": \"nowpayments\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "This endpoint named \"Card - NowPayments - Create ++\", signifies that it's for creating a new payment card with NowPayments. It uses the POST method which means it is used to send data to be processed by the identified resource.\n\nThe URL for this endpoint is \"http://localhost:3000/api/payment/card/create\", a local host URL to create a new payment card.\n\nThere are also several data fields in the request body:\n\n1. `\"accountId\"`: The account ID to which this card is associated.\n2. `\"sessionId\"`: The session ID that refers to a specific user session.\n3. `\"source\"`: This is an object representing various parameters for the payment source.\n    - `\"walletId\"`: The identifier of the user's wallet.\n    - `\"userId\"`: The identifier of the user.\n    - `\"type\"`: The type of the card, in this case `\"credit_card\"`.\n    - `\"number\"`: The card number.\n    - `\"expirationMonth\"`: The expiration month of the card.\n    - `\"expirationYear\"`: The expiration year of the card.\n    - `\"cvv\"`: The card's security code.\n    - `\"holderName\"`: The name of the cardholder.\n    - `\"holderEmail\"`: The email address of the cardholder.\n    - `\"holderPhone\"`: The phone number of the cardholder.\n    - `\"holderAddress\"`: The home address of the cardholder.\n    - `\"holderCity\"`: The city of the cardholder.\n    - `\"holderState\"`: The state of residence of the cardholder.\n    - `\"holderCountry\"`: The country of residence of the cardholder.\n    - `\"holderPostalCode\"`: The postal code of the cardholder.\n    - `\"holderIp\"`: The IP address of the cardholder.\n    - `\"holderBrowser\"`: The browser used by the cardholder.\n    - `\"holderFingerprint\"`: The unique device fingerprint of the cardholder.\n    - `\"holderDevice\"`: The device used by the cardholder.\n    - `\"holderUserAgent\"`: The user agent string of the cardholder's browser.\n    - `\"holderPlatform\"`: The platform used by the cardholder.\n    - `\"holderOs\"`: The operating system of the cardholder.\n    - `\"holderDeviceType\"`: The type of device used by the cardholder.\n    - `\"holderMetadata\"`: Other key-value pair metadata of the user device and browser.\n    - `\"status\"`: Current status of the card, for instance, `\"pending\"`.\n    - `\"date\"`: The date of the card creation.\n    - `\"meta\"`: Any other additional meta information.\n4. `\"isSaveCard\"`: Denotes whether or not to save card information for future payments.\n5. `\"isPrimary\"`: States whether or not this card is the primary card.\n6. `\"provider\"`: The provider of the payment service, in this case, `\"nowpayments\"`.\n\nSome fields are not described as they are empty, such as `\"headers\"` in the request which would contain any additional information or prerequisites that the server needs to fulfill the request. \n\nLastly, this request body has been sent in `\"raw\"` mode, meaning the data has been serialized in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - NowPayments - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"cardId\": \"fae5e22f-5371-4ed0-b566-fb0e70e85970\",\n    \"source\": {\n        \"holderName\": \"John Weak 2\"\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": true,\n    \"provider\": \"nowpayments\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "This API endpoint is for updating an existing card on the 'NowPayments' platform. The endpoint is http://localhost:3000/api/payment/card/update and it uses the 'PUT' HTTP method. \n\nHere's a detailed description of the data that this endpoint works with:\n\n1. `name`: Represents the name of the API endpoint. In this case, it's 'Card - NowPayments - Update.'\n\n2. `request`: This property holds all the request details.\n   \n   a. `method`: Indicates the HTTP method that should be used for this API request. Here, it is 'PUT' which is generally used for updating information on the server.\n   \n   b. `url`: This is the location or route of the API service on the server for updating a card.\n\n3. `headers`: This property is not populated; however, it could be used to pass additional parameter information like authorization tokens, content type etc.\n\n4. `body`: Contains data that needs to be sent to the server to process the 'PUT' request. \n\n   a. `mode`: Shows the format in which data is encoded. Here, it is 'raw.'\n   \n   b. `raw`: Specifies the actual JSON data being transmitted in the body.\n   \n   - `accountId`: Identifies the account for which card information is being updated.\n   \n   - `sessionId`: Denotes a unique session that the server uses to keep track of the interactions.\n   \n   - `cardId`: Unique identifier for the card that needs to be updated.\n   \n   - `source`: Contains additional card details.\n       - `holderName`: The name of the card holder, in this case, 'John Weak 2.'\n   \n   - `isSaveCard`: A boolean value, which when 'true' indicates that the card information should be saved.\n   \n   - `isPrimary`: A boolean value, which when 'true' indicates that the card should be marked as primary.\n\n   - `provider`: Specifies the payment system used, in this case, it's 'nowpayments.'\n   \n   c. `options`: Contains settings that help configure the behavior of the request.\n  \n      - `raw`: This is a subset of 'options' and specifies the language format of the raw data, in this case, 'json.' It helps the system decode the data sent correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - NowPayments - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/?cardId=8ee763f0-d9b3-43ba-b9c0-e3f60be47823&provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "8ee763f0-d9b3-43ba-b9c0-e3f60be47823"
+            },
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "Endpoint: Card - NowPayments - Get\n\nThis endpoint is a \"GET\" request type and used to get the information of a specific card from NowPayments based on the supplied cardId, provider, accountId and sessionId.\n\nDetail Description:\n\n1. \"name\": This field represents the name of the request endpoint. In this case, the endpoint's name is \"Card - NowPayments - Get\" where 'Card - NowPayments' indicates the functionality and 'Get' specifies the http method type used for the request.\n\n2. \"request\": This field contains all the required information that is needed for the API request.\n\n    a. \"method\": This field determines the Http method type. In this case, the method type is \"GET\". A \"GET\" method is used to retrieve data from a server.\n\n    b. \"url\": This is the location to which the request is being sent. The URL is \"http://localhost:3000/api/payment/card/get/\". A query string has been appended to the URL with \"?\" sign and it contains four parameters - 'cardId', 'provider', 'accountId' and 'sessionId'.\n\n          -- 'cardId': It is a unique identifier assigned to a card.\n          -- 'provider': This parameter specifies the payment provider. The provider in this case is 'nowpayments'.\n          -- 'accountId': It is a unique identifier associated specifically with the account.\n          -- 'sessionId': The session identifier signifies the period of interaction between an user and an application.\n\n3. \"headers\": Headers let the client and the server pass additional information with an HTTP request. In this case, headers array is empty which means no additional data is required for the endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - NowPayments - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/?cardId=cardId&provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "cardId"
+            },
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint allows for GET requests to retrieve all \"Card - NowPayments\" records. Here's a breakdown of each data:\n\n1. `name`: This field refers to the name of the endpoint. In this case, it is \"Card - NowPayments - Get All\". This name reflects the purpose of the endpoint, which is to get all records related to NowPayments' card.\n\n2. `request`: The request object contains all the details about the HTTP request that will be made to the API.\n\n   - `method`: This specifies the HTTP method to be used when making a request to the endpoint. In this instance, it is a \"GET\" request. This indicates that we are fetching data from the server.\n\n   - `url`: This is the full URL where the request will be sent. The base is \"http://localhost:3000\", and the URI is \"/api/payment/card/getAll/\". \n\n     There are also URL parameters to be passed along with the request, declared as follows:\n\n     - `cardId`: This is an identifier used to specify a particular NowPayments card record that you're interested in.\n   \n     - `provider`: This parameter is used to specify the payment provider. In this request, the provider is `nowpayments`.\n   \n     - `accountId`: This parameter signifies the account ID associated with the NowPayments card.\n\n     - `sessionId`: This is the session ID for the current user session.\n\n3. `headers`: This is currently an empty array indicating no additional HTTP headers are being sent with the request. Headers can often contain authentication tokens or specify the format of the request body. In this case, no such information is required.\n\nRemember to replace `cardId`, `accountId`, and `sessionId` with the actual values during the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - NowPayments - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"cardId\": \"7a747ae6-b193-456d-88ea-c963c2b1a2ad\",\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Card - NowPayments - Delete\". It's designed to send a POST request to the server, specifically to the URL \"http://localhost:3000/api/payment/card/delete\". The function of this endpoint is to delete the specified card details related to NowPayments.\n\nNo specific headers are required for this request.\n\nThere are several important pieces of data sent in the body of the request:\n\n1) \"accountId\": As the name suggests, this is the account ID associated with the card that needs to be deleted. Replace \"accountId\" with the actual account ID for the request.\n \n2) \"sessionId\": This is the session ID for the current user session. Replace \"sessionId\" with an authenticated session ID tied to the user account from which you are attempting to delete the card.\n  \n3) \"cardId\": This is the unique ID of the card that you wish to delete. In the provided example, it's set as \"7a747ae6-b193-456d-88ea-c963c2b1a2ad\", but you should replace this with the actual ID of the card that needs to be deleted.\n\n4) \"provider\": This is the name of the payment provider. In the provided example, it's set to \"authorizenet\". This should be replaced with the actual name of the provider that was used for the card details.\n\nThe raw data of the body is sent in JSON language, as specified in the \"options\" section. Ensure that you have a correct JSON formatting while sending the data."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - PayPal - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"payment_source\": {\r\n            \"card\": {\r\n                \"number\": \"4005519200000004\",\r\n                \"expiry\": \"2028-12\"\r\n            }\r\n        }\r\n    },\r\n    \"isSaveCard\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "This endpoint is used to create a new PayPal card.\n\n1. `name` - The name of this endpoint, which is \"Card - PayPal - Create ++\".\n\n2. `request` - The information for this request. It has several fields: \n\n    a. `method` - The HTTP verb defining the operation to be performed. Here, it is 'POST' which means we are sending data to the server to create a new resource.\n\n    b. `url` - The endpoint URL where the request is sent. In this case, it is sending to \"http://localhost:3000/api/payment/card/create\".\n\n    c. `headers` - An array to include HTTP headers. This array is currently empty.\n\n    d. `body` - The content of the message that is sent to the server. Here, we are sending in `raw` mode with Json as the language. Below is the detail of the Json body.\n\n        i. `accountId` - The identification of the user’s account.\n\n        ii. `sessionId` - The identification of the user's session.\n\n        iii. `source` - This consists of payment source details which further has `card` details.\n\n           - `payment_source.card.number` - This contains the card number.\n           - `payment_source.card.expiry` - This contains the card expiry date. \n\n        iv. `isSaveCard` - This is a boolean that tells the system whether to save this card details for future transactions. If the value is `true`, it will save the card.\n\n        v. `isPrimary` - This boolean tells if this card is the user's primary card. If it's `false`, this is not a primary card.\n\n        vi. `provider` - The provider of the payment service. Here, it's given as \"paypal\".\n\n3. `options` - This is used to customize processing. It sets the language of the raw data as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - PayPal - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"cardId\": \"payPalCardId\",\r\n    \"source\": {\r\n        \"payment_source\": {\r\n            \"card\": {\r\n                \"number\": \"4005519200000004\",\r\n                \"expiry\": \"2028-12\"\r\n            }\r\n        }\r\n    },\r\n    \"isSaveCard\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Card - PayPal - Update\", is a PUT request type. It's designed to update card details that are associated with PayPal account. The URL for this API is `http://localhost:3000/api/payment/card/update`.\n\nBeing a PUT request, it requires some specific information in the request body sent in 'raw' format. The language of the raw body is JSON.\n\nHere's the data breakdown or specific fields in the request body:\n\n- `accountId`: This field is used to identify the account for which the card update will be carried out. It should be the ID of the account in string form.\n\n- `sessionId`: This field holds a unique ID for identifying the session. This may be used for session tracking or user identification purposes.\n\n- `cardId`: This field represents the unique ID of the PayPal card which is to be updated.\n\n- `source`: This is an object that contains information about the source of payment.\n  \n  - Within `source`, there's a nested object `payment_source` that actually holds the updated payment information.\n  \n    - Under `payment_source`, another nested object `card` includes the new card details.\n     \n      - `number`: This is the new card number.\n      - `expiry`: This represents the new expiry date of the card in \"YYYY-MM\" format.\n\n- `isSaveCard`: This is a boolean field indicating whether or not to save this card for future transactions. If true, the card will be saved for future use.\n\n- `isPrimary`: This is also a boolean field that indicates if this card will be set as the primary card for the account.\n\n- `provider`: This field refers to the payment gateway provider. In this case, it should be set as \"paypal\".\n\nRemember, the request doesn't contain any headers, but might require some according to your application's authentication and authorization policy. Always adhere to your specific application's requirements when making such calls."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - PayPal - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/?cardId=payPalCardId&provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "payPalCardId"
+            },
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint retrieves information related to a PayPal card stored in your system. Here is a detailed description of each parameter in the request:\n\n1. **name**: This is the name of the API endpoint. In this case, it's \"Card - PayPal - Get\". This typically describes the function of a particular endpoint. This endpoint is used to get the PayPal Card information.\n\n2. **request**: This includes details about the HTTP request such as its method, URL, and headers.\n   \n    i) **method**: The HTTP method used for this endpoint is \"GET\". This type of method is used to retrieve data from a resource. Here, it is being used to fetch PayPal card information from the server.\n    \n    ii) **url**: This is the URL to which the request will be sent. The base URL here is \"http://localhost:3000/api/payment/card/get/\". Apart from the base URL, there are several query parameters which need to be included in the URL:\n    \n        - **cardId**: This query parameter is used to pass the unique identifier of the PayPal card whose details you want to fetch.\n        \n        - **provider**: This will be always set as 'paypal' since we are requesting a PayPal card's information.\n        \n        - **accountId**: This is the unique identifier of the user account under which the particular PayPal card is registered.\n        \n        - **sessionId**: The unique identifier of the session during which the API request is made, can be used for tracking and debugging purposes.\n        \n   iii) **headers**: The request does not require any specific headers to be included. But in a typical scenario, this could contain credentials or tokens for authentication, or other metadata such as the content type and length."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - PayPal - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/?customerId=vault_customer_id&provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "page_size",
+              "value": "5",
+              "disabled": true
+            },
+            {
+              "key": "page",
+              "value": "1",
+              "disabled": true
+            },
+            {
+              "key": "total_required",
+              "value": "false",
+              "disabled": true
+            },
+            {
+              "key": "customerId",
+              "value": "vault_customer_id"
+            },
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Card - PayPal - Get All\". It is designed to retrieve all PayPal card details associated with a particular customer.\n\nThe request is done via the \"GET\" method which is typically used to retrieve data from a specified source.\n\nThe URL for the request is \"http://localhost:3000/api/payment/card/getAll/\". This is the endpoint you will send your GET requests to, if you want to retrieve some specific information. This is located on your local server at port 3000 and it is directed towards the api for handling payment card information.\n\nThe URL also contains a few parameters:\n\n1. \"customerId\": This is a unique identifier for the customer whose card details you want to retrieve. You need to replace 'vault_customer_id' with the actual customer id while making a request.\n\n2. \"provider\": This is the payment provider. In this case, it is set to PayPal.\n\n3. \"accountId\": This is an identifier for the customer's account. You should replace 'accountId' with the actual account id while making a request.\n\n4. \"sessionId\": This parameter carries the ID of the current session, which can be used for session management on the server-side. You should replace 'sessionId' with the actual session id while making a request.\n\nThe headers section is currently empty, meaning no additional metadata is sent within the request. Depending on your API's needs, headers might typically include authorization, content-type specification or other types of identification information. In this case, you do not need to add any information in the headers to make your request."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - PayPal - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"cardId\": \"payPalCardId\",\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Card - PayPal - Delete\". It represents a service called when you want to delete a particular PayPal card that exists in your account. The request it handles is of the \"POST\" method.\n\nThe URL endpoint for this is \"http://localhost:3000/api/payment/card/delete\". This is essentially the location where the server that this service calls home resides, and it listens for incoming requests in order to facilitate operations related to the payment card deletion.\n\nThere are no additional network-related specifications or constraints captured in this endpoint; this is stated clear by the empty \"headers\" field.\n\nThe body of the request submitted to the \"Card - PayPal - Delete\" endpoint is in raw format and specifies JSON as the language in which the keys and values are written. The raw data contains the following fields:\n\n- \"accountId\": This represents the unique identifier of the account that owns the PayPal card being deleted. This field is mandatory to ensure that the card is linked to the right user account.\n\n- \"sessionId\": This is the unique identifier for the session in which the operation is being performed. It's used for tracking the user's interaction with the service and ensuring security of the operation. \n\n- \"cardId\": Identified as \"paypalCardId\", this specifies the unique identity of the PayPal Card in question that needs to be deleted. This ID will be used to specify the exact card attached to the account intended for deletion. \n\n- \"provider\": This field expectedly contains the string value \"paypal\" indicating that the provider of the card being deleted is PayPal. This field is necessary to identify the payment gateway involved in the operation.\n\nFinally, the 'options' field specifies the formatting options for the request body. In this case, it indicates that the content type of the body is 'raw' and the language used is 'json'.\n\nAll these data fields are necessary for this API endpoint to successfully execute a request and perform the intended operation which is to delete a card from the payment options of the user's account."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Stripe - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"number\": \"4242424242424242\",\r\n        \"exp_month\": \"5\",\r\n        \"exp_year\": \"2026\",\r\n        \"cvc\": \"314\"\r\n    },\r\n    \"isSaveCard\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "This endpoint, named \"Card - Stripe - Create ++\", is utilized to create a new Stripe payment card. It is a POST method, indicating that data will be sent to the specified URL (http://localhost:3000/api/payment/card/create) to create or update a resource.\n\nThe main details sent in the request body are well-formatted in JSON language as indicated by the \"raw\" option. Let's discuss in detail about each data:\n\n1. `accountId`: This represents the ID associated with the account for which the card is being created. Replace \"accountId\" with the actual account ID.\n2. `sessionId`: This is the ID that uniquely identifies the session. Replace \"sessionId\" with your current session ID.\n3. `source`: This field includes essential card information:\n   - `number`: This is the credit/debit card number. The sample given here is \"4242424242424242\". Be sure to replace this with an actual card number.\n   - `exp_month`: This denotes the card's expiration month. It should be replaced with the actual expiry month of the card. The sample data provided is \"5\".\n   - `exp_year`: This refers to the card's expiration year that needs to be replaced by the actual expiry year of the card. The sample data provided is \"2026\".\n   - `cvc`: This is the verification code of the card. It should be replaced with the actual CVC of the card. The sample data provided is \"314\".\n4. `isSaveCard`: Determines whether or not the card should be saved for future transactions. It's a boolean field taking either 'true' or 'false'. In provided example, the value is 'true', implying the card details should be saved.\n5. `isPrimary`: Indicates whether the card should be set as the primary card for the account. It's also a boolean field. Here it's set to 'false', meaning this card shouldn’t be the primary one.\n6. `provider`: Specifies the payment provider, 'stripe' in this case. \n\nRemember to replace all placeholder values with actual data to successfully execute the API."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Stripe - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"cardId\": \"cardId\",\r\n    \"source\": {\r\n        \"number\": \"4242424242424242\",\r\n        \"exp_month\": \"5\",\r\n        \"exp_year\": \"2026\",\r\n        \"cvc\": \"314\"\r\n    },\r\n    \"isSaveCard\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "This is a PUT request, which is meant for updating an existing resource. \n\nIn this case, the endpoint is named \"Card - Stripe - Update\". The purpose of this endpoint is to update the details of an existing payment card associated with a Stripe account. The request is made to the URL: \"http://localhost:3000/api/payment/card/update\".\n\nThere are several key data values in the request body, each of which should be filled in with the appropriate user-specific data:\n\n- `accountId`: This is the ID of the account which the card belongs to. You should replace the placeholder \"accountId\" with the actual account ID.\n\n- `sessionId`: This is the ID of the current session. You will need to replace \"sessionId\" with your actual session ID.\n\n- `cardId`: This is the ID of the card you want to update. Replace \"cardId\" with the actual ID of the card.\n\n- `source`: This is an object that contains the following card details:\n  \n  - `number`: The 16 digit card number. The placeholder \"4242424242424242\" should be replaced with the actual card number.\n \n  - `exp_month`: The expiration month of the card. Replace the placeholder \"5\" with the actual expiration month.\n  \n  - `exp_year`: The expiration year of the card. Replace the placeholder \"2026\" with the actual expiration year. \n\n  - `cvc`: The card verification code. Replace the placeholder \"314\" with the actual CVC of the card.\n\n- `isSaveCard`: This is a boolean indicating whether the card details should be saved for future transactions. The value is set to true.\n\n- `isPrimary`: This is a boolean indicating whether the card should be set as the primary card for the account. The value is set to true.\n\n- `provider`: This is the name of the card provider. In this case, the provider is \"stripe\".\n\nThe \"options\" object contains information about the formatting of the body content. The \"language\" key indicates that the body content is formatted in JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Stripe - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/?cardId=stripeCardId&provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "stripeCardId"
+            },
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Card - Stripe - Get\". Its purpose is to retrieve information about a specific card from the Stripe payment gateway. \n\nTo use this end point, execute a GET request to the URL \"http://localhost:3000/api/payment/card/get/\". This endpoint will return the details of a card registered to a specific account and session through Stripe, which can be identified using the below parameters:\n\n1. Query Parameter: cardId=stripeCardId\n    This is the unique identifier of the card with respect to Stripe. It's a required parameter to specifically identify which card's details are to be fetched.\n\n2. Query Parameter: provider=stripe \n    This parameter denotes that the gateway provider is 'Stripe'. It is essential to specify the provider as 'Stripe' as it plays a major role in deciding how the server will interact and fetch the information. \n\n3. Query Parameter: accountId=accountId\n    This is used to specify the account that is linked with this card in Stripe. \n\n4. Query Parameter: sessionId=sessionId\n    This parameter is the session id for the current active session. This could potentially be used for verifying and maintaining the security aspects in the server interaction.  \n\nThe request does not require any additional headers.\n\nThe endpoint will communicate with Stripe's APIs to retrieve and return the detailed information about the card specified by the 'stripeCardId' parameter. The returned information generally includes card number, expiry date, and other details, in a secure, highly encrypted format.\n\nRemember, all these parameters are obligatory and have to be provided to successfully process the request.\n\nPlease replace the 'stripeCardId', 'accountId' and 'sessionId' with the actual values during the final request.\n\nImportant: As with all API calls that involve sensitive data, ensure this request is made securely over the network."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Stripe - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/?provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled `Card - Stripe - Get All`. It's a GET request which means it is used to retrieve information. All data retrieval is handled via this endpoint. \n\nThe URL for the endpoint is `http://localhost:3000/api/payment/card/getAll/`. It is structured as follows:\n\n- `http://localhost:3000/` is the base URL which is generally the entry point of the API.\n\n- `/api/payment/card/getAll/` is the path to the specific resource you are wanting to interact with. In this case, it is to get all cards associated with a particular payment. \n\nThere are also URL parameters that are needed:\n\n- `provider` parameter is used to specify the payment provider. In this example, it is set to 'stripe'. This parameter is used to determine which payment provider's API should be used to process the request.\n\n- `accountId` parameter is used to specify the account the cards are associated with. The accountId is unique for each user's account.\n\n- `sessionId` parameter is used to maintain a session for the user. It's used for identifying the user's session across multiple requests.\n\nThere are no headers specified in the request. Headers generally include more metadata about the request like authentication tokens, content type etc.\n\nSo, in a nutshell, this endpoint retrieves all the card information of a particular account from the payment provider Stripe."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Stripe - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"cardId\": \"stripeCardId\",\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is labeled as \"Card - Stripe - Delete\". It utilizes a POST request and is designed to delete a specific payment card associated with a given account on Stripe. The endpoint's URL is \"http://localhost:3000/api/payment/card/delete\".\n\nHere is a rundown of the different elements involved in this endpoint:\n\n1. `name`: This defines the identity of the endpoint. In this case, its value is \"Card - Stripe - Delete\", indicating that this endpoint is for deleting a card in the Stripe payment system.\n\n2. `request`: This contains the specificities of the HTTP request. It includes the HTTP method, URL, and other elements such as headers and body.\n\n3. `method`: Specifies the HTTP method used. The value is \"POST\", which means data will be sent as part of the request.\n\n4. `url`: This shows the endpoint's URL or path. It is \"http://localhost:3000/api/payment/card/delete\".\n\n5. `headers`: At the moment, this is an empty array, indicating that there are no additional headers included in the HTTP request.\n\n6. `body`: Contains the actual data that will be sent with the POST request. The `body` is divided into a few parts: `mode`, `raw`, and `options`.\n\n   - `mode`: Its value is \"raw\", indicating that the data will be sent as a raw input.\n   \n   - `raw`: This contains the actual raw data to be sent. It is in a JSON format including the following keys:\n     \n     - `accountId`: A string that identifies the account in concern. \n     \n     - `sessionId`: A string that provides the session ID. This is usually needed for authentication purposes.\n     \n     - `cardId`: A string denoting the unique ID of the card on Stripe that should be deleted.\n     \n     - `provider`: Denotes the payment provider. Its value should always be \"stripe\" in this context.\n\n   - `options`: These are the options for the raw input. The `language` is set to \"json\", which specifies that the raw data uses the JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - BitPay - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveCard\": true,\"isPrimary\": false, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Card - BitPay - Create\". It represents a functionality to create a new card entry using BitPay as a payment provider.\n\nThe request type is POST which is usually used for creating new entries.\n\nThe targeted URL where this API will hit is 'http://localhost:3000/api/payment/card/create', which ideally would trigger the server-side - to create a new card for payment.\n\nThis endpoint does not require any request headers.\n\nThe request body must be a raw JSON payload with the following attributes:\n\n1. \"accountId\": A string that represents the unique identifier of the account. You'll need to replace this placeholder with the actual ID.\n\n2. \"sessionId\": A string that signifies the session identifier. Replace this with the actual session.\n\n3. \"source\": This can accept any value, however in this case, it is set to null.\n\n4. \"isSaveCard\": A boolean that indicates whether the card should be saved for future transactions.\n\n5. \"isPrimary\": A boolean that indicates whether the card should be set as the primary card for the user.\n\n6. \"provider\": The provider attribute has been set to 'bitpay', denoting the card's payment provider.\n\nThe 'options' object within the 'body' object indicates \"raw\" data is being sent in the 'body', and the \"language\" has been set to 'json' signifying the raw data will be in JSON format.\n\nEnsure that the data types of your input match the required format before sending the request to the server."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - BitPay - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"cardId\":\"cardId\",\"source\": null,\"isSaveCard\": true,\"isPrimary\": true, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "This API endpoint is a PUT request titled \"Card - BitPay - Update\". It is designed to update the status and information of a payment card related to a BitPay account. The URL of this endpoint is \"http://localhost:3000/api/payment/card/update\". Currently, it doesn't require any specific headers.\n\nIn this endpoint, the body of the request constitutes several parameters which are as follows:\n\n1. `accountId`: This string-type field represents the unique identifier that points to a specific user account. This is required to identify and make changes to the correct user account.\n\n2. `sessionId`: This string-type field references the particular session during which the update is being executed. It ensures trackability and security for transactions.\n\n3. `cardId`: A string-type field that denotes the unique identifier of the specific card linked to the user account, that needs to be updated.\n\n4. `source`: This nullable field can be used to specify the origin or the source from which the update request is coming. \n\n5. `isSaveCard`: This Boolean-type field indicates whether the user wants to save the updated card details for future transactions. If true, the card details will be saved, if not, the details will not be saved.\n\n6. `isPrimary`: This Boolean-type field is used to mention if the updated card should be the primary card for future transactions. The value will be true if it is to be set as a primary card, and false otherwise.\n\n7. `provider`: This field specifies the name of the payment provider. In this case, it is \"bitpay\".\n\nThe request body is sent as a raw JSON data format and the \"language\" value is set to \"json\" under the \"options\" key, which implies that the server should interpret the body content as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - BitPay - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/cardId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            "{{cardId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is named \"Card - BitPay - Get\". It serves the purpose of retrieving card details associated with BitPay.\n\nThe API uses the HTTP GET method to fetch data. Once invoked, it sends a request to the server located at \"http://localhost:3000/api/payment/card/get/cardId\".\n\nThe URL of this API contains several parameters as noted below:\n\n1. `provider` : This indicates the provider of the payment card. In this case, the provider is set to BitPay.\n2. `accountId` : The accountId in the URL represents the account identifier. This is a unique identification associated with each account.\n3. `sessionId`: This is a unique identifier for the session in which the request is made. The sessionId changes for each session.\n\nThe endpoint is not configured to send any headers in its request.\n\nPlease replace `cardId`, `accountId` and `sessionId` in the URL with actual values to make a successful request. It's also worth noting that this URL will only work on the local instance of your server running at port 3000, unless you replace `localhost:3000` with your deployed server link.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Card - BitPay - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/cardId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            "{{cardId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint represents a GET request to fetch all BitPay Cards.\n\nFields detail:\n\n- `name`: This specifies the name of the API call. In this case, the call is named \"Card - BitPay - Get All\" which may mean that the endpoint retrieves all the cards linked with BitPay.\n\n- `request`: This object contains detailed information about the API request.\n\n  - `method`: Defines the HTTP method used for the API call. Here \"GET\" is used, which means we are retrieving data from this endpoint.\n\n  - `url`: The URL field contains the actual API endpoint. In this case, `http://localhost:3000/api/payment/card/getAll/cardId` is the URL for calling the API. Please note that this is currently set up to run on a local server (localhost) at port 3000.\n\n    - The URL has some parameters such as `provider`, `accountId`, and `sessionId`.\n\n      - `provider=bitpay`: This identifies the payment provider for the card. In this case, the provider is set as 'bitpay'.\n      \n      - `accountId=accountId`: This could be a variable in which 'accountId' placeholder should be replaced with an actual account ID. An account Id is normally the account identifier specific to the user.\n      \n      - `sessionId=sessionId`: The 'sessionId' placeholder seems to be for passing an active session ID. The session ID is often used to identify the user's session.\n\n- `headers`: Headers are often used to give the server additional information about the request. This field is currently empty indicating that no extra HTTP headers are being sent with this API request."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - BitPay - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"cardId\":\"cardId\",\"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Card - BitPay - Delete\", it allows you to delete a payment card from the BitPay provider, and its method is \"POST\".\n\nThe request URL where this endpoint will hit is \"http://localhost:3000/api/payment/card/delete\". You need to replace 'localhost:3000' with your own server's address and port. \n\nNo headers are required for this request.\n\nThe body of the request is in 'raw' mode, which signifies that your data may not necessarily be in a particular format, but in this case, it should be in JSON format as specified in the \"options\". Your request body should be a raw JSON as an input.\n\nHere is the brief information of each field you need to include in your request body:\n\n1. \"accountId\": It's the unique identifier representing a user account. Replace \"accountId\" with your actual account ID that you want to associate with this request.\n\n2. \"sessionId\": This is the unique identifier for the current session. Replace \"sessionId\" with your actual session ID for the interactive user session.\n\n3. \"cardId\": This is the unique identifier of the payment card that needs to be removed. Replace \"cardId\" with the actual ID of the card.\n\n4. \"provider\": This is the name of the payment gateway provider. In this case, it is always \"bitpay\". \n\nRemember to replace all placeholder values with actual data before sending the request.\n\nThe 'options' property in the body shows that the 'language' is 'json', it tells the server to expect a JSON formatted raw data in the body part of the request.\n\nUpon calling this endpoint, the specified payment card associated with the provided accountId and sessionId will be removed from the BitPay provider. Please handle the response accordingly to capture the outcome of the deletion process."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - CashApp - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveCard\": true,\"isPrimary\": false, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "Here's a detailed description of each data in the endpoint:\n\n- **name**: The name represents the unique designation for this specific endpoint. Here, the name \"Card - CashApp - Create\" denotes that the purpose of this endpoint is to create a card in the context of the CashApp.\n\n- **request**: The 'request' object contains all the information needed for making a server request.\n\n    - **method**: This field takes a HTTP method, such as GET or POST. For this endpoint \"POST\" is used, indicating that data is being sent to the server for processing.\n\n    - **url**: The URL to which the HTTP request should be sent. In this case, the URL is a local http address - `http://localhost:3000/api/payment/card/create`, indicating a local server for processing card creation in payment routing.\n\n    - **headers**: Should contain any necessary HTTP headers in key-value pairs. In this endpoint, there are no headers needed.\n\n    - **body**: The body includes the main content of your HTTP request.\n\n        - **mode**: The mode of the data sent - in this case 'raw' which means it is sent as a string of text.\n        \n        - **raw**: The raw body of request. Here, it includes inputs such as 'accountId', 'sessionId', 'source', 'isSaveCard', 'isPrimary',and 'provider'.\n             \n            - 'accountId': The unique identifier for the account associated with the card.\n            \n            - 'sessionId': A unique ID associated with the current session of the API interaction.\n            \n            - 'source': Denotes the source of the card info. Here, it's null meaning no specific source is given.\n            \n            - 'isSaveCard': A boolean value that indicates if the card is saved or not. 'true' means the card is saved to the account.\n            \n            - 'isPrimary': Another boolean value which tells if the card is the primary card for the account. If it's 'false', it means it's not the primary card.\n            \n            - 'provider': A string specifies the type of the payment provider. \n              \n        - **options**: Here, it dictates how the 'raw' data should be treated. Specifying 'json' under 'language' means the data should be interpreted as a JSON object.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Card - CashApp - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"cardId\":\"cardId\",\"source\": null,\"isSaveCard\": true,\"isPrimary\": true, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "The endpoint `Card - CashApp - Update` performs a `PUT` method update operation to modify card-related information in the payment service. It communicates with the service over the URL http://localhost:3000/api/payment/card/update. The endpoint doesn't need any specific headers.\n\nThe data sent to the endpoint through the request body includes:\n\n1. `accountId`: It is a required field in the body of the request. It represents the unique identifier for the account to which this card data is associated.\n\n2. `sessionId`: This identifier is used to maintain a session between client and server. The server keeps track of this sessionId to recognize subsequent requests from the same user.\n\n3. `cardId`: It is the unique identifier for the card that needs to be updated.\n\n4. `source`: The original source from which the card data comes from. This field takes a null value in the provided request.\n\n5. `isSaveCard`: It is a boolean value. If set to `true`, it indicates the card would be saved for future transactions. \n\n6. `isPrimary`: Another boolean field. If set to `true`, it means that this card is set as the primary card for the respective account.\n\n7. `provider`: This refers to the payment provider that handles the transactions. In this case, it specifies that the provider is \"cashapp\".\n\nThe body data is raw and formatted in `JSON` language as indicated by the `options` field. \n\nThis endpoint essentially allows for update operations to card data in accounts linked to CashApp, controlling aspects such as whether to save the card details and whether to set it as the primary card."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - CashApp - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/cardId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            "{{cardId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Card - CashApp - Get\" and it uses the HTTP method 'GET'. It is configured to fetch payment card information provided by CashApp from the application running on your local server at port 3000 (localhost:3000).\n\nIn detail, let's break down the URL: \"http://localhost:3000/api/payment/card/get/cardId?provider=cashapp&accountId=accountId&sessionId=sessionId\"\n\n'http': This is the protocol being used for the request, which is Hypertext Transfer Protocol in this case.\n\n'localhost:3000': This is the host and port where the application is running. Typically this represents the base URL of the application.\n\n'/api/payment/card/get/cardId': This is the path to the specific endpoint that handles fetching a payment card information. 'cardId' is a placeholder and it should be replaced with the actual id of the card you want to retrieve.\n\n'provider=cashapp': This is a query parameter. It specifies that the card provider is CashApp, it is crucial for targeting the right service for fetching the card data.\n\n'accountId=accountId': This is another query parameter. It is a placeholder that should be replaced with the account id associated with the card you're trying to get information for.\n\n'sessionId=sessionId': It is yet another query parameter. You should replace it with the session id related to the user's current session.\n\nThe 'headers' field is currently an empty array, meaning there are no additional HTTP headers to send with the request. Depending upon the implementation details of your application, you might need to include some headers such as authentication tokens and content-type."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - CashApp - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/cardId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            "{{cardId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is associated with the functionality of fetching all card details for a particular CashApp account. The endpoint is named \"Card - CashApp - Get All\". Here is a detail description of all data points regarding this endpoint:\n\n1. `\"name\": \"Card - CashApp - Get All\"` - Represents the name of the endpoint. It is used to identify the particular endpoint in a collection of API endpoints.\n\n2. `\"request\"` - This includes all the necessary details required to make the API request.\n\n3. `\"method\": \"GET\"` - This indicates the HTTP method to be used when making the API request. A \"GET\" method is used to retrieve data from a specified resource.\n\n4. `\"url\"` - This is the URL where the API request will be sent. It specifies where the server that will respond to the request is located. In this case, the url is `http://localhost:3000/api/payment/card/getAll/cardId`\n\n5.  `provider` - This is a parameter in the URL where you specify the card provider. For this endpoint, it is set to \"cashapp\".\n\n6. `accountId` - This is also a parameter in the request URL. It is used to specify the ID of the account for which cards information are being requested.\n\n7. `sessionId` - This parameter in the URL is used to maintain an ongoing user session.\n\n8. `\"headers\": []` - This parameter is used to provide additional information with the HTTP request. However, as it is an empty array, there are no additional headers used in this API request."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - CashApp - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"cardId\":\"cardId\",\"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint refers to the \"Card - CashApp - Delete\" function. It involves the following data:\n\n- **Name**: Name of the function, which is \"Card - CashApp - Delete\".\n\n- **Request**: Information about the request being sent. \n    - **Method**: The HTTP method used, which is \"POST\". This is used when the client needs to send data to the server to create a resource.\n    - **URL**: The URL or API endpoint where the request will be sent. This URL is \"http://localhost:3000/api/payment/card/delete\".\n    - **Headers**: Headers that need to be included in the HTTP request. In this case, none are specified.\n    - **Body**: The body of the request, which contains the data to be sent to the server.\n        - **Mode**: Indicates the format of the data sent, which is \"raw\" in this case.\n        - **Raw**: The raw content to be sent. It contains the following fields:\n            - **accountId**: The unique identifier of the account.\n            - **sessionId**: The unique identifier of the session.\n            - **cardId**: The unique identifier of the card to be deleted.\n            - **provider**: The provider of the card, which is \"cashapp\".\n        - **Options**: Options related to the request body. \n            - **Raw**: Indicates the language format of the raw content sent, which in this case is \"json\". Specifies that the data is exchanged in JSON (JavaScript Object Notation) format, a popular lightweight data-interchange format which is easy to read and write."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Venmo - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveCard\": true,\"isPrimary\": false, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "This endpoint creates a new Venmo card.\n\nThe endpoint takes the following data:\n\n1. `method`: This represents the HTTP method used by the API. In this case, it's POST which means a data object is being sent to the API.\n\n2. `url`: This is the URL path of the API endpoint where the request will be sent. Here the URL is: \"http://localhost:3000/api/payment/card/create\". This route is used for creating a new payment card.\n\n3. `headers`: This part is currently empty which indicates that there are no additional headers to be sent for this request.\n\n4. `body`: This is the actual data that is being sent to the API. This data is in the JSON format.\n\n- `mode`: This specifies the format of the body data. In this case, it's \"raw\" which means the data is in raw format and not form-data.\n\n- `raw`: This contains the actual payload that is sent to the server. Following details are sent:\n\n    - `accountId`: The account ID to which this card will be associated.\n  \n    - `sessionId`: The session ID through which the user is logged in.\n  \n    - `source`: This field is currently null which indicates that no extra information about the source of request is being sent.\n  \n    - `isSaveCard`: A boolean value that indicates whether the card needs to be saved for later use or not. If true, the card will be saved.\n  \n    - `isPrimary`: A boolean value that indicates whether this card will be set as a primary card for the account.\n  \n    - `provider`: The name of the card provider. In this case, it's \"venmo\".\n\n5. `options` : It specifies any additional options tied to assigning language to the payload. In this case, JSON has been assigned as body language."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Venmo - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"cardId\":\"cardId\",\"source\": null,\"isSaveCard\": true,\"isPrimary\": true, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Card - Venmo - Update\". It is targeted towards updating the Venmo card details associated with an account. Here are the details of each data field:\n\n1. **name**: Specifies the name of the endpoint, in this case, it's \"Card - Venmo - Update\".\n\n2. **request**: Houses the details about the HTTP request.\n\n     - **method**: Specifies the HTTP method to use. For this endpoint, the \"PUT\" method is applied indicating that it updates data.\n     \n     - **url**: The URI where the request will be sent. Here it is using the local server on port 3000 with the path \"/api/payment/card/update\".\n     \n     - **headers**: A field for optional metadata to be sent in HTTP headers. This is left empty in this case indicating no additional headers are required.\n\n     - **body**: This carries the payload or the data content to be processed by the server. \n\n       - **mode**: Indicates the data format of the body. It will be in \"raw\" format.\n       \n       - **raw**: Houses the actual raw data to be sent. This must be a string. Here the attributes include:\n       \n         - **accountId**: The unique id associated with an account.\n         \n         - **sessionId**: The id of the current session.\n         \n         - **cardId**: The id associated with the specific card which needs to be updated.\n         \n         - **source**: This is a nullable field and does not necessarily require to be filled out.\n         \n         - **isSaveCard**: A boolean function to indicate whether to save the card details for future transactions. It's set to true, indicating that the card details will be saved.\n         \n         - **isPrimary**: Another boolean function to indicate if the card is the primary method for doing transactions. This is set to true, indicating that this card is the primary method for transactions.\n         \n         - **provider**: Specifies the payment provider. Here it is \"venmo\".\n        \n       - **options**: It holds any additional options. Here, it specifies the language of the raw data as JSON.\n\nThrough this endpoint, you can update Venmo card details for an account. Remember to replace placeholders (e.g., \"accountId\", \"sessionId\", \"cardId\") with actual values during the implementation."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Venmo - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/cardId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            "{{cardId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is labeled as \"Card - Venmo - Get\". It is a GET request that pulls information related to a specific card used for Venmo payments.\n\nDetails of the data in this endpoint:\n\n- \"name\": This field indicates the name of the endpoint. In this case, it is entitled \"Card - Venmo - Get\". \n\n- \"request\": This object houses the setup for the HTTP request that invokes this endpoint.\n\n  - \"method\": The type of HTTP request to be made. For this endpoint, it is a GET request which is used for retrieving data from the server.\n\n  - \"url\": This specifies the location of the server that will process the request and includes the parameters that specify the subset of the data to be returned. In this case, the endpoint is located on the localhost server at port 3000, following the path \"/api/payment/card/get/cardId\".\n\n- URL Parameters:\n\n  - \"provider\": This parameter determines the payment provider. In this instance, it is always set to 'venmo'.\n\n  - \"accountId\": This parameter is used to pass the unique identifier of an account to the server. The actual accountId needs to be supplied in the actual request in place of 'accountId' placeholder.\n\n  - \"sessionId\": It is used to pass the current session's unique identifier to the server. Replace 'sessionId' placeholder with actual sessionId in the request.\n\n- \"headers\" - This is currently an empty array where you could add request headers if necessary. Request headers are additional instructions sent with the GET request. For example, you might include \"Content-Type: application/json\" if your GET request needs to send JSON-formatted information.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Venmo - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/cardId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            "{{cardId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is used to retrieve all the card details from Venmo.\n\n1. `name` : This indicates the name of the API endpoint. It is “Card - Venmo - Get All” in this case. This name is used for identification purposes. It could be the specific operation that this endpoint carries out.\n\n2. `request`: This is the main part of the API endpoint. It contains information about the type of request, the URL, headers and other data that the server may need to process and respond to the request.\n\n   - `method` : This indicates the HTTP method to be used when making the request. In this case, it is 'GET', which means this API endpoint retrieves data from the server.\n \n   - `url` : This is the URL to which the request should be sent. \"http://localhost:3000/api/payment/card/getAll/cardId?provider=venmo&accountId=accountId&sessionId=sessionId\" is the URL in this case. This is the address that will be accessing the \"Get All Card Information\" functionality in the Venmo service.\n\n   - The URL also contains query parameters:\n     - `provider` : The provider parameter is used to specify the payment platform, which is 'venmo' in this case.\n     - `accountId` : This is the unique identifier representing a specific account on Venmo. Replace 'accountId' with the actual account ID.\n     - `sessionId` : Represents a session established by the user at a given time. Replace 'sessionId' with the actual session ID.\n\n   - `headers` : While it's empty here, this would typically be used to specify additional HTTP headers that should be included in the request. These could include things like authentication tokens, content type specifications and more.\n\nSo, when using this endpoint, replace `accountId` and `sessionId` with the accurate values as per your needs to get all the Venmo card details associated with the given account."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Venmo - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"cardId\":\"cardId\",\"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named 'Card - Venmo - Delete'. When used, it will send a POST request to 'http://localhost:3000/api/payment/card/delete'. This is designed to delete a Venmo card that is associated with a given account and session ID.\n\nThe different data fields for this endpoint are:\n\n1. \"name\" : This is the name identifier of the endpoint, adding context to what the purpose of the endpoint is. Here the \"name\" is 'Card - Venmo - Delete', implying that this endpoint is designed to delete a card associated with a Venmo account.\n\n2. \"request\" : This contains the details of the request to be made while accessing the URL. It's a POST method implying data is sent to the server to create/update a resource.\n\n3. \"method\" : In the request block, \"method\" describes the HTTP method to be used when the request is made to the server. Here, it's a 'POST' method, which means that it will send data to the server.\n\n4. \"url\" : This is the server URL that the API request will be made to. For this endpoint, the URL is 'http://localhost:3000/api/payment/card/delete'.\n\n5. \"headers\" : This would usually encompass additional parameters that need to be included in the API call, such as api-key, content-type, etc. In this case, it's left as an empty array, indicating no additional headers are needed for this endpoint.\n\n6. \"body\": Contains details that need to be sent through the HTTP request. Here, we have specific modes like \"raw\" and \"options\".\n\n   a. \"mode\" : Specifies how the data in the 'body' section is being transmitted. Here, it's set to 'raw', implying the data will be sent just as it is without any encoding or multipart forms.\n\n   b. \"raw\" : It's a mode inside the body where you provide the data to be sent in a raw manner. In this endpoint, the data being sent are 'accountId', 'sessionId', 'cardId', and 'provider' which are necessary attributes to delete the card.\n\n   c. \"options\" : This specifies additional settings. Nested inside this key is 'raw' which contains 'language' set to 'json', implying the data being sent is in the JSON format.\n\nTo summarize, this endpoint is used to delete a Venmo card. It requires account ID, session ID, card ID, and the provider name (in this case, Venmo) to successfully execute this operation."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Zelle - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveCard\": true,\"isPrimary\": false, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "create"
+          ]
+        },
+        "description": "Endpoint Title: Card - Zelle - Create\n\nThis endpoint describes the API call for creating a new card using the Zelle payment provider. It employs a \"POST\" method used to create a resource in a database, allowing users to create a new card linked with specific account details.\n\nDetails:\n\n1. Method: POST \nThe request employs a \"POST\" method indicating it is used to send data to 'create' a resource on a server-side database. \n\n2. URL: http://localhost:3000/api/payment/card/create\nThe URL indicates the route to a local server's Create Card API used for creating a new card for a payment gateway.\n\n3. Name: Card - Zelle - Create\nThe name suggests that this endpoint is defined for creating a card using the 'Zelle' payment provider.\n\n4. Headers: None\nNo further header information is required to authorize or give additional details about this request.\n\n5. Body:\n   - Mode: Raw\nIt needs raw data input, where you will enter a raw JSON object containing the data to create a new card.\n\n   - accountId: This is a string value representing the owner's account id; it indicates who the newly created card will be associated with.\n\n   - sessionId: This is another string value representing the session id, used to track interactions with the server, ensuring requests come from valid users.\n\n   - source: This value represents the source through which the card creation was initiated. However, here, it is set to null.\n\n   - isSaveCard: This boolean value indicates whether the user desires to save the card for easier future payment interactions. If true, the card details will be stored for future use.\n\n   - isPrimary: Another boolean value that specifies whether this card is a primary card. By default, it is set to false, indicating it's not the main card for this account.\n\n   - provider: This string explicitly states the card's payment service provider. Here, 'Zelle' is used.\n\n6. Options:\n   - Language: JSON\nThe request body should be written in JSON format.\n   \nIn conclusion, this endpoint is used to create a new card using the Zelle payment provider with defined account and session details."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Zelle - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"cardId\":\"cardId\",\"source\": null,\"isSaveCard\": true,\"isPrimary\": true, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "update"
+          ]
+        },
+        "description": "This endpoint is associated with the name 'Card - Zelle - Update'. It is responsible for making a 'PUT' HTTP request to update the payment card information linked with Zelle. The URL for this request is 'http://localhost:3000/api/payment/card/update'. There are no custom headers involved in this request.\n\nThe request body is strictly in a raw format, containing JSON data. It houses the following pieces of data:\n\n1. `accountId`: A string type field that provisions the unique identifier of the account where the card is being updated.\n\n2. `sessionId`: A string that represents the unique identifier of the session in which the card is being updated.\n\n3. `cardId`: A string that signifies the unique identifier of the card which is being updated.\n\n4. `source`: A field which can either contain a string or null. In this current setup, it's null. It might be used to specify the source from which the update request is initiated.\n\n5. `isSaveCard`: A boolean field to indicate whether or not to save the card for future use. In this case, it is set to true, meaning the preference is to save the card.\n\n6. `isPrimary`: Another boolean field to indicate whether this card is to be set as the primary card or not. Here, it is set to true, meaning this card will be designated as the primary card.\n\n7. `provider`: A string field that specifies the payment processing provider. In this case, it is set to 'zelle'.\n\nThe `options` object defines the language of the raw request body. In this case, the language is set as 'json'."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Zelle - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/cardId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            "{{cardId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is named \"Card - Zelle - Get\". \n\n1. __Method__: It uses the `GET` method, which typically requests data from a resource without any side-effects.\n\n2. __URL__: The URL for this endpoint is \"http://localhost:3000/api/payment/card/get/cardId\". This is the local server address where the API resides. You should replace `cardId` with the actual ID of the card you want to get information about. It represents a specific card that exists in your system.\n\n3. __Query Parameters__:\n    \n    - __provider__: This parameter should be set to \"zelle\". This reveals that the underlying form of payment connected with the card is facilitated by Zelle.\n    - __accountId__: This parameter should contain the account ID associated with the user. It is a unique identifier that refers to a specific user in your system.\n    - __sessionId__: This parameter should contain a unique session ID generated for a particular user session. It helps in maintaining the state and tracking the behaviour of a user during a session.\n\n4. __Headers__: As of now, the request doesn't require any specific headers. Headers in HTTP requests provide additional parameters that are needed by the API endpoint to process the request. Since it is empty, no extra data is needed in the headers for this API call. However, based on the requirements like authentication, content type etc., it might be required in the future.\n\nIn summary, this API is designed to retrieve card information associated with a specific account using Zelle as the provider. A unique `cardId`, `accountId`, and `sessionId` needs to be specified in the URL to get the information."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Zelle - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/getAll/cardId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "getAll",
+            "{{cardId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Card - Zelle - Get All\". It's a GET API request which aims to retrieve all the card information related to the payment provider Zelle.\n\nHere's a detailed breakdown of each data:\n\n- `name`: The name of this endpoint is \"Card - Zelle - Get All\". It suggests that this endpoint is used to retrieve all Zelle card information.\n\n- `method`: This field specifies the request method used which is GET. GET is used when you want to retrieve data from a server.\n\n- `url`: The URL field provides the path to which the request will be sent. In this case, the URL is \"http://localhost:3000/api/payment/card/getAll/cardId\". This suggests that the API will be hitting a local server on port 3000 to execute the request. The call is to the 'payment' service, specifically to get all the cards of type 'Zelle'. It also indicates that 'cardId' is passed in the URL as a path parameter.\n\n    - The URL contains a few query parameters:\n        - `provider`: It specifies the payment provider which is set as 'zelle'.\n        - `accountId`: This query parameter is used to pass the specific account ID for which payment card data is fetched.\n        - `sessionId`: This query parameter is to pass the session ID. Most likely, it is used for session management and tracking the user session.\n\n- `headers`: As of now, there are no custom headers specified in the request. Headers often contain metadata and additional information such as content type, authorization information etc. that the server should know about."
+      },
+      "response": []
+    },
+    {
+      "name": "Card - Zelle - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"cardId\":\"cardId\",\"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Card - Zelle - Delete\". It uses the POST method to delete a Zelle card from the specified account. Its URL is http://localhost:3000/api/payment/card/delete.\n\nHere's the detailed description of each data:\n\n1. `name`: This is the name of the endpoint. In this case, the name is \"Card - Zelle - Delete\". This name usually illustrates the purpose of this endpoint, which is to delete a Zelle card.\n\n2. `request`: This field envelops all the request-related information for the API call.\n\n3. `method`: The request type. Here, the method is POST, which is typically used to submit data to be processed.\n\n4. `url`: This is the endpoint URL to which the request is sent. In this case, the URL is http://localhost:3000/api/payment/card/delete.\n\n5. `headers`: This is an array that could possibly contain metadata for the HTTP request. In this instance, it is empty.\n\n6. `body`: This contains data that you want to send to the server.\n\n   * `mode`: Defines the way the data is being sent. As mentioned in the provided data, the mode used here is \"raw\".\n\n   * `raw`: This field contains all the raw data to be sent with the request in a JSON format. The data it contains includes:\n        - `accountId`: The unique identifier of the account where the Zelle card is being deleted from.\n        - `sessionId`: The current session's unique identifier.\n        - `cardId`: The unique identifier of the card that needs to be deleted.\n        - `provider`: The card provider's name, indicating from which provider's list the card needs to be removed.\n\n    * `options`: This field provides options for processing body data.\n        * `raw`: Further options specifically for processing raw data.\n           * `language`: The language in which the raw data is written, here it is JSON.\n\nPlease note that the actual values are not provided in the example and need to be replaced with proper values before the request is made."
+      },
+      "response": []
+    }
+  ]
+}

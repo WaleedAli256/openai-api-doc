@@ -1,0 +1,1110 @@
+{
+  "info": {
+    "_postman_id": "a559d9f5-db3d-4e53-b71f-8682c6f3dccb",
+    "name": "UtilityPoint",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Utility - Point - Create for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"TTP\",\n    \"description\": \"Team Tournament Point\",\n    \"type\": \"platform\",\n    \"action\": \"award\",\n    \"rate\": 1,\n    \"amount\": 5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Utility - Point - Create for User\n\n**Request Method:** POST  \n**URL:** `http://localhost:3000/api/utility/point/create`  \n\n---\n\n#### Authentication\n- **Auth Type:** Bearer  \n  This endpoint requires a bearer token to authenticate the request. The token should be provided in the header of the request as follows:\n  - **Key:** token\n  - **Value:** BearerToken (replace this placeholder with your actual bearer token)\n\n---\n\n#### Request Body\n\nThe request body should be sent in JSON format with the following fields:\n\n1. **sessionId** (String)  \n   Unique identifier for the session. This helps in tracking user activities within the current session.\n\n2. **accountId** (String)  \n   Unique identifier for the user account. This specifies which user's points are being created or modified.\n\n3. **targetType** (String)  \n   The type of target entity associated with the action. For example, it could refer to a user's account ID or another identified entity. In this case, the value is set to \"accountId\".\n\n4. **name** (String)  \n   A name assigned to the point creation event. This serves as an identifier or label for the operation, such as \"TTP.\"\n\n5. **description** (String)  \n   A brief explanation of the point event. This provides additional context. In this example, it is \"Team Tournament Point.\"\n\n6. **type** (String)  \n   This field indicates the category of the point creation. The value \"platform\" might suggest that points are allocated based on platform-specific actions.\n\n7. **action** (String)  \n   The action type to be associated with the point creation. In this instance, it is set to \"award,\" indicating that points are being awarded to a user.\n\n8. **rate** (Integer)  \n   The rate at which points are granted. Here, it is set to 1, potentially indicating that one point is awarded per qualifying action.\n\n9. **amount** (Integer)  \n   The total amount of points to be awarded during this operation. In this case, it is set to 5, meaning five points will be credited to the user's account.\n\n---\n\n#### Headers\n- There are no additional headers defined in this request, and the provided header entry is disabled.\n\n---\n\n**Note:** Ensure to replace placeholder values (like `sessionId`, `accountId`, and `BearerToken`) with actual data for making valid API requests."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Create Bulk for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"TTP\",\n            \"description\": \"Team Tournament Point\",\n            \"type\": \"platform\",\n            \"action\": \"award\",\n            \"rate\": 1,\n            \"amount\": 5\n        },\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"TTP\",\n            \"description\": \"Team Tournament Point\",\n            \"type\": \"platform\",\n            \"action\": \"award\",\n            \"rate\": 1,\n            \"amount\": 5\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "createBulk"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Utility - Point - Create Bulk for User\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"POST\",\n      \"url\": \"http://localhost:3000/api/utility/point/createBulk\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"list\\\": [\\n        {\\n            \\\"targetType\\\": \\\"accountId\\\",\\n            \\\"name\\\": \\\"TTP\\\",\\n            \\\"description\\\": \\\"Team Tournament Point\\\",\\n            \\\"type\\\": \\\"platform\\\",\\n            \\\"action\\\": \\\"award\\\",\\n            \\\"rate\\\": 1,\\n            \\\"amount\\\": 5\\n        },\\n        {\\n            \\\"targetType\\\": \\\"accountId\\\",\\n            \\\"name\\\": \\\"TTP\\\",\\n            \\\"description\\\": \\\"Team Tournament Point\\\",\\n            \\\"type\\\": \\\"platform\\\",\\n            \\\"action\\\": \\\"award\\\",\\n            \\\"rate\\\": 1,\\n            \\\"amount\\\": 5\\n        }\\n    ]\\n}\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\"\n          }\n        }\n      }\n    }\n  },\n  \"details\": {\n    \"sessionId\": \"A unique identifier for the current session. This is used to track and manage the session for the user making the request.\",\n    \"accountId\": \"This represents the ID of the account for which the points are being created. It is required for identifying the user or entity to which the points will be awarded.\",\n    \"list\": [\n      {\n        \"targetType\": \"This specifies the type of target that the points are being awarded to. In this case, it is targeting an accountId.\",\n        \"name\": \"The name given to the point being awarded. In this example, it's labeled as 'TTP', which stands for Team Tournament Point.\",\n        \"description\": \"A short description of the point being awarded. This gives context to what the point represents.\",\n        \"type\": \"This indicates the type of the award. Here, it is noted as 'platform', suggesting it is related to a specific system or platform.\",\n        \"action\": \"The action being performed; in this case, it is 'award', meaning points are being granted.\",\n        \"rate\": \"This denotes the rate at which points are awarded. In the provided examples, it is set to 1.\",\n        \"amount\": \"This is the total number of points that will be awarded. For each entry in the list, it is specified as 5.\"\n      },\n      {\n        \"targetType\": \"This specifies the type of target that the points are being awarded to. In this case, it is also targeting an accountId.\",\n        \"name\": \"The name given to the point being awarded. In this case, it's again labeled as 'TTP', which stands for Team Tournament Point.\",\n        \"description\": \"A short description of the point being awarded. This gives context to what the point represents.\",\n        \"type\": \"This indicates the type of the award. Here, it is noted as 'platform', suggesting it is related to a specific system or platform.\",\n        \"action\": \"The action being performed; in this case, it is 'award', meaning points are being granted.\",\n        \"rate\": \"This denotes the rate at which points are awarded. In the provided examples, it is set to 1.\",\n        \"amount\": \"This is the total number of points that will be awarded. For each entry in the list, it is specified as 5.\"\n      }\n    ]\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Create for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"TTP\",\n    \"description\": \"Team Tournament Point\",\n    \"type\": \"platform\",\n    \"action\": \"award\",\n    \"rate\": 1,\n    \"amount\": 5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "create"
+          ]
+        },
+        "description": "{\n  \"description\": \"This endpoint allows you to create a utility point for a specific team. Below is a detailed description of each data component involved in this request.\",\n\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ],\n      \"description\": \"Authentication is handled using a Bearer token. Replace 'BearerToken' with your actual token to authenticate the request.\"\n    },\n    \n    \"method\": {\n      \"value\": \"POST\",\n      \"description\": \"This indicates that the request method is POST, which is used to send data to the server.\"\n    },\n    \n    \"url\": {\n      \"value\": \"http://localhost:3000/api/utility/point/create\",\n      \"description\": \"The endpoint URL where the request will be sent. It is currently set to a local server address.\"\n    },\n    \n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true,\n        \"description\": \"No additional headers are required for this request, and this default header is disabled.\"\n      }\n    ],\n\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"targetType\\\": \\\"teamId\\\",\\n    \\\"targetId\\\": \\\"teamId\\\",\\n    \\\"name\\\": \\\"TTP\\\",\\n    \\\"description\\\": \\\"Team Tournament Point\\\",\\n    \\\"type\\\": \\\"platform\\\",\\n    \\\"action\\\": \\\"award\\\",\\n    \\\"rate\\\": 1,\\n    \\\"amount\\\": 5\\n}\",\n      \"options\": {\n        \"raw\": {\n          \"language\": \"json\",\n          \"description\": \"The body of the request is in raw JSON format and contains the following fields:\"\n        }\n      },\n      \"fields\": {\n        \"sessionId\": {\n          \"description\": \"A unique identifier for the session. This should be replaced with the actual session ID.\"\n        },\n        \"accountId\": {\n          \"description\": \"The account identifier associated with the action. Replace with the actual account ID.\"\n        },\n        \"targetType\": {\n          \"description\": \"Defines the type of target for the utility point, in this case, it is set to 'teamId' indicating that the points are for a team.\"\n        },\n        \"targetId\": {\n          \"description\": \"The specific identifier of the team that will receive the points. Replace with the actual team ID.\"\n        },\n        \"name\": {\n          \"description\": \"A name for the utility point entry. In this example, it is 'TTP' which can represent a tournament point.\"\n        },\n        \"description\": {\n          \"description\": \"A detailed description of what the utility point represents, in this case, 'Team Tournament Point'.\"\n        },\n        \"type\": {\n          \"description\": \"Identifies the platform type associated with the point. Here it is specified as 'platform'.\"\n        },\n        \"action\": {\n          \"description\": \"Specifies the action being performed with the utility point. In this example, it is set to 'award', indicating that points are being granted.\"\n        },\n        \"rate\": {\n          \"description\": \"This field indicates the rate of the points being awarded. A value of 1 suggests that the points are awarded at a rate of 1.\"\n        },\n        \"amount\": {\n          \"description\": \"The total amount of points being awarded to the team. In this case, it is set to 5.\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Create Bulk for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"TTP\",\n            \"description\": \"Team Tournament Point\",\n            \"type\": \"platform\",\n            \"action\": \"award\",\n            \"rate\": 1,\n            \"amount\": 5\n        },\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"BPT\",\n            \"description\": \"Beladed Platform Token\",\n            \"type\": \"platform\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1000\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "createBulk"
+          ]
+        },
+        "description": "### Endpoint: Utility - Point - Create Bulk for User\n\n**Description:** This API endpoint allows the bulk creation of utility points for users. It requires authentication via a bearer token and expects a specific JSON structure in the body of the request.\n\n#### Request Details\n\n- **Auth**:\n  - **Type**: Bearer Authentication\n    - **Bearer**:\n      - **Key**: `token`\n      - **Value**: `BearerToken` (This should be replaced with a valid token for authentication).\n      - **Type**: String (The format of the token provided is in string format).\n\n- **Method**: \n  - **POST**: This specifies that the request is to create new resources.\n\n- **URL**: \n  - `http://localhost:3000/api/utility/point/createBulk`: The endpoint to which the request will be sent. This URL points to a local development server.\n\n#### Headers\n- **Key**: (Empty, currently not required in this request context)\n- **Value**: (Empty, currently not required in this request context)\n- **Disabled**: True (Means this header will not be sent with the request).\n\n#### Body\n- **Mode**: Raw (The body content is sent as raw data).\n- **Content**: The body must be a valid JSON object structured as follows:\n\n```json\n{\n  \"sessionId\": \"sessionId\",       // Unique identifier for the session, should be replaced with actual session ID.\n  \"accountId\": \"accountId\",       // Unique identifier for the account, should be replaced with actual account ID.\n  \"list\": [\n    {\n      \"targetType\": \"teamId\",     // Indicates the type of target entity, can refer to \"teamId\" or \"accountId\".\n      \"targetId\": \"teamId\",       // ID of the team for which the points are awarded.\n      \"name\": \"TTP\",              // Name of the point awarding mechanism.\n      \"description\": \"Team Tournament Point\", // A brief description of what this point is for.\n      \"type\": \"platform\",          // The type of point or reward being allocated.\n      \"action\": \"award\",           // The action to be performed, in this case, awarding points.\n      \"rate\": 1,                   // The rate at which points are assigned or calculated.\n      \"amount\": 5                  // The actual amount of points to be awarded.\n    },\n    {\n      \"targetType\": \"accountId\",   // Indicates the type of target entity, here it refers to \"accountId\".\n      \"name\": \"BPT\",               // Name of the point allocation mechanism.\n      \"description\": \"Beladed Platform Token\", // A description for this specific point allocation.\n      \"type\": \"platform\",           // The type of point or reward being utilized.\n      \"action\": \"buy\",              // The action to be performed for this entry, indicating a purchase.\n      \"rate\": 1,                    // The rate at which the tokens are accounted for or purchased.\n      \"amount\": 1000                // The quantity of points or tokens involved in the purchase.\n    }\n  ]\n}\n```\n\n### Summary:\nThis API call is used to create multiple utility points in bulk for different target types (like teams or accounts). Ensure to replace placeholder values such as `sessionId`, `accountId`, `teamId`, etc., with appropriate identifiers before making the request. Each point entry includes details like the target type, action, rate, and amount, indicating how and for what reason points are being created or allocated."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Convert Point",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"pointId\": \"pointId\",\n    \"type\": \"network\",\n    \"rate\": 1,\n    \"amount\": 1,\n    \"convertTo\": \"token\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/convert",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "convert"
+          ]
+        },
+        "description": "### Description of Endpoint: Utility - Point - Convert Point\n\n#### Request Type\n- **Method**: `POST`  \n  This indicates that the endpoint expects a POST request to be made.\n\n#### URL\n- **Endpoint**: `http://localhost:3000/api/utility/point/convert`  \n  This is the endpoint URL to which the request will be sent.\n\n#### Authentication\n- **Auth Type**: `Bearer`  \n  The endpoint uses Bearer token authentication. The client must provide a valid token to access this endpoint.\n\n- **Bearer Token**:  \n  - **Key**: `token`  \n    This is the identifier for the authentication token.\n  - **Value**: `BearerToken`  \n    This represents the actual token string that the client will use to authenticate.\n  - **Type**: `string`  \n    Indicates that the value is a string type.\n\n#### Headers\n- **Header**:  \n  - **Key**: `Client-UUID`  \n    This is a unique identifier for the client making the request.\n  - **Value**: `ClientUUID`  \n    This should be replaced with the actual UUID value of the client.\n  - **Type**: `default`  \n    Specifies the type of header being sent in the request.\n\n#### Request Body\n- **Body Mode**: `raw`  \n  The body of the request is sent in raw format.\n\n- **Body Content**: The body must be formatted in JSON and should contain the following fields:\n  - **sessionId**: `sessionId`  \n    A unique identifier for the user's session.\n  - **accountId**: `accountId`  \n    Identifies the user's account associated with the points.\n  - **pointId**: `pointId`  \n    Identifies the specific point that is to be converted.\n  - **type**: `network`  \n    Specifies the type of point conversion. In this case, it is a network type.\n  - **rate**: `1`  \n    Represents the conversion rate of points to tokens. This is a numeric value.\n  - **amount**: `1`  \n    Indicates the amount of points to be converted. This is a numeric value.\n  - **convertTo**: `token`  \n    Specifies the target unit to convert the points to, in this case, it is \"token\".\n\n- **Options**:  \n  - **Raw**:  \n    - **Language**: `json`  \n      Indicates that the raw body content is in JSON format.\n\nThis endpoint facilitates the conversion of points within a specified account into tokens, using the provided session and point identifiers, along with their respective amounts and conversion rates."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Update Point for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"pointId\": \"pointId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"TTP\",\n    \"description\": \"Team Tournament Point\",\n    \"type\": \"platform\",\n    \"action\": \"award\",\n    \"rate\": 1,\n    \"amount\": 5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "update"
+          ]
+        },
+        "description": "### Utility - Point - Update Point for User\n\n#### Request\n\n- **Auth**\n  - **Type**: Bearer\n    - This indicates that authentication is done using a bearer token. The bearer token is passed in the request header.\n      - **Key**: token\n      - **Value**: BearerToken\n      - **Type**: string\n      - Purpose: This is used to authenticate the user making the request. It must be replaced with a valid bearer token.\n\n- **Method**\n  - **PUT**\n  - Purpose: This HTTP method is used to update an existing resource. In this case, it is used to update the points of a user.\n\n- **URL**\n  - **Endpoint**: `http://localhost:3000/api/utility/point/update`\n  - Purpose: This is the endpoint where the request is sent to update the point for a user.\n\n- **Headers**\n  - **Key**: Client-UUID\n    - **Value**: ClientUUID\n    - **Type**: default\n    - Purpose: This is used to identify the client making the request. It should be replaced with a valid UUID that uniquely identifies the client.\n\n#### Body\n\n- **Mode**: raw\n  - Purpose: Indicates that the body of the request is in raw format rather than form data.\n\n- **Content** (in JSON format):\n  - **sessionId**: \"sessionId\"\n    - Purpose: This is the identifier for the current session. It should be replaced with the actual session ID.\n  \n  - **accountId**: \"accountId\"\n    - Purpose: This is the identifier for the user’s account whose points are being updated. It should be replaced with the actual account ID.\n  \n  - **pointId**: \"pointId\"\n    - Purpose: This is the identifier for the point entry that is being updated. It should be replaced with the actual point ID.\n  \n  - **targetType**: \"accountId\"\n    - Purpose: Indicates the type of target for the point update. In this case, it targets an account using the account ID.\n\n  - **name**: \"TTP\"\n    - Purpose: This gives a name to the point update action, which in this case is \"TTP\" for Team Tournament Point.\n\n  - **description**: \"Team Tournament Point\"\n    - Purpose: This provides a description of the point update action, explaining what it relates to.\n\n  - **type**: \"platform\"\n    - Purpose: Indicates the type of the point being updated. In this case, it is set as \"platform.\"\n\n  - **action**: \"award\"\n    - Purpose: Specifies the action to be performed on the point. In this case, points are being awarded to the user.\n\n  - **rate**: 1\n    - Purpose: Indicates the rate at which points are awarded. In this example, it is set to 1.\n\n  - **amount**: 5\n    - Purpose: This indicates the total number of points to be awarded to the user. In this example, the user will receive 5 points.\n\nThis endpoint allows for updating a user's points with specified parameters. Be sure to replace placeholder values with actual data when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Update Point for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"pointId\": \"pointId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"TTP\",\n    \"description\": \"Team Tournament Point\",\n    \"type\": \"platform\",\n    \"action\": \"award\",\n    \"rate\": 1,\n    \"amount\": 5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Utility - Point - Update Point for Team\n\n**Request Type:** PUT\n\n**URL:** `http://localhost:3000/api/utility/point/update`\n\n#### Authorization\n- **Auth Type:** Bearer\n  - **Token:** A token that is required for authorization. It should be replaced with the actual bearer token during the request.\n\n#### Headers\n- **Client-UUID:** A unique identifier for the client making the request. This should be replaced with the actual UUID for the client.\n\n#### Body\nThe request body should be sent in raw JSON format and contains the following fields:\n\n1. **sessionId**: Represents the session identifier for tracking the user's session during the request. This value should be replaced with the actual session ID.\n\n2. **accountId**: The unique identifier for the account that is associated with the points being updated. This should be replaced with the actual account ID.\n\n3. **pointId**: This is the unique identifier for the point entry that needs to be updated. The value should correspond to the point ID you wish to change.\n\n4. **targetType**: Specifies the type of target that is being updated with points. In this case, it should be set to \"teamId\" to indicate that points are awarded to a team.\n\n5. **targetId**: The unique identifier for the team that is receiving the points. This should be replaced with the actual team ID.\n\n6. **name**: A string representing the name of the point update. In this example, it is set to \"TTP\" (Team Tournament Point), but this can be customized to reflect the specific point update.\n\n7. **description**: A brief description of the point update. For instance, \"Team Tournament Point\" provides context about what the points are related to.\n\n8. **type**: Indicates the category or platform for the points. For this request, it is set to \"platform,\" but could represent different contexts as necessary.\n\n9. **action**: Defines the action being taken with respect to the points. It is set to \"award\" here, indicating that points are being given to the team.\n\n10. **rate**: Specifies the rate or multiplier for the points being awarded. In this example, the rate is set to 1.\n\n11. **amount**: Represents the total points being awarded to the team. In this case, it is set to 5 points.\n\n### Notes\n- Ensure that the values for `sessionId`, `accountId`, `pointId`, `targetId`, and other fields are correctly populated before making the request.\n- The endpoint is designed for updating team points effectively based on the provided parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get By ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?pointId=pointId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "pointId",
+              "value": "pointId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Point - Get By ID\n\n**Description:**\nThis API endpoint allows users to retrieve information about a specific utility point based on its unique identifier. The request is made using the HTTP GET method, and it requires an authentication token to access the data securely.\n\n#### Request Details:\n\n- **Authentication:**\n  - **Type:** Bearer\n    - This indicates that the request requires a bearer token for authentication.\n  - **Bearer Token:**\n    - **Key:** token\n      - This field is the key used to pass the authentication token.\n    - **Value:** BearerToken\n      - This placeholder should be replaced with a valid bearer token to authorize the request.\n    - **Type:** string\n      - This signifies that the authentication token is provided as a string.\n\n- **Method:**\n  - **GET**\n    - The HTTP method used for this request, which indicates that we want to retrieve data from the specified resource.\n\n- **URL:**\n  - **Endpoint:** `http://localhost:3000/api/utility/point/get/`\n    - This is the base URL for the API where the request will be sent.\n  - **Query Parameters:**\n    - `pointId=pointId`\n      - The unique identifier of the utility point that you want to fetch. Replace `pointId` with the actual ID of the point.\n    - `sessionId=sessionId`\n      - The session identifier for the current user session. Replace `sessionId` with the actual session ID being used.\n    - `accountId=accountId`\n      - The unique identifier for the user account. Replace `accountId` with the actual account ID.\n\n- **Headers:**\n  - An empty header field is present, but it is disabled. This means no additional headers are required, but this can be modified if any custom headers are needed in the future.\n\n- **Body:**\n  - **Mode:** raw\n    - Indicates that the body of the request will be sent in raw format.\n  - **Raw Content:**\n    - The body is empty for this request since GET requests do not typically send a body. \n\nThis endpoint is useful for accessing specific information related to a utility point, ensuring proper authentication and session context."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Balance",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?balance=1&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "balance",
+              "value": "1"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### API Endpoint: Utility - Point - Get Balance\n\n- **Name**: This refers to the name of the API endpoint, which is \"Utility - Point - Get Balance\". It indicates that the endpoint is related to retrieving the balance for a utility point.\n\n- **Request**: This object contains all the details needed to execute the API call.\n\n  - **Auth**: This section specifies the authentication method used for the API request.\n    \n    - **Type**: Indicates the type of authentication. In this case, it is \"bearer\", meaning that a token will be used for authorization.\n    \n    - **Bearer**: This is the array containing the bearer token information.\n      \n      - **Key**: The key name for the bearer token, labeled \"token\".\n      \n      - **Value**: The actual bearer token that will be sent with the request. It is represented as \"BearerToken\", which needs to be replaced with a valid token.\n      \n      - **Type**: Indicates the data type, which is \"string\" in this context.\n\n  - **Method**: This specifies the HTTP method used for the request. Here, it is a \"GET\" request, which is typically used to retrieve data from the server.\n\n  - **URL**: This is the endpoint URL to which the request will be sent. The URL is structured as follows:\n    \n    - Base URL: `http://localhost:3000/api/utility/point/get/`\n    - Query Parameters:\n      - `balance=1`: This query parameter is used to indicate that the balance information is being requested.\n      - `sessionId=sessionId`: This query parameter is for passing a session identifier, which may be used to maintain state or track user sessions.\n      - `accountId=accountId`: This parameter is used to specify the account for which the balance is being requested.\n\n  - **Headers**: This section is for any additional headers that might be required for the API request.\n    \n    - The example shows an empty header, with both \"key\" and \"value\" set to empty strings. It is also marked as \"disabled\", indicating that this header will not be sent. If needed, valid headers can be added here.\n\n  - **Body**: This element contains the body of the request.\n\n    - **Mode**: Specifies the mode for sending the body, which is set to \"raw\" indicating the body content will be plain text or raw data.\n    \n    - **Raw**: This field is empty, meaning no body content is sent with the GET request. Typically, GET requests do not send a body, so this is appropriate.\n\nThis structured information facilitates understanding how to interact with the API for retrieving the utility point balance effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Stats",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?log=stats&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "stats"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Utility - Point - Get Stats\",\n  \"description\": \"This endpoint retrieves statistical data related to a specific utility point. It requires a valid bearer token for authentication and provides statistical information in response to a GET request.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"description\": \"Authorization type is 'bearer'. A bearer token is required to access this endpoint. Replace 'BearerToken' with the actual token.\",\n    \"method\": \"GET\",\n    \"description\": \"This is a GET request, which is used to retrieve data from the server.\",\n    \"url\": \"http://localhost:3000/api/utility/point/get/?log=stats&sessionId=sessionId&accountId=accountId\",\n    \"description\": \"The URL of the endpoint where statistical data can be fetched. It includes query parameters for 'log', 'sessionId', and 'accountId'.\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"description\": \"No additional headers are required for this request. The current header is disabled.\",\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"\"\n    },\n    \"description\": \"The request body is empty for this GET request, as no data needs to be sent to the server.\"\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Ledger",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?log=ledger&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "ledger"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Point - Get Ledger\n\n**Request Type**: \n- **GET**: This indicates that the request is a retrieval of data.\n\n**URL**: \n- `http://localhost:3000/api/utility/point/get/?log=ledger&sessionId=sessionId&accountId=accountId`: This is the endpoint for accessing the ledger information. It includes three query parameters:\n  - **log**: This query parameter is set to `ledger`, indicating that the request is specifically for ledger information.\n  - **sessionId**: This parameter is intended to capture the unique identifier for the user session. It must be replaced with the actual session ID during the request.\n  - **accountId**: This parameter is used to specify the unique identifier for the user's account. This should be populated with the account ID relevant to the request.\n\n**Authentication**:\n- **Type**: Bearer\n  - This requires a bearer token for authentication.\n  - **Token**: The value provided should be `BearerToken`, which represents the actual token needed for authentication. This must be replaced with a valid bearer token when making the request.\n\n**Headers**:\n- **Key**: There are no specific headers included in this request as the header object is empty. The header is currently disabled, indicating that there are no additional header parameters required at this time.\n\n**Body**:\n- **Mode**: raw\n  - The request body is set to `raw`, but since the body is empty, no data needs to be sent with the GET request. This is typical for requests that do not require a payload or body content.\n\nThis endpoint facilitates the retrieval of ledger details associated with a specific account, linked to a user session, and requires the proper authentication token for access."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Platform Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?log=type&type=platform&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "platform"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Point - Get Platform Logs\n\nThis API endpoint is designed to retrieve platform logs for a specific point utility. The following details outline the components of the request:\n\n- **Request Name**: This is the identifier for the API request. It specifies that this is a utility point request focused on obtaining platform logs.\n\n- **Authentication**:  \n  - **Type**: The authentication method used is Bearer token, which secures the API request.\n  - **Bearer Token**: This is the authorization token you'll need to include in your request header. Replace `\"BearerToken\"` with your actual token value.\n\n- **HTTP Method**: The request method being used is `GET`. This means the API is intended to retrieve data from the server rather than modifying it.\n\n- **URL**: The endpoint URL is `http://localhost:3000/api/utility/point/get/`. This is where the request is sent.  \n  - **Query Parameters**:  \n    - `log`: This parameter indicates the type of log being requested. The value is set to `\"type\"`.\n    - `type`: Specifies the type of platform to filter the logs. The value is set to `\"platform\"`.\n    - `sessionId`: This parameter should hold the value of the session identifier you require to filter your results.\n    - `accountId`: This is the identifier for the user account whose logs are being retrieved.\n\n- **Headers**:  \n  - This section may include any custom headers that need to be passed with the request. Currently, it shows an empty key and value, indicating that no additional headers are being sent. The header is marked as disabled.\n\n- **Body**:  \n  - **Mode**: The body mode is set to `raw`, indicating that the body would typically contain raw data.\n  - **Raw**: The body is empty for this request since it is a `GET` request and generally does not require a payload.\n\nThis API endpoint provides a focused way to gather platform logs tied to specific parameters, making it useful for monitoring and troubleshooting platform-related issues within a utility application."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Network Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?log=type&type=network&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "network"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Point - Get Network Logs\n\n#### Name\n- **Utility - Point - Get Network Logs**: This is the name of the API endpoint used for retrieving network logs.\n\n#### Request\n- **Auth**: The endpoint requires authentication using a bearer token.\n  - **Type**: Indicates that the authorization method used is a bearer token.\n  - **Bearer**: This field contains the details of the token used for authentication.\n    - **Key**: A descriptor for the token, labeled as \"token\".\n    - **Value**: The actual bearer token used for authentication, represented as \"BearerToken\".\n    - **Type**: Specifies that the type of token is a string. \n\n- **Method**: The HTTP method used to make the request.\n  - **GET**: This indicates that the request is intended to retrieve data from the specified resource.\n\n- **URL**: The endpoint URL for making the request.\n  - **Format**: `http://localhost:3000/api/utility/point/get/?log=type&type=network&sessionId=sessionId&accountId=accountId`\n  - **Parameters**:\n    - **log**: Type of logs to retrieve, set to \"type\".\n    - **type**: Specifies that the type of logs being requested is \"network\".\n    - **sessionId**: Represents the session ID for which logs need to be fetched, labeled as \"sessionId\".\n    - **accountId**: The account ID associated with the logs, labeled as \"accountId\".\n\n- **Headers**: This section is for any additional headers to include in the request.\n  - An empty key and value indicate that no headers are currently being sent with this request.\n  - **Disabled**: This field is set to true, meaning the headers are currently inactive.\n\n- **Body**: Details about the request body.\n  - **Mode**: Specifies the format of the body content.\n    - **raw**: Indicates that raw data can be sent in the body.\n    - **Raw**: Currently no data is being included in the body of the request.\n\nThis endpoint enables users to retrieve network logs based on specified parameters such as session ID and account ID, while ensuring secure access via bearer token authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Universe Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?log=type&type=universe&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "universe"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Point - Get Universe Logs\n\n- **Name**: Utility - Point - Get Universe Logs  \n  This is the title of the endpoint which gives context about its functionality.\n\n- **Request**:  \n  This section contains details about how to make a request to the API.\n\n  - **Auth**:  \n    Authentication details required to access this API.\n\n    - **Type**: `bearer`  \n      Indicates that the endpoint uses bearer token authentication, a common method for securing API access.\n\n    - **Bearer**:  \n      Contains a list of bearer token attributes.\n\n      - **Key**: `token`  \n        This is the name of the key used for storing the authentication token.\n\n      - **Value**: `BearerToken`  \n        This is a placeholder for the actual bearer token that should be used in the request to authenticate the user. It must be replaced with a valid token when making the API call.\n\n      - **Type**: `string`  \n        Specifies that the value for the token is a string.\n\n  - **Method**: `GET`  \n    This indicates that the API request utilizes the HTTP GET method, which is used to retrieve data from the server.\n\n  - **URL**:  \n    The full URL that you need to request to access this endpoint. \n    ```\n    http://localhost:3000/api/utility/point/get/?log=type&type=universe&sessionId=sessionId&accountId=accountId\n    ```\n    - **Parameters**:\n      - `log=type`  \n        This parameter specifies the kind of log to retrieve. It is set to \"type\".\n\n      - `type=universe`  \n        This indicates that the logs being requested relate to the \"universe\" type.\n\n      - `sessionId=sessionId`  \n        A placeholder for the session ID. It should be replaced with an actual session identifier to filter logs related to a specific session.\n\n      - `accountId=accountId`  \n        This is a placeholder for the account ID. It should be replaced with an actual account identifier to filter logs associated with a specific account.\n\n  - **Headers**:  \n    This section is for placing any additional headers required by the request.\n\n    - **Key**: (Empty)  \n      This field is currently empty, indicating that no additional headers are specified for this request.\n\n    - **Value**: (Empty)  \n      The value associated with the empty key. There are no values set here.\n\n    - **Type**: `default`  \n      Indicates that this header type is a default type.\n\n    - **Disabled**: `true`  \n      This indicates that the header is currently disabled and will not be sent with the request.\n\n  - **Body**:  \n    This section is where the request body is defined.\n\n    - **Mode**: `raw`  \n      Indicates the type of body being sent. In this case, it is raw data.\n\n    - **Raw**: `\"\"`  \n      The body is empty, meaning no data needs to be sent in the request body for this GET request.\n\n### Summary:\nThis endpoint retrieves logs related to a specific \"universe\" type, filtered by session ID and account ID, and requires a bearer token for authentication. Ensure that you replace placeholders in the URL and token with actual values before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Accumulation Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?log=accumulation&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "accumulation"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### API Description for Utility - Point - Get Accumulation Logs\n\n**Endpoint Name**: Utility - Point - Get Accumulation Logs\n\nThis API endpoint is used to retrieve accumulation logs for a specified session and account. It allows clients to access historical data related to point accumulation.\n\n#### Request Details\n\n- **Auth**: \n  - The request requires authentication using a Bearer Token. \n  - **Auth Type**: Bearer\n  - **Bearer Token**: The token used for authorization. This should be a valid token for the session.\n    - **Key**: `token`\n    - **Value**: `BearerToken` (replace with the actual token)\n    - **Type**: string\n\n- **Method**: \n  - The HTTP method used for this request is GET, indicating that this endpoint is used to retrieve data.\n\n- **URL**: \n  - The endpoint URL is `http://localhost:3000/api/utility/point/get/?log=accumulation&sessionId=sessionId&accountId=accountId`.\n    - **Log**: This parameter specifies the type of log to fetch, which in this case is `accumulation`.\n    - **sessionId**: This is a required query parameter to specify the unique identifier for the session for which we want to retrieve accumulation logs.\n    - **accountId**: This is a required query parameter representing the identifier for the account linked to the logs being retrieved.\n\n- **Headers**: \n  - The request has headers, but since the key and value are empty, no additional headers are sent in the request. The header entry is currently disabled.\n\n- **Body**: \n  - The request body is set to \"raw\" mode, implying that no payload is sent with this GET request. This is typical for GET requests where parameters are passed through the URL query string.\n\nThis endpoint is useful for clients who need to track point accumulation over time based on specific sessions and accounts."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Deduction Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?log=deduction&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "deduction"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Point - Get Deduction Logs\n\nThis endpoint retrieves logs related to point deductions for a specific user session and account.\n\n#### Request Details\n\n- **Auth**: \n  - **Type**: This API uses Bearer token authentication.\n  - **Bearer**: A token is required for authorization.\n    - **Key**: `token` - This is the identifier for the token.\n    - **Value**: `BearerToken` - Replace this with the actual token required for authentication.\n    - **Type**: `string` - The value must be a string format.\n\n- **Method**: \n  - **GET** - This specifies that the endpoint is accessed using the GET method, which is typically used to retrieve data.\n\n- **URL**: \n  - The complete URL for the API request is: \n    ```\n    http://localhost:3000/api/utility/point/get/?log=deduction&sessionId=sessionId&accountId=accountId\n    ```\n  - **Base URL**: `http://localhost:3000`\n  - **Path**: `/api/utility/point/get/` - This indicates that the action relates to the utility points feature.\n  - **Query Parameters**:\n    - **log**: `deduction` - This specifies that you are interested in deduction logs.\n    - **sessionId**: `sessionId` - This should be replaced with the actual session ID to filter logs related to a specific user session.\n    - **accountId**: `accountId` - This should be replaced with the actual account ID to filter the logs for a specific account.\n\n- **Headers**: \n  - An empty header is defined but is currently disabled, meaning nothing will be sent in the headers. Users may need to customize headers depending on their requirements.\n\n- **Body**: \n  - **Mode**: `raw` - This indicates the body format type for any data that might be sent.\n  - **Raw**: Currently empty. This API call does not require a body, as it is a GET request which typically does not send data in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Conversion Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?log=conversion&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "conversion"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Point - Get Conversion Logs\n\nThis endpoint is used to retrieve logs related to conversion events within the utility point system.\n\n#### Request Authentication\n- **Auth Type**: Bearer\n  - This request requires Bearer Token authentication. You need to provide a valid token to access the endpoint.\n  - **Token**: The token should be prefixed with \"Bearer\", and the actual token value is expected to be provided in the `value` field.\n\n#### Request Method\n- **HTTP Method**: GET\n  - This is a GET request, which means it is used to retrieve information from the server.\n\n#### Request URL\n- **Endpoint URL**: `http://localhost:3000/api/utility/point/get/?log=conversion&sessionId=sessionId&accountId=accountId`\n  - This is the URL where the request will be sent. It is structured to include query parameters.\n  \n#### Query Parameters\n- **log**: This parameter must be set to `conversion`, indicating that the request is specifically for conversion logs.\n- **sessionId**: This represents the unique identifier for the session associated with the logs being requested. It should be replaced with the actual session ID value.\n- **accountId**: This is the unique identifier for the account from which the conversion logs need to be retrieved. It should be replaced with the actual account ID value.\n\n#### Request Headers\n- **Headers**: The request includes headers for additional information.\n  - An example header placeholder is included, but it is currently empty and disabled.\n  \n#### Request Body\n- **Body**: \n  - The request body is empty because this is a GET request and typically does not include a body. The mode is set to \"raw\" but has no content.\n\nThis description provides a clear understanding of how to use this API endpoint, including details on authentication, methods, parameters, and structure."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get Neutral Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/get/?log=category&category=neutrals&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "category"
+            },
+            {
+              "key": "category",
+              "value": "neutrals"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Point - Get Neutral Logs\n\n#### Request Method\n- **Method**: `GET`\n  - This endpoint uses the GET method to request data from the server.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/utility/point/get/?log=category&category=neutrals&sessionId=sessionId&accountId=accountId`\n  - This is the endpoint to retrieve neutral logs. It includes query parameters for filtering the logs.\n\n#### Query Parameters\n- **log**: \n  - This parameter indicates the type of log being requested, which is set as \"category\".\n  \n- **category**: \n  - This specifies the category of logs to retrieve. In this case, it is set to \"neutrals\". This will filter the logs to only include those categorized as neutrals.\n\n- **sessionId**: \n  - This is a placeholder for the session ID. It is used to uniquely identify a user session. The actual session ID should be provided when making the request.\n\n- **accountId**: \n  - This is a placeholder for the account ID. It is used to specify which user's logs are being requested. The actual account ID should be provided when making the request.\n\n#### Authentication\n- **Auth Type**: `Bearer`\n  - This endpoint requires authentication using a Bearer token. \n\n- **Bearer Token**: \n  - **Key**: `token`\n  - **Value**: `BearerToken`\n  - **Type**: `string`\n    - The user must include a Bearer token in the request header for authorization. The actual token should be substituted for \"BearerToken\" when making the request.\n\n#### Headers\n- **Headers**: \n  - An empty header object is present but it's disabled. No additional headers are required for this endpoint.\n\n#### Request Body\n- **Body**: \n  - **Mode**: `raw`\n  - **Raw**: `\"\"`\n    - The body is empty for this GET request, as there is no need to send any additional data in the request body.\n\nOverall, this endpoint allows users to retrieve logs categorized as neutral by providing necessary parameters and authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Point - Get All\n\n#### Authentication\n- **Type**: Bearer Token\n  - **Key**: `token`\n  - **Value**: `BearerToken`\n  - **Type**: string  \n  This section requires a bearer token for authorization. Users need to replace `BearerToken` with a valid token to access the endpoint.\n\n#### Request Method\n- **Method**: GET  \n  This endpoint utilizes the GET HTTP method to retrieve data.\n\n#### URL\n- **URL**: `http://localhost:3000/api/utility/point/all/?sessionId=sessionId&accountId=accountId`  \n  This is the endpoint URL where the request will be sent. It contains query parameters:\n  - **sessionId**: Replace `sessionId` with the actual session ID to identify the user's session.\n  - **accountId**: Replace `accountId` with the required account ID to specify which account's data to retrieve.\n\n#### Headers\n- **Headers**:  \n  - **Key**: (not set)  \n  - **Value**: (not set)  \n  - **Type**: default  \n  - **Disabled**: true  \n  This section shows a placeholder for additional headers which are currently not set and are disabled. Users can include any necessary headers if required by the API.\n\n#### Body\n- **Body**:  \n  - **Mode**: raw  \n  - **Raw**: (empty)  \n  This endpoint does not require a request body. The body is set to raw mode but is empty since no data needs to be sent with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Point - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"pointId\":\"pointId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/point/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "point",
+            "delete"
+          ]
+        },
+        "description": "### Description of Each Data in Endpoint\n\n- **name**: This is the identifier for the API request, which indicates that this endpoint is for deleting a utility point.\n\n- **request**: Contains the details of the API request configuration.\n\n  - **auth**: Specifies the authentication method used for the request.\n  \n    - **type**: Indicates the type of authentication. In this case, it's 'bearer', meaning a token is required for access.\n  \n    - **bearer**: Contains the details of the bearer token required for authentication.\n  \n      - **key**: The name for the token, here it is labeled as \"token\".\n      \n      - **value**: Represents the actual variable that should be replaced with a session ID, signifying user authentication.\n      \n      - **type**: Defines the type of data for this token, which is a string.\n\n  - **method**: Specifies the HTTP method used for the request. It is 'POST', indicating that data will be sent to the server for processing.\n\n  - **url**: The endpoint URL where the API request is targeted. In this case, it's `http://localhost:3000/api/utility/point/delete`, a local server address pointing to the utility point deletion endpoint.\n\n  - **headers**: A collection of additional information sent with the request. Currently, it's specified as an empty header, which means no additional headers are included. The header is marked as disabled.\n\n  - **body**: This section contains the data sent in the request.\n  \n    - **mode**: Specifies how the body of the request is formatted. It's set to 'raw', indicating that the body contains a raw JSON string.\n    \n    - **raw**: This is the actual content of the request body in JSON format. It includes:\n    \n      - **sessionId**: This should be replaced with the actual session ID for the user making the request.\n      \n      - **accountId**: Represents the unique identifier for the account associated with the utility point to be deleted.\n      \n      - **pointId**: Refers to the specific identifier for the utility point that is to be removed from the system.\n\nThis detailed description provides clarity on the purpose and structure of the request to ensure proper usage in the API collection."
+      },
+      "response": []
+    }
+  ]
+}

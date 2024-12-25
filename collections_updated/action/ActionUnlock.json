@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "9b62eac7-df7e-4657-934b-94a71000ca9a",
+    "name": "ActionUnlock",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Unlock - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didUnlock\": true,\n    \"unlockType\": \"channel\",\n    \"didClickthrough\": true,\n    \"tokenAmount\": 40,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/unlock/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "unlock",
+            "create"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Action - Unlock - Create\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"POST\",\n      \"url\": \"http://localhost:3000/api/action/unlock/create\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"path\\\": \\\"/live/channel/video123\\\",\\n    \\\"targetType\\\": \\\"videoId\\\",\\n    \\\"targetId\\\": \\\"videoId\\\",\\n    \\\"sourceType\\\": \\\"accountId\\\",\\n    \\\"sourceId\\\": \\\"accountId\\\",\\n    \\\"didUnlock\\\": true,\\n    \\\"unlockType\\\": \\\"channel\\\",\\n    \\\"didClickthrough\\\": true,\\n    \\\"tokenAmount\\\": 40,\\n    \\\"name\\\": \\\"\\\",\\n    \\\"description\\\": \\\"\\\",\\n    \\\"tags\\\": \\\"\\\"\\n}\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\"\n          }\n        }\n      }\n    }\n  }\n}\n\n1. **name**: This field represents the name of the API action. It indicates that this endpoint is used for creating an unlock action.\n\n2. **request**: This nested object details the request properties for the API call.\n\n   - **auth**: This section defines the authentication method used for the request. In this case, a bearer token is required to authorize the request.\n     \n     - **type**: Specifies the type of authentication; here, it is bearer.\n     - **bearer**: This array contains the bearer token information.\n       \n       - **key**: The name of the token parameter, which is \"token\".\n       - **value**: The actual bearer token value expected to be used for authentication. In this example, it is indicated as \"BearerToken\".\n       - **type**: Indicates the data type of the token, specified as string.\n\n   - **method**: This specifies the HTTP method for the API call. Here, it is a POST method, indicating that data is being sent to the server to create a new resource.\n\n   - **url**: The endpoint URL for the API that will process the request. In this case, it's a local server URL pointing to the action unlock create route.\n\n   - **headers**: This is an array that can hold additional headers for the request. In this example, the header is empty and disabled.\n\n   - **body**: This section contains the details of the data being sent in the POST request.\n     \n     - **mode**: Indicates the format of the body data. Here it is set to \"raw\", meaning the content is provided as a plain text.\n     \n     - **raw**: This is the raw JSON data that will be sent in the request body. It includes various parameters.\n       \n       - **sessionId**: Identifier for the current user session. This is used to track the user's activities within the application.\n       - **accountId**: Unique identifier for the user’s account. This is necessary for associating the unlock action with the right user account.\n       - **path**: The specific path or URL where the unlock action is being applied, denoted by \"/live/channel/video123\".\n       - **targetType**: This indicates the type of target being unlocked, which is set as \"videoId\" in this case.\n       - **targetId**: The ID of the target item that is being unlocked, referenced here as \"videoId\".\n       - **sourceType**: Represents the type of source that is initiating the unlock action, indicated as \"accountId\".\n       - **sourceId**: The identifier for the source account that is performing the unlock action, marked as \"accountId\".\n       - **didUnlock**: A boolean that indicates if the unlock action was successful; set to true in this example.\n       - **unlockType**: Describes the type of unlock performed, with \"channel\" being the specified type.\n       - **didClickthrough**: A boolean indicating whether the user clicked through to unlock; also set to true here.\n       - **tokenAmount**: The amount of tokens to be deducted or used for unlocking, set to 40.\n       - **name**: A placeholder for the name associated with the unlock action, currently empty.\n       - **description**: A placeholder for a description of the unlock action, currently empty.\n       - **tags**: A placeholder for tags related to the unlock action, currently empty.\n\n     - **options**: This object specifies options related to the body format.\n       \n       - **raw**: Contains formatting options for raw data.\n         \n         - **language**: Specifies the language of the raw data, set to \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Unlock - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didUnlock\": true,\n    \"unlockType\": \"channel\",\n    \"didClickthrough\": true,\n    \"tokenAmount\": 40,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"unlockId\":\"unlockId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/unlock/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "unlock",
+            "update"
+          ]
+        },
+        "description": "# Action - Unlock - Update Endpoint Description\n\n## Request Authentication\n- **Auth Type**: Bearer\n  - **Key**: `token` \n    - The token used for authorization. It is a Bearer token which is passed in the request for authentication.\n\n## HTTP Method\n- **Method**: PUT\n  - This endpoint uses the PUT method to update existing resources.\n\n## URL\n- **Endpoint URL**: `http://localhost:3000/api/action/unlock/update`\n  - This is the endpoint URL where the request will be sent.\n\n## Headers\n- **Header Name**: `Client-UUID`\n  - **Value**: `ClientUUID`\n    - A unique identifier for the client making the request. This is used to track or identify client requests.\n\n## Request Body\n- **Content Type**: raw (JSON format)\n  \n### Body Parameters\n- **sessionId**: \n  - A unique identifier for the session. This is used to track the session state.\n  \n- **accountId**: \n  - The identifier for the user's account. This represents the account related to the unlock action.\n  \n- **path**: \n  - The path indicating the resource being accessed or modified. E.g., `/live/channel/video123` for a specific video.\n\n- **targetType**: \n  - Specifies the type of resource being targeted by the action. In this case, it is set to `\"videoId\"`.\n\n- **targetId**: \n  - The identifier of the resource being unlocked or acted upon. This should specify the video ID.\n\n- **sourceType**: \n  - Indicates the type of source from which the item is being unlocked, set to `\"accountId\"`.\n\n- **sourceId**: \n  - The identifier of the source associated with the unlock action, which corresponds to the `accountId`.\n\n- **didUnlock**: \n  - A boolean value indicating whether the item has been successfully unlocked. Set to `true` to indicate a successful unlock.\n\n- **unlockType**: \n  - Describes the type of unlock action performed. In this case, it is set to `\"channel\"`.\n\n- **didClickthrough**: \n  - A boolean value indicating whether the user acted upon a click-through. Set to `true` to indicate that a click-through occurred.\n\n- **tokenAmount**: \n  - A numeric value representing the amount of tokens involved in the unlock action. In this case, it is set to `40`.\n\n- **name**: \n  - A field for an additional name related to the unlock action. This is currently empty.\n\n- **description**: \n  - A field for a description of the unlock action. This is also currently provided as empty.\n\n- **tags**: \n  - A field for any tags related to the unlock action. Presently left empty.\n\n- **unlockId**: \n  - A unique identifier for the unlock action itself. This must be specified to track individual unlock actions.\n\nThis description is intended to clarify the usage and required parameters for making a PUT request to the specified endpoint to update unlock actions."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Unlock - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/unlock/get/?unlockId=unlockId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "unlock",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "unlockId",
+              "value": "unlockId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Unlock - Get\n\n#### Description:\nThis endpoint is designed to retrieve information related to an unlock action. It uses a GET request to fetch data based on specific identifiers.\n\n#### Components:\n\n1. **name**: \n   - Describes the purpose of the endpoint, which is to retrieve information about an unlock action.\n\n2. **request**:\n   - Contains all necessary details needed to make the API call.\n\n   - **auth**:\n     - Defines the authentication method used for the request.\n     - **type**: Indicates that the authentication method is a bearer token.\n     - **bearer**: Holds the details of the token used to authorize the request.\n       - **key**: The name of the token parameter, which is \"token\".\n       - **value**: Placeholder for the actual bearer token that will be used for authorization (represented as \"BearerToken\").\n       - **type**: Specifies the data type of the token, which is a \"string\".\n\n   - **method**:\n     - Specifies the HTTP method to be used for this request, which is \"GET\".\n\n   - **url**:\n     - This is the endpoint's URL, including query parameters that are required for the request:\n       - **unlockId**: A unique identifier for the unlock action.\n       - **sessionId**: Identifier for the session in which the unlock action is taking place.\n       - **accountId**: Identifier for the account that is involved in the unlock action.\n\n   - **headers**:\n     - An array of header parameters for the request.\n     - Currently, there is an entry without a key or value, which is disabled, indicating it is not in use for this request.\n\n   - **body**:\n     - Defines the body of the request.\n     - **mode**: Indicates the way the body is structured—here it is set to \"raw\".\n     - **raw**: This field is empty, meaning no additional data is sent in the body of the GET request.\n\nThis endpoint allows users to retrieve specific unlock action information by providing the necessary identifiers in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Unlock - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/unlock/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "unlock",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Unlock - Get All\",\n  \"description\": \"This endpoint retrieves all unlock actions from the server. It requires authentication and uses a GET request method to fetch the required data. The response will contain details related to all unlock actions available in the system.\",\n  \"request\": {\n    \"auth\": {\n      \"description\": \"Authentication type for making requests to the API. This endpoint uses bearer token authentication.\",\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"description\": \"The key used to provide the bearer token for authentication. This token must be included in the request headers.\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"method\": {\n      \"description\": \"The HTTP method used for this request. 'GET' is used here, indicating that the request is intended to retrieve data from the server.\"\n    },\n    \"url\": {\n      \"description\": \"The endpoint URL where the request is sent. This example uses a local server address and includes query parameters.\",\n      \"value\": \"http://localhost:3000/api/action/unlock/all/?sessionId=sessionId&accountId=accountId\"\n    },\n    \"headers\": {\n      \"description\": \"Additional headers can be sent with the request. In this case, no custom header is defined as the key and value fields are empty and disabled.\"\n    },\n    \"body\": {\n      \"description\": \"The body of the request. Since this is a GET request, the body is empty.\",\n      \"mode\": \"raw\",\n      \"raw\": \"\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Unlock - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"unlockId\":\"unlockId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/unlock/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "unlock",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Unlock - Delete\n\n- **Name**: Action - Unlock - Delete \n  - This is the identifier for the specific action being documented.\n\n- **Request**:\n  - **Auth**: \n    - **Type**: Bearer\n      - This indicates that the API request uses bearer token authentication.\n    - **Bearer**: \n      - **Key**: token\n        - This is the key used to represent the authentication token in the request.\n      - **Value**: sessionId\n        - This represents the session identifier being passed to authenticate the request.\n      - **Type**: string\n        - The data type expected for the token.\n  \n  - **Method**: \n    - POST\n      - This specifies that the request type is a POST request, which is typically used for sending data to the server to create or update a resource.\n\n  - **URL**: \n    - http://localhost:3000/api/action/unlock/delete\n      - This is the endpoint where the request is sent. It indicates the local server and the specific path for unlocking and deleting an action.\n\n  - **Headers**: \n    - An array of headers that can be attached to the request. In this case:\n      - **Key**: (empty)\n        - Currently, there are no additional headers being used in this request.\n      - **Value**: (empty)\n        - There is no specified value for headers as they are not being utilized.\n      - **Type**: default\n        - Indicates the default type for headers.\n      - **Disabled**: true\n        - This indicates that the header is disabled and will not be sent with the request.\n\n  - **Body**: \n    - **Mode**: raw\n      - The body of the request is in raw format, allowing for sending custom data structures.\n    - **Raw**: \n      - `{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"unlockId\":\"unlockId\"}`\n        - This is the JSON payload being sent with the request. It contains:\n          - **sessionId**: This is the identifier for the current user session.\n          - **accountId**: This represents the unique identifier for the account associated with the action.\n          - **unlockId**: This is the specific identifier for the unlock action that is to be deleted."
+      },
+      "response": []
+    }
+  ]
+}

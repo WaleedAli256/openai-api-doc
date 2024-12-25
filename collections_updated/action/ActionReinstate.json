@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionReinstate",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Reinstate - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"reinstate1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reinstate/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reinstate",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Reinstate - Create\n\nThis endpoint is used to create a reinstatement action for a specified session. Below is a detailed description of each data point in the request body:\n\n- **sessionId**: This is a unique identifier for the session associated with the reinstatement action. It is required to link the reinstatement to the specific session context.\n\n- **accountId**: This represents the identifier for the account performing the action. It is crucial for authorizing the request and ensuring that the action is being carried out by the correct user.\n\n- **path**: This is the specific path of the resource that is being reinstated. In this example, it points to a live channel video, which indicates that the action is related to streaming content.\n\n- **targetType**: Indicates the type of target being reinstated. In this case, it is specified as \"streamer\", meaning that the action is aimed at a streamer account.\n\n- **targetId**: This is the unique identifier for the specific target resource (e.g., the video or streamer) being reinstated. It connects the action to the individual entity.\n\n- **sourceType**: This field specifies the type of source from which the reinstatement is being initiated. It is set to \"accountId\", indicating that the source is an account identifier.\n\n- **sourceId**: This is the identifier for the source account associated with the reinstatement. It should match the account that is initiating the reinstatement process.\n\n- **tokenAmount**: This number indicates the amount of tokens being used or affected by the reinstatement. In this example, the value is set to 20.\n\n- **name**: This field provides a name for the reinstatement action. It can be used to identify or label the action for future reference, with \"reinstate1\" as a sample name.\n\n- **description**: This is an optional field for providing additional information about the reinstatement action. In this instance, it is left empty, but users can include any relevant details if necessary.\n\n- **tags**: This optional field allows users to categorize the reinstatement action using tags. It is useful for organization and searching purposes but is left empty in this example.\n\n### Request Configuration\n- **Auth**: The endpoint requires bearer token authentication for authorization. The token must be sent with the request to validate the user's identity and permissions.\n\n- **Method**: The HTTP method for this request is POST, which is used to submit data to the server to create a new resource.\n\n- **URL**: The endpoint URL is `http://localhost:3000/api/action/reinstate/create`, where the request should be sent.\n\n- **Headers**: Currently, there is a placeholder for headers that is disabled. Users can customize or add headers as needed for the request.\n\n- **Body**: The request body is sent in raw JSON format and contains all the parameters necessary for creating a reinstatement action as described above."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reinstate - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"reinstateId\":\"reinstateId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reinstate/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reinstate",
+            "update"
+          ]
+        },
+        "description": "### Action - Reinstate - Update Endpoint Description\n\n- **name**: Identifies this API request as \"Action - Reinstate - Update.\"\n\n- **request**: Contains all the details needed to make the API request.\n\n  - **auth**: Specifies the authentication method.\n\n    - **type**: Indicates the type of authentication used. Here, it is \"bearer.\"\n    \n    - **bearer**: Represents the details of the bearer token.\n    \n      - **key**: The name of the token parameter. It is labeled as \"token.\"\n      \n      - **value**: Placeholder for the actual token value, represented as \"BearerToken.\" This will be replaced with the real token when making the request.\n      \n      - **type**: The data type of the token, which is specified as \"string.\"\n\n  - **method**: Indicates the HTTP method used for the request. In this case, it is \"PUT,\" which is commonly used to update existing resources.\n\n  - **url**: The endpoint URL where the request is sent. It points to the action for reinstating an update: `http://localhost:3000/api/action/reinstate/update`.\n\n  - **headers**: Additional information sent with the request.\n\n    - **key**: The name of the header, which is \"Client-UUID.\"\n    \n    - **value**: A placeholder for the actual client UUID, represented here as \"ClientUUID.\"\n    \n    - **type**: Specifies that this header is a default type.\n\n  - **body**: Contains the data sent with the request.\n\n    - **mode**: Indicates the format of the request body, which is \"raw,\" meaning the body contains raw data.\n\n    - **raw**: The content of the body in JSON format, which includes various fields necessary for the action.\n\n      - **sessionId**: A unique identifier for the session in which the action is being performed.\n      \n      - **accountId**: The identifier for the account associated with the action.\n      \n      - **reinstateId**: An identifier specifically related to the reinstatement action.\n      \n      - **path**: The path to the resource (in this case, a video) that is being reinstated.\n      \n      - **targetType**: Describes the type of the target entity; here, it is specified as \"streamer.\"\n      \n      - **targetId**: The identifier of the target entity, in this case, related to a video, referred to as \"videoId.\"\n      \n      - **sourceType**: The type of source entity associated with the action; it is indicated as the account ID.\n      \n      - **sourceId**: An identifier for the source entity, in this case, represented as \"accountId.\"\n      \n      - **tokenAmount**: The amount of tokens involved in this action, set to 20.\n      \n      - **name**: A placeholder for a name associated with this action, set to \"Farooq.\"\n      \n      - **description**: A text description providing details about the action, here specified as \"this is description.\"\n      \n      - **tags**: A string for tagging or categorizing the action, currently expressed as \"xyz.\"\n\n    - **options**: Additional configuration for the body data.\n\n      - **raw**: Specifies that the content of the body is in raw format.\n      \n        - **language**: Indicates the language of the raw content, stating it is \"json.\"\n\nThis structure outlines the requirements for the reinstatement action, detailing how to authenticate, where to send the request, and the data needed to successfully execute the update."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reinstate - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reinstate/get/?reinstateId=reinstateId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reinstate",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "reinstateId",
+              "value": "reinstateId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Reinstate - Get\n\n- **Name**: Identifies this particular API endpoint as \"Action - Reinstate - Get.\"\n\n- **Request**: Contains all the details necessary to make a request to the API.\n\n  - **Auth**: Specifies the authentication method needed to access the endpoint.\n    - **Type**: Indicates that a bearer token is used for authentication.\n    - **Bearer**: This section includes the details of the bearer token.\n      - **Key**: The name of the bearer token, which is \"token.\"\n      - **Value**: The actual token value, labeled here as \"BearerToken.\" This will be replaced with the actual token to gain access.\n      - **Type**: Describes the format of the token, which is a string.\n\n  - **Method**: The HTTP method used for this request, which is \"GET.\" This method is typically used to retrieve data from the server.\n\n  - **URL**: The endpoint URL where the request is sent. It includes placeholders for parameters:\n    - `reinstateId`: A required identifier for the specific reinstate action.\n    - `sessionId`: A required identifier representing the current session.\n    - `accountId`: A required identifier associated with the user account.\n\n  - **Headers**: Contains additional information for the request.\n    - **Key**: The key of the header. In this case, it is left blank.\n    - **Value**: The value of the header. This is also blank.\n    - **Type**: Describes the type of header used, which is \"default.\" This header is currently disabled and will not be sent with the request.\n\n  - **Body**: Contains data sent with the request.\n    - **Mode**: Indicates how the body is formatted, which is set to \"raw.\"\n    - **Raw**: This section is currently empty, meaning no additional body data will be sent with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reinstate - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reinstate/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reinstate",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description\n\n**Name**: Action - Reinstate - Get All  \nThis is an API endpoint designed to retrieve all reinstatement actions. \n\n---\n\n### Request Details\n\n- **Auth**: \n  - **Type**: Bearer \n    - The request is authorized using a bearer token. This means that a token must be provided to verify the user's identity.\n    - **Bearer**: \n      - **Key**: token \n        - This is the identifier for the authentication method.\n      - **Value**: BearerToken \n        - This is a placeholder for the actual bearer token that must be used for authorization.\n      - **Type**: string \n        - This indicates that the token value is a string.\n\n- **Method**: GET \n  - This indicates that the request method is GET, which is used to retrieve data from the server.\n\n- **URL**: \n  - `http://localhost:3000/api/action/reinstate/all/?sessionId=sessionId&accountId=accountId`\n    - This is the full URL used to access the endpoint.\n    - **Base URL**: `http://localhost:3000/api/action/reinstate/all/` \n      - This part specifies the server and the path to the resource.\n    - **Query Parameters**:\n      - **sessionId**: sessionId \n        - This is a placeholder for the actual session ID to identify the user's session.\n      - **accountId**: accountId \n        - This is a placeholder for the actual account ID to filter the reinstatement actions by account.\n\n- **Headers**: \n  - An array that can contain any additional header information. In this case, it is empty and disabled, meaning no extra headers are sent with this request.\n\n- **Body**: \n  - **Mode**: raw \n    - This indicates that the body content type is raw text.\n  - **Raw**: \n    - The body is empty in this request, meaning no additional data is being sent with the GET request.\n\n---\n\nThis endpoint can be used to fetch all reinstatement actions associated with a specific session and account, provided that the correct bearer token and IDs are supplied."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reinstate - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"reinstateId\":\"reinstateId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reinstate/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reinstate",
+            "delete"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n**Name**: \n- **Action - Reinstate - Delete**: This is the title of the API request, indicating that the action pertains to reinstating and deleting a specific resource.\n\n**Request**:\n- **Auth**:\n  - **Type**: \n    - **Bearer**: This denotes the authentication method used for the API request. In this case, the Bearer token is used to authorize the request.\n  - **Bearer**:\n    - **Key**: \n      - **token**: This is the identifier for the token used in authorization.\n    - **Value**: \n      - **sessionId**: This indicates the actual token value that must be replaced with a valid session ID during the execution of the request.\n    - **Type**:\n      - **string**: This shows that the value of the token is expected to be a string.\n\n- **Method**:\n  - **POST**: This specifies that the HTTP method for this request is POST, meaning data will be sent to the server to create or modify resources.\n\n- **URL**:\n  - **http://localhost:3000/api/action/reinstate/delete**: This is the endpoint to which the request is sent. It directs the request to the local server on port 3000 and specifies the action of reinstating and deleting.\n\n- **Headers**:\n  - **Key**: \n    - (empty): There is currently no custom header included in this request.\n  - **Value**: \n    - (empty): As with the key, there is no associated value for a custom header at this stage.\n  - **Type**: \n    - **default**: The header is of the default type, which generally means there are no special configurations applied.\n  - **Disabled**: \n    - **true**: This setting means that this particular header is not active and will not be sent with the request.\n\n- **Body**:\n  - **Mode**: \n    - **raw**: Indicates that the data being sent in the body of the request is raw data, not form data or URL encoded.\n  - **Raw**: \n    - **{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"reinstateId\":\"reinstateId\"}**: This is the actual payload of the request in JSON format. It contains three keys:\n      - **sessionId**: This should be replaced with the actual session ID to authenticate the user making the request.\n      - **accountId**: This should be replaced with the account ID related to the reinstatement action.\n      - **reinstateId**: This should be replaced with the ID of the resource that needs to be reinstated and deleted. \n\nIn summary, this endpoint facilitates a POST request that allows the user to reinstate and delete a specified resource using a session ID, account ID, and reinstate ID, with authorization handled via a Bearer token."
+      },
+      "response": []
+    }
+  ]
+}

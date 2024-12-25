@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationTournaments",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Tournaments - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Tournaments\",\"description\":\"This tournaments is my second tournaments\",\"tags\":\"second,tournaments\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTournamentsPrivate\":true,\"isTournamentOnly\":false,\"isTournamentsDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tournaments/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tournaments",
+            "create"
+          ]
+        },
+        "description": "The given endpoint represents the creation of a notification for tournaments. The data consist of various key-value pairs which are described below:\n\n1. \"name\": This field represents the name of the endpoint, which in this case is \"Notification - Tournaments - Create\".\n\n2. \"request\": This field contains the details of the request needed to call the endpoint.\n\n  a) \"auth\": This field contains authentication methods needed to access the endpoint. It's using bearer token authentication where \"key\" should be the string \"token\" and \"value\" should be the actual bearer token. \n\n  b) \"method\": This field contains the HTTP method for the request which is \"POST\".\n\n  c) \"url\": This field contains the URL of the endpoint.\n\n  d) \"headers\": Headers to be included with the request but here it's empty and disabled.\n\n  e) \"body\": This field contains the payload or data to be sent to the server:\n\n  - \"mode\": Specifies how the body data is structured, which is \"raw\" in this case.\n\n  - \"raw\": Contains the raw body data which will be sent to this endpoint, in JSON format. Each property within the \"raw\" field is explained below:\n\n    i) \"sessionId\": This field holds the session Id.\n\n    ii) \"accountId\": The account id associated with the session.\n\n    iii) \"name\": Name of the tournament.\n\n    iv) \"description\": Description of the tournament.\n\n    v) \"tags\": Tags for the tournament.\n\n    vi) \"profilePhotoUrl\": URL for the profile photo associated with the tournament.\n\n    vii) \"coverPhotoUrl\": URL for the cover photo of the tournament.\n\n    viii) \"minimumTipAmount\": Minimum tip amount for the tournament.\n\n    ix) \"categoryId\": Id of the category.\n\n    x) \"category\": Category name.\n\n    xi) \"subCategoryId\": Id of the subcategory.\n\n    xii) \"subCategory\": Subcategory name.\n\n    xiii) \"isTournamentsPrivate\": Boolean value indicating if the tournament is private.\n\n    xiv) \"isTournamentOnly\": Boolean value indicating if this is tournament only.\n\n    xv) \"isTournamentsDefault\": Boolean value indicating if this is the default tournament.\n\n    xvi) \"isPreLiveNotificationAds\": Boolean value indicating if there are pre-live ads.\n\n    xvii) \"isPostLiveNotificationAds\": Boolean value indicating if there are post-live ads.\n\n    xviii) \"breakPreLiveNotificationUrl\": URL for the pre-live ads video.\n\n    xix) \"breakPostLiveNotificationUrl\": URL for the post-live ads video.\n\n  - \"options\": Specifies additional options for the body of the request. Here, it is specifying that the language used in the \"raw\" field is JSON.\n  \nEach of these properties plays an essential part in the request body and should be filled in appropriately."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Tournaments - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"tournamentsId\":\"tournamentsId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Tournaments 2.0\",\"description\":\"This tournaments is my second tournaments\",\"tags\":\"second,tournaments\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTournamentsPrivate\":true,\"isTournamentOnly\":false,\"isTournamentsDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tournaments/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tournaments",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named `Notification - Tournaments - Update`, is designed to update the data of a specific tournament on a server running on localhost port 3000. The data is sent via the `PUT` HTTP method to `/api/notification/tournaments/update`.\n\nAuthenticating is done using the `bearer` method requiring a token input as a string.\n\nThe request header must include a `Client-UUID`, a unique identifier for the client.\n\nThe request body must be in `raw` format containing the following data:\n\n- `tournamentsId`: Unique identifier for the tournament.\n- `sessionId`: Session id reference of active user.\n- `accountId`: Identifier for the related account.\n- `name`: The new name of the tournament.\n- `description`: A brief description about the tournament.\n- `tags`: Tags associated with the tournament.\n- `profilePhotoUrl`: URL of the profile photo for the tournament.\n- `coverPhotoUrl`: URL of the cover photo for the tournament.\n- `minimumTipAmount`: Minimum tip amount if applicable.\n- `categoryId`: Unique identifier for the category.\n- `category`: The General category of the tournament.\n- `subCategoryId`: Unique identifier for the subcategory.\n- `subCategory`: More specific subcategory of the tournament.\n- `isTournamentsPrivate`: Boolean field for tournament's privacy, if it's private this is true.\n- `isTournamentOnly`: Boolean field indicating if the tournament is exclusive.\n- `isTournamentsDefault`: Boolean field, if the tournament is the account's default tournament this is true.\n- `isPreLiveNotificationAds`: Boolean field, if set to true ads are shown before live notifications.\n- `isPostLiveNotificationAds`: Boolean field, if set to true ads are shown after live notifications.\n- `breakPreLiveNotificationUrl`: URL of the pre-live notification break video. \n- `breakPostLiveNotificationUrl`: URL of the post-live notification break video.\n\nMake sure to replace placeholder values with the actual data when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Tournaments - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tournaments/get/?tournamentsId=tournamentsId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tournaments",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tournamentsId",
+              "value": "tournamentsId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. **name**: The name of the endpoint is 'Notification - Tournaments - Get'. It signifies that this API will fetch the notification related to tournamnets.\n\n2. **request**: This key contains the main structure of the HTTP request.\n\n3. **auth**:\n    - **type**: The 'type' key states the type of authorization used, which in this case is the 'Bearer'.\n    - **bearer**: The 'bearer' key is an array of bearer tokens containing the following information:\n        - **key**: 'Token'; it indicates that this value will be used as the authorization token header.\n        - **value**: 'BearerToken'; it represents the actual token value you should use to authenticate the API requests.\n        - **type**: Specifies that the given token is of type 'string'.\n\n4. **method**: This is a 'GET' method. It indicates that information is being retrieved from the server.\n\n5. **url**: The URL key specifies the endpoint to which the request is made. The URL contains parameters after the '?', which are: tournamentsId, sessionId, and accountId.\n\n6. **headers**: This is an array of objects containing the additional information that is sent along with the request. This API does not contain any headers as the value of both key and value is empty and it is disabled.\n\n7. **body**: This section contains the data which will be sent to the server. \n    - **mode**: The 'raw' mode indicates that the body content will be sent as a raw data.\n    - **raw**: As the 'raw' key is an empty string in this case, no body content is being sent with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Tournaments - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tournaments/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tournaments",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This data endpoint is titled `Notification - Tournaments - Get All`. As the name suggests, it is used to retrieve all the notifications related to tournaments. \n\nIt uses the `GET` method, indicating its primary purpose is to retrieve information. The endpoints URL is `http://localhost:3000/api/notification/tournaments/all/`, where `localhost:3000` is the local server address, and `/api/notification/tournaments/all/` is the specific path to the endpoint.\n\nThis endpoint requires Bearer Token Authentication, which is a method for an HTTP user agent to provide a single-string token to the server. The token is provided as a value in the `BearerToken` field under `auth`. It is a type of `string`.\n\nTwo query parameters are attached to the URL: `sessionId` and `accountId`. These parameters should be replaced with the respective session ID and account ID of the user.\n\nThe `headers` field in the request is currently empty and disabled. Headers are often used to provide additional information about the request or response.\n\nThe `body` of the request contains a `mode` field set to `\"raw\"`, suggesting that raw data can be sent in the body of the request. However, because this is a `GET` request, there is no body content or `raw` field provided as it's usually used with `POST` or `PUT` requests to send data to the server.\n\nPlease replace `BearerToken`, `sessionId`, and `accountId` with actual values when using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Tournaments - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tournamentsId\":\"tournamentsId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/tournaments/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "tournaments",
+            "delete"
+          ]
+        },
+        "description": "This endpoint, named \"Notification - Tournaments - Delete\", is used to delete notifications pertaining to specific tournaments. \n\nThe endpoint uses the HTTP POST method. \n\nIt is authenticated using the Bearer Token method, meaning you will need a valid token for the session, denoted as \"sessionId\", in order to gain authorised access. \n\nThe API URL where the request is sent to is \"http://localhost:3000/api/notification/tournaments/delete\". \n\nAt this moment, there are no extra headers or specifications included in the request's header field.\n\nAs for the body of the request, it is sent in raw mode with a JSON format payload. The payload contains the following fields: \n\n1. \"sessionId\": It's a string type value that stands for the current session of your interaction with the API.\n   \n2. \"accountId\": This is also a string type value and refers to the ID of the user's account which is associated with the session.\n   \n3. \"tournamentsId\": This value represents the ID of the specific tournament whose notifications you want to delete.\n\nPlease note that all of the three mentioned fields (\"sessionId\", \"accountId\", and \"tournamentsId\") are required to make a valid request to this endpoint."
+      },
+      "response": []
+    }
+  ]
+}

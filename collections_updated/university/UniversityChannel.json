@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "UniversityChannel",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "University - Channel - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Channel\",\"description\":\"This channel is my second channel\",\"tags\":\"second,channel\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isChannelPrivate\":true,\"isTournamentOnly\":false,\"isChannelDefault\":true,\"isPreLiveUniversityAds\":true,\"isPostLiveUniversityAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/channel/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "channel",
+            "create"
+          ]
+        },
+        "description": "**Endpoint Description: University - Channel - Create**\n\n- **name**: This specifies the name of the API endpoint being defined, which is responsible for creating a university channel.\n\n- **request**: This object contains all the elements related to the API request.\n\n  - **auth**: This section defines the authentication method required to access the endpoint.\n    \n    - **type**: Indicates that the authentication method is a bearer token.\n    \n    - **bearer**: This array includes the details of the bearer token required for authorization.\n      \n      - **key**: Identifies the type of authentication information being sent, in this case for the \"token\".\n      \n      - **value**: Represents the actual bearer token; in this case, it is labeled as \"BearerToken\" but will be replaced with an actual token when making requests.\n      \n      - **type**: Specifies that the data type of the token is a string.\n\n  - **method**: This indicates the HTTP method used for the API request. In this case, it is a \"POST\" request, which is commonly used for creating new resources.\n\n  - **url**: The endpoint URL where the API request will be sent. This is set to \"http://localhost:3000/api/university/channel/create\", indicating that the request is going to a local server.\n\n  - **headers**: This section includes any additional HTTP headers that need to be sent with the request.\n    \n    - **key**: Currently left empty, meaning no specific header is set.\n    \n    - **value**: Also currently empty as no specific header value is being assigned.\n    \n    - **type**: Set as \"default\", indicating that the header type is the standard one but is marked as disabled, which means it will not be included in the request.\n\n  - **body**: This object contains the payload that will be sent in the body of the POST request.\n  \n    - **mode**: Sets the body mode, here it is \"raw\", meaning the body is sent as raw data.\n    \n    - **raw**: This field contains the actual data sent in the request body in JSON format. The data includes:\n    \n      - **sessionId**: A unique identifier for a user session.\n      \n      - **accountId**: A unique identifier for the user's account.\n      \n      - **name**: The name of the channel being created, in this case, \"My Second Channel\".\n      \n      - **description**: A brief description of the channel, here stating \"This channel is my second channel\".\n      \n      - **tags**: Comma-separated tags that categorize the channel, in this case, \"second,channel\".\n      \n      - **profilePhotoUrl**: A URL pointing to the profile photo for the channel.\n      \n      - **coverPhotoUrl**: A URL pointing to the cover photo for the channel.\n      \n      - **minimumTipAmount**: The minimum amount that can be tipped in the channel, set to 10.\n      \n      - **categoryId**: Identifier for the category under which the channel falls, here it's \"category123\".\n      \n      - **category**: The main category of the channel, labeled as \"General\".\n      \n      - **subCategoryId**: Identifier for a more specific subcategory, here it's \"subCategory456\".\n      \n      - **subCategory**: A specific subcategory for the channel, labeled as \"Specific\".\n      \n      - **isChannelPrivate**: A boolean indicating whether the channel is private; set to true.\n      \n      - **isTournamentOnly**: A boolean indicating if the channel is only for tournaments; set to false.\n      \n      - **isChannelDefault**: A boolean indicating if this is the default channel; set to true. \n\n      - **isPreLiveUniversityAds**: A boolean indicating whether pre-live university advertisements are enabled; set to true.\n\n      - **isPostLiveUniversityAds**: A boolean indicating whether post-live university advertisements are enabled; set to true. \n\n      - **breakPreLiveVideoUrl**: A URL linking to a video that might play during a pre-live break.\n      \n      - **breakPostLiveVideoUrl**: A URL linking to a video that might play during a post-live break.\n\n    - **options**: This object sets options related to the raw content format.\n    \n      - **raw**: This object contains details about the raw content.\n        \n        - **language**: Specifies that the format of the raw data is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Channel - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"channelId\":\"channelId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Channel 2.0\",\"description\":\"This channel is my second channel\",\"tags\":\"second,channel\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isChannelPrivate\":true,\"isTournamentOnly\":false,\"isChannelDefault\":true,\"isPreLiveUniversityAds\":true,\"isPostLiveUniversityAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/channel/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "channel",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: University - Channel - Update\n\n**Description: This endpoint is used to update the details of a university channel. Below is a detailed description of each data field.**\n\n#### Request Details:\n\n- **Auth:**\n  - **Type:** `bearer`\n    - This indicates the type of authentication used. In this case, it utilizes bearer token authentication.\n  - **Bearer:**\n    - **Key:** `token`\n      - This refers to the authentication token required to authorize the request.\n    - **Value:** `BearerToken`\n      - The actual bearer token that should be replaced with a valid token for authorization.\n    - **Type:** `string`\n      - This specifies that the token should be provided as a string.\n\n- **Method:**\n  - **PUT**\n    - This indicates that the request will update existing data.\n\n- **URL:**\n  - **http://localhost:3000/api/university/channel/update**\n    - The endpoint URL where the update request is sent.\n\n- **Headers:**\n  - **Key:** `Client-UUID`\n    - This is a unique identifier for the client making the request.\n  - **Value:** `ClientUUID`\n    - The actual UUID that should be replaced with a valid client identifier.\n  - **Type:** `default`\n    - This indicates that the header is standard and does not require special formatting.\n\n- **Body:**\n  - **Mode:** `raw`\n    - The body of the request is sent as raw JSON.\n  - **Raw:**\n    ```json\n    {\n      \"channelId\": \"channelId\",\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"name\": \"My Second Channel 2.0\",\n      \"description\": \"This channel is my second channel\",\n      \"tags\": \"second,channel\",\n      \"profilePhotoUrl\": \"https://example.com/profile.jpg\",\n      \"coverPhotoUrl\": \"https://example.com/cover.jpg\",\n      \"minimumTipAmount\": 10,\n      \"categoryId\": \"category123\",\n      \"category\": \"General\",\n      \"subCategoryId\": \"subCategory456\",\n      \"subCategory\": \"Specific\",\n      \"isChannelPrivate\": true,\n      \"isTournamentOnly\": false,\n      \"isChannelDefault\": true,\n      \"isPreLiveUniversityAds\": true,\n      \"isPostLiveUniversityAds\": true,\n      \"breakPreLiveVideoUrl\": \"https://example.com/break-pre-live.mp4\",\n      \"breakPostLiveVideoUrl\": \"https://example.com/break-post-live.mp4\"\n    }\n    ```\n\n    - **channelId:**\n      - The unique identifier for the channel being updated. Replace with the actual ID of the channel.\n\n    - **sessionId:**\n      - The unique identifier for the session related to the channel update. Replace with the actual session ID.\n\n    - **accountId:**\n      - The unique identifier for the account associated with the channel. Replace with the actual account ID.\n\n    - **name:**\n      - The new name for the channel. This is the title presented to users.\n\n    - **description:**\n      - A brief explanation or details about the channel.\n\n    - **tags:**\n      - Keywords associated with the channel, useful for categorization and searching.\n\n    - **profilePhotoUrl:**\n      - A URL pointing to the profile photo of the channel.\n\n    - **coverPhotoUrl:**\n      - A URL pointing to the cover photo for the channel.\n\n    - **minimumTipAmount:**\n      - The minimum amount users can tip the channel.\n\n    - **categoryId:**\n      - The ID associated with the main category of the channel.\n\n    - **category:**\n      - The name of the main category under which the channel falls.\n\n    - **subCategoryId:**\n      - The ID associated with a specific subcategory for the channel.\n\n    - **subCategory:**\n      - The name of the subcategory under which the channel is classified.\n\n    - **isChannelPrivate:**\n      - A boolean value that indicates if the channel is private (true) or public (false).\n\n    - **isTournamentOnly:**\n      - A boolean flag that indicates whether the channel is solely for tournaments.\n\n    - **isChannelDefault:**\n      - A boolean value that indicates if this channel is the default channel for the account.\n\n    - **isPreLiveUniversityAds:**\n      - A boolean value that states if pre-live university advertisements are enabled.\n\n    - **isPostLiveUniversityAds:**\n      - A boolean value that denotes if post-live university advertisements are enabled.\n\n    - **breakPreLiveVideoUrl:**\n      - A URL pointing to a video that plays during breaks before the live stream.\n\n    - **breakPostLiveVideoUrl:**\n      - A URL pointing to a video that plays during breaks after the live stream.\n\n**Note:** Ensure to replace placeholder values with actual data when making requests. This will help the system to properly process the updates."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Channel - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/channel/get/?channelId=channelId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "channel",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channelId",
+              "value": "channelId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"University - Channel - Get\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/university/channel/get/?channelId=channelId&sessionId=sessionId&accountId=accountId\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    }\n  }\n} \n\n### Description of Each Field:\n\n- **request**: This field contains details about the request being made to the API.\n\n  - **auth**: This specifies the authentication type used for the request.\n\n    - **type**: Indicates the type of authentication, which is set to \"bearer\".\n    \n    - **bearer**: A list containing details for bearer token authentication.\n\n      - **key**: A placeholder for the authentication key, here represented as \"token\".\n\n      - **value**: Represents the actual bearer token used for the request. In this case, it is indicated as \"BearerToken\".\n\n      - **type**: Describes the type of value for the bearer, which is a string.\n\n  - **method**: Defines the HTTP method used for this request, which is set to \"GET\". This method is generally used to retrieve data from the server.\n\n  - **url**: The endpoint where the request is directed. This consists of the base URL and query parameters which include:\n  \n    - **channelId**: This parameter is used to specify the unique identifier of the channel you want to retrieve information for.\n    \n    - **sessionId**: This parameter denotes the identifier for the current session, which may be required for the retrieval process.\n    \n    - **accountId**: This parameter represents the identifier for the account associated with the channel.\n\n  - **headers**: Contains any additional headers to be sent along with the request.\n  \n    - **key**: The name of the header, currently left empty.\n    \n    - **value**: The value for the header, which is also currently left empty.\n\n    - **type**: Indicates the type of the header, here it is set to \"default\".\n\n    - **disabled**: A boolean field indicating whether this header is active. In this case, it is set to true, meaning the header is disabled.\n\n  - **body**: Details the body of the request being sent.\n\n    - **mode**: The mode of the body content, which is set to \"raw\". This indicates that the request body is not formatted or structured but is sent as a raw string.\n\n    - **raw**: The actual content of the body, which is currently empty, indicating no body content will be sent with this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Channel - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/channel/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "channel",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: University - Channel - Get All\n\n- **Name**: University - Channel - Get All  \n  This endpoint is used to retrieve all channels related to a university.\n\n- **Request**:  \n  This section contains the details of the HTTP request to be made.\n\n  - **Auth**:  \n    This part specifies the authentication mechanism used to access the endpoint.\n    \n    - **Type**: Bearer  \n      Indicates that the request will use Bearer token authentication.\n\n    - **Bearer**:  \n      Contains the details of the bearer token required for authentication.\n      \n      - **Key**: token  \n        This is the identifier for the token.\n\n      - **Value**: BearerToken  \n        This represents the actual bearer token to be used in the request. Replace \"BearerToken\" with the actual token string.\n\n      - **Type**: string  \n        Specifies that the token should be treated as a string.\n\n  - **Method**: GET  \n    This indicates that the HTTP GET method will be used, which is typically used to retrieve data from a server.\n\n  - **URL**:  \n    The endpoint URL that will be called to fetch the data.\n    \n    - **Base URL**: http://localhost:3000/api/university/channel/all/  \n      This is the main URL for accessing university channels.\n\n    - **Query Parameters**:  \n      These are additional parameters attached to the URL to provide more context or filtering for the request.\n    \n      - **sessionId**: sessionId  \n        This represents a unique identifier for the current session. It will help in tracking user sessions when accessing the data.\n        \n      - **accountId**: accountId  \n        This denotes the unique identifier for the user's account. It is necessary to ensure that the request is associated with a specific user's data.\n\n  - **Headers**:  \n    The section for HTTP headers associated with the request.\n    \n    - **Key**: (empty)  \n      This field is currently empty and does not contain any custom headers.\n\n    - **Value**: (empty)  \n      This field is also empty and does not contain any corresponding value.\n\n    - **Type**: default  \n      This indicates the default type of the header.\n\n    - **Disabled**: true  \n      This indicates that the header is currently disabled and will not be included in the request.\n\n  - **Body**:  \n    Contains the body of the request. While typically relevant for POST or PUT requests, in this case:\n    \n    - **Mode**: raw  \n      Indicates that the body should be treated as raw data, but since this is a GET request, no body is sent.\n\n    - **Raw**: \"\"  \n      This field is empty, indicating that no content will be sent in the body of the request.\n\n### Summary\nThis endpoint is designed to fetch all available channels associated with a university using Bearer token authentication. It requires session and account IDs as query parameters for context and retrieval purposes. No additional headers or body content are needed for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Channel - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/channel/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "channel",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint: University - Channel - Delete\n\n#### Description\nThis endpoint is used to delete a specific channel associated with a university. It requires authentication via a bearer token and expects a POST request.\n\n#### Request Details\n\n- **Authentication**: \n  - **Type**: Bearer Token\n  - **Key**: `token`\n    - **Value**: `sessionId`\n    - **Type**: String\n  - Explanation: The request must include a bearer token for authentication, which is expected to be represented by `sessionId`.\n\n- **Method**: \n  - **Type**: POST\n  - Explanation: This operation requires sending a POST request to perform the deletion operation.\n\n- **URL**: \n  - **Endpoint**: `http://localhost:3000/api/university/channel/delete`\n  - Explanation: This is the URL that points to the endpoint responsible for deleting a channel.\n\n- **Headers**: \n  - No specific headers need to be set for this request.\n  - Explanation: The default header section is disabled and does not require any additional headers for this request.\n\n- **Body**: \n  - **Mode**: Raw\n  - **Content**: `{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\"}`\n  - Explanation: The body of the request must be in JSON format and should contain the following fields:\n    - **sessionId**: The session identifier used for authentication.\n    - **accountId**: The unique identifier for the account associated with the channel.\n    - **channelId**: The unique identifier of the channel that is to be deleted. \n\nThis structured data provides all necessary information for users to understand how to use the endpoint for deleting a university channel."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationMessages",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Messages - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Messages\",\"description\":\"This messages is my second messages\",\"tags\":\"second,messages\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isMessagesPrivate\":true,\"isTournamentOnly\":false,\"isMessagesDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/messages/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "messages",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Notification - Messages - Create\". It uses the POST method to create a new message in the notification system. The endpoint URL is http://localhost:3000/api/notification/messages/create.\n\nThe authentication method for this endpoint is bearer token. You will need to provide the \"token\" in the bearer array, and the provided token should be a string. \n\nThe body of the POST request should be in raw JSON format. It consists of the following fields:\n\n- \"sessionId\": A string that represents the ID of the current session.\n- \"accountId\": The ID associated with the account of the user creating the message.\n- \"name\": The name of the message you are creating.\n- \"description\": A brief explanation about the message.\n- \"tags\": Keywords or labels associated with the message.\n- \"profilePhotoUrl\": The URL of the user's profile photo.\n- \"coverPhotoUrl\": The URL of the cover photo for the message.\n- \"minimumTipAmount\": The minimum amount of tip acceptable. \n- \"categoryId\": The ID associated with the category of the message.\n- \"category\": The category that the message belongs to.\n- \"subCategoryId\": The ID of the subcategory of the message (if any).\n- \"subCategory\": The sub-category that the message belongs to (if any).\n- \"isMessagesPrivate\": A boolean that indicates whether the message is private or not.\n- \"isTournamentOnly\": A boolean to indicate if the message is only available for tournaments or not.\n- \"isMessagesDefault\": A boolean flag that indicates if this message is the default.\n- \"isPreLiveNotificationAds\": A boolean flag to indicate if there are pre-live ads on the notification.\n- \"isPostLiveNotificationAds\": A boolean flag to indicate if the post-live notification includes ads.\n- \"breakPreLiveNotificationUrl\": The URL for the pre-live notification break video.\n- \"breakPostLiveNotificationUrl\": The URL for the post-live notification break video.\n\nPlease note that the headers key-value are set to default and is disabled. This suggests that there are currently no standard or custom headers in use for this API endpoint. \n\nRemember to replace the placeholders (e.g., BearerToken, sessionId, accountId) with actual values when calling the endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Messages - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"messagesId\":\"messagesId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Messages 2.0\",\"description\":\"This messages is my second messages\",\"tags\":\"second,messages\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isMessagesPrivate\":true,\"isTournamentOnly\":false,\"isMessagesDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/messages/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "messages",
+            "update"
+          ]
+        },
+        "description": "This is an endpoint named \"Notification - Messages - Update,\" which uses the `PUT` method to update notification messages on the server. \n\n1. **Authentication**: The authentication type is \"bearer\". This means it passes a bearer token in the header of the request for authorization. The `key` is \"token\" and the `value` should be the bearer token to authenticate the request.\n\n2. **Method**: The method used is `PUT`. This is used to update an existing resource on the server.\n\n3. **URL**: The endpoint URL is \"http://localhost:3000/api/notification/messages/update\". This is the location where the request will be made.\n\n4. **Headers**: \n\n   - \"Client-UUID\" is a unique identifier for the client making the request. Its type is `default`.\n\n5. **Body**: The body of the request is in raw JSON format and consists of the details about the message that is being updated:\n\n   - `messageId`: Identifier for the message.\n   \n   - `sessionId`: Identifier for the session. \n\n   - `accountId`: Identifier for the account.\n\n   - `name`: The name of the message.\n\n   - `description`: A brief description of the message.\n\n   - `tags`: Additional tags associated with the message, separated by commas.\n\n   - `profilePhotoUrl`: The URL of the profile photo.\n\n   - `coverPhotoUrl`: The URL of the cover photo.\n\n   - `minimumTipAmount`: The minimum tip amount for the message.\n\n   - `categoryId` & `category`: The category ID and name.\n\n   - `subCategoryId` & `subCategory`: The sub-category ID and name.\n\n   - `isMessagesPrivate`: A boolean indicating whether the message is private.\n\n   - `isTournamentOnly`: A boolean indicating whether the message is only for tournaments.\n\n   - `isMessagesDefault`: A boolean indicating whether the message is the default message.\n\n   - `isPreLiveNotificationAds`: A boolean indicating if pre-live notifications are advertisements.\n\n   - `isPostLiveNotificationAds`: A boolean indicating if post-live notifications are advertisements.\n\n   - `breakPreLiveNotificationUrl`: The URL for the break pre-live notification.\n\n   - `breakPostLiveNotificationUrl`: The URL for the break post-live notification."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Messages - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/messages/get/?messagesId=messagesId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "messages",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "messagesId",
+              "value": "messagesId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is called \"Notification - Messages - Get\". This endpoint is primarily used to retrieve notification messages. \n\n1. **Authentication**: \n   This endpoint uses Bearer token authentication. The key for the token is \"token\", which needs to be a string value. Provide the authentication token with the \"BearerToken\" value to get authorized access.\n\n2. **Request Method**: \n   This endpoint uses the GET HTTP method. GET is used to request data from a specified resource on a server.\n\n3. **URL**: \n   The URL for this endpoint is \"http://localhost:3000/api/notification/messages/get\". It takes three parameters i.e., \"messagesId\", \"sessionId\", and \"accountId\". All three parameters should be added to the URL, right after the \"?\" mark, each separated by an \"&\".\n\n4. **Headers**: \n   The headers field is currently set to default and disabled. When enabled, it gets set to a key-value pair specifying characteristics of the data being sent or requested.\n\n5. **Body**: \n   The current body mode for this endpoint is set to \"raw\". At this mode, the endpoint does not expect any data to be sent within the body of the request. \n\nPlease replace the 'BearerToken', 'messagesId', 'sessionId', and 'accountId' with actual values before using it. The 'BearerToken' needs to be replaced with a valid authentication token. 'messagesId', 'sessionId', and 'accountId' are specific to individual accounts and sessions."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Messages - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/messages/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "messages",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is called \"Notification - Messages - Get All\". It is used to fetch all the notification messages from the provided `sessionId` and `accountId`. Here's the breakdown of the data:\n\n1. Auth: This endpoint requires bearer authentication, meaning appropriate credentials must be presented before accessing this endpoint. The `token` is passed as bearer authentication in the request header. Replace `BearerToken` with your actual bearer token string.\n\n2. Method: This endpoint uses the 'GET' method, that is it's used for retrieving data.\n\n3. URL: The endpoint URL is `http://localhost:3000/api/notification/messages/all/`. Two query parameters `sessionId` and `accountId` need to be passed. Replace `sessionId` and `accountId` in the url with your actual session ID and account ID respectively.\n\n4. Headers: There is a default header included in the request but it's disabled and doesn't contain any key or value. Feel free to add any headers if needed.\n\n5. Body: The request body is in 'raw' JSON format. However, the 'raw' field is currently empty, indicating that this GET request does not require a body as it's primarily used to retrieve data.\n\nNote: Make sure you replace `BearerToken`, `sessionId` and `accountId` with your actual values before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Messages - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"messagesId\":\"messagesId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/messages/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "messages",
+            "delete"
+          ]
+        },
+        "description": "1. \"name\": This value corresponds to the name of the endpoint. In this case, the name of the endpoint is \"Notification - Messages - Delete\". This indicates that this endpoint is used to delete messages from the Notification.\n\n2. \"request\": This section contains all the information regarding the request sent to the endpoint.\n\n3. \"auth\": This section details the authentication required for the request. It is using a \"bearer\" type authentication, which uses encrypted security tokens. \n\n4. \"bearer\": An array representing the bearer token in the authentication process. It has an object containing:\n\n   - \"key\": Name of the authorization token, in this case, it's \"token\".\n   - \"value\": The required value for the key, here it's \"sessionId\".\n   - \"type\": Specifies the data type of the value. Here it indicates that the session ID should be a string.\n\n5. \"method\": This indicates the HTTP method for the request. Here, the method is \"POST\". This means that the request wants to send data to the server to create/update a resource.\n\n6. \"url\": The URL where the request is to be sent. The endpoint for this request is \"http://localhost:3000/api/notification/messages/delete\".\n\n7. \"headers\": This section contains additional parameters that you need to send with request header. In this case, it's empty by default, meaning no additional header parameters are sent.\n\n8. \"body\": This section represents the data sent to the server with the HTTP request. Here, it's in \"raw\" format indicating JSON request body. It includes:\n\n   - \"mode\": This specifies the format of the body. The value \"raw\" specifies that the body contains raw data.\n   - \"raw\": This includes the raw request body. It consists of a JSON object with the \"sessionId\", \"accountId\" and \"messagesId\". These values represent the session identifier, user's account identifier and identifier for the messages that need to be deleted respectively."
+      },
+      "response": []
+    }
+  ]
+}

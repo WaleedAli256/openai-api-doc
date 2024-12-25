@@ -1,0 +1,398 @@
+{
+  "info": {
+    "_postman_id": "bd688fc7-fe68-4af6-bcd9-5dc981b07fb7",
+    "name": "TeamCategory",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Team - Category - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"name\": \"Miami Art Week 4\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/category/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "category",
+            "create"
+          ]
+        },
+        "description": "{\n  \"name\": \"Team - Category - Create\",\n  \"description\": \"This endpoint is used to create a new category for a team. It accepts data in a JSON format that specifies the details of the category to be created. The request requires authentication using a Bearer token, which should be included in the Authorization header. The method used for this request is POST, indicating that it will send data to the server to create a new resource.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ],\n      \"description\": \"Authentication is done using a Bearer token. Replace 'BearerToken' with your actual token to authenticate the request.\"\n    },\n    \"method\": \"POST\",\n    \"description\": \"The HTTP method used to send the request is POST, indicating that data will be submitted to create a new resource.\",\n    \"url\": \"http://localhost:3000/api/team/category/create\",\n    \"description\": \"This is the endpoint URL where the request is sent to create a new team category. The endpoint is running locally on port 3000.\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"description\": \"Currently, there are no custom headers included in the request. The header entry is disabled and can be ignored.\",\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"The body of the request contains the data being sent to create the category. It is provided in raw JSON format.\",\n      \"raw\": \"{\\n    \\\"sessionId\\\":\\\"sessionId\\\",\\n    \\\"accountId\\\":\\\"accountId\\\",\\n    \\\"name\\\": \\\"Miami Art Week 4\\\",\\n    \\\"displayName\\\": \\\"Miami Art Week 2024\\\",\\n    \\\"description\\\": \\\"An immersive celebration of art and culture during Miami Art Week.\\\",\\n    \\\"tags\\\": \\\"Art,Exhibition,Miami,Culture\\\"\\n}\",\n      \"fields\": {\n        \"sessionId\": {\n          \"description\": \"A unique identifier for the current session. This helps to associate the category with a specific session.\"\n        },\n        \"accountId\": {\n          \"description\": \"A unique identifier for the account under which the category is created. This links the category to a specific user account.\"\n        },\n        \"name\": {\n          \"description\": \"The official name of the category being created. Example: 'Miami Art Week 4'.\"\n        },\n        \"displayName\": {\n          \"description\": \"A user-friendly name for the category that may be displayed in the user interface. Example: 'Miami Art Week 2024'.\"\n        },\n        \"description\": {\n          \"description\": \"A detailed description of the category. This provides context and information about the category, such as its purpose or event details. Example: 'An immersive celebration of art and culture during Miami Art Week.'\"\n        },\n        \"tags\": {\n          \"description\": \"A comma-separated list of keywords associated with the category. These tags help categorize and improve the discoverability of the category. Example: 'Art,Exhibition,Miami,Culture'.\"\n        }\n      },\n      \"options\": {\n        \"raw\": {\n          \"language\": \"json\"\n        }\n      },\n      \"description\": \"The request body is expected to be in JSON format, which is typical for RESTful API interactions.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Team - Category - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"categoryId\":\"teamCategoryId\",\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"name\": \"Miami Art Week 3\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/category/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "category",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Team - Category - Update\n\n**Request Type**: PUT  \n**URL**: `http://localhost:3000/api/team/category/update`  \n\n**Authentication**:  \n- **Type**: Bearer Token  \n- **Token**: A string value that represents the user's authentication token to authorize the request.\n\n**Headers**:  \n- **Client-UUID**: A unique identifier for the client making the request. This is used for tracking and managing client requests.\n\n**Body Parameters**:  \nThe body of the request should be sent in JSON format and includes the following fields:\n\n1. **categoryId**:  \n   - Type: String  \n   - Description: This is the unique identifier for the category you want to update within the team.\n\n2. **sessionId**:  \n   - Type: String  \n   - Description: This represents the identifier for the session associated with the category being updated.\n\n3. **accountId**:  \n   - Type: String  \n   - Description: This is the unique identifier for the account that owns or manages the category.\n\n4. **name**:  \n   - Type: String  \n   - Description: This is the new name you want to assign to the category. For example, \"Miami Art Week 3\".\n\n5. **displayName**:  \n   - Type: String  \n   - Description: This is the name that will be displayed for the category, such as \"Miami Art Week 2024\". It should be user-friendly and descriptive.\n\n6. **description**:  \n   - Type: String  \n   - Description: A detailed description of the category. This provides more context about what the category entails, such as \"An immersive celebration of art and culture during Miami Art Week.\"\n\n7. **tags**:  \n   - Type: String  \n   - Description: A comma-separated list of tags associated with the category. These tags can be used for categorization and search purposes, for example, \"Art,Exhibition,Miami,Culture\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - Category - Get By ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/category/get/?categoryId=teamCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "category",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "teamCategoryId"
+            }
+          ]
+        },
+        "description": "### Team - Category - Get By ID\n\nThis endpoint is used to retrieve details of a specific team category using its unique identifier.\n\n#### Request Details\n\n- **Authentication**: The request requires bearer token authentication. A valid bearer token should be provided in the authorization header.\n\n- **Method**: \n  - **GET**: This indicates that the request is retrieving information rather than creating or updating data.\n\n- **URL**:\n  - **Base URL**: `http://localhost:3000/api/team/category/get/`\n  - **Query Parameter**: `?categoryId=teamCategoryId`\n    - This parameter is required and should be replaced with the actual ID of the team category you wish to retrieve.\n\n#### Headers\n- There are currently no headers specified for this request. The headers section is marked as disabled, indicating it is not in use for this endpoint.\n\n#### Body\n- The body of the request is empty or not required. The mode is set to \"raw,\" but there is no payload included. This is typical for a GET request, which usually does not contain a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - Category - Get By Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/category/get/?name=teamCategoryName",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "category",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "teamCategoryName"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Team - Category - Get By Name\n\n**Request Type:**  \n- **Method:** GET  \n  This method is used to retrieve data from the specified resource.\n\n**Authorization:**  \n- **Auth Type:** Bearer  \n  This endpoint requires a bearer token for authentication. The token must be included in the request for access to the resource.\n- **Bearer Token Details:**  \n  - **Key:** token  \n    This represents the key used for authorization purposes.\n  - **Value:** BearerToken  \n    This is a placeholder for the actual bearer token that users should replace with their valid token.\n  - **Type:** string  \n    This indicates that the value for the bearer token should be provided as a string.\n\n**Endpoint URL:**  \n- **URL:** `http://localhost:3000/api/team/category/get/?name=teamCategoryName`  \n  This is the complete URL to access the desired endpoint. The query parameter `name` should be replaced with the actual name of the team category you wish to retrieve.\n\n**Headers:**  \n- **Header Details:**  \n  - **Key:** (not specified)  \n    This header field is currently empty and not in use.\n  - **Value:** (not specified)  \n    There is no value assigned to this header field.\n  - **Type:** default  \n    Indicates that this header is of a default type but is marked as disabled, meaning it will not be sent with the request.\n\n**Body:**  \n- **Body Mode:** raw  \n  The request body is in a raw format.\n- **Raw Body Content:**  \n  There is no content in the body for this request as it is a GET request, which typically does not require a body.\n\n### Summary:  \nThis endpoint allows users to retrieve the details of a team category by its name, ensuring proper authentication through the bearer token. Users need to specify the category name in the URL to get the relevant data."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - Category - Get By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/category/get/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "category",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Team - Category - Get By Account ID\n\n- **Name**: Team - Category - Get By Account ID\n  - This is the title of the API endpoint which indicates that it retrieves categories associated with a specific team, filtered by the account ID.\n\n- **Request**:\n  - **Auth**:\n    - **Type**: bearer\n      - This indicates that the endpoint uses Bearer Token authentication to authorize requests.\n    - **Bearer**:\n      - **Key**: token\n        - This is the name of the authorization key.\n      - **Value**: BearerToken\n        - Placeholder for the actual token value needed to authenticate requests. The user must replace \"BearerToken\" with a valid token.\n      - **Type**: string\n        - Indicates that the token is expected to be a string format.\n\n  - **Method**: GET\n    - This specifies that the request method used for this API call is a GET request, meaning it is used to retrieve data from the server.\n\n  - **URL**: \n    - `http://localhost:3000/api/team/category/get/?accountId=accountId`\n      - This is the endpoint where the request will be sent. The base URL is set to localhost on port 3000. The endpoint path indicates that it is retrieving categories for a team. The query parameter `accountId` must be replaced with the actual account ID to filter the data accordingly.\n\n  - **Headers**:\n    - **Key**: (blank)\n      - This field is currently empty and not being used, but it could be an optional place to add any required headers in future requests.\n    - **Value**: (blank)\n      - Similar to the key, this value is not currently assigned.\n    - **Type**: default\n      - Specifies the type of header.\n    - **Disabled**: true\n      - Shows that this header is currently disabled and will not be included in the request.\n\n  - **Body**:\n    - **Mode**: raw\n      - Indicates that the body of the request is in raw format. However, since this is a GET request, typically there isn’t a body to send.\n    - **Raw**: (empty)\n      - Currently empty since GET requests usually do not include request payloads.\n\n### Usage Notes:\n- Make sure to insert a valid Bearer Token for authorization.\n- Replace `accountId` in the URL with an actual account ID to fetch the relevant data.\n- If there are any specific headers needed for the request, they should be added in the headers section."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - Category - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/category/all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "category",
+            "all"
+          ]
+        },
+        "description": "### Endpoint Description: Team - Category - Get All\n\n#### Request Details:\n- **Auth**: This section specifies the authentication method used for accessing the API. In this case, it uses bearer token authentication, which requires a valid token to be included in the request headers for authorization.\n  - **Type**: Indicates the type of authentication. Here, it is set to \"bearer.\"\n  - **Bearer Token**: \n    - **Key**: Specifies the key for the bearer token. In this case, it is labeled as \"token.\"\n    - **Value**: Represents the actual token that needs to be sent, which in this example is \"BearerToken.\" This should be replaced with an actual token during requests.\n    - **Type**: Designates the data type of the token, which is a string.\n\n- **Method**: The HTTP method used for this request. This is set to \"GET,\" which means the request is intended to retrieve data from the server.\n\n- **URL**: The endpoint URL that the request will hit. For this operation, it is \"http://localhost:3000/api/team/category/all,\" indicating that this endpoint is set up to fetch all categories associated with a team.\n\n- **Headers**: This section is meant to include any additional headers you may need for the request. Currently, the header is empty, and it is marked as disabled, meaning it won't be sent with the request.\n\n- **Body**: Refers to the body of the request. In this case, it is set to \"raw\" mode, but the body is empty, which is typical for a GET request since it usually does not require a body to be sent with the request. \n\n### Summary:\nThis API endpoint allows users to retrieve all categories associated with a team using a GET request. It requires a bearer token for authentication, provides the endpoint URL, and includes optional headers and body settings, though they are not used in this particular request."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - Category - Get All By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/category/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "category",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Team - Category - Get All By Account ID\n\n- **Name**: This is the identifier for the API endpoint, indicating that it retrieves all categories associated with a specific account ID within a team.\n\n- **Request**: This section outlines how to make the request to the API.\n\n  - **Auth**: This specifies the authentication method required to access the endpoint.\n    - **Type**: The authentication type is set to \"bearer,\" which means that a token is required for authentication.\n    - **Bearer**: This contains the token required to authenticate the request.\n      - **Key**: The key here is \"token,\" identifying the type of bearer token.\n      - **Value**: This holds the actual token value needed for authentication, represented as \"BearerToken,\" which should be replaced by a valid token when making the request.\n      - **Type**: This indicates the data type of the token, which is a string.\n\n  - **Method**: The HTTP method for this request is \"GET,\" indicating that this endpoint is used to retrieve data.\n\n  - **URL**: This is the endpoint URL that needs to be called to get the data.\n    - The URL includes a query parameter:\n      - **accountId**: This parameter is required and should be replaced with the specific account ID for which the categories are being requested.\n\n  - **Headers**: This section can include additional headers for the request.\n    - Currently, there is an empty key for a header, indicating no additional headers are being used. The header is marked as \"disabled,\" which means it will not be sent with the request.\n\n  - **Body**: This part of the request holds data to be sent to the server.\n    - **Mode**: The body mode is set to \"raw,\" meaning that the body can contain raw data.\n    - **Raw**: In this case, the raw body is empty since this is a GET request, which typically does not require a body.\n\nThis endpoint is designed for users who need to obtain all categories for a specific account within a team context by providing the corresponding account ID in the request URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - Category - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"categoryId\":\"teamCategoryId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/category/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "category",
+            "delete"
+          ]
+        },
+        "description": "**Endpoint Description:**\n\nThis API endpoint is used to delete a category associated with a team. The operation requires an authenticated request and is executed using the HTTP POST method.\n\n**Detailed Breakdown of Each Data Point:**\n\n- **name**: Represents the name of the API request. \"Team - Category - Delete\" indicates that this endpoint is intended to remove a category from a team.\n\n- **request**: This section describes the specifics of the API request.\n\n  - **auth**: This object specifies the authentication method used for the request.\n  \n    - **type**: Indicates the type of authentication used. Here, it is set to \"bearer\", which means that the request requires a bearer token.\n    \n    - **bearer**: This is an array that contains the details of the bearer token.\n    \n      - **key**: This is the identifier for the bearer token. It is named \"token\".\n      \n      - **value**: This indicates where the actual session token will be provided. The placeholder \"sessionId\" indicates that the user must substitute this with their actual session identifier.\n      \n      - **type**: Specifies the data type of the key, which is \"string\".\n\n  - **method**: Indicates the HTTP method used for this request. In this case, \"POST\" means that the request is intended to submit data to the server.\n\n  - **url**: The URL endpoint that the request is sent to. \"http://localhost:3000/api/team/category/delete\" is the local server address for deleting a team category.\n\n  - **headers**: This array is for additional HTTP headers that can be included in the request. \n\n    - **key**: The identifier for the header. In this case, it is left empty.\n    \n    - **value**: The value for the header. This is also left empty.\n    \n    - **type**: Indicates the type of header. Here, it is labeled as \"default\".\n    \n    - **disabled**: A boolean value indicating whether this header is active. It is set to true, meaning this header is currently disabled.\n\n  - **body**: This section contains the data being sent with the request.\n\n    - **mode**: Indicates the format of the request body. It is set to \"raw\", meaning the body contains unformatted data.\n\n    - **raw**: This holds the actual data being sent in JSON format. The structure includes:\n    \n      - **sessionId**: A placeholder for the current user's session identifier. This must be replaced with the actual session ID.\n      \n      - **accountId**: A placeholder for the user's account identifier. Similar to sessionId, this should be replaced with the real account ID.\n      \n      - **categoryId**: A placeholder for the specific category identifier that the user wishes to delete. This should be filled with the actual category ID to identify which category is being targeted for deletion.\n\n**Note**: Ensure that all placeholders are replaced with actual values when making a request to this endpoint."
+      },
+      "response": []
+    }
+  ]
+}

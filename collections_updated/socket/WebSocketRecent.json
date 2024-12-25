@@ -1,0 +1,444 @@
+{
+  "info": {
+    "_postman_id": "b69b1f88-227f-4eca-878c-d1b61251d8a7",
+    "name": "WebSocketRecent",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Web - Socket - Recent All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/recent?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "recent"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### API Endpoint: Web - Socket - Recent All\n\n#### Description\nThis API endpoint is designed to retrieve a list of recent WebSocket connections. It provides functionality to fetch multiple recent entries based on specific criteria.\n\n#### Request Details\n\n- **Method**: GET\n  - Specifies the type of request being made to the server. In this case, it is a GET request, which is typically used to retrieve data.\n\n- **URL**: `http://localhost:3000/api/socket/web/recent?recent=true&limit=limit`\n  - This is the endpoint's URL where the request is sent. The URL contains query parameters that help define the output of the request:\n    - `recent=true`: This parameter indicates that the client is interested in fetching recent data only.\n    - `limit=limit`: This parameter specifies the maximum number of entries the server should return. The actual limit value should replace \"limit.\"\n\n- **Headers**: []\n  - This array is currently empty, meaning no additional headers are required for this request. Headers can be added if authentication or specific content types are necessary for the API call.\n\n### Summary\nUse this endpoint to access the most recent WebSocket connection data. Customize the `limit` parameter to specify how many recent records you want to retrieve."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Channel",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/channel?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "channel"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "**Endpoint Description: Web - Socket - Recent Channel**\n\n- **Name**: Web - Socket - Recent Channel\n  - This is the identifier for the API endpoint, indicating that it deals with recent channels within a web socket context.\n\n- **Request**: \n  - This section outlines the details of the API call that can be made to retrieve data.\n\n  - **Method**: \n    - **GET**\n      - This specifies that the request will be a 'GET' method, which is typically used to fetch data from a server.\n\n  - **URL**: \n    - `http://localhost:3000/api/socket/web/channel?recent=true&limit=limit`\n      - This is the endpoint URL where the GET request will target.\n      - It consists of the following components:\n        - `http://localhost:3000`: This indicates that the API is being accessed locally on port 3000.\n        - `/api/socket/web/channel`: This portion specifies that the request is related to the web socket API for channels.\n        - `?recent=true`: This query parameter is being used to filter the response to only include recent channels.\n        - `&limit=limit`: This query parameter is intended to define the maximum number of channels returned in the response. Users need to replace `limit` with an actual numerical value to set this limit.\n\n- **Headers**: \n  - This section is currently empty, which means that no custom headers are being sent with the request. Headers may include information such as authentication tokens or content types if needed in future implementations."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Team",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/team?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "team"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Recent Team\n\n- **Name**: Web - Socket - Recent Team  \n  This endpoint retrieves the most recent teams via a WebSocket connection.\n\n- **Request Method**: GET  \n  The HTTP method used for this request is GET, which is used to request data from the specified resource.\n\n- **URL**:  \n  `http://localhost:3000/api/socket/web/team?recent=true&limit=limit`  \n  This is the endpoint URL. The parameters in the query string include:\n  - **recent**: A flag set to true to indicate that only recent teams should be fetched.\n  - **limit**: A placeholder for the maximum number of teams to return. Replace 'limit' with the desired number.\n\n- **Headers**:  \n  This request does not require any specific headers to be included in the request.\n\nThis endpoint is useful for applications that need to display the latest team information in real time."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Loyalty",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/loyalty?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "loyalty"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Web - Socket - Recent Loyalty\n\n#### Request Method\n- **GET**: This method is used to retrieve data from the specified endpoint.\n\n#### URL\n- **http://localhost:3000/api/socket/web/loyalty?recent=true&limit=limit**: \n  - This is the API endpoint where the request is sent. \n  - It is assumed to be running on the local server, specifically on port 3000.\n  - The endpoint is related to \"loyalty\", suggesting it retrieves information about customer loyalty activities or data. \n\n#### Query Parameters\n- **recent=true**: \n  - This parameter filters the response to include only the most recent loyalty information.\n  - Setting this to true means that the system is requested to prioritize the latest entries.\n\n- **limit=limit**: \n  - This parameter specifies the maximum number of loyalty entries to return in the response.\n  - The specified limit should be replaced with an actual numeric value to determine how many entries are fetched.\n\n#### Headers\n- **[]**: \n  - There are no custom headers defined for this request. \n  - The request will be sent without additional metadata or security tokens.\n\nThis endpoint is designed to fetch the latest loyalty data from a web socket service, allowing users to easily access recent loyalty activity with the option to limit the number of results returned."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Support",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/support?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "support"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Recent Support\n\n#### Description:\nThis endpoint retrieves recent support information through a WebSocket connection. It is designed to return a collection of recent support entries based on the specified query parameters.\n\n#### Detailed Description of Each Data:\n\n- **name**: This is the identifier for the API endpoint. It describes the function of the API call, which is to access recent support data through a WebSocket.\n\n- **request**: This section contains details about the type of HTTP request being made.\n\n  - **method**: This indicates the HTTP method used for the request. In this case, the method is \"GET\", which means the endpoint is used to retrieve data.\n\n  - **url**: This is the full address that the server will respond to when the request is made. It consists of:\n    - **base URL**: `http://localhost:3000` - This indicates that the API is running on the local server on port 3000.\n    - **path**: `/api/socket/web/support` - This specifies the particular endpoint for accessing WebSocket support data.\n    - **query parameters**:\n      - `recent=true` - This parameter specifies that only recent support entries should be returned.\n      - `limit=limit` - This parameter is used to limit the number of results that are returned. The actual limit value should be specified when making the request.\n\n- **headers**: This field is currently empty, indicating that no additional headers are required to be sent with the request. Headers may include authentication tokens or content type specifications, but in this case, they are not needed.\n\nIn summary, this endpoint allows the user to fetch recent support information through a GET request, specifying the desired limit on the number of entries returned. Make sure to replace `limit` with an actual number when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Game",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/game?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "game"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Recent Game\n\n**Method**: GET  \n**URL**: `http://localhost:3000/api/socket/web/game?recent=true&limit=limit`  \n\n#### Description of Data:\n\n- **name**: The name of this endpoint is \"Web - Socket - Recent Game\". This indicates that the endpoint is intended to retrieve recent game data using a WebSocket connection.\n\n- **request**: This section contains details about the HTTP request being made to the endpoint.\n\n  - **method**: This specifies that the HTTP method used for the request is GET. This means the request is intended to retrieve data from the server.\n\n  - **url**: The URL provided (`http://localhost:3000/api/socket/web/game?recent=true&limit=limit`) is where the request is being sent. \n    - `http://localhost:3000`: This indicates that the request is being sent to a local server running on port 3000.\n    - `/api/socket/web/game`: This part of the URL specifies the endpoint for accessing game data through the WebSocket API.\n    - `?recent=true`: This query parameter indicates that only the most recent game data should be returned.\n    - `&limit=limit`: This query parameter is used to specify the maximum number of recent games to return. This should be replaced with an actual number to determine the limit of results.\n\n- **headers**: This is an empty array indicating that no additional headers are required for this request. If any specific headers were needed, they would be listed here."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Show",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/show?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "show"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Web - Socket - Recent Show\n\n**Endpoint Description:**\nThis endpoint retrieves recent shows through a WebSocket connection. It is used to fetch data about shows that have occurred recently, allowing users to stay updated with the latest content.\n\n**Request Method:**\n- **GET**: This method is used to request data from the specified resource.\n\n**Request URL:**\n- **http://localhost:3000/api/socket/web/show?recent=true&limit=limit**\n  - **Base URL**: `http://localhost:3000`\n    - This indicates that the API is hosted locally on your machine at port 3000.\n  - **Path**: `/api/socket/web/show`\n    - This specifies the segment of the API that deals with WebSocket functionality related to shows.\n  - **Query Parameters**:\n    - **recent=true**: This parameter filters the results to only include shows that are recent.\n    - **limit=limit**: This parameter specifies the maximum number of shows to return in the response. Replace `limit` with an actual number to set the desired limit for the results."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Education",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/education?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "education"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Description of Endpoint Data for \"Web - Socket - Recent Education\"\n\n- **Name**: \n  - This represents the title of the API request. The name \"Web - Socket - Recent Education\" indicates that this endpoint is designed to fetch recent education-related data via a web socket.\n\n- **Request**: \n  - This section provides details about how to make a request to the API. \n\n  - **Method**: \n    - This specifies the type of HTTP request to be used. In this case, it is a \"GET\" request, which is typically used to retrieve data from the server.\n\n  - **URL**: \n    - This is the endpoint where the API request is sent. The URL \"http://localhost:3000/api/socket/web/education?recent=true&limit=limit\" indicates that the request is made to a local server running on port 3000. \n    - The path \"/api/socket/web/education\" specifies the resource being accessed, which is the education data through a web socket.\n    - The query parameters:\n      - `recent=true` suggests that only recent education data should be retrieved.\n      - `limit=limit` indicates that there may be a limit on the number of results returned; it should be replaced by an actual number when making the request.\n\n  - **Headers**: \n    - This is an array that can include any additional metadata sent to the server with the request. In this case, it is empty, meaning no specific headers are required for this API call.\n\nThis description outlines each component of the request for users to understand how to interact with the \"Web - Socket - Recent Education\" endpoint effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Tournament",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/tournament?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "tournament"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Recent Tournament\n\n#### Method\n- **GET**: This endpoint uses the GET method to retrieve information about recent tournaments from the server.\n\n#### URL\n- **http://localhost:3000/api/socket/web/tournament?recent=true&limit=limit**: This is the full URL for the endpoint, where:\n  - **http://localhost:3000**: Indicates the server is running locally on port 3000.\n  - **/api/socket/web/tournament**: This is the path for the tournament resource.\n  - **?recent=true**: This query parameter specifies that only recent tournaments should be fetched. Setting this parameter to true filters the response to include only the most current tournament data.\n  - **&limit=limit**: This query parameter allows the user to specify how many recent tournaments to return. The value for 'limit' should be replaced with an integer that represents the desired number of tournament entries.\n\n#### Headers\n- **headers**: This section is currently empty, meaning no special headers are required for this request. If needed, headers can be added for authentication or content type in future implementations.\n\nThis endpoint is designed to provide users with a list of the latest tournaments, allowing them to define how many results they want to retrieve through the 'limit' parameter."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Comments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/comments?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "comments"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Web - Socket - Recent Comments\n\nThis endpoint retrieves the most recent comments by using a WebSocket connection. It is specifically designed to allow for real-time updates on comments as they are posted.\n\n#### Request Breakdown\n\n- **Method**: \n  - `GET`: This indicates that the request is made to retrieve data from the server.\n\n- **URL**: \n  - `http://localhost:3000/api/socket/web/comments?recent=true&limit=limit`: This is the endpoint where the request is sent. \n    - The base URL is `http://localhost:3000/api/socket/web/comments`, and it is appended with two query parameters:\n      - `recent=true`: This parameter requests only the most recent comments.\n      - `limit=limit`: This parameter specifies the maximum number of comments to return. Replace `limit` with an actual number to set the desired limit.\n\n- **Headers**: \n  - `[]`: This indicates that no additional headers are sent with this request. Headers may sometimes be necessary for authentication or other purposes, but in this case, none are included.\n\nThis endpoint is useful for applications that require fetching the latest comments dynamically, enhancing user engagement with real-time data."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Chats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/chats?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "chats"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Recent Chats\n\n#### Method: GET\n\n#### URL:\n- **Base URL**: `http://localhost:3000`\n- **Endpoint**: `/api/socket/web/chats`\n- **Query Parameters**:\n  - `recent`: A boolean parameter set to `true` to fetch only recent chats.\n  - `limit`: A variable that defines the maximum number of recent chats to be returned.\n\n#### Description:\nThis API endpoint retrieves the recent chats for the web socket application. It filters the chat data to only include those marked as recent. The `limit` parameter is used to specify how many recent chat records should be returned in the response. \n\nNo additional headers are required for this request. The request will be made to a server running on localhost, specifically on port 3000. \n\nUse this endpoint to easily fetch the latest chat entries and control the number of entries you receive by adjusting the `limit` parameter."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Votes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/votes?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "votes"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Web - Socket - Recent Votes\n\nThis endpoint retrieves the most recent votes through a web socket connection. Below is a detailed description of each part of the request data:\n\n- **name**: Represents the title of the API request, indicating that it is related to recent votes over a web socket.\n\n- **request**: Contains all the details necessary to execute the API request.\n\n  - **method**: Specifies the HTTP method used for the request. In this case, it is set to \"GET,\" which is used to retrieve data from the server.\n\n  - **url**: The endpoint URL is where the request is sent. Here, it is \"http://localhost:3000/api/socket/web/votes?recent=true&limit=limit\".\n    - **http://localhost:3000**: This indicates that the server is running locally on port 3000.\n    - **/api/socket/web/votes**: This part of the URL specifies the path to the resource, which is related to votes.\n    - **?recent=true**: This query parameter indicates that the request is specifically for retrieving recent votes.\n    - **&limit=limit**: This query parameter is intended to specify the maximum number of recent votes to retrieve. The placeholder \"limit\" should be replaced with an actual number to determine how many recent votes to return.\n\n  - **headers**: This section is currently an empty array, indicating that no additional HTTP headers are being sent with the request. Headers could typically include information like content type or authorization tokens if required. \n\nMake sure to replace \"limit\" with an appropriate number when making the request to control how many recent votes you want to fetch."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Account",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/account?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "account"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Recent Account\n\n#### Method\n- **GET**: This is a HTTP method used to request data from the specified resource. In this case, it retrieves data related to recent accounts.\n\n#### URL\n- **http://localhost:3000/api/socket/web/account?recent=true&limit=limit**: This is the endpoint where the request is sent. It consists of the following components:\n  - **localhost:3000**: Refers to the server address; \"localhost\" indicates that the server is running on your local machine, and \"3000\" is the port number.\n  - **/api/socket/web/account**: This is the path to the resource on the server. It defines the specific API endpoint for accessing account data.\n  - **?recent=true**: This is a query parameter indicating that only recent accounts should be retrieved. Setting this to true filters the results to show only accounts that have been recently active.\n  - **&limit=limit**: This is another query parameter that specifies how many recent accounts to return. The actual number should replace the word \"limit\" in the query string.\n\n#### Headers\n- **headers**: This is an array where you can specify any HTTP headers that may be needed for the request. In this case, it is empty indicating that no additional headers are required for this request. \n\nThis endpoint allows users to access a list of recent accounts through a WebSocket connection, providing the option to limit the number of accounts returned based on the specified limit."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Recent Video",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/video?recent=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "video"
+          ],
+          "query": [
+            {
+              "key": "recent",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "**Endpoint Name:** Web - Socket - Recent Video\n\n**Request Details:**\n\n- **Method:** GET  \n  This indicates that the request is intended to retrieve data from the server.\n\n- **URL:** \n  `http://localhost:3000/api/socket/web/video?recent=true&limit=limit`  \n  This is the endpoint where the request will be sent to obtain recent video data. It includes query parameters for filtering the results.\n\n**Query Parameters:**\n\n- **recent=true**  \n  This parameter specifies that only recent video entries should be returned in the response. When set to true, the server will prioritize videos that have been uploaded or added most recently.\n\n- **limit=limit**  \n  This parameter defines the maximum number of video entries that the server should return in the response. It acts as a cap on the results to make the request more efficient and manageable.\n\n**Headers:**  \nCurrently, there are no additional headers specified for this request. Headers can be used to provide additional information or configuration options when making an API call, but none are needed for this particular request."
+      },
+      "response": []
+    }
+  ]
+}

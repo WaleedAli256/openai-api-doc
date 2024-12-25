@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "734f72f1-3624-466e-ab16-0e60531182e0",
+    "name": "ActionTip",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Tip - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didTip\": true,\n    \"utilityType\": \"token\",\n    \"tokenAmount\": 20,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tip/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tip",
+            "create"
+          ]
+        },
+        "description": "### Action - Tip - Create\n\nThis endpoint is designed for creating a tip action associated with specific content, such as a video. Below is a detailed description of each part of the request data.\n\n#### Request\n\n- **Auth**\n  - **Type**: Represents the authentication method. In this case, it uses Bearer token authentication.\n  - **Bearer**: Contains the details for the bearer token.\n    - **Key**: Specifies the name for the token, in this instance, it's labeled “token”.\n    - **Value**: Holds the bearer token string, shown here as “BearerToken”. This token is required for authorization.\n    - **Type**: Indicates the data type of the token, which is a string.\n\n- **Method**: This specifies the HTTP method to be used for the request. It is set to **POST**, indicating that data will be sent to the server to create a new resource.\n\n- **URL**: The endpoint for the API call. It’s given as `http://localhost:3000/api/action/tip/create`, which is the path where the request will be sent.\n\n- **Headers**: Contains the request headers.\n  - **Key**: This is currently empty, indicating that no custom headers are being used.\n  - **Value**: Also empty, which means no value is set for the key. \n  - **Type**: Default, meaning it is a standard header.\n  - **Disabled**: This is marked as true, indicating that the header will not be included in the request.\n\n- **Body**: This specifies the content to be sent in the request body.\n  - **Mode**: It indicates the body structure. It is set as **raw**, meaning a raw data payload is used rather than form data or x-www-form-urlencoded.\n  - **Raw**: This section contains the JSON data that will be sent to the server. The following fields are included:\n    - **sessionId**: Represents the unique identifier for the session, where the tip action occurs.\n    - **accountId**: Specifies the unique identifier for the user's account making the tip.\n    - **path**: The path to the content being tipped, represented as a string (e.g., `/live/channel/video123`).\n    - **targetType**: Indicates the type of target being tipped. In this case, it is set to `videoId`, referring to the video content.\n    - **targetId**: The unique identifier for the target video that is receiving the tip.\n    - **sourceType**: Marks the source type associated with the tip action, also set to `accountId`.\n    - **sourceId**: The unique identifier for the account that is the source of the tip.\n    - **didTip**: A boolean value that indicates whether the tip action was completed (true signifies the action took place).\n    - **utilityType**: Indicates the type of utility used for the tip, specified here as `token`.\n    - **tokenAmount**: Represents the amount of tokens being tipped, shown as `20`.\n    - **name**: A placeholder for any name associated with the tip (currently left empty).\n    - **description**: A placeholder for any description associated with the tip (currently left empty).\n    - **tags**: A placeholder for any tags related to the tip (currently left empty).\n  \n- **Options**: This defines the settings for the raw body content.\n  - **Raw**: Specifies that the content type is JSON in this case, ensuring the server recognizes the format correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Tip - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didTip\": true,\n    \"utilityType\": \"token\",\n    \"tokenAmount\": 10,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"tipId\":\"tipId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tip/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tip",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Tip - Update\n\n**Request Type:** PUT  \n**Endpoint URL:** http://localhost:3000/api/action/tip/update  \n\n#### Authentication:\n- **Type:** Bearer Token  \n  - **Token:** A string value representing the authorization token required for accessing the API. Replace \"BearerToken\" with the actual token.\n\n#### Headers:\n- **Client-UUID:** \n  - A unique identifier for the client making the request. Replace \"ClientUUID\" with the actual client UUID.\n\n#### Body Parameters (in JSON format):\n1. **sessionId:** \n   - The ID of the session related to the action being performed. Replace \"sessionId\" with the appropriate session identifier.\n\n2. **accountId:** \n   - The unique identifier for the account associated with the action. Replace \"accountId\" with the actual account ID.\n\n3. **path:** \n   - The URL path pointing to the specific resource being tipped. This typically includes the type of resource and its identifier, such as \"/live/channel/video123\".\n\n4. **targetType:** \n   - Specifies the type of the target receiving the tip, such as \"videoId\". This indicates what kind of resource is being interacted with.\n\n5. **targetId:** \n   - The unique identifier of the target that is being tipped. Replace \"videoId\" with the actual identifier of the target resource.\n\n6. **sourceType:** \n   - Indicates the type of the source from which the tip is coming, such as \"accountId\". \n\n7. **sourceId:** \n   - The unique identifier of the source from which the tip is being sent. Replace \"accountId\" with the appropriate identifier.\n\n8. **didTip:** \n   - A boolean value indicating whether a tip has been given. Set this to `true` to indicate that a tip is being made.\n\n9. **utilityType:** \n   - Specifies the type of utility being used for the tip, such as \"token\". This indicates the medium used for the tip.\n\n10. **tokenAmount:** \n    - The amount of tokens being tipped. Replace \"10\" with the actual number of tokens intended to be tipped.\n\n11. **name:** \n    - An optional field for a name or title associated with the tip. It can be left blank if not needed.\n\n12. **description:** \n    - An optional field for a description of the tip. It can be left blank if not needed.\n\n13. **tags:** \n    - Optional tags associated with the tip action. This can be used for categorization and can be left blank if not utilized.\n\n14. **tipId:** \n    - The unique identifier for the tip action being updated. Replace \"tipId\" with the actual identifier of the tip.\n\n### Note:\nMake sure to replace placeholder values in the request with actual values relevant to the action you intend to update."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Tip - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tip/get/?tipId=tipId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tip",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tipId",
+              "value": "tipId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Description of Endpoint Data:**\n\n- **Name**: Action - Tip - Get\n  - This is the name of the API request, indicating the operation being performed is to retrieve a 'tip' action.\n\n- **Request**:\n  - This section describes the details of the API request that will be sent to the server.\n\n  - **Auth**:\n    - **Type**: bearer\n      - This indicates that the request uses Bearer token authentication.\n      \n    - **Bearer**:\n      - This is an array containing the authentication token required for authorization.\n      \n      - **Key**: token\n        - This is the identifier for the authentication token.\n        \n      - **Value**: BearerToken\n        - This is a placeholder for the actual Bearer token value that must be provided for authentication when making the request.\n        \n      - **Type**: string\n        - This specifies that the value should be a string.\n\n  - **Method**: GET\n    - This indicates that the request method used is GET, meaning it is intended to retrieve data from the server without modifying any resources.\n\n  - **URL**: http://localhost:3000/api/action/tip/get/?tipId=tipId&sessionId=sessionId&accountId=accountId\n    - This is the endpoint URL where the GET request will be sent. \n    - It includes several query parameters:\n      - **tipId**: Represents the unique identifier of the tip being requested.\n      - **sessionId**: Represents the unique identifier of the session related to the request.\n      - **accountId**: Represents the unique identifier of the account making the request.\n\n  - **Headers**:\n    - This section would typically contain additional HTTP headers to be sent with the request.\n    \n    - **Key**: \"\"\n      - This field is currently empty, meaning no additional header key is specified.\n      \n    - **Value**: \"\"\n      - This field is also empty, indicating no additional value is provided for the header.\n      \n    - **Type**: default\n      - This signifies the type of header, which is in its default format, but it is currently disabled.\n\n  - **Body**:\n    - This section specifies the body of the request, relevant for methods that send data. However, since this is a GET request, the body is not used.\n    \n    - **Mode**: raw\n      - Indicates that the request body could be in raw data format, though it is not applicable for a GET request.\n      \n    - **Raw**: \"\"\n      - The raw body content is empty, as no data needs to be sent in the body for this GET operation."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Tip - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tip/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tip",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Tip - Get All\n\n- **name**: This is the name of the API endpoint, which is \"Action - Tip - Get All\". It indicates this endpoint is used for retrieving all tip-related actions.\n\n- **request**: Contains details about how to make the request to the API.\n\n  - **auth**: This section defines the authentication method required to access the endpoint.\n  \n    - **type**: Specifies the type of authentication being used. In this case, it is \"bearer\", which means a token is required to authenticate.\n    \n    - **bearer**: An array that holds the bearer token information.\n      \n      - **key**: The identifier for the token; here, it is simply \"token\".\n      \n      - **value**: The actual bearer token that will be sent with the request. It is represented as \"BearerToken\", and should be replaced with a valid token when making the request.\n      \n      - **type**: Indicates the type of data for the token. In this case, it is a \"string\".\n\n  - **method**: Specifies the HTTP method. This endpoint uses the \"GET\" method, which is typically used for retrieving data from the server.\n\n  - **url**: The URL endpoint where the request will be sent. It is a combination of the base URL and specific path to access tips. The example provided is \"http://localhost:3000/api/action/tip/all/?sessionId=sessionId&accountId=accountId\".\n    \n    - **sessionId**: This is a query parameter in the URL, used to identify the session related to the request. It should be substituted with the actual session ID you are working with.\n    \n    - **accountId**: Another query parameter that identifies the specific account linked to the request. This should also be replaced with the actual account ID.\n\n  - **headers**: Contains the HTTP headers to be sent with the request.\n    \n    - **key**: Indicates the name of the header; it is currently empty and not used.\n    \n    - **value**: The value associated with the header; also currently empty.\n    \n    - **type**: Specifies that the header type is \"default\". This header is marked as \"disabled\", meaning it will not be sent with the request.\n\n  - **body**: Describes the content that would be included in the body of the request if needed.\n    \n    - **mode**: Defines the format of the body. Currently set to \"raw\", indicating no specific formatting is applied.\n    \n    - **raw**: Contains the raw data that would be sent in the body; currently, it is empty, which implies that for a GET request, no body content is typically needed."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Tip - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tipId\":\"tipId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tip/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tip",
+            "delete"
+          ]
+        },
+        "description": "**Endpoint Description: Action - Tip - Delete**\n\n- **Name**: Action - Tip - Delete  \n  This is the identifier for the action of deleting a tip.\n\n- **Request**:  \n  Details regarding the request that needs to be made to the endpoint.\n\n  - **Auth**:  \n    This section details the authentication required to access the endpoint.\n    \n    - **Type**: bearer  \n      Indicates that a bearer token is used for authentication.\n    \n    - **Bearer**:  \n      Contains information about the bearer token.\n      \n      - **Key**: token  \n        This specifies the name of the token parameter.\n      \n      - **Value**: sessionId  \n        This is a placeholder that represents the actual session ID necessary for authentication.\n      \n      - **Type**: string  \n        This indicates that the value of the token is a string.\n\n  - **Method**: POST  \n    This signifies that the request method used will be POST, which is typically used for sending data to the server.\n\n  - **URL**: http://localhost:3000/api/action/tip/delete  \n    This is the endpoint where the delete request will be sent. It targets the action of deleting a tip.\n\n  - **Headers**:  \n    This section contains any HTTP headers that may need to accompany the request.\n    \n    - **Key**: (empty)  \n      No specific headers are being set in this request as the key is empty.\n    \n    - **Value**: (empty)  \n      Similarly, the value for the header is empty.\n\n    - **Type**: default  \n      This specifies the default type of the headers.\n\n    - **Disabled**: true  \n      This indicates that the header is currently disabled and will not be included in the request.\n\n  - **Body**:  \n    This section outlines the content that will be sent in the request body.\n\n    - **Mode**: raw  \n      The body content is sent as raw data.\n\n    - **Raw**:  \n      This is the actual payload being sent to the server. It contains three key-value pairs in JSON format.\n\n      - **sessionId**: \"sessionId\"  \n        This is a placeholder representing the user's session ID which is required for the operation.\n\n      - **accountId**: \"accountId\"  \n        This is a placeholder that indicates the account ID of the user associated with the tip.\n\n      - **tipId**: \"tipId\"  \n        This is a placeholder that refers to the unique identifier of the tip that needs to be deleted."
+      },
+      "response": []
+    }
+  ]
+}

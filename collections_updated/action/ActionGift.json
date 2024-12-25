@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "09ae7fef-98d5-426c-b519-e52f14ab99f1",
+    "name": "ActionGift",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Gift - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"giftType\": \"sticker\",\n    \"UtilityType\": \"token\",\n    \"didGift\": true,\n    \"tokenAmount\": 20,\n    \"name\": \"name\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/gift/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "gift",
+            "create"
+          ]
+        },
+        "description": "### Action - Gift - Create Endpoint Description\n\n**Endpoint**: This endpoint is used to create a gift action within the application. \n\n**HTTP Method**: POST\n\n**URL**: `http://localhost:3000/api/action/gift/create`\n\n#### Authentication:\n- **Type**: Bearer authentication\n- **Bearer Token**: Include a valid token for authentication purposes. The token should be prefixed with `Bearer ` followed by the actual token string.\n\n#### Request Body Parameters:\n- **sessionId**: A unique identifier for the user session. This helps in managing user interactions during their session.\n- **accountId**: The identifier for the user’s account. It represents the user who is sending the gift.\n- **path**: The resource path where the action is being directed, typically a URL representing the content (e.g., a live stream).\n- **targetType**: Specifies the type of target for the gift. In this case, it is identified as `videoId`, indicating that the gift is directed towards a specific video.\n- **targetId**: The unique identifier for the target, which corresponds to the `videoId` being gifted to.\n- **sourceType**: Indicates the type of source for the gift, which is identified as `accountId`, showing that the gift's origin is from an account.\n- **sourceId**: The unique identifier for the source, matching the `accountId` from which the gift is sent.\n- **giftType**: Defines the type of gift being sent. For this request, it is a `sticker`.\n- **UtilityType**: Indicates the type of utility that the gift action uses, in this case, it is `token`, suggesting that tokens are being spent to send the gift.\n- **didGift**: A boolean value (true/false) that indicates whether the gift action has been successfully executed.\n- **tokenAmount**: Represents the number of tokens being used to send the gift. This is a numerical value indicating the cost of the gift.\n- **name**: A name or title for the gift action. This could be a descriptive label or the name of the gift.\n- **description**: An optional field to provide additional details about the gift. If not needed, this can be left empty.\n- **tags**: Optional field for any tags associated with the gift. This can help in categorizing or labeling the gift for easy identification.\n\n### Headers:\n- No custom headers are defined for this request, and the default header has been disabled.\n\nThis endpoint allows users to send gifts within the application by providing necessary parameters related to the session, account, and gift specifications. Be sure to replace the placeholder values with actual data for successful requests."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Gift - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"giftType\": \"sticker\",\n    \"UtilityType\": \"token\",\n    \"didGift\": true,\n    \"tokenAmount\": 20,\n    \"name\": \"updated name\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"giftId\":\"giftId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/gift/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "gift",
+            "update"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Action - Gift - Update\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"PUT\",\n      \"url\": \"http://localhost:3000/api/action/gift/update\",\n      \"headers\": [\n        {\n          \"key\": \"Client-UUID\",\n          \"value\": \"ClientUUID\",\n          \"type\": \"default\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"path\\\": \\\"/live/channel/video123\\\",\\n    \\\"targetType\\\": \\\"videoId\\\",\\n    \\\"targetId\\\": \\\"videoId\\\",\\n    \\\"sourceType\\\": \\\"accountId\\\",\\n    \\\"sourceId\\\": \\\"accountId\\\",\\n    \\\"giftType\\\": \\\"sticker\\\",\\n    \\\"UtilityType\\\": \\\"token\\\",\\n    \\\"didGift\\\": true,\\n    \\\"tokenAmount\\\": 20,\\n    \\\"name\\\": \\\"updated name\\\",\\n    \\\"description\\\": \\\"\\\",\\n    \\\"tags\\\": \\\"\\\",\\n    \\\"giftId\\\":\\\"giftId\\\"\\n}\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\"\n          }\n        }\n      }\n    }\n  },\n  \"details\": {\n    \"sessionId\": \"Unique identifier for the session during which the gift action is being updated.\",\n    \"accountId\": \"Identifier for the account associated with the gift transaction.\",\n    \"path\": \"The specific path or URL related to the content or channel where the gift is being sent, formatted as a string.\",\n    \"targetType\": \"Indicates the type of target receiving the gift, in this case, a video ID.\",\n    \"targetId\": \"Identifier for the target entity (like a video) that is receiving the gift.\",\n    \"sourceType\": \"Type of source making the gift, noted here as an account ID.\",\n    \"sourceId\": \"Identifier for the source entity (like an account) sending the gift.\",\n    \"giftType\": \"Specifies the type of gift being sent, which is a sticker in this case.\",\n    \"UtilityType\": \"Defines the type of utility used for the gift transaction, denoted as token.\",\n    \"didGift\": \"Boolean value indicating whether the gift action was successfully processed (true) or not (false).\",\n    \"tokenAmount\": \"Number of tokens involved in the gift action, set to 20.\",\n    \"name\": \"Updated name or label for the gift being processed.\",\n    \"description\": \"A field for further details or description of the gift; currently left empty.\",\n    \"tags\": \"Optional tags for categorizing or describing the gift; currently left empty.\",\n    \"giftId\": \"Unique identifier for the gift being updated.\"\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Gift - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/gift/get/?giftId=giftId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "gift",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "giftId",
+              "value": "giftId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Endpoint Name: Action - Gift - Get**\n\n**Request Information:**\n- **Auth:** This section specifies that the request requires bearer token authentication. A bearer token is a type of access token used to authorize API requests, indicating that the client has the appropriate permissions to access the requested resource.\n  - **Type:** The authentication type is \"bearer.\"\n  - **Bearer:** This array contains details for the bearer token.\n    - **Key:** This indicates that the token is identified by the string \"token.\"\n    - **Value:** This placeholder \"BearerToken\" denotes where the actual token should be placed for authentication.\n    - **Type:** This specifies the type of value expected for the token, which is a string.\n\n- **Method:** The HTTP request method used is \"GET.\" This method is typically used to retrieve data from a specified resource.\n\n- **URL:** This is the endpoint's URL where the request is sent. It follows the structure:\n  - `http://localhost:3000/api/action/gift/get/?giftId=giftId&sessionId=sessionId&accountId=accountId`\n    - **localhost:** This indicates that the API is hosted locally on the machine being used.\n    - **api/action/gift/get/:** This part describes the specific resource being accessed, in this case, to get a gift action.\n    - **Query Parameters:**\n      - `giftId`: This parameter represents the unique identifier for the gift being requested.\n      - `sessionId`: This parameter refers to the unique identifier for the session associated with the request.\n      - `accountId`: This parameter indicates the unique identifier for the account making the request.\n\n- **Headers:** This section includes HTTP headers that can be sent with the request. \n  - **Key:** There is a key placeholder that is empty, which implies no specific custom headers are needed.\n  - **Value:** The value is also empty.\n  - **Type:** The type is marked as \"default.\"\n  - **Disabled:** This setting is true, indicating that this header is currently inactive and will not be sent with the request.\n\n- **Body:** This section configures the body of the request.\n  - **Mode:** The mode is set to \"raw,\" which means that the body of the request is a raw string and not one of the predefined formats like JSON or form data.\n  - **Raw:** The raw body is empty, suggesting that no data is sent with the body of the GET request, aligning with the typical usage of GET methods where body data is not generally included. \n\nIn summary, this endpoint retrieves gift information using specified identifiers for the gift, session, and account, authenticated via a bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Gift - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/gift/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "gift",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of the API Endpoint \"Action - Gift - Get All\"\n\n#### Name\n- **Action - Gift - Get All**: This is the name of the API endpoint, indicating its purpose to retrieve all gift actions.\n\n#### Request\n- **Auth**: Defines the authentication required to access the endpoint.\n  - **Type**: Indicates the type of authentication. Set to `bearer`, meaning a bearer token is required for authorization.\n  - **Bearer**: An array that contains the token information.\n    - **Key**: This specifies the type of authentication token being used, labeled as `token`.\n    - **Value**: The actual token value which is used to authenticate the request, currently set as `BearerToken`, which should be replaced with an actual token.\n    - **Type**: This indicates the data type of the token, specified as `string`.\n\n- **Method**: \n  - **GET**: This specifies the HTTP method used for the request, which is `GET`. This method is typically used to retrieve data from a specified resource.\n\n- **URL**: \n  - This is the endpoint URL where the request is sent. It comprises several parameters:\n    - `http://localhost:3000/api/action/gift/all/`: The base URL for accessing all gift actions.\n    - `?sessionId=sessionId`: A query parameter where `sessionId` should be replaced with an actual session ID that relates to the user's session.\n    - `&accountId=accountId`: Another query parameter where `accountId` should be substituted with the actual account ID of the user making the request.\n\n- **Headers**: \n  - This section captures any header information that should be included with the request.\n    - **Key**: Currently empty, which means no specific header key is being sent.\n    - **Value**: Also empty, indicating no corresponding header value is being sent.\n    - **Type**: Default, which means the header type is standard.\n    - **Disabled**: Set to true, which means that this header will not be sent with the request.\n\n- **Body**: \n  - **Mode**: \n    - **Raw**: Indicates that the body format for the request is raw text.\n  - **Raw**: \n    - The body is currently empty, indicating that no additional data needs to be sent with the GET request. \n\nThis endpoint is designed to fetch all available gift actions for the user specified by the session and account ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Gift - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"giftId\":\"giftId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/gift/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "gift",
+            "delete"
+          ]
+        },
+        "description": "### Action - Gift - Delete Description\n\n- **Name**: This is the name of the API action, which indicates that it pertains to deleting a gift. \n\n- **Request**: This section outlines the specifications needed for the API call.\n\n  - **Auth**: Details the type of authentication required for this request.\n    - **Type**: Specifies that the authentication type is \"bearer\".\n    - **Bearer**: An array that contains the authentication details.\n      - **Key**: The key for the bearer token, which is \"token\".\n      - **Value**: Represents the session ID used for authentication. Replace \"sessionId\" with the actual session ID string when making the request.\n      - **Type**: Indicates the type of value being passed, which is \"string\".\n\n  - **Method**: This indicates the HTTP method used for the request. In this case, it is \"POST\", meaning this action will send data to the server to delete a gift.\n\n  - **URL**: The endpoint this request targets. The URL is `http://localhost:3000/api/action/gift/delete`, which denotes that the request will be sent to a local server to delete a gift.\n\n  - **Headers**: This section contains any custom headers needed for the request.\n    - **Key**: There is no key provided in this example.\n    - **Value**: There is no value provided in this example.\n    - **Type**: Setting is \"default\", and this header is currently disabled, meaning it will not be sent with the request.\n\n  - **Body**: This section describes the data you need to send with the request.\n    - **Mode**: Indicates that the body is sent in \"raw\" format.\n    - **Raw**: Contains the JSON string that includes the necessary information to delete a gift. The body must include:\n      - **sessionId**: The ID used for the user session, replace \"sessionId\" with the actual session ID.\n      - **accountId**: The ID of the account that owns the gift, replace \"accountId\" with the actual account ID.\n      - **giftId**: The ID of the gift that is to be deleted, replace \"giftId\" with the actual gift ID. \n\nMake sure to swap out placeholder values with actual data when performing this API call."
+      },
+      "response": []
+    }
+  ]
+}

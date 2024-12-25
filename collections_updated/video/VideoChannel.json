@@ -1,0 +1,249 @@
+{
+  "info": {
+    "_postman_id": "fc16e2f6-9ad9-4260-8007-4963f366cbb1",
+    "name": "VideoChannel",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Video - Channel - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"Fortune\",\"description\":\"This channel is by Fortune Vieyra\",\"tags\":\"second,channel\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":1,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isChannelPrivate\":true,\"isTournamentOnly\":false,\"isChannelDefault\":true,\"isPreLiveVideoAds\":true,\"isPostLiveVideoAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseVideoUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/channel/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "channel",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Video - Channel - Create\n\nThis endpoint allows users to create a new video channel with various customizable settings. Below is a detailed description of each data field in the request body.\n\n#### Request Body Fields:\n\n- **sessionId**: Represents the unique identifier for the current user session. This is used to track the user's activity and ensure that actions are associated with the correct session.\n\n- **accountId**: This is the unique identifier for the user's account. It links the channel to the specific account of the user creating it.\n\n- **name**: The name of the channel. It is how the channel will be identified and searched. For example, \"Fortune\".\n\n- **description**: A brief description of the channel, providing insights into the content or the purpose of the channel. For example, \"This channel is by Fortune Vieyra\".\n\n- **tags**: A comma-separated list of keywords associated with the channel. Tags help categorize the channel and make it easier for users to find content, such as \"second,channel\".\n\n- **profilePhotoUrl**: The URL link to the profile photo of the channel. This image represents the channel visually across the platform. For example, \"https://example.com/profile.jpg\".\n\n- **coverPhotoUrl**: The URL link to the cover photo of the channel. This is the larger image that appears at the top of the channel page, providing a visual identity. For example, \"https://example.com/cover.jpg\".\n\n- **minimumTipAmount**: The minimum amount that a viewer can tip the channel creator. This is defined in the currency set by the platform. For example, the minimum tip could be 10 units.\n\n- **unlockAmount**: The amount required to unlock specific content or features in the channel. For example, an unlock amount of 1 unit might be charged to access exclusive videos.\n\n- **category**: The main category that the channel falls under. This helps users navigate channels by content type. An example would be \"General\".\n\n- **subCategory**: A more specific classification within the main category. This helps further refine the channel’s classification, such as \"Specific\".\n\n- **searchType**: Specifies the type of content that can be searched within the channel. For example, \"Game\" indicates that the channel may focus on gaming-related content.\n\n- **isEnabled**: A boolean value indicating whether the channel is currently active and visible to users. If set to true, the channel is enabled.\n\n- **isChannelPrivate**: A boolean value that specifies whether the channel is private and only accessible to selected viewers. If true, only invited users can view the channel.\n\n- **isTournamentOnly**: A boolean that indicates if the channel is exclusively for tournaments. If set to true, only tournament-related content will be available.\n\n- **isChannelDefault**: A boolean value indicating whether this channel should be set as the default channel. If true, it may be the first option users see when accessing video channels.\n\n- **isPreLiveVideoAds**: A boolean indicating whether ads are shown before the live video starts. If true, viewers will see ads prior to the content.\n\n- **isPostLiveVideoAds**: A boolean indicating whether ads are shown after the live video ends. If true, viewers will see ads after the content concludes.\n\n- **breakPreLiveVideoUrl**: URL to a video that will be played during breaks before the live video starts. This content can keep viewers engaged until the live stream begins.\n\n- **breakLivePauseVideoUrl**: URL to a video that will play if the live stream is paused. This ensures viewers have something to watch rather than a blank screen.\n\n- **breakPostLiveVideoUrl**: URL to a video that will play after the live stream ends. This could contain highlights or additional content related to the channel.\n\nThis collection allows for detailed channel creation, catering to various aspects of user engagement and content management."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Channel - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"channelId\":\"channelId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"MyNikeChannel\",\"description\":\"This channel is my second channel\",\"tags\":\"second,channel\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"unlockAmount\":100,\"category\":\"General\",\"subCategory\":\"Specific\",\"searchType\":\"Game\",\"isEnabled\":true,\"isChannelPrivate\":true,\"isTournamentOnly\":false,\"isChannelDefault\":true,\"isPreLiveVideoAds\":true,\"isPostLiveVideoAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakLivePauseVideoUrl\":\"https://example.com/break-paused-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/channel/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "channel",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Video - Channel - Update\n\n#### Auth\n- **Type**: Bearer\n  - **Key**: `token`\n    - **Value**: `BearerToken` - This is the authorization token required to access the endpoint.\n\n#### Method\n- **Type**: PUT - This HTTP method is used to update an existing resource on the server.\n\n#### URL\n- **Endpoint**: `http://localhost:3000/api/video/channel/update` - This is the URL where the request will be sent to update the video channel.\n\n#### Headers\n- **Client-UUID**\n  - **Key**: `Client-UUID` - A unique identifier for the client making the request.\n  - **Value**: `ClientUUID` - This represents the UUID associated with the client.\n\n#### Body\n- **Mode**: Raw - The body of the request is sent in raw format.\n- **Raw Content**: This is a JSON object that must be sent in the request body. Below are the individual fields:\n\n  - **channelId**: \n    - A unique identifier for the channel to be updated.\n\n  - **sessionId**: \n    - A unique identifier for the user session.\n\n  - **accountId**: \n    - A unique identifier for the account associated with the channel.\n\n  - **name**: \n    - The name of the channel (e.g., \"MyNikeChannel\").\n\n  - **description**: \n    - A brief description of the channel (e.g., \"This channel is my second channel\").\n\n  - **tags**: \n    - Comma-separated list of tags associated with the channel (e.g., \"second,channel\").\n\n  - **profilePhotoUrl**: \n    - A URL pointing to the profile photo for the channel (e.g., \"https://example.com/profile.jpg\").\n\n  - **coverPhotoUrl**: \n    - A URL pointing to the cover photo for the channel (e.g., \"https://example.com/cover.jpg\").\n\n  - **minimumTipAmount**: \n    - The minimum amount that can be tipped on the channel, specified in the relevant monetary unit (e.g., 10).\n\n  - **unlockAmount**: \n    - The amount required to unlock specific content on the channel (e.g., 100).\n\n  - **category**: \n    - The primary category for the channel (e.g., \"General\").\n\n  - **subCategory**: \n    - A more detailed classification of the channel (e.g., \"Specific\").\n\n  - **searchType**: \n    - The method or type of search associated with the channel (e.g., \"Game\").\n\n  - **isEnabled**: \n    - A boolean value indicating if the channel is active (true) or not (false).\n\n  - **isChannelPrivate**: \n    - A boolean that indicates whether the channel is private (true) or public (false).\n\n  - **isTournamentOnly**: \n    - Indicates if the channel is exclusively for tournaments (true) or has other content (false).\n\n  - **isChannelDefault**: \n    - A flag indicating if this is the default channel (true) or not (false).\n\n  - **isPreLiveVideoAds**: \n    - Indicates whether pre-live video advertisements are enabled for the channel (true) or not (false).\n\n  - **isPostLiveVideoAds**: \n    - Indicates whether post-live video advertisements are enabled for the channel (true) or not (false).\n\n  - **breakPreLiveVideoUrl**: \n    - A URL for a video that plays during pre-live breaks (e.g., \"https://example.com/break-pre-live.mp4\").\n\n  - **breakLivePauseVideoUrl**: \n    - A URL for a video that plays during live video pauses (e.g., \"https://example.com/break-paused-live.mp4\").\n\n  - **breakPostLiveVideoUrl**: \n    - A URL for a video that plays after the live stream ends (e.g., \"https://example.com/break-post-live.mp4\"). \n\nThese fields collectively define the properties and configuration of the video channel to be updated in the system."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Channel - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/channel/get/?channelId=channelId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "channel",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channelId",
+              "value": "channelId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Video - Channel - Get\": \"This refers to the name of the API endpoint which retrieves video data associated with a specific channel.\",\n    \n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"This indicates that the API request uses Bearer authentication, requiring a token for authorization.\",\n        \n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This represents the key used in the authorization header.\",\n            \"value\": \"BearerToken\": \"This placeholder indicates where the actual Bearer token should be provided for authentication.\",\n            \"type\": \"string\": \"This specifies that the value of the Bearer token is a string.\"\n          }\n        ]\n      },\n      \n      \"method\": \"GET\": \"This indicates that the HTTP method used for the request is 'GET', which is used to retrieve data from the specified resource.\",\n      \n      \"url\": \"http://localhost:3000/api/video/channel/get/?channelId=channelId\": \"This is the endpoint URL where the request is sent. It includes a query parameter 'channelId', which should be replaced with the actual ID of the channel for which video information is being requested.\",\n      \n      \"headers\": [\n        {\n          \"key\": \"\": \"This is an empty key indicating that no additional headers are being sent with the request.\",\n          \"value\": \"\": \"This is an empty value corresponding to the empty key, meaning no value is associated.\",\n          \"type\": \"default\": \"This indicates the type of header, which in this case is set to default, but is not actively used since headers are disabled.\",\n          \"disabled\": true: \"This indicates that the header is disabled and will not be included in the request.\"\n        }\n      ],\n      \n      \"body\": {\n        \"mode\": \"raw\": \"This specifies the mode of the body for the API request, indicating that the body content is sent in raw format.\",\n        \n        \"raw\": \"\": \"This placeholder denotes that the body of the request is empty, as the GET method does not typically require a body.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Channel - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/channel/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "channel",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Video - Channel - Get All\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/video/channel/all/?accountId=accountId\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    }\n  },\n  \"details\": {\n    \"name\": \"This is the name of the API endpoint used to retrieve all video channels.\",\n    \"auth\": {\n      \"type\": \"bearer\": \"This indicates that the endpoint requires bearer token authentication.\",\n      \"bearer\": [\n        {\n          \"key\": \"token\": \"This is the key name for the authentication token.\",\n          \"value\": \"BearerToken\": \"This is a placeholder for the actual bearer token that should be used for authentication. Replace with a valid token.\",\n          \"type\": \"string\": \"This indicates that the value type is a string.\"\n        }\n      ]\n    },\n    \"method\": \"GET\": \"This specifies that the request method is GET, meaning data will be retrieved from the server.\",\n    \"url\": \"http://localhost:3000/api/video/channel/all/?accountId=accountId\": \"This is the endpoint URL that needs to be called to get all video channels. The 'accountId' parameter should be set to the actual account ID you want to query.\",\n    \"headers\": [\n      {\n        \"key\": \"\": \"This is currently empty, indicating no specific header is required for this request.\",\n        \"value\": \"\": \"This is also empty, as there are no header values set.\",\n        \"type\": \"default\": \"This implies that the header type is a standard header.\",\n        \"disabled\": true: \"This indicates that this header is currently disabled and will not be sent with the request.\"\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\": \"This indicates the format of the body data, which is set to raw.\",\n      \"raw\": \"\": \"Since the request does not require a body for a GET request, this is left empty.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Channel - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/channel/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "channel",
+            "delete"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **Name**: \n  - This represents the name of the API request, which is \"Video - Channel - Delete\". It indicates that this request is used to delete a channel associated with a video.\n\n- **Request**: \n  - This section contains details about how the request should be made.\n\n  - **Auth**: \n    - This specifies the authentication type needed for the request. In this case, it is a bearer token, which is a type of access token used for authentication.\n\n    - **Type**: \n      - This indicates that the authentication method is \"bearer\".\n\n    - **Bearer**: \n      - This array holds the details of the token used for authentication. \n\n      - **Key**: \n        - This is a description of the item in the token, which is \"token\". \n\n      - **Value**: \n        - This is the actual value associated with the key, here it is \"sessionId\", which should be replaced with a valid session identifier.\n\n      - **Type**: \n        - This indicates the data type of the value, which is a string.\n\n  - **Method**: \n    - This indicates the HTTP method used for the request. It is set to \"POST\", which means data will be sent to the server to request the deletion of the channel.\n\n  - **URL**: \n    - This is the endpoint where the request is sent. It points to \"http://localhost:3000/api/video/channel/delete\", which is a local server URL pointing to the delete channel functionality.\n\n  - **Headers**: \n    - This section may contain additional headers for the request.\n\n    - **Key**: \n      - Currently empty, indicating that no additional header is defined for this request.\n\n    - **Value**: \n      - Also empty, as there are no associated values with the key.\n\n    - **Type**: \n      - Set to \"default\", which implies a standard header is expected.\n\n    - **Disabled**: \n      - This is a boolean value indicating whether the header is enabled or not. It is set to true, meaning this header will not be included in the request.\n\n  - **Body**: \n    - This section defines the body of the request, which contains the data that will be sent to the server.\n\n    - **Mode**: \n      - Indicating the format of the request body. It is set to \"raw\", meaning the data is sent in a raw format.\n\n    - **Raw**: \n      - This is where the actual data to be sent is defined. The body consists of a JSON object with three key-value pairs:\n      \n      - **sessionId**: \n        - This key is meant to identify the user's session. It should be replaced with a valid session identifier when making a request.\n\n      - **accountId**: \n        - This key represents the ID of the user's account. It requires a valid account identifier to specify which account is associated with the request.\n\n      - **channelId**: \n        - This key is used to identify the specific channel that is to be deleted. It should be replaced with the relevant channel identifier when the request is made."
+      },
+      "response": []
+    }
+  ]
+}

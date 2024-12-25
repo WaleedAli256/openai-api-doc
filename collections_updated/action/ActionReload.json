@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "8de4dd1e-d0c0-4c8e-9dc1-3a2c934bde76",
+    "name": "ActionReload",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Reload - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"didReload\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reload/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reload",
+            "create"
+          ]
+        },
+        "description": "### Action - Reload - Create\n\n#### Request\n- **Auth**: \n  - **Type**: Specifies the type of authentication used for the request. This endpoint utilizes Bearer token authentication.\n  - **Bearer**: \n    - **Key**: Identifies the token parameter.\n    - **Value**: This should be replaced with the actual Bearer token for authentication.\n    - **Type**: Indicates that the value is a string.\n\n- **Method**: \n  - **POST**: This specifies that the HTTP method for this request is POST, which is used to send data to the server.\n\n- **URL**: \n  - **Endpoint**: The URL to which the request is made. In this case, it points to `http://localhost:3000/api/action/reload/create`, which is likely a local server endpoint.\n\n- **Headers**: \n  - An array to hold HTTP headers. In this case, there is a header entry present but it is currently disabled and contains no key or value.\n\n- **Body**: \n  - **Mode**: Indicates the body type is \"raw.\" This means the raw data will be sent in the request body.\n  - **Raw**: Contains the actual JSON payload being sent to the server. It includes the following fields:\n    - **sessionId**: A unique identifier for the current user session. This should be replaced with an actual session ID.\n    - **accountId**: Identifies the account associated with the request. This should be replaced with the actual account ID.\n    - **path**: The path indicating the location of the resource being acted upon. This typically represents a specific channel, such as `/live/channel/video123`.\n    - **targetType**: Specifies the type of target for the action, in this case, it is indicated as `videoId`.\n    - **targetId**: The unique identifier for the target resource, which should be replaced with the actual video ID.\n    - **sourceType**: Represents the type of source related to this action, which in this case is also indicated as `accountId`.\n    - **sourceId**: The unique identifier for the source resource, typically the same as `accountId`.\n    - **name**: A placeholder that can be filled with a name related to the action or resource. Currently, it is left empty.\n    - **description**: A placeholder for a description regarding the action or resource. Currently, it is left empty.\n    - **tags**: A placeholder for any tags relevant to the action or resource. Currently, it is left empty.\n    - **didReload**: A boolean value indicating if the action involved a reload. Currently set to `true`.\n\n- **Options**: \n  - **Raw**: \n    - **Language**: Specifies that the content being sent is in JSON format.\n\nThis endpoint is designed for creating a reload action associated with video content, requiring identifiers for the session and account, as well as details about the video and accompanying metadata."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reload - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"didReload\": false,\n    \"reloadId\":\"reloadId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reload/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reload",
+            "update"
+          ]
+        },
+        "description": "### Action - Reload - Update Endpoint Description\n\n- **Name**: \n  - Action - Reload - Update\n  \n- **Request Details**:\n  - **Authentication**: \n    - Type: Bearer Token\n      - The request requires a bearer token for authentication which should be included in the authorization header.\n      - Key: `token`\n      - Value: The token should be in the format of `BearerToken`.\n\n  - **Method**: \n    - PUT\n      - This method is used to update existing resources or data on the server.\n      \n  - **URL**: \n    - `http://localhost:3000/api/action/reload/update`\n      - This is the endpoint where the request is sent for updating the reload action.\n      \n  - **Headers**:\n    - **Client-UUID**:\n      - Key: `Client-UUID`\n      - Value: This header should contain the unique identifier of the client making the request.\n      \n  - **Body**: \n    - Mode: Raw\n      - This indicates that the body of the request is sent as raw JSON data.\n    - Raw Content:\n      ```json\n      {\n          \"sessionId\": \"sessionId\",\n          \"accountId\": \"accountId\",\n          \"path\": \"/live/channel/video123\",\n          \"targetType\": \"videoId\",\n          \"targetId\": \"videoId\",\n          \"sourceType\": \"accountId\",\n          \"sourceId\": \"accountId\",\n          \"name\": \"\",\n          \"description\": \"\",\n          \"tags\": \"\",\n          \"didReload\": false,\n          \"reloadId\": \"reloadId\"\n      }\n      ```\n      - **sessionId**: \n        - Represents the unique identifier for the session associated with the action.\n        \n      - **accountId**: \n        - The unique identifier for the account that owns the resources or is making the request.\n        \n      - **path**: \n        - Specifies the resource path, in this example, pointing to a live channel.\n        \n      - **targetType**: \n        - Indicates the type of the target that is being acted upon; here, it is `videoId`.\n        \n      - **targetId**: \n        - The unique identifier of the target resource (video) that is being referred to.\n        \n      - **sourceType**: \n        - Defines the type of the source, stated as `accountId`, indicating it is associated with the account.\n        \n      - **sourceId**: \n        - The unique identifier of the source which might be relevant to the action.\n        \n      - **name**: \n        - A string field intended for the name of the reload action (can be left empty).\n        \n      - **description**: \n        - A string field intended for providing a description of the reload action (can be left empty).\n        \n      - **tags**: \n        - A field for specifying any tags associated with the reload action (can be left empty).\n        \n      - **didReload**: \n        - A boolean indicating whether the reload action has been performed; `false` indicates it has not.\n        \n      - **reloadId**: \n        - The unique identifier associated with the reload action.\n\nThis endpoint is intended for updating action-related data in a system that handles video resources, particularly for live streaming channels. It requires specific identifiers and may involve a change in the state of a reload action based on the provided parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reload - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reload/get/?reloadId=reloadId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reload",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "reloadId",
+              "value": "reloadId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Reload - Get\n\n- **Name**: This is the identifier for the API endpoint and indicates that it is used to retrieve information about a reload action.\n\n- **Request**: This section outlines the specific details required to make a request to the endpoint.\n\n  - **Auth**:\n    - **Type**: This specifies the authentication method used. In this case, it uses **Bearer Token** authentication.\n    - **Bearer**: This contains the details of the bearer token.\n      - **Key**: The key used to identify the bearer token, labeled as \"token\".\n      - **Value**: This is where the actual bearer token is specified, labeled as \"BearerToken\". This is a placeholder that should be replaced with a valid token when making a request.\n      - **Type**: This indicates the datatype for the bearer token, which is a string.\n\n  - **Method**: Indicates the HTTP method used for this request. It is set to **GET**, meaning this endpoint is intended for retrieving data.\n\n  - **URL**: The endpoint URL specifies where the request should be sent. The URL includes query parameters:\n    - `reloadId`: Represents the unique identifier for the reload action that is being requested.\n    - `sessionId`: Represents the session identifier, which is related to the user's session when making the request.\n    - `accountId`: Represents the unique identifier for the account associated with the reload action.\n\n  - **Headers**: This section allows for custom headers to be sent with the request.\n    - **Key**: This is left blank, indicating that no additional header keys are specified at this time.\n    - **Value**: Similarly, the value is blank, so no specific values are provided.\n    - **Type**: The type is listed as **default**, indicating standard header settings.\n    - **Disabled**: This indicates that the header is currently disabled and will not be included in the request.\n\n  - **Body**: This section defines the content that can be sent with the request.\n    - **Mode**: The body mode is set to **raw**, which means that the body content will be sent as plain text.\n    - **Raw**: Currently, this is an empty string, indicating that no body content needs to be sent with the request.\n\nThis endpoint is designed to retrieve information related to a reload action based on specific identifiers, utilizing bearer token authentication for security."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reload - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reload/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reload",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Reload - Get All Endpoint Description\n\n**Name:**  \nAction - Reload - Get All  \nThis endpoint is designed to retrieve all reload actions for a specific user session and account.\n\n**Request:**\n\n- **Auth:**  \n  The endpoint requires bearer token authentication, which is a method of verifying access using a token.\n\n  - **Type:**  \n    This specifies the authentication method used, which is set to **bearer**.\n\n  - **Bearer:**  \n    This section contains the token details necessary for authentication.  \n\n    - **Key:**  \n      The key field indicates the name of the token parameter, which is **token**.  \n\n    - **Value:**  \n      The value field shows the actual token required for accessing this endpoint, prefixed with \"Bearer\". The placeholder here is **BearerToken** and should be replaced with the actual token during usage.\n\n    - **Type:**  \n      This denotes the data type of the value, which is **string**.\n\n- **Method:**  \n  The HTTP method for this request is **GET**, indicating that this request is meant to retrieve data from the server.\n\n- **URL:**  \n  The URL specifies the endpoint address to which the request will be sent.  \n  ```\n  http://localhost:3000/api/action/reload/all/?sessionId=sessionId&accountId=accountId\n  ```\n  - **Base URL:** The base URL is set to **http://localhost:3000**, indicating that the API is hosted locally on port 3000.  \n\n  - **Path:** The path **/api/action/reload/all/** indicates that this is the resource aimed at fetching all reload actions.  \n\n  - **Query Parameters:**  \n    - **sessionId:** A query parameter that needs to be replaced with the actual session ID to identify the user session.  \n    - **accountId:** Another query parameter that should be replaced with the actual account ID to access the specific account actions.  \n\n- **Headers:**  \n  This section is currently set with an empty key and value and is disabled, meaning no additional headers are being used for this request. Users can enable or modify it as needed.\n\n- **Body:**  \n  The body of the request is configured in a **raw** format but is left empty, implying that no additional data needs to be sent in the body for this GET request.\n\nThis endpoint is used to fetch all reload-related actions associated with a specific user session and account, requiring appropriate authentication and session details."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reload - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"reloadId\":\"reloadId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reload/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reload",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint: Action - Reload - Delete\n\n#### Request Details\n\n- **Auth**: \n  - **Type**: Bearer Authentication is used to authorize access to the API. \n  - **Bearer Details**: A token is required for the request, which will be passed as a `sessionId`. \n\n- **Method**: \n  - **POST**: This endpoint uses the HTTP POST method to send data to the server.\n\n- **URL**: \n  - The request will be sent to `http://localhost:3000/api/action/reload/delete`, which is the local host address where the API is hosted. \n\n- **Headers**: \n  - Currently, there are no custom headers specified. There is an empty header field that is disabled, meaning it will not be sent with the request.\n\n- **Body**: \n  - **Mode**: The body is in \"raw\" format, which allows for sending JSON data directly.\n  - **Raw Data**: The JSON payload being sent contains the following keys:\n    - **sessionId**: This represents the unique identifier for the user session that is currently active.\n    - **accountId**: This represents the unique identifier for the account linked to the session or action.\n    - **reloadId**: This signifies the unique identifier for the reload action that is to be deleted. \n\nThis endpoint is designed to send a request to delete a specific reload action associated with a user session and account. Make sure to properly replace the placeholder values with actual identifiers when making a request."
+      },
+      "response": []
+    }
+  ]
+}

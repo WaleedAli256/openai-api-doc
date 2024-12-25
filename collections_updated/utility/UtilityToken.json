@@ -1,0 +1,1110 @@
+{
+  "info": {
+    "_postman_id": "c415609a-4f2f-4936-be50-725ebe420641",
+    "name": "UtilityToken",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Utility - Token - Create for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"BPT\",\n    \"description\": \"Beladed Platform Token\",\n    \"type\": \"platform\",\n    \"action\": \"buy\",\n    \"rate\": 1,\n    \"amount\": 1000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "create"
+          ]
+        },
+        "description": "**Endpoint Description: Utility - Token - Create for User**\n\n- **Name**: This is the identifier for the API request, indicating that this endpoint is used to create a token for a user.\n\n- **Request**: This section describes the details of the API request to create a utility token.\n\n  - **Auth**: \n    - **Type**: Specifies the authentication method used for the request. It indicates that a bearer token is required to authorize the request.\n    - **Bearer**: Contains the details of the token used for authentication.\n      - **Key**: This is labeled as \"token,\" which denotes the type of authentication.\n      - **Value**: This is where the actual bearer token should be placed. The placeholder \"BearerToken\" should be replaced with a valid token during the request.\n      - **Type**: Specifies that the value is of string type.\n\n  - **Method**: Indicates that the HTTP method to be used for this request is POST, which is typically used to create new resources.\n\n  - **URL**: This is the endpoint where the request is sent. In this case, it is located at `http://localhost:3000/api/utility/token/create`.\n\n  - **Headers**: \n    - This section includes an array of headers to be sent with the request. In this example, there are no specific header keys or values provided, and it is marked as disabled.\n\n  - **Body**: This section contains the data sent with the POST request. Here, it is specified in raw JSON format.\n    - **Mode**: Specifies that the body content will be treated as raw data. \n    - **Raw**: Contains the JSON object to be sent in the request body. The JSON object includes:\n      - **sessionId**: Represents a unique identifier for the user's session. This should be replaced with a valid session ID.\n      - **accountId**: Denotes the ID of the account for which the token is being created. This should be replaced with an actual account ID.\n      - **targetType**: Specifies the type of target for the token, which in this case is indicated as \"accountId.\"\n      - **name**: The name given to the token. In this example, it is set as \"BPT.\"\n      - **description**: A brief description of the token, noted as \"Beladed Platform Token\" in this example.\n      - **type**: Indicates the category of the token. Here, it is marked as \"platform.\"\n      - **action**: Defines what action the token will be associated with, currently set to \"buy.\"\n      - **rate**: Represents the exchange rate or value associated with the token, provided as a numeric value (1).\n      - **amount**: Specifies the total amount of the token being created, represented as 1000 in this case.\n\n  - **Options**: \n    - Here, it details the configuration of the raw body content, specifying that the language of the content is JSON.\n\nThis detailed description provides all the necessary information to understand and utilize the \"Utility - Token - Create for User\" API endpoint effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Create Bulk for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"BPT\",\n            \"description\": \"Beladed Platform Token\",\n            \"type\": \"platform\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1000\n        },\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"BPT\",\n            \"description\": \"Beladed Platform Token\",\n            \"type\": \"platform\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1000\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "createBulk"
+          ]
+        },
+        "description": "### API Endpoint Description: Utility - Token - Create Bulk for User\n\n**Name**: Utility - Token - Create Bulk for User  \nThis endpoint allows the user to create multiple tokens in bulk for the specified account.\n\n#### Request Details:\n\n- **Authentication**:\n  - **Type**: Bearer\n  - **Bearer Token**: This is the expected authentication method where a bearer token needs to be provided in the request. The placeholder `BearerToken` should be replaced with an actual token for authorization.\n\n- **Request Method**: \n  - **POST**: This is the HTTP method used for creating new resources. In this case, it is used to create tokens in bulk.\n\n- **URL**: \n  - `http://localhost:3000/api/utility/token/createBulk`: This is the endpoint where the request is sent. Ensure that the server is running locally on port 3000.\n\n- **Headers**: \n  - Currently, there are no specific headers set. There is a disabled header field, indicating no additional headers are required for this request.\n\n- **Body**: \n  - **Mode**: Raw\n  - **Content**: The body of the request must be in JSON format and adhere to the structure outlined below. \n\n#### Request Body Parameters: \n\n- **sessionId**: \n  - Description: This is a unique identifier for the user's session. It helps in linking the token creation process to a specific user session.\n\n- **accountId**: \n  - Description: This represents the unique identifier for the account for which the tokens are being created.\n\n- **list**: \n  - Description: An array of objects, each representing a token that is to be created. Each token object contains the following fields:\n    - **targetType**: \n      - Description: Specifies the target type for the token creation. In this case, it is set to \"accountId\", indicating that the tokens will be linked to a specific account.\n      \n    - **name**: \n      - Description: The name of the token being created. For example, \"BPT\" stands for Beladed Platform Token.\n\n    - **description**: \n      - Description: A brief description of what the token represents, e.g., \"Beladed Platform Token\".\n\n    - **type**: \n      - Description: The category of the token. This indicates that it is a \"platform\" type token.\n\n    - **action**: \n      - Description: Specifies the action related to the token, such as \"buy\" for purchasing the token.\n\n    - **rate**: \n      - Description: The rate at which the token can be bought or sold. For example, a rate of 1 indicates a 1:1 exchange.\n\n    - **amount**: \n      - Description: This indicates the quantity of tokens to create. For instance, an amount of 1000 specifies that 1000 tokens should be created.\n\n**Sample JSON Request Body**:\n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"BPT\",\n            \"description\": \"Beladed Platform Token\",\n            \"type\": \"platform\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1000\n        },\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"BPT\",\n            \"description\": \"Beladed Platform Token\",\n            \"type\": \"platform\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1000\n        }\n    ]\n}\n```\n\nNote: Ensure that the `sessionId` and `accountId` are replaced with actual identifiers when making a request. The list can contain multiple token objects, allowing for bulk creation."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Create for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"BPT\",\n    \"description\": \"Beladed Platform Token\",\n    \"type\": \"platform\",\n    \"action\": \"sell\",\n    \"rate\": 1,\n    \"amount\": 13\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "create"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Utility - Token - Create for Team\": \"This is the title of the API request, indicating that it is used to create a token for a specific team within the utility service.\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"This indicates that the request uses Bearer Token authentication, which requires a token for authentication.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"The key under which the token is stored in the request.\",\n            \"value\": \"BearerToken\": \"This specific value should be replaced with the actual bearer token required to authorize the request.\",\n            \"type\": \"string\": \"The data type of the token, which is a string.\"\n          }\n        ]\n      },\n      \"method\": \"POST\": \"This indicates that the request type is POST, commonly used for sending data to create a new resource.\",\n      \"url\": \"http://localhost:3000/api/utility/token/create\": \"This is the endpoint URL where the API request is sent to create a token for a team.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"This field is currently empty and indicates that no additional headers are being passed in the request.\",\n          \"value\": \"\": \"The value associated with the header key, which is empty in this case.\",\n          \"type\": \"default\": \"This indicates that the header type is the default type.\",\n          \"disabled\": true: \"This means that the header is currently disabled and will not be included in the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"This indicates that the body of the request is raw data.\",\n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"targetType\\\": \\\"teamId\\\",\\n    \\\"targetId\\\": \\\"teamId\\\",\\n    \\\"name\\\": \\\"BPT\\\",\\n    \\\"description\\\": \\\"Beladed Platform Token\\\",\\n    \\\"type\\\": \\\"platform\\\",\\n    \\\"action\\\": \\\"sell\\\",\\n    \\\"rate\\\": 1,\\n    \\\"amount\\\": 13\\n}\": \"This is the actual JSON payload being sent in the request body. It contains various parameters including session ID, account ID, target type, target ID, token name, description, type of token, action to be performed, and the rate and amount associated with the token.\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\": \"This specifies that the raw data being sent is in JSON format.\"\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Create Bulk for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"BPT\",\n            \"description\": \"Beladed Platform Token\",\n            \"type\": \"platform\",\n            \"action\": \"sell\",\n            \"rate\": 1,\n            \"amount\": 13\n        },\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"BPT\",\n            \"description\": \"Beladed Platform Token\",\n            \"type\": \"platform\",\n            \"action\": \"sell\",\n            \"rate\": 1,\n            \"amount\": 13\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "createBulk"
+          ]
+        },
+        "description": "### Endpoint: Create Bulk Token for User\n\n#### Overview\nThis endpoint allows the creation of multiple tokens in bulk for a specified user. The request needs to include authentication via a bearer token and the details of the tokens to be created.\n\n#### Request Details\n\n- **Auth**\n  - **Type**: Bearer\n    - This indicates that authorization is done using a bearer token.\n  - **Bearer Token**: \n    - **Key**: token\n    - **Value**: BearerToken\n      - Replace \"BearerToken\" with the actual token value for authentication.\n    - **Type**: string\n\n- **Method**: POST\n  - This HTTP method is used to send data to the server for processing.\n\n- **URL**: \n  - `http://localhost:3000/api/utility/token/createBulk`\n    - This is the endpoint where the request should be sent.\n\n- **Headers**: \n  - Currently, there are no custom headers included in the request (disabled option).\n\n- **Body**:\n  - **Mode**: raw\n    - The body type is raw JSON data.\n  - **Raw Data**:\n    - A JSON object containing the following attributes:\n      - **sessionId**: \n        - A unique identifier for the session. \n        - Replace with an actual session ID.\n      - **accountId**: \n        - A unique identifier for the account the tokens are being created for.\n        - Replace with the actual account ID.\n      - **list**: \n        - An array of token objects that specify details for each token to be created. Each object in the list contains:\n          - **targetType**: \n            - Specifies the type of target (e.g., teamId).\n          - **targetId**: \n            - The identifier of the target (corresponding to the type specified).\n          - **name**: \n            - The name of the token.\n          - **description**: \n            - Provides a brief description of what the token represents.\n          - **type**: \n            - Indicates the platform type (e.g., platform).\n          - **action**: \n            - The action that can be performed with the token (e.g., sell).\n          - **rate**: \n            - The rate at which the token is valued.\n          - **amount**: \n            - The total amount of tokens to be created.\n\n#### Example Body Structure\n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"BPT\",\n            \"description\": \"Beladed Platform Token\",\n            \"type\": \"platform\",\n            \"action\": \"sell\",\n            \"rate\": 1,\n            \"amount\": 13\n        },\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"BPT\",\n            \"description\": \"Beladed Platform Token\",\n            \"type\": \"platform\",\n            \"action\": \"sell\",\n            \"rate\": 1,\n            \"amount\": 13\n        }\n    ]\n}\n```\n\n### Notes\nMake sure to replace the placeholder values (`sessionId`, `accountId`, `teamId`, etc.) with actual data before making the request. The response from the server will indicate whether the tokens were successfully created or if any errors occurred."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Convert Token",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"amount\": 10,\n    \"rate\": 1,\n    \"type\": \"platform\",\n    \"target\": \"crypto\",\n    \"toType\": \"platform\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/convert",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "convert"
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Token - Convert Token\n\n#### Request Method\n- **Method**: POST\n  - This endpoint requires a POST request to convert tokens.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/utility/token/convert`\n  - The endpoint is accessed at the specified URL on a local server.\n\n#### Authentication\n- **Auth Type**: Bearer Token\n  - This endpoint requires bearer token authentication.\n  - **Token**: The bearer token is expected in the request header for authorization.\n  - **Key**: `token`\n    - Represents the authentication token.\n  - **Value**: `BearerToken`\n    - Replace this placeholder with the actual token needed for authentication.\n  - **Type**: string\n\n#### Headers\n- **Header Key**: `Client-UUID`\n  - This header is used to identify the client making the request.\n  - **Value**: `ClientUUID`\n    - Replace this placeholder with the actual UUID of the client.\n  - **Type**: default\n\n#### Request Body\n- **Body Mode**: Raw\n  - The request body must be sent in raw format as a JSON object.\n  \n- **Raw Body Content**:\n  - ```json\n    {\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"amount\": 10,\n        \"rate\": 1,\n        \"type\": \"platform\",\n        \"target\": \"crypto\",\n        \"toType\": \"platform\"\n    }\n    ```\n\n  - **Fields**:\n    - **sessionId**: Represents the unique identifier for the session in which the token conversion is taking place. Replace `sessionId` with the actual session ID.\n    \n    - **accountId**: Represents the unique identifier of the account that is performing the conversion. Replace `accountId` with the actual account ID.\n    \n    - **amount**: The number of tokens to convert. This is a numerical value; in this example, it is set to `10`.\n    \n    - **rate**: The conversion rate of the tokens. In this example, it is set to `1`, which can be adjusted based on the conversion policy.\n    \n    - **type**: Indicates the current type of the token being converted. In this example, it is set to `platform`, which should be updated based on the token type you are working with.\n    \n    - **target**: Specifies the target currency or token type that the conversion will be performed to. In this example, it is set to `crypto`.\n    \n    - **toType**: Indicates the final type of the token after conversion. In this example, it is also set to `platform`.\n\n#### Notes\n- Ensure that all placeholder values (like `BearerToken`, `ClientUUID`, `sessionId`, and `accountId`) are replaced with valid data when making the request.\n- The response from this endpoint will typically provide information about the success or failure of the token conversion operation."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Update Token for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"tokenId\": \"e87e4e08-1669-4f59-a5e7-3ec9101812fe\",\n    \"targetType\": \"accountId\",\n    \"name\": \"BPT\",\n    \"type\": \"platform\",\n    \"action\": \"sell\",\n    \"amount\": 1000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Utility - Token - Update Token for User\n\nThis endpoint is used to update a token associated with a user account. Below is a detailed description of each component of the request.\n\n#### Request\n\n- **Method**: `PUT`\n  - This indicates that the request is intended to update an existing resource.\n\n- **URL**: `http://localhost:3000/api/utility/token/update`\n  - This is the endpoint where the request is sent. It assumes the service is running locally on port 3000.\n\n#### Authentication\n\n- **Auth Type**: `Bearer`\n  - The request uses bearer token authentication, which means the user must provide a token that grants access to the API.\n  \n- **Bearer Token**:\n  - **Key**: `token`\n  - **Value**: `BearerToken`\n    - This field should contain the actual bearer token for authentication. Replace `BearerToken` with the valid token that has been issued to the user.\n\n#### Headers\n\n- **Key**: `Client-UUID`\n  - **Value**: `ClientUUID`\n    - This header should contain a unique identifier for the client making the request. Replace `ClientUUID` with the actual UUID that identifies the client application.\n\n#### Body\n\n- **Mode**: `raw`\n  - The body of the request is sent in raw format.\n\n- **Raw Content**:\n  - The body contains a JSON object with the following fields:\n  \n  - **sessionId**: `\"sessionId\"`\n    - This is the unique identifier for the user session that needs to be updated. Replace it with the actual session ID.\n  \n  - **accountId**: `\"accountId\"`\n    - This is the unique identifier for the account associated with the token. Replace it with the actual account ID.\n  \n  - **tokenId**: `\"e87e4e08-1669-4f59-a5e7-3ec9101812fe\"`\n    - This is a unique identifier for the token that needs to be updated. Ensure it is the correct token ID that corresponds to the account.\n  \n  - **targetType**: `\"accountId\"`\n    - Specifies the type of target for the update. In this case, it indicates that the target is an account, as specified by `accountId`.\n  \n  - **name**: `\"BPT\"`\n    - This is the name associated with the token. Replace with the relevant name as needed.\n  \n  - **type**: `\"platform\"`\n    - Indicates which platform the token is related to. Typically, this could refer to different services or platforms against which the token is used.\n\n  - **action**: `\"sell\"`\n    - This defines the action to be taken. In this example, it suggests that the user is selling something related to the token.\n  \n  - **amount**: `1000`\n    - This specifies the amount relevant to the action being performed (e.g., the amount of currency or tokens to sell). Adjust this to reflect the correct amount for the intended operation.\n\n#### Summary\n\nThis PUT request is designed to update a user's token settings in the system. Be sure to replace placeholder values with actual identifiers and values to ensure the request is processed correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Update Token for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"tokenId\": \"tokenId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"BPT\",\n    \"type\": \"platform\",\n    \"action\": \"buy\",\n    \"amount\": 1000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "update"
+          ]
+        },
+        "description": "### Utility - Token - Update Token for Team\n\nThis endpoint is designed to update a token for a specific team within the utility service. Below is a detailed description of the data involved in the request.\n\n#### Request Method\n- **Method**: PUT\n  - This method is used to send data to the server to update an existing resource.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/utility/token/update`\n  - This is the endpoint where the PUT request is sent. It updates the token for the specified team.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - This type of authentication requires a bearer token to be included in the request. It verifies the identity of the user making the request.\n\n  - **Bearer Token**:\n    - **Key**: `token`\n    - **Value**: `BearerToken`\n      - A placeholder for the actual bearer token that grants access to the API.\n    - **Type**: string\n      - This is the data type of the token, which is sent as a string.\n\n#### Headers\n- **Header**: `Client-UUID`\n  - **Key**: `Client-UUID`\n    - A unique identifier for the client making the request.\n  - **Value**: `ClientUUID`\n    - A placeholder for the actual Client UUID value.\n  - **Type**: default\n    - Indicates that this is a standard HTTP header.\n\n#### Request Body\n- **Body Mode**: Raw\n  - This indicates that the body of the request is sent as raw text.\n\n- **Body Content**: \n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"tokenId\": \"tokenId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"BPT\",\n    \"type\": \"platform\",\n    \"action\": \"buy\",\n    \"amount\": 1000\n}\n```\n  - **sessionId**: `sessionId`\n    - A placeholder for the session identifier through which the user is authenticated.\n  \n  - **accountId**: `accountId`\n    - A placeholder representing the account that the token is associated with.\n\n  - **tokenId**: `tokenId`\n    - A placeholder for the ID of the token to be updated.\n\n  - **targetType**: `teamId`\n    - Specifies the type of the target, in this case, it indicates that the target is a team.\n\n  - **targetId**: `teamId`\n    - A placeholder for the ID of the team for which the token is being updated.\n\n  - **name**: `BPT`\n    - A placeholder for the name of the token. In this example, it is set to \"BPT\".\n\n  - **type**: `platform`\n    - Defines the type of the token being updated. Here it is specified as \"platform\".\n\n  - **action**: `buy`\n    - The action associated with the token update; in this case, it is set to \"buy\".\n\n  - **amount**: `1000`\n    - Indicates the amount related to the action. Here, it is set to 1000. \n\n#### Options\n- **Language**: json\n  - This indicates that the raw body content is in JSON format, which is the expected format for this API endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get By ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?tokenId=tokenId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tokenId",
+              "value": "tokenId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Token - Get By ID\n\n**Request Type:** GET  \nThis endpoint is used to retrieve details about a specific token by its ID.\n\n**Authentication:**  \n- **Type:** Bearer  \nThis indicates that the request requires Bearer token authentication.  \n- **Token:** A Bearer token is expected in the request's authorization header. The placeholder \"BearerToken\" should be replaced with the actual token for authentication purposes.\n\n**URL:**  \nThe URL for accessing this endpoint is structured as follows:  \n`http://localhost:3000/api/utility/token/get/?tokenId=tokenId&sessionId=sessionId&accountId=accountId`  \n- **tokenId:** This is a required query parameter that specifies the unique identifier of the token you wish to retrieve.\n- **sessionId:** This is an optional query parameter that may be used to reference a specific session relevant to the token request.\n- **accountId:** This is an optional query parameter used to specify the account associated with the token.\n\n**Headers:**  \nNo specific headers are defined in this request. The header section is currently empty and disabled. If required, additional headers can be specified.\n\n**Body:**  \n- The body of the request is set to \"raw\" mode. However, since this is a GET request, no body content is needed. The raw field is empty.\n\nThis endpoint is designed to provide a mechanism to fetch information about a token based on its ID, alongside optional session and account identifiers. Make sure to include the necessary authentication token when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Balance",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?balance=1&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "balance",
+              "value": "1"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of each data in the endpoint \"Utility - Token - Get Balance\"\n\n- **name**: This is the title of the request. It indicates that the endpoint is used to retrieve the balance for a specific utility token.\n\n- **request**: This object contains all the details needed to make the request to the API.\n\n  - **auth**: This specifies the type of authentication used for the request.\n    - **type**: Indicates that the authentication method is 'bearer', which means that a token is used to authenticate the request.\n    - **bearer**: An array containing the details of the bearer token needed for authentication.\n      - **key**: A label for the bearer token; in this case, it's \"token\".\n      - **value**: This is the actual bearer token that is passed along with the request. It should be replaced with the actual token when making the API call. Here, it's labelled as \"BearerToken\".\n      - **type**: Specifies the data type for the token, which is set to \"string\".\n\n  - **method**: This indicates the HTTP method used for the request. In this case, it's a 'GET' request, which is typically used to retrieve data.\n\n  - **url**: This is the endpoint URL that will be called to get the balance. It includes query parameters for balance retrieval.\n    - **balance**: A query parameter that seems to indicate whether to retrieve the balance. The value is set to '1', but may require clarification on its exact purpose.\n    - **sessionId**: A query parameter that is expected to be replaced with the actual session ID related to the account or user requesting the balance.\n    - **accountId**: A query parameter that should be replaced with the actual account ID for which the balance is being queried.\n\n  - **headers**: This section is used for additional headers needed for the request.\n    - **key**: This is meant for specifying the header name; currently, it is empty, indicating that no additional headers are being sent.\n    - **value**: The value associated with the key. It is also currently empty.\n    - **type**: This indicates that the header is of default type.\n    - **disabled**: A flag indicating that this header is currently disabled and will not be included in the request.\n\n  - **body**: This defines the body of the request.\n    - **mode**: The mode indicates the format of the body; here, it is set to 'raw', meaning the body content is sent as plain text.\n    - **raw**: This is where you can include the body content. Currently, it is empty, indicating that no body content is necessary for this GET request.\n\nThis detailed breakdown provides clarity on how to use the \"Utility - Token - Get Balance\" endpoint, ensuring a proper understanding for future users."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Stats",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?log=stats&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "stats"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Token - Get Stats Endpoint Description\n\n- **name**: This is the title of the API request, indicating that this endpoint is used to retrieve statistics related to a utility token.\n\n- **request**: This section describes the details of the HTTP request to be made.\n\n  - **auth**: This specifies the type of authentication used for the request.\n  \n    - **type**: Indicates the authentication type, which is set to \"bearer\" in this case.\n    \n    - **bearer**: Contains the details for bearer token authentication.\n    \n      - **key**: Represents the structure key for the bearer token.\n      \n      - **value**: This is where the actual bearer token is placed, labeled as \"BearerToken\" for illustration purposes. Users should replace this with their actual bearer token.\n      \n      - **type**: Specifies the data type of the value, which is a string.\n\n  - **method**: This indicates the HTTP method to be used for the request. It is set to \"GET,\" meaning this request is intended to retrieve data.\n\n  - **url**: This is the endpoint URL where the request is sent. It consists of:\n  \n    - The base URL: `http://localhost:3000`\n    \n    - The path of the API: `/api/utility/token/get/`\n    \n    - Query parameters are included:\n      \n      - **log**: Set to `stats`, this parameter indicates that the request is asking for statistical data.\n      \n      - **sessionId**: This is a placeholder for the session identifier; users should replace \"sessionId\" with an actual session ID.\n      \n      - **accountId**: This is a placeholder for the account identifier; users should replace \"accountId\" with a valid account ID.\n  \n  - **headers**: This section is for any additional headers that might be necessary for the API call.\n    \n    - **key**: This would be where you can specify the name of the header if needed.\n    \n    - **value**: This is where you define the value for the header.\n    \n    - **type**: Specifies the header type. Currently disabled, indicating this section is not in use.\n    \n  - **body**: This section defines the body of the request.\n  \n    - **mode**: Indicates the format of the body. Set to \"raw,\" indicating the body is not structured (e.g., JSON or XML).\n    \n    - **raw**: This is where the raw body content would go, currently empty as this request does not require a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Ledger",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?log=ledger&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "ledger"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Token - Get Ledger\n\n#### Description:\nThis endpoint is used to retrieve the ledger details associated with a specific token. It requires authentication and asks for certain parameters to be included in the request URL.\n\n---\n\n#### Request Details:\n\n- **Auth**:\n  - **Type**: Bearer\n    - This indicates that Bearer Token authentication is used.\n  - **Bearer**: \n    - **Key**: `token`\n      - This represents the authorization key in the request.\n    - **Value**: `BearerToken`\n      - Replace this placeholder with your actual Bearer token to authenticate the request.\n    - **Type**: string\n      - Indicates that the token should be a string format.\n\n- **Method**: \n  - **GET**\n    - This signifies that the request will retrieve data from the server. \n\n- **URL**: \n  - `http://localhost:3000/api/utility/token/get/?log=ledger&sessionId=sessionId&accountId=accountId`\n    - This is the endpoint you will be calling to access the ledger data.\n    - **Query Parameters**:\n      - **log**: `ledger`\n        - This parameter indicates that you are requesting ledger logs.\n      - **sessionId**: `sessionId`\n        - Replace this with the actual ID of the session for which you want to retrieve the ledger.\n      - **accountId**: `accountId`\n        - Replace this with the actual ID of the account tied to the session you're querying.\n\n- **Headers**: \n  - The headers array currently contains an empty entry. It is disabled and serves no purpose unless it is updated with relevant header information. \n\n- **Body**: \n  - **Mode**: Raw\n    - Indicates the format of the request body.\n  - **Raw**: \n    - The raw body is empty for a GET request, as no additional data needs to be sent. \n\n--- \n\nEnsure that you replace the placeholder values such as `BearerToken`, `sessionId`, and `accountId` with actual data before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Platform Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?log=type&type=platform&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "platform"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Token - Get Platform Logs\n\n**Description of Data:**\n\n- **name**: This is the name of the API endpoint. It indicates that this endpoint is used for retrieving logs related to a specific platform.\n\n- **request**: This section includes information about how the request to the API should be made.\n\n  - **auth**: Represents the authentication method used to access the endpoint.\n  \n    - **type**: Specifies the type of authentication. In this case, it is bearer token authentication.\n    \n    - **bearer**: Contains details about the bearer token used for authentication.\n    \n      - **key**: The key for the bearer token, which is typically \"token\".\n      \n      - **value**: The actual value for the bearer token, represented here as \"BearerToken\". This should be replaced with the actual token when making a request.\n      \n      - **type**: Indicates the data type of the bearer token, which is a string.\n\n  - **method**: Describes the HTTP method used for the request. Here, it is a \"GET\" request, which is used to retrieve data from the server.\n\n  - **url**: The URL that the request will be sent to. This is structured as follows:\n    \n    - **base URL**: \"http://localhost:3000/api/utility/token/get/\" indicates where the request will be directed.\n    \n    - **query parameters**: \n      - `log`: This parameter asks for specific log types. In this case, it is set to \"type\".\n      - `type`: This parameter specifies that the logs are related to the \"platform\".\n      - `sessionId`: Represents the ID of the session for which the logs are being requested. It should be replaced with the actual session ID.\n      - `accountId`: Represents the ID of the account for which the logs are relevant. It should be replaced with the actual account ID.\n\n  - **headers**: This section allows for the inclusion of additional HTTP headers with the request.\n  \n    - The current entry does not have a key or value and is marked as disabled, indicating that no headers are currently being sent with the request.\n\n  - **body**: This section represents the body of the request.\n  \n    - **mode**: Indicates the type of content being sent. Here, it is set to \"raw\", meaning no structured data (like JSON) is being sent.\n    \n    - **raw**: This is empty, which means there is no body content included in the request when making a GET request.\n\nThis endpoint is utilized to fetch logs based on specified parameters through a GET request while requiring authorization via a bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Network Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?log=type&type=network&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "network"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Description of Endpoint: Utility - Token - Get Network Logs**\n\n1. **Name**: \n   - \"Utility - Token - Get Network Logs\" \n   - This identifies the API function responsible for retrieving network logs related to a specific token.\n\n2. **Request**: \n   - This section describes the configuration needed to make the request to the API.\n\n   - **Auth**: \n     - Type: Specifies the authentication method used for this API request.\n       - Type is \"bearer\", which requires a token to be sent for authentication.\n     - Bearer:\n       - An array that contains authentication details.\n         - **Key**: \"token\" \n           - This represents the name of the authentication parameter sent in the request.\n         - **Value**: \"BearerToken\" \n           - This is a placeholder for the actual token required for access, which should be replaced with a valid bearer token.\n         - **Type**: \"string\" \n           - Indicates that the token value should be a string.\n\n   - **Method**: \n     - \"GET\" \n     - Indicates that this request is intended to retrieve data from the server.\n\n   - **URL**: \n     - \"http://localhost:3000/api/utility/token/get/?log=type&type=network&sessionId=sessionId&accountId=accountId\" \n     - This is the endpoint to which the request is sent. \n       - It includes several query parameters:\n         - **log**: \"type\" \n           - Indicates the type of log requested (in this case, it is categorized under \"type\").\n         - **type**: \"network\" \n           - Specifies that the logs should pertain specifically to network activities.\n         - **sessionId**: \"sessionId\" \n           - A placeholder where the actual session ID should be provided to filter the logs by a specific user session.\n         - **accountId**: \"accountId\" \n           - A placeholder where the actual account ID should be provided to filter logs related to a specific account.\n\n   - **Headers**: \n     - An array that can contain additional information sent with the request.\n       - **Key**: \n         - Currently empty, meaning that no custom headers are being used.\n       - **Value**: \n         - Also empty for the same reason.\n       - **Type**: \"default\" \n         - Indicates that this header is a standard header type.\n       - **Disabled**: \n         - \"true\" \n           - This means the header is currently not active or included in the request.\n\n   - **Body**: \n     - This part details the content being sent with the request.\n       - **Mode**: \"raw\" \n         - Indicates that the body of the request is raw data instead of form data or other types.\n       - **Raw**: \n         - Currently empty, meaning no additional data is being sent in the body of the request.\n\nThis endpoint allows users to retrieve specific network logs associated with a token by providing the necessary authentication and filtering through session and account IDs."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Universe Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?log=type&type=universe&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "universe"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Token - Get Universe Logs\n\n#### Request Details\n\n- **Authentication**:\n  - **Type**: Bearer Token\n  - **Token**: This is a required token used for authentication. It should be included in the request headers, formatted as \"Bearer BearerToken\". Replace \"BearerToken\" with the actual token for authentication.\n\n- **Method**: \n  - **GET**: This indicates that the request is retrieving data from the server.\n\n- **URL**: \n  - `http://localhost:3000/api/utility/token/get/?log=type&type=universe&sessionId=sessionId&accountId=accountId`\n    - This is the endpoint where the request is sent.\n    - **Query Parameters**:\n      - `log`: This parameter specifies the type of log to retrieve. The value should be set to `\"type\"` to indicate the required log type.\n      - `type`: Set this parameter to `\"universe\"` to filter the results for universe-related logs.\n      - `sessionId`: This parameter should be replaced with the actual session ID to identify the user session for which logs are being fetched.\n      - `accountId`: This should be replaced with the actual account ID to specify which account's universe logs are to be retrieved.\n\n- **Headers**:\n  - There are no specific headers used in this request. The current configuration indicates a header which is disabled and contains no key or value.\n\n- **Body**: \n  - **Mode**: Raw\n  - **Raw**: This section is empty as GET requests typically do not include a body. Any necessary data should be passed as query parameters.\n\nThis endpoint is designed to fetch logs specific to a universe while requiring proper authentication via the bearer token. The parameters ensure that the logs are filtered based on the user session and account provided."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Accumulation Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?log=accumulation&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "accumulation"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of the API Endpoint: Utility - Token - Get Accumulation Logs\n\n- **Endpoint Name**: Utility - Token - Get Accumulation Logs  \n  This is the designated name for the API endpoint that facilitates retrieval of accumulation log data related to tokens.\n\n- **Request Type**: GET  \n  This indicates that the request method to be used is a GET request, which is typically used for retrieving data from a server.\n\n- **Authentication Type**: Bearer  \n  This specifies that the API requires Bearer token authentication, which is a common method for securing endpoints by requiring a valid authentication token.\n\n- **Bearer Token**:  \n  - **Key**: token  \n    The identifier for the token parameter in the request.\n  - **Value**: BearerToken  \n    This should be replaced with the actual Bearer token used for authentication during the request.\n  - **Type**: string  \n    Indicates that the value for the token is a string.\n\n- **URL**:  \n  `http://localhost:3000/api/utility/token/get/?log=accumulation&sessionId=sessionId&accountId=accountId`  \n  This is the endpoint URL where the request is sent. It includes query parameters:\n  - **log**: accumulation  \n    Specifies the type of log information being requested, in this case, logs related to accumulation.\n  - **sessionId**: sessionId  \n    A placeholder for the unique identifier of the session for which logs are requested. This needs to be replaced with an actual session ID.\n  - **accountId**: accountId  \n    A placeholder for the unique identifier for the account associated with the session. This should be replaced with an actual account ID.\n\n- **Headers**:  \n  The headers section is currently empty and disabled, meaning no additional headers are being sent with the request. In certain scenarios, custom headers may be required based on API specifications.\n\n- **Body**:  \n  - **Mode**: raw  \n    Indicates that the body of the request is sent in raw format.\n  - **Raw**:  (Empty string)  \n    There is no body content needed for this GET request. Typically, GET requests do not have a body, so this remains empty.\n\nThis endpoint is designed for obtaining detailed accumulation log information for a specified account and session using appropriate authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Deduction Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?log=deduction&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "deduction"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Token - Get Deduction Logs\n\n**Endpoint Description:**  \nThis API endpoint is used to retrieve logs related to token deductions. It is a GET request, which means it is designed to fetch data rather than modify it.\n\n**Authentication:**  \n- **Auth Type:** Bearer  \n  This endpoint requires bearer token authentication. You must provide a valid bearer token in the request to access deduction logs.  \n\n- **Token details:**  \n  - **Key:** token  \n    This is the identifier for the token being passed in the request.  \n  - **Value:** BearerToken  \n    Replace this placeholder with the actual bearer token when making the request.  \n  - **Type:** string  \n    The data type of the token is a string.\n\n**HTTP Method:**  \n- **Method:** GET  \n  This indicates that the request is intended to retrieve data from the server.\n\n**Request URL:**  \n- **URL:** `http://localhost:3000/api/utility/token/get/?log=deduction&sessionId=sessionId&accountId=accountId`  \n  This is the endpoint where the request should be sent. It includes query parameters:  \n  - **log**  \n    Set to \"deduction\" to specify that you are querying deduction logs.  \n  - **sessionId**  \n    Replace this placeholder with the actual session ID you want to query logs for.  \n  - **accountId**  \n    Replace this placeholder with the actual account ID associated with the logs you want to retrieve.\n\n**Headers:**  \n- **Headers:**  \n  - **Key:** (empty)  \n    There are no additional headers to include in the request, thus the key is empty.  \n  - **Value:** (empty)  \n    The value is also empty.  \n  - **Type:** default  \n    This is the default type of header, but since no additional headers are being used, this section is disabled.\n\n**Body:**  \n- **Body Mode:** raw  \n  This indicates that the request has a body that is being sent as raw data.  \n- **Raw Data:** (empty)  \n  The body of this request does not contain any data, as it is a GET request and typically does not require a body.  \n\nThis endpoint allows users to access historical token deduction logs based on session and account identifiers, ensuring proper access control via bearer token authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Conversion Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?log=conversion&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "conversion"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Token - Get Conversion Logs\n\n#### Endpoint Description\nThis API endpoint is designed to retrieve conversion logs based on a specific session and account. It performs a GET request to the specified URL.\n\n#### Request Details\n\n- **Auth**\n  - **Type:** Bearer\n    - This indicates that the authentication method used is a bearer token.\n    - **Bearer Token**\n      - **Key:** `token`\n      - **Value:** `BearerToken`\n        - This is where the actual bearer token should be placed for authentication.\n      - **Type:** String\n        - Specifies that the token is provided as a string.\n\n- **Method**\n  - **GET**\n    - This indicates that the HTTP method used for this request is GET, which is typically used to retrieve data from a server.\n\n- **URL**\n  - `http://localhost:3000/api/utility/token/get/?log=conversion&sessionId=sessionId&accountId=accountId`\n    - **Base URL:** `http://localhost:3000`\n      - Refers to the server address where the API is hosted. In this case, it is running locally.\n    - **Endpoint Path:** `/api/utility/token/get/`\n      - Specifies that the request is targeting the utility token retrieval function.\n    - **Query Parameters:**\n      - `log=conversion`\n        - This parameter indicates that the logs being requested are specifically for conversion events.\n      - `sessionId=sessionId`\n        - This parameter should be replaced by the actual session ID for which the conversion logs are being requested.\n      - `accountId=accountId`\n        - This parameter should be replaced with the actual account ID associated with the conversion logs.\n\n- **Headers**\n  - An empty header is defined but disabled.\n    - **Key:** `\"\"`\n    - **Value:** `\"\"`\n    - **Type:** Default\n    - **Disabled:** True\n      - This indicates that there are currently no custom headers being sent with the request.\n\n- **Body**\n  - **Mode:** Raw\n    - The request body is defined in raw format, but it is empty.\n  - **Raw:**\n    - `\"\"`\n      - No data is being passed in the request body for this GET request.\n\nThis endpoint is primarily used to log and retrieve specific conversion activities associated with a user defined by a session and account ID. Users must include a valid bearer token to authenticate their request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get Neutral Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/get/?log=category&category=neutrals&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "category"
+            },
+            {
+              "key": "category",
+              "value": "neutrals"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Token - Get Neutral Logs\n\n#### Request Details:\n\n- **Authentication**: This endpoint requires authentication using a Bearer token.\n  - **Key**: `token` - This is the identifier for the authentication method.\n  - **Value**: `BearerToken` - This is where the actual Bearer token should be provided, replacing \"BearerToken\" with the valid token string.\n  - **Type**: `string` - This denotes that the token should be formatted as a string.\n\n- **Method**: `GET` - This indicates that the request is using the GET method to retrieve data from the server.\n\n- **URL**: This is the endpoint URL where the request will be sent. It uses query parameters to filter the logs being requested:\n  - **Base URL**: `http://localhost:3000/api/utility/token/get/`\n  - **Query Parameters**:\n    - `log`: Specifies the log type to fetch; in this case, it is set to `category`.\n    - `category`: This specifically identifies the category of logs desired, which is set to `neutrals`.\n    - `sessionId`: This parameter should contain the unique session identifier to filter logs related to a particular session.\n    - `accountId`: This parameter should contain the account identifier to filter logs pertaining to a specific account.\n\n- **Headers**: There is a header section included, but it is currently disabled and does not contain any keys or values.\n  - **Key**: is empty.\n  - **Value**: is empty.\n  - **Type**: Default - Indicates the type of header being used (none in this case).\n  - **Disabled**: true - This means that the header is not active in the request.\n\n- **Body**: \n  - **Mode**: `raw` - Indicates that the body will be sent in raw format.\n  - **Raw**: Currently no data is included in the body for this GET request, as it typically does not require a request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Utility - Token - Get All\",\n  \"description\": \"This endpoint is used to retrieve all token information associated with a given session and account. It supports authentication via a bearer token that must be included in the request header. The API call is made using the GET method, indicating that it is intended for data retrieval without side effects. The URL for the request includes two query parameters: sessionId and accountId, which are required to specify the session and account whose tokens are being requested. The request does not include any additional headers or body content since it solely relies on the URL parameters and the authentication token.\"\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Token - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tokenId\":\"tokenId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/token/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "token",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Token - Delete\n\n- **Name**: Utility - Token - Delete  \n  This is the designation for the operation that handles the deletion of a token related to a user session.\n\n- **Request**: This section details how to set up the request to the server.\n\n  - **Auth**:  \n    Specifies the authentication method required to access the endpoint.\n    \n    - **Type**: Bearer  \n      Indicates that the authentication uses a bearer token.\n\n    - **Bearer**: Contains the necessary token information.  \n      - **Key**: `token`  \n        This is the identifier for the authentication token.\n      - **Value**: `sessionId`  \n        Represents the actual session identifier used to authenticate the request.\n      - **Type**: string  \n        Specifies that the value provided should be a string.\n\n  - **Method**: POST  \n    This shows that the request method used to interact with the endpoint is POST, which is typically used to submit data to the server.\n\n  - **URL**: `http://localhost:3000/api/utility/token/delete`  \n    This is the address of the API endpoint where the deletion request is sent. In this case, it targets the local server.\n\n  - **Headers**:  \n    An array of headers to be sent with the request.\n    - **Key**: (Empty)  \n      There are no specific headers set in this array.\n    - **Value**: (Empty)  \n      There are no values assigned as the key is empty.\n    - **Type**: default  \n      This indicates the standard type of header, but as there are no headers, it is currently disabled.\n\n  - **Body**:  \n    This section contains the data payload sent with the request. The body is formatted in raw JSON format.\n\n    - **Mode**: raw  \n      Indicates that the body content is being sent as raw data.\n\n    - **Raw**:  \n      This is the JSON object that will be transmitted in the request body.\n      ```json\n      {\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"tokenId\": \"tokenId\"\n      }\n      ```\n      - **sessionId**: A string representing the identifier for the session from which the token should be deleted.\n      - **accountId**: A string representing the unique identifier of the user account associated with the session.\n      - **tokenId**: A string that denotes the specific token that is to be deleted from the user's session."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "UniversityTour",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "University - Tour - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Tour\",\"description\":\"This tour is my second tour\",\"tags\":\"second,tour\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTourPrivate\":true,\"isTournamentOnly\":false,\"isTourDefault\":true,\"isPreLiveUniversityAds\":true,\"isPostLiveUniversityAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/tour/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "tour",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: University - Tour - Create\n\n- **Name**: Represents the name of the endpoint, indicating that this is the API call for creating a university tour.\n\n- **Request**: The structure of the HTTP request needed to access the endpoint.\n\n  - **Auth**: Specifies the authorization method used for this request.\n  \n    - **Type**: Indicates that Bearer token authentication is required.\n    \n    - **Bearer**: Contains a list of bearer tokens to be included in the request.\n    \n      - **Key**: Used to identify the token.\n      \n      - **Value**: The actual token value that is used for authentication. It should be prefixed with \"Bearer\".\n      \n      - **Type**: The data type of the token, which is string in this case.\n  \n  - **Method**: The HTTP method used for this request, which is POST. This indicates that data is being sent to the server to create a new resource.\n\n  - **URL**: The endpoint URL where the request is sent. In this case, it points to `http://localhost:3000/api/university/tour/create` indicating it is likely being tested on a local server.\n\n  - **Headers**: A list of additional HTTP headers that may be included in the request. Currently, this section has an empty header key and value, which is disabled.\n\n  - **Body**: The main content of the request.\n  \n    - **Mode**: Indicates the format of the request body; in this case, it's set to \"raw\" for a raw JSON string.\n    \n    - **Raw**: Contains the actual JSON payload that is sent in the body of the request. It includes the following fields:\n\n      - **sessionId**: A unique identifier for the session related to the tour.\n      \n      - **accountId**: An identifier for the account creating the tour.\n      \n      - **name**: The name of the tour being created.\n      \n      - **description**: A brief description of the tour.\n      \n      - **tags**: A comma-separated list of tags associated with the tour for better categorization and searchability.\n      \n      - **profilePhotoUrl**: The URL link to the profile photo associated with the tour.\n      \n      - **coverPhotoUrl**: The URL link to the cover photo of the tour.\n      \n      - **minimumTipAmount**: Specifies the minimum amount expected as a tip for the tour.\n      \n      - **categoryId**: The identifier for the main category under which the tour is classified.\n      \n      - **category**: The name of the category for the tour.\n      \n      - **subCategoryId**: The identifier for any subcategory related to the tour.\n      \n      - **subCategory**: The name of the subcategory for further classification.\n      \n      - **isTourPrivate**: A Boolean value indicating whether the tour is private (true) or public (false).\n      \n      - **isTournamentOnly**: A Boolean value indicating if the tour is exclusively for tournaments.\n      \n      - **isTourDefault**: A Boolean that shows if this tour is set as the default option.\n      \n      - **isPreLiveUniversityAds**: A Boolean indicating whether pre-live university advertisements will be used.\n      \n      - **isPostLiveUniversityAds**: A Boolean indicating whether post-live university advertisements will be used.\n      \n      - **breakPreLiveVideoUrl**: A URL link to a video that plays before the live university tour starts.\n      \n      - **breakPostLiveVideoUrl**: A URL link to a video that plays after the live university tour ends.\n\n    - **Options**: Additional configuration for the raw body content.\n\n      - **Raw**: Specifies settings for the raw data format.\n      \n        - **Language**: Indicates the data type, which is JSON in this instance."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Tour - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"tourId\":\"tourId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Tour 2.0\",\"description\":\"This tour is my second tour\",\"tags\":\"second,tour\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTourPrivate\":true,\"isTournamentOnly\":false,\"isTourDefault\":true,\"isPreLiveUniversityAds\":true,\"isPostLiveUniversityAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/tour/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "tour",
+            "update"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint:\n\n**Endpoint Name:** University - Tour - Update\n\n**Request Details:**\n\n- **Authentication:**\n  - **Type:** Bearer\n    - This indicates that the request requires a bearer token for authorization.\n  - **Bearer Token:**\n    - **Key:** token\n    - **Value:** BearerToken\n    - **Type:** string\n    - This is the token used for authenticating the request against the API. Replace \"BearerToken\" with a valid token.\n\n- **Method:** \n  - **PUT**\n    - This specifies that the HTTP method used for the request is PUT, which is typically used for updating existing resources.\n\n- **URL:**\n  - **http://localhost:3000/api/university/tour/update**\n    - This is the endpoint where the update request is sent. It is hosted on localhost and operates on port 3000.\n\n- **Headers:**\n  - **Client-UUID:**\n    - **Key:** Client-UUID\n    - **Value:** ClientUUID\n    - **Type:** default\n    - This header is used to identify the client making the request. Replace \"ClientUUID\" with the actual UUID associated with the client.\n\n**Body:**\n- The body of the request contains a JSON object that includes the following fields:\n\n  - **tourId:**\n    - The unique identifier of the tour that needs to be updated.\n  \n  - **sessionId:**\n    - The unique identifier for the session associated with the tour.\n\n  - **accountId:**\n    - The unique identifier for the account that owns the tour.\n\n  - **name:**\n    - A string representing the name of the tour. For example: \"My Second Tour 2.0\".\n\n  - **description:**\n    - A string providing a descriptive overview of the tour. For instance: \"This tour is my second tour\".\n\n  - **tags:**\n    - A comma-separated list of tags associated with the tour. For example: \"second,tour\".\n\n  - **profilePhotoUrl:**\n    - A URL pointing to the profile photo associated with the tour. Example: \"https://example.com/profile.jpg\".\n\n  - **coverPhotoUrl:**\n    - A URL pointing to the cover photo for the tour. Example: \"https://example.com/cover.jpg\".\n\n  - **minimumTipAmount:**\n    - A numeric value indicating the minimum amount that can be tipped for participating in the tour. For instance: 10.\n\n  - **categoryId:**\n    - The unique identifier for the category under which the tour is classified. For example: \"category123\".\n\n  - **category:**\n    - A string indicating the primary category of the tour. For example: \"General\".\n\n  - **subCategoryId:**\n    - The unique identifier for the subcategory of the tour. For example: \"subCategory456\".\n\n  - **subCategory:**\n    - A string indicating the specific subcategory for the tour. For example: \"Specific\".\n\n  - **isTourPrivate:**\n    - A boolean indicating whether the tour is private (true) or public (false).\n\n  - **isTournamentOnly:**\n    - A boolean indicating whether the tour is exclusive to tournaments (true) or open to all types of participation (false).\n\n  - **isTourDefault:**\n    - A boolean indicating whether this tour is set as the default option for users (true) or not (false).\n\n  - **isPreLiveUniversityAds:**\n    - A boolean indicating whether pre-live university ads should be displayed for this tour (true) or not (false).\n\n  - **isPostLiveUniversityAds:**\n    - A boolean indicating whether post-live university ads should be displayed for this tour (true) or not (false).\n\n  - **breakPreLiveVideoUrl:**\n    - A URL pointing to a video that plays during the break before the live session starts. Example: \"https://example.com/break-pre-live.mp4\".\n\n  - **breakPostLiveVideoUrl:**\n    - A URL pointing to a video that plays during the break after the live session ends. Example: \"https://example.com/break-post-live.mp4\"."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Tour - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/tour/get/?tourId=tourId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "tour",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tourId",
+              "value": "tourId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n**Name:** University - Tour - Get  \nThis is the name of the endpoint, which indicates that it retrieves information related to a university tour.\n\n**Request:**  \nThis section details the specifics of how to make the request to the endpoint.\n\n- **Auth:**  \n  This specifies the authentication mechanism required to access the endpoint.\n  - **Type:** Bearer  \n    Indicates that bearer token authentication is used.\n  - **Bearer:**  \n    This is an array that contains the token details needed for authentication.\n    - **Key:** token   \n      The name of the token field that is used for authentication.\n    - **Value:** BearerToken  \n      This is a placeholder for the actual bearer token that must be provided when making the request.\n    - **Type:** string  \n      Specifies that the value should be in string format.\n\n- **Method:** GET  \n  This describes the HTTP method used for the request, which is GET in this case, indicating the action is to retrieve data.\n\n- **URL:**  \n  This is the endpoint URL that will be called to get the university tour information.  \n  Example URL structure:  \n  `http://localhost:3000/api/university/tour/get/?tourId=tourId&sessionId=sessionId&accountId=accountId`  \n  - **tourId:** Represents the unique identifier for the specific tour being requested.  \n  - **sessionId:** Refers to the session associated with the tour request.  \n  - **accountId:** Denotes the account identifying the user making the request.\n\n- **Headers:**  \n  This section is intended for any additional HTTP headers that might be required in the request.\n  - **Key:** (empty)  \n    There is no header key provided in this request.\n  - **Value:** (empty)  \n    There is no header value provided in this request.\n  - **Type:** default  \n    Specifies that the type of header is default.\n  - **Disabled:** true  \n    Indicates that this header is currently disabled and will not be sent with the request.\n\n- **Body:**  \n  This section contains the body of the request.\n  - **Mode:** raw  \n    Indicates that the body format is raw text rather than a structured format such as JSON.\n  - **Raw:** (empty)  \n    There is no body content provided for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Tour - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/tour/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "tour",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: University - Tour - Get All\n\n- **Name**: University - Tour - Get All  \n  This is the name of the API endpoint, indicating that it retrieves all university tours.\n\n- **Request**: This section outlines the details needed to make the request to the API.\n\n  - **Auth**:  \n    This field specifies the type of authentication required to access the endpoint. For this endpoint, bearer token authentication is utilized.  \n\n    - **Type**: Bearer  \n      This indicates that the authentication uses a bearer token, which is a common method for securing API requests.\n\n    - **Bearer**:  \n      This is an array that includes the authentication details.  \n\n      - **Key**: Token  \n        This is the key name for the bearer token in the authorization header.  \n\n      - **Value**: BearerToken  \n        This placeholder represents the actual token that should be provided to grant access. Replace this with a valid bearer token when making the request.  \n\n      - **Type**: String  \n        This indicates that the token should be a string data type.\n\n  - **Method**: GET  \n    This indicates that the HTTP method used for this request is GET, meaning the client is requesting data from the server.\n\n  - **URL**: `http://localhost:3000/api/university/tour/all/?sessionId=sessionId&accountId=accountId`  \n    This is the endpoint URL where the request will be made. It includes query parameters:  \n    - **sessionId**: This parameter identifies the session associated with the request. Replace 'sessionId' with the actual session identifier.  \n    - **accountId**: This parameter represents the account identifier. Replace 'accountId' with the actual account identifier.\n\n  - **Headers**:  \n    This section is reserved for any additional headers that may be needed in the request.  \n\n    - **Key**: [Empty]  \n      This implies no specific headers are currently set for this request.\n\n    - **Value**: [Empty]  \n      There are no associated values for headers at this moment.\n\n    - **Type**: Default  \n      This indicates that the header types are default types, but since the headers are empty, they are not currently being used.\n\n    - **Disabled**: True  \n      This indicates that the header section is disabled, so no additional headers will be sent with the request.\n\n  - **Body**:  \n    This section defines the body of the request.\n    \n    - **Mode**: Raw  \n      This means that the body of the request will be sent in a raw format.\n\n    - **Raw**: [Empty]  \n      There is no content in the body of the request since this is a GET request, which typically does not require a body."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Tour - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tourId\":\"tourId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/tour/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "tour",
+            "delete"
+          ]
+        },
+        "description": "**Endpoint Description: University - Tour - Delete**\n\n- **Name**: University - Tour - Delete\n  - This is the label for the operation that will delete a specific tour associated with a university.\n\n- **Request**: \n  - This section outlines the details of the request that will be made to the API.\n\n  - **Auth**: \n    - **Type**: Bearer\n      - This indicates that the request will use bearer token authentication to verify access.\n      \n    - **Bearer**:\n      - An array that includes the token necessary for authentication.\n      \n      - **Key**: token\n        - This defines the identifier for the token being used for authentication.\n        \n      - **Value**: sessionId\n        - This indicates the expected value for the token, which should be replaced with the actual session ID of the user making the request.\n        \n      - **Type**: string\n        - This signifies that the value of the token is in string format.\n\n  - **Method**: POST\n    - This indicates that the HTTP method used for this request is POST. This method is typically used to submit data to the server.\n\n  - **URL**: \n    - `http://localhost:3000/api/university/tour/delete`\n    - This is the endpoint URL where the request will be sent. It targets the delete operation for a university tour.\n\n  - **Headers**:\n    - This section is meant for specifying any additional headers that may be included in the request.\n    \n    - **Key**: (empty)\n      - This indicates that there are no custom headers specified for this request.\n      \n    - **Value**: (empty)\n      - This indicates that there is no value associated with the key.\n      \n    - **Type**: default\n      - Indicates that the header type is default.\n      \n    - **Disabled**: true\n      - This signifies that this header is not active and will not be included in the request.\n\n  - **Body**: \n    - This section defines the content that will be sent along with the request.\n\n    - **Mode**: raw\n      - This indicates that the body will be sent in a raw format rather than using a form or other encoding types.\n\n    - **Raw**:\n      - `{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tourId\":\"tourId\"}`\n      - This is the payload that is sent with the request. It contains three key fields:\n        \n        - **sessionId**: This should be replaced with the actual session ID of the user making the request, used for authentication.\n        \n        - **accountId**: This should be replaced with the actual account ID of the user requesting the deletion of the tour.\n        \n        - **tourId**: This should be replaced with the actual ID of the tour that needs to be deleted."
+      },
+      "response": []
+    }
+  ]
+}

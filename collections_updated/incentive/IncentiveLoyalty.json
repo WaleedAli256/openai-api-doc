@@ -1,0 +1,355 @@
+{
+  "info": {
+    "_postman_id": "222c5f8c-64f7-4174-90cf-7ef807cc6876",
+    "name": "IncentiveLoyalty",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Incentive - Loyalty - Create Coupon",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"teamId\": \"teamId\",\n    \"category\": \"Fashion & Accessories\",\n    \"loyaltyType\": \"Coupon\", //Coupon, Product, NFT\n    \"title\": \"Exclusive Membership Reward\",\n    \"description\": \"Get access to premium features with this reward.\",\n    \"tags\": \"premium, membership, reward\",\n    \"price\": \"29.99\",\n    \"tokenAmount\": 250,\n    \"isProcessPayment\": true,\n    \"isShipping\": false,\n    \"redirectUrl\": \"https://example.com/redeem\",\n    \"couponCode\": \"PREMIUM20\",\n    \"websiteUrl\": \"https://example.com\",\n    \"buttonText\": \"Activate Reward\",\n    \"releaseDate\": \"2024-11-25\",\n    \"releaseTime\": \"10:00:00\",\n    \"expiresDate\": \"2024-12-25\",\n    \"expiresTime\": \"23:59:59\",\n    \"activationType\": \"auto\",\n    \"coverPhotoUrl\": \"https://example.com/images/reward-cover.jpg\",\n    \"videoPlaybackUrl\": \"https://example.com/videos/reward.mp4\",\n    \"galleryPhotos\": [\n        \"https://example.com/images/gallery1.jpg\",\n        \"https://example.com/images/gallery2.jpg\"\n    ],\n    \"didInviteUsers\": true,\n    \"invitedData\": [\n        { \"targetType\": \"email\", \"targetId\": \"user001@example.com\" },\n        { \"targetType\": \"accountId\", \"targetId\": \"u12345bc-d87e-890f-gh12-ijk345678xyz\" }\n    ],\n    \"didShareItem\": true,\n    \"sharedData\": [\n        { \"platform\": \"Facebook\", \"shareCount\": 50 },\n        { \"platform\": \"Twitter\", \"shareCount\": 30 }\n    ],\n    \"didPromoteItem\": false,\n    \"promotedData\": [],\n    \"createdBy\": \"admin123\",\n    \"createdAt\": \"2024-11-20T14:30:00\",\n    \"updatedBy\": \"admin123\",\n    \"updatedAt\": \"2024-11-20T14:30:00\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/loyalty/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "loyalty",
+            "create"
+          ]
+        },
+        "description": "This endpoint, \"Incentive - Loyalty - Create Coupon\", is used to create a new coupon. It requires Bearer type authorization. Please replace \"BearerToken\" with your actual bearer token.\n\nThe request is POST type and the URL is: http://localhost:3000/api/incentive/loyalty/create.\n\nThe body of the request, defined in raw JSON, contains the following fields:\n\n- \"accountId\": The unique ID of the account.\n- \"sessionId\": The unique ID of the user's session.\n- \"teamId\": The unique ID of the team.\n- \"category\": The category for the incentive, in this case, 'Fashion & Accessories'.\n- \"loyaltyType\": The type of loyalty incentive. This can be a coupon, product, or NFT. \n- \"title\": The title of the reward.\n- \"description\": A brief description of the reward.\n- \"tags\": Tags related to the reward.\n- \"price\": The price of the reward.\n- \"tokenAmount\": The amount of tokens required to claim the reward.\n- \"isProcessPayment\": A boolean to indicate if payment is required. \n- \"isShipping\": A boolean to indicate if shipping applies to the reward.\n- \"redirectUrl\": The URL to which users will be redirected upon claiming the reward.\n- \"couponCode\": The unique code for the coupon.\n- \"websiteUrl\": The URL of the website where the reward can be redeemed.\n- \"buttonText\": The text on the button to claim the reward.\n- \"releaseDate\": The date when the reward will be released.\n- \"releaseTime\": The time when the reward will be released.\n- \"expiresDate\": The expiration date of the reward.\n- \"expiresTime\": The expiration time of the reward.\n- \"activationType\": The type of activation, here it's 'auto'.\n- \"coverPhotoUrl\": The URL of the reward's cover photo.\n- \"videoPlaybackUrl\": The URL of the reward's video, if it exists.\n- \"galleryPhotos\": List of additional photos URLs for the reward.\n- \"didInviteUsers\": A boolean to indicate if users were invited.\n- \"invitedData\": Detailed information about the invited users.\n- \"didShareItem\": A boolean to indicate if the reward was shared.\n- \"sharedData\": Detailed information about where and how many times the reward was shared.\n- \"didPromoteItem\": A boolean to indicate if the reward was promoted.\n- \"promotedData\": Detailed information about the promotion of the reward.\n- \"createdBy\": The account name of the user who created the reward.\n- \"createdAt\": The date and time when the reward was created.\n- \"updatedBy\": The account name of the user who last updated the reward.\n- \"updatedAt\": The date and time when the reward was last updated.\n\nThe body request should be written in JSON format. Please replace the placeholders with your actual data."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Loyalty - Create Product",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"teamId\": \"teamId\",\n    \"category\": \"Fashion & Accessories\",\n    \"loyaltyType\": \"Product\",\n    \"title\": \"Exclusive Membership Reward\",\n    \"description\": \"Get access to premium features with this reward.\",\n    \"tags\": \"premium, membership, reward\",\n    \"price\": \"29.99\",\n    \"tokenAmount\": 250,\n    \"isProcessPayment\": true,\n    \"isShipping\": false,\n    \"redirectUrl\": \"https://example.com/redeem\",\n    \"couponCode\": \"PREMIUM20\",\n    \"websiteUrl\": \"https://example.com\",\n    \"buttonText\": \"Activate Reward\",\n    \"releaseDate\": \"2024-11-25\",\n    \"releaseTime\": \"10:00:00\",\n    \"expiresDate\": \"2024-12-25\",\n    \"expiresTime\": \"23:59:59\",\n    \"activationType\": \"auto\",\n    \"coverPhotoUrl\": \"https://example.com/images/reward-cover.jpg\",\n    \"videoPlaybackUrl\": \"https://example.com/videos/reward.mp4\",\n    \"galleryPhotos\": [\n        \"https://example.com/images/gallery1.jpg\",\n        \"https://example.com/images/gallery2.jpg\"\n    ],\n    \"didInviteUsers\": true,\n    \"invitedData\": [\n        { \"targetType\": \"email\", \"targetId\": \"user001@example.com\" },\n        { \"targetType\": \"accountId\", \"targetId\": \"u12345bc-d87e-890f-gh12-ijk345678xyz\" }\n    ],\n    \"didShareItem\": true,\n    \"sharedData\": [\n        { \"platform\": \"Facebook\", \"shareCount\": 50 },\n        { \"platform\": \"Twitter\", \"shareCount\": 30 }\n    ],\n    \"didPromoteItem\": false,\n    \"promotedData\": [],\n    \"createdBy\": \"admin123\",\n    \"createdAt\": \"2024-11-20T14:30:00\",\n    \"updatedBy\": \"admin123\",\n    \"updatedAt\": \"2024-11-20T14:30:00\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/loyalty/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "loyalty",
+            "create"
+          ]
+        },
+        "description": "EndPoint Name: \"Incentive - Loyalty - Create Product\" - This defines the purpose of the endpoint. It is being used for creating a product for loyalty incentives.\n\nRequest Data: \n- Method: \"POST\" – This signifies the HTTP request type, which in this case, is 'POST' to send data to the server.\n- Url: \"http://localhost:3000/api/incentive/loyalty/create\" - This is the URL where the request will be made.\n\nAuth: \n- Type: \"bearer\" - This signifies bearer authentication type. \n- Key: \"token\" - This is the name of the parameter where the security token will go in the headers.\n- Value: \"BearerToken\" - The actual token to be used to authenticate with the API.\n\nHeaders: \n- In this request, no specific headers have been outlined, and any pre-populated defaults have been disabled.\n\nBody Data: \n- Mode: \"raw\" – Here, the input body content type is raw. The raw data is sent as it is, without any encoding or form-data.\n- Options: Language: \"json\" - The language format for input data is JSON.\n\nThe raw data includes multiple parameters which come along with their properties: \"accountId\", \"sessionId\", \"teamId\", \"category\", \"loyaltyType\", \"title\", \"description\", \"tags\", \"price\", \"tokenAmount\", \"isProcessPayment\", \"isShipping\", \"redirectUrl\", \"couponCode\", \"websiteUrl\", \"buttonText\", \"releaseDate\", \"releaseTime\", \"expiresDate\", \"expiresTime\", \"activationType\", \"coverPhotoUrl\", \"videoPlaybackUrl\", \"galleryPhotos\", \"didInviteUsers\", \"invitedData\", \"didShareItem\", \"sharedData\", \"didPromoteItem\", \"promotedData\", \"createdBy\", \"createdAt\", \"updatedBy\", \"updatedAt\". Each of these is a field with its respective value connected to the loyalty program features such as release dates, expiration dates, payment system details, description of the product, price and much more. This information will be consumed by the service once the request is made."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Loyalty - Create NFT",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"teamId\": \"teamId\",\n    \"category\": \"Fashion & Accessories\",\n    \"loyaltyType\": \"NFT\",\n    \"title\": \"Exclusive Membership Reward\",\n    \"description\": \"Get access to premium features with this reward.\",\n    \"tags\": \"premium, membership, reward\",\n    \"price\": \"29.99\",\n    \"tokenAmount\": 250,\n    \"isProcessPayment\": true,\n    \"isShipping\": false,\n    \"redirectUrl\": \"https://example.com/redeem\",\n    \"couponCode\": \"\",\n    \"websiteUrl\": \"https://example.com\",\n    \"buttonText\": \"Activate Reward\",\n    \"releaseDate\": \"2024-11-25\",\n    \"releaseTime\": \"10:00:00\",\n    \"expiresDate\": \"2024-12-25\",\n    \"expiresTime\": \"23:59:59\",\n    \"activationType\": \"auto\",\n    \"coverPhotoUrl\": \"https://example.com/images/reward-cover.jpg\",\n    \"videoPlaybackUrl\": \"https://example.com/videos/reward.mp4\",\n    \"galleryPhotos\": [\n        \"https://example.com/images/gallery1.jpg\",\n        \"https://example.com/images/gallery2.jpg\"\n    ],\n    \"didInviteUsers\": true,\n    \"invitedData\": [\n        { \"targetType\": \"email\", \"targetId\": \"user001@example.com\" },\n        { \"targetType\": \"accountId\", \"targetId\": \"u12345bc-d87e-890f-gh12-ijk345678xyz\" }\n    ],\n    \"didShareItem\": true,\n    \"sharedData\": [\n        { \"platform\": \"Facebook\", \"shareCount\": 50 },\n        { \"platform\": \"Twitter\", \"shareCount\": 30 }\n    ],\n    \"didPromoteItem\": false,\n    \"promotedData\": [],\n    \"createdBy\": \"admin123\",\n    \"createdAt\": \"2024-11-20T14:30:00\",\n    \"updatedBy\": \"admin123\",\n    \"updatedAt\": \"2024-11-20T14:30:00\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/loyalty/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "loyalty",
+            "create"
+          ]
+        },
+        "description": "This endpoint represents the creation of a non-fungible token (NFT) in a loyalty incentive program with the following detailed specification:\n\n1. **Endpoint name:** Incentive - Loyalty - Create NFT\n\n2. **Authorization:** It requires a Bearer token for authorization. This token must be provided in the request header as a string format.\n\n3. **HTTP Method:** It's a POST request, indicating the creation or addition of a resource.\n\n4. **URL:** The service can be accessed via http://localhost:3000/api/incentive/loyalty/create.\n\n5. **Request Body:** Contains the attributes of the NFT to be created and it is written in raw JSON format.\n\n    - **accountId:** Represents the account ID of the user.\n    - **sessionId:** Defines the unique session ID.\n    - **teamId:** Identifier for a particular team.\n    - **category:** Represents the category of the NFT, in this case it is \"Fashion & Accessories\".\n    - **loyaltyType:** Describes the nature of the reward, which is NFT here.\n    - **title:** Title of the reward.\n    - **description:** Brief details regarding the reward.\n    - **tags:** Keywords related to the reward.\n    - **price:** Cost of the reward.\n    - **tokenAmount:** The number of tokens associated with the reward.\n    - **isProcessPayment:** A boolean indicating if payment needs to be processed.\n    - **isShipping:** A boolean indicating if the reward requires shipping.\n    - **redirectUrl:** The URL user will be redirected to upon successful creation of NFT.\n    - **couponCode:** Any applicable coupon code.\n    - **websiteUrl:** Website where the reward can be redeemed.\n    - **buttonText:** Text to show on the redeem button.\n    - **releaseDate:** The date when the reward will be released.\n    - **expiresDate:** The date when the reward will expire.\n    - **activationType:** The method whereby the reward is activated.\n    - **coverPhotoUrl:** The URL of the cover photo for the reward.\n    - **videoPlaybackUrl:** The URL where a video demonstration of the reward can be viewed.\n    - **galleryPhotos:** URLs of photos showcasing the reward.\n    - **didInviteUsers:** Boolean to specify if users were invited to view the reward.\n    - **invitedData:** Details about invitees.\n    - **didShareItem:** Boolean to specify if the reward was shared.\n    - **sharedData:** Details about where and how many times the reward was shared.\n    - **didPromoteItem:** Boolean to specify if the reward was promoted.\n    - **promotedData:** Array carrying details about the promotion if didPromoteItem is true.\n    - **createdBy:** Identification of the creator.\n    - **createdAt:** The precise time the reward was created.\n    - **updatedBy:** Identification of the updater.\n    - **updatedAt:** The precise time the reward was last updated. \n\n6. **Response:** The endpoint doesn't specify a response structure, it probably sends back the created resource along with a success status."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Loyalty - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"teamId\": \"teamId\",\n    \"loyaltyId\": \"loyaltyId\",\n    \"category\": \"electronics\",\n    \"loyaltyType\": \"Coupon\",\n    \"title\": \"Exclusive Membership Reward 2.0\",\n    \"description\": \"Get access to premium features with this reward.\",\n    \"tags\": \"premium, membership, reward\",\n    \"price\": \"29.99\",\n    \"tokenAmount\": 250,\n    \"isProcessPayment\": true,\n    \"isShipping\": false,\n    \"redirectUrl\": \"https://example.com/redeem\",\n    \"couponCode\": \"PREMIUM20\",\n    \"websiteUrl\": \"https://example.com\",\n    \"buttonText\": \"Activate Reward\",\n    \"releaseDate\": \"2024-11-25\",\n    \"releaseTime\": \"10:00:00\",\n    \"expiresDate\": \"2024-12-25\",\n    \"expiresTime\": \"23:59:59\",\n    \"activationType\": \"auto\",\n    \"coverPhotoUrl\": \"https://example.com/images/reward-cover.jpg\",\n    \"videoPlaybackUrl\": \"https://example.com/videos/reward.mp4\",\n    \"galleryPhotos\": [\n        \"https://example.com/images/gallery1.jpg\",\n        \"https://example.com/images/gallery2.jpg\"\n    ],\n    \"didInviteUsers\": true,\n    \"invitedData\": [\n        { \"targetType\": \"email\", \"targetId\": \"user001@example.com\" },\n        { \"targetType\": \"accountId\", \"targetId\": \"u12345bc-d87e-890f-gh12-ijk345678xyz\" }\n    ],\n    \"didShareItem\": true,\n    \"sharedData\": [\n        { \"platform\": \"Facebook\", \"shareCount\": 50 },\n        { \"platform\": \"Twitter\", \"shareCount\": 30 }\n    ],\n    \"didPromoteItem\": false,\n    \"promotedData\": [],\n    \"createdBy\": \"admin123\",\n    \"createdAt\": \"2024-11-20T14:30:00\",\n    \"updatedBy\": \"admin123\",\n    \"updatedAt\": \"2024-11-20T14:30:00\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/loyalty/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "loyalty",
+            "update"
+          ]
+        },
+        "description": "This is the detailed description of the given endpoint data:\n\nEndpoint Name: \"Incentive - Loyalty - Update\"\n\nIt is a put request type, meaning it's used to update an existing resource.\n\nAuthentication:\nIt uses bearer authentication. The bearer token should be passed in the token key.\n\nURL:\nThis is the URL where the API request will be sent: \"http://localhost:3000/api/incentive/loyalty/update\".\n\nHeaders:\nClient-UUID is being passed in the request header. Client-UUID identifies a client device or session.\n\nBody: \nThe body is in raw JSON format including the following fields:\n\n- \"accountId\": A unique ID for the account.\n- \"sessionId\": The ID of the current session.\n- \"teamId\": The ID of the the team.\n- \"loyaltyId\": The unique ID for the loyalty program.\n- \"category\": The category for the incentive, in this case it's electronics.\n- \"loyaltyType\": The type of the loyalty, here it is a Coupon.\n- \"title\": The title of the incentive. \n- \"description\": A brief description about the incentive.\n- \"tags\": Relevant tags associated with the incentive.\n- \"price\": The price of the incentive.\n- \"tokenAmount\": The number of tokens required to claim the incentive.\n- \"isProcessPayment\": Flag to indicate if payment processing is required.\n- \"isShipping\": Flag to indicate if shipping is required.\n- \"redirectUrl\": The URL for redeeming the incentive.\n- \"couponCode\": The code for the coupon.\n- \"websiteUrl\": Website address where the incentive can be claimed.\n- \"buttonText\": Text displayed on the activation button.\n- \"releaseDate\", \"releaseTime\": The date and time when the incentive will be released.\n- \"expiresDate\", \"expiresTime\": The date and time till when the incentive can be claimed.\n- \"activationType\": How this incentive will be activated. It's automatic in this case.\n- \"coverPhotoUrl\": The URL of the image used as a cover for the incentive.\n- \"videoPlaybackUrl\": The URL of the video explaining the incentive details.\n- \"galleryPhotos\": A list of the URLs of photos which will be displayed in a gallery view.\n- \"didInviteUsers\": Flag indicating if invitees have been added to the incentive.\n- \"invitedData\": Data detailing who was invited to the incentive.\n- \"didShareItem\": Flag indicating if the incentive was shared.\n- \"sharedData\": Detailed data of where the incentive was shared (which platform and how many times).\n- \"didPromoteItem\": Flag indicating if the incentive was promoted.\n- \"promotedData\": Data detailing where the incentive was promoted.\n- \"createdBy\": Username of the user who created the incentive.\n- \"createdAt\": Timestamp indicating when the incentive was created.\n- \"updatedBy\": Username of the user who updated the incentive.\n- \"updatedAt\": Timestamp indicating when the incentive was last updated.\n\nThese are all the fields that you can likely update on this endpoint. You will need to provide the valid data types in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Loyalty - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/loyalty/get/?loyaltyId=loyaltyId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "loyalty",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "loyaltyId",
+              "value": "loyaltyId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This API endpoint is called \"Incentive - Loyalty - Get\". This uses the HTTP 'GET' method to retrieve loyalty incentive information.\n\n#### Authentication\nThe authentication required for this endpoint is of the type 'bearer'. This requires a valid token to authenticate the requests made to the endpoint. This token field key is \"token\" and should hold the bearer token string.\n\n#### Method\nThe HTTP method used for this endpoint is GET. This HTTP method is used to retrieve data from the server.\n\n#### URL\nThe 'url' is where the request is being sent. This is where the server is located to handle this specific endpoint. This URL format is http://localhost:3000/api/incentive/loyalty/get and it's parameterized with loyaltyId, sessionId, accountId. \n\n'loyaltyId' - This parameter is used to specify the loyalty program's ID.\n'sessionId' -This parameter is used to maintain the session information.\n'accountId' - This parameter is used to specify the account ID.\n\n#### Headers\nHeaders can be added to amend the request. In the provided data, a header template is included, but it is disabled by default. Hence, this field can be left empty or can be filled with necessary request header info such as content-type, auth-token etc.\n\n#### Body\nThe 'body' carries the bulk of the request information. This endpoint uses 'raw' mode for the body, but as it is a GET request, it doesn't require a body. Therefore, the 'raw' field is left empty. \n\nSo, primarily you need to authenticate yourself and pass the user 'loyaltyId', 'sessionId' and 'accountId' as parameters in the request URL to get the required information."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Loyalty - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/loyalty/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "loyalty",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "In this endpoint, there are multiple data points which have been included:\n\n1. **name**: The 'name' attribute refers to the name of the endpoint. Here, 'Incentive - Loyalty - Get All' indicates that this endpoint is aimed at retrieving all incentives related to loyalty.\n\n2. **request**: The 'request' attribute denotes the HTTP request being sent to the server. This includes the details about the authentication, method, URL, headers, and body of the API request.\n\n    - **auth**: The 'auth' field specifies the type of authentication being used. Here, the 'bearer' authentication type is used. \n        - **bearer**: This field includes an array of bearer tokens used for authentication. Each token has a 'key', 'value', and 'type'. Here, the 'key' is 'token', the 'value' is 'BearerToken', and the 'type' is 'string'.\n       \n    - **method**: The 'method' attribute describes the HTTP method being utilized for this API request. In this case, it is a 'GET' request, which requests data from a specified resource.\n\n    - **url**: The 'url' field refers to the API's endpoint URL. Here, the URL is 'http://localhost:3000/api/incentive/loyalty/all/?sessionId=sessionId&accountId=accountId'. This URL includes query parameters such as 'sessionId' and 'accountId', which are used to retrieve specific data.\n    \n    - **headers**: The 'headers' attribute contains an array of HTTP headers to be included in the API request. Here, a default header, which is currently disabled (as indicated by 'disabled: true'), is provided. Its 'key' and 'value' are both blank.\n    \n    - **body**: The 'body' field is where the main content of the HTTP message goes. However, since the 'mode' is 'raw' and the 'raw' content is blank, no body content is being sent with this 'GET' request. In other request methods like 'POST', this field would contain the data being sent to the server."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Loyalty - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"loyaltyId\":\"loyaltyId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/loyalty/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "loyalty",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named as \"Incentive - Loyalty - Delete\". It is used to delete a particular loyalty incentive in your application.\n\n1. Authentication: This endpoint uses 'Bearer' authentication. The bearer token (also known as a security token) must be provided to authenticate the session. \n    - Key: \"token\"\n    - Value: \"sessionId\"\n    - Type: This is a 'string' data type.\n\n2. Method: This endpoint uses the 'POST' method which is usually used to send data to the server.\n\n3. URL: \"http://localhost:3000/api/incentive/loyalty/delete\"; This is the endpoint URL, which contains the server's address and the specific route to the 'Incentive - Loyalty - Delete' API.\n\n4. Headers: The headers data is currently empty, but this location usually contains additional information that client must pass to the server.\n\n5. Body: This is where you specify the data that is to be sent to the server. \n\n    It uses 'raw' mode for the body, which allows you to send data without any encoding. The raw data string sent to this endpoint should be in JSON format and contains the following fields:\n    \n    - \"sessionId\": The session ID for logged-in user session. This should be a string.\n    - \"accountId\": The account ID related to the user who wishes to delete a loyalty incentive. This should be a string.\n    - \"loyaltyId\": The ID of the specific loyalty incentive that is to be deleted. This should be a string.\n\nNote: Make sure you replace \"sessionId\", \"accountId\", and \"loyaltyId\" with actual values when making a request."
+      },
+      "response": []
+    }
+  ]
+}

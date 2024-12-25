@@ -1,0 +1,214 @@
+{
+  "info": {
+    "_postman_id": "9a62daab-274b-4c42-b1a8-a23671f2d47b",
+    "name": "WebSocketManagement",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Web - Socket - Connect",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/connect",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "connect"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Connect\n\n**Method:** POST  \nThis endpoint is used to establish a connection to a WebSocket server.\n\n**URL:** `http://localhost:3000/api/socket/web/connect`  \nThis is the endpoint where the connection request will be sent. It is designed to work with a server running locally on port 3000.\n\n#### Request Details\n\n- **Headers:**  \n  There are no specific headers required for this request. However, ensure that any necessary headers required by your server (like authentication tokens) are added if needed.\n\n- **Body:**  \n  The request body must be sent in raw JSON format, and it includes the following fields:\n\n  - **socketId:**  \n    This is required to uniquely identify the WebSocket connection. It should be a string representing the ID assigned to the socket.\n\n  - **accountId:**  \n    This is required to associate the WebSocket connection with a specific user account. It should be a string representing the unique identifier of the account.\n\n#### Example Raw Body:\n```json\n{\n  \"socketId\": \"socketId\",\n  \"accountId\": \"accountId\"\n}\n```\nReplace `\"socketId\"` and `\"accountId\"` with the actual values when sending the request.\n\nThis endpoint allows you to connect a WebSocket to a specific account, enabling real-time communication and data exchange."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Disconnect",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/disconnect",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "disconnect"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Disconnect\n\n**Method:** POST  \nThis endpoint is used to disconnect a WebSocket connection from the server.\n\n**URL:** http://localhost:3000/api/socket/web/disconnect  \nThis is the local endpoint where the request is sent. Replace `localhost:3000` with the appropriate server address in a production environment.\n\n**Headers:**  \nNo specific headers are required for this request.\n\n**Body:**  \nThe body of the request is sent in JSON format. It must include the following fields:\n\n- **socketId:** This field should contain the unique identifier of the WebSocket connection that you want to disconnect. It is essential for identifying which connection to terminate.\n\n- **accountId:** This field should contain the unique identifier of the account associated with the WebSocket connection. This is used to verify the identity of the user requesting the disconnection.\n\n**Options:**  \nThe body is specified to be in raw format, with the language set to JSON. This indicates that the data sent to the server must be properly formatted JSON.\n\n### Example Body Structure:\n```json\n{\n  \"socketId\": \"socketId\",\n  \"accountId\": \"accountId\"\n}\n```\nMake sure to replace `\"socketId\"` and `\"accountId\"` with the actual values relevant to your request before sending it."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/status?socketId=socketId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "socketId",
+              "value": "socketId"
+            }
+          ]
+        },
+        "description": "### Web - Socket - Status Endpoint Description\n\n- **Name**: Web - Socket - Status\n  - This is the title of the API endpoint, indicating that it is related to the status of WebSocket connections.\n\n- **Request**: \n  - This section contains the details on how to make a request to this endpoint.\n\n  - **Method**: GET\n    - This indicates that the request is using the HTTP GET method, which is generally used to retrieve data from a server.\n\n  - **URL**: \n    - `http://localhost:3000/api/socket/web/status?socketId=socketId`\n      - This is the complete URL to access the endpoint. \n      - `localhost:3000` specifies that the API is running locally on port 3000.\n      - `/api/socket/web/status` indicates the specific path of the endpoint.\n      - `?socketId=socketId` is a query parameter where `socketId` should be replaced with the actual ID of the WebSocket connection you want to check the status for.\n\n  - **Headers**: []\n    - This indicates that no specific headers are required in the request to access this endpoint. It's an empty array showing that default HTTP headers will be used.\n\nThis endpoint is used to check the status of a WebSocket connection by providing the appropriate socket ID in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/get?socketId=socketId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "socketId",
+              "value": "socketId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Get\n\n#### Request Overview:\nThis endpoint allows the user to retrieve information related to a specific WebSocket connection identified by its `socketId`. The request method used is GET.\n\n#### Request Details:\n\n- **Method**: \n  - This endpoint uses the HTTP GET method, which is commonly used to request data from a specified resource.\n\n- **URL**: \n  - The URL for this endpoint is `http://localhost:3000/api/socket/web/get?socketId=socketId`. \n  - Here, `localhost:3000` indicates that the server is running locally on port 3000.\n  - The path `/api/socket/web/get` specifies the API route for handling WebSocket requests.\n  - The query parameter `socketId=socketId` is used to specify which WebSocket connection's information you wish to retrieve. The actual value for `socketId` should be replaced with the specific identifier of the WebSocket connection you want to query.\n\n- **Headers**: \n  - In this case, there are no specific headers required for the request. The request can be made without any custom headers being sent.\n\n### Summary:\nThis endpoint is used to fetch information about a specific WebSocket connection using its unique identifier. Replace `socketId` in the URL with the actual socket ID you are interested in to receive the relevant data."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Delete (Soft)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Delete (Soft)\n\n**Name:** Web - Socket - Delete (Soft)\n\n**Request Method:** POST\n\n**Request URL:** \n- This is the URL where the request is sent: `http://localhost:3000/api/socket/web/delete`\n\n**Headers:** \n- No specific headers are required for this request as the headers array is empty.\n\n**Request Body:** \n- **Mode:** The request body is sent in \"raw\" mode.\n- **Content:** The body contains a JSON object formatted as a string. \n- **Raw Body Content:** \n  - The JSON structure includes a single key-value pair where the key is `\"socketId\"` and the value is a placeholder `\"socketId\"`. This value should be replaced with the actual ID of the socket you wish to delete.\n  \n**Options:** \n- The request body specifies that the language for the raw content is JSON. This is important for the server to properly interpret the incoming data.\n\n### Key Points:\n- This endpoint is used to softly delete a WebSocket connection using its unique identifier (`socketId`).\n- The deletion is “soft,” implying that the socket may not be permanently removed from the system, but instead marked as inactive or similar."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Destroy (Permanent)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/destroy",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "destroy"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Destroy (Permanent)\n\n- **Name**: This is the name of the API endpoint, which indicates that it is used to permanently destroy or terminate a web socket connection.\n\n- **Request Details**:\n  - **Method**: The HTTP method used for this endpoint is POST. This means the request sends data to the server to perform an action—in this case, to destroy a web socket.\n  \n  - **URL**: The endpoint is hosted locally at `http://localhost:3000/api/socket/web/destroy`. This URL points to the specific resource responsible for handling the destruction of web socket connections.\n\n- **Headers**: There are no specific headers required for this request. Headers may be necessary in other contexts for authentication or content type, but for this endpoint, they are left empty.\n\n- **Body**: \n  - **Mode**: The body of the request is set to \"raw,\" which means we will be sending a plain text payload instead of form data or other multipart formats. \n  - **Raw Content**: The JSON content being sent in the body is `{\"socketId\": \"socketId\"}`. This contains a key `socketId` that represents the unique identifier of the web socket that needs to be destroyed. The value `\"socketId\"` is a placeholder and should be replaced with the actual ID of the socket connection intended for termination.\n  - **Options**: The body option specifies that the language of the raw content is JSON, ensuring the server interprets the data correctly.\n\nThis endpoint is essential for managing web socket connections and ensuring that unused or inactive sockets are properly terminated to free up resources."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Undelete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/undelete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "undelete"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Undelete\n\n- **Name**: Web - Socket - Undelete\n  - Describes the operation being performed, which is a request to undelete a web socket.\n\n- **Request**:\n  - **Method**: POST\n    - This indicates the type of request being made to the server. A POST request is typically used to submit data to be processed.\n  \n  - **URL**: http://localhost:3000/api/socket/web/undelete\n    - This is the endpoint where the request is sent. It points to the undelete action for web sockets on the local server running on port 3000.\n\n  - **Headers**: []\n    - This section is currently empty, meaning no custom headers are included in the request. Headers may be used for authentication, content type specification, etc.\n\n  - **Body**:\n    - **Mode**: raw\n      - The body content is being sent as raw data.\n    \n    - **Raw**: `{\"socketId\": \"socketId\"}`\n      - This is the actual data being sent in the request body. It contains a JSON object with a single field, `socketId`, which is used to specify the identifier of the socket that needs to be undeleted. The placeholder \"socketId\" should be replaced with the actual socket ID of the socket being restored.\n    \n    - **Options**:\n      - **Raw**:\n        - **Language**: json\n          - Specifies that the raw data format being used is JSON, which allows the server to properly interpret the content of the request body."
+      },
+      "response": []
+    }
+  ]
+}

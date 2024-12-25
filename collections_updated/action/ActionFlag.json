@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionFlag",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Flag - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"flag1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/flag/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "flag",
+            "create"
+          ]
+        },
+        "description": "**Action - Flag - Create**\n\nThis endpoint is designed to create a flag for a specific content item, typically utilized within a streaming or content management application.\n\n- **Auth**:\n  - **Type**: Bearer\n    - This section requires a bearer token for authentication. The bearer token should be passed in the header of the request. \n    - The token format is a string that grants access to the API endpoint.\n\n- **Method**: \n  - **POST**\n    - This method is used to send data to the server for creating a new flag.\n\n- **URL**: \n  - **http://localhost:3000/api/action/flag/create**\n    - This is the endpoint address where the POST request is sent to create a flag.\n\n- **Headers**: \n  - This section is currently set up but not in use, as both key and value fields are empty and the header is marked as disabled. Generally, headers can convey additional information such as content type or custom parameters.\n\n- **Body**: \n  - **Mode**: Raw\n    - The request body is sent in raw format, which allows for direct input of JSON data.\n\n  - **Raw**:\n    - This section contains the JSON data being sent in the body of the request. This includes several fields:\n    \n    - **sessionId**: \n      - This is a unique identifier for a session, which helps to track user interactions or activities during that session.\n      \n    - **accountId**: \n      - This represents the user or entity account that is sending the request, typically linked to their profile within the application.\n\n    - **path**: \n      - This indicates the specific path or location of the content, such as the video or streaming channel being flagged. \n      - Example: `/live/channel/video123`.\n    \n    - **targetType**: \n      - This parameter specifies the type of target being flagged, which in this case is set to `streamer`, indicating that a streamer is the subject of the flagging action.\n\n    - **targetId**: \n      - The unique identifier of the content item or streamer being flagged, providing a way to reference that specific entity.\n      - Example: `videoId`.\n    \n    - **sourceType**: \n      - This defines the type of source initiating the flagging request, which is set to `accountId`, indicating that the account specified is the source.\n\n    - **sourceId**: \n      - This is the identifier for the source, which is expected to match the `accountId` provided earlier.\n\n    - **tokenAmount**: \n      - This denotes the amount of tokens being used or impacted by this action. A value of `20` indicates the number of tokens exchanged, spent, or credited in this operation.\n\n    - **name**: \n      - A label for the flag being created. In this example, it is referred to as `flag1`, which serves as an identifier for the flag in potential later operations or queries.\n\n    - **description**: \n      - This field is currently empty, but it is intended for additional details regarding the nature or purpose of the flag being created.\n\n    - **tags**: \n      - Similar to the description, this field is also empty and can be used to categorize or label the flag with keywords for easier management and retrieval."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Flag - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"flagId\":\"flagId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/flag/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "flag",
+            "update"
+          ]
+        },
+        "description": "**Action - Flag - Update Endpoint Description**\n\n- **name**: Indicates the name of the API action, which in this case is \"Action - Flag - Update\". This name should help users quickly identify the purpose of the request.\n\n- **request**: This section outlines the details of the HTTP request that will be sent to the API.\n\n  - **auth**: Defines the authentication method used for the request.\n  \n    - **type**: Specifies the type of authentication; here, it is \"bearer\", indicating that a bearer token will be used.\n    \n    - **bearer**: A list containing details about the bearer token required for authentication.\n    \n      - **key**: The name of the token parameter which is \"token\".\n      \n      - **value**: The actual value of the token that needs to be passed; it is labeled as \"BearerToken\".\n      \n      - **type**: The data type of the token value, which is \"string\".\n\n  - **method**: Indicates the HTTP method to be used for the request; it is \"PUT\", which is typically used to update existing resources.\n\n  - **url**: The endpoint URL to which the request will be sent. In this case, it is \"http://localhost:3000/api/action/flag/update\".\n\n  - **headers**: A list of HTTP headers to be included with the request.\n\n    - **key**: The name of the header, in this case, \"Client-UUID\".\n    \n    - **value**: The value for the header, labeled as \"ClientUUID\", which is a unique identifier for the client.\n    \n    - **type**: The type of the header; here it is marked as \"default\".\n\n  - **body**: Contains the data to be sent with the request.\n\n    - **mode**: Specifies the format of the body content. Here, it is set to \"raw\", meaning the data will be sent as raw text.\n    \n    - **raw**: The actual data being sent with the request, formatted as a JSON object. The structure of this JSON is as follows:\n\n      - **sessionId**: A unique identifier for the current session.\n      \n      - **accountId**: The unique identifier for the account associated with the request.\n      \n      - **flagId**: The unique identifier for the specific flag being updated.\n      \n      - **path**: Specifies the location of the resource; in this case, it is \"/live/channel/video123\".\n      \n      - **targetType**: Indicates the type of target being updated; here, it specifies \"streamer\".\n      \n      - **targetId**: The unique identifier for the target; labeled as \"videoId\".\n      \n      - **sourceType**: The type of source of the request; it is labeled as \"accountId\".\n      \n      - **sourceId**: The unique identifier for the source, which is also set to \"accountId\".\n      \n      - **tokenAmount**: Represents the amount of tokens being adjusted; here, it is set to 20.\n      \n      - **name**: A label or identifier for the action, in this case, it is \"Farooq\".\n      \n      - **description**: A detailed description of the action being taken; stated as \"this is description\".\n      \n      - **tags**: Additional tags associated with the action; specified as \"xyz\".\n\n    - **options**: Additional settings related to the request body format.\n\n      - **raw**: An object specifying the language format of the raw data; it is set to \"json\", indicating that the body content is formatted as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Flag - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/flag/get/?flagId=flagId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "flag",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "flagId",
+              "value": "flagId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Flag - Get Endpoint Description\n\n**Name:** Action - Flag - Get\n- This is the identifier for the API request.\n\n**Request:**\n- This section outlines the details needed to make the API call.\n\n**Auth:**\n- **Type:** bearer\n  - This indicates that the authentication type used for this request is a Bearer token.\n  \n- **Bearer:**\n  - This section contains details about the token required for authentication.\n  - **Key:** token\n    - This specifies that the name of the parameter being sent is `token`.\n  - **Value:** BearerToken\n    - This placeholder is used to represent the actual Bearer token string that must be included for authentication. \n  - **Type:** string\n    - This indicates that the value for the token should be of type string.\n\n**Method:**\n- **GET**\n  - This defines the HTTP method used for the request as GET, which is typically used to retrieve data from the specified resource.\n\n**URL:**\n- `http://localhost:3000/api/action/flag/get/?flagId=flagId&sessionId=sessionId&accountId=accountId`\n  - This is the endpoint where the GET request will be sent. It includes query parameters:\n    - **flagId:** A parameter expected in the URL to specify the ID of the flag being requested.\n    - **sessionId:** A parameter to identify the session associated with the request.\n    - **accountId:** A parameter to identify the account related to the action being queried.\n\n**Headers:**\n- This section normally includes additional metadata, but in this case:\n  - **Key:** (empty)\n    - There are no specific headers provided in this request.\n  - **Value:** (empty)\n    - There is no associated value for any headers.\n  - **Type:** default\n    - Indicates the default type for headers.\n  - **Disabled:** true\n    - This indicates that any headers listed are currently disabled and will not be sent with the request.\n\n**Body:**\n- **Mode:** raw\n  - This specifies the format for the request body. Since this request is a GET request, typically, a body is not included.\n- **Raw:**\n  - It's empty in this case, meaning no data is being sent in the body of the request.\n\nThis endpoint is intended to retrieve information about a specific flag using the provided identifiers while requiring a valid Bearer token for authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Flag - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/flag/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "flag",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Flag - Get All Endpoint\n\n#### Request Method\n- **Method**: GET\n  - The request uses the HTTP GET method, which is typically used to retrieve data from a specified resource.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/action/flag/all/?sessionId=sessionId&accountId=accountId`\n  - This is the endpoint to access the action flags. \n  - The URL contains two query parameters:\n    - **sessionId**: Identifier for a particular session, used to track the context of a user's session.\n    - **accountId**: Identifier for the user account, which specifies which account's data to retrieve.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - The endpoint requires authentication via a Bearer Token. This type of authentication allows access to the resource only if the token is valid.\n  \n- **Bearer Token**:\n  - **Key**: token\n    - This is the identifier for the token in use.\n  - **Value**: BearerToken\n    - This placeholder represents the actual token that must be provided for authentication. Users should replace \"BearerToken\" with their valid token.\n  - **Type**: string\n    - The token is provided as a string.\n\n#### Request Headers\n- **Headers**: \n  - An empty header object is included but is currently set to disabled. This means no additional headers are being sent with the request.\n  \n#### Request Body\n- **Body**: \n  - **Mode**: raw\n    - The request does not require a body; it has been specified as 'raw' to indicate that no data is being sent.\n  - **Raw**: \n    - The raw body is empty, indicating that there is no data included in the request body for this GET method.\n\nThis endpoint is used for fetching all action flags associated with a particular session and account, ensuring that the request is authenticated with a bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Flag - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"flagId\":\"flagId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/flag/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "flag",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Flag - Delete\n\n#### General Information\nThis endpoint is used to delete a flag associated with a specific account within the system. It requires authentication via a bearer token and expects a POST request containing relevant identifiers in the request body.\n\n#### Request Details\n\n- **Auth:** \n  - **Type:** Bearer \n    - This indicates that the endpoint requires a bearer token for authentication. The token must be provided in the request to authorize the action.\n\n- **Bearer Token:** \n  - **Key:** `token`\n    - This is the identifier for the token being used.\n  - **Value:** `sessionId`\n    - This represents the actual token that is needed for authentication. It should be replaced with a valid session identifier.\n\n- **Method:**\n  - **Type:** POST\n    - This specifies that the request should be made using the HTTP POST method, which is typically used to send data to the server.\n\n- **URL:**\n  - **Endpoint:** `http://localhost:3000/api/action/flag/delete`\n    - This is the address where the request will be sent for flag deletion. Ensure that the base URL changes to the appropriate environment or production URL as needed.\n\n- **Headers:**\n  - **Key:** (Empty)\n  - **Value:** (Empty)\n  - **Type:** Default\n  - **Disabled:** True\n    - Currently, no custom headers are specified or required for this request. This section is disabled, indicating it doesn't add any headers to the request.\n\n- **Body:**\n  - **Mode:** Raw\n    - Indicates that the body of the request is in raw format, meaning that it contains a direct JSON string.\n  - **Raw Content:** \n    ```json\n    {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"flagId\": \"flagId\"\n    }\n    ```\n    - This is the JSON structure that must be sent in the request body. It contains the following fields:\n      - **sessionId:** This should be replaced with the actual session identifier relevant to the user making the request.\n      - **accountId:** This field represents the unique identifier for the account associated with the flag that is being deleted.\n      - **flagId:** This is the unique identifier for the flag that needs to be deleted.\n\n#### Summary\nThis endpoint allows users to delete a specified flag for a given account. Proper authentication is required via a bearer token, and it is imperative that the correct session, account, and flag IDs are provided in the body of the request to successfully execute the deletion operation."
+      },
+      "response": []
+    }
+  ]
+}

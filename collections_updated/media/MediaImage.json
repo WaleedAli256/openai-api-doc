@@ -1,0 +1,1311 @@
+{
+  "info": {
+    "_postman_id": "05ccbfc7-d696-4aa5-9671-0d421e5be551",
+    "name": "MediaImage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Media - Image - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Image - Create\" and its function is to create a new image media through a POST request. Here's a description of each field in the endpoint:\n\n- **name**: The name of the endpoint, which signifies its purpose. In this case, \"Media - Image - Create\" implies that it's an endpoint for creating new image media.\n\n- **request**: This field contains details about the request to be made which includes authentication, method type, URL, headers, and body.\n\n- **auth**: This outlines the authentication details required for the API endpoint. The authentication type used here is \"bearer\". The bearer token must be provided as the value in the \"token\" key.\n\n- **method**: The HTTP method to be used for the request, in this case, 'POST'.\n\n- **url**: The URL where the request is sent. It is http://localhost:3000/api/media/image/create for this endpoint.\n\n- **headers**: Any additional headers that should be included with the request. Currently, there are no defined extra headers since the key and value field are empty and this header is disabled.\n\n- **body**: This includes the details on the required input for the request. In this case, the mode indicates that the input should be provided in RAW format.\n\n  - The raw input should be in JSON format as hinted by the “language” under “options\".\n  - The raw payload includes several parameters: `sessionId`, `accountId`, `name`, `description`, `tags`, `contentType`, `contentLength`, `targetKey`, `compressUsing`, `isCompressed`, `isPrivate` and `data`, which contain various information regarding the image media being created.\n  - For example, the `description` field would contain a brief description of the image media, `tags` would contain tags related to the media for easy searching, `contentType` would indicate the type of image like 'image/jpeg', and so on.\n\nRemember to replace the placeholder values in the payload with actual data before sending the request through the endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Video",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Media - Image - Create - For Video\" and it is responsible for creating an image to be associated with a video. It uses the POST method and expects a bearer token for authentication.\n\n1. **name**: This is the name of the endpoint, which is \"Media - Image - Create - For Video\".\n\n2. **auth**: This refers to the authentication method used to validate the request. In this case, the authentication type is \"bearer\", which means the request requires a bearer token.\n\n    - **key**: The key for the bearer token is \"token\".\n    - **value**: The value for the token is \"BearerToken\".\n    - **type**: The data type of the value. Here, it is a \"string\".\n\n3. **method**: This is the HTTP method used for this API call. Here it is \"POST\".\n\n4. **url**: This is the API endpoint's URL, which is \"http://localhost:3000/api/media/image/create\".\n\n5. **headers**: This refers to the HTTP Headers which can be sent along with the request. Currently, there are no headers in this request, and any default headers are disabled.\n\n6. **body**: This refers to the body portion of the HTTP request.\n\n    - **mode**: This dictates in what form the body is sent. Here, it is \"raw\".\n    - **raw**: This contains the raw JSON data being sent in the body. \n        - **sessionId**: The ID of the session.\n        - **accountId**: The ID of the account.\n        - **videoId**: The ID of the video.\n        - **name**: The name of the media.\n        - **description**: A description for the media.\n        - **tags**: Tags associated with the media.\n        - **contentType**: The content type of the image.\n        - **contentLength**: Specifies the length of the content.\n        - **targetKey**: This might be useful for categorizing or identifying the content on the server side.\n        - **compressUsing**: The compression method used.\n        - **isCompressed**: A boolean value indicating whether the media is compressed.\n        - **isPrivate**: A boolean value indicating whether the media is private.\n        - **data**: The actual image data.\n    - **options**: These are the options for the body of the request.\n        - **language**: The language used for the raw data in the body. Here, it is JSON.\n\nKeep in mind, make sure to replace placeholders such as \"BearerToken\", \"sessionId\", \"accountId\", \"videoId\", and the image data in the \"data\" field with actual values."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Channel",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "This endpoint is labeled \"Media - Image - Create - For Channel\". \n\n- It utilizes the \"POST\" method, indicating that it is used to send data to be processed by the identified resource, in this case the create media image API at `http://localhost:3000/api/media/image/create`.\n\nAuthorization:\n- The endpoint employs Bearer token authentication, which requires a token that need to be included in every request.\n\nHeaders:\n- It currently doesn't carry any additional headers beyond the default ones implicitly set by the HTTP protocol itself. \n\nBody:\n- It sends data to the server in raw JSON format. \n\nThe fields in the body are:\n\n1. `sessionId`: Used to identify the user's session. This is typically a unique string of characters associated with a particular user's session.\n2. `accountId`: Identifies a user's account, usually with a unique string.\n3. `channelId`: Identifies a unique channel.\n4. `name`: The name of the media file.\n5. `description`: A descriptive text for the media file.\n6. `tags`: Keywords related to the media file separated by commas.\n7. `contentType`: Specifies the media type of the resource.\n8. `contentLength`: Indicates the size of the entity-body. The value must be >= 0.\n9. `targetKey`: The attribute where the media URL will be stored. \n10. `compressUsing`: Specifies the method used for compression.\n11. `isCompressed`: Indicates whether the media has been compressed. It's a boolean value - true if compressed, false otherwise.\n12. `isPrivate`: Indicates the visibility of the media. It's a boolean value - true for private, false for public.\n13. `data`: Contains the actual media data.\n  \nThese fields must be replaced with appropriate values for the `POST` request to work as intended."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"streamId\":\"streamId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "1. `\"name\"`: This represents the name of the endpoint. In this case, the name is \"Media - Image - Create - For Stream\", which is most likely an API for creating an image meant for a stream.\n\n2. `\"request\"`: This refers to the request specifications of the endpoint.\n\n3. `\"auth\"`: This is the authorization method required by the endpoint. The endpoint uses 'Bearer' type authorization, which means you need a bearer token to access it. The token value will be filled in at runtime.\n\n4. `\"method\"`: The HTTP method used for the request is 'POST'. In this context, it is used to send data to create a new image on the server.\n\n5. `\"url\"`: This is the address at which the API endpoint resides. In this case, it's hosted locally on 'http://localhost:3000/api/media/image/create'.\n\n6. `\"headers\"`: Headers can contain more information about the request. This field is currently empty and disabled.\n\n7. `\"body\"`: The body of the request contains detailed data sent to the API endpoint. It operates in 'raw' mode meaning you can send any kind of text in the message body. The text (in JSON format) includes various pieces of information such as 'sessionId', 'accountId', 'streamId', and others.\n    \n   - `\"sessionId\"`: This could be an identifier for a single browser session.\n    \n   - `\"accountId\"`: This could be the account identifier who owns the image files.\n    \n   - `\"streamId\"`: The identifier for the stream where the media will be used.\n    \n   - `\"name\"`: Supposedly, the name you wish to give to the media being created.\n    \n   - `\"description\"`: A brief description of the media.\n   \n   - `\"tags\"`: Keywords or labels to categorize the media.\n   \n   - `\"contentType\"`: The format of the image file. In this case, it is JPEG.\n   \n   - `\"contentLength\"`: This is usually the size of the content being uploaded. Here, it's been set to '0'.\n   \n   - `\"targetKey\"`: Could be the attribute in the storage database where the value (the uploaded media) will be stored.\n   \n   - `\"compressUsing\"`: The compression method used for the media, in this case, 'Base64'.\n   \n   - `\"isCompressed\"`: A boolean value indicating whether the media being created is compressed or not.\n   \n   - `\"isPrivate\"`: A boolean value indicating whether the media is private (accessible by only the uploader).\n   \n   - `\"data\"`: Most likely the data of the image to be uploaded itself, represented as a string of characters.\n\n8. `\"options\"`: These are the additional settings for the request body. Here, 'language' is set to 'json', indicating that the data in the body should be in JSON format.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "1. \"name\": This is the name of the API endpoint. Here, it is \"Media - Image - Create - For Team\", indicating it is used to create an image for a team in media.\n\n2. \"request\": This contains details of the HTTP request that is to be made.\n\n3. \"auth\": This specifies the authentication method to be used for this HTTP request. Here, it uses a bearer token.\n\n4. \"bearer\": This is a list that contains the details of the bearer token needed for authentication.\n\n5. \"token\": This is the key for the bearer token.\n\n6. \"BearerToken\": This is the value of the token key, signifying the bearer token itself.\n\n7. \"type\": This refers to the data type of the token, which is a string.\n\n8. \"method\": This is the HTTP request method. In this case, it's a POST request.\n\n9. \"url\": This is the URL where the request is to be made.\n\n10. \"headers\": This contains any headers that need to be included in the request. Here, no headers are given.\n\n11. \"body\": This contains the body of the HTTP request.\n\n12. \"raw\": In the body, \"raw\" contains the raw JSON payload to be sent with the HTTP request.\n\n13. \"sessionId\", \"accountId\", \"teamId\", \"name\", \"description\", \"tags\", \"contentType\", \"contentLength\", \"targetKey\", \"compressUsing\", \"isCompressed\", \"isPrivate\", \"data\": These are different parameters included in the request payload with their respective values.\n\n14. \"options\": This contains any options for the body of the request.\n\n15. \"language\": This specifies the language of the body content. Here, it is JSON.\n\nSo, each of these data points provides specific details about the HTTP request that is to be made. They outline the form of the request, the destination, the content, the type of request, and how the request should be observed and treated at the destination."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"profileId\":\"accountId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "1. \"name\": This represents the name of the operation you're performing in this endpoint, which in this case is \"Media - Image - Create - For Profile\". This name is used for identification and organization purposes.\n\n2. \"request\": This holds all the data and information related to the HTTP request you're making. It has different properties such as auth, method, url, headers, and body, which determines the nature of the request.\n\n3. \"auth\": Within the request, \"auth\" indicates the necessary authorization method used to access the endpoint. Here, the type of auth is \"bearer\" implying that access is granted via bearer tokens.\n\n4. \"bearer\": This array contains the necessary key-value pair for bearer auth. The 'key' attribute is set to 'token' implying that you need to add your security token as the value of the key. The 'value' attribute is currently set to 'BearerToken' and this should be replaced with the actual token.\n\n5. \"method\": Specifies the HTTP method being used for the request. Here, it's \"POST\", indicating you're adding new information.\n\n6. \"url\": Defines the URL where the request is sent. In this case, the endpoint is: \"http://localhost:3000/api/media/image/create\".\n\n7. \"headers\": This is an array that may contain any additional headers you need to add to your HTTP request. This endpoint does not have any additional headers as it is currently disabled.\n\n8. \"body\": Contains data to be sent to the server. In this request, it contains some specific keys with associated values. The \"mode\" is set to \"raw\", meaning it will send the data as a raw string.\n\n9.  \"raw\": This is a JSON string defined in the request body. Its content includes various properties such as sessionId, accountId, profileId, name, description, tags, contentType,contentLength,targetKey, compressUsing, isCompressed, isPrivate, and data for storing image and other related information.\n\n10. \"options\": Holds extra configuration for the body, here it states that the language of the raw data is JSON.\n\nPlease ensure to replace placeholder values in the 'raw' field with appropriate values before making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Tournament",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tournamentId\":\"tournamentId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "1. **name**: This field refers to the name of the endpoint which is `\"Media - Image - Create - For Tournament\"`. It indicates that this API endpoint is used to create images for a tournament.\n\n2. **request**: This section is about the required HTTP request for this API.\n\n3. **auth**: This field represents the authorization type needed for this endpoint. It requires a `\"Bearer Token\"` for authorization. A bearer token is a type of API token that is sent along with the request.\n\n   - **key**: The key `\"token\"` represents the bearer token.\n   - **value**: `\"BearerToken\"` is the placeholder for the actual token value.\n   - **type**: The data type of the token is `\"string\"`.\n\n4. **method**: The method field indicates that this is a `POST` request, used to send data to the server to create a new resource.\n\n5. **url**: The url field is the endpoint to which the HTTP request should be sent `\"http://localhost:3000/api/media/image/create\"`.\n\n6. **headers**: This section is for any required headers for the request. In this case, it is empty and disabled.\n\n7. **body**: This contains data that is to be sent to the server.\n\n   - **mode**: The `mode` value `\"raw\"` indicates that the body contains raw data.\n   - **raw**: The field `raw` contains JSON formatted data to be sent to the server. Each field within this data is explained as follows:\n     - `sessionId` and `accountId`: These are IDs associated with the session and the account respectively.\n     - `tournamentId`: This ID is associated with the tournament.\n     - `name` and `description`: The name and description of the media.\n     - `tags`: Any relevant tags to the media.\n     - `contentType`: The content format i.e., `\"image/jpeg\"`.\n     - `contentLength`: The length of the content which is `0` here.\n     - `targetKey`: This is the `key` used to identify the media item. Here, it's `\"profilePhotoUrl\"`.\n     - `compressUsing`: This indicates the compression type used, `\"Base64\"` in this case.\n     - `isCompressed`: This is a boolean flag indicating if the content is compressed or not.\n     - `isPrivate`: This is a boolean flag that indicates if the media is private or not.\n     - `data`: This field will contain the actual media(binary data).\n   - **options**: This contains the options for the raw request body. The `language` field indicates that the request body should be interpreted as `\"json\"`."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Advertisement",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"advertisementId\":\"advertisementId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Media - Image - Create - For Advertisement\". It is designed to create a new media image for use in advertising. \n\nBelow is a detailed description of each data on this endpoint:\n\n1. `name`: The endpoint's name. \n\n2. `request`: This encapsulates the details of the HTTP request to be made.\n\n    - `auth`: The authentication type and credentials used for this request.\n        - `type`: This specifies that the Bearer Token will be used for authentication.\n        - `bearer`: A list that includes the key name at which the bearer token can be found and its value.\n    \n    - `method`: HTTP method. In this case, it's a POST method which is usually used for sending data to the server.\n    \n    - `url`: The endpoint to which the request will be sent.\n    \n    - `headers`: A list of HTTP headers. Currently, no custom header is set. The default headers are automatically added by the client.\n    \n    - `body`: The body of the request includes details about the new media image:\n         - `mode`: The format of the content in the body, which is \"raw\" in this case.\n         - `raw`: The actual content sent to the server in JSON format.\n            - `sessionId`: A string that represents the session ID.\n            - `accountId`: An identifier for the account under which the image is being created.\n            - `advertisementId`: An identifier for the particular advertisement this image is being created for.\n            - `name`: The name of the media.\n            - `description`: A brief description of the media.\n            - `tags`: Used to categorize and better organize the media. In this case, the tags are \"second\" and \"media\".\n            - `contentType`: The media type, which is \"image/jpeg\" in this case.\n            - `contentLength`: The length of the content. Currently set to 0.\n            - `targetKey`: The location or attribute where the media URL will be saved, which is \"profilePhotoUrl\" in this case.\n            - `compressUsing`: The type of compression used. Here the media is compressed using \"Base64\".\n            - `isCompressed`: A Boolean value that checks if the image is compressed.\n            - `isPrivate`: A Boolean value that checks the privacy status of the media.\n            - `data`: The actual media data in a string format.\n         - `options`: Contains additional options for the raw body.\n             - `raw`: Specifies that the language of the raw body is JSON.\n\n3. As this endpoint deals with the creation of media images, the HTTP request method is \"POST\". After the image is created, the server might return 201 Created status code, indicating that the image was created successfully.\n\nPlease note that the specific behavior might vary depending on server-side implementation."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Loyalty",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"loyaltyId\":\"loyaltyId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Image - Create - For Loyalty\". \n\nThis is a POST request endpoint, which is generally used to send data to a server to create a new resource. The request is sent to the URL \"http://localhost:3000/api/media/image/create\".\n\nThe auth block contains the authentication details necessary to access this endpoint. The type of authentication is \"bearer\". The \"bearer\" field is an array, but it contains only one object and that object has three properties. The \"key\" is \"token\", the \"value\" is \"BearerToken\", and the type is \"string\". This implies that a bearer token string will be used for authorization.\n\nThe \"headers\" field is empty and disabled for this request, which means no additional headers are required.\n\nAs for the request body, it is a raw JSON object containing several fields:\n\n- \"sessionId\": the unique ID of the session.\n- \"accountId\": the unique ID of the account.  \n- \"loyaltyId\": the unique ID related to a loyalty scheme.\n- \"name\": the name assigned to the media being created, \"My Second Media\" in this case.\n- \"description\": a detailed explanation regarding the media.\n- \"tags\": these are keywords or labels that categorize or relate to the media.\n- \"contentType\": this field describes the media file's format, which is \"image/jpeg\".\n- \"contentLength\": this field represents the size of the content, which is 0.\n- \"targetKey\": specifies the purpose of the media file, \"profilePhotoUrl\".\n- \"compressUsing\": indicates the method used to compress the media file, here it is \"Base64\".\n- \"isCompressed\": a boolean representing whether the media data is compressed or not, which is true.\n- \"isPrivate\": a boolean indicating whether the media file is private or not, which is false.\n- \"data\": the content of the media file.\n\nThe raw body data is in the JSON format. Other configurations or options related to the raw format are represented in \"options\". Here, it indicates that the body data is in JSON \"language\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Promotion",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"promotionId\":\"promotionId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "1. \"name\": This field shows the name for the endpoint. In this instance, it is used for creating a media image for promotions.\n\n2. \"request\": It encapsulates the information about the client request to this endpoint.\n\n   - \"auth\": This field identifies the authorization type, in this case, 'bearer' token. It includes :\n      \n     - \"key\" : Identifier for the type of token.\n     - \"value\" : This is the value of the authorization token.\n     - \"type\" : It represents the data type of the token value, which is a string in this case.\n\n   - \"method\": This field specifies the HTTP method for the request. Here, POST method indicates it's sending data to the server to create a new resource.\n\n   - \"url\": This displays the URL endpoint where requests are sent. \n\n   - \"headers\": This field contains an array of headers but it's empty in this example, therefore the request has no additional headers. \n\n   - \"body\": This includes data sent with the POST request. It is divided into the following sections:\n    \n       - \"mode\": This field confirms the body type. Here, it is specified as 'raw' - meaning that the body contents are unparsed.\n       - \"raw\": This is the raw data being sent in the HTTP request body in the form of a JSON object. Here, this data represents information about the media image being created:\n   \n    1. \"sessionId\": Unique session identifier for the current session.\n    2. \"accountId\": Unique identifier for the user account.\n    3. \"promotionId\": Unique identifier for the promotion.\n    4. \"name\": The user-provided name for the media.\n    5. \"description\": A brief description of the media.\n    6. \"tags\": Relevant tags for the media.\n    7. \"contentType\": The type of content, in this case, an image and its format jpeg.\n    8. \"contentLength\": The size/length of the content, specified as 0 here.\n    9. \"targetKey\": The key used to retrieve this media image in subsequent requests.\n    10. \"compressUsing\": The method used for compressing the image, in this case, Base64.\n    11. \"isCompressed\": A boolean value indicating whether the content is compressed.\n    12. \"isPrivate\": A boolean value indicating whether the media image is private.\n    13. \"data\": The content of the image.\n       - \"options\": It provide additional context/parameters for the request body where \"language\" is set to \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Create - For Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"rewardId\":\"rewardId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "create"
+          ]
+        },
+        "description": "- \"name\": This refers to the name of the endpoint. In this case, the endpoint is named as 'Media - Image - Create - For Reward.' This endpoint is used to create new media for rewards.\n\n- \"request\": It signifies the HTTP request specifics. \n\n     - \"auth\": It represents the authentication mechanism for the request. Here, 'Bearer' token is being used for authorization. \n\n             - \"key\": The key value here is named 'token'.\n               \n             - \"value\": The representing value for the given key, in this case, it's 'BearerToken.'\n\n             - \"type\": Specifies the type of data that the 'token' is, which is a 'string' in the present case.\n\n    - \"method\": This indicates the HTTP method that the endpoint uses. Here, it is 'POST', meaning the endpoint is designed to send new information to the server.\n\n    - \"url\": This is the URL to which the request is sent. Here, the POST request is sent to `http://localhost:3000/api/media/image/create`.\n\n    - \"headers\": An array containing the header information. The default value of the header key-value pair in this case is empty and is disabled.\n\n    - \"body\": Refers to the payload that is being sent with the request.\n\n        - \"mode\": The mode in which the body is being sent. Here, it is in 'raw' mode implying that the data hasn't been altered from its original state.\n\n        - \"raw\": The actual data being sent with the request. It contains several properties as mentioned below:\n\n            - \"sessionId\": User's session ID.\n\n            - \"accountId\": User's account ID.\n\n            - \"rewardId\": ID referring to the specific reward.\n\n            - \"name\": The name of the new media, 'My Second Media' in this case.\n\n            - \"description\": A brief description of the media.\n\n            - \"tags\": Tags that are associated with the media. For example, 'second, media'.\n\n            - \"contentType\": Specifies the media type format, which is 'image/jpeg' in this case.\n\n            - \"contentLength\": Length of the content. It is 0 in this example.\n\n            - \"targetKey\": The key targeting the location where the image will be saved, 'profilePhotoUrl' in this case.\n\n            - \"compressUsing\": The method used to compress the image, 'Base64' in this context.\n\n            - \"isCompressed\": A boolean value indicating if the image is compressed. It's set to true in this example.\n\n            - \"isPrivate\": A boolean value to indicate whether the media is private (true) or public (false). Here, it is set to false, meaning it's public.\n\n            - \"data\": The actual image data which is not shown here but denoted as `...`.\n\n        - \"options\": Contains options for the request. In this case, the 'raw' payload is specified to be in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"streamId\":\"streamId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"mediaData\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "This endpoint, \"Media - Image - Update\", is responsible for updating image media. It uses a \"PUT\" request to accomplish this and authentication is done using a Bearer Token.\n\nHere's a breakdown of each data in this endpoint:\n\n- `name`: This is the endpoint's name. It is descriptive of what the endpoint does; in this case, the endpoint updates image media.\n\n- `auth`: This specifies the type of authentication mechanism used. It stores authentication parameters that are necessary for accessing endpoint resources. It is using 'bearer' authorization in this case, which is specified by a token string.\n\n- `bearer`: This array consists of the key, value and type of the bearer token for authentication. The 'key' is the token name, 'value' is the actual token and 'type' represents the format of the token which is 'string' in this case. \n\n- `method`: This is the HTTP request method used. For this endpoint it is a 'PUT', meaning that it is used to update an existing entity.\n\n- `url`: This is your local server's address where the endpoint resides.\n\n- `headers`: It contains one key-value pair which signifies the 'Client-UUID'. The 'key' is your Client UUID's name and 'value' is the actual UUID.\n\n- `body`: This indicates the request content sent to the server. Details about media to be updated are included here.\n  - `mode`: This describes how the request data is sent. 'raw' mode indicates that the data is sent in the form of an unprocessed string.\n  - `raw`: This holds the actual request data, represented as a JSON. It contains keys such as 'imageId', 'sessionId', 'accountId', etc., that carry information about the media that is to be updated.\n  - `options`: Configurations related to the 'raw' data are present here. It specifies that the 'raw' data language is JSON.\n\nEach key in the 'raw' data represents the following:\n- `imageId`, `sessionId`, `accountId`, `streamId`, `channelId`, `videoId`: These are unique identifiers related to the media.\n- `name`, `description`: These fields contain the updated name and description of the media.\n- `tags`: This is a string of tags associated with the media.\n- `contentType`: This refers to the type of media being sent, 'image/jpeg' in this case.\n- `contentLength`: This indicates the size of the content.\n- `targetKey`: This is specific attribute name for updating the profile photo URL.\n- `compressUsing`, `isCompressed`: These indicate the media compression status and method used.\n- `isPrivate`: This is a Boolean that determined whether the media is private or not.\n- `mediaData`: This holds the actual media content data."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Video",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "- **name**: This stands for the name of the endpoint. In this case, the endpoint is being used for updating the media image for a video.\n\n- **request**: This refers to the HTTP request being made. It includes **auth**, **method**, **url**, **headers**, and **body** elements.\n\n    - **auth**:\n        - **type**: The type of authorization being used. Here, it is a bearer token.\n        - **bearer**: This represents the actual authentication token required. The key-value pair is the token.\n\n    - **method**: The HTTP method for the request. It is a `PUT` method, which means it's used for updating resources.\n\n    - **url**: The URL for the API endpoint. Here, the URL is to update a media image on a local host.\n\n    - **headers**: The request header to be sent. In this instance, a \"Client-UUID\" is to be supplied. This is the unique identifier that represents a specific client.\n\n    - **body**: The content of your request. Here, it includes 'mode', 'raw' and 'options'. \n        - **mode**: The processing mode for the request body. In this case, the mode is raw, meaning the data is sent as is, without any processing or encoding.\n        - **raw**: This is the raw data you're sending. It provides detailed information about the image, including:\n          - `imageId`, `sessionId`, `accountId`, `videoId`: Specific identifiers for the image, session, account and video respectively.\n          - `name`: The name of the media.\n          - `description`: A description for the image.\n          - `tags`: Tags used for categorization or identification.\n          - `contentType`: The Internet Media Type of the image. In this example, it's a jpeg image format.\n          - `contentLength`: The size of the image data in bytes. Here it is set to 0 which should be the actual image size.\n          - `targetKey`: The target attribute that is going to take the uploaded image's URL. In this variance, it is profile photo URL.\n          - `compressUsing`: The method used for compression. Here, it is Base64.\n          - `isCompressed`: A boolean value indicating if the image is compressed.\n          - `isPrivate`: A boolean value indicating whether the file is private or public.\n          - `data`: The base64 encoded string of the image file.\n        - **options**: There are additional options you can use with raw mode. Here, the language has been set to JSON.  \n\nAs per the request flow, the user must provide the required identifiers, media details and the actual media, in base64 encoded format. The image will then be processed as indicated, and the URL of the image will be updated in the 'profilePhotoUrl' attribute."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Channel",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "The API endpoint being described is named `Media - Image - Update - For Channel`. \n\n1. **Authorization**: The Authorization/authentication method here is a `Bearer Token`. The key for this token is `token` and its current value is \"BearerToken\". As this is a string type value, each user will need to replace \"BearerToken\" with their actual token to achieve successful authorization.\n\n2. **Request Method**: This API uses the `PUT` method. This method is typically used when you want to fully update a resource.\n\n3. **URL**: The URL where this API endpoint can be accessed is `http://localhost:3000/api/media/image/update`.\n\n4. **Headers**: A 'Client-UUID' header is required with the key `Client-UUID` and a placeholder value, `ClientUUID`. This will identify the user's client UUID, and the placeholder will need to be replaced with the actual client UUID.\n\n5. **Body**: The Body of the request is in `raw` mode, using `JSON` language.\n\n    i) You need to provide the `imageId`, `sessionId`, `accountId`, and `channelId` to update an image on the server. These will identify the specific image, session, account and channel associated with the update.\n\n    ii) `name`: This is the new name for your image.\n\n    iii) `description`: A brief description of the image.\n\n    iv) `tags`: Keywords associated with the image, currently set to 'second, media'.\n\n    v) `contentType`: The type of content, which is in \"image/jpeg\" format.\n\n    vi) `contentLength`: The length of content, which is currently set to 0.\n\n    vii) `targetKey`: This key specifies the field which will hold the URL to the image.\n\n    viii) `compressUsing`: The method used to compress the image. Here, it is 'Base64'.\n\n    ix) `isCompressed`: A Boolean variable showing whether the file is compressed or not; it's currently set to true, indicating the image is compressed.\n\n    x) `isPrivate`: Another Boolean value indicating whether the image is private or not; here it's set to false, meaning the image isn't private.\n    \n    xi) `data`: This field includes the actual data of your image.\n\nThat's a comprehensive rundown of every data point in the API endpoint. Users need to replace the placeholders with valid data when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"streamId\":\"streamId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "1. **name:** This is the name of the endpoint, titled 'Media - Image - Update - For Stream'. It likely represents an API call that updates the image for a media stream.\n\n2. **request:** This field contains details about the request that is to be sent.\n\n   - **auth:** This field contains data on the authentication method for this API request.\n\n     - **type:** The type of authentication is 'bearer', which expresses the required type of security being used.\n     - **bearer:** An array that stores bearer tokens for authentication. Contains the following:\n\n        - **key:** This represents the key of the bearer token.\n        - **value:** The value of the bearer token.\n        - **type:** The data type of the bearer token, in this case, a string.\n\n   - **method:** Request method type used for the API call. For this endpoint, 'PUT' method is used which is typically for updating resources.\n\n   - **url:** This is the API endpoint to which the request will be sent.\n\n   - **headers:** It's an array that holds additional parameters that the request will comprise of. It includes:\n\n     - **key:** The key is noted as 'Client-UUID' which is a unique identifier for the client.\n     - **value:** The corresponding value here is 'ClientUUID'.\n     - **type:** The type of data, noted as 'default'.\n\n   - **body:** It shows how to structure the data payload that should be sent in the API request.\n    \n     - **mode:** 'raw' mode indicates that text input is allowed.\n     - **raw:** This is a JSON string that contains the desired payload to be sent in the API request. Each key-value pair in this JSON string represents an attribute of the image to be updated in the media stream.\n   \n       + **imageId:** The identifier for the image.\n       + **sessionId:** The identifier for the session.\n       + **accountId:** The identifier for the account.\n       + **streamId:** The identifier for the stream.\n       + **channelId:** The identifier for the channel.\n       + **name:** A new name to update the media.\n       + **description:** A new description for the image.\n       + **tags:** Tags associated with the media.\n       + **contentType:** The media type of the image. Here, it is 'image/jpeg'.\n       + **contentLength:** The length of the content. Here, it is set to 0.\n       + **targetKey:** The attribute to update, in this case 'profilePhotoUrl'.\n       + **compressUsing:** The image compression format. Here, it is 'Base64'.\n       + **isCompressed:** A boolean value indicating whether the image is compressed.\n       + **isPrivate:** A boolean value indicating if the image is private or publicly accessible.\n       + **data:** The actual data or content of the image.\n\n     - **options:** Specifies how the raw data is processed. 'language' key specifies that JSON is being used for structuring the data.\n   \nThe above fields are essential for making the API request. By understanding each of these fields, you can construct, modify, or understand how to interact with this API request appropriately."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "The API endpoint named \"Media - Image - Update - For Team\" is a PUT request intended for updating image files for a specific team in the system. This endpoint is hosted at \"http://localhost:3000/api/media/image/update\".\n\nTo authenticate the request, you need a bearer token which should be placed under the 'auth' field. The token's data type is a string.\n\nThe header of the request requires a unique Client-UUID, which is an identifier for the client making the request.\n\nThe body of the request is raw type and accepts JSON as its language, it includes the following fields :\n\n1. imageId: It is a unique identifier for the image that is to be updated.\n2. sessionId: Identifier for the active session.\n3. accountId: Identifier of the account to which the image belongs.\n4. teamId: Identifier of the team for which the image is to be updated.\n5. name: The new name that you want to set for the image.\n6. description: Description about the image.\n7. tags: Any tags (like 'second', 'media') you wish to associate with the image.\n8. contentType: The content type of the media (in this case, it is expected to be 'image/jpeg').\n9. contentLength: The length of the content.\n10. targetKey: The key against which the image will be stored.\n11. compressUsing: Specifies the method used for compressing the image (for example, 'Base64').\n12. isCompressed: A boolean flag indicating if the image is compressed.\n13. isPrivate: A boolean flag indicating if the image is private or not.\n14. data: The actual image data, in this case, it should be provided in Base64 for it to be successfully stored."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"profileId\":\"accountId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "This endpoint is titled \"Media - Image - Update - For Profile.\" It's used to update an image related specifically to a profile.\n\nAuthentication for this endpoint is a 'Bearer' type, meaning you'll send a token as a bearer type using the 'Authorization' header. The key-value pair for this field is \"token\" and \"BearerToken,\" respectively. The value here should be replaced with your actual Bearer token.\n\nThe HTTP method in use here is PUT. This method is used when you want to update an existing resource.\n\nAs for the URL, the endpoint is hosted locally at 'http://localhost:3000/api/media/image/update'. This indicates image update operations pertaining to media.\n\nThe endpoint requires a header, the 'Client-UUID', which identifies the client. Replace 'ClientUUID' with the actual Client UUID as required. \n\nThe body of this endpoint sends data in raw JSON format. Here's a brief explanation of the key-value data that should be provided:\n\n- 'imageId': The unique identifier for the image you wish to update.\n- 'sessionId': ID of the active session.\n- 'accountId': The unique ID that identifies the user account.  \n- 'profileId': The profile ID that pertains to the account ID.\n- 'name': The new name you want to give the media.\n- 'description': Details or explanations about the media, for instance, \"This media is my second media.\"\n- 'tags': Tags related to the media; this can help during searching or categorizing.\n- 'contentType': The media's format; for instance, \"image/jpeg\".\n- 'contentLength': The length or size of the content. Here it is 0 but should be replaced with the actual size.\n- 'targetKey': The key where the image will be stored. In this case, it is 'profilePhotoUrl'.\n- 'compressUsing': The method used to compress the image, i.e., 'Base64'.\n- 'isCompressed': A boolean indicator telling whether the image is compressed or not.\n- 'isPrivate': A boolean indicator showing whether or not the media is private.\n- 'data': The data for the media in string format, replace \"...\" with actual image data.\n\nThis endpoint does not return any data as it's a PUT request and results in an update action on the server only."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Tournament",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tournamentId\":\"tournamentId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Image - Update - For Tournament\". It is utilized to update the media image for a given tournament using the HTTP PUT method. Here is an explanation of each field involved in the endpoint.\n\n1. **auth**: This field is responsible for authorizing the request.\n- **type**: This describes the type of authorization used, in this case, a bearer token.\n- **bearer.token**: This field houses the bearer token needed for authorization.\n\n2. **method**: This field specifies the HTTP method used, which is PUT.\n\n3. **url**: This indicates the URL where the API server can be located.\n\n4. **headers**: These are metadata sent with the HTTP request. In this case, a unique client UUID is sent as a header.\n- **Client-UUID**: This unique identifier for the client making the request.\n\n5. **body**: This contains all the information needed to be sent to the server.\n- **mode**: The mode in which the body will be sent, which is 'raw'.\n- **raw**: This contains the actual data that will be sent to the server in JSON format, including `imageId`, `sessionId`, `accountId`, `tournamentId`, `name`, `description`, `tags`, `contentType`, `contentLength`, `targetKey`, `compressUsing`, `isCompressed`, `isPrivate`, `data`.\n\n6. **options**: This field specifies the language used in the raw body. This is optional and in this request, it is json.\n\nEach raw data field carries the following information.\n- `imageId`: The unique identifier of the image being updated.\n- `sessionId`: The unique ID of the session.\n- `accountId`: The account ID relating to the session.\n- `tournamentId`: The unique ID for the tournament where the image is being updated.\n- `name`: The name of the new media.\n- `description`: A brief explanation of the new media.\n- `tags`: Related tags for searchability.\n- `contentType`: The file format of the image.\n- `contentLength`: The length of the content, in this case, it is set 0.\n- `targetKey`: Specifies where to save the image.\n- `compressUsing`: Describes the compression method used, in this case, Base64.\n- `isCompressed`: Indicates whether the data is compressed or not.\n- `isPrivate`: Indicates whether the image is private or public.\n- `data`: The actual image content."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Advertisement",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"advertisementId\":\"advertisementId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named `Media - Image - Update - For Advertisement`, is used to update an image related to an advertisement. It requires a `PUT` method, and the targeted URL for this request is `http://localhost:3000/api/media/image/update`.\n\nIn order to authenticate the request, a Bearer Token is needed. This token should be specified in the `auth` section in the `bearer` array where the `key` is `token` and the `value` is your actual Bearer Token.\n\nAlong with this, the request header must include a `Client-UUID`, represented by `ClientUUID`.\n\nThe body of this request should send the data in the `raw` mode with the language being in `json`. There's an array of fields, in which:\n\n- `imageId`: Represents the unique identifier of the image.\n- `sessionId`: Represents the unique identifier of the user's session.\n- `accountId`: Represents the unique identifier of the account.\n- `advertisementId`: Represent the unique identifier of the advertisement for which the media will be updated.\n- `name`: This is the new name for your media.\n- `description`: This will be the new description for your media.\n- `tags`: Tags that are relevant to your media separated by commas.\n- `contentType`: This signifies the type of content, which is 'image/jpeg' in this instance.\n- `contentLength`: This indicates the size of the media. 0 means that it is currently blank or you are not updating the size.\n- `targetKey`: This signifies the attribute of the user profile where the URL of the new image will be stored, in this case, `profilePhotoUrl`.\n- `compressUsing`: The method used to compress the image.\n- `isCompressed`: This is a boolean value which indicates whether the media is compressed.\n- `isPrivate`: This is a boolean value which indicates whether the media is private or public.\n- `data`: This field is for including the actual media data; in this case it is represented by `...`.\n\nTo modify this template for your use, remember to replace the placeholders, such as \"BearerToken\" or \"ClientUUID\", with real values. Remember to replace the `raw` data with actual image data as well."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Loyalty",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"loyaltyId\":\"loyaltyId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "This endpoint is for updating media related to a loyalty program, specifically for images.\n\n- `name`: Represents the name of the endpoint, here, it is 'Media - Image - Update - For Loyalty'. \n- `request`: Contains details regarding the request to the endpoint.\n\n  - `auth`: Specifies the authorization type and details needed to successfully make a request to the endpoint.\n    - `type`: This is the type of authentication method. Here, it is 'bearer', which means it uses Bearer Token for the authorization.\n    - `bearer`: It's an array containing information about the bearer token. The `key` is 'token' and the `value` should be replaced by your actual Bearer Token.\n\n  - `method`: The HTTP method used for making a request to this endpoint. In this case, it 'PUT', which means we're updating existing data.\n\n  - `url`: Represents the URL of the endpoint to which the request is made.\n\n  - `headers`: This is where you include additional headers to be sent with the request. Here, there's a `Client-UUID` header where the `value` should be replaced with your Client UUID.\n\n  - `body`: Contains the actual content of the HTTP request. \n    - `mode`: The mode here is 'raw', meaning you input the request data as it is.\n    - `raw`: The raw data which mostly contains the editable fields in a JSON format for the image file.\n    - `options`: Contains settings regarding the raw input. The `language` is set to 'json' so the input should be written in JSON format.\n\nSome important parameters inside the `raw` field:\n\n- `imageId`, `sessionId`, `accountId`, and `loyaltyId`: These are identifiers used for the image, session, account, and loyalty respectively. \n\n- `name` and `description`: Information about the media, what it is and what it's about.\n\n- `tags`: Tags for identification of the media. \n\n- `contentType`: The media format, for example image/jpeg.\n\n- `contentLength`: Length of the content, input as 0 for now.\n\n- `targetKey`: The attribute this image is related to, here it's being set to 'profilePhotoUrl'.\n\n- `compressUsing`: The method of compression, Base64 in this case.\n\n- `isCompressed`: This advises whether the content has been compressed. It's set to true, subject to the compression status of your media.\n\n- `isPrivate`: Whether the media content is private or public.\n\n- `data`: Here you include the actual image media data."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Promotion",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"promotionId\":\"promotionId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "\"name\": This data field contains the name of the endpoint, which in this case is \"Media - Image - Update - For Promotion\". This is essentially the name or title for your API Request.\n\n\"request\": This is the root element of your API request, encapsulating all the details of the request.\n\nUnder \"request\":\n\n\"auth\": This section contains authorization details. It indicates that a Bearer token is used for authentication.\n\n\"type\": It specifies the type of authentication, which in this case is \"Bearer\".\n\n\"bearer\": This is an array that contains information about the bearer token required for authentication.\n\n\"key\": It specifies the key, which is \"token\" in this case.\n\n\"value\": It specifies the value of the key. For security purposes, the token value is simply referred to as \"BearerToken\".\n\n\"type\": It indicates the data type of the value, which is \"string\" in this case.\n\n\"method\": It specifies the HTTP method to be used for the request, which is \"PUT\" in this case.\n\n\"url\": It is the URL where the API request is sent.\n\n\"headers\": This array contains the client information which is sent with the request.\n\n\"key\": It identifies the key name of the header, which is \"Client-UUID\".\n\n\"value\": It is the value of the key, referred to as \"ClientUUID\".\n\n\"type\": It indicates the type of the header, which is \"default\" in this case.\n\n\"body\": This contains the actual data that you want to send with your API request.\n\n\"mode\": This indicates that the mode of body data is \"raw\", i.e., unprocessed.\n\n\"raw\": This contains all the raw JSON data to be sent with the request, including imageId, sessionId, accountId, promotionId, name of the media, a description of the media, tags, contentType, contentLength, targetKey, compressUsing, isCompressed, isPrivate, and the actual data.\n\n\"options\": This allows to specify some additional settings regarding the raw data.\n\n\"raw.language\": It indicates the language format of the raw data which is \"json\" in this case."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Update - For Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"imageId\":\"imageId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"rewardId\":\"rewardId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"image/jpeg\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Media - Image - Update - For Reward,\" is designed for updating the image associated with a reward. Here's what each piece of data represents:\n\n1. `auth`: This denotes the authentication method for this endpoint. It's set to the bearer method, which is a way to authorize and certify the identity of the server.\n\n- `type`: The type of authentication, in this case, it is `bearer`.\n\n- `bearer`: Contains the `token` to authenticate the server. The `value` `BearerToken` is a placeholder for the actual token.\n\n2. `method`: This is the HTTP method used for the request. Here, the `PUT` method is used, which typically is used to update existing resources.\n\n3. `url`: This is the URL to which the request is sent.\n\n4. `headers`: This contains additional data sent with the request. Here, `Client-UUID`, which uniquely identifies a client, is being sent.\n\n5. `body`: This contains the data you want to put in the request body. It is often used with `PUT`, `POST`, etc., methods.\n\nIn the `body`:\n\n- `mode`: The mode of the content to send. Here it is set to `raw`, which means you're sending raw data.\n\n- `raw`: This contains the JSON object being sent with the request.\n\nInside the `raw`:\n\n- `imageId`: Identifier for the image to be updated.\n\n- `sessionId`: The session identifier.\n\n- `accountId`: Identifier for the user's account.\n\n- `rewardId`: Identifier for the reward.\n\n- `name`: The new name for the image.\n\n- `description`: A description of the image.\n\n- `tags`: Relevant tags for the image, separated by commas.\n\n- `contentType`: The format of the image. Here it's `image/jpeg`.\n\n- `contentLength`: The size of the image. Here it's `0`, but you'd replace that with the actual size.\n\n- `targetKey`: This is likely the location where the image would be stored.\n\n- `compressUsing`: The method of compression used for the image. Here it's `Base64`.\n\n- `isCompressed`: A boolean indicating if the image is compressed or not.\n\n- `isPrivate`: A boolean indicating if the image is private or not.\n\n- `data`: This likely contains the actual image data.\n\n- `options`: Additional options for this request.\n\nInside `options`:\n\n- `raw`: Only option available here is `language` which is set to `json`, indicating the format of data sent in the `raw` field.\n  \nNote: All the placeholder values like `BearerToken`, `imageId`, `sessionId` etc., should be replaced with actual values while using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/get/?imageId=imageId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "imageId",
+              "value": "imageId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is referred to as \"Media - Image - Get\". It's purposed to retrieve an image using a GET request method. Here is a breakdown of the various elements involved:\n\n1. \"name\": Gives the name of the endpoint, which is \"Media - Image - Get\". This name essentially describes the nature of operations performed by this endpoint.\n\n2. \"request\": This is the actual request that the system will make. It contains a number of nested fields that further define the request details.\n\n3. \"auth\": This is a field that sets the authentication type for the request. The \"type\" is set to \"bearer\", which indicates that it's a bearer token authentication.\n\n   - \"bearer\": This is an array that contains objects detailing the authentication token needed to gain access. It contains a single object with three properties:\n\n        - \"key\": The key for the token, denoted as \"token\".\n        \n        - \"value\": The actual value to replace in \"key\". It can be any valid \"Bearer Token\".\n        \n        - \"type\": This represents the data type of the \"token\". Which in this case is a \"string\".\n        \n4. \"method\": This is the HTTP method used to make the request. “GET” is a method indicating that it isFetching data from a specific resource.\n\n5. \"url\": This is the URL of the API endpoint. It has query parameters \"imageId\", \"sessionId\", and \"accountId\", which are placeholders and should be replaced with real values when making a request.\n\n6. \"headers\": This is an array that contains objects specifying any additional information the server needs to know. Currently, it contains a disabled header which does not contain any key or value.\n\n7. \"body\": This outlines the body of our request. In this case, it's in \"raw\" mode but contains no data."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Get - Download Media",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/get/?imageId=imageId&sessionId=sessionId&accountId=accountId&download=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "imageId",
+              "value": "imageId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "download",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "1. \"name\": This field represents the name of the API endpoint. For this case, it is labeled as \"Media - Image - Get - Download Media\". The name suggests that this endpoint is linked to media, specifically images, and its main function is to retrieve or download media.\n\n2. \"request\": This field holds data about the API request, which includes details about the authorization, method type, URL, headers, and body of the request.\n\n3. \"auth\": This section specifies the type of authorization required for this API request. This particular API requires \"bearer\" type of authorization i.e., an authorization token must be provided. \n\n4. \"bearer\": This subtype of \"auth\" contains the information about the authorization token. The information includes the key for this field, which is \"token\", its value is \"BearerToken\", and its data type, which is a \"string\".\n\n5. \"method\": This defines the HTTP method for the request. In this case, \"GET\" is used, indicating that it retrieves data.\n\n6. \"url\": This field contains the URL where the API request is sent. This URL also includes some parameters such as imageId, sessionId, accountId, and download that need to be replaced with real values.\n\n7. \"headers\": This section outlines specifications for the HTTP headers to be included in the request. However, in this case, the key-value pair is empty and labelled as \"default\" and disabled, meaning that default headers will be used by the server as necessary.\n\n8. \"body\": This segment refers to the body of the request. It's currently set to \"raw\", indicating that it can accept unstructured data, but as the \"raw\" field is empty, this suggests that no data is currently needed in the request body for this API endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Get - For Public",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/get/?imageId=imageId&public=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "imageId",
+              "value": "imageId"
+            },
+            {
+              "key": "public",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "1. \"name\": This is the name of the endpoint. In this case, it's called \"Media - Image - Get - For Public\", indicating that this endpoint is used to retrieve images for public viewers.\n\n2. \"request\": This is the main request object that contains all the necessary information to perform a HTTP request. \n\n3. \"auth\": The authentication mechanism used by this endpoint. Here we are using the \"bearer\" type, indicating that we'll be using Bearer authentication, a HTTP authentication scheme that involves security tokens called bearer tokens.\n\n4. \"bearer\": This object contains details of the bearer token. The \"key\" is the name of the token (in this case, \"token\"), \"value\" is the token string that you must replace with actual token when making a request (here it's, \"BearerToken\"), and \"type\" is the data type of this token, which is a string.\n\n5. \"method\": This shows that the HTTP method used for the request is \"GET\". This method is used to retrieve data from a server.\n\n6. \"url\": This is the URL endpoint where the request will be sent. In this case, `http://localhost:3000/api/media/image/get/?imageId=imageId&public=1`. Replace `imageId` with an actual id of the image you want to retrieve.\n\n7. \"headers\": This is an array of headers to be sent along with the request. In this instance, no headers are included as the \"disabled\" field is set to true. The \"key\" and \"value\" fields are left empty, suggesting no extra information is sent in the header.\n\n8. \"body\": This section is for the information sent through the HTTP request. The \"mode\" is set to \"raw\", indicating that the information should be sent in raw format. However, the \"raw\" field is an empty string, indicating there's no additional data to be sent in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This API is named \"Media - Image - Get All\". It is a GET request intended to retrieve all images from the media section of this application. Below are the details regarding each part of the request.\n\n- **Auth**: This request uses bearer token authentication. In order to authenticate yourself, you need to provide a string value called \"BearerToken\".\n\n- **Method**: This is a GET request. This kind of request is generally used to retrieve resources from a server. \n\n- **URL**: The endpoint where the request is made is `http://localhost:3000/api/media/image/all`. Two query parameters should be attached to the URL – `sessionId` & `accountId`. The values of these query parameters should be replaced with actual session ID and account ID for the user's session respectively.\n\n- **Headers**: There is a placeholder for a header field in the request but it is currently disabled and doesn't contain any value or key, means it isn't used.\n\n- **Body**: The body mode is set to \"raw\" but there is currently no content in the body of the request. Generally, for GET requests, the body is left empty as we are not sending any data to the server, we just retrieve it.\n\nRemember to replace \"BearerToken\", \"sessionId\", and \"accountId\" with actual values when testing or using this endpoint in an application context."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Image - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"imageId\":\"imageId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/image/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "image",
+            "delete"
+          ]
+        },
+        "description": "Below, you will find detailed descriptions for each part of the API endpoint data:\n\n- **name**: This represents the name of the current API endpoint. Here, \"Media - Image - Delete\" suggests that this endpoint is used to delete a specific image from some media.\n\n- **request**: This is a general term for all the operations that have been requested. All of the API requirements are set here.\n\n  - **auth**: This refers to the authentication system of this endpoint. This helps to check if the incoming request is from an authenticated source.\n\n    - **type**: This refers to the type of authentication being used; in this case, it's \"bearer\" authentication, which relies on a token for identification and access management.\n\n    - **bearer**: It's an array of bearer tokens used for authentication. The bearer token, described as \"token\", is a string type and its value is identified by \"sessionId\".\n\n  - **method**: This represents the HTTP method being enforced. Here, it's \"POST\", which means the endpoint will be used to send data to the server.\n\n  - **url**: This is the URL of the server where the API request will be sent. In this case, it's \"http://localhost:3000/api/media/image/delete\".\n\n  - **headers**: These define the operating parameters of an HTTP request or response. However, in this data set, there are no set values for any header.\n\n  - **body**: Body content refers to the main part of the HTTP request or response.\n\n    - **mode**: The API request mode is set as \"raw\", which means you send a direct sequence of characters as it is in the body.\n\n    - **raw**: Here, you will send a raw input with specific parameters to the API. These parameters are sessionId, accountId, and imageId, all are string type. The server will use these parameters to identify the necessary image to be deleted for the account associated with the provided sessionId and accountId."
+      },
+      "response": []
+    }
+  ]
+}

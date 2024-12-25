@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "d6b3c510-6dce-476f-8eab-c11dca0a2fe8",
+    "name": "ActionCompete",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Compete - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\":\"Tournament 1\",\n    \"targetText\":\"lets play a cricket match\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/compete/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "compete",
+            "create"
+          ]
+        },
+        "description": "{\n  \"description\": \"This endpoint is used to create a competition action. Below is a detailed description of each data point included in the request body:\\n\\n- **sessionId**: A unique identifier for the session in which the action is being created. This helps to associate the action with a specific user session.\\n\\n- **accountId**: This represents the unique identifier for the account associated with the action being created. It is important to link the action to the correct user or account.\\n\\n- **path**: This indicates the path to the content that is being targeted within the application's structure. In this case, it points to a specific video channel.\\n\\n- **targetType**: Specifies the type of the target for the action. The value \\\"videoId\\\" indicates that the action is related to a video.\\n\\n- **targetId**: The unique identifier for the target content. In this scenario, it corresponds to the specific video involved in the competition action.\\n\\n- **sourceType**: Describes the type of the source from which the action is initiated. Here it is set to \\\"accountId\\\", relating to the user's account.\\n\\n- **sourceId**: The unique identifier for the source that is initiating the competition action. Similar to accountId, it links back to the user's account.\\n\\n- **name**: The name given to the tournament or competition. In this example, it is \\\"Tournament 1\\\", which provides a label for the action.\\n\\n- **targetText**: A textual description or message associated with the target action. In this case, it encourages participation in a cricket match by stating \\\"lets play a cricket match\\\".\\n\\n- **description**: An optional field for adding a more detailed description of the action. Currently, it is left empty.\\n\\n- **tags**: This allows for tagging the action with specific keywords or categories. This field is also currently empty and can be utilized for better classification or searchability.\"\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Compete - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\":\"Tournament s\",\n    \"targetText\":\"lets play a sss match\",\n    \"competeId\":\"competeId\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/compete/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "compete",
+            "update"
+          ]
+        },
+        "description": "### Action - Compete - Update\n\n#### Request Details:\n- **Auth**: This section describes the authentication method.\n  - **Type**: Bearer token is used for authorization.\n  - **Bearer**: \n    - **Key**: The key identifier for the token. In this case, it's \"token\".\n    - **Value**: This represents the actual token used for authentication, in this case, \"BearerToken\". Replace this with the actual bearer token.\n    - **Type**: Indicates that the token is of string type.\n\n- **Method**: \n  - **PUT**: This indicates that the request is a PUT operation. PUT is used to update existing resources.\n\n- **URL**: \n  - **Endpoint**: `http://localhost:3000/api/action/compete/update` is the endpoint where the request will be sent. This URL is the local server address for updating contest details.\n\n- **Headers**: \n  - **Client-UUID**: This is a custom header that identifies the client making the request.\n    - **Key**: \"Client-UUID\" is the name of the header.\n    - **Value**: Represents the unique identifier for the client, denoted as \"ClientUUID\". This should be replaced with the actual UUID.\n    - **Type**: This is a default header type.\n\n#### Body: (Payload Details)\n- **Mode**: \n  - **Raw**: Indicates that the body of the request is sent as raw data.\n\n- **Raw**: \n  - The body must be a valid JSON object with the following fields:\n  \n  ```json\n  {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"path\": \"/live/channel/video123\",\n      \"targetType\": \"videoId\",\n      \"targetId\": \"videoId\",\n      \"sourceType\": \"accountId\",\n      \"sourceId\": \"accountId\",\n      \"name\": \"Tournament s\",\n      \"targetText\": \"lets play a sss match\",\n      \"competeId\": \"competeId\",\n      \"description\": \"\",\n      \"tags\": \"\"\n  }\n  ```\n\n- **Fields in the JSON body**:\n  - **sessionId**: Unique identifier for the session related to the competition.\n  - **accountId**: Identification number for the account associated with the user.\n  - **path**: The URL path of the resource related to the competition, such as a video or stream path.\n  - **targetType**: Specifies the type of target being competed against, here it indicates a video ID.\n  - **targetId**: The specific ID of the target item (video) that participants will compete against.\n  - **sourceType**: Type indicating the source from which the competition starts, in this case, it is based on account ID.\n  - **sourceId**: The specific ID of the source account related to the competition.\n  - **name**: The name assigned to the competition or tournament.\n  - **targetText**: Text description or prompt for the competition, in this case, an invitation to play a match.\n  - **competeId**: Unique identifier for the competition being updated.\n  - **description**: Additional descriptive text for the competition. Currently set as empty.\n  - **tags**: Keywords associated with the competition for categorization. Currently set as empty.\n\nThis endpoint is designed for updating competition details, including session, account, and competition specifics, via a PUT request with appropriate authentication and headers."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Compete - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/compete/get/?competeId=competeId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "compete",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "competeId",
+              "value": "competeId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description\n\n**Endpoint Name:** Action - Compete - Get  \nThis endpoint is utilized to retrieve details for a specific \"compete\" action.\n\n**Request Details:**\n\n- **Authentication:**\n  - **Type:** Bearer Token\n    - A Bearer Token is required for authentication to access this endpoint. The token allows secure access to protected resources.\n      - **Key:** `token` - The key used to send the bearer token in the request.\n      - **Value:** `BearerToken` - Replace this placeholder with the actual token value received during authentication.\n      - **Type:** string - Indicates that the value should be a string format.\n\n- **HTTP Method:** GET  \n  This method is used to request data from the specified resource.\n\n- **URL:**  \n  `http://localhost:3000/api/action/compete/get/?competeId=competeId&sessionId=sessionId&accountId=accountId`  \n  This is the target URL where the request will be sent to retrieve compete details. The URL includes the following query parameters:\n  - **competeId:** This parameter should be replaced with the specific ID of the compete for which data is being requested.\n  - **sessionId:** This parameter should be replaced with the relevant session identifier to provide context to the compete action.\n  - **accountId:** This parameter is intended to identify the account associated with the compete action.\n\n- **Headers:**\n  - **Key:** (empty) - No specific headers are defined in this request. The header is disabled by default.\n  - **Value:** (empty) - No value defined for the key, indicating none are needed at this point.\n\n- **Body:**\n  - **Mode:** Raw  \n    Indicates that the body format of the request is raw text.\n  - **Raw:** (empty) - The body is empty for this GET request, as no payload is sent with this type of request.\n\n### Summary\nThis endpoint allows you to retrieve details about a competition using specific identifiers like competeId, sessionId, and accountId through a GET request with appropriate authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Compete - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/compete/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "compete",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Compete - Get All\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"description\": {\n        \"auth\": \"Authentication method used is Bearer Token. This requires a token to be provided in the request header for authorization.\",\n        \"method\": \"GET\",\n        \"description\": \"This is a GET request which is used to retrieve data from the server.\",\n        \"url\": \"The endpoint URL is 'http://localhost:3000/api/action/compete/all/?sessionId=sessionId&accountId=accountId'. This URL is used to get all compete actions.\",\n        \"sessionId\": \"Session ID is a required parameter that identifies the session for which compete actions are being requested.\",\n        \"accountId\": \"Account ID is another required parameter that specifies the account related to the compete actions.\",\n        \"headers\": [\n          {\n            \"key\": \"\",\n            \"value\": \"\",\n            \"type\": \"default\",\n            \"disabled\": true\n          }\n        ],\n        \"description\": \"Currently, there are no custom headers being used in this request as the default header is disabled.\",\n        \"body\": {\n          \"mode\": \"raw\",\n          \"raw\": \"\",\n          \"description\": \"The body of the request is empty as this is a GET request which typically does not require a request body.\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Compete - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"competeId\":\"competeId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/compete/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "compete",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Compete - Delete\n\n- **Name**: This is the identifier for the endpoint, specifically for deleting an action related to the competition.\n\n- **Request**:\n  - **Auth**:\n    - **Type**: The authentication method used is Bearer Token. This is a common method for securing API endpoints.\n    - **Bearer**: \n      - **Key**: This is the identifier for the token in the request.\n      - **Value**: This represents the session ID that is required for authentication.\n      - **Type**: The type of data being passed for the token, which is a string.\n\n  - **Method**: The HTTP method used for this request is POST, which is typically used to send data to the server.\n\n  - **URL**: The endpoint that the request is being sent to. In this case, it is `\"http://localhost:3000/api/action/compete/delete\"`, which indicates it is running on a local server.\n\n  - **Headers**: \n    - This section is currently empty and disabled. Typically, headers can provide additional context for the request, such as content type, but none are necessary for this specific call.\n\n  - **Body**:\n    - **Mode**: The body is configured in raw mode, meaning it directly accepts the text format.\n    - **Raw**: The body must contain a JSON object structured as follows:\n      - **sessionId**: Represents the unique identifier for the user's session.\n      - **accountId**: Refers to the unique identifier for the user’s account.\n      - **competeId**: Indicates the unique identifier for the competition that is to be deleted.\n\nThis API is intended to remove a specific competition action associated with a user's account, utilizing the provided identifiers for proper authentication and targeting."
+      },
+      "response": []
+    }
+  ]
+}

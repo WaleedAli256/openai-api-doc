@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "f63e592c-8d73-4eea-96b8-be8ba0d12ee9",
+    "name": "ActionReview",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Review - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didReview\": true,\n    \"reviewScore\": 5,\n    \"isUndo\": false,\n    \"name\":\"\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/review/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "review",
+            "create"
+          ]
+        },
+        "description": "### Action - Review - Create\n\n**Request Details:**\n\n- **Auth**:\n  - **Type**: Indicates the authentication method being used. In this case, it is a bearer token.\n  - **Bearer**: Contains the following information:\n    - **Key**: Represents the parameter name for the token. In this case, it is labeled as \"token\".\n    - **Value**: This is where the actual bearer token should be placed to authorize the request. For example, it is represented as \"BearerToken\".\n    - **Type**: Specifies the data type of the token, which is a string.\n\n- **Method**: \n  - **POST**: This indicates that the request is using the POST method, which is typically used to create new resources or submit data to the server.\n\n- **URL**: \n  - **Endpoint**: The URL endpoint where the request is sent. Here, it is \"http://localhost:3000/api/action/review/create\", indicating that this request is targeting a local server for action review creation.\n\n- **Headers**:\n  - A key-value pair representing the headers for the HTTP request. In this case, the key and value are empty, and the header is disabled.\n\n- **Body**: \n  - **Mode**: The format of the request body. Here it is set to \"raw\", indicating that the body is sent as a raw string.\n  - **Raw**: Contains the actual content that will be sent in the request body. The content is formatted as JSON and consists of the following fields:\n    - **sessionId**: A string representing the unique identifier for the session in which the review is being created.\n    - **accountId**: A string that represents the identifier of the account making the review.\n    - **path**: A string indicating the path to the content being reviewed, such as a video on a live channel.\n    - **targetType**: A string defining the type of target being reviewed, in this case, it is labeled as \"videoId\".\n    - **targetId**: A string representing the unique identifier of the target, such as the video ID.\n    - **sourceType**: A string indicating the type of the source from which the review originates, which is set as \"accountId\".\n    - **sourceId**: A string representing the unique identifier of the source, mimicking the accountId.\n    - **didReview**: A boolean indicating whether the user has submitted a review (true) or not (false).\n    - **reviewScore**: An integer score given by the reviewer, here it is set to 5, representing the highest rating.\n    - **isUndo**: A boolean representing if the review should be undone; set to false indicates that this is a new review, not an undo action.\n    - **name**: An optional string field for the name associated with the review (currently empty).\n    - **description**: An optional string field for the description associated with the review (currently empty).\n    - **tags**: An optional string field for tags associated with the review (currently empty).\n\n- **Options**:\n  - **Raw**:\n    - **Language**: Specifies the format of the raw body content as JSON.\n\nThis detailed description provides a comprehensive understanding of the fields and structure for users interacting with the Action - Review - Create API."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Review - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didReview\": true,\n    \"reviewScore\": 5,\n    \"isUndo\": false,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"reviewId\": \"reviewId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/review/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "review",
+            "update"
+          ]
+        },
+        "description": "### Action - Review - Update\n\nThis endpoint allows users to update a review for a specified action or item. Below is a detailed description of each piece of data associated with the request:\n\n#### Request Type\n- **Method**: PUT\n  - This indicates that the operation will update an existing resource on the server.\n\n#### URL\n- **URL**: `http://localhost:3000/api/action/review/update`\n  - The endpoint where the action review update request is sent.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - The request requires bearer token authentication, ensuring that the requester has proper authorization.\n\n- **Bearer Token**: \n  - **Key**: `token`\n    - The identifier for the bearer token.\n  - **Value**: `BearerToken`\n    - A placeholder for the actual token used to authenticate the request.\n  - **Type**: string\n    - Indicates that the token value should be a string.\n\n#### Headers\n- **Client-UUID**:\n  - **Key**: `Client-UUID`\n    - A custom header field used to identify the client making the request.\n  - **Value**: `ClientUUID`\n    - A placeholder for the actual UUID of the client.\n  - **Type**: default\n    - Specifies the default type for this header.\n\n#### Request Body\n- **Body Mode**: raw\n  - Indicates that the body of the request will be sent in raw format.\n  \n- **Raw Body Content**:\n  - The body is formatted in JSON and contains the following fields:\n\n  - **sessionId**: \n    - Represents the unique identifier for the session during which the review is made.\n\n  - **accountId**: \n    - Identifies the account associated with the review.\n\n  - **path**: \n    - The path indicating where the video or content is located, e.g., `/live/channel/video123`.\n\n  - **targetType**: \n    - Specifies the type of the target being reviewed, e.g., `videoId`.\n\n  - **targetId**: \n    - The unique identifier of the target that is being reviewed.\n\n  - **sourceType**: \n    - Indicates the type of the source, e.g., `accountId`.\n\n  - **sourceId**: \n    - The unique identifier for the source account of the review.\n\n  - **didReview**: \n    - A boolean indicating whether or not the review has been completed (true/false).\n\n  - **reviewScore**: \n    - A numeric score assigned to the review, typically on a scale (e.g., 1 to 5).\n\n  - **isUndo**: \n    - A boolean value indicating whether the review action is to undo a previous review.\n\n  - **name**: \n    - An optional field for the name associated with the review.\n\n  - **description**: \n    - An optional field for a description of the review.\n\n  - **tags**: \n    - Optional field for any tags associated with the review.\n\n  - **reviewId**: \n    - The unique identifier of the review being updated.\n\nThis endpoint is used for updating an existing review and requires appropriate authentication and information in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Review - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/review/get/?reviewId=reviewId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "review",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "reviewId",
+              "value": "reviewId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Review - Get\n\n- **Name**: This endpoint is referred to as \"Action - Review - Get\". It is designed to retrieve a review based on specific parameters.\n\n- **Method**: The HTTP method used for this request is **GET**, indicating that the endpoint is meant to fetch data without modifying any server resources.\n\n- **URL**: The request is sent to the following URL:\n  ```\n  http://localhost:3000/api/action/review/get/?reviewId=reviewId&sessionId=sessionId&accountId=accountId\n  ```\n  This URL includes query parameters for `reviewId`, `sessionId`, and `accountId`, which are essential for identifying which review to retrieve.\n\n- **Query Parameters**:\n  - **reviewId**: This parameter should be replaced with the actual ID of the review you want to fetch. It serves as a unique identifier for the review.\n  - **sessionId**: This parameter represents the session context under which the review was created or accessed. It helps in tracking user sessions.\n  - **accountId**: This parameter indicates the account associated with the review, allowing for filtering based on user accounts.\n\n- **Authentication**: The request requires bearer token authentication. This means that access to this endpoint is secured and needs a valid token to be provided in the request header.\n  - **Bearer Token**: \n    - **Key**: `token`\n    - **Value**: `BearerToken` - This is a placeholder for the actual token that will authorize the request.\n    - **Type**: This is marked as a string, indicating the format of the token.\n\n- **Headers**: The current state of headers shows one placeholder with no key or value and is disabled. This means no additional headers are currently required or sent with this request aside from the authorization token.\n\n- **Body**: The request body is set to raw mode but contains no data. For a GET request, it is typical to not include a body, so this configuration is appropriate.\n\nOverall, this endpoint allows users to retrieve specific review details by providing necessary identifiers in the URL, ensuring that access is controlled through bearer token authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Review - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/review/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "review",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Review - Get All\n\nThis API endpoint retrieves all reviews associated with actions. Below is a detailed description of each component of the request.\n\n- **Name**: Action - Review - Get All  \n  This is the name of the API request. It indicates that the endpoint is used to get all reviews related to actions.\n\n- **Request**: \n  The main section where the details of the API request are defined.\n\n  - **Auth**:  \n    Specifies the authentication method used for the API call.\n    \n    - **Type**: `bearer`  \n      This indicates that the API uses Bearer Token authentication.\n      \n    - **Bearer**:  \n      An array that contains a single object for the token.\n      \n      - **Key**: `token`  \n        The key used to signify the token in the authorization header.\n        \n      - **Value**: `BearerToken`  \n        A placeholder string for the actual Bearer Token required for authentication. Users should replace `BearerToken` with their actual token.\n        \n      - **Type**: `string`  \n        This denotes that the value of the token is a string data type.\n        \n  - **Method**: `GET`  \n    This specifies that the request method is GET, which means it will retrieve data from the server.\n\n  - **URL**: `http://localhost:3000/api/action/review/all/?sessionId=sessionId&accountId=accountId`  \n    The endpoint URL for the API request. It consists of the base URL followed by the specific route to access all reviews. It also includes two query parameters:\n    \n    - **sessionId**: a placeholder for the unique identifier of the session. This should be replaced with the actual session ID.\n    \n    - **accountId**: a placeholder for the unique identifier of the account. This should be replaced with the actual account ID.\n\n  - **Headers**:  \n    An array that allows you to specify any additional HTTP headers for the request.\n    \n    - **Key**: `\"\"`  \n      In this case, there are no custom headers defined as the key is empty.\n      \n    - **Value**: `\"\"`  \n      Similarly, since the key is empty, there is no value defined.\n      \n    - **Type**: `default`  \n      Indicates the type of the header, which defaults to standard headers.\n      \n    - **Disabled**: `true`  \n      This means that the header configuration is currently disabled and will not be sent with the request.\n      \n  - **Body**:  \n    Contains the data to be sent with the request.\n    \n    - **Mode**: `raw`  \n      This indicates that the body of the request is in raw format.\n      \n    - **Raw**: `\"\"`  \n      The body is empty, meaning no additional data is sent with the request. This is typical for GET requests where no body is required. \n\nThis detailed description serves to help users understand how to interact with the endpoint correctly and what information they need to prepare when making a request to retrieve action reviews."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Review - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"reviewId\":\"reviewId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/review/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "review",
+            "delete"
+          ]
+        },
+        "description": "### Action - Review - Delete\n\n- **Request Auth**: \n  - **Type**: The authentication type is set to \"bearer\", meaning that this request requires a bearer token for authentication.\n  - **Bearer**: Contains an array with authentication details.\n    - **Key**: This field indicates the name of the token, which is \"token\" in this case.\n    - **Value**: This is a placeholder value where \"sessionId\" should be replaced with the actual session ID that provides authorization for the request.\n    - **Type**: The type of the value is set to \"string\", indicating that the token is in string format.\n\n- **Request Method**: \n  - The HTTP method used for this request is \"POST\", indicating that data is being sent to the server to perform an action.\n\n- **Request URL**: \n  - The endpoint URL for the request is \"http://localhost:3000/api/action/review/delete\". This is the address where the request will be sent to delete a review action.\n\n- **Request Headers**: \n  - This section is currently empty, with no headers set. One header is marked as disabled, implying it was considered but not in use for this request.\n\n- **Request Body**: \n  - The body of the request is set to use \"raw\" mode, meaning that the data will be sent as a raw JSON string.\n  - The raw data must follow the structure provided:\n    - **sessionId**: This field requires the actual session ID for the user session, replacing the placeholder \"sessionId\".\n    - **accountId**: This field requires the account ID of the user requesting the review deletion, replacing the placeholder \"accountId\".\n    - **reviewId**: This field specifies the ID of the review that needs to be deleted, replacing the placeholder \"reviewId\". \n\nUsers must ensure to replace the placeholders in the JSON body with actual IDs to successfully execute the delete action for the review."
+      },
+      "response": []
+    }
+  ]
+}

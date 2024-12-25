@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "TournamentTeam",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tournament - Team - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Team\",\"description\":\"This team is my second team\",\"tags\":\"second,team\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTeamPrivate\":true,\"isTournamentOnly\":false,\"isTeamDefault\":true,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/team/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "team",
+            "create"
+          ]
+        },
+        "description": "**Description for the \"Tournament - Team - Create\" Endpoint:**\n\nThis endpoint is used to create a new team for a tournament. The request requires a bearer token for authentication and sends the team details in the body of the request.\n\n**Request Structure:**\n\n- **Authentication:**\n  - **Type:** Bearer\n    - The bearer token must be provided for authorization purposes. The placeholder \"BearerToken\" should be replaced with an actual token that grants access to the API.\n\n- **Method:**\n  - **Type:** POST\n    - This endpoint uses the POST method to submit data for creating a new team.\n\n- **URL:**\n  - **Endpoint:** `http://localhost:3000/api/tournament/team/create`\n    - This is the URL where the request is sent to create a new team. It uses the local server during development.\n\n- **Headers:**\n  - **Key:** (Empty)\n    - Currently, there are no custom headers required, and the header is disabled. It can be configured later if needed.\n\n- **Body:**\n  - **Mode:** Raw\n    - The body of the request is sent in raw format.\n  \n  - **Content:** \n    - A JSON string containing the following fields:\n\n      - **sessionId:**\n        - Type: String\n        - Description: Unique identifier for the session in which the team is being created.\n\n      - **accountId:**\n        - Type: String\n        - Description: The account ID associated with the user creating the team.\n\n      - **name:**\n        - Type: String\n        - Description: The name of the team being created (e.g., \"My Second Team\").\n\n      - **description:**\n        - Type: String\n        - Description: A short description of the team (e.g., \"This team is my second team\").\n\n      - **tags:**\n        - Type: String\n        - Description: Comma-separated tags related to the team (e.g., \"second,team\") for categorization or search purposes.\n\n      - **profilePhotoUrl:**\n        - Type: String\n        - Description: A URL pointing to the team's profile photo (e.g., \"https://example.com/profile.jpg\").\n\n      - **coverPhotoUrl:**\n        - Type: String\n        - Description: A URL pointing to the team's cover photo (e.g., \"https://example.com/cover.jpg\").\n\n      - **minimumTipAmount:**\n        - Type: Number\n        - Description: The minimum amount for tips associated with the team (e.g., 10).\n\n      - **categoryId:**\n        - Type: String\n        - Description: The ID of the category under which the team falls (e.g., \"category123\").\n\n      - **category:**\n        - Type: String\n        - Description: The name of the category the team belongs to (e.g., \"General\").\n\n      - **subCategoryId:**\n        - Type: String\n        - Description: The ID for the sub-category related to the team (e.g., \"subCategory456\").\n\n      - **subCategory:**\n        - Type: String\n        - Description: The name of the sub-category the team is related to (e.g., \"Specific\").\n\n      - **isTeamPrivate:**\n        - Type: Boolean\n        - Description: A flag indicating whether the team is private (e.g., true).\n\n      - **isTournamentOnly:**\n        - Type: Boolean\n        - Description: A flag to denote if the team is only used for tournament purposes (e.g., false).\n\n      - **isTeamDefault:**\n        - Type: Boolean\n        - Description: Indicates if this team is set as default for future actions (e.g., true).\n\n      - **isPreLiveTournamentAds:**\n        - Type: Boolean\n        - Description: A flag to indicate if pre-live advertisements for tournaments are enabled (e.g., true).\n\n      - **isPostLiveTournamentAds:**\n        - Type: Boolean\n        - Description: A flag to indicate if post-live advertisements for tournaments are enabled (e.g., true).\n\n      - **breakPreLiveVideoUrl:**\n        - Type: String\n        - Description: A URL to a video that can be shown during pre-live breaks (e.g., \"https://example.com/break-pre-live.mp4\").\n\n      - **breakPostLiveVideoUrl:**\n        - Type: String\n        - Description: A URL to a video that can be shown during post-live breaks (e.g., \"https://example.com/break-post-live.mp4\"). \n\nThis endpoint facilitates the creation of a well-defined team with various associated attributes and settings."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Team - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"teamId\":\"teamId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Team 2.0\",\"description\":\"This team is my second team\",\"tags\":\"second,team\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTeamPrivate\":true,\"isTournamentOnly\":false,\"isTeamDefault\":true,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/team/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "team",
+            "update"
+          ]
+        },
+        "description": "### API Endpoint: Tournament - Team - Update\n\nThis endpoint is used to update the details of a specific tournament team. Below is a detailed description of each piece of data in the request.\n\n#### Request Method\n- **PUT**: This indicates that the request is intended to update the existing resource on the server.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/tournament/team/update`\n  - The endpoint URL for updating a tournament team resource.\n\n#### Authentication\n- **Auth Type**: Bearer Token\n  - This indicates that the API requires a bearer token for authentication.\n- **Bearer Token**: \n  - **Key**: `token`\n  - **Value**: `BearerToken` (placeholder for the actual token)\n  - **Type**: string\n  - The bearer token is necessary for accessing this endpoint and should be replaced with a valid token.\n\n#### Headers\n- **Client-UUID**: \n  - **Key**: `Client-UUID`\n  - **Value**: `ClientUUID` (placeholder for the actual Client UUID)\n  - **Type**: default\n  - This header is used to identify the client making the request, and should be replaced with the actual UUID.\n\n#### Request Body\n- **Body Mode**: Raw\n  - This indicates that the request body will be in raw JSON format.\n- **Raw JSON**: \n```json\n{\n  \"teamId\": \"teamId\",\n  \"sessionId\": \"sessionId\",\n  \"accountId\": \"accountId\",\n  \"name\": \"My Second Team 2.0\",\n  \"description\": \"This team is my second team\",\n  \"tags\": \"second,team\",\n  \"profilePhotoUrl\": \"https://example.com/profile.jpg\",\n  \"coverPhotoUrl\": \"https://example.com/cover.jpg\",\n  \"minimumTipAmount\": 10,\n  \"categoryId\": \"category123\",\n  \"category\": \"General\",\n  \"subCategoryId\": \"subCategory456\",\n  \"subCategory\": \"Specific\",\n  \"isTeamPrivate\": true,\n  \"isTournamentOnly\": false,\n  \"isTeamDefault\": true,\n  \"isPreLiveTournamentAds\": true,\n  \"isPostLiveTournamentAds\": true,\n  \"breakPreLiveVideoUrl\": \"https://example.com/break-pre-live.mp4\",\n  \"breakPostLiveVideoUrl\": \"https://example.com/break-post-live.mp4\"\n}\n```\n\n##### JSON Data Description\n1. **teamId**: \n   - A unique identifier for the team that needs to be updated. This should reflect the actual team ID.\n\n2. **sessionId**: \n   - A unique identifier for the session related to this team update. This can be used for tracking or validation purposes.\n\n3. **accountId**: \n   - The unique identifier for the account that owns or manages the team. This is useful for ensuring the correct association with user accounts.\n\n4. **name**: \n   - The new name for the team. This should be a user-friendly name that represents the team.\n\n5. **description**: \n   - A brief description of the team. This can provide additional context or information about the team to others.\n\n6. **tags**: \n   - A comma-separated list of tags associated with the team. Tags can help categorize or identify the team easily.\n\n7. **profilePhotoUrl**: \n   - A URL pointing to the team's profile photo. This will be displayed as the team's avatar or representative image.\n\n8. **coverPhotoUrl**: \n   - A URL pointing to the team's cover photo. This image will serve as a larger background representation for the team.\n\n9. **minimumTipAmount**: \n   - The minimum amount that can be tipped to the team. This is useful for setting financial expectations or thresholds.\n\n10. **categoryId**: \n    - The unique identifier for the category under which this team falls. Categories help in organizing teams effectively.\n\n11. **category**: \n    - The name of the category to which the team belongs. This helps in classifying the team based on types or activities.\n\n12. **subCategoryId**: \n    - A unique identifier for any subcategory associated with the team. This allows for further classification.\n\n13. **subCategory**: \n    - The name of the subcategory for the team, providing more specific categorization.\n\n14. **isTeamPrivate**: \n    - A boolean value indicating whether the team is private (true) or public (false). Private teams can restrict visibility and access.\n\n15. **isTournamentOnly**: \n    - A boolean value specifying if the team is exclusive to tournaments. True means the team can only participate in tournaments.\n\n16. **isTeamDefault**: \n    - Indicates whether this team is set as the default team (true) or not (false). Default teams may have special privileges or status.\n\n17. **isPreLiveTournamentAds**: \n    - A boolean indicating if advertisements will be shown before the live tournament starts.\n\n18. **isPostLiveTournamentAds**: \n    - A boolean indicating if advertisements will be shown after the live tournament ends.\n\n19. **breakPreLiveVideoUrl**: \n    - A URL pointing to a video that can be shown during the pre-live phase of the tournament. This might include promotional or informative content.\n\n20. **breakPostLiveVideoUrl**: \n    - A URL to a video that can be shown after the live tournament has concluded. This could include highlights or recaps. \n\nThis structure provides clarity on how to use the endpoint and the purpose of each field in the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Team - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/team/get/?teamId=teamId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "team",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "teamId",
+              "value": "teamId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Tournament - Team - Get\n\n#### Overview\nThis endpoint is designed to retrieve information related to a specific team in a tournament context. The request is made using a GET method, indicating that the information requested will not modify any server data.\n\n#### Request Details\n\n- **Auth**: \n  - **Type**: Bearer\n    - This endpoint requires authentication using a bearer token. The acknowledgement of a valid token signifies that the user has the necessary permissions to access the requested resources.\n    - **Bearer Token**: \n      - **Key**: `token`\n      - **Value**: `BearerToken`\n      - **Type**: String\n        - The value should be replaced with an actual bearer token that authenticates the request.\n\n- **Method**: \n  - **GET**\n    - Indicates that the request is intended to retrieve data from the server rather than submit data.\n\n- **URL**: \n  - `http://localhost:3000/api/tournament/team/get/?teamId=teamId&sessionId=sessionId&accountId=accountId`\n    - This is the endpoint URL where the request is sent.\n    - **Query Parameters**:\n      - **teamId**: Represents the unique identifier of the team whose information is being requested. It should be replaced with the actual team ID.\n      - **sessionId**: Represents the session identifier for the current tournament. This allows the server to fetch data relevant to the specific session.\n      - **accountId**: Represents the unique identifier for the account making the request. This enables validation and access control for the account's data.\n\n- **Headers**:\n  - There are no additional headers required for this request. An example placeholder is present but currently disabled.\n\n- **Body**:\n  - **Mode**: Raw\n    - The body of the request is specified as raw, which means it does not contain any predefined structure like JSON or form data for this GET request.\n  - **Raw**: \n    - This field is empty as GET requests typically do not require a body. If needed, it can remain blank.\n\n### Summary\nUse this endpoint to get detailed information about a specific team within a tournament. Ensure you provide valid tokens and identifiers in the URL parameters for successful data retrieval."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Team - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/team/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "team",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Data for the Endpoint \"Tournament - Team - Get All\"\n\n- **name**: This specifies the name of the API endpoint. In this case, it is \"Tournament - Team - Get All,\" indicating that the API retrieves all teams associated with a tournament.\n\n- **request**: This section contains all the details necessary to make the API request.\n\n  - **auth**: This indicates the authentication method used to secure the endpoint.\n  \n    - **type**: Specifies that the authentication type is \"bearer,\" meaning a token is required for access.\n    \n    - **bearer**: This is an array containing the necessary authentication information.\n    \n      - **key**: This specifies the name of the token field, which is \"token.\"\n      \n      - **value**: This is a placeholder value representing the actual bearer token which is needed to authenticate the request. It should be replaced with a valid token at runtime (e.g., \"BearerToken\").\n      \n      - **type**: Indicates the data type of the token, which is \"string.\"\n\n  - **method**: This specifies the HTTP method used for the request. In this case, it is \"GET,\" which means the request is intended to retrieve data.\n\n  - **url**: This is the endpoint URL where the API request will be sent. It includes query parameters for session ID and account ID:\n  \n    - **http://localhost:3000/api/tournament/team/all/**: Base URL indicating the local server and the specific API route for getting all teams in a tournament.\n    \n    - **sessionId=sessionId**: A query parameter where \"sessionId\" should be replaced with the actual session ID value during execution.\n    \n    - **accountId=accountId**: Another query parameter where \"accountId\" should be replaced with the actual account ID value during execution.\n\n  - **headers**: This is an array that can hold additional information needed in the request header.\n  \n    - **key**: The key for header information, which is currently empty.\n    \n    - **value**: The value associated with the header key, which is also currently empty.\n    \n    - **type**: Indicates that this is of default type.\n    \n    - **disabled**: A flag indicating whether this header is active; it is set to true, meaning this header will not be included in the request.\n\n  - **body**: This section describes the body of the request.\n  \n    - **mode**: Specifies the type of request body; it is set to \"raw,\" indicating the body will be raw data.\n    \n    - **raw**: This holds the actual content of the body; it is currently empty, suggesting that no data is required in the body for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Team - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/team/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "team",
+            "delete"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: This indicates the name of the API endpoint, which is \"Tournament - Team - Delete\". This suggests that the endpoint is intended for deleting a team from a tournament.\n\n- **request**: This section contains all the details necessary to make the API request.\n\n  - **auth**: This specifies the type of authentication used for the API request.\n  \n    - **type**: This indicates the type of authentication. In this case, it is \"bearer\", meaning that the request requires a bearer token for authorization.\n    \n    - **bearer**: This is an array containing the details for the bearer token.\n    \n      - **key**: The key for the token object. Here, it is specified as \"token\".\n      \n      - **value**: This is the placeholder for the session ID that the user should provide when making the request. It is represented as \"sessionId\".\n      \n      - **type**: Indicates the data type of the token value. It is specified as \"string\".\n\n  - **method**: This shows the HTTP method used for the request. In this case, it is \"POST\", indicating that this endpoint is intended to send data to the server to delete a resource.\n\n  - **url**: This is the endpoint URL where the API request is directed. It is currently set to \"http://localhost:3000/api/tournament/team/delete\", which means it is expected to run locally on port 3000.\n\n  - **headers**: This section contains any HTTP headers to be included in the request. Currently:\n  \n    - **key**: There is no specified key for the header, indicating that no custom headers are being sent.\n    \n    - **value**: There is no value provided, suggesting that this header is not in use.\n    \n    - **type**: It is set to \"default\", which is the standard header type.\n    \n    - **disabled**: This is set to true, indicating that the header is currently inactive and will not be included in the request.\n\n  - **body**: This contains the data that will be sent in the request body.\n  \n    - **mode**: This indicates the format of the request body. It is set to \"raw\", meaning the data is sent as plain text.\n    \n    - **raw**: This is the actual data sent in the request body. It is a JSON object containing:\n      \n      - **sessionId**: The identity token of the user's session, represented as \"sessionId\". The user needs to replace this with the actual session ID.\n      \n      - **accountId**: The account identifier for the user whose action this delete request is tied to, represented as \"accountId\". The actual account ID must be substituted here.\n      \n      - **teamId**: The identifier of the team that is to be deleted, represented as \"teamId\". The team ID needs to be replaced with the specific ID of the team to be deleted.\n\nThis detailed breakdown explains the purpose and structure of the request to delete a team from a tournament in the API."
+      },
+      "response": []
+    }
+  ]
+}

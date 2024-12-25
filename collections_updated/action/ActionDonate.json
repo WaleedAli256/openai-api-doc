@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "4099ed18-0fc0-4254-ace6-409954453cc4",
+    "name": "ActionDonate",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Donate - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"utilityType\": \"token\",\n    \"name\": \"My chairity\",\n    \"didDonate\": true,\n    \"isAccepted\": true,\n    \"isRejected\": false,\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/donate/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "donate",
+            "create"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint: Action - Donate - Create\n\n#### Request Authentication\n- **Auth Type**: Specifies that the request uses Bearer token for authorization.\n- **Bearer Token**: \n  - **Key**: \"token\" - Identifies the authorization token.\n  - **Value**: \"BearerToken\" - The actual token that authorizes the request, typically a string representing the user's session.\n  - **Type**: \"string\" - Indicates that the value of the token is a string.\n\n#### Request Method\n- **Method**: \"POST\" - Indicates that this request will create a new resource on the server.\n\n#### Request URL\n- **URL**: \"http://localhost:3000/api/action/donate/create\" - The endpoint where the request will be sent to create a donation action.\n\n#### Request Headers\n- **Headers**: \n  - **Key**: An empty string - Indicates that no additional custom headers are set.\n  - **Value**: An empty string - There is no associated value for the header.\n  - **Type**: \"default\" - The default type for the header.\n  - **Disabled**: true - This header is currently disabled and will not be sent with the request.\n\n#### Request Body\n- **Body Mode**: \"raw\" - Indicates that the body of the request will contain raw data.\n- **Raw Data**:\n  - A JSON object containing the following fields:\n    - **sessionId**: \"sessionId\" - Represents the unique identifier for the user session.\n    - **accountId**: \"accountId\" - The ID of the user account making the donation.\n    - **path**: \"/live/channel/video123\" - The URL path to the content associated with the donation, such as a live stream.\n    - **targetType**: \"videoId\" - Specifies the type of target for the donation, which in this case is a video ID.\n    - **targetId**: \"videoId\" - The unique ID of the target video receiving the donation.\n    - **sourceType**: \"accountId\" - Indicates that the source of the donation is an account ID.\n    - **sourceId**: \"accountId\" - The unique ID of the source account from which the donation originates.\n    - **utilityType**: \"token\" - Specifies the type of utility used for the donation, which is a token.\n    - **name**: \"My chairity\" - The name of the charity or cause associated with the donation.\n    - **didDonate**: true - A boolean indicating whether the donation was successfully made.\n    - **isAccepted**: true - A boolean indicating whether the donation has been accepted.\n    - **isRejected**: false - A boolean indicating whether the donation has been rejected.\n    - **description**: \"\" - A field for additional comments or notes about the donation, currently empty.\n    - **tags**: \"\" - A field for tags or labels associated with the donation, currently empty.\n\n#### Options\n- **Raw Data Options**: \n  - **Language**: \"json\" - Specifies that the format of the raw data is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Donate - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"utilityType\": \"token\",\n    \"name\": \"My chairity updated name\",\n    \"didDonate\": true,\n    \"isAccepted\": true,\n    \"isRejected\": false,\n    \"donateId\": \"donateId\",\n    \"description\": \"this is description\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/donate/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "donate",
+            "update"
+          ]
+        },
+        "description": "### Action - Donate - Update\n\n**Request Overview**  \nThis request is designed to update the donation information associated with a particular action within the API. The request method is PUT, which implies that it modifies an existing resource.\n\n**Authorization**  \n- **Type:** Bearer  \n  - This type of authorization requires a token for access.  \n- **Token:** \"BearerToken\"  \n  - This placeholder represents the actual bearer token that is necessary for authenticating the request.\n\n**URL**  \n- **Endpoint:** `http://localhost:3000/api/action/donate/update`  \n  - The endpoint for updating the donation action, typically it should point to the live server once development is completed.\n\n**Headers**  \n- **Client-UUID:** \"ClientUUID\"  \n  - This header uniquely identifies the client making the request. Replace `ClientUUID` with the actual UUID for your client application.\n\n**Body**  \nThe body of the request is in raw JSON format and contains the following fields:\n\n- **sessionId**  \n  - Represents the unique identifier for the session during which the donation action is being updated.\n\n- **accountId**  \n  - The unique identifier for the account making the donation. This helps in attributing the donation to the correct user.\n\n- **path**  \n  - Indicates the specific path or reference to the resource, in this case, a video path like `/live/channel/video123`.\n\n- **targetType**  \n  - Specifies the type of resource that is being targeted for this action. Here, it is set to `videoId`, indicating that the action is linked to a video.\n\n- **targetId**  \n  - The unique identifier for the target resource (in this case, the video) that the donation is associated with.\n\n- **sourceType**  \n  - Refers to the type of source from which the donation is being made. This is set to `accountId`, meaning the source is another account.\n\n- **sourceId**  \n  - The unique identifier for the source account, indicating where the donation is originating from.\n\n- **utilityType**  \n  - Specifies the type of utility used for the donation. In this case, it is set to `token`, which may suggest that donations are conducted via token transactions.\n\n- **name**  \n  - Represents the updated name of the charity or purpose for which the donation is being made. The example value is \"My charity updated name\".\n\n- **didDonate**  \n  - A boolean value indicating whether the user actually made a donation. Set to `true` in this case.\n\n- **isAccepted**  \n  - A boolean value indicating whether the donation action has been accepted by the receiving party. This example is set to `true`.\n\n- **isRejected**  \n  - A boolean flag that shows if the donation action was rejected. It is set to `false`, meaning the action has not been rejected.\n\n- **donateId**  \n  - The unique identifier of the donation record being updated.\n\n- **description**  \n  - A textual description related to the donation action. In this case, it is set to \"this is description\".\n\n- **tags**  \n  - A field meant for categorizing or tagging the donation with relevant keywords. The example provided is empty, indicating no tags have been assigned.\n\nThis structure provides all the necessary information to update a donation action in the API effectively. Make sure to replace placeholder values with actual data while making requests."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Donate - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/donate/get/?donateId=donateId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "donate",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "donateId",
+              "value": "donateId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Donate - Get\n\nThis API request is designed to retrieve information regarding a specific donation action. Below are the details of the components involved in this endpoint.\n\n#### Request Components\n\n- **auth**:\n  - **type**: Specifies the type of authentication required. In this case, it uses Bearer token authentication.\n  - **bearer**: This array contains the authentication token used to authorize the request. \n    - **key**: Represents the name of the token attribute. Here, it's labeled as \"token\".\n    - **value**: This is where the actual token is supplied. It is indicated as \"BearerToken\", which should be replaced with a valid token for authentication.\n    - **type**: Specifies the type of the value, which is a string.\n\n- **method**:\n  - Represents the HTTP method used for the request. The method specified is \"GET\", indicating that this request is used to retrieve data.\n\n- **url**:\n  - The endpoint URL for the API call. \n  - The structure includes query parameters that need to be provided:\n    - **donateId**: An identifier for the specific donation action you are querying.\n    - **sessionId**: An identifier for the session associated with the donation action.\n    - **accountId**: An identifier for the account related to the donation.\n  \n  The complete URL format appears as:\n  `http://localhost:3000/api/action/donate/get/?donateId=donateId&sessionId=sessionId&accountId=accountId`.\n\n- **headers**:\n  - This section is for any additional HTTP headers that may be required for the request. In this case, it is currently empty, with no headers being passed.\n  - **disabled**: This field indicates the status of the header. It is set to `true`, meaning this header section is not actively used in the request.\n\n- **body**:\n  - The body of the request is meant to contain any payload data if needed. It currently has a mode set to \"raw\", indicating that raw data would be used if there were any. However, it is empty here, implying that no body data is required for this GET request.\n\n### Summary\nThis endpoint allows users to retrieve donation information based on specified identifiers. Proper authentication via a Bearer token is required, and the request will include the necessary URL parameters for successful retrieval of the desired data."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Donate - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/donate/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "donate",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Donate - Get All\n\n#### Request Details\n\n- **Name**: Action - Donate - Get All  \n  This is the name of the API endpoint used for retrieving all donation actions.\n\n- **Method**: GET  \n  This specifies the HTTP method used for the request, which is GET in this case. This method is typically used to retrieve data from a server.\n\n- **URL**: `http://localhost:3000/api/action/donate/all/?sessionId=sessionId&accountId=accountId`  \n  This is the endpoint's URL. It points to the local server and includes query parameters:\n  - **sessionId**: Represents the unique identifier for the session.\n  - **accountId**: Refers to the unique identifier for the account.\n\n#### Authentication\n\n- **Auth Type**: Bearer  \n  This indicates that the request requires bearer token authentication.\n\n- **Bearer Token**:  \n  - **Key**: token  \n    This is the key that identifies the authorization token in the request.\n  - **Value**: BearerToken  \n    This is a placeholder for the actual bearer token that must be included in the authorization header. Replace \"BearerToken\" with a valid token.\n  - **Type**: string  \n    This indicates that the token value should be provided as a string.\n\n#### Headers\n\n- **Headers**:  \n  There are currently no custom headers defined for this request. The header entry is disabled and can be configured if needed.\n\n#### Body\n\n- **Body Mode**: raw  \n  The body of the request is set to raw, indicating that no form data or JSON object is being sent in the request.\n\n- **Raw**:  \n  The body is empty in this case, as this GET request typically does not require a body.\n\n### Summary\nThis endpoint is designed to retrieve all donation actions for a given account and session. The user needs to provide valid session and account identifiers, as well as a valid bearer token for authentication. The request does not include any additional headers or body content."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Donate - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"donateId\":\"donateId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/donate/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "donate",
+            "delete"
+          ]
+        },
+        "description": "**Action - Donate - Delete Endpoint Description**\n\n- **Name**: Action - Donate - Delete\n  - This is the name of the API action that is responsible for deleting a donation record.\n\n- **Request**: Contains all the necessary details to make a request to the endpoint.\n  \n  - **Auth**: Defines the authentication details required for this request.\n    - **Type**: \"bearer\"\n      - Specifies that bearer token authentication is used.\n    - **Bearer**: Contains information about the bearer token.\n      - **Key**: \"token\"\n        - This is the identifier for the authentication token.\n      - **Value**: \"sessionId\"\n        - This represents the actual session ID that must be used for authentication. Replace this with the actual session ID when making a request.\n      - **Type**: \"string\"\n        - Indicates that the value type for the token is a string.\n\n  - **Method**: \"POST\"\n    - This specifies that the request method to be used is POST, which is commonly used for creating or deleting resources.\n\n  - **URL**: \"http://localhost:3000/api/action/donate/delete\"\n    - This is the endpoint which the request will be sent to. It indicates that the action is related to deleting a donation resource.\n\n  - **Headers**: A list of HTTP headers to be sent with the request.\n    - **Key**: \"\"\n      - Currently an empty key, which means no specific header is set.\n    - **Value**: \"\"\n      - The corresponding value is also empty.\n    - **Type**: \"default\"\n      - Indicates that this is a default type header.\n    - **Disabled**: true\n      - This header is disabled and will not be included in the request.\n\n  - **Body**: Contains the payload that will be sent with the request.\n    - **Mode**: \"raw\"\n      - Indicates that the body of the request will be provided as raw data rather than a form or a specific format.\n    - **Raw**: \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"donateId\\\":\\\"donateId\\\"}\"\n      - This is the raw JSON data that must be sent in the body of the request. It includes:\n        - **sessionId**: \"sessionId\"\n          - Identify the session for which the delete action is being performed. Replace with the actual session ID.\n        - **accountId**: \"accountId\"\n          - The ID of the account associated with the donation to be deleted. Replace with the actual account ID.\n        - **donateId**: \"donateId\"\n          - The ID of the specific donation record that you intend to delete. Replace with the actual donation ID."
+      },
+      "response": []
+    }
+  ]
+}

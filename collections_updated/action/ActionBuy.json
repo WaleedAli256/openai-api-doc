@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "b096ec4d-cbee-4825-b22d-82cb861d7467",
+    "name": "ActionBuy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Buy - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"sand\",\n    \"description\": \"sand for building\",\n    \"tags\":\"sand\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/buy/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "buy",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Buy - Create\n\n#### Request Overview\nThis request is used to create a new buy action in the system. It utilizes a POST method to send data to the specified URL.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - **Token**: A string token is required for authentication. This token should be included in the authorization header as \"BearerToken\".\n\n#### Request Method\n- **Method**: POST\n  - The request is sent using the POST HTTP method.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/action/buy/create`\n  - This is the endpoint where the request is sent to create a new buy action.\n\n#### Request Headers\n- **Headers**: Currently, there are no custom headers specified. The header field is disabled, meaning it will not be sent with the request.\n\n#### Request Body\n- **Body Mode**: Raw\n  - The data is sent in the raw format, specifically as a JSON string.\n\n- **JSON Payload**:\n  - **sessionId**: A unique identifier for the user session. This helps in tracking the action related to a specific user experience.\n  \n  - **accountId**: The identifier for the user's account involved in the action. This is necessary to associate the buy action with the correct account.\n  \n  - **path**: The specific path indicating the location of the resource, such as a video channel.\n  \n  - **targetType**: Specifies the type of target action. In this case, it indicates that the target is identified by \"videoId\".\n  \n  - **targetId**: The unique identifier of the target item (e.g., the video that is being bought).\n  \n  - **sourceType**: Represents the source type of the action, which is linked to the user account (denoted as \"accountId\").\n  \n  - **sourceId**: This is the identifier for the source linked to the buy action, also using \"accountId\".\n  \n  - **name**: A descriptive name for the buy action. In this instance, it is set to \"sand\".\n  \n  - **description**: A detailed description of the buy action, providing context about what is being purchased. Here, it notes \"sand for building\".\n  \n  - **tags**: Contains keywords related to the buy action. In this example, it is simply \"sand\", which may help with categorization or searching.\n\n#### Additional Information\n- **Body Options**: The body is set to use JSON language to ensure proper formatting. \n\nThis request structure allows users to submit a buy action and provide necessary details required for processing the action in the system."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Buy - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"buyId\": \"buyId\",\n    \"name\":\"update\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/buy/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "buy",
+            "update"
+          ]
+        },
+        "description": "**Description of each data in the \"Action - Buy - Update\" endpoint:**\n\n1. **Request Name**: \n   - The name given to this request is \"Action - Buy - Update\". This describes the purpose of the request, which is to update a purchase action.\n\n2. **Authorization**:\n   - **Type**: \"bearer\"\n     - This specifies the type of authentication being used.\n   - **Bearer Token**:\n     - **Key**: \"token\"\n       - This is the key for the bearer token required for authentication.\n     - **Value**: \"BearerToken\"\n       - This is a placeholder for the actual token that is needed to authorize the request.\n     - **Type**: \"string\"\n       - This indicates that the value of the token is a string.\n\n3. **HTTP Method**:\n   - **PUT**: \n     - This indicates that the request is using the PUT method, which is employed to update an existing resource.\n\n4. **Request URL**:\n   - **URL**: \"http://localhost:3000/api/action/buy/update\"\n     - This is the endpoint where the request will be sent. It points to the local server where the update action will be processed.\n\n5. **Headers**:\n   - **Key**: \"Client-UUID\"\n     - This header is expected to be sent with the request. It identifies the client making the request.\n   - **Value**: \"ClientUUID\"\n     - A placeholder for the actual UUID value that should represent the client.\n\n6. **Body**:\n   - **Mode**: \"raw\"\n     - The body of the request is sent in raw format.\n   - **Raw Content**: \n     - This is the JSON formatted data that will be included in the body of the request:\n       - **sessionId**: \n         - Identifies the user session. Placeholder is \"sessionId\" for the actual session identifier.\n       - **accountId**: \n         - Represents the account associated with the action. Placeholder is \"accountId\".\n       - **path**: \n         - Specifies the path to the resource being accessed, e.g., a video channel. Example provided is \"/live/channel/video123\".\n       - **targetType**: \n         - Indicates the type of target for the action. In this case, it's set to \"videoId\".\n       - **targetId**: \n         - Specifies the ID of the target resource. Placeholder is \"videoId\".\n       - **sourceType**: \n         - Indicates the type of the source of the action. This is set to \"accountId\".\n       - **sourceId**: \n         - Specifies the ID of the source, here also a placeholder for \"accountId\".\n       - **buyId**: \n         - Represents the ID of the purchase to be updated. Placeholder is \"buyId\".\n       - **name**: \n         - A placeholder string \"update\" for the name of the update action.\n       - **description**: \n         - Currently left blank, it can be used to provide additional details about the update.\n       - **tags**: \n         - Currently left blank, it can be used to categorize the update with tags.\n\n7. **Body Options**:\n   - **Language**: \"json\"\n     - Indicates that the body content is formatted as JSON, which is the standard format for APIs. \n\nThis overview outlines the purpose and structure of the \"Action - Buy - Update\" endpoint request, including the required fields for making a successful API call."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Buy - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/buy/get/?buyId=buyId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "buy",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "buyId",
+              "value": "buyId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Endpoint Description: Action - Buy - Get**\n\n- **Name**: This identifies the action as \"Action - Buy - Get.\"\n\n- **Request**: This section contains details about the request that will be made to the API.\n\n  - **Auth**: This details the authentication method required for the API request.\n    - **Type**: Specifies that the authentication method is \"bearer.\"\n    - **Bearer**: A list that contains details about the bearer token needed for authentication.\n      - **Key**: Identifies the type of data being sent, which is \"token.\"\n      - **Value**: This is a placeholder for the actual bearer token, represented as \"BearerToken.\" This value needs to be replaced with an actual token.\n      - **Type**: Indicates that the value is a string.\n\n  - **Method**: The HTTP method used for this request is \"GET.\" This means that the request is intended to retrieve data.\n\n  - **URL**: The endpoint URL for the request. It includes placeholders for parameters:\n    - `buyId`: This should be replaced with the unique identifier for the buying action.\n    - `sessionId`: This should be replaced with the identifier for the user session.\n    - `accountId`: This should be replaced with the identifier for the user account.\n    - The full URL template is `http://localhost:3000/api/action/buy/get/?buyId=buyId&sessionId=sessionId&accountId=accountId`.\n\n  - **Headers**: This section usually contains additional information sent with the request.\n    - In this case, there is a placeholder for a header key and value, but it is currently empty and marked as disabled. This means no additional headers will be sent with the request.\n\n  - **Body**: This section typically contains data sent with the request.\n    - **Mode**: Indicates the mode of the body content, which is set to \"raw,\" meaning that raw data will be sent.\n    - **Raw**: There is no actual data to send in the body for this GET request, so it is left empty."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Buy - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/buy/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "buy",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Buy - Get All\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/action/buy/all/?sessionId=sessionId&accountId=accountId\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    },\n    \"details\": {\n      \"auth\": {\n        \"type\": \"bearer\": \n          \"Indicates that the request uses Bearer token authentication. Users must include a valid token to access the endpoint.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\":\n              \"This is the identifier for the Bearer token. It is required for the authentication process.\",\n            \"value\": \"BearerToken\":\n              \"Placeholder for the actual token needed to authenticate the request.\",\n            \"type\": \"string\":\n              \"The type indicates that the token is a string value.\"\n          }\n        ],\n      },\n      \"method\":\n        \"This indicates that the request method is GET, meaning it retrieves data from the server.\",\n      \"url\":\n        \"The endpoint to access the action buy resources. It includes query parameters for sessionId and accountId which are required to filter results according to user sessions and specific accounts.\",\n      \"headers\":\n        \"An array of headers to be sent with the request. Currently, there are no custom headers defined and the entry is disabled.\",\n      \"body\":\n        {\n          \"mode\": \"raw\":\n            \"The mode specifies the body format; in this case, it's raw, which means no data is being sent in the request body.\",\n           \"raw\": \n            \"Empty string indicating that there is no request body content for this GET request.\"\n        }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Buy - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"buyId\":\"buyId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/buy/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "buy",
+            "delete"
+          ]
+        },
+        "description": "### Action - Buy - Delete Endpoint Description\n\nThis endpoint is designed to delete a specific buy action associated with a user account.\n\n1. **Request Method**: \n   - **POST**: This method is used to send data to the server to perform the delete action.\n\n2. **URL**: \n   - **http://localhost:3000/api/action/buy/delete**: This is the local server URL where the delete request is sent. The path indicates that it’s related to actions for buying.\n\n3. **Authentication**: \n   - **Type**: Bearer Token.\n   - **Token**: The user must provide a session token identified by the key “token”. This token is essential for verifying the user’s identity and permission to perform the delete action.\n\n4. **Headers**: \n   - Currently, there are no additional headers included in the request, which means default behavior will apply. The header field is marked as disabled.\n\n5. **Body**: \n   - **Mode**: Raw.\n   - **Content**: The body of the request is sent in JSON format and contains three fields:\n     - **sessionId**: Represents the user's session ID to authenticate the request. This should match the token provided in the authentication step.\n     - **accountId**: This field specifies the account related to the buy action that needs to be deleted. It identifies whose action is being targeted.\n     - **buyId**: This uniquely identifies the specific buy action that is to be deleted from the system.\n\nEnsure you replace the placeholders such as \"sessionId\", \"accountId\", and \"buyId\" with actual values when making a request to this endpoint."
+      },
+      "response": []
+    }
+  ]
+}

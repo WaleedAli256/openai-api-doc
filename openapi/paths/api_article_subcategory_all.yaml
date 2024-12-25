@@ -1,39 +1,44 @@
 get:
   tags:
     - ArticleSubcategory
-  summary: Article - SubCategory - Get All
+  summary: Article - SubCategory - Get All By Category ID
   description: >-
-    This endpoint is titled "Article - SubCategory - Get All". As the name
-    suggests, it provides functionality to retrieve all the subcategories for
-    articles in the database.
+    This endpoint is called "Article - SubCategory - Get All By Category ID".
+    Here is a detailed description of each data:
 
 
-    1. "name": 'Article - SubCategory - Get All' : This refers to the title or
-    name of the API endpoint. It signifies what the API endpoint will do.
+    - "name": It is the name of the endpoint. It indicates that this endpoint is
+    used to retrieve all the subcategories of articles under a specific
+    category, identified by a category ID.
 
 
-    2. "request": This represents the details of the HTTP request that will be
-    executed. 
+    - "request": The object contains all the necessary details required to make
+    the HTTP request.
 
+      - "auth": The authentication method required for this endpoint. It is of type "bearer". Bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens called bearer tokens. 
+        - "bearer": An array containing details about the bearer authentication token required for the endpoint. 
+          - "key": The name of the token, which is "token".
+          - "value": The placeholder for the bearer token, which should replaced with your actual bearer token (BearerToken).
+          - "type": The datatype of the value, here it is "string".
 
-    Within the "request" object:
+      - "method": The HTTP method used for this request, which is "GET" in our case.
 
-       2.1 "auth": This section is for authentication and authorizing the request.
-           "auth" includes an authentication type 'bearer' and its value - a token as a string labeled "BearerToken". Bear in mind, you would need to replace 'BearerToken' with an actual token. In the context of HTTP, Bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens.
+      - "url": The URL where the request needs to be sent. Here it should be pointing to the place where your server is running, followed by the specific route to get the article subcategories. Replace 'articleCategoryId' with your actual article category id to fetch respective subcategories.
 
-       2.2 "method": 'GET'. This denotes the HTTP method being used for the request. 'GET' is used to retrieve information from the given URL.
+      - "headers": An array where you can add additional headers. Currently, there are no additional headers required for the call, hence it's empty and disabled.
 
-       2.3 "url": This is the URL endpoint where the request will be sent. It targets localhost on port 3000 and specifically the route '/api/article/subcategory/all', which is likely to return a collection of all subcategories of articles.
-
-       2.4 "headers": This part includes additional HTTP headers that you want to include in your request. Here, the header is disabled and the key-value pair is empty, and will thus not be playing any role in the request.
-
-       2.5 "body": This section contains the details about the data sent in the HTTP body. Since the 'GET' method is being used here which does not include a body, this section, in this case, has the "mode" as "raw", but does not include any actual data ("raw": ""). Therefore, no body data will be sent with this request.
-
-    3. Lastly, do note for a successful request, your server must be running on
-    'localhost' with the port '3000' and your API should be set up to return all
-    subcategories of articles for this '/api/article/subcategory/all' endpoint.
+      - "body": Details of the body of the request. Since this is a GET request, no body data is necessary and hence the "mode" is "raw" and "raw" data is empty.
+      
+    Remember, this endpoint requires a bearer token for authentication, so
+    ensure to include it in your request.
   security:
     - bearerAuth: []
+  parameters:
+    - name: categoryId
+      in: query
+      schema:
+        type: string
+      example: articleCategoryId
   responses:
     '200':
       description: Successful response

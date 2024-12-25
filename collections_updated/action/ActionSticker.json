@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "b172413e-218a-4328-b144-2d6cbdaac7ad",
+    "name": "ActionSticker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Sticker - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didUseSticker\": true,\n    \"stickerType\": \"funny\",\n    \"tokenAmount\": 30,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sticker/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sticker",
+            "create"
+          ]
+        },
+        "description": "### Description of Request Data for \"Action - Sticker - Create\"\n\n- **Auth**: This section is for authentication.\n  - **Type**: Specifies the type of authentication being used. In this case, it is a Bearer token which is required for secure API access.\n  - **Bearer**: An array that contains the authentication token.\n    - **Key**: Refers to the specific identifier for the token.\n    - **Value**: This is the actual bearer token that you need to provide for authentication.\n    - **Type**: This indicates the data type of the token, which is \"string\".\n\n- **Method**: This specifies the HTTP method being used for the request. Here, the method is \"POST\", indicating that data is being sent to the server.\n\n- **URL**: This is the endpoint to which the request is being sent. It is set to \"http://localhost:3000/api/action/sticker/create\", indicating that the creation of a sticker will happen at this API endpoint located on the local server.\n\n- **Headers**: This section would typically contain additional metadata for the request.\n  - **Key**: This can be used to specify any specific header parameters. Currently, there are no headers defined as the key is empty.\n  - **Value**: As with the key, the value is currently empty.\n  - **Type**: Default, indicating a standard header.\n  - **Disabled**: This indicates whether the header is active or not. Currently, it is disabled.\n\n- **Body**: This section contains the data payload for the request.\n  - **Mode**: Specifies the format of the payload. \"raw\" means that the data is sent directly as-is.\n  - **Raw**: The actual data being sent in JSON format. It includes:\n    - **sessionId**: A unique identifier for the session during which the sticker is created.\n    - **accountId**: The identifier for the account that is creating the sticker.\n    - **path**: Specifies the location associated with the sticker, given in a string format which includes a reference to a video.\n    - **targetType**: Denotes what type of target the sticker is being applied to. Here it is \"videoId\".\n    - **targetId**: The identifier for the target where the sticker will be placed, specifically a video.\n    - **sourceType**: Indicates the type of source being used. Here, it is set to \"accountId\".\n    - **sourceId**: The identifier for the source, which is also the accountId.\n    - **didUseSticker**: A boolean value indicating whether the sticker has been used or not, currently set to true.\n    - **stickerType**: The category or type of sticker being created; in this case, it is \"funny\".\n    - **tokenAmount**: Indicates the number of tokens being utilized in the creation of the sticker, set to 30.\n    - **name**: A placeholder for the name of the sticker, currently left blank.\n    - **description**: A placeholder for a description of the sticker, currently left blank.\n    - **tags**: Placeholder for any tags that may be associated with the sticker, currently left blank.\n  - **Options**: Additional options for the request payload.\n    - **Raw**: Specifies the language of the raw data, which is set to \"json\".\n\nThis structured data allows users to create a sticker through the specified API endpoint, supplying necessary details about the session, account, and properties of the sticker itself."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Sticker - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didUseSticker\": true,\n    \"stickerType\": \"funny update\",\n    \"tokenAmount\": 30,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"stickerId\":\"stickerId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sticker/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sticker",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Sticker - Update\n\n**Request Details:**\n\n- **Auth:**\n  - **Type:** Bearer\n    - **Token:**\n      - **Key:** token\n      - **Value:** BearerToken\n      - **Type:** string\n      - This is the authorization token required to authenticate the request. Replace \"BearerToken\" with your actual token.\n\n- **Method:** PUT  \n  - This specifies that the request will update existing resources on the server.\n\n- **URL:** `http://localhost:3000/api/action/sticker/update`  \n  - This is the endpoint where the request is sent to update the sticker action.\n\n- **Headers:**\n  - **Client-UUID:**  \n    - **Key:** Client-UUID\n    - **Value:** ClientUUID\n    - **Type:** default  \n    - This header is used to identify the client making the request. Replace \"ClientUUID\" with the actual UUID of the client.\n\n- **Body:**\n  - **Mode:** raw  \n    - Indicates that the body of the request is in raw format.\n  \n  - **Raw Content:**  \n    ```json\n    {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"path\": \"/live/channel/video123\",\n      \"targetType\": \"videoId\",\n      \"targetId\": \"videoId\",\n      \"sourceType\": \"accountId\",\n      \"sourceId\": \"accountId\",\n      \"didUseSticker\": true,\n      \"stickerType\": \"funny update\",\n      \"tokenAmount\": 30,\n      \"name\": \"\",\n      \"description\": \"\",\n      \"tags\": \"\",\n      \"stickerId\": \"stickerId\"\n    }\n    ```\n  \n  - **Field Descriptions:**\n    - **sessionId:**  \n      - A unique identifier for the current session. Replace \"sessionId\" with the actual session ID.\n\n    - **accountId:**  \n      - The identifier for the user's account. Replace \"accountId\" with the actual account ID.\n\n    - **path:**  \n      - The path to the content where the sticker is applied. For example, \"/live/channel/video123\" indicates the specific location of the video.\n\n    - **targetType:**  \n      - Specifies the type of target the sticker will be applied to. In this case, it indicates that the target type is a video ID.\n\n    - **targetId:**  \n      - The specific ID of the target video where the sticker is being applied. Replace \"videoId\" with the actual video ID.\n\n    - **sourceType:**  \n      - Indicates the type of the source for the sticker action. In this case, it refers to an account ID.\n\n    - **sourceId:**  \n      - The identifier of the source where the sticker originated. Replace \"accountId\" with the actual account ID again.\n\n    - **didUseSticker:**  \n      - A boolean value indicating whether the sticker was used or not. Set to `true` means the sticker was applied.\n\n    - **stickerType:**  \n      - Describes the type of the sticker being used. In this example, it’s specified as \"funny update\".\n\n    - **tokenAmount:**  \n      - The amount of tokens used or rewarded for this sticker action. This example shows 30 tokens.\n\n    - **name:**  \n      - A field for the name of the sticker. Currently empty but can be used to define a custom name.\n\n    - **description:**  \n      - A field to provide a description of the sticker. Currently empty and can be utilized to elaborate on the sticker's purpose.\n\n    - **tags:**  \n      - Tags related to the sticker. This field is currently empty but can be used to categorize or label the sticker.\n\n    - **stickerId:**  \n      - The unique identifier for the sticker. Replace \"stickerId\" with the actual sticker ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Sticker - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sticker/get/?stickerId=stickerId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sticker",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "stickerId",
+              "value": "stickerId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Sticker - Get Endpoint Description\n\n- **Name**: Action - Sticker - Get  \n  This is the name of the API endpoint that retrieves information about a specific sticker based on provided identifiers.\n\n- **Request**:\n  - **Auth**:  \n    - **Type**: Bearer  \n      The authentication method used for this request is bearer token authentication.\n\n    - **Bearer**:  \n      - **Key**: token  \n        This is the key used to pass the authentication token in the request.\n        \n      - **Value**: BearerToken  \n        This represents the actual bearer token value needed to authenticate the request. It must be replaced with a valid token to access the endpoint.\n\n      - **Type**: string  \n        This indicates that the value provided for the bearer token should be in string format.\n\n  - **Method**: GET  \n    This specifies that the HTTP method for this request is GET, which is typically used to retrieve data from a server.\n\n  - **URL**:  \n    `http://localhost:3000/api/action/sticker/get/?stickerId=stickerId&sessionId=sessionId&accountId=accountId`  \n    This is the endpoint URL used to fetch the sticker data. It includes query parameters:\n    - **stickerId**: This parameter should be replaced with the unique identifier of the sticker you want to retrieve.\n    - **sessionId**: This parameter should be replaced with the session identifier related to the active user session.\n    - **accountId**: This parameter should be replaced with the account identifier associated with the user making the request.\n\n  - **Headers**:\n    - **Key**: \"\"  \n      No custom headers are defined for this request as indicated by the empty key.\n      \n    - **Value**: \"\"  \n      There is no value associated with the custom header since the key is empty.\n\n    - **Type**: default  \n      This specifies that the header type is set to default.\n\n    - **Disabled**: true  \n      This indicates that any provided headers are currently disabled and will not be sent with the request.\n\n  - **Body**:\n    - **Mode**: raw  \n      The body of the request is set to \"raw\", which means it does not send any specific formatted data.\n\n    - **Raw**: \"\"  \n      The body is empty, meaning no data is required to be sent in the body of this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Sticker - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sticker/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sticker",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description\n\n#### Name\n- **Action - Sticker - Get All**: This endpoint retrieves all sticker actions available for the user.\n\n#### Request Details\n\n1. **Authentication** \n   - **Type**: Bearer\n   - **Bearer**: This section contains an authorization token that is required to access the endpoint.\n     - **Key**: `token` - This is the name of the authorization key.\n     - **Value**: `BearerToken` - This is a placeholder for the actual bearer token that must be provided to authenticate the request. Users must replace it with a valid token.\n     - **Type**: `string` - Indicates that the value of the token is a string.\n\n2. **Method**\n   - **GET**: This specifies that the endpoint uses the GET method, which is typically used for retrieving data from the server.\n\n3. **URL**\n   - **Endpoint URL**: `http://localhost:3000/api/action/sticker/all/?sessionId=sessionId&accountId=accountId` - This is the URL used to access the endpoint. It includes query parameters:\n     - **sessionId**: A placeholder for the user's session identifier. Must be replaced with an actual session ID.\n     - **accountId**: A placeholder for the user's account identifier. Must be replaced with an actual account ID.\n\n4. **Headers**\n   - The headers section is currently empty and disabled. Users can add any necessary headers for their request here, but as it stands, no additional headers are required.\n\n5. **Body**\n   - **Mode**: `raw` - This indicates that the body of the request is in raw format.\n   - **Raw**: This field is empty, meaning no request body is sent with the GET request. GET requests typically do not include a body.\n\n### Usage Notes\n- Ensure that you replace `BearerToken`, `sessionId`, and `accountId` with appropriate values before making the request.\n- Since this is a GET request, it is primarily used to retrieve information from the server, and no data is sent in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Sticker - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"stickerId\":\"stickerId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sticker/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sticker",
+            "delete"
+          ]
+        },
+        "description": "### Description of Each Data Element in the Endpoint\n\n- **name**: This is the title of the API request. It describes the action being performed, in this case, it indicates that this endpoint is used to delete a sticker.\n\n- **request**: This section contains all the details related to the API request being made.\n\n  - **auth**: This specifies the authentication mechanism being used for the request.\n  \n    - **type**: This indicates the method of authentication. In this case, it is a \"bearer\" token, which means that access is controlled via a token that must be included in the request.\n    \n    - **bearer**: This array holds the details of the bearer token required for authentication.\n    \n      - **key**: This is the identifier for the token. Here it is labeled \"token,\" indicating its purpose.\n      \n      - **value**: This is a placeholder for the actual value of the bearer token needed for the request. In the context of the request, it is set to \"sessionId,\" indicating that the session ID will be used as the bearer token.\n      \n      - **type**: This indicates the data type of the value. It is specified as \"string,\" meaning that the value should be treated as a string.\n\n  - **method**: This states the type of HTTP request being made. In this case, \"POST\" indicates that data is being sent to the server, which is typical for deleting resources.\n\n  - **url**: This is the endpoint URL where the API request is directed. The URL \"http://localhost:3000/api/action/sticker/delete\" indicates that the request is being made to a local server running on port 3000 to perform the action of deleting a sticker.\n\n  - **headers**: This section can include custom headers that provide additional context for the request.\n\n    - **key**: This is the name of a header. Here it is left empty, possibly indicating that there are no additional headers required for this request.\n    \n    - **value**: This is the value associated with the key. It is also empty in this case.\n    \n    - **type**: This specifies the type of header, which is \"default\" in this case indicating standard header behavior.\n    \n    - **disabled**: This boolean indicates whether the header is currently enabled or disabled. It is set to true, meaning that this header will not be included in the request.\n\n  - **body**: This section holds the data sent with the request.\n\n    - **mode**: This specifies the format of the request body. It is set to \"raw,\" indicating that the body will be sent as raw JSON data.\n    \n    - **raw**: This is a string representation of the actual data being sent in the request body. The raw data includes:\n    \n      - **sessionId**: This field should contain the valid session ID for the user making the request. It is a placeholder indicating that the actual session ID needs to be provided.\n      \n      - **accountId**: This field is meant to hold the identifier for the account associated with the sticker being deleted. Like sessionId, it indicates that the actual account ID needs to be specified.\n      \n      - **stickerId**: This field is used to specify the unique identifier of the sticker that is to be deleted. Again, this is a placeholder, and the actual sticker ID needs to be included in the request."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "d48bd698-f3a2-4f60-b0d7-068bd75acf91",
+    "name": "ActionReport",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Report - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didReport\": true,\n    \"category\": \"this is category\",\n    \"subcategory\": \"this is subcategory\",\n    \"subject\": \"this is subject\",\n    \"text\": \"some text\",\n    \"name\":\"\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/report/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "report",
+            "create"
+          ]
+        },
+        "description": "### Description of Endpoint: Action - Report - Create\n\nThis endpoint is used to create a report within the system through a `POST` request to the specified URL. Below are the details for each piece of data involved in the request:\n\n#### Request Details:\n\n- **Method**: \n  - **POST** - This HTTP method is used to send data to the server to create a new resource.\n\n- **URL**: \n  - **http://localhost:3000/api/action/report/create** - This is the endpoint URL where the report creation request is sent. It runs on `localhost` at port `3000`.\n\n#### Authentication:\n\n- **Auth Type**: \n  - **Bearer** - The request requires bearer token authentication for authorization.\n  \n- **Bearer Token**: \n  - **key**: Represents the parameter name used to pass the token.\n  - **value**: A placeholder (`BearerToken`) that should be replaced with the actual token needed to authenticate the request.\n  - **type**: Indicates that this is a string value.\n\n#### Headers:\n\n- **Headers**: \n  - This section is currently empty, with a key and value that are not set. It is marked as disabled, meaning it won't be sent with the request. Typically, headers can be used to provide additional context or directives for the server.\n\n#### Body:\n\n- **Body Mode**: \n  - **raw** - The body of the request will be sent as raw JSON data.\n\n- **Body Content**: \n  The body contains the following fields in JSON format:\n  \n  - **sessionId**: A unique identifier for the session. This should be replaced with the actual session identifier being reported.\n  \n  - **accountId**: The identifier for the account that is making the report. Replace with the specific account ID.\n  \n  - **path**: A string that describes the path of the content being reported, such as the URL or route. Example: `/live/channel/video123`.\n  \n  - **targetType**: The type of the target being reported. For instance, it could indicate that the target is identified by a video ID.\n  \n  - **targetId**: The specific ID of the target (e.g., video ID) that you are reporting.\n  \n  - **sourceType**: Indicates the type of source that is reporting the content, typically related to the identifier passed in `accountId`.\n  \n  - **sourceId**: The ID of the source that is creating the report, usually the same as `accountId`.\n  \n  - **didReport**: A boolean value indicating if the report has already been submitted. Typically should be set to `true`.\n  \n  - **category**: A string describing the main category of the report. This provides general classification of the report type.\n  \n  - **subcategory**: A string providing more specific classification within the main category.\n  \n  - **subject**: A brief title or subject line for the report, summarizing the reason for the report.\n  \n  - **text**: A longer text field providing details about the report’s content, providing context or explanations as necessary.\n  \n  - **name**: A field that could be used to specify a name associated with the report, currently left empty.\n  \n  - **description**: A field for a more detailed description of the report. It is currently left empty.\n  \n  - **tags**: This can hold metadata or labels to categorize the report, currently left empty.\n\nThis request structure enables you to effectively report an issue or action within the application, gathering essential information needed for review and resolution."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Report - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didReport\": true,\n    \"category\": \"this is category updated\",\n    \"subcategory\": \"this is subcategory\",\n    \"subject\": \"this is subject\",\n    \"text\": \"some text\",\n    \"name\":\"\",\n    \"description\":\"\",\n    \"tags\":\"\",\n    \"reportId\":\"reportId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/report/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "report",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Report - Update\n\nThis endpoint allows for the updating of a report in the action system. Below are detailed descriptions for each field in the request.\n\n#### Request Details\n\n- **Auth**: \n  - **Type**: Defines the authorization mechanism used for this request. In this case, it is set to \"bearer\".\n  - **Bearer**: \n    - **Key**: The name of the key used for authorization, labeled as \"token\".\n    - **Value**: This should include the actual Bearer token used for authentication, shown as \"BearerToken\".\n    - **Type**: Indicates the data type, which is \"string\".\n\n- **Method**: \n  - Specifies the HTTP method used for the request. Here it is set to \"PUT\", indicating that the client intends to update an existing resource.\n\n- **URL**: \n  - The endpoint to which the request is sent. In this instance, it points to \"http://localhost:3000/api/action/report/update\", suggesting that this is a local development endpoint.\n\n- **Headers**:\n  - **Client-UUID**: \n    - **Key**: Represents the header name, \"Client-UUID\".\n    - **Value**: This should contain the unique identifier for the client making the request, noted as \"ClientUUID\".\n    - **Type**: Declares the type of data sent in the header, which is set to \"default\".\n\n#### Body Content\nThe body of the request must be formatted as raw JSON. Below is a breakdown of each field within the body:\n\n- **sessionId**: \n  - A string that identifies the session in which the report is being updated.\n\n- **accountId**: \n  - A string representing the unique identifier for the account associated with this report.\n\n- **path**: \n  - A string that indicates the resource path for the report, here denoted as \"/live/channel/video123\".\n\n- **targetType**: \n  - A string that specifies the type of target being reported. In this case, it is set to \"videoId\".\n\n- **targetId**: \n  - A string that contains the unique identifier of the targeted resource, specifically the video being reported.\n\n- **sourceType**: \n  - A string denoting the type of source for the report, here labeled as \"accountId\".\n\n- **sourceId**: \n  - A string representing the unique identifier of the source account reporting the issue.\n\n- **didReport**: \n  - A boolean value that indicates whether the item has been reported. It is set to true in this example.\n\n- **category**: \n  - A string providing a description of the report's main category, identified as \"this is category updated\".\n\n- **subcategory**: \n  - A string that gives further detail within the category, noted as \"this is subcategory\".\n\n- **subject**: \n  - A string summarizing the subject of the report, presented as \"this is subject\".\n\n- **text**: \n  - A string containing additional information or remarks about the report, described as \"some text\".\n\n- **name**: \n  - A string reserved for the name associated with the report. It is left empty in this context.\n\n- **description**: \n  - A string intended for a detailed description of the report's purpose or context. This field is also left empty here.\n\n- **tags**: \n  - A string for any tags that might be relevant to the report. It is currently empty in this request.\n\n- **reportId**: \n  - A string that uniquely identifies the report being updated, noted as \"reportId\".\n\nThis endpoint is designed to facilitate the modification of report details within the action system, providing a comprehensive structure for the necessary data."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Report - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/report/get/?reportId=reportId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "report",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "reportId",
+              "value": "reportId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Description of the Data in the Endpoint:**\n\n- **name**: This is the title of the request. It indicates that this request is related to getting a report action. The name helps in identifying the purpose of the API call.\n\n- **request**: This object encapsulates all the details required to execute the API call.\n\n  - **auth**: This section defines the authentication method used for the request. In this case:\n    - **type**: Specifies that the authentication method is \"bearer\", which typically uses a token to validate access.\n    - **bearer**: This is an array containing the details of the bearer token:\n      - **key**: This indicates the type of the token. It's labeled \"token\".\n      - **value**: This is a placeholder for the actual bearer token that you will use for authentication. Replace \"BearerToken\" with your actual token.\n      - **type**: Specifies that the token is of type \"string\".\n\n  - **method**: This defines the HTTP method used for the request. Here, it is \"GET\", which is used to retrieve data from the server.\n\n  - **url**: This is the endpoint where the API request is sent. It includes query parameters:\n    - **reportId**: This query parameter is used to specify which report is being requested. Replace \"reportId\" with the actual ID of the report you want to retrieve.\n    - **sessionId**: This parameter is used to identify the session for which the report is generated. Replace \"sessionId\" with the actual session ID.\n    - **accountId**: This parameter identifies the user account related to the report. Replace \"accountId\" with the appropriate account ID.\n\n  - **headers**: This section contains any additional headers that may need to be sent with the request. In this case:\n    - **key**: Currently set to an empty string, which indicates there are no additional headers needed in this request.\n    - **value**: Also set to an empty string for the same reason.\n    - **type**: Specifies that the header type is \"default\".\n    - **disabled**: Set to true, indicating that this header is currently not being used.\n\n  - **body**: This section contains the body of the request:\n    - **mode**: Indicates the format of the body. Here it is set to \"raw\", which is often used for API requests that do not require a body.\n    - **raw**: Contains the actual content of the body. It is empty in this request, indicating that no body content is required for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Report - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/report/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "report",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Data for Endpoint: Action - Report - Get All\n\n- **name**: This is the name of the API endpoint. It describes the purpose of the request, which is to retrieve all report data related to actions.\n\n- **request**: This section contains all the details necessary to perform the API request.\n\n  - **auth**: This specifies the authentication method required for the request.\n  \n    - **type**: Indicates the type of authentication. In this case, it is a bearer token authentication.\n  \n    - **bearer**: This is an array that holds the bearer token details.\n    \n      - **key**: This is the identifier for the token, labeled as \"token\".\n      \n      - **value**: This specifies the actual token value needed to authorize the request. For this example, it is represented as \"BearerToken\" and should be replaced with an actual token in a real scenario.\n      \n      - **type**: This specifies the data type of the token, which is a string.\n\n  - **method**: This indicates the HTTP method used for the request. Here, it is \"GET\", meaning the request is intended to retrieve data.\n\n  - **url**: This is the endpoint URL where the API request will be sent. It includes query parameters for `sessionId` and `accountId`, which need to be specified to access the desired reports.\n  \n  - **headers**: This array holds any additional header information for the request.\n  \n    - **key**: This is the name of the header. Currently, it is empty.\n    \n    - **value**: This is the value of the header. It is also currently empty.\n    \n    - **type**: Indicates the type of header. It is set to \"default\".\n    \n    - **disabled**: A boolean value indicating whether the header is active or inactive. In this case, it is set to true, meaning this header will not be sent with the request.\n\n  - **body**: This specifies the data that will be sent with the request.\n  \n    - **mode**: Indicates the format used for the body data. It is set to \"raw\", suggesting that the body may contain a raw payload.\n    \n    - **raw**: This is where the actual body content would be placed. Currently, it is empty, indicating that no body data is sent with this GET request.\n\nThis endpoint is designed to fetch reports related to actions from a specified account and session, utilizing bearer token authentication for security."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Report - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"reportId\":\"reportId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/report/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "report",
+            "delete"
+          ]
+        },
+        "description": "**Endpoint Name**: Action - Report - Delete\n\n**Description**: This endpoint is designed for deleting a report from the system. It requires proper authentication and specific details to successfully execute the deletion.\n\n**Request Details**:\n- **Authentication**:\n  - **Type**: Bearer\n  - **Bearer Token**: The authorization uses a bearer token, which is a common method for accessing secure APIs. The token required is a \"sessionId\" that validates the user's session.\n\n- **HTTP Method**: POST  \n  - This method indicates that data is being sent to the server to perform an action—in this case, to delete a report.\n\n- **URL**: \n  - The endpoint URL is `http://localhost:3000/api/action/report/delete`. This is the address to which the request will be sent for report deletion.\n\n- **Headers**:\n  - There are currently no custom headers specified. The default header setup is disabled, meaning it will not be sent with the request. Customize if necessary for your application.\n\n- **Body**:\n  - **Mode**: Raw\n  - **Content**: The body of the request is sent as a raw JSON string. It contains:\n    - **sessionId**: A string identifier for the user's current session, which is necessary for authentication.\n    - **accountId**: A string identifier for the account associated with the report. This informs the system which user's report is being targeted.\n    - **reportId**: A string identifier for the specific report that needs to be deleted. This tells the system exactly which report to remove.\n\nThis detailed information should help users understand how to use the \"Action - Report - Delete\" endpoint effectively."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "c750e771-1691-4a75-b12f-6b0f4d5a8699",
+    "name": "ActionFollow",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Follow - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didFollow\": true,\n    \"isUndo\": false,\n    \"name\":\"this is name\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/follow/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "follow",
+            "create"
+          ]
+        },
+        "description": "### Action - Follow - Create Endpoint Description\n\n**Endpoint Name:** Action - Follow - Create\n\n**Request Details:**\n- **Authentication:** \n  - The request uses Bearer Token authentication.\n  - **Token:** A string value representing the authorization token required to access this endpoint.\n\n- **HTTP Method:** \n  - This endpoint uses the POST method to send data.\n\n- **URL:** \n  - The endpoint can be accessed at `http://localhost:3000/api/action/follow/create`.\n\n- **Headers:**\n  - There are no custom headers set, and the default header is disabled.\n\n- **Body:**\n  - The request body is in raw JSON format and includes the following fields:\n    - **sessionId:**\n      - A unique identifier for the user's session.\n    - **accountId:**\n      - The identifier of the account that is performing the follow action.\n    - **path:**\n      - This specifies the path related to the follow action, typically indicating the specific resource being referred to.\n    - **targetType:**\n      - A string that indicates the type of target associated with the follow action (in this case, a videoId).\n    - **targetId:**\n      - The identifier for the target resource that is being followed (e.g., a specific video).\n    - **sourceType:**\n      - This indicates the type associated with the source of the follow action, which is accountId in this case.\n    - **sourceId:**\n      - An identifier for the source account from which the follow action originates.\n    - **didFollow:**\n      - A boolean value indicating whether the follow action was successfully completed (true) or not (false).\n    - **isUndo:**\n      - A boolean value that signifies whether the action is being undone (true for undo; false if it's a new follow).\n    - **name:**\n      - A string representing a name or title associated with the action.\n    - **description:**\n      - A string for additional descriptive information about the action (currently empty).\n    - **tags:**\n      - A field for adding tags related to the follow action (currently empty). \n\nThis detailed description outlines the purpose and requirements for each data element in the request for the Action - Follow - Create endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Follow - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didFollow\": true,\n    \"isUndo\": false,\n    \"name\": \"this is name\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"followId\": \"followId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/follow/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "follow",
+            "update"
+          ]
+        },
+        "description": "### Action - Follow - Update Endpoint Description\n\n#### Request Method\n- **Method**: PUT\n    - This request method is used to update an existing resource.\n\n#### URL\n- **Endpoint URL**: `http://localhost:3000/api/action/follow/update`\n    - This is the URL to which the request is sent for updating follow actions.\n\n#### Authorization\n- **Authorization Type**: Bearer Token\n    - This indicates that the request requires a bearer token for authentication.\n- **Token**: \n    - **Key**: `token`\n    - **Value**: `BearerToken`\n        - This is a placeholder for the actual bearer token that provides authentication.\n\n#### Headers\n- **Header**: Client-UUID\n    - **Key**: `Client-UUID`\n    - **Value**: `ClientUUID`\n        - This header typically contains the unique identifier for the client making the request.\n\n#### Body\n- **Body Mode**: Raw\n    - This indicates that the request body is sent as raw data.\n- **Raw Data**:\n    ```json\n    {\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"path\": \"/live/channel/video123\",\n        \"targetType\": \"videoId\",\n        \"targetId\": \"videoId\",\n        \"sourceType\": \"accountId\",\n        \"sourceId\": \"accountId\",\n        \"didFollow\": true,\n        \"isUndo\": false,\n        \"name\": \"this is name\",\n        \"description\": \"\",\n        \"tags\": \"\",\n        \"followId\": \"followId\"\n    }\n    ```\n    - **sessionId**: This represents the unique identifier for the session in which the follow action is being taken.\n    - **accountId**: This is the identifier for the user account associated with the follow action being updated.\n    - **path**: Indicates the path or URL where the related content (e.g., live channel) is located.\n    - **targetType**: Specifies the type of target being acted upon, in this case, it is a video identifier.\n    - **targetId**: The specific identifier of the target (video) that is being followed.\n    - **sourceType**: This notes the type of source that is initiating the follow action, here it refers to the account ID.\n    - **sourceId**: The unique identifier of the source (account) that is following the target.\n    - **didFollow**: A boolean value indicating whether the follow action has been taken (true) or not (false).\n    - **isUndo**: A boolean flag indicating if the follow action is being undone (true) or not (false).\n    - **name**: An optional field providing a name or title for the action.\n    - **description**: An optional field to add any descriptions related to the follow action.\n    - **tags**: This field is for adding any relevant tags associated with the follow action, which is currently empty.\n    - **followId**: This represents the unique identifier of the follow action being updated.\n\n### Summary\nThis endpoint is used to update the details of a follow action for a particular video or content, including session and account information, target details, and the action's state. All provided fields must be filled out appropriately to ensure the update is processed correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Follow - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/follow/get/?followId=followId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "follow",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "followId",
+              "value": "followId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: This represents the name of the API request. In this case, it is \"Action - Follow - Get\", indicating that this request is related to retrieving follow actions.\n\n- **request**: This section contains details about the HTTP request being made.\n\n  - **auth**: Specifies the authentication method for the request.\n    - **type**: Indicates the type of authentication used. Here, it is \"bearer\", which typically involves a token-based system.\n    - **bearer**: An array that contains bearer token details needed for authentication.\n      - **key**: This is the name of the token provided in the authorization header. Here, it is \"token\".\n      - **value**: The actual token used for authentication. It is prefixed with \"Bearer\" to signify that it is a bearer token. In this case, the value is \"BearerToken\" (this should be replaced with a real token in implementation).\n      - **type**: Defines the data type of the token, which is \"string\".\n\n  - **method**: This defines the HTTP method used for the request. It is \"GET\", which indicates that the request is intended to retrieve data from the server.\n\n  - **url**: The endpoint URL where the request is to be sent. The URL is structured as follows:\n    - **Base URL**: `http://localhost:3000/api/action/follow/get/`\n    - **Query Parameters**:\n      - **followId**: This parameter (value should be replaced with actual follow ID) is used to specify which follow action to retrieve.\n      - **sessionId**: This parameter (value should be replaced with actual session ID) indicates the current user session.\n      - **accountId**: This parameter (value should be replaced with actual account ID) identifies the account from which the follow action information is being fetched.\n\n  - **headers**: This section is meant for HTTP headers that might be required for the request.\n    - **key**: The name of the header. In this case, it is left empty.\n    - **value**: The value associated with the header. It is also empty.\n    - **type**: Indicates the type of header being defined. Here, it is set to \"default\".\n    - **disabled**: This boolean value indicates whether the header is active or not. It is set to true, meaning the header will be ignored in the request.\n\n  - **body**: This section represents the body of the request.\n    - **mode**: Indicates the type of body being sent. It is set to \"raw\".\n    - **raw**: This field contains the actual payload to be sent in the request. In this case, it is empty, signifying that no body content is sent with the GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Follow - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/follow/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "follow",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Endpoint Description**\n\n**Name**: Action - Follow - Get All  \nThis endpoint is used to retrieve all follow actions associated with a specific session and account.\n\n**Request Details**:\n\n1. **Authorization**: \n   - **Type**: Bearer\n     - This indicates that the API uses bearer token authentication. \n   - **Bearer Token**: \n     - **Key**: token\n     - **Value**: BearerToken\n     - **Type**: string\n     - The value 'BearerToken' should be replaced with an actual token that authenticates the user making the request. The token grants access to the API.\n\n2. **Method**: \n   - **GET**: \n     - This HTTP method is used to request data from the server. In this case, it fetches data related to follow actions.\n\n3. **URL**: \n   - **Endpoint**: http://localhost:3000/api/action/follow/all/\n     - This is the base URL that directs the request to the API endpoint responsible for handling follow actions.\n   - **Query Parameters**: \n     - **sessionId**: sessionId\n       - Replace this with the actual session ID to specify which user's session data to retrieve.\n     - **accountId**: accountId\n       - Replace this with the actual account ID to identify which account's follow actions you want to fetch.\n\n4. **Headers**: \n   - An array that could contain custom headers, but in this case, it is currently empty.\n   - The provided header configuration is disabled, meaning no additional headers will be sent with this request.\n\n5. **Body**: \n   - **Mode**: raw\n     - This indicates that there is no body content required for this GET request.\n   - **Raw**: An empty string, as the GET method typically does not send a body.\n\nThis endpoint will return all follow actions linked to the specified session and account, given the correct authentication and parameter values."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Follow - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"followId\":\"followId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/follow/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "follow",
+            "delete"
+          ]
+        },
+        "description": "### Action - Follow - Delete Endpoint Description\n\n- **Name**: Action - Follow - Delete\n  - This is the name of the endpoint which clearly indicates that it is used to delete a follow action.\n\n- **Request**: \n  - This section details the characteristics of the HTTP request to be made to the endpoint.\n\n  - **Auth**:\n    - **Type**: Bearer\n      - This indicates that the request requires bearer token authentication, which typically involves including a token as part of the request headers.\n      \n    - **Bearer**:\n      - **Key**: token\n        - This specifies the name of the authentication token being used.\n        \n      - **Value**: sessionId\n        - This indicates the placeholder value for the session ID, which should be replaced with the actual session ID when making a request.\n      \n      - **Type**: string\n        - This designates that the value of the token is in string format.\n\n  - **Method**: POST\n    - This indicates that the HTTP method being used for the request is POST. It implies that the request is intended to send data to the server.\n\n  - **URL**: http://localhost:3000/api/action/follow/delete\n    - This is the endpoint's URL where the request will be sent. It is structured to point to the local server for action follow deletion.\n\n  - **Headers**:\n    - This section contains any additional header information for the request. \n      - **Key**: (Empty)\n        - Indicates that there are currently no additional headers set for this request.\n      \n      - **Value**: (Empty)\n        - Indicates that there is no value associated with the empty key.\n      \n      - **Type**: default\n        - Specifies the default type of the header.\n      \n      - **Disabled**: true\n        - Indicates that any current headers are disabled (not sent with the request).\n\n  - **Body**:\n    - This section defines the body of the request, which contains the data being sent to the server.\n    \n    - **Mode**: raw\n      - Specifies that the body content is sent in raw format, meaning it won't be encoded or serialized in a certain way.\n      \n    - **Raw**: \n      - `{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"followId\":\"followId\"}`\n        - This is the actual payload of the POST request. It is in JSON format and contains three properties:\n          - **sessionId**: A placeholder for the session identifier that the user will need to provide.\n          - **accountId**: A placeholder for the account ID that identifies the user whose follow action is to be deleted.\n          - **followId**: A placeholder for the follow ID that represents the following action to be deleted. \n\nEnsure to replace the placeholders with actual values when making a request to delete a follow action."
+      },
+      "response": []
+    }
+  ]
+}

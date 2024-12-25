@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionRead",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Read - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"read1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/read/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "read",
+            "create"
+          ]
+        },
+        "description": "### Action - Read - Create\n\nThis endpoint is used to create a read action in the system. The following details outline the structure and expected input for the request:\n\n#### Request Authentication\n- **Auth Type:** Bearer\n  - This indicates that the request requires a bearer token for authentication. \n  - **Bearer Token:**\n    - *Key*: `token` \n    - *Value*: The value should be prefixed with \"Bearer\" followed by a space and then the actual token (e.g., \"Bearer {YourActualToken}\").\n    - *Type*: String\n\n#### Request Method\n- **Method:** POST\n  - This specifies that the request type is a POST method, typically used for creating new resources.\n\n#### Request URL\n- **URL:** `http://localhost:3000/api/action/read/create`\n  - This is the endpoint on the server where the request will be sent. The `/create` part indicates that it is for creating a new read action.\n\n#### Request Headers\n- **Headers:**\n  - Currently, no specific headers are defined as the key and value fields are empty. However, headers can typically be used for content type or other authentication details if needed.\n\n#### Request Body\n- **Body Mode:** Raw\n  - The body of the request is provided in raw format as a JSON string.\n\n- **Raw JSON Structure:**\n  ```json\n  {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"path\": \"/live/channel/video123\",\n      \"targetType\": \"streamer\",\n      \"targetId\": \"videoId\",\n      \"sourceType\": \"accountId\",\n      \"sourceId\": \"accountId\",\n      \"tokenAmount\": 20,\n      \"name\": \"read1\",\n      \"description\": \"\",\n      \"tags\": \"\"\n  }\n  ```\n\n#### JSON Field Descriptions\n- **sessionId:** \n  - This is a string that represents a unique identifier for the session in which the read action is taking place. \n\n- **accountId:** \n  - A string that identifies the account associated with the read action.\n\n- **path:** \n  - The path is a string that specifies the location of the resource being read. In this case, it shows a live channel path.\n\n- **targetType:** \n  - A string that specifies the type of target being accessed. In this context, \"streamer\" indicates that the target is a streaming service or channel.\n\n- **targetId:** \n  - This string represents the unique identifier of the target resource. It should be the ID of the video or stream being accessed.\n\n- **sourceType:** \n  - This indicates the type of source from which the action is being initiated. Here, it is identified by \"accountId.\"\n\n- **sourceId:** \n  - A string that denotes the unique identifier of the source from which the read action originates.\n\n- **tokenAmount:** \n  - A numeric value indicating the amount of tokens or credits used in this read action. In this case, it is set to 20.\n\n- **name:** \n  - A string that provides a name for the read action, allowing for easier identification.\n\n- **description:** \n  - A string meant for additional information about the read action. It is currently empty but can be populated with relevant details.\n\n- **tags:** \n  - A string intended for categorizing or tagging the action for easier searching or filtering. It is also currently empty.\n\nThis detailed breakdown of each field should help users understand the required structure and purpose of the data being sent with this API request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Read - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"readId\":\"readId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/read/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "read",
+            "update"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Name of the action being performed, in this case, 'Action - Read - Update'.\",\n    \n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"Authentication method being used, which is Bearer Token in this case.\",\n        \n        \"bearer\": [\n          {\n            \"key\": \"token\": \"Identifies the type of token used for authentication.\",\n            \"value\": \"BearerToken\": \"The actual token value that is required to authenticate the user.\",\n            \"type\": \"string\": \"Indicates that the type of the value is a string.\"\n          }\n        ]\n      },\n      \n      \"method\": \"PUT\": \"The HTTP method used for this request; in this case, it is PUT, which is typically used for updating resources.\",\n      \n      \"url\": \"http://localhost:3000/api/action/read/update\": \"The URL endpoint where the request is sent to perform the action.\",\n      \n      \"headers\": [\n        {\n          \"key\": \"Client-UUID\": \"A unique identifier for the client making the request.\",\n          \"value\": \"ClientUUID\": \"The actual UUID value for the client, which is required in the header.\",\n          \"type\": \"default\": \"Specifies that this is a default type header.\"\n        }\n      ],\n      \n      \"body\": {\n        \"mode\": \"raw\": \"Indicates that the body of the request is being sent in raw format.\",\n        \n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"readId\\\":\\\"readId\\\",\\n    \\\"path\\\": \\\"/live/channel/video123\\\",\\n    \\\"targetType\\\": \\\"streamer\\\",\\n    \\\"targetId\\\": \\\"videoId\\\",\\n    \\\"sourceType\\\": \\\"accountId\\\",\\n    \\\"sourceId\\\": \\\"accountId\\\",\\n    \\\"tokenAmount\\\": 20,\\n    \\\"name\\\": \\\"Farooq\\\",\\n    \\\"description\\\": \\\"this is description\\\",\\n    \\\"tags\\\": \\\"xyz\\\"\\n}\": \"The raw JSON body of the request which contains multiple fields to be sent with the update.\",\n        \n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\": \"Specifies that the language of the raw body content is JSON.\"\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Read - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/read/get/?readId=readId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "read",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "readId",
+              "value": "readId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of the Endpoint Data\n\n- **name**: This is the name of the API request. It describes the purpose of the request which, in this case, is to read data through a \"GET\" action.\n\n- **request**: This object contains all the details necessary to execute the API request.\n\n  - **auth**: This section defines the authentication type required for the request.\n    - **type**: Specifies the authentication method used. Here, it's set to \"bearer\", which means that the request requires a bearer token for authorization.\n    - **bearer**: An array that contains the details of the bearer token.\n      - **key**: The name of the token field, which is \"token\" in this instance.\n      - **value**: This is where the actual token is provided, represented as \"BearerToken\". This value should typically be replaced with the actual bearer token needed for authentication.\n      - **type**: Specifies the data type, which is \"string\" in this case.\n\n  - **method**: Indicates the HTTP method used for the request. \"GET\" means this request is used to retrieve data from the server.\n\n  - **url**: This is the endpoint URL where the request is sent. It includes the following parameters:\n    - **readId**: Represents the ID of the item you want to read. This should be replaced with the actual ID you're querying.\n    - **sessionId**: Represents the session identifier associated with the request. This should also be replaced with the actual session ID.\n    - **accountId**: Represents the ID of the account you are retrieving data for. This should be replaced with the actual account ID.\n\n  - **headers**: Contains any additional headers to be sent along with the request.\n    - The current entry has an empty key and value, and is disabled, indicating that no extra headers are being used in this request.\n\n  - **body**: This section defines the content of the request body.\n    - **mode**: Indicates the format of the body. It's set to \"raw\", which means the payload is sent as plain text.\n    - **raw**: Contains the actual content of the body. In this case, it's empty, suggesting no body content is necessary for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Read - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/read/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "read",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Read - Get All\n\n- **Name**: Action - Read - Get All\n  - This refers to a specific API operation designed to retrieve all actions stored in the database.\n\n- **Request**:\n  - **Auth**:\n    - **Type**: Bearer\n      - This indicates that the request requires authentication via a bearer token.\n      - **Bearer**: Provides details for authentication.\n        - **Key**: \n          - `token`\n            - This represents the authentication key required by the API to authorize the request.\n        - **Value**: \n          - `BearerToken`\n            - This is where the actual bearer token must be placed for authentication. Replace `BearerToken` with a valid token to access the API.\n        - **Type**: \n          - `string`\n            - Designates that the expected value for the token is a string.\n\n  - **Method**:\n    - **GET**\n      - This specifies that the request will be using the HTTP GET method, which is typically used to retrieve data from the server.\n\n  - **URL**:\n    - `http://localhost:3000/api/action/read/all/?sessionId=sessionId&accountId=accountId`\n      - This is the endpoint URL where the API can be accessed.\n      - `sessionId` and `accountId` are query parameters that must be filled in with appropriate values to identify the session and account for which actions are being retrieved.\n\n  - **Headers**:\n    - An empty header is defined but currently disabled.\n      - **Key**: `\"\"`\n        - This part is where you can specify custom headers if needed.\n      - **Value**: `\"\"`\n        - The expected value for the custom header, currently left blank.\n      - **Type**: \n        - `default`\n          - Indicates the type of the header, which is default in this case.\n      - **Disabled**: \n        - `true`\n          - This means this particular header will not be sent with the request.\n\n  - **Body**:\n    - **Mode**: \n      - `raw`\n        - Indicates that the body of the request is sent in raw format.\n    - **Raw**: \n      - `\"\"`\n        - The body of the request is currently empty, as this is a GET request where typically no body is included."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Read - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"readId\":\"readId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/read/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "read",
+            "delete"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n**Endpoint Name:**  \nAction - Read - Delete  \n\n**Request Details:**  \n- **Auth:**  \n  - **Type:** Bearer Authentication  \n    This requires a bearer token for authorization, which is typically used to verify the user's identity and grant access to protected resources.\n  - **Bearer Array:**  \n    - **Key:** token  \n      The key represents the type of authentication being used.\n    - **Value:** sessionId  \n      This is a placeholder that should be replaced with the actual session ID for the user making the request.\n    - **Type:** string  \n      Indicates that the value should be formatted as a string.\n\n- **Method:**  \n  - **POST**  \n    This indicates that the request will submit data to the server for processing.\n\n- **URL:**  \n  - **http://localhost:3000/api/action/read/delete**  \n    This is the endpoint where the request is sent. It is hosted locally on port 3000, and the action being performed is to read and delete data.\n\n- **Headers:**  \n  - This section is currently empty but reserved for any additional header key-value pairs needed for the request. The header is marked as disabled, indicating it is not currently in use.\n\n- **Body:**  \n  - **Mode:** raw  \n    This indicates that the body of the request will be sent as raw JSON data.\n  - **Raw Data:**  \n    - `{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"readId\":\"readId\"}`  \n      This JSON object is structured to include three key-value pairs:  \n      - **sessionId:** Represents the user's session identifier. Replace \"sessionId\" with the actual session ID.  \n      - **accountId:** Represents the account identifier that is associated with the user. Replace \"accountId\" with the actual account ID.  \n      - **readId:** Represents the unique identifier for the item intended to be deleted. Replace \"readId\" with the actual ID of the item.\n\nThis endpoint is designed to manage the reading and deletion of specific data related to user actions in the application."
+      },
+      "response": []
+    }
+  ]
+}

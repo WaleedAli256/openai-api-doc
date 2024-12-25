@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionCancel",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Cancel - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"cancel1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/cancel/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "cancel",
+            "create"
+          ]
+        },
+        "description": "### Action - Cancel - Create Endpoint\n\n#### Request Details\n\n- **Authorization**:\n  - **Type**: Bearer\n    - **Key**: `token`\n      - This field contains the authentication token required to access the endpoint. The token should be prefixed with the word \"Bearer\".\n\n- **Method**: \n  - **POST**\n    - This indicates that the endpoint is used to create new data, specifically to cancel an action.\n\n- **URL**: \n  - `http://localhost:3000/api/action/cancel/create`\n    - The endpoint where the request is sent. It is set to the local server, so it is not accessible publicly.\n\n- **Headers**:\n  - There is an empty header entry included by default. This has been disabled and does not contribute any information for the request. In practice, you may need to add relevant headers depending on your API requirements.\n\n#### Body Parameters (JSON Format)\n\nThe request body needs to be formatted as JSON and includes the following parameters:\n\n- **sessionId**: \n  - This is a unique identifier for the session related to the action being canceled. It helps in tracking the ongoing activities or requests.\n\n- **accountId**: \n  - This represents the identifier for the user account initiating the cancellation. It is crucial for linking the request to the correct user.\n\n- **path**: \n  - The path specifies the resource to which the cancellation action applies, such as the location of the live stream or video.\n\n- **targetType**: \n  - Indicates the type of target for the cancellation action. In this case, it specifies that the target is a \"streamer\".\n\n- **targetId**: \n  - This is the specific identifier for the target, such as the video ID of the livestream that is to be canceled.\n\n- **sourceType**: \n  - Designates the type of source from which the action is initiated. Here it is marked as \"accountId\", emphasizing that the source is an account.\n\n- **sourceId**: \n  - This is another identifier for the source, and it shares the same value as the accountId. This ensures that the source is clearly linked to the proper account.\n\n- **tokenAmount**: \n  - This integer value represents the amount of tokens involved in the cancellation action. It can refer to any kind of currency or virtual tokens specific to the application's context.\n\n- **name**: \n  - A string value providing a name for the cancellation action. This can serve as an identifier for later reference.\n\n- **description**: \n  - This field is currently empty and can be utilized for providing additional information about the cancellation action.\n\n- **tags**: \n  - Also currently empty, this field can be used to add tags for categorization or filtering purposes related to the cancellation action.\n\nThe body of the request supports raw JSON format and must adhere to the structure outlined for it to be processed correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Cancel - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"cancelId\":\"cancelId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/cancel/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "cancel",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description for Action - Cancel - Update\n\nThis endpoint is used to update a cancellation action. Below is a detailed description of the data involved in this request.\n\n1. **Authentication:**\n   - **Type:** Bearer\n   - **Token:** Used for authorization to access the endpoint. This should be a valid bearer token.\n\n2. **Request Method:**\n   - **Method:** PUT\n   - The HTTP method used to update the resource.\n\n3. **URL:**\n   - **URL:** `http://localhost:3000/api/action/cancel/update`\n   - The endpoint where the request is sent for updating the cancellation action.\n\n4. **Headers:**\n   - **Client-UUID:**\n     - Key: `Client-UUID`\n     - Value: `ClientUUID`\n     - This header is used to identify the client making the request uniquely.\n\n5. **Body:**\n   - The body of the request is in raw JSON format and contains the following fields:\n\n   - **sessionId:** \n     - A unique identifier for a user session. This is used to track the session during which the cancellation action is taking place.\n\n   - **accountId:**\n     - The identifier for the account involved in the cancellation. It helps link the action to a specific user account.\n\n   - **cancelId:**\n     - The identifier for the specific cancel action that is being updated. This is used to identify which cancellation is being modified.\n\n   - **path:**\n     - A string representing the path to the resource, such as a live channel or video. For example, `/live/channel/video123`.\n\n   - **targetType:**\n     - The type of target that is being affected by the cancellation (such as `streamer`).\n\n   - **targetId:**\n     - The identifier for the target being canceled, which could represent a video or streamer.\n\n   - **sourceType:**\n     - Indicates the type of source from which the cancellation request is originating (e.g., `accountId`).\n\n   - **sourceId:**\n     - The source identifier that corresponds to the `sourceType`, typically representing the user's account ID.\n\n   - **tokenAmount:**\n     - The amount of tokens involved in the cancellation action, which could represent a monetary value or other quantifiable measure (20 in this case).\n\n   - **name:**\n     - A string representing the name associated with the cancellation. For instance, `Farooq`.\n\n   - **description:**\n     - A brief description of the cancellation action, providing additional context (e.g., \"this is description\").\n\n   - **tags:**\n     - A string used for tagging or categorizing the cancellation action, which could be useful for filtering or searching (e.g., \"xyz\"). \n\nThis information will help users understand the purpose and requirements of the API request when using the Postman collection."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Cancel - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/cancel/get/?cancelId=cancelId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "cancel",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "cancelId",
+              "value": "cancelId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Cancel - Get\n\n**Description**: This endpoint is designed to retrieve information related to a cancellation action based on provided identifiers. \n\n#### Request Components:\n\n- **Authorization**:\n  - **Type**: Bearer Token\n  - **Key**: `token`\n  - **Value**: `BearerToken` - This token should be replaced with a valid bearer token to authenticate the request.\n\n- **Method**: \n  - **GET** - This indicates that the endpoint is accessed using the HTTP GET method, which is typically used to retrieve data from the server.\n\n- **URL**: \n  - `http://localhost:3000/api/action/cancel/get/?cancelId=cancelId&sessionId=sessionId&accountId=accountId`\n    - This is the endpoint URL where the request is sent. \n    - **Query Parameters**:\n      - `cancelId`: This parameter should be replaced with the unique identifier of the cancellation you wish to retrieve.\n      - `sessionId`: This parameter should be replaced with the session identifier relevant to the cancellation action.\n      - `accountId`: This parameter represents the account identifier associated with the cancellation.\n\n- **Headers**:\n  - The headers section currently has an entry that is disabled and empty. This generally means there are no additional headers required for this request. If any headers are needed in the future, they should be added here.\n\n- **Body**:\n  - **Mode**: Raw\n  - **Content**: The body of the request is empty, which is typical for a GET request as it generally does not require a body for retrieval of data.\n\n### Summary:\nThis API call allows users to fetch detailed information about a cancellation action by supplying the necessary identifiers through URL parameters. It requires authentication via a bearer token, and no additional headers or body content are necessary for the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Cancel - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/cancel/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "cancel",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Cancel - Get All Endpoint Description\n\n- **Name**: Action - Cancel - Get All\n  - This is the name of the API call that retrieves all cancel actions.\n\n- **Request**:\n  - This section outlines the details of the HTTP request that will be made to the server.\n\n  - **Auth**:\n    - **Type**: Bearer\n      - This indicates that the request uses bearer token authentication. The token must be included in the request to access secure endpoints.\n    - **Bearer**:\n      - This is an array that contains the authentication details required for the request.\n      - **Key**: token\n        - This specifies the name of the authentication parameter.\n      - **Value**: BearerToken\n        - This is a placeholder for the user's actual bearer token that will be used to authenticate the request.\n      - **Type**: string\n        - This indicates that the value of the token is a string.\n\n  - **Method**: GET\n    - This specifies that the HTTP method for the request is a GET, which is used to retrieve data from the specified resource.\n\n  - **URL**: http://localhost:3000/api/action/cancel/all/?sessionId=sessionId&accountId=accountId\n    - This is the endpoint URL to which the GET request will be sent. \n    - **Base URL**: http://localhost:3000/api/action/cancel/all/\n    - **Query Parameters**:\n      - **sessionId**: sessionId\n        - A placeholder for the session ID that may be required to filter or retrieve specific session-related data.\n      - **accountId**: accountId\n        - A placeholder for the account ID that may be required to filter or retrieve specific account-related data.\n\n  - **Headers**:\n    - This section can include additional HTTP headers for the request.\n    - **Key**: (empty)\n      - This indicates that there is currently no additional header key included in the request.\n    - **Value**: (empty)\n      - This indicates that there is currently no corresponding value for the header key included in the request.\n    - **Type**: default\n      - This represents the default type for the header (though none are currently specified).\n    - **Disabled**: true\n      - This indicates that any headers defined in this list are disabled and will not be sent with the request.\n\n  - **Body**:\n    - This section contains the body of the request.\n    - **Mode**: raw\n      - This indicates that the body format is raw, meaning that it can accept any string format.\n    - **Raw**: \"\"\n      - This indicates that there is no body data to be sent with the GET request, as GET requests typically do not have a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Cancel - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"cancelId\":\"cancelId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/cancel/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "cancel",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Cancel - Delete\n\n- **Name**: Action - Cancel - Delete\n  - This operation is used to cancel an action or request by deleting it from the system.\n\n- **Request**:\n  - Contains all the necessary details for making a request to the API endpoint.\n\n  - **Auth**:\n    - **Type**: Bearer\n      - This indicates that the request requires a bearer token for authentication.\n    - **Bearer**:\n      - A list containing authentication details.\n      - **Key**: token\n        - This field represents the type of authentication being used.\n      - **Value**: sessionId\n        - This is a placeholder for the actual session ID that authenticates the user making the request.\n      - **Type**: string\n        - Indicates that the value of the key is expected to be a string.\n\n  - **Method**: POST\n    - The HTTP method used for the request. In this case, it is a POST request, which is typically used to send data to the server.\n\n  - **URL**: \n    - `http://localhost:3000/api/action/cancel/delete`\n      - This is the endpoint URL where the request should be sent.\n\n  - **Headers**:\n    - A collection of key-value pairs sent with the request to provide additional context.\n    - **Key**: (empty)\n      - There are no specific headers being applied in this request as this field is left empty.\n    - **Value**: (empty)\n      - Correspondingly, there is no value provided for the header.\n    - **Type**: default\n      - The type indicates that this header is a default type.\n    - **Disabled**: true\n      - This indicates that the header is currently not active and will not be sent with the request.\n\n  - **Body**:\n    - Contains the data that will be sent in the request. \n    - **Mode**: raw\n      - This signifies that the request body is provided as raw JSON data.\n    - **Raw**: \n      - The actual content being sent in the body formatted as a JSON string:\n      ```json\n      {\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"cancelId\": \"cancelId\"\n      }\n      ```\n      - **sessionId**: Placeholder for the session ID, which identifies the user's current session.\n      - **accountId**: Placeholder for the account ID related to the action being canceled.\n      - **cancelId**: Placeholder for the specific ID of the action or request that is being canceled. \n\nThis information outlines how to set up and use this specific API endpoint to cancel an action by making a POST request with the necessary authentication and data."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,1110 @@
+{
+  "info": {
+    "_postman_id": "e2d47155-1f0c-45d0-8cae-57cd079af138",
+    "name": "UtilityCrypto",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Utility - Crypto - Create for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"BTC\",\n    \"description\": \"Bitcoin\",\n    \"type\": \"btc\",\n    \"action\": \"buy\",\n    \"rate\": 1,\n    \"amount\": 10000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "create"
+          ]
+        },
+        "description": "### Utility - Crypto - Create for User\n\nThis endpoint allows users to create a cryptocurrency entry associated with their account. Below is a detailed description of each data field required in the request.\n\n#### Request Details\n\n- **Authorization Token**: \n  - **Key**: `token` \n  - **Value**: `BearerToken` \n  - **Type**: `string` \n  - The request must include a bearer token for authentication. This token verifies the identity of the user making the request.\n\n- **Method**: \n  - **Type**: `POST` \n  - This indicates that the request will create a new resource on the server.\n\n- **URL**: \n  - **Value**: `http://localhost:3000/api/utility/crypto/create` \n  - The specific endpoint for making the request to create a cryptocurrency. This is typically hosted on a server.\n\n#### Body Parameters\n\nThe request body should be in raw JSON format and includes the following fields:\n\n- **sessionId**: \n  - **Type**: `string` \n  - A unique identifier for the user session. This helps track the user's activity and manage their session state.\n\n- **accountId**: \n  - **Type**: `string`\n  - The unique identifier for the user’s account on which the cryptocurrency action is being performed.\n\n- **targetType**: \n  - **Type**: `string` \n  - Specifies the type of target for the cryptocurrency action, here it indicates that the target is an account ID.\n\n- **name**: \n  - **Type**: `string` \n  - The name of the cryptocurrency. For example, it could be \"BTC\" for Bitcoin.\n\n- **description**: \n  - **Type**: `string` \n  - A brief description of the cryptocurrency. For instance, \"Bitcoin\" describes the name provided.\n\n- **type**: \n  - **Type**: `string` \n  - The type/category of cryptocurrency. Common types may include \"btc\" for Bitcoin, \"eth\" for Ethereum, etc.\n\n- **action**: \n  - **Type**: `string` \n  - This indicates the action to be performed on the cryptocurrency. In this case, \"buy\" indicates a purchase transaction.\n\n- **rate**: \n  - **Type**: `number` \n  - The exchange rate at which the cryptocurrency will be bought. For example, if the rate is set to 1, it reflects the price of one unit of cryptocurrency.\n\n- **amount**: \n  - **Type**: `number` \n  - The amount of cryptocurrency to be bought. For instance, if set to 10000, it represents the quantity of the cryptocurrency being purchased.\n\n### Example JSON Payload\n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"BTC\",\n    \"description\": \"Bitcoin\",\n    \"type\": \"btc\",\n    \"action\": \"buy\",\n    \"rate\": 1,\n    \"amount\": 10000\n}\n```\n\nThis endpoint will create a new entry for the specified cryptocurrency in the user’s account using the provided values. Be sure to replace placeholders with actual session and account identifiers."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Create Bulk for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"BTC\",\n            \"description\": \"Bitcoin\",\n            \"type\": \"btc\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 10000\n        },\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"BTC\",\n            \"description\": \"Bitcoin\",\n            \"type\": \"btc\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 10000\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "createBulk"
+          ]
+        },
+        "description": "**Endpoint Name: Utility - Crypto - Create Bulk for User**\n\n**Request Method:** POST  \n**Request URL:** http://localhost:3000/api/utility/crypto/createBulk\n\n### Request Authentication\n- **Auth Type:** Bearer\n   - **Token:** This is an authorization token required to access the endpoint. It must be formatted as \"BearerToken\" where \"BearerToken\" is your actual bearer token used for authenticating the request.\n\n### Request Headers\n- **Headers:** No additional custom headers are specified in this request. The default header is disabled.\n\n### Request Body\nThis is a raw JSON object that contains the necessary data to create bulk cryptocurrency transactions for a user:\n\n- **sessionId:** A unique identifier for the user's session. This helps to track the user and their transactions during a specific session.\n\n- **accountId:** The identifier for the user's account which will be associated with the transactions being created. This ensures that the transactions apply to the correct user account.\n\n- **list:** An array of cryptocurrency transaction objects detailing the specific transactions to be created. Each object within this array has the following structure:\n\n   - **targetType:** Specifies the type of target for the transaction. In this case, it is set to \"accountId\", indicating the transaction targets a specific user account.\n\n   - **name:** The name of the cryptocurrency to be transacted. For example, \"BTC\" refers to Bitcoin.\n\n   - **description:** A brief description of the cryptocurrency. In this case, \"Bitcoin\" describes what \"BTC\" stands for.\n\n   - **type:** The type of cryptocurrency being transacted. This is a string that specifies the cryptocurrency, such as \"btc\" for Bitcoin.\n\n   - **action:** Describes the type of transaction being requested. In this example, it is set to \"buy\", indicating that the user wants to purchase Bitcoin.\n\n   - **rate:** This represents the exchange rate for the transaction. In the examples provided, it is set to 1, which might imply that the transaction is occurring at a rate of 1 unit of currency per Bitcoin.\n\n   - **amount:** The quantity of the cryptocurrency to be transacted. In this example, it is set to 10000, which would represent the amount of BTC the user wishes to buy.\n\n### Example of List Object\nThe request body includes an example list with two identical transaction objects for purchasing Bitcoin (BTC). Each object includes all the attributes described above.\n\nThis endpoint allows users to efficiently create multiple cryptocurrency transactions in a single API call, streamlining the process for bulk purchases in the system."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Create for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"BTC\",\n    \"description\": \"Bitcoin\",\n    \"type\": \"btc\",\n    \"action\": \"buy\",\n    \"rate\": 1,\n    \"amount\": 10000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Utility - Crypto - Create for Team\n\n- **Request Method**: POST  \n  This indicates that the endpoint is designed to create a new resource, in this case, for a team related to cryptocurrency.\n\n- **URL**: `http://localhost:3000/api/utility/crypto/create`  \n  The endpoint where the request will be sent. This URL is pointing to a local server.\n\n- **Authentication**:\n  - **Type**: Bearer  \n    This specifies that Bearer token is required for authentication.\n  - **Bearer Token**:\n    - **Key**: token  \n      This is the identifier for the bearer token in the authorization header.\n    - **Value**: BearerToken  \n      This represents the actual token that grants access to the API. Replace \"BearerToken\" with an actual valid token to authorize the request.\n    - **Type**: string  \n      Indicates that the value of the token is a string datatype.\n\n- **Headers**:  \n  An empty headers object is present, which is currently disabled. While it can be used in some scenarios for adding custom headers, it is not being utilized in this request.\n\n- **Body**:\n  - **Mode**: raw  \n    This signifies the format of the body being sent in the request.\n  - **Raw JSON**:\n    The following keys and values are included within the JSON body:\n    \n    - **sessionId**: `\"sessionId\"`  \n      This is a placeholder for the session identifier associated with the user's session. It must be replaced with the actual session ID.\n      \n    - **accountId**: `\"accountId\"`  \n      This is a placeholder for the unique identifier of the account making the request. It should be replaced with the actual account ID.\n      \n    - **targetType**: `\"teamId\"`  \n      This specifies the type of target associated with the action. Here, it is indicating that the target is a team.\n      \n    - **targetId**: `\"teamId\"`  \n      This is the ID of the team for which the cryptocurrency action is being created.\n      \n    - **name**: `\"BTC\"`  \n      This represents the name of the cryptocurrency involved, in this case, Bitcoin.\n      \n    - **description**: `\"Bitcoin\"`  \n      A brief description of the cryptocurrency, further clarifying that this is Bitcoin.\n      \n    - **type**: `\"btc\"`  \n      This indicates the cryptocurrency type. \"btc\" stands for Bitcoin.\n      \n    - **action**: `\"buy\"`  \n      This represents the action to be taken. In this instance, the action is to buy the specified cryptocurrency.\n      \n    - **rate**: `1`  \n      This signifies the rate at which the cryptocurrency is being bought. In this example, it is set to 1, possibly meaning one unit of currency for one BTC.\n      \n    - **amount**: `10000`  \n      This denotes the amount of the cryptocurrency to be purchased. In this case, it indicates a purchase of 10,000 units of Bitcoin.\n\n- **Options**:  \n  - **Raw Settings**: \n    - **Language**: json  \n      This indicates that the raw body content is formatted as JSON. This helps in ensuring proper parsing of the data being sent in the request.\n\nThis endpoint is useful for creating crypto transactions specific to a team within the utility framework. The appropriate values for session ID, account ID, and team ID need to be provided to complete the request successfully."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Create Bulk for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"BTC\",\n            \"description\": \"Bitcoin\",\n            \"type\": \"btc\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 10000\n        },\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"BTC\",\n            \"description\": \"Bitcoin\",\n            \"type\": \"btc\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 10000\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "createBulk"
+          ]
+        },
+        "description": "### Endpoint: Utility - Crypto - Create Bulk for Team\n\n#### Request Overview\nThis endpoint allows users to create bulk cryptocurrency actions for a designated team. It is intended to facilitate multiple transactions in one request.\n\n##### Authorization\n- **Type**: Bearer\n  - **Token**: A string that represents the bearer token required for authorization. Replace `\"BearerToken\"` with your actual token.\n\n##### Method\n- **POST**: This request type is used to send data to the API to create a new resource.\n\n##### URL\n- **Endpoint**: `http://localhost:3000/api/utility/crypto/createBulk`\n  - This is the URL where the request will be sent.\n\n#### Request Headers\n- Currently, no custom headers are included in the request. The default header is present but disabled.\n\n#### Request Body\nThe body of the request is in JSON format and contains the following fields:\n\n- **sessionId**: \n  - Type: String\n  - Description: Represents the unique identifier for the user's session.\n\n- **accountId**: \n  - Type: String\n  - Description: Represents the unique identifier for the user's account.\n\n- **list**: \n  - Type: Array of Objects\n  - Description: This is a collection of individual cryptocurrency transaction objects. Each object contains details about a specific cryptocurrency action. \n\nEach object in the list has the following properties:\n\n1. **targetType**: \n   - Type: String\n   - Description: Indicates the type of target for the action. In this case, it specifies that the action is directed towards a team (`\"teamId\"`).\n\n2. **targetId**: \n   - Type: String\n   - Description: Represents the unique identifier for the team that the cryptocurrency action is targeting.\n\n3. **name**: \n   - Type: String\n   - Description: The name of the cryptocurrency. Example: `\"BTC\"` represents Bitcoin.\n\n4. **description**: \n   - Type: String\n   - Description: A brief description of the cryptocurrency. Example: `\"Bitcoin\"`.\n\n5. **type**: \n   - Type: String\n   - Description: The type of cryptocurrency, which in this case is specified as `\"btc\"` for Bitcoin.\n\n6. **action**: \n   - Type: String\n   - Description: The action to be performed with the cryptocurrency. Examples include actions like `\"buy\"` or `\"sell\"`.\n\n7. **rate**: \n   - Type: Number\n   - Description: The rate at which the cryptocurrency is being bought or sold. Example: A value of `1` may represent the price per unit.\n\n8. **amount**: \n   - Type: Number\n   - Description: The total amount of cryptocurrency to be transacted. Example: A value of `10000` represents the quantity being bought or sold.\n\n#### Example of Request Body\n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"BTC\",\n            \"description\": \"Bitcoin\",\n            \"type\": \"btc\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 10000\n        },\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"BTC\",\n            \"description\": \"Bitcoin\",\n            \"type\": \"btc\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 10000\n        }\n    ]\n}\n```\n\nThe request body is structured to facilitate multiple buy actions for Bitcoin for the same target team. Adjust the values as necessary for your specific use case."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Convert Crypto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"cryptoId\": \"cryptoId\",\n    \"type\": \"btc\",\n    \"rate\": 1,\n    \"amount\": 1,\n    \"convertTo\": \"token\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/convert",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "convert"
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Crypto - Convert Crypto\n\n**Request Method:**  \n- **POST**: This endpoint is accessed using the POST method, indicating that data will be sent to the server.\n\n**Request URL:**  \n- **http://localhost:3000/api/utility/crypto/convert**: This is the URL to which the request will be sent. It is structured to indicate it is part of a utility service for converting cryptocurrencies.\n\n**Authentication:**  \n- **Auth Type:** Bearer  \n  - A bearer token is used for authentication. It is a type of token that provides access to the API on behalf of a user or service.\n  - **Token Structure:**  \n    - **Key:** `token`      \n    - **Value:** `BearerToken`    \n    - **Type:** `string`  \n  - Replace `BearerToken` with the actual token value needed for authenticating the request.\n\n**Headers:**  \n- **Client-UUID**:  \n  - This header is used to identify the client making the request.\n  - **Key:** `Client-UUID`  \n  - **Value:** `ClientUUID`  \n  - Replace `ClientUUID` with the unique identifier for the client.\n\n**Request Body:**  \n- The body of the request contains key-value pairs in JSON format, detailing the conversion operation.\n\n  **JSON Body Structure:**\n  - **sessionId**:  \n    - Type: `string`  \n    - This represents the unique identifier for the session during which the conversion is taking place.\n\n  - **accountId**:  \n    - Type: `string`  \n    - This is the identifier for the user's account that is requesting the conversion.\n\n  - **cryptoId**:  \n    - Type: `string`  \n    - This represents the identifier for the cryptocurrency that is being converted.\n\n  - **type**:  \n    - Type: `string`  \n    - This indicates the type of cryptocurrency being converted, for example, \"btc\" represents Bitcoin.\n\n  - **rate**:  \n    - Type: `number`  \n    - This denotes the current exchange rate for the cryptocurrency being converted.\n\n  - **amount**:  \n    - Type: `number`  \n    - This is the quantity of cryptocurrency to be converted.\n\n  - **convertTo**:  \n    - Type: `string`  \n    - This specifies the token or cryptocurrency to which the conversion is being made.\n\n**Body Mode:**  \n- **Mode:** `raw`  \n  - The request body is sent as raw data, formatted as JSON.\n\n**Options:**  \n- **Language:** `json`  \n  - This option specifies that the raw data being sent is formatted in JSON.\n\n### Summary:\nThis endpoint handles cryptocurrency conversions. It requires a bearer token for authentication and expects specific parameters in the request body for the conversion operation. Make sure to replace placeholder values with actual data when using the endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Update Crypto for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"cryptoId\": \"cryptoId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"BTC\",\n    \"description\": \"Bitcoin\",\n    \"type\": \"btc\",\n    \"action\": \"buy\",\n    \"rate\": 1,\n    \"amount\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "update"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Utility - Crypto - Update Crypto for User\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"PUT\",\n      \"url\": \"http://localhost:3000/api/utility/crypto/update\",\n      \"headers\": [\n        {\n          \"key\": \"Client-UUID\",\n          \"value\": \"ClientUUID\",\n          \"type\": \"default\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"cryptoId\\\": \\\"cryptoId\\\",\\n    \\\"targetType\\\": \\\"accountId\\\",\\n    \\\"name\\\": \\\"BTC\\\",\\n    \\\"description\\\": \\\"Bitcoin\\\",\\n    \\\"type\\\": \\\"btc\\\",\\n    \\\"action\\\": \\\"buy\\\",\\n    \\\"rate\\\": 1,\\n    \\\"amount\\\": 2\\n}\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\"\n          }\n        }\n      }\n    }\n  },\n  \"details\": {\n    \"auth\": {\n      \"type\": \"authenticates the user with bearer token\",\n      \"bearer\": {\n        \"token\": \"the actual bearer token that grants access to the API\"\n      }\n    },\n    \"method\": {\n      \"PUT\": \"method used to update existing data on the server\"\n    },\n    \"url\": {\n      \"http://localhost:3000/api/utility/crypto/update\": \"the endpoint where the update request is sent\"\n    },\n    \"headers\": {\n      \"Client-UUID\": \"a unique identifier for the client making the request\"\n    },\n    \"body\": {\n      \"sessionId\": \"identifies the active session for the user\",\n      \"accountId\": \"the unique identifier for the user's account\",\n      \"cryptoId\": \"the unique identifier for the specific cryptocurrency to be updated\",\n      \"targetType\": \"the type of account targeted for the update, here it is an accountId\",\n      \"name\": \"the name of the cryptocurrency; in this case, it is Bitcoin, represented by BTC\",\n      \"description\": \"provides more context about the cryptocurrency, specifically it is Bitcoin\",\n      \"type\": \"the type of cryptocurrency; for Bitcoin, it is represented as 'btc'\",\n      \"action\": \"the intended operation to perform, here it indicates a purchase action ('buy')\",\n      \"rate\": \"the price per unit of the cryptocurrency at which the transaction occurs\",\n      \"amount\": \"the quantity of cryptocurrency to be bought\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Update Crypto for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"cryptoId\": \"cryptoId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"BTC\",\n    \"description\": \"Bitcoin\",\n    \"type\": \"btc\",\n    \"action\": \"buy\",\n    \"rate\": 1,\n    \"amount\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Crypto - Update Crypto for Team\n\n**Request Type:**  \n- **Method:** PUT  \n  Indicates that this endpoint is used to update existing resources.\n\n**Authentication:**  \n- **Type:** Bearer  \n  This endpoint requires bearer token authentication. The token should be included in the Authorization header.\n\n**Request URL:**  \n- **URL:** `http://localhost:3000/api/utility/crypto/update`  \n  This is the endpoint where the update request will be sent. It is hosted locally.\n\n**Headers:**  \n- **Client-UUID:**  \n  - **Key:** `Client-UUID`  \n    This header is expected to contain the UUID of the client making the request. It uniquely identifies the client.\n\n**Request Body:**  \nThe body of the request must be in raw JSON format and includes the following fields:\n\n1. **sessionId:**  \n   - A unique identifier for the current session. This is used to associate the update request with a specific session context.\n\n2. **accountId:**  \n   - The identifier for the account that is being modified. This specifies which account the crypto update pertains to.\n\n3. **cryptoId:**  \n   - The identifier for the cryptocurrency that is being updated. This tells the system which specific cryptocurrency to modify.\n\n4. **targetType:**  \n   - The type of the target for this update. In this case, it is specified as `teamId`, indicating that the update is aimed at a team.\n\n5. **targetId:**  \n   - The identifier for the team that is receiving the update. This specifies which team the action pertains to.\n\n6. **name:**  \n   - The name of the cryptocurrency being updated. An example is \"BTC\" for Bitcoin.\n\n7. **description:**  \n   - A brief description of the cryptocurrency. For example, \"Bitcoin\" is given as a description for BTC.\n\n8. **type:**  \n   - The type of the cryptocurrency. This specifies the classification of the crypto, such as \"btc\" for Bitcoin.\n\n9. **action:**  \n   - Indicates the action to be taken with the cryptocurrency. The example \"buy\" indicates that the action involves purchasing the specified crypto.\n\n10. **rate:**  \n    - The rate at which the cryptocurrency is being bought or sold. For instance, `1` could represent the price in the specified quote currency.\n\n11. **amount:**  \n    - The quantity of cryptocurrency being bought or sold. In this example, `2` indicates that two units of the cryptocurrency are involved in the action.\n\n**Body Format:**  \n- The body is raw JSON, which means it should be sent as is without any additional formatting. Ensure that the values are correctly set before making the request.\n\nThis detailed structure helps to understand what data is needed and how to format the request for successful interaction with the endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get By ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?cryptoId=cryptoId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "cryptoId",
+              "value": "cryptoId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Utility - Crypto - Get By ID\",\n  \"description\": {\n    \"Request Authentication\": \"This endpoint requires bearer token authentication. Users must provide a valid token in the authorization header to gain access to the resource.\",\n    \"Method\": \"GET\",\n    \"URL\": \"The request is made to the specified endpoint, which is structured to receive three query parameters: 'cryptoId', 'sessionId', and 'accountId'. 'cryptoId' identifies the specific cryptocurrency entry you want to retrieve, 'sessionId' pertains to the current user session, and 'accountId' represents the user account associated with the request.\",\n    \"Query Parameters\": {\n      \"cryptoId\": \"A unique identifier for the cryptocurrency. This value must be supplied in the request to fetch the corresponding record.\",\n      \"sessionId\": \"An identifier for the current user session. This helps maintain the context of the user interaction with the API.\",\n      \"accountId\": \"The account identifier associated with the user making the request. This parameter is used for account-specific data retrieval.\"\n    },\n    \"Headers\": \"No custom headers are required for this request as the header field is disabled by default. Standard headers will be handled automatically.\",\n    \"Body\": \"This request does not require a body. It's a GET request, which means all required data is passed via the URL as query parameters.\"\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get Balance",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?balance=1&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "balance",
+              "value": "1"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": \"This is an API endpoint to retrieve the balance of a cryptocurrency account. Below is a detailed description of each part of the request data:\\n\\n- **name**: This denotes the title of the request, which is 'Utility - Crypto - Get Balance'. This title helps identify the purpose of the API call.\\n\\n- **request**: This object contains all the necessary information for making the API request.\\n\\n  - **auth**: This section specifies the authentication method required to access the endpoint.\\n    - **type**: Indicates the type of authentication used, which is 'bearer'. \\n    - **bearer**: This is an array that contains the details of the bearer token for authorization.\\n      - **key**: This is the identifier for the token, labeled as 'token'.\\n      - **value**: This placeholder shows where to input the actual bearer token, here it is represented as 'BearerToken'.\\n      - **type**: The type of this key value pair, which is 'string'.\\n\\n  - **method**: Specifies the HTTP method to be used for the API call, which is 'GET' in this case. This means we are requesting data from the server.\\n\\n  - **url**: This string contains the endpoint URL, where the API request is directed. It includes query parameters to specify the request details:\\n    - **balance**: This parameter is set to '1', indicating that we want to retrieve the balance.\\n    - **sessionId**: This parameter allows for session management and should be replaced with the actual session ID.\\n    - **accountId**: This parameter is used to specify the account for which the balance is requested, replacing it with the actual account ID needed.\\n\\n  - **headers**: This array contains any additional headers that may be required for the request.\\n    - **key**: A placeholder that should typically contain the name of the header, currently, it is left empty.\\n    - **value**: A placeholder for the value associated with the key, currently empty as well.\\n    - **type**: Indicates the type of the header, which is 'default'.\\n    - **disabled**: This is a boolean indicating whether this header is currently active or not; it is set to true, meaning it is disabled.\\n\\n  - **body**: This section describes the request body sent with the API call.\\n    - **mode**: Indicates the format in which the body is sent. It is set to 'raw', which allows for a raw text input.\\n    - **raw**: Currently, it is empty, meaning no additional body content is provided in the request.\"\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get Stats",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?log=stats&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "stats"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Crypto - Get Stats\n\n**request:** This section outlines the details necessary to make a request to the endpoint.\n\n- **auth:** \n  - **type:** Specifies that the authorization method being used is a bearer token.\n  - **bearer:** Contains a single item:\n    - **key:** Indicates the parameter for the bearer token, labeled as \"token\".\n    - **value:** The example value for the bearer token, noted as \"BearerToken\". This is the actual token required for authorization and should be replaced with a valid token in use.\n    - **type:** Clarifies that the value is of string type.\n\n- **method:** This shows the HTTP method to be used for the request. In this case, it is a \"GET\" request, which fetches data from the specified endpoint.\n\n- **url:** \n  - This is the URL used to access the endpoint. It includes:\n    - **http://localhost:3000/api/utility/crypto/get/**: The base URL and path where the request is sent.\n    - **log=stats:** A query parameter that indicates that the log type requested is \"stats\", likely referring to statistics data.\n    - **sessionId=sessionId:** A placeholder for a session identifier. The user needs to replace \"sessionId\" with an actual session ID.\n    - **accountId=accountId:** Another placeholder for an account identifier, requiring the user to substitute \"accountId\" with an actual account identifier.\n\n- **headers:** \n  - This is an array for any additional headers that might be needed for the request. In this case, it appears to be empty, and the header is currently disabled by default. Users may add relevant headers if required by the API.\n\n- **body:** \n  - **mode:** Specifies the type of content in the body of the request. It is set to \"raw\".\n  - **raw:** This field is blank, suggesting that no content needs to be sent within the body for this request. GET requests typically do not require a body, so this remains empty. \n\nThis endpoint is used to retrieve statistics related to cryptocurrency through a GET request, requiring proper authentication and specific parameters in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get Ledger",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?log=ledger&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "ledger"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Utility - Crypto - Get Ledger\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"method\": \"GET\",\n    \"url\": \"http://localhost:3000/api/utility/crypto/get/?log=ledger&sessionId=sessionId&accountId=accountId\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"\"\n    }\n  },\n  \"description\": {\n    \"method\": \"Indicates the HTTP method to be used for this request, which is 'GET'. This is used to retrieve data from the server.\",\n    \"url\": \"The endpoint URL for the API call. It includes the host ('localhost:3000'), the path ('/api/utility/crypto/get/'), and query parameters ('log', 'sessionId', and 'accountId') that specify the action and necessary identifiers for the request.\",\n    \"log\": \"This query parameter signifies that the type of data being requested is the ledger, which likely refers to a record of transactions.\",\n    \"sessionId\": \"A query parameter intended to identify the specific session for which the ledger is being requested. It needs to be replaced with an actual session ID value.\",\n    \"accountId\": \"A query parameter to specify which account's ledger should be retrieved. It must be filled with a valid account identifier.\",\n    \"auth\": {\n      \"type\": \"Defines the authentication method to be used for accessing the API. In this case, it is a 'bearer' token authorization.\",\n      \"bearer\": [\n        {\n          \"key\": \"token\": \"The key used to refer to the authorization token required for the request.\",\n          \"value\": \"BearerToken\": \"A placeholder for the actual bearer token that authenticates the request. The actual token must be substituted here for authorization.\",\n          \"type\": \"string\": \"Denotes that the token is a string data type.\"\n        }\n      ]\n    },\n    \"headers\": [\n      {\n        \"key\": \"Indicates the name of the header. In this case, it is left empty.\",\n        \"value\": \"Holds the value corresponding to the key. This field is also empty.\",\n        \"type\": \"default\": \"Specifies the default type of header.\",\n        \"disabled\": \"Set to true, meaning this header is currently not in use.\"\n      }\n    ],\n    \"body\": {\n      \"mode\": \"Indicates the format of the body content. Set to 'raw', which means it will send data as plain text.\",\n      \"raw\": \"This field is empty, indicating that no body content needs to be sent with this GET request, as it typically does not require a body.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get BTC Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?log=type&type=btc&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "btc"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Crypto - Get BTC Logs\n\n#### Request Description:\n\n- **auth**: This section contains the authentication method used for the request.\n  - **type**: Specifies the type of authentication being used. In this case, it is set to \"bearer\", meaning a bearer token will be included in the request header to verify the user's identity.\n  - **bearer**: An array containing the bearer token details.\n    - **key**: The name of the key which in this scenario is \"token\".\n    - **value**: The actual bearer token that will be used for authentication. It is currently represented as \"BearerToken\", which should be replaced with a valid token.\n    - **type**: Indicates the data type of the value, marked as a string.\n\n- **method**: Specifies the HTTP method to be used for the request. Here it is \"GET\", which is utilized to retrieve information from the specified resource.\n\n- **url**: The endpoint that will be called to fetch the BTC logs. The URL includes several query parameters:\n  - **log**: Indicates the type of log to be retrieved. Specifically set to \"type\" in this case.\n  - **type**: Defines the category of logs to be fetched. Here, it is set to \"btc\" to specify Bitcoin logs.\n  - **sessionId**: A placeholder for the session ID associated with the request. This should be replaced with an actual session ID to retrieve relevant logs.\n  - **accountId**: A placeholder for the account ID. This should be replaced with the actual account ID related to the account from which logs are being retrieved.\n\n- **headers**: This section outlines the HTTP headers to be included in the request.\n  - **key**: The name of the header, which is currently empty in this template.\n  - **value**: The value of the header, also currently empty.\n  - **type**: Specifies the type of the header, marked as \"default\".\n  - **disabled**: A boolean indicating whether this header is enabled or disabled. It is set to true, which means this header will not be sent with the request.\n\n- **body**: Indicates the body of the request.\n  - **mode**: The format of the body content. It is set to \"raw\", meaning the body will contain a raw text payload.\n  - **raw**: A string representing the actual request body content. In this case, it is empty which indicates no body data is being sent with the GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get ETH Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?log=type&type=eth&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "eth"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Crypto - Get ETH Logs\n\n**Name:** Utility - Crypto - Get ETH Logs  \nThis endpoint retrieves Ethereum (ETH) logs based on specified parameters.\n\n#### Request Details:\n- **Auth**\n  - **Type:** Bearer\n  - **Bearer Token:** A token is required for authentication. Replace \"BearerToken\" with a valid token to authorize the request.\n\n- **Method:** GET  \nThis indicates that the request will retrieve data from the server.\n\n- **URL:** \n  - `http://localhost:3000/api/utility/crypto/get/?log=type&type=eth&sessionId=sessionId&accountId=accountId`\n  - The URL is the endpoint where the request will be sent. The query parameters include:\n    - `log=type`: This parameter specifies the type of log to retrieve.\n    - `type=eth`: This indicates that only Ethereum logs should be fetched.\n    - `sessionId=sessionId`: Replace `sessionId` with an actual session identifier to filter results.\n    - `accountId=accountId`: Replace `accountId` with an actual account identifier to specify the account from which to pull logs.\n\n- **Headers:** \n  - An empty header field is provided but is currently disabled. This means no additional headers are included in the request.\n\n- **Body:** \n  - **Mode:** Raw  \n  - **Raw:** The body is empty for this GET request since no payload is needed to fetch the logs.\n\n### Summary:\nThis API call allows users to fetch Ethereum logs by specifying parameters like log type, session ID, and account ID, with authentication required via a bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get USDT Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?log=type&type=usdt&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "usdt"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Crypto - Get USDT Logs\n\n#### 1. Name\n- **Utility - Crypto - Get USDT Logs**: This is the name of the API endpoint which is used to retrieve logs related to USDT (Tether) cryptocurrency transactions.\n\n#### 2. Request\n- **Auth**: This section specifies the authentication method used for accessing the endpoint.\n\n    - **Type**: The type of authentication used is \"bearer\". This means that a token is required to authenticate the request.\n    \n    - **Bearer**: Contains the details of the bearer token required for authentication.\n    \n        - **Key**: This denotes the authentication parameter, which is named \"token\".\n        \n        - **Value**: The actual token value should be prefixed with \"Bearer\" followed by the token string. It is represented here as \"BearerToken\" and should be replaced with the actual token during use.\n        \n        - **Type**: Indicates that the value provided is of type \"string\".\n\n#### 3. Method\n- **GET**: This indicates that the request type is a GET request, which is used to retrieve data from the specified resource.\n\n#### 4. URL\n- **URL**: This is the endpoint address where the request is made. \n    - The URL given is `http://localhost:3000/api/utility/crypto/get/?log=type&type=usdt&sessionId=sessionId&accountId=accountId`\n    - It includes several query parameters:\n        - **log**: This parameter indicates the log type being requested; in this case, it is set to \"type\".\n        - **type**: This parameter specifies the cryptocurrency type, which is set to \"usdt\" for Tether.\n        - **sessionId**: This parameter is used to identify the particular user session; it is represented as \"sessionId\" and should be replaced with an actual session ID.\n        - **accountId**: This parameter identifies the account associated with the request; it is represented as \"accountId\" and should be replaced with an actual account ID.\n\n#### 5. Headers\n- **Headers**: This is an optional section where additional HTTP headers can be specified. \n    - In this case, there are no headers defined in the provided request, and the section is disabled.\n\n#### 6. Body\n- **Body**: This section refers to the main content that can be sent along with the request.\n    - **Mode**: The body mode is set to \"raw\", indicating that the body will contain raw data instead of form data or URL encoded data.\n    - **Raw**: Since this is a GET request, there is typically no body content; hence it is empty in this example."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get Accumulation Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?log=accumulation&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "accumulation"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Crypto - Get Accumulation Logs Endpoint Description\n\n- **Name**: Utility - Crypto - Get Accumulation Logs  \nThis is the title of the endpoint, indicating that it retrieves accumulation logs related to cryptocurrency.\n\n- **Request**:  \nThis section outlines the details of the request that needs to be made to access the accumulation logs.\n\n  - **Auth**:  \n    This specifies the type of authentication required to access the endpoint.\n    \n    - **Type**: `bearer`  \n      Indicates that bearer token authentication is used.\n      \n    - **Bearer**:  \n      This is an array that contains the bearer token details needed for authentication.\n      \n      - **Key**: `token`  \n        Represents the key for the bearer token used in the request.\n        \n      - **Value**: `BearerToken`  \n        Placeholder for the actual bearer token. Users should replace this with a valid token when making the request.\n        \n      - **Type**: `string`  \n        Specifies that the token value is a string type.\n\n  - **Method**: `GET`  \n    This is the HTTP method used for the request. It indicates that the request is intended to retrieve data from the server.\n\n  - **URL**:  \n    The endpoint URL is where the request is sent. It includes query parameters that specify what data is being requested.\n    \n    - **Base URL**: `http://localhost:3000`  \n      This indicates that the API is hosted locally, typically for development purposes.\n\n    - **Path**: `/api/utility/crypto/get/`  \n      The specific path of the API used to access utility functions related to cryptocurrency.\n\n    - **Query Parameters**:\n      - `log=accumulation`  \n        This parameter specifies the type of logs to retrieve, in this case, accumulation logs.\n        \n      - `sessionId=sessionId`  \n        Placeholder for the session ID. Users should replace this with an actual session ID relevant to their request.\n        \n      - `accountId=accountId`  \n        Placeholder for the account ID. Users should replace this with an actual account ID to specify which account's logs to retrieve.\n\n  - **Headers**:  \n    This section is for any additional headers that may be required with the request.\n    \n    - **Key**: `\"\"` (empty)  \n      Currently, there are no headers specified for the request, but this field allows for custom headers if necessary.\n      \n    - **Value**: `\"\"` (empty)  \n      No value is provided for the header as it is currently disabled.\n      \n    - **Type**: `default`  \n      Indicates the type of headers being used.\n\n    - **Disabled**: `true`  \n      This means the header is not included in the request.\n\n  - **Body**:  \n    This section describes the body of the request.\n    \n    - **Mode**: `raw`  \n      Indicates that the body is in raw format.\n      \n    - **Raw**: `\"\"` (empty)  \n      There is no body content required for this GET request, so this field is left empty.\n\nThis endpoint is designed to help users obtain specific cryptocurrency accumulation logs and requires appropriate authentication and query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get Deduction Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?log=deduction&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "deduction"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Data in the Endpoint\n\n- **name**: This is the title of the API request, which indicates that it relates to retrieving deduction logs for cryptocurrency-related activities.\n\n- **request**: This section contains all the details about how to make the API request.\n\n  - **auth**: Authentication details required to access the API.\n\n    - **type**: This specifies the method of authentication used. In this case, it is a bearer token.\n\n    - **bearer**: This is an array that holds the bearer token used for authentication.\n\n      - **key**: This indicates the name of the token parameter. In this case, it's labeled as \"token\".\n\n      - **value**: This is the actual bearer token string that is required for authentication. This should be replaced with a valid token when making the request.\n\n      - **type**: Indicates the data type of the token, which is a string.\n\n  - **method**: This specifies the HTTP method to be used for the request. Here, it is a GET request, which is used to retrieve data from the server.\n\n  - **url**: This is the endpoint URL to which the API request will be sent. It contains query parameters for filtering or specifying the data being requested.\n\n    - The URL includes the following query parameters:\n      - **log**: This parameter is set to \"deduction\", indicating that the request is for deduction logs.\n      - **sessionId**: This parameter should be replaced with an actual session ID, which helps to identify the user session.\n      - **accountId**: This parameter must be replaced with a valid account ID to specify from which account the deduction logs are being retrieved.\n\n  - **headers**: This section is for additional header information that may be sent with the request.\n\n    - **key**: The name of the header. In this instance, the key is left empty, indicating no additional headers are added.\n    \n    - **value**: The value associated with the header key. Similarly, the value is empty as no additional headers are being utilized.\n\n    - **type**: Indicates the type of the header, marked as \"default\".\n\n    - **disabled**: This is a boolean flag that specifies whether the header is active or not. Here, it is set to true, meaning the header is inactive.\n\n  - **body**: This section defines the body of the request, which is typically used in POST requests. Since this is a GET request, the body is not utilized here.\n\n    - **mode**: Indicates the format of the body. This is set to \"raw\".\n\n    - **raw**: This field is empty, showing there is no body content for this GET request.\n\nThis structure helps users clearly understand the parameters and requirements necessary to successfully utilize the API to get deduction logs for cryptocurrency activities."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get Conversion Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?log=conversion&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "conversion"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Crypto - Get Conversion Logs\n\n#### Request Overview\nThis endpoint is designed to retrieve conversion logs related to cryptocurrency transactions. Below is a detailed description of each component of the request.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - The request uses Bearer token authentication to securely access the API. \n  - **Key**: `token`\n    - This is the specific key used in the authentication header.\n  - **Value**: `BearerToken`\n    - This is a placeholder for the actual bearer token required for authentication. Users should replace `BearerToken` with their valid token.\n  - **Type**: `string`\n    - Indicates that the value of the token is a string.\n\n#### HTTP Method\n- **Method**: GET\n  - This indicates that the request is a GET request, which is typically used to retrieve data from the server.\n\n#### URL\n- **URL**: `http://localhost:3000/api/utility/crypto/get/?log=conversion&sessionId=sessionId&accountId=accountId`\n  - This is the endpoint URL where the request is sent.\n  - **Query Parameters**:\n    - **log**: `conversion`\n      - This parameter specifies that the user is requesting conversion logs related to cryptocurrency.\n    - **sessionId**: `sessionId`\n      - A placeholder for the user's session ID, used to identify the user's session in the system.\n    - **accountId**: `accountId`\n      - A placeholder for the account ID, which identifies the specific user's account whose conversion logs are being requested.\n\n#### Headers\n- **Headers**: \n  - This section currently does not contain any active headers as it is marked as disabled.\n  - Users can add any additional headers required for their specific use case here.\n\n#### Body\n- **Body Mode**: Raw\n  - The request body mode is set to raw, indicating that no body content is included in the request since this is a GET request. GET requests typically do not send a body.\n\n#### Summary\nThis endpoint allows users to fetch conversion logs for cryptocurrency transactions by providing a valid bearer token for authentication along with required query parameters like session ID and account ID. Users will need to adjust the placeholders with actual values when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get Neutral Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/get/?log=category&category=neutrals&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "category"
+            },
+            {
+              "key": "category",
+              "value": "neutrals"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Utility - Crypto - Get Neutral Logs\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ],\n        \"description\": \"This section indicates that authentication is done using a bearer token. Users must provide a valid bearer token in the request header to access the endpoint.\"\n      },\n      \"method\": {\n        \"description\": \"The HTTP method used for this request is GET. This method is used to retrieve data from the server.\"\n      },\n      \"url\": {\n        \"description\": \"The URL required to access the endpoint: http://localhost:3000/api/utility/crypto/get/. It also includes query parameters: log, category, sessionId, and accountId, which are necessary for filtering the logs based on specific criteria.\"\n      },\n      \"headers\": {\n        \"description\": \"This is where you can specify additional headers if needed. Currently, there are no additional headers included, and this section is disabled.\"\n      },\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": {\n          \"description\": \"The body of the request is set to raw mode, but it is currently empty. For a GET request, the body is typically not used, and parameters are sent via the URL.\"\n        }\n      }\n    },\n    \"parameters\": {\n      \"log\": {\n        \"description\": \"This is a query parameter indicating the type of logs to retrieve. In this case, it's set to 'category'.\"\n      },\n      \"category\": {\n        \"description\": \"This parameter specifies the category of logs to retrieve. It is set to 'neutrals', which indicates that only neutral logs will be returned.\"\n      },\n      \"sessionId\": {\n        \"description\": \"A unique identifier for the user session. This helps in tracking and filtering logs related to a specific session.\"\n      },\n      \"accountId\": {\n        \"description\": \"A unique identifier for the user's account. This parameter is used to retrieve logs related to a specific account.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint:\n\n- **name**: This field specifies the name of the API request. In this case, the name is \"Utility - Crypto - Get All\". This indicates that the request is related to retrieving all cryptocurrency-related data.\n\n- **request**: This object contains all the details necessary to make the API request.\n\n  - **auth**: This section outlines the authentication method used for this API request.\n  \n    - **type**: This indicates the authentication type being used. Here, it is set to \"bearer\", which means that the request requires a bearer token for authentication.\n    \n    - **bearer**: This array contains the details of the bearer token.\n    \n      - **key**: A label for the data being passed, which in this case is \"token\".\n      \n      - **value**: The actual bearer token value that will authenticate the request. It is presented here as \"BearerToken\", which should be replaced with a valid bearer token by the user.\n      \n      - **type**: Specifies the data type of the token. Here, it is set to \"string\".\n\n  - **method**: This field states the HTTP method to be used for the request. It is set to \"GET\", indicating that data will be retrieved from the server.\n\n  - **url**: This is the endpoint URL for the API request. It is configured as \"http://localhost:3000/api/utility/crypto/all/?sessionId=sessionId&accountId=accountId\".\n    \n    - **sessionId**: A query parameter that is expected to provide the session identifier for the request. Users should replace \"sessionId\" with an actual session ID.\n    \n    - **accountId**: Another query parameter that specifies the account identifier related to the request. Users should replace \"accountId\" with a valid account ID.\n\n  - **headers**: This section lists any additional headers that should be included in the request.\n    \n    - **key**: The header field name. In this example, it is empty, suggesting no additional headers are required.\n    \n    - **value**: The value associated with the header, which is also empty in this case.\n    \n    - **type**: Indicates the type of the header. It is marked as \"default\", but it is also disabled, meaning this header will not be included in the request.\n\n  - **body**: This object outlines the request body content.\n    \n    - **mode**: Indicates the format of the request body, which is set to \"raw\". This suggests that if there were a body, it would accept unstructured text.\n    \n    - **raw**: This field is currently empty, indicating there is no request body content needed for this GET request.\n\nEach user utilizing this API collection should pay close attention to the bearer token and the query parameters to ensure valid requests are sent."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Crypto - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"cryptoId\":\"cryptoId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/crypto/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "crypto",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint: Utility - Crypto - Delete\n\n- **Name**: Utility - Crypto - Delete  \n  This is the title of the API request, indicating that it is used to delete a cryptocurrency entry within a utility context.\n\n- **Request**:\n  - **Auth**:\n    - **Type**: Bearer  \n      This specifies that the request will use bearer token authentication.\n    - **Bearer**:  \n      An array containing authentication details for the request.\n      - **Key**: token  \n        This is the key that represents the authentication type.\n      - **Value**: sessionId  \n        This is the variable name that holds the actual session token required for authentication.\n      - **Type**: string  \n        This indicates that the value of the token is expected to be a string data type.\n\n  - **Method**: POST  \n    This indicates that the HTTP method for the request is POST, meaning that this request will send data to the server to perform the delete operation.\n\n  - **URL**: http://localhost:3000/api/utility/crypto/delete  \n    This is the endpoint URL where the delete request will be sent. It points to a local server with the specified path for deleting cryptocurrency entries.\n\n  - **Headers**:  \n    This section includes any custom headers that may be sent with the request.\n    - **Key**: (empty)  \n      Currently, there are no custom headers included in this request, as the key is empty.\n    - **Value**: (empty)  \n      No value is associated with the header as it is disabled.\n    - **Type**: default  \n      Indicates the default type for any headers, though it is not in use here since the header is disabled.\n\n  - **Body**:\n    - **Mode**: raw  \n      This indicates that the request body will be sent as raw text.\n    - **Raw**:  \n      A JSON object as a string which includes:\n      - **sessionId**: \"sessionId\"  \n        This is a placeholder for the actual session ID required for authentication. It must be replaced with a valid session ID when making the request.\n      - **accountId**: \"accountId\"  \n        This is a placeholder for the ID of the account from which the cryptocurrency should be deleted. This value needs to be replaced with the actual account ID when making the request.\n      - **cryptoId**: \"cryptoId\"  \n        This is a placeholder for the specific ID of the cryptocurrency that is intended to be deleted. Like the others, it should be replaced with the actual cryptocurrency ID in the request."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "ReportsPlayer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Reports - Player - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Player\",\"description\":\"This player is my second player\",\"tags\":\"second,player\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isPlayerPrivate\":true,\"isTournamentOnly\":false,\"isPlayerDefault\":true,\"isPreLiveReportsAds\":true,\"isPostLiveReportsAds\":true,\"breakPreLiveReportsUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveReportsUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/player/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "player",
+            "create"
+          ]
+        },
+        "description": "This endpoint, named `Reports - Player - Create`, is a POST request that requires the \"bearer\" authentication type. The bearer token for this endpoint must be supplied in the form of a string in the `token` field. The endpoint url is `http://localhost:3000/api/reports/player/create`.\n\nThe following JSON body needs to be passed in the raw format with the JSON language option:\n\n- `sessionId`: A unique identification string for the session.\n- `accountId`: A unique identification string for the account.\n- `name`: A string field used to provide the name of the second player.\n- `description`: A string field to describe the player. In the current example, the second player is being described.\n- `tags`: A string field for tags related to the player. Multiple tags can be separated with commas.\n- `profilePhotoUrl`: A string field for the URL of the player's profile photo.\n- `coverPhotoUrl`: A string field for the URL of the player's cover photo.\n- `minimumTipAmount`: An integer indicating the least amount of tip the player can receive.\n- `categoryId`: A unique string identifying the category.\n- `category`: A category string, general in application.\n- `subCategoryId`: A unique string identifying the sub-category. \n- `subCategory`: A string specifying the sub-category, more specific in application.\n- `isPlayerPrivate`: A boolean field which when set to true makes the player private.\n- `isTournamentOnly`: A boolean field indicating if the player is for tournaments only.\n- `isPlayerDefault`: A boolean field indicating if the player is set as the default.\n- `isPreLiveReportsAds`: A boolean field indicating if the ads are to be displayed before live reports.\n- `isPostLiveReportsAds`: A boolean field indicating if the ads are to be displayed after live reports.\n- `breakPreLiveReportsUrl`: A string field for the URL of the pre-live report break video.\n- `breakPostLiveReportsUrl`: A string field for the URL of the post-live report break video.\n\nAll these fields must be enclosed in double-quotes (`\"`). Moreover, ensure the fields are separated by commas (`,`). The entire JSON body must be enclosed in curly braces (`{}`). There are currently no custom request headers in the endpoint, hence that part is disabled."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Player - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"playerId\":\"playerId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Player 2.0\",\"description\":\"This player is my second player\",\"tags\":\"second,player\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isPlayerPrivate\":true,\"isTournamentOnly\":false,\"isPlayerDefault\":true,\"isPreLiveReportsAds\":true,\"isPostLiveReportsAds\":true,\"breakPreLiveReportsUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveReportsUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/player/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "player",
+            "update"
+          ]
+        },
+        "description": "This API endpoint is named \"Reports - Player - Update\". It's a PUT request, which is used to update existing resources. This endpoint is authenticated through Bearer authentication, which requires a \"token\" string to be passed in the headers. \n\nThe request is made to 'http://localhost:3000/api/reports/player/update'. Along with the Bearer token, you also need to provide a \"Client-UUID\" in the headers, which uniquely identifies each client.\n\nThe body of this request must be in raw JSON format, containing the player report data that needs to be updated. The following parameters are included in the JSON:\n\n- \"playerId\": Identifier of the player.\n- \"sessionId\": Session in which the player is participating.\n- \"accountId\": Identifier of the player's account.\n- \"name\": Updated name of the player. \n- \"description\": Updated description of the player.\n- \"tags\": Tags associated with the player, usually for categorization or search purposes. \n- \"profilePhotoUrl\": URL of the player's updated profile photo.\n- \"coverPhotoUrl\": URL of the player's updated cover photo.\n- \"minimumTipAmount\": The minimum amount for tips applicable to this player.\n- \"categoryId\": Identifier for player's category.\n- \"category\": Updated name of the player's category.\n- \"subCategoryId\": Identifier for player's sub-category.\n- \"subCategory\": Updated name of the player's sub-category.\n- \"isPlayerPrivate\": Boolean value showing if the player is private or public.\n- \"isTournamentOnly\": Boolean value indicating if the player is only for tournaments.\n- \"isPlayerDefault\": Boolean value indicating if this player is set as the default.\n- \"isPreLiveReportsAds\": Boolean value indicating whether to show ads before live reports.\n- \"isPostLiveReportsAds\": Boolean value indicating whether to show ads after live reports.\n- \"breakPreLiveReportsUrl\": URL at which the pre-live reports break for ads will be available.\n- \"breakPostLiveReportsUrl\": URL at which the post-live reports break for ads will be available.\n\nThe API will return a response that indicates the success or failure of the operation."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Player - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/player/get/?playerId=playerId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "player",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "playerId",
+              "value": "playerId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "- **name**: This denotes the name or title of this endpoint, which in this case is 'Reports - Player - Get'. This is usually used for identifying the API endpoint in a collection or documentation.\n\n- **request.auth**: The 'auth' field represents the type of authorization required to send a request to this endpoint. This endpoint requires Bearer Token authorization. The generated token needs to be passed here as a string.\n\n- **request.method**: This is the HTTP method used for the request. Since the method here is 'GET', this endpoint corresponds to retrieving data from a server.\n\n- **request.url**: This is the URL where the request will be sent. It includes the base URL (http://localhost:3000/api/reports/player/get/) and query parameters playerId, sessionId, and accountId to identify the specific player, session, and account.\n\n- **request.headers**: Headers can contain more information about the request. For this endpoint, no additional headers are required as the 'disabled' value is set to 'true'.\n\n- **request.body**: Here we define what data to send within the body of the HTTP request. For this 'GET' request, there is no body. The mode is 'raw' which means that if data were to be sent, it would be sent in unprocessed form. For this endpoint, however, no 'raw' data is to be sent. \n\nRemember to replace the BearerToken string in the auth field, and playerId, sessionId, accountId in the URL with actual values for a successful request."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Player - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/player/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "player",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Reports - Player - Get All\". It fetches all reports associated with a player from the server.\n\n1. `name`: This is the name of the endpoint which is \"Reports - Player - Get All\". You will use this name to identify this endpoint in your collection.\n\n2. `request`: This object contains information about the HTTP request that you will be sending.\n\n3. `auth`: This object has details about the authentication required for the endpoint.\n    - `type`: This specifies the authentication type, in this case \"bearer\", which means you should pass a bearer token for authentication.\n    - `bearer`: This field is an array and contains infomation about the bearer token.\n        - `key`: The field label or key, in this case \"token\".\n        - `value`: This is where you will substitute with the actual token, labelled here as \"BearerToken\".\n        - `type`: Specifies the type of the key value. Here, it's a \"string\".\n\n4. `method`: The HTTP method used for this endpoint is \"GET\" - this indicates you are retrieving data.\n\n5. `url`: This is the URL of the endpoint. Parameters such as `sessionId` and `accountId` are query strings. Replace `sessionId` and `accountId` with the actual session ID and account ID respectively when making a request.\n\n6. `headers`: This is an array of headers. It's empty, meaning no custom headers are needed for this request.\n\n7. `body`: This object contains details about the body of the request.\n    - `mode` : The mode of the body is set to \"raw\", implying you can send unstructured data. However, since this is a GET request, typically no request body is needed, so \"raw\" should be empty. \n\nThat's what each part of this endpoint means. Make sure to replace the placeholders like `BearerToken`, `sessionId`, and `accountId` with actual values when sending a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Player - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"playerId\":\"playerId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/player/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "player",
+            "delete"
+          ]
+        },
+        "description": "The endpoints in this JSON object are described as follows:\n\n1. \"name\": \"Reports - Player - Delete\" - This is the name of the endpoint, indicating that it is used for deleting player reports.\n\n2. \"request\": This object contains all the details of the HTTP request.\n\n    a. \"auth\": This object describes the authentication method used for the request. \n    \n        i. \"type\": \"bearer\" - This indicates the type of authentication used, which in this case is Bearer authentication.\n    \n        ii. \"bearer\": This array contains the bearer token details. Here, the bearer token is represented by a sessionId, of string type.\n\n    b. \"method\": \"POST\" - This indicates the HTTP method used for the request. Here it is \"POST\", which means data is sent to a server to create a resource.\n\n    c. \"url\": \"http://localhost:3000/api/reports/player/delete\" - This is the URL endpoint at which the request will be made.\n\n    d. \"headers\": This field is an array that would usually contain any additional headers that the request requires. In this case, it is an empty default header that is disabled.\n\n    e. \"body\": This object contains details of the request body. \n\n        i. \"mode\": \"raw\" - This describes how the request body is formatted. Here, it is in \"raw\" mode which means the data is sent as it is written in the body field. \n\n        ii. \"raw\": This field contains the raw data being sent in the body. It includes the sessionId, accountId, and playerId, all of which are necessary for identifying the correct player report to delete.\n\nSo, when executing this POST request, you should include the bearer token in the request header. The token represents the sessionId and is a string type. The request body should be in raw format and include three identifiers- sessionId, accountId, and playerId. This information is necessary to specify the player report to be deleted."
+      },
+      "response": []
+    }
+  ]
+}

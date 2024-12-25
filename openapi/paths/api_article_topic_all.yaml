@@ -1,51 +1,59 @@
 get:
   tags:
     - ArticleTopic
-  summary: Article - Topic - Get All
+  summary: Article - Topic - Get All By SubCategory ID
   description: >-
-    - "name": This is the name of the endpoint. In this case, the name given is
-    "Article - Topic - Get All", which implies that this endpoint probably
-    fetches all topic-related articles.
+    This endpoint is named "Article - Topic - Get All By SubCategory ID". It
+    basically gets all articles under a specific topic identified by its
+    subcategory ID. Here's the breakdown:
 
 
-    - "request": A descriptor for the type of HTTP request being made. The
-    properties that follow within this hierarchy present more specific details
-    about the request.
+    1. **name**: The name of this endpoint is "Article - Topic - Get All By
+    SubCategory ID", which explains the primary function of this endpoint. It's
+    designed to fetch all articles within a specified topic that falls under a
+    certain subcategory.
 
 
-    - "auth": This is an authorization object. In this case, it's of type
-    'bearer', which is a method of authentication that involves sending a bearer
-    token.
-
-        - "type": Specifies the authentication method used. Here, the "Bearer" HTTP authentication scheme is being used.
-      
-        - "bearer": This array contains the information for bearer authentication which includes:
-          - "key": This is the header field name used to pass the bearer token, in this instance it's 'token' 
-          - "value": This is where the actual bearer token is placed. In this instance, the placeholder is 'BearerToken'.
-          - "type": The data type of the 'value'. In this case, it's a string.
-
-    - "method": The type of HTTP method used for the request. Here, it's a "GET"
-    method, used to retrieve data from a server.
+    2. **auth**: This section outlines the expected authentication mechanism.
+    The `type` is "bearer", indicating that bearer token authentication is
+    required. The bearer token itself should be supplied as the value of the
+    `token` key. Here, "BearerToken" is a placeholder for the actual token you
+    need to provide.
 
 
-    - "url": The URL to where the request is being sent. Here, the request is
-    being sent to "http://localhost:3000/api/article/topic/all", which is likely
-    to be an API endpoint for getting all topics of articles.
+    3. **method**: This endpoint uses the "GET" HTTP method, which is typically
+    used to retrieve information.
 
 
-    - "headers": HTTP headers that will be included in the request. In this
-    example, no specific headers are included as the key-value field is kept
-    empty and it is disabled. If it was enabled, the listed key-value pair would
-    have been sent as an HTTP header.
+    4. **url**: This is the URL where the request should be sent. This example
+    uses a local server running on port 3000. The route is
+    "/api/article/topic/all". A query parameter `subCategoryId` is required
+    where you are supposed to provide the subcategory ID
+    (`articleSubCategoryId`) of the articles that you want to retrieve.
 
 
-    - "body": Defines the body of the request. In this case, the "mode" is set
-    to "raw", meaning the HTTP request body will contain raw (unprocessed) data.
-    However, no raw content has been provided in this endpoint, so it's left as
-    an empty string. This makes sense since, for a "GET" request, you usually do
-    not need a request body.
+    5. **headers**: This is usually where you define any necessary HTTP headers
+    for your request. However, in this case, a default header without a
+    key-value pair is defined, but it is disabled.
+
+
+    6. **body**: This outlines the structure and mode of the body of your
+    request. However, since we're using a GET method, the body is not required
+    and thus the `raw` field is empty. The `mode` is set to "raw", but it won't
+    be used here.
+
+
+    Please remember to replace placeholders with real values when using this
+    endpoint. Specifically, you should provide a valid bearer token and a valid
+    subcategory ID.
   security:
     - bearerAuth: []
+  parameters:
+    - name: subCategoryId
+      in: query
+      schema:
+        type: string
+      example: articleSubCategoryId
   responses:
     '200':
       description: Successful response

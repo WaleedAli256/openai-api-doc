@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationUsers",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Users - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Users\",\"description\":\"This users is my second users\",\"tags\":\"second,users\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isUsersPrivate\":true,\"isTournamentOnly\":false,\"isUsersDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/users/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "users",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Notification - Users - Create\". It's a POST request used to create a new user in the notification system. The request is authenticated using a bearer token which should be provided in the 'token' field inside the 'auth' object. The endpoint URL is \"http://localhost:3000/api/notification/users/create\".\n\nThere is an empty key-value pair in the headers object that is disabled by default. However, if any headers are required for your specific situation, you can enter them here.\n\nThe main content of this request is in the 'body' object, which contains several fields. Please ensure that you post the content in the 'raw' mode. \n\nThe 'raw' body of the request is provided in JSON format and includes the user's session ID, account ID, name, a description of the user, tags associated with the user, URLs for the user's profile and cover photos, the minimum amount that can be tipped to the user, category details (both primary and sub-category), privacy settings, whether the user is only for tournaments, whether the user is default, whether pre-live and post-live ads are displayed during the user's notifications, and URLs for pre and post-live breaks.\n\nIt's essential that these fields are filled out completely and accurately, as they create a full profile for the user in the notification system. Ensure all URLs and IDs are valid, and boolean fields are correctly set to either true or false. The 'minimumTipAmount' field expects a numerical value for the minimum tip amount."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Users - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"usersId\":\"usersId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Users 2.0\",\"description\":\"This users is my second users\",\"tags\":\"second,users\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isUsersPrivate\":true,\"isTournamentOnly\":false,\"isUsersDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/users/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "users",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Notification - Users - Update\". It requires a PUT HTTP method, which means it's used to update an existing resource on the server. The endpoint URL is 'http://localhost:3000/api/notification/users/update'.\n\nAuthentication for this endpoint is done with a Bearer token. The Bearer token should be provided with the key as 'token', and it's of 'string' type.\n\nThis API also needs a 'Client-UUID' in the header for identifying the client making the request.\n\nThe body of this request is in raw JSON format and contains several properties:\n\n- 'usersId': The unique identifier for the user.\n- 'sessionId': The session identifier.\n- 'accountId': The account identifier.\n- 'name': The new name of the user.\n- 'description': The description of the user.\n- 'tags': These are tags associated with the user separated by commas.\n- 'profilePhotoUrl': The URL link to the user's profile photo.\n- 'coverPhotoUrl': The URL link to the user's cover photo.\n- 'minimumTipAmount': This is the minimum tip amount that the user can get.\n- 'categoryId': The identifier for the user's category.\n- 'category': The name of the user's category.\n- 'subCategoryId': The identifier for the user's sub-category.\n- 'subCategory': The name of the user's sub-category.\n- 'isUsersPrivate': A boolean value representing whether the user is private.\n- 'isTournamentOnly': A boolean value representing whether the user is only for tournaments.\n- 'isUsersDefault': A boolean value representing whether the user is the default.\n- 'isPreLiveNotificationAds': A boolean value representing whether the user will have ads before live notifications.\n- 'isPostLiveNotificationAds': A boolean value representing whether the user will have ads after live notifications.\n- 'breakPreLiveNotificationUrl': The URL link to the break that happens before the live notification.\n- 'breakPostLiveNotificationUrl': The URL link to the break that happens after the live notification. \n\nAll these properties should be provided as string values, apart from the ones that specifically marked as boolean, which should be provided as true or false."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Users - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/users/get/?usersId=usersId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "users",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "usersId",
+              "value": "usersId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "The given data contains details about an API endpoint. Here's a detailed description of its various components:\n\n1. \"name\": The \"name\" field indicates the name or title of the API endpoint. In this case, the name is \"Notification - Users - Get\". This could imply that this API endpoint might be used to get notifications pertaining to users.\n\n2. \"request\": This contains details about the request that needs to be made to this API endpoint. It contains the following elements:\n    - \"auth\": Contains the authentication specifics that this API needs. The authentication method in this case is \"bearer\", indicating the presence of a bearer token for user authentication. The bearer token is a string typed key-value pair that needs to be passed in the API call.\n    \n    - \"method\": The type of HTTP method to access this endpoint. It is \"GET\", indicating that data is being retrieved from the server.\n    \n    - \"url\": The actual URL or endpoint where the request needs to be made. Query parameters including \"usersId\", \"sessionId\", and \"accountId\" are required.\n    \n    - \"headers\": Any additional HTTP headers that should be sent with the request. In this case, an empty key-value pair is set as the default and is disabled, implying that there is no additional header information being sent with this request.\n    \n    - \"body\": Contains details about the body of the HTTP request. The mode is set to \"raw\", indicating that the raw data is sent in the body of the request. However, it appears there is no raw data to be sent as part of this request as the \"raw\" field is empty.\n\nOverall, this API seems to be retrieving user notification data by taking a bearer token for authentication and user-specific identifiers like \"usersId\", \"sessionId\", and \"accountId\" as parameters. The request doesn't include additional header or body data."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Users - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/users/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "users",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "- `name`: This attribute refers to the name of the specific endpoint. In this case, \"Notification - Users - Get All\". This name serves as a brief description of the endpoint's functionality, i.e., retrieving all notifications for users.\n\n- `request`: This object encapsulates all the details related to the HTTP request to be made to a specific service. \n\n  - `auth`: This object describes the authentication method to be used for the request. The `type` specifies the authentication type. Here, a bearer token is used.\n  \n    - `bearer`: This array includes the details of the bearer token authentication. Each item in the array is an object that contains a `key` (i.e., the name of the field), `value` (i.e., the actual bearer token), and the `type` of the value, which in this instance is a string.\n  \n\n  - `method`: This defines the HTTP method to be used for the request. Here, it is GET method.\n  \n  - `url`: This is the API endpoint to which the request will be sent. The current URL includes query parameters (`sessionId` and `accountId`) which will need to be populated with appropriate values to retrieve notifications for a specific account and session.\n  \n  - `headers`: This array represents any additional HTTP headers that should be included in the request. It is currently empty and thus disabled, indicating that no extra headers are to be sent.\n  \n  - `body`: This contains any data that has to be sent in the body of the HTTP request. It contains `mode` and `raw`. The `mode` describes the way data present in the body should be formatted prior to being sent with the request. For instances, `raw` data is sent as it is without any modifications. But in this case, the `raw` value is an empty string indicating that no data is sent with the HTTP request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Users - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"usersId\":\"usersId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/users/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "users",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is titled 'Notification - Users - Delete'. \n\nThe Authentication type used for this endpoint is 'Bearer Authentication'. It has a bearer token field labeled as 'token', which should carry a 'sessionId'. The value of this sessionId is a string type. This ID is critical for user authentication. \n\nThe HTTP request method for this endpoint is 'POST', implying that you are sending (posting) data to the API.\n\nThe URL for the endpoint is 'http://localhost:3000/api/notification/users/delete'. This is the address that the request will be sent to. \n\nIn this endpoint, headers are included, but they have been disabled. This means they will be ignored when the request is sent.\n\nWithin the body of the request is the 'raw' mode type. The raw format of the data to be sent within the body of the request is in JSON (JavaScript Object Notation). \n\nIt contains the following attributes:\n1. 'sessionId': A unique id related to the session of the API consumer. It is assumed to be a unique identifier for tracking session.\n2. 'accountId': This probably refers to the unique id of the account involved in this API operation.\n3. 'usersId': This field likely represents the unique user ids for which the notifications need to be turned off or deleted. \n\nEnsure you replace 'sessionId', 'accountId', and 'usersId' with the correct values before sending the request."
+      },
+      "response": []
+    }
+  ]
+}

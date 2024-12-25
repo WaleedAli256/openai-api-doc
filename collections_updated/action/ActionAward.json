@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionAward",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Award - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"award1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/award/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "award",
+            "create"
+          ]
+        },
+        "description": "### Action - Award - Create\n\n**Endpoint**: POST http://localhost:3000/api/action/award/create\n\n#### Request Authorization\n- **Auth Type**: Bearer\n  - **Token**: This is a security token that allows access to the API. Replace `BearerToken` with the actual token needed for authentication.\n\n#### Request Method\n- **Method**: POST\n  - This specifies that you are sending data to the server to create a new award action.\n\n#### Request Body\n- **Body Type**: Raw JSON\n  - The body of the request should be formatted as raw JSON data. The following fields are required in the JSON body:\n\n1. **sessionId**: \n   - A unique identifier for the session in which the award is being created. This helps track the specific session for which the action is associated.\n\n2. **accountId**: \n   - The identifier for the account initiating the award creation. This should represent the user or entity that is responsible for the action.\n\n3. **path**: \n   - The path to the specific resource related to this action, such as a live video stream. In this case, it is formatted as `/live/channel/video123`.\n\n4. **targetType**: \n   - Specifies the type of target that will receive the award. In this example, it is set to `streamer`, indicating that the award is directed towards a streaming content creator.\n\n5. **targetId**: \n   - The identifier for the target entity receiving the award. Here, it should be replaced with the actual ID of the video or streamer.\n\n6. **sourceType**: \n   - Indicates the type of source from which the award is being issued. It is set to `accountId`, meaning that the award is coming from a user account.\n\n7. **sourceId**: \n   - Similar to `accountId`, this is the identifier for the source account issuing the award. It should match the `accountId` above to indicate the same entity.\n\n8. **tokenAmount**: \n   - The amount of tokens being awarded in this action. In this case, it is set to 20 tokens.\n\n9. **name**: \n   - The name of the award being created. This is a descriptive title for the award, which in this case is set to `award1`.\n\n10. **description**: \n    - A text field to provide an optional description of the award. This can be left blank or filled with additional information.\n\n11. **tags**: \n    - An optional field for including tags related to the award. This can help in categorizing or filtering awards based on different criteria. It can be left empty if no tags are needed.\n\n#### Headers\n- **Headers**: \n  - No specific headers are required as none are set. The default header type is disabled, indicating that no additional headers are necessary for this request.\n\n### Summary\nThis API endpoint is used to create an award action, allowing a user to award tokens to a streamer or content creator. Ensure all the required fields are filled out correctly and replace placeholder values with actual identifiers."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Award - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"awardId\":\"awardId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/award/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "award",
+            "update"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: This is the title of the API request. It indicates the action being performed, which in this case is to update an award.\n\n- **request**: This object contains all the necessary details to execute the request.\n\n  - **auth**: This section specifies the authentication method required for the request.\n    \n    - **type**: Indicates the type of authentication being used. In this case, it is \"bearer,\" which means a token is needed for access.\n    \n    - **bearer**: This array includes the details of the bearer token.\n      \n      - **key**: This defines the parameter name for the bearer token, which is \"token.\"\n      \n      - **value**: This represents the actual bearer token that will be used for authentication. In this example, it is denoted as \"BearerToken.\"\n      \n      - **type**: Specifies the data type of the token, which is a string.\n\n  - **method**: This indicates the HTTP method used for the request. Here, it is \"PUT,\" suggesting that this request will update an existing resource.\n\n  - **url**: This is the endpoint URL where the request is sent. In this case, it is directed to \"http://localhost:3000/api/action/award/update.\"\n\n  - **headers**: This array contains any additional headers necessary for the request.\n    \n    - **key**: This defines the name of the header. It is set to \"Client-UUID.\"\n    \n    - **value**: This represents the value associated with the header, which here is referred to as \"ClientUUID.\"\n    \n    - **type**: Specifies the type of the header, labeled as \"default.\"\n\n  - **body**: This object describes the content sent with the request.\n\n    - **mode**: Indicates the format of the body content. In this case, it is \"raw,\" meaning the content is sent as a raw text string.\n    \n    - **raw**: This contains the actual data to be sent in the request body. It is formatted in JSON.\n      \n      - **sessionId**: This field holds the identifier for the session in which the action is taking place.\n      \n      - **accountId**: This represents the unique identifier for the user’s account involved in the action.\n      \n      - **awardId**: This indicates the unique identifier of the award that is being updated.\n      \n      - **path**: This specifies the path related to the action, likely indicating where the award action is relevant. Here, it is set to \"/live/channel/video123.\"\n      \n      - **targetType**: This indicates the type of target for the award action. In this example, it is set to \"streamer,\" denoting that the award is aimed at a streaming entity.\n      \n      - **targetId**: This is the unique identifier for the target of the action, in this case represented as \"videoId.\"\n      \n      - **sourceType**: This denotes the type of source from which the action originates. Here, it is marked as \"accountId.\"\n      \n      - **sourceId**: This provides the unique identifier for the source, which is the same as the accountId in this request.\n      \n      - **tokenAmount**: This indicates the number of tokens to be awarded in the action, specified as 20.\n      \n      - **name**: This field holds the name associated with the action, set to \"Farooq\" in this instance.\n      \n      - **description**: This provides additional details about the action being performed, here noted as \"this is description.\"\n      \n      - **tags**: This field serves as a way to categorize the action, represented simply as \"xyz.\"\n\n    - **options**: This object includes settings for the body content.\n      \n      - **raw**: This specifies additional format details for the raw content.\n        \n        - **language**: Indicates the language of the raw content, which is \"json\" in this case."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Award - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/award/get/?awardId=awardId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "award",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "awardId",
+              "value": "awardId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Award - Get\n\n#### Description of Data\n\n- **name**: This specifies the name of the API request. In this case, the request is titled \"Action - Award - Get\", which indicates that it is used for retrieving award-related information.\n\n- **request**: This section contains all the details related to the API request.\n\n  - **auth**: This denotes the authentication method used for the request.\n    - **type**: Specifies the type of authentication. In this instance, it is set to \"bearer\", indicating a bearer token authentication method.\n    - **bearer**: This is an array that holds the authentication details.\n      - **key**: This is a label for the value being sent, which is \"token\" in this situation.\n      - **value**: This holds the actual bearer token. Here, it is labeled as \"BearerToken\", which should be replaced with a valid token when making the request.\n      - **type**: The data type of the value provided, which is \"string\".\n\n  - **method**: Specifies the HTTP method used for the request. This request uses the \"GET\" method, which is typically used to retrieve data from the server.\n\n  - **url**: This is the endpoint URL that the request is sent to. In this instance, it is:\n    ```\n    http://localhost:3000/api/action/award/get/?awardId=awardId&sessionId=sessionId&accountId=accountId\n    ```\n    - The URL contains query parameters:\n      - **awardId**: A placeholder for the ID of the award you want to retrieve. You must replace \"awardId\" with the actual award ID.\n      - **sessionId**: A placeholder for the session ID associated with the request. Replace \"sessionId\" with the actual session ID.\n      - **accountId**: A placeholder for the account ID associated with the request. Replace \"accountId\" with the actual account ID.\n\n  - **headers**: This section is meant for including additional headers in the request.\n    - **key**: This is left empty and does not contain any specific header information.\n    - **value**: This is also empty, indicating no value is associated with any header.\n    - **type**: This is labeled as \"default\".\n    - **disabled**: This property is set to true, which means that this particular header setup is disabled and will not be included in the request.\n\n  - **body**: This section describes the body of the request.\n    - **mode**: Indicates the format of the request body. Here, it is \"raw\", suggesting that the body content is sent as raw data.\n    - **raw**: This field is currently empty, which means there is no raw data being sent in the body of the request.\n\nThis description provides a comprehensive overview of the components involved in the \"Action - Award - Get\" request, guiding users on how to properly utilize the API."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Award - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/award/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "award",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Award - Get All\n\n#### Overview\nThis endpoint retrieves a list of all awards associated with a given session and account. \n\n#### Detailed Description of Each Field\n\n- **name**: \n  - This is the name of the API request. It is labeled as \"Action - Award - Get All,\" indicating that it fetches all the available awards.\n\n- **request**: \n  - This object contains all the details needed to perform the API request.\n\n  - **auth**:\n    - This specifies the authentication method for the API request.\n    - **type**: \n      - The type of authentication being used. In this case, it is \"bearer,\" which indicates that a token is required to authorize the request.\n    - **bearer**: \n      - This array holds the details for the bearer token.\n      - **key**: \n        - This represents the name of the token. Here, it's labeled as \"token.\"\n      - **value**: \n        - This is the actual token value you need to supply for authorization. This is presented as \"BearerToken\" but should be replaced with a real token.\n      - **type**: \n        - Indicates the data type of the value provided for the bearer token. It is set to \"string.\"\n\n  - **method**: \n    - This indicates the HTTP method used for the request. It is set to \"GET,\" which is used for retrieving data.\n\n  - **url**: \n    - This is the endpoint URL where the API request is sent. \n    - The structure includes parameters for session ID and account ID: \n      - `sessionId=sessionId`: This placeholder should be replaced with the actual session ID for the query.\n      - `accountId=accountId`: This placeholder should be replaced with the actual account ID for the query.\n    - The full URL for the request is: `http://localhost:3000/api/action/award/all/?sessionId=sessionId&accountId=accountId`.\n\n  - **headers**: \n    - This is an array that contains any additional headers that may be needed for the API request. In this case, the array contains an empty object, indicating that no custom headers are required, and the header is currently disabled.\n\n  - **body**: \n    - This section holds the body of the request.\n    - **mode**: \n      - Indicates the format of the body content. It is set to \"raw,\" implying a raw data type is expected.\n    - **raw**: \n      - This is where the raw data would be placed if necessary. Currently, it is empty since a GET request typically does not require a body.\n\n#### Usage \nUse this endpoint to retrieve all awards for a specified session and account by supplying the required parameters and a valid bearer token for authentication. Be sure to replace the placeholders in the URL with actual values before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Award - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"awardId\":\"awardId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/award/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "award",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Award - Delete\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": {\n          \"description\": \"Authentication method requiring a bearer token to authorize the request. The token is typically provided in the header for authentication.\"\n        },\n        \"bearer\": [\n          {\n            \"key\": \"token\": {\n              \"description\": \"Specifies the type of authorization token being used for this request.\"\n            },\n            \"value\": \"sessionId\": {\n              \"description\": \"This is the actual session ID that identifies the user's active session and grants access to the API.\"\n            },\n            \"type\": \"string\": {\n              \"description\": \"Indicates that the value of the token is expected to be a string.\"\n            }\n          }\n        ]\n      },\n      \"method\": \"POST\": {\n        \"description\": \"The HTTP method used for this request. POST is typically used to submit data to be processed to a specified resource.\"\n      },\n      \"url\": \"http://localhost:3000/api/action/award/delete\": {\n        \"description\": \"The endpoint URL where the request is sent. This URL points to the API function responsible for deleting an award.\"\n      },\n      \"headers\": [\n        {\n          \"key\": \"\": {\n            \"description\": \"This normally indicates a header key that can be defined for sending additional information with the request, but it is not specified here.\"\n          },\n          \"value\": \"\": {\n            \"description\": \"The corresponding value for the header key, which is also not specified here.\"\n          },\n          \"type\": \"default\": {\n            \"description\": \"Indicates the type of the header. However, since the key and value fields are empty, no additional headers are being sent.\"\n          },\n          \"disabled\": true: {\n            \"description\": \"This indicates that the header is currently disabled and will not be included in the request.\"\n          }\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": {\n          \"description\": \"The body of the request is formatted as raw data. This means it is not structured as form data or JSON automatically.\"\n        },\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"awardId\\\":\\\"awardId\\\"}\": {\n          \"description\": \"This is the raw JSON payload sent in the body of the request. It includes three parameters: sessionId, accountId, and awardId. These values are placeholders and should be replaced with actual data when making the request.\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

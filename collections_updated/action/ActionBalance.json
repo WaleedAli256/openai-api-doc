@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionBalance",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Balance - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"balance1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/balance/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "balance",
+            "create"
+          ]
+        },
+        "description": "### Action - Balance - Create Endpoint Description\n\nThis API endpoint is used to create a new balance action in the system. Below is a detailed description of each component in the request.\n\n#### Request Authentication\n- **Type**: Indicates that the authentication method used is a bearer token.\n- **Bearer**: Contains the token used for authorization.\n  - **Key**: Represents the name of the token parameter, which is standardized to \"token\" in this context.\n  - **Value**: Placeholder for the actual bearer token (e.g., \"BearerToken\") that grants access to the API.\n  - **Type**: Specifies that the value is of type string.\n\n#### HTTP Method\n- **Method**: The request uses the HTTP POST method, indicating that it is intended to submit data to be processed.\n\n#### Endpoint URL\n- **URL**: The endpoint for making the POST request, which is set to `http://localhost:3000/api/action/balance/create`. This is the local server address where the API is hosted.\n\n#### Request Headers\n- **Headers**: This section can include additional metadata sent with the request. It's currently shown as empty and disabled, which means no custom headers are set.\n\n#### Request Body\n- **Mode**: The request body is set to \"raw\", which means that the data is sent as plain text.\n- **Raw**: Contains the JSON formatted data that is submitted in the request body. Below is the breakdown of each field included in the JSON:\n  - **sessionId**: A unique identifier for the user session (e.g., \"sessionId\") being referenced.\n  - **accountId**: The ID of the account for which the balance action is being created (e.g., \"accountId\").\n  - **path**: A string that specifies the path associated with the action (e.g., \"/live/channel/video123\").\n  - **targetType**: Indicates who or what the action is targeted at, which in this case is \"streamer\".\n  - **targetId**: The ID of the target for the action, such as a video ID (e.g., \"videoId\").\n  - **sourceType**: Specifies the type of source to draw from, noted as \"accountId\".\n  - **sourceId**: The ID of the source used in the action, which is also the account ID (e.g., \"accountId\").\n  - **tokenAmount**: The amount of tokens involved in the balance action, set here to 20.\n  - **name**: A name assigned to the balance action for identification purposes (e.g., \"balance1\").\n  - **description**: An optional field that can document more information about the action (currently left empty).\n  - **tags**: An optional field for adding tags to categorize the balance action (currently left empty).\n\n#### Body Options\n- **Options**: Specifies settings for interpreting the raw body.\n  - **Raw**: Indicates that the body content is in JSON format.\n\nThis endpoint is useful for users looking to manage user balances within a specific context like streaming, providing a streamlined way to create balance actions programmatically."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Balance - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"balanceId\":\"balanceId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/balance/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "balance",
+            "update"
+          ]
+        },
+        "description": "### Action - Balance - Update\n\n#### Request Details:\n- **Auth**: This section outlines the authentication method used for the request.\n  - **Type**: The type of authentication being used is bearer token.\n  - **Bearer Token**: A key-value pair where:\n    - **Key**: The name for the token, labeled as \"token\".\n    - **Value**: The actual bearer token placeholder, noted as \"BearerToken\". This token must be replaced with a valid token for authorization.\n\n- **Method**: The HTTP method used for this request is PUT, which indicates that this request is intended to update an existing resource.\n\n- **URL**: The endpoint for making the request is:\n  - `http://localhost:3000/api/action/balance/update`\n  - This is the designated path for updating balance information.\n\n- **Headers**: Custom headers to be sent with the request.\n  - **Client-UUID**: A key-value pair where:\n    - **Key**: The header's name is \"Client-UUID\".\n    - **Value**: The placeholder \"ClientUUID\" must be replaced with the actual client UUID for identification purposes.\n\n#### Body:\n- The body of the request contains a raw JSON object that specifies the details necessary for the balance update.\n  - **SessionId**: A unique identifier for the session, replace \"sessionId\" with the actual session ID.\n  - **AccountId**: Identifier for the account in question, to be replaced with the actual account ID.\n  - **BalanceId**: Unique identifier for the balance record to be updated, must replace \"balanceId\" with the correct value.\n  - **Path**: A string representing the path where the action is being executed, for example, \"/live/channel/video123\".\n  - **TargetType**: Specifies the type of target for the operation, here it is set to \"streamer\".\n  - **TargetId**: Identifier for the target object, replace \"videoId\" with the actual ID.\n  - **SourceType**: Type of source for the operation, to be set as \"accountId\".\n  - **SourceId**: Identifier for the source account, will also be \"accountId\" in this case.\n  - **TokenAmount**: The quantity of tokens being updated, currently set to 20.\n  - **Name**: A string representing the name associated with the action, currently set as \"Farooq\".\n  - **Description**: A brief string description for the action, currently set to \"this is description\".\n  - **Tags**: Comma-separated tags that describe the action, currently set to \"xyz\".\n\nThis information is structured in JSON format and is necessary for executing the balance update action in the API."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Balance - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/balance/get/?balanceId=balanceId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "balance",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "balanceId",
+              "value": "balanceId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Balance - Get Endpoint Description\n\n- **name**: Represents the name of the API action being performed. In this case, it is \"Action - Balance - Get\", indicating that this endpoint is used to retrieve balance details.\n\n- **request**: This section outlines the details of the HTTP request that will be made to the server.\n\n  - **auth**: This part specifies the authentication method used for the request.\n  \n    - **type**: Indicates the authentication mechanism. Here, it is \"bearer\", meaning the request requires a bearer token for authorization.\n    \n    - **bearer**: This is an array that contains the parameters for the bearer token.\n    \n      - **key**: A label for the token, in this instance, it is \"token\".\n      \n      - **value**: Represents the actual bearer token to be sent with the request. It is currently marked as \"BearerToken\", which should be replaced with an actual token when making the request.\n      \n      - **type**: Indicates the data type of the token value, which is specified as \"string\".\n\n  - **method**: The HTTP method used for this request. It is a \"GET\" request, which means the endpoint is used to retrieve information rather than modify it.\n\n  - **url**: The endpoint URL where the request will be sent. This includes:\n  \n    - The base URL: `http://localhost:3000`\n    \n    - The API path: `/api/action/balance/get/`\n    \n    - Query parameters:\n      - **balanceId**: A parameter that should be replaced with the actual balance ID to specify which balance to retrieve.\n      - **sessionId**: A parameter that should be replaced with the actual session ID, used to identify the user session.\n      - **accountId**: A parameter that should be replaced with the actual account ID to retrieve the relevant balance for the specified account.\n\n  - **headers**: This section lists HTTP headers to be included in the request.\n  \n    - The current header is empty, meaning no additional headers are sent. The header is marked as \"disabled\", which implies it is not active and will not be included in the request.\n\n  - **body**: The body of the request.\n  \n    - **mode**: Indicates the format of the body. For a GET request, this is generally not used, but here it is set to \"raw\".\n    \n    - **raw**: Contains the request body data, which is currently empty, as GET requests typically do not include a body.\n\nThis detailed description provides a comprehensive overview of the components involved in the \"Action - Balance - Get\" endpoint for effective usage by other users."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Balance - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/balance/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "balance",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Balance - Get All\n\n- **Name**: Action - Balance - Get All\n  - This identifies the purpose of the API call. It is used to retrieve all balance-related information for actions.\n\n- **Request**: \n  - This section details how the request should be formed to interact with the API.\n\n  - **Auth**:\n    - **Type**: bearer\n      - The authentication method used for this endpoint is OAuth 2.0 Bearer Token.\n      \n    - **Bearer**:\n      - This is an array that contains the details required for bearer authentication.\n      \n      - **Key**: token\n        - This represents the authorization key used to authenticate the request.\n        \n      - **Value**: BearerToken\n        - This should contain the actual token value to grant access. Replace \"BearerToken\" with the actual token obtained during user authentication.\n        \n      - **Type**: string\n        - Indicates that the value of the token is a string.\n\n  - **Method**: GET\n    - Specifies that this endpoint uses the HTTP GET method to retrieve data.\n\n  - **URL**: \n    - The endpoint for the API call.\n    - **http://localhost:3000/api/action/balance/all/?sessionId=sessionId&accountId=accountId**\n      - This is the base URL used to access the API. \n      - **sessionId**: This query parameter is used to identify the current user session. Replace \"sessionId\" with the actual session identifier.\n      - **accountId**: This query parameter specifies the account for which the balance data will be fetched. Replace \"accountId\" with the actual account identifier.\n\n  - **Headers**: \n    - This provides additional information about the request.\n    \n    - **Key**: (Empty)\n      - Represents a placeholder for any headers that might be needed, but currently is empty.\n    \n    - **Value**: (Empty)\n      - The corresponding value for the header is also currently empty.\n      \n    - **Type**: default\n      - Indicates the default type for the header.\n\n    - **Disabled**: true\n      - This means that the header is currently not active and will not be sent with the request.\n\n  - **Body**:\n    - This section describes the body of the request.\n    \n    - **Mode**: raw\n      - Indicates that the body could contain raw data.\n    \n    - **Raw**: \"\"\n      - Currently, this field is empty, meaning no data is sent in the body of the request.\n\nThis endpoint is designed to gather all balance related actions for a specific session and account, using bearer token authentication to ensure secure access. Users interacting with this API should provide the necessary session and account identifiers in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Balance - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"balanceId\":\"balanceId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/balance/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "balance",
+            "delete"
+          ]
+        },
+        "description": "### Action - Balance - Delete\n\nThis endpoint is designed to delete a specific balance associated with a particular account in the system. Below is a detailed description of each part of the request:\n\n- **Name**: This identifies the endpoint and its purpose. In this case, it is called \"Action - Balance - Delete,\" indicating that it performs a deletion operation on balance records.\n\n- **Request**: This section outlines the specifications for making the API request.\n\n  - **Auth**: This indicates the method of authentication required to access the endpoint. \n    - **Type**: The authentication type is 'bearer,' which means it requires a token for authorization.\n    - **Bearer**: This is an array containing the required token information.\n      - **Key**: Here it is labeled as \"token,\" which represents the authentication token needed for the request.\n      - **Value**: The value of this field is \"sessionId,\" which should be replaced with the actual session ID of the user making the request.\n      - **Type**: The type is set as \"string,\" indicating that the value should be a string.\n\n  - **Method**: The HTTP method used for this request is \"POST.\" This means that you are sending data to the server to perform an action.\n\n  - **URL**: The endpoint URL is specified as \"http://localhost:3000/api/action/balance/delete.\" This is the path where the request will be sent.\n\n  - **Headers**: This section is for any additional information sent with the request, but in this case, there are no headers configured (both the key and value are empty, and it is marked as disabled).\n\n  - **Body**: This part includes the data being sent to the server.\n    - **Mode**: The body mode is set to \"raw,\" indicating that the data is being sent in its raw format (not using a form).\n    - **Raw**: The actual data being sent in the body is a JSON string. It contains the following fields:\n      - **sessionId**: This is the session ID required to authenticate the request. Replace \"sessionId\" with the actual session ID.\n      - **accountId**: This field contains the ID of the account from which the balance is to be deleted. Replace \"accountId\" with the actual ID of the account.\n      - **balanceId**: This specifies the ID of the balance you want to delete. Replace \"balanceId\" with the actual ID of the balance record.\n\nIn summary, this endpoint allows users to remove a specific balance for a given account by providing necessary authentication and the relevant identifiers in the request body."
+      },
+      "response": []
+    }
+  ]
+}

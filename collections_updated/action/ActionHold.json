@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionHold",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Hold - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"hold1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/hold/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "hold",
+            "create"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Hold - Create\",\n  \"description\": \"This API endpoint is designed to create a hold action for a specific target, typically in a streaming context. Users can specify various parameters for the hold action, allowing for customization based on the session and account details.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ],\n      \"description\": \"This is a bearer token authentication mechanism. Users need to provide a valid bearer token to authorize the request. Ensure that 'BearerToken' is replaced with an actual valid token.\"\n    },\n    \"method\": \"POST\",\n    \"description\": \"This API uses the POST method, indicating that data is being sent to the server to create a new hold action.\",\n    \"url\": \"http://localhost:3000/api/action/hold/create\",\n    \"description\": \"This is the endpoint URL where the hold action request is sent. It is hosted locally on port 3000.\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"description\": \"Currently, there are no additional headers specified for this request. However, if required, users can add relevant headers such as Content-Type or Accept, depending on their needs.\",\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"The body of the request is in raw format, structured as a JSON object. It contains the necessary information to create the hold action.\",\n      \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"path\\\": \\\"/live/channel/video123\\\",\\n    \\\"targetType\\\": \\\"streamer\\\",\\n    \\\"targetId\\\": \\\"videoId\\\",\\n    \\\"sourceType\\\": \\\"accountId\\\",\\n    \\\"sourceId\\\": \\\"accountId\\\",\\n    \\\"tokenAmount\\\": 20,\\n    \\\"name\\\": \\\"hold1\\\",\\n    \\\"description\\\": \\\"\\\",\\n    \\\"tags\\\": \\\"\\\"\\n}\",\n      \"options\": {\n        \"raw\": {\n          \"language\": \"json\"\n        }\n      },\n      \"description\": {\n        \"sessionId\": {\n          \"description\": \"Unique identifier for the current session. This helps in tracking the hold action within that session.\"\n        },\n        \"accountId\": {\n          \"description\": \"Identifier for the account that is initiating the hold action. This is used to associate the hold with the correct user account.\"\n        },\n        \"path\": {\n          \"description\": \"The path of the live channel related to the hold action. It generally indicates where the content is being streamed, e.g., '/live/channel/video123'.\"\n        },\n        \"targetType\": {\n          \"description\": \"Specifies the type of target for the hold action. For instance, 'streamer' indicates that the hold is placed on a streamer.\"\n        },\n        \"targetId\": {\n          \"description\": \"Unique identifier for the target of the hold action, typically the video ID of the content that the user is holding.\"\n        },\n        \"sourceType\": {\n          \"description\": \"Defines the source type for the hold. In this case, it is set to 'accountId'.\"\n        },\n        \"sourceId\": {\n          \"description\": \"Identifier of the source from which the hold is initiated. It is usually the same as accountId.\"\n        },\n        \"tokenAmount\": {\n          \"description\": \"Represents the amount of tokens assigned to the hold action. In this case, it is set to 20 tokens.\"\n        },\n        \"name\": {\n          \"description\": \"A given name for the hold action, in this example, it is 'hold1'. This helps to identify the action easily.\"\n        },\n        \"description\": {\n          \"description\": \"An optional field for providing additional details about the hold action. Currently, it is left empty.\"\n        },\n        \"tags\": {\n          \"description\": \"An optional field for adding tags to the hold action. This field is also currently empty.\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Hold - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"holdId\":\"holdId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/hold/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "hold",
+            "update"
+          ]
+        },
+        "description": "#### Action - Hold - Update\n\n**Request Authentication**\n- **Type:** Bearer\n  - **Token:** The authorization token provided for accessing this API endpoint. This should be in the format \"Bearer <token>\", where \"<token>\" is the actual bearer token you have received for authentication.\n\n**HTTP Method**\n- **Method:** PUT \n  - This indicates that the request is meant to update existing resources at the specified URL.\n\n**URL**\n- **Endpoint URL:** `http://localhost:3000/api/action/hold/update` \n  - This is the endpoint where the update request will be sent. It manages actions related to a \"hold\" update.\n\n**Headers**\n- **Client-UUID:** \n  - A unique identifier for the client making the request. It is used to identify and authorize the client in the system.\n\n**Request Body**\n- **Mode:** Raw\n  - The request body is being sent in raw format, specifically as JSON.\n\n- **Raw JSON Body:**\n  - This contains the following fields:\n  \n  1. **sessionId:** \n     - A unique identifier for the session. It helps in tracking the current user's session.\n  \n  2. **accountId:** \n     - The unique identifier for the account associated with the hold. This indicates which user's account is being updated.\n  \n  3. **holdId:** \n     - The identifier for the specific hold that is being updated. It points to the current hold in the system.\n  \n  4. **path:** \n     - The path or URL where the resource is located. In this case, it is pointing to a live channel, \"/live/channel/video123\".\n  \n  5. **targetType:** \n     - Indicates the type of target impacted by the hold action. In this case, it specifies that the target is a \"streamer\".\n  \n  6. **targetId:** \n     - The unique identifier for the target, which in this context is the video ID (e.g., \"videoId\") associated with the hold.\n  \n  7. **sourceType:** \n     - The type of the source associated with the hold. Here, it refers to an \"accountId\".\n  \n  8. **sourceId:** \n     - The unique identifier for the source, specifically linking back to the account ID involved in this action.\n  \n  9. **tokenAmount:** \n     - The number of tokens associated with this hold action. In this case, it is set to 20.\n  \n  10. **name:** \n      - A descriptive name for the hold or action. For instance, \"Farooq\" is likely a user or hold name.\n  \n  11. **description:** \n      - A textual description providing more context about the hold. Here it's marked as \"this is description\".\n  \n  12. **tags:** \n      - Tags related to this hold action. Here it is marked as \"xyz\" which could be used for categorization or filtering.\n\n**Body Options**\n- **Options:**\n  - **Raw Language:** JSON\n    - Specifies the format of the raw body content being sent which is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Hold - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/hold/get/?holdId=holdId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "hold",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "holdId",
+              "value": "holdId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Hold - Get\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"method\": \"GET\",\n    \"url\": \"http://localhost:3000/api/action/hold/get/?holdId=holdId&sessionId=sessionId&accountId=accountId\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"\"\n    }\n  }\n}\n\n### Description of Each Data\n\n- **name**: This specifies the name of the API request. In this case, it is \"Action - Hold - Get\", indicating that this request is intended to retrieve information related to an action hold.\n\n- **request**: This object contains all the details of the API request being made.\n\n  - **auth**: This is the authentication method used for the request.\n    \n    - **type**: Indicates the type of authentication being used; in this instance, it is \"bearer\", which means that a bearer token is required to authorize the request.\n\n    - **bearer**: This is an array that contains authentication token details.\n\n      - **key**: Represents the name of the token, which is \"token\" in this case.\n\n      - **value**: This holds the actual bearer token value, represented here as \"BearerToken\". This token is required to authenticate the user making the request.\n\n      - **type**: Defines the data type of the token, which is \"string\" in this instance.\n\n  - **method**: Specifies the HTTP method to be used for the request. Here, \"GET\" indicates that this request is retrieving data from the server.\n\n  - **url**: This is the endpoint URL where the request is being sent. The URL includes query parameters:\n    \n    - **holdId**: Represents the ID of the hold that is being queried. It is marked here as a placeholder \"holdId\".\n\n    - **sessionId**: Represents the session's ID, which helps identify the session associated with this action. It is shown as a placeholder \"sessionId\".\n\n    - **accountId**: This indicates the account ID to be used in the request. It is labeled as a placeholder \"accountId\".\n\n  - **headers**: This array allows the inclusion of HTTP headers for the request.\n    \n    - **key**: The name of the header is currently empty, indicating that no custom headers are added.\n\n    - **value**: The value of the header is also empty.\n\n    - **type**: Specifies the type of the header; here it's set as \"default\".\n\n    - **disabled**: A boolean value indicating whether this header is disabled for this request. Currently set to true, meaning this header will not be sent.\n\n  - **body**: This describes the body of the request.\n\n    - **mode**: Indicates the body format being used. In this case, it is \"raw\", meaning the body is expected to be sent as raw data rather than as form data or other formats.\n\n    - **raw**: This field holds the actual content of the body. It is empty here, meaning no body content is required for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Hold - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/hold/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "hold",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Hold - Get All\n\nThis endpoint is used to retrieve a list of all actions that are currently on hold. Below are the details of each component in the endpoint:\n\n- **name**: \n  - \"Action - Hold - Get All\"\n  - This is the identifier for the API request, indicating the purpose of the request.\n\n- **request**: \n  - This section contains all the necessary information to make the API call.\n\n  - **auth**: \n    - This field specifies the authentication method required to access the endpoint.\n    \n    - **type**: \n      - \"bearer\"\n      - Indicates that bearer token authentication is used.\n\n    - **bearer**: \n      - This is an array that contains details about the authorization token.\n      \n      - **key**: \n        - \"token\"\n        - The name of the property in the array that holds the token.\n        \n      - **value**: \n        - \"BearerToken\"\n        - Placeholder for the actual token required for authentication. Users need to replace this with their valid bearer token.\n        \n      - **type**: \n        - \"string\"\n        - Specifies that the value of the token is a string.\n\n  - **method**: \n    - \"GET\"\n    - This indicates that the request method is GET, meaning it will retrieve data from the server without modifying any resources.\n\n  - **url**: \n    - \"http://localhost:3000/api/action/hold/all/?sessionId=sessionId&accountId=accountId\"\n    - The endpoint URL where the request will be sent. \n    - It includes query parameters:\n      - **sessionId**: A placeholder for the session identifier. Users must provide a valid session ID.\n      - **accountId**: A placeholder for the account identifier. Users must provide a valid account ID.\n\n  - **headers**: \n    - This section is for any additional headers that may be required in the request.\n    \n    - **key**: \n      - An empty string indicates that no custom headers are specified.\n      \n    - **value**: \n      - An empty string indicates that no value is associated with a custom header.\n      \n    - **type**: \n      - \"default\"\n      - Indicates that this is a default header type.\n      \n    - **disabled**: \n      - true\n      - This signifies that the header is currently disabled and will not be sent with the request.\n\n  - **body**: \n    - This part is used to define the body of the request.\n\n    - **mode**: \n      - \"raw\"\n      - Indicates that the body of the request is in raw format.\n\n    - **raw**: \n      - An empty string indicates that no raw body content is being sent with the request.\n\nThis structure should help users understand how to utilize the \"Action - Hold - Get All\" endpoint effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Hold - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"holdId\":\"holdId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/hold/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "hold",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint: Action - Hold - Delete\n\n**Name:** Action - Hold - Delete  \nThis describes a request designed to delete a hold action in the system.\n\n**Request Details:**\n\n- **Auth:**  \n  - **Type:** Bearer  \n    This indicates that the request uses bearer token authentication. This method requires a token to be sent along with the request to prove its authenticity.\n\n  - **Bearer:**  \n    - **Key:** token  \n      This is the name of the authentication key that will carry the session identifier.  \n    - **Value:** sessionId  \n      This placeholder represents the actual session ID that must be provided to authenticate the request.  \n    - **Type:** string  \n      The type indicates that the value for the token must be a string.\n\n- **Method:** POST  \n  This indicates that the request uses the POST method, which is typically used for sending data to a server to create or update a resource.\n\n- **URL:** `http://localhost:3000/api/action/hold/delete`  \n  This is the endpoint where the request is sent. It is hosted on localhost and specifies the delete action for a hold.\n\n- **Headers:**  \n  This section is currently empty, meaning no specific headers are set for the request.  \n  - **Key:** \"\"  \n    No header key is provided.  \n  - **Value:** \"\"  \n    No header value is provided.  \n  - **Type:** default  \n    This indicates that the header type is default but no additional header is actively being used.  \n  - **Disabled:** true  \n    This means that this particular header is not active or in use.\n\n- **Body:**  \n  The body of the request contains data necessary to perform the delete action.  \n  - **Mode:** raw  \n    Indicates that the body content is sent in raw, unformatted JSON.  \n  - **Raw:**  \n    The actual content being sent is:  \n    `{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"holdId\":\"holdId\"}`  \n    This JSON object needs to be populated with real values:\n    - **sessionId:** the session identifier for the user making the request.\n    - **accountId:** the identifier for the account associated with the hold to be deleted.\n    - **holdId:** the identifier for the specific hold that is being deleted.\n"
+      },
+      "response": []
+    }
+  ]
+}

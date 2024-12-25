@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "UniversityVideo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "University - Video - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Video\",\"description\":\"This video is my second video\",\"tags\":\"second,video\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isVideoPrivate\":true,\"isTournamentOnly\":false,\"isVideoDefault\":true,\"isPreLiveUniversityAds\":true,\"isPostLiveUniversityAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "video",
+            "create"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"The name of the API endpoint, indicating that it is used to create a video for the university.\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"This specifies the type of authentication required. A Bearer token must be provided in order to access this endpoint.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This is a key that represents the type of authentication (token).\",\n            \"value\": \"BearerToken\": \"This is where the actual Bearer token should be placed for authentication. It must be a valid token to authorize the request.\",\n            \"type\": \"string\": \"This indicates that the value should be a string.\"\n          }\n        ]\n      },\n      \"method\": \"POST\": \"This specifies that the HTTP method used for this request is POST, indicating that data will be sent to create a new resource.\",\n      \"url\": \"http://localhost:3000/api/university/video/create\": \"This is the URL endpoint for the API where the request will be sent to create a video.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"This is the key for the header. In this case, it is empty.\",\n          \"value\": \"\": \"This is the value for the header. In this case, it is also empty.\",\n          \"type\": \"default\": \"This specifies the type of the header, which is set to default.\",\n          \"disabled\": true: \"This indicates that this header is currently disabled and will not be included in the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"This indicates that the body of the request is being sent in raw format.\",\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"name\\\":\\\"My Second Video\\\",\\\"description\\\":\\\"This video is my second video\\\",\\\"tags\\\":\\\"second,video\\\",\\\"profilePhotoUrl\\\":\\\"https://example.com/profile.jpg\\\",\\\"coverPhotoUrl\\\":\\\"https://example.com/cover.jpg\\\",\\\"minimumTipAmount\\\":10,\\\"categoryId\\\":\\\"category123\\\",\\\"category\\\":\\\"General\\\",\\\"subCategoryId\\\":\\\"subCategory456\\\",\\\"subCategory\\\":\\\"Specific\\\",\\\"isVideoPrivate\\\":true,\\\"isTournamentOnly\\\":false,\\\"isVideoDefault\\\":true,\\\"isPreLiveUniversityAds\\\":true,\\\"isPostLiveUniversityAds\\\":true,\\\"breakPreLiveVideoUrl\\\":\\\"https://example.com/break-pre-live.mp4\\\",\\\"breakPostLiveVideoUrl\\\":\\\"https://example.com/break-post-live.mp4\\\"}\": \"This is the actual content of the request body in JSON format. It contains various properties related to the video being created.\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\": \"This specifies that the raw content is in JSON format, indicating that the body follows JSON syntax.\"\n          }\n        }\n      }\n    },\n    \"sessionId\": \"A unique identifier for the session under which the video is being created.\",\n    \"accountId\": \"The identifier associated with the user account that is creating the video.\",\n    \"name\": \"The title of the video being created.\",\n    \"description\": \"A brief overview or narrative about the content of the video.\",\n    \"tags\": \"A comma-separated list of keywords associated with the video for search and categorization.\",\n    \"profilePhotoUrl\": \"A URL pointing to the profile photo to be associated with the video creator.\",\n    \"coverPhotoUrl\": \"A URL pointing to the cover photo that will be displayed for the video.\",\n    \"minimumTipAmount\": \"The minimum amount that can be tipped by viewers for this video.\",\n    \"categoryId\": \"The unique identifier for the category under which this video falls.\",\n    \"category\": \"The general category of the video content (e.g., General, Education).\",\n    \"subCategoryId\": \"The unique identifier for the sub-category of the video.\",\n    \"subCategory\": \"The specific sub-category of the video content.\",\n    \"isVideoPrivate\": \"A boolean flag that indicates whether the video should be private or public.\",\n    \"isTournamentOnly\": \"A boolean flag that indicates if the video is exclusive to tournament events.\",\n    \"isVideoDefault\": \"A boolean flag that indicates whether this video is set as a default video for the creator.\",\n    \"isPreLiveUniversityAds\": \"A boolean flag that indicates if pre-live university advertisements should be included with the video.\",\n    \"isPostLiveUniversityAds\": \"A boolean flag that indicates if post-live university advertisements should be included with the video.\",\n    \"breakPreLiveVideoUrl\": \"A URL linking to a video that will be displayed before the live event starts.\",\n    \"breakPostLiveVideoUrl\": \"A URL linking to a video that will be displayed after the live event has concluded.\"\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "University - Video - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"videoId\":\"videoId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Video 2.0\",\"description\":\"This video is my second video\",\"tags\":\"second,video\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isVideoPrivate\":true,\"isTournamentOnly\":false,\"isVideoDefault\":true,\"isPreLiveUniversityAds\":true,\"isPostLiveUniversityAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "video",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: University - Video - Update\n\n#### Request\n\n- **Auth**\n  - **Type**: Bearer\n    - **Key**: `token`\n      - **Value**: `BearerToken`\n        - **Type**: String\n      - Description: This is the authentication token required to authorize the API request. It should be a valid bearer token that grants access to the endpoint.\n\n- **Method**\n  - **PUT**\n    - Description: This HTTP method indicates that the API will be updating an existing resource. In this case, it will update the video associated with the specified parameters.\n\n- **URL**\n  - **Value**: `http://localhost:3000/api/university/video/update`\n    - Description: This is the endpoint URL where the update request will be sent. It points to the local server for testing purposes.\n\n- **Headers**\n  - **Key**: `Client-UUID`\n    - **Value**: `ClientUUID`\n      - **Type**: Default\n    - Description: This header contains a unique identifier for the client making the request. It is used to track and manage requests from different clients.\n\n#### Body \n- **Mode**: Raw\n  - Description: The request body is sent in raw JSON format.\n\n- **Raw Content**: \n  ```json\n  {\n    \"videoId\": \"videoId\",\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"name\": \"My Second Video 2.0\",\n    \"description\": \"This video is my second video\",\n    \"tags\": \"second,video\",\n    \"profilePhotoUrl\": \"https://example.com/profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/cover.jpg\",\n    \"minimumTipAmount\": 10,\n    \"categoryId\": \"category123\",\n    \"category\": \"General\",\n    \"subCategoryId\": \"subCategory456\",\n    \"subCategory\": \"Specific\",\n    \"isVideoPrivate\": true,\n    \"isTournamentOnly\": false,\n    \"isVideoDefault\": true,\n    \"isPreLiveUniversityAds\": true,\n    \"isPostLiveUniversityAds\": true,\n    \"breakPreLiveVideoUrl\": \"https://example.com/break-pre-live.mp4\",\n    \"breakPostLiveVideoUrl\": \"https://example.com/break-post-live.mp4\"\n  }\n  ```\n\n- **Parameters**:\n  - **videoId**: The unique identifier of the video that is being updated. It indicates which video resource the request applies to.\n  - **sessionId**: The identifier for the session related to the video. This is required for linking the video to the appropriate viewing context.\n  - **accountId**: The identifier for the user account associated with the video. This links the video to the account that owns it.\n  - **name**: The new title of the video. This is a descriptive name that will be displayed to users.\n  - **description**: A text field that provides details about the video. It explains the content or context of the video.\n  - **tags**: A comma-separated list of tags associated with the video. Tags help categorize and make the video searchable.\n  - **profilePhotoUrl**: A URL pointing to the profile photo associated with the video creator or account.\n  - **coverPhotoUrl**: A URL for the cover image of the video, typically displayed as a thumbnail.\n  - **minimumTipAmount**: A numeric value indicating the minimum tip amount that can be given to support the video creator.\n  - **categoryId**: The unique identifier for the category under which the video falls.\n  - **category**: The name of the category to which the video belongs, defining the broad topic area.\n  - **subCategoryId**: The unique identifier for a more specific sub-category of the video.\n  - **subCategory**: The name of the sub-category under the main category, providing further context.\n  - **isVideoPrivate**: A boolean value indicating whether the video is private (true) or public (false).\n  - **isTournamentOnly**: A boolean value indicating if the video is only intended for tournament use (true) or not (false).\n  - **isVideoDefault**: A boolean indicating if this video should be marked as the default video for its category (true) or not (false).\n  - **isPreLiveUniversityAds**: A boolean that specifies if pre-live ads should be shown with the video (true) or not (false).\n  - **isPostLiveUniversityAds**: A boolean that specifies if post-live ads should be shown with the video (true) or not (false).\n  - **breakPreLiveVideoUrl**: A URL for a break video that plays before the live content starts.\n  - **breakPostLiveVideoUrl**: A URL for a video that plays after the live content ends. \n\nThis body structure contains all the necessary information to successfully update a video in the university video management system."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Video - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/video/get/?videoId=videoId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "video",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "videoId",
+              "value": "videoId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: University - Video - Get\n\n**Name**: University - Video - Get  \nThis endpoint is used to retrieve video information from the university's database.\n\n**Authentication**:  \n- **Type**: Bearer  \n  Requires a Bearer token for authentication to access the API.\n\n**Request Method**:  \n- **Method**: GET  \n  This method is used to request data from the specified resource.\n\n**URL**:  \n- **URL**: `http://localhost:3000/api/university/video/get/?videoId=videoId&sessionId=sessionId&accountId=accountId`  \n  This is the endpoint URL where the request is sent. It includes query parameters necessary for fetching the video:\n  - **videoId**: The unique identifier for the video you want to retrieve.\n  - **sessionId**: The identifier for the current session, useful for tracking purposes.\n  - **accountId**: The identifier for the user account making the request.\n\n**Request Headers**:  \n- This section currently contains an empty header object, meaning there are no additional headers required for the request. This header is disabled.\n\n**Request Body**:  \n- **Mode**: Raw  \n  Since this is a GET request, the body does not carry any data. It is left empty, indicating that no additional information is being sent.\n\nThis endpoint is primarily used to fetch video details from the university's system by providing the required identifiers through query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Video - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/video/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "video",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: University - Video - Get All\n\n- **Name**: University - Video - Get All\n  - This represents the purpose of the endpoint, which is to retrieve all videos related to the university.\n\n- **Request**: This section outlines the components required for making the API request.\n\n  - **Auth**: This part specifies the authentication method for the request.\n    - **Type**: bearer\n      - Indicates that the request requires bearer token authentication.\n    - **Bearer**: An array containing objects for the bearer token.\n      - **Key**: token\n        - Identifies the authentication key.\n      - **Value**: BearerToken\n        - A placeholder for the actual bearer token required to authorize the request.\n      - **Type**: string\n        - Specifies that the token value should be treated as a string.\n\n  - **Method**: GET\n    - This indicates that the HTTP method used for the request is GET, which is typically used to retrieve data from the server.\n\n  - **URL**: \n    - `http://localhost:3000/api/university/video/all/?sessionId=sessionId&accountId=accountId`\n      - This is the endpoint URL to which the GET request is sent.\n      - **Base URL**: `http://localhost:3000/api/university/video/all/`\n        - This defines the path for accessing university videos.\n      - **Query Parameters**:\n        - `sessionId=sessionId`\n          - A placeholder for the session identity; used to identify the user session for the request.\n        - `accountId=accountId`\n          - A placeholder for the account identity; used to link the request to a specific user account.\n\n  - **Headers**: This section can contain additional information about the request, though in this case:\n    - **Key**: (empty)\n      - Indicates there are no additional headers specified.\n    - **Value**: (empty)\n      - Indicates there are no values for headers specified.\n    - **Type**: default\n      - Refers to the default header type.\n    - **Disabled**: true\n      - This indicates that the header is currently disabled and not being sent with the request.\n\n  - **Body**: \n    - **Mode**: raw\n      - Indicates that the body of the request (if applicable) is in raw format.\n    - **Raw**: \"\"\n      - This field is empty, meaning no request body is needed for this GET request.\n\nThis description provides a clear and concise explanation of each component of the \"University - Video - Get All\" endpoint, making it easier for users to understand how to utilize this API effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "University - Video - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/video/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "video",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Overview: University - Video - Delete\n\n#### Description:\nThis endpoint allows users to delete a video associated with a university account. The request requires authentication and must be sent to the appropriate URL.\n\n#### Request Details:\n\n- **Authentication**: \n  - The request requires a bearer token for authentication. This token should be passed in the authorization header. \n  - The bearer token is provided in the following format:\n    - **Key**: `token`\n    - **Value**: Represents the `sessionId`, which is used to verify the user's session.\n\n- **HTTP Method**: \n  - The request uses the `POST` method to submit the video deletion request.\n\n- **URL**: \n  - The endpoint URL for the delete request is `http://localhost:3000/api/university/video/delete`. This is the target where the delete operation is performed.\n\n- **Headers**:\n  - Currently, there are no additional headers defined for the request. One of the headers is present but disabled and does not have a key or value assigned. This can be removed or updated as needed.\n\n- **Body**: \n  - The body of the request is sent in `raw` JSON format and contains the following key-value pairs:\n    - **sessionId**: This key holds the session identifier for the current user session which is necessary for validating the request.\n    - **accountId**: This key represents the unique identifier for the university account under which the video resides. \n    - **videoId**: This key is the identifier of the video that needs to be deleted. It specifies which video will be removed from the account.\n\nMake sure to replace the placeholders (`sessionId`, `accountId`, and `videoId`) with actual values before sending the request."
+      },
+      "response": []
+    }
+  ]
+}

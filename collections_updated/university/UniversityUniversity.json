@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "UniversityGeneral",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "University - General - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second General\",\"description\":\"This university is my second university\",\"tags\":\"second,university\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isGeneralPrivate\":true,\"isTournamentOnly\":false,\"isGeneralDefault\":true,\"isPreLiveUniversityAds\":true,\"isPostLiveUniversityAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/university/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "university",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: University - General - Create\n\n**Request Method:** POST  \n**Request URL:** `http://localhost:3000/api/university/university/create`  \n**Authentication Type:** Bearer Token\n\n#### Authorization\n- **Token:** A bearer token needed for authentication. Replace \"BearerToken\" with the actual token for authorization.\n\n#### Request Body\nThe body of the request should be in JSON format and contains the following fields:\n\n1. **sessionId**: A unique identifier for the current session. This is used to track the user's activity during the session.\n\n2. **accountId**: The identifier for the user's account which is creating the university. This links the university to the specific user account.\n\n3. **name**: The name of the university being created. This will be how the university is identified in the system and seen by users.\n\n4. **description**: A brief summary about the university. This field provides additional information that describes the university.\n\n5. **tags**: A comma-separated list of keywords related to the university. Tags help categorize the university and can be useful for search purposes.\n\n6. **profilePhotoUrl**: A URL pointing to the university's profile photo. This image represents the university on its profile page.\n\n7. **coverPhotoUrl**: A URL pointing to the university's cover photo. This image is displayed prominently on the university's profile.\n\n8. **minimumTipAmount**: A numerical value representing the minimum amount that can be tipped in relation to this university. This establishes a threshold for tipping.\n\n9. **categoryId**: An identifier for the main category of the university. This links the university to a specific category in the database.\n\n10. **category**: The name of the main category to which the university belongs. This field provides a broad classification.\n\n11. **subCategoryId**: An identifier for the sub-category of the university. This allows for more specific classification within the main category.\n\n12. **subCategory**: The name of the sub-category to which the university belongs. This field allows further refinement of the university’s classification.\n\n13. **isGeneralPrivate**: A boolean value indicating whether the university is private or not. It defines if the university's details are only available to selected users.\n\n14. **isTournamentOnly**: A boolean value that specifies if the university is for tournament usage only. If true, it suggests that the university is centered around competitive events.\n\n15. **isGeneralDefault**: A boolean value indicating whether this university is set as a default option within its category. \n\n16. **isPreLiveUniversityAds**: A boolean value that indicates whether advertisements for the university can appear before live sessions.\n\n17. **isPostLiveUniversityAds**: A boolean value that indicates whether advertisements for the university can appear after live sessions.\n\n18. **breakPreLiveVideoUrl**: A URL pointing to a video that will play before a live session begins, potentially providing promotional content related to the university.\n\n19. **breakPostLiveVideoUrl**: A URL pointing to a video that will play after a live session ends, serving as a follow-up or promotional material for the university.\n\nMake sure to replace placeholders and URLs with actual data before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "University - General - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"universityId\":\"universityId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second General 2.0\",\"description\":\"This university is my second university\",\"tags\":\"second,university\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isGeneralPrivate\":true,\"isTournamentOnly\":false,\"isGeneralDefault\":true,\"isPreLiveUniversityAds\":true,\"isPostLiveUniversityAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/university/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "university",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: University - General - Update\n\n#### Request Details\n\n- **Auth** \n  - **Type**: Bearer Token\n    - Specifies the authentication method for accessing this endpoint.\n    - **Bearer**: Contains an array of authentication tokens.\n      - **Key**: \"token\" - Identifier for the token.\n      - **Value**: \"BearerToken\" - Placeholder for the actual bearer token that needs to be provided for authorization.\n      - **Type**: string - Indicates that the token value is a string.\n\n- **Method**: PUT\n  - The HTTP method used for the request. PUT is typically used to update existing resources on the server.\n\n- **URL**: \n  - `http://localhost:3000/api/university/university/update` - The endpoint where the update request is sent. This URL points to a local server.\n\n#### Headers\n- **Client-UUID**\n  - **Key**: \"Client-UUID\" - An identifier for the client making the request.\n  - **Value**: \"ClientUUID\" - Placeholder value indicating where the actual client UUID should be inserted.\n  - **Type**: default - Indicates that this is a standard header.\n\n#### Body\n- **Mode**: raw\n  - Indicates the format of the body content being sent in the request.\n\n- **Raw**: \n  ```json\n  {\n    \"universityId\": \"universityId\",\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"name\": \"My Second General 2.0\",\n    \"description\": \"This university is my second university\",\n    \"tags\": \"second,university\",\n    \"profilePhotoUrl\": \"https://example.com/profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/cover.jpg\",\n    \"minimumTipAmount\": 10,\n    \"categoryId\": \"category123\",\n    \"category\": \"General\",\n    \"subCategoryId\": \"subCategory456\",\n    \"subCategory\": \"Specific\",\n    \"isGeneralPrivate\": true,\n    \"isTournamentOnly\": false,\n    \"isGeneralDefault\": true,\n    \"isPreLiveUniversityAds\": true,\n    \"isPostLiveUniversityAds\": true,\n    \"breakPreLiveVideoUrl\": \"https://example.com/break-pre-live.mp4\",\n    \"breakPostLiveVideoUrl\": \"https://example.com/break-post-live.mp4\"\n  }\n  ```\n\n##### Body Parameters\n- **universityId**: \n  - A unique identifier for the university to be updated.\n\n- **sessionId**: \n  - An identifier for the current session.\n\n- **accountId**: \n  - An identifier for the user or account making the request.\n\n- **name**: \n  - The name of the university that is being updated.\n\n- **description**: \n  - A textual description providing more information about the university.\n\n- **tags**: \n  - A comma-separated list of tags associated with the university for better categorization.\n\n- **profilePhotoUrl**: \n  - A URL pointing to the profile photo of the university.\n\n- **coverPhotoUrl**: \n  - A URL pointing to the cover photo of the university.\n\n- **minimumTipAmount**: \n  - The minimum amount for tips related to the university.\n\n- **categoryId**: \n  - An identifier for the category under which the university falls.\n\n- **category**: \n  - The general category designation for the university.\n\n- **subCategoryId**: \n  - An identifier for the sub-category associated with the university.\n\n- **subCategory**: \n  - The specific sub-category designation for the university.\n\n- **isGeneralPrivate**: \n  - A boolean that indicates whether the university is private or not. True means it's private.\n\n- **isTournamentOnly**: \n  - A boolean indicating if the university is exclusively for tournaments. True means it is.\n\n- **isGeneralDefault**: \n  - A boolean indicating if this is the default general university setting. True means it is the default.\n\n- **isPreLiveUniversityAds**: \n  - A boolean indicating if pre-live ads are enabled for the university. True means ads can be shown before live events.\n\n- **isPostLiveUniversityAds**: \n  - A boolean indicating if post-live ads are enabled for the university. True means ads can be shown after live events.\n\n- **breakPreLiveVideoUrl**: \n  - A URL to a video that can be shown before live events as a break.\n\n- **breakPostLiveVideoUrl**: \n  - A URL to a video that can be shown after live events as a break."
+      },
+      "response": []
+    },
+    {
+      "name": "University - General - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/university/get/?universityId=universityId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "university",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "universityId",
+              "value": "universityId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: University - General - Get\n\n**Request Method**: GET  \nThis endpoint is used to retrieve information about a specific university. \n\n**Authentication**: Bearer Token  \nThe request requires authentication via a bearer token, which must be included in the request headers.\n\n- **Key**: `token`  \n  - Represents the authentication token required for validating the request.\n\n- **Value**: `BearerToken`  \n  - This is a placeholder for the actual bearer token that should be provided when the request is made.\n\n- **Type**: string  \n  - Indicates that the value of the token must be a string.\n\n**URL**:  \n`http://localhost:3000/api/university/university/get/?universityId=universityId&sessionId=sessionId&accountId=accountId`  \nThis is the endpoint URL where the request is sent. It includes query parameters that are necessary to identify the specific university and session.\n\n- **Query Parameters**:\n  - **universityId**:  \n    - This parameter is used to specify the unique identifier of the university that you want to retrieve information about.\n  \n  - **sessionId**:  \n    - This parameter is used to indicate the specific session for which the information is relevant. This could refer to a term, semester, or academic year.\n\n  - **accountId**:  \n    - This parameter represents the identifier for the account making the request, enabling any account-specific data retrieval or access control.\n\n**Headers**:  \nThe request may include headers, but in this case, the provided header parameters are empty and the header is disabled.\n\n- **Key**:  \n  - Currently, there are no headers specified. However, additional headers can be defined if necessary by adding key-value pairs.\n\n- **Value**:  \n  - As there are no headers in use, this remains empty.\n\n- **Type**: default  \n  - Indicates the header type, though in this instance no headers are applied.\n\n**Body**:  \nThe body of the request is not used in this GET request.\n\n- **Mode**: raw  \n  - Specifies that the request body is in raw format, although no body content is included.\n\n- **Raw**:  \n  - The body is empty (`\"\"`), which is typical for GET requests as they do not require a message body to send data."
+      },
+      "response": []
+    },
+    {
+      "name": "University - General - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/university/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "university",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Endpoint Description: University - General - Get All**\n\nThis endpoint is designed to retrieve a list of all universities from the server. Below is a detailed description of each component involved in this API request.\n\n- **Name**: This identifies the request within the collection. The name is \"University - General - Get All\", indicating that it is meant to fetch general information about all universities.\n\n- **Request**: This section outlines the specifics of the API request being made.\n\n  - **Auth**: This specifies the authentication method being used to access the endpoint.\n  \n    - **Type**: The authentication type is set to \"bearer,\" indicating that a bearer token is required for authentication.\n    \n    - **Bearer**: This contains an array for the bearer token used in the request:\n      \n      - **Key**: The key is \"token,\" naming the authorization parameter.\n      \n      - **Value**: Placeholder value \"BearerToken\" is used here, which should be replaced with an actual bearer token when making the request.\n      \n      - **Type**: The type is \"string,\" indicating that the token should be a string value.\n\n  - **Method**: The HTTP method for this request is \"GET,\" which is used to retrieve data from the server.\n\n  - **URL**: This is the endpoint URL where the request will be sent. It is structured as:\n    ```\n    http://localhost:3000/api/university/university/all/?sessionId=sessionId&accountId=accountId\n    ```\n    - **Base URL**: `http://localhost:3000` - indicates that the API is hosted locally on port 3000.\n    \n    - **Path**: `/api/university/university/all/` - this path specifies that the request is targeting the \"all\" universities endpoint.\n    \n    - **Query Parameters**:\n      - **sessionId**: This parameter should be replaced with a valid session identifier for authentication purposes.\n      - **accountId**: This parameter should be replaced with a valid account identifier for the user making the request.\n\n  - **Headers**: This section is currently empty, indicating that no additional HTTP headers are required beyond the bearer token for this request. The header is present but disabled.\n\n  - **Body**: The body of the request is specified here.\n  \n    - **Mode**: The mode is \"raw,\" indicating that the body content can be written directly.\n    \n    - **Raw**: The raw payload is empty, indicating that no body data is needed for this GET request.\n\nThis endpoint allows the user to obtain a comprehensive list of all universities stored in the system by issuing a properly formatted GET request with the necessary authentication details."
+      },
+      "response": []
+    },
+    {
+      "name": "University - General - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"universityId\":\"universityId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/university/university/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "university",
+            "university",
+            "delete"
+          ]
+        },
+        "description": "**Endpoint Name:** University - General - Delete\n\n**Request:**\n\n- **Authorization:**\n  - **Type:** Bearer\n    - This indicates that the request uses a Bearer token for authentication. The token is essential for verifying the identity of the user making the request.\n    - **Bearer Token Details:**\n      - **Key:** token\n        - This is the identifier for the token being passed in the request.\n      - **Value:** sessionId\n        - This placeholder represents the actual session ID required for authentication purposes. This should be replaced with a valid session ID.\n      - **Type:** string\n        - Indicates that the value of the token is expected to be a string data type.\n\n- **Method:** POST\n  - This specifies that the HTTP method for the request is POST, which is typically used to send data to the server to be processed.\n\n- **URL:** http://localhost:3000/api/university/university/delete\n  - This is the endpoint where the request is being sent. It points to the local server's API for deleting a university.\n\n- **Headers:**\n  - **Key:** (Empty)\n    - The header key is currently empty and not being used. It is marked as disabled.\n  - **Value:** (Empty)\n    - Similar to the key, the header value is also empty and not in use. It is marked as disabled.\n  \n- **Body:**\n  - **Mode:** raw\n    - This indicates that the body of the request is sent in raw format, which allows for the transmission of a raw JSON string.\n  - **Raw Content:** \n    - `{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"universityId\":\"universityId\"}`\n      - **sessionId:** \n        - A placeholder for the session ID, which is used for authentication.\n      - **accountId:** \n        - A placeholder for the account ID, which identifies the user account making the deletion request.\n      - **universityId:** \n        - A placeholder for the university ID of the university that is to be deleted. This value should be replaced with the actual university ID that is intended for deletion.\n\nThis endpoint is designed to delete a university based on the provided university ID and requires both a valid session ID for authentication and an account ID associated with the requesting user."
+      },
+      "response": []
+    }
+  ]
+}

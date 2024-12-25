@@ -1,0 +1,610 @@
+{
+  "info": {
+    "_postman_id": "d8cdf360-e09e-4bb8-99b5-9a02a9d2fd29",
+    "name": "WhipSignal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Signal - Offer - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"type\": \"offer\",\"sdp\": \"v=0\\r\\no=- 25678 753849 IN IP4 192.168.1.1\\r\\ns=-\\r\\nc=IN IP4 192.168.1.1\\r\\nt=0 0\\r\\na=sendrecv\\r\\nm=audio 49170 RTP/AVP 0\\r\\na=rtpmap:0 PCMU/8000\\r\\n\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/offer/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "offer",
+            "create"
+          ]
+        },
+        "description": "{\n  \"name\": \"Signal - Offer - Create\",\n  \"description\": \"This request is used to create an offer in the Signal API. It requires a valid authentication token and sends the necessary data in the request body.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"description\": \"Authentication is done using a bearer token. This token must be included in the request header to authorize the operation.\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\",\n          \"description\": \"The actual bearer token used for authentication. Replace 'BearerToken' with the specific token you need to use.\"\n        }\n      ]\n    },\n    \"method\": \"POST\",\n    \"description\": \"The HTTP method used for this request is POST. This indicates that data will be sent to the server to create a new resource.\",\n    \"url\": \"http://localhost:3000/api/signal/offer/create\",\n    \"description\": \"The endpoint URL where the request will be sent. In this example, it points to a local server running on port 3000.\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true,\n        \"description\": \"No additional headers are required for this request, so this entry is disabled.\"\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"The body of the request contains the raw JSON data that needs to be sent to create the signal offer.\",\n      \"raw\": \"{\\\"accountId\\\":\\\"accountId\\\", \\\"sessionId\\\":\\\"sessionId\\\", \\\"type\\\": \\\"offer\\\",\\\"sdp\\\": \\\"v=0\\\\r\\\\no=- 25678 753849 IN IP4 192.168.1.1\\\\r\\\\ns=-\\\\r\\\\nc=IN IP4 192.168.1.1\\\\r\\\\nt=0 0\\\\r\\\\na=sendrecv\\\\r\\\\nm=audio 49170 RTP/AVP 0\\\\r\\\\na=rtpmap:0 PCMU/8000\\\\r\\\\n\\\"}\",\n      \"description\": \"The JSON object containing the following fields: 'accountId' which identifies the user's account, 'sessionId' which identifies the specific session, 'type' which indicates the type of request (offer), and 'sdp' which contains the Session Description Protocol that describes the multimedia session.\",\n      \"options\": {\n        \"raw\": {\n          \"language\": \"json\",\n          \"description\": \"Specifies that the body content is in raw format and is expected to be in JSON.\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Offer - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"signalId\":\"signalId\", \"type\": \"offer\",\"sdp\": \"v=0\\r\\no=- 25678 753849 IN IP4 192.168.1.1\\r\\ns=-\\r\\nc=IN IP4 192.168.1.1\\r\\nt=0 0\\r\\na=sendrecv\\r\\nm=audio 49170 RTP/AVP 0\\r\\na=rtpmap:0 PCMU/8000\\r\\n\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/offer/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "offer",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Signal - Offer - Update\n\n#### Request Details\n\n- **Auth**: \n  - **Type**: Bearer\n    - **Bearer Token**: This is a security token that allows the client access to the endpoint. The client must include this token in the request header to authenticate themselves. \n      - **Key**: `token`\n      - **Value**: `BearerToken` (This should be replaced with an actual token during a real request)\n      - **Type**: String (The token is represented as a string)\n\n- **Method**: \n  - **PUT**: This HTTP method is used for updating existing resources on the server. In this case, it updates an offer related to a signal.\n\n- **URL**: \n  - `http://localhost:3000/api/signal/offer/update`: The endpoint where the request is sent. It is hosted locally on port 3000 and is used to update the signal offer.\n\n- **Headers**: \n  - This section is currently empty and disabled. Normally, headers can be added here to provide additional information or configuration for the request (such as content type or additional authentication). \n\n- **Body**: \n  - **Mode**: \n    - **Raw**: The data is sent in its raw format rather than as form data.\n    - **Raw Content**: \n      - This contains a JSON object structured as follows:\n        - **accountId**: A unique identifier for the account associated with the offer.\n        - **sessionId**: An identifier for the specific session in which this offer is being made.\n        - **signalId**: A unique identifier for the signal that is being updated.\n        - **type**: A string indicating the type of request, which is set to \"offer\" in this scenario.\n        - **sdp**: Session Description Protocol (SDP) data that provides details about the media session, including codec information, network addresses, and other parameters necessary for establishing the communication channel.\n          - Example SDP data:\n            ```\n            v=0\n            o=- 25678 753849 IN IP4 192.168.1.1\n            s=-\n            c=IN IP4 192.168.1.1\n            t=0 0\n            a=sendrecv\n            m=audio 49170 RTP/AVP 0\n            a=rtpmap:0 PCMU/8000\n            ```\n  - **Options**:\n    - **Raw**: Specifies the data being sent is of JSON type.\n\nThis endpoint allows users to update offers related to signals by sending the necessary identifiers and session information in a structured JSON format. Ensure to replace placeholder values in the body with actual data when making a real request."
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Offer - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/offer/get?accountId=accountId&sessionId=sessionId&signalId=signalId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "offer",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "signalId",
+              "value": "signalId"
+            }
+          ]
+        },
+        "description": "**Endpoint Description: Signal - Offer - Get**\n\n- **Request Name**: This is the name of the API request; in this case, it represents the action to retrieve offers associated with a signal.\n\n- **Authentication**: The request uses bearer token authentication. A bearer token is a type of token that is provided in the request header to authenticate the user. Users need to replace \"BearerToken\" with their actual authentication token.\n\n  - **Type**: Specifies that the authentication method being used is bearer token authentication.\n  - **Bearer**: This section holds the token details.\n    - **Key**: Indicates the parameter name of the token, which is \"token\".\n    - **Value**: Here, it specifies the token itself; users will need to replace \"BearerToken\" with their valid token for access.\n    - **Type**: Denotes that the value is a string.\n\n- **Method**: This indicates the type of HTTP request being made. The \"GET\" method is employed here, which is used for retrieving data from the server.\n\n- **URL**: This is the endpoint where the request is sent. It consists of:\n  - **Base URL**: \"http://localhost:3000/api/signal/offer/get\" is the base URL of the API.\n  - **Query Parameters**: \n    - **accountId**: This parameter should be replaced with the user's account ID.\n    - **sessionId**: This parameter should be replaced with the user's session ID.\n    - **signalId**: This parameter should be replaced with the signal's ID that the user wants to retrieve offers for.\n\n- **Headers**: This section is used to specify additional information in the request. In this case:\n  - **Key**: Currently, no key is provided, which means no additional headers are required.\n  - **Value**: No value is specified.\n  - **Type**: The type is default.\n  - **Disabled**: This property indicates whether the header is active or not. It is set to true, meaning that this header will not be included in the request.\n\n- **Body**: The body of the request is defined here.\n  - **Mode**: The mode is set to \"raw\", meaning that the body content can be provided in a raw format.\n  - **Raw**: Currently, the raw body is empty, indicating that no data needs to be sent in the request body for this GET request. \n\nThis API request is designed to allow users to fetch offers related to specific signals using their account and session information. Make sure to properly set the required parameters and the bearer token for successful authentication and data retrieval."
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Offer - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"signalId\":\"signalId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/offer/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "offer",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Signal - Offer - Delete\n\n**Name:** Signal - Offer - Delete  \nThis endpoint is used to delete an offer associated with a specific signal.\n\n**Request Information:**\n\n- **Auth:** \n  - **Type:** Bearer Token \n  - The request requires authorization via a bearer token to ensure that the requester has the necessary permissions.\n\n- **Method:** POST  \n  - This endpoint is accessed using the POST method, which is typically used to send data to the server to create or update resources.\n\n- **URL:** `http://localhost:3000/api/signal/offer/delete`  \n  - This is the endpoint URL where the request will be sent. The base URL is intended for local development.\n\n- **Headers:**  \n  - An array is provided for the headers, but currently, there are no custom headers defined. The default header is disabled and does not contain any key or value.\n\n**Body Information:**\n\n- **Body Mode:** raw  \n  - The request body is sent as raw data.\n\n- **Raw Data:** `{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"signalId\":\"signalId\"}`  \n  - This is the format of the data that must be sent in the body of the request. It contains three fields:\n    - **accountId:** The identifier for the account associated with the offer to be deleted.\n    - **sessionId:** The identifier for the session in which the operation is being performed.\n    - **signalId:** The identifier for the specific signal related to the offer that needs to be deleted.\n\n- **Options:**  \n  - **Raw Language:** json  \n  - Specifies that the raw data is in JSON format, which is a lightweight data interchange format that is easy to read and write for humans and machines alike. \n\nPlease ensure to replace `\"accountId\"`, `\"sessionId\"`, and `\"signalId\"` with the actual values as needed when making a request to this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Answer - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"type\": \"answer\",\"sdp\": \"v=0\\r\\no=- 25678 753849 IN IP4 192.168.1.1\\r\\ns=-\\r\\nc=IN IP4 192.168.1.1\\r\\nt=0 0\\r\\na=recvonly\\r\\nm=audio 49170 RTP/AVP 0\\r\\na=rtpmap:0 PCMU/8000\\r\\n\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/answer/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "answer",
+            "create"
+          ]
+        },
+        "description": "### API Endpoint Description: Signal - Answer - Create\n\n#### Name\n- **Signal - Answer - Create**: This endpoint is used to create a signal answer in a specific session.\n\n#### Request\n- **Auth**: \n  - **Type**: Bearer\n  - **Bearer**: This contains the authentication token required for the request.\n    - **Key**: \"token\" - The identifier for the bearer token.\n    - **Value**: \"BearerToken\" - The actual token that grants access to the API (replace \"BearerToken\" with your actual token when making requests).\n    - **Type**: string - Specifies that the token value is a string.\n\n- **Method**: \n  - **POST**: Indicates that this endpoint requires a POST request to create a new signal answer.\n\n- **URL**: \n  - **http://localhost:3000/api/signal/answer/create**: This is the endpoint for creating a signal answer. The address is currently configured to run locally on port 3000.\n\n- **Headers**: \n  - The request currently does not require any headers to be set, as indicated by:\n    - **Key**: (empty) - No specific header key is included.\n    - **Value**: (empty) - No specific header value is included.\n    - **Type**: default - Default type indicating it's a standard header.\n    - **Disabled**: true - This header setting is disabled and not sent with the request.\n\n- **Body**:\n  - **Mode**: \n    - **raw**: Specifies that the request body will be sent as raw data.\n  \n  - **Raw**: \n    - The content of the body that needs to be sent in JSON format:\n      - **accountId**: \"accountId\" - The ID of the account associated with this request (replace with actual ID).\n      - **sessionId**: \"sessionId\" - The ID of the session in which the signal answer is being created (replace with actual ID).\n      - **type**: \"answer\" - Specifies that this is an answer type signal.\n      - **sdp**: \n        - **Session Description Protocol (SDP)**: \n          - Contains a series of lines formatted for multimedia session description:\n            - **Version**: `v=0` indicates the SDP version.\n            - **Origin**: `o=- 25678 753849 IN IP4 192.168.1.1` identifies the session origin.\n            - **Session Name**: `s=-` provides a default session name.\n            - **Connection Information**: `c=IN IP4 192.168.1.1` specifies the connection information.\n            - **Timing**: `t=0 0` indicates that the session does not have a specific timing.\n            - **Media Attributes**: `a=recvonly` indicates that this endpoint will only receive media.\n            - **Media Description**: `m=audio 49170 RTP/AVP 0` describes the media type (audio) and associated settings.\n            - **RTP Mapping**: `a=rtpmap:0 PCMU/8000` specifies the payload type and codec being used.\n\n  - **Options**: \n    - **Raw**: Contains settings related to the type of raw body:\n      - **Language**: \"json\" - Indicates that the raw data is in JSON format. \n\nThis description provides all necessary details for users of the Postman API collection to understand how to use the \"Signal - Answer - Create\" endpoint effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Answer - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"signalId\":\"signalId\", \"type\": \"answer\",\"sdp\": \"v=0\\r\\no=- 25678 753849 IN IP4 192.168.1.1\\r\\ns=-\\r\\nc=IN IP4 192.168.1.1\\r\\nt=0 0\\r\\na=recvonly\\r\\nm=audio 49170 RTP/AVP 0\\r\\na=rtpmap:0 PCMU/8000\\r\\n\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/answer/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "answer",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Signal - Answer - Update\n\n**Request Type:** PUT  \n**URL:** `http://localhost:3000/api/signal/answer/update`  \n\n#### Authentication\n- **Type:** Bearer Token\n  - **Key:** `token`\n  - **Value:** `BearerToken` (Placeholder for the actual token)\n  - **Type:** String  \n  This token is required for authorization to access the API.\n\n#### Headers\n- **Key:** Empty (No additional headers are set)\n- **Value:** Empty \n- **Type:** Default \n- **Disabled:** true  \n  This indicates that no custom headers are being sent with the request.\n\n#### Request Body\n- **Mode:** Raw  \n  The body content is sent as a raw JSON object.\n\n**Raw Content:**  \n```json\n{\n  \"accountId\": \"accountId\",\n  \"sessionId\": \"sessionId\",\n  \"signalId\": \"signalId\",\n  \"type\": \"answer\",\n  \"sdp\": \"v=0\\r\\no=- 25678 753849 IN IP4 192.168.1.1\\r\\ns=-\\r\\nc=IN IP4 192.168.1.1\\r\\nt=0 0\\r\\na=recvonly\\r\\nm=audio 49170 RTP/AVP 0\\r\\na=rtpmap:0 PCMU/8000\\r\\n\"\n}\n```\n\n#### Body Parameters\n- **accountId:** \n  - **Description:** Identifier for the account associated with the signal. This should be provided in string format.\n\n- **sessionId:** \n  - **Description:** Identifier for the session in which the signal is being used. This should be provided in string format.\n\n- **signalId:** \n  - **Description:** Identifier for the specific signal being updated. This should be provided in string format.\n\n- **type:** \n  - **Description:** Denotes the type of signal being sent. In this case, it is set to \"answer\". This identifies the purpose or the nature of the signal.\n\n- **sdp:** \n  - **Description:** Session Description Protocol formatted string that contains network and media information. This includes details like version, origin, timing, media type, and connection information. The example provided indicates that audio media is being described with specific parameters.\n\n  **Example SDP:**\n  ```\n  v=0\n  o=- 25678 753849 IN IP4 192.168.1.1\n  s=-\n  c=IN IP4 192.168.1.1\n  t=0 0\n  a=recvonly\n  m=audio 49170 RTP/AVP 0\n  a=rtpmap:0 PCMU/8000\n  ```\n\nThis endpoint is designed for updating an answer signal in a WebRTC context, using the provided account and session identifiers along with the relevant session description protocol details."
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Answer - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/answer/get?accountId=accountId&sessionId=sessionId&signalId=signalId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "answer",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "signalId",
+              "value": "signalId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Signal - Answer - Get\n\n**Request Type:**  \n- **Method:** GET  \nThis method is used to retrieve data from the specified endpoint.\n\n**Authentication:**  \n- **Auth Type:** Bearer  \nThe request requires bearer token authentication, which is used to authorize access to the API.  \n\n- **Bearer Token Structure:**  \n  - **Key:** token  \n    This field holds the actual bearer token needed for authentication.  \n  - **Value:** BearerToken  \n    This is a placeholder string for the actual token that should be provided to authenticate the request.  \n  - **Type:** string  \n    Indicates that the value is a string.\n\n**Endpoint URL:**  \n- **URL:** `http://localhost:3000/api/signal/answer/get?accountId=accountId&sessionId=sessionId&signalId=signalId`  \nThis is the URL endpoint being accessed:  \n  - **Base URL:** `http://localhost:3000/api/signal/answer/get`  \n  This is the root path for the API call.  \n  - **Query Parameters:**  \n    - **accountId:** The unique identifier for the account from which the data is being requested.  \n    - **sessionId:** The unique identifier for the session related to the signal being queried.  \n    - **signalId:** The unique identifier for the specific signal being requested.  \n\n**Headers:**  \n- **Headers Array:**  \n  - There are no headers specified in this request as the header object is empty, and it is currently disabled. \n\n**Body:**  \n- **Body Mode:** raw  \n  The request body is set to raw format, meaning it can contain a string payload.  \n- **Raw Content:**  \n  - The raw body is empty for this GET request, as typically, GET requests do not require a body.\n\nThis endpoint is designed to fetch data related to a specific signal answer based on the identifiers provided in the query parameters. Ensure that valid tokens and parameters are used when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Answer - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"signalId\":\"signalId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/answer/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "answer",
+            "delete"
+          ]
+        },
+        "description": "### Signal - Answer - Delete\n\nThis endpoint is used to delete a specific answer related to a signal. Below is a detailed description of each data component associated with this API request:\n\n#### Authentication\n- **Auth Type**: Bearer\n  - **Key**: This represents the type of authentication being used. In this case, it is a Bearer token.\n  - **Token**: A placeholder string \"BearerToken\" is used, which should be replaced with an actual Bearer token required for authentication.\n\n#### Request Method\n- **Method**: POST\n  - This indicates that the request will use the POST HTTP method to send data to the server for processing.\n\n#### URL\n- **URL**: `http://localhost:3000/api/signal/answer/delete`\n  - This is the endpoint where the request will be sent. It targets the local server on port 3000 and the specific path for deleting a signal answer.\n\n#### Headers\n- **Headers**: An array for defining any HTTP headers for the request. \n  - Currently, it appears to have an empty header entry which is disabled. This means no additional headers are being sent in the request.\n\n#### Body\n- **Body**: \n  - **Mode**: Raw\n    - This implies that the body of the request will contain raw data.\n  - **Raw**: `{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"signalId\":\"signalId\"}`\n    - This is the main content of the body where the data is structured in JSON format.\n    - **accountId**: Placeholder for the identifier of the account associated with the request.\n    - **sessionId**: Placeholder for the identifier of the session during which the request is made.\n    - **signalId**: Placeholder for the identifier of the signal that is targeted for deletion.\n  - **Options**:\n    - **Raw Language**: JSON\n      - Indicates that the format of the raw body content is JSON, ensuring proper handling of the data format.\n\nThis endpoint is crucial for managing signal answers by allowing users to delete specific entries as needed.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Candidate - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"type\": \"candidate\",\"candidate\": \"candidate:842163049 1 udp 1677729535 192.168.1.1 54400 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag EEtu network-id 1 network-cost 10\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/candidate/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "candidate",
+            "create"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n**Endpoint Name:** Signal - Candidate - Create  \nThis endpoint is used to create a new candidate signal in the system.\n\n**Request Method:** POST  \nIndicates that this request will be sending data to the server to create a new resource.\n\n**Request URL:**  \n`http://localhost:3000/api/signal/candidate/create`  \nThis is the URL where the request will be sent. It is hosted locally at port 3000.\n\n**Authentication:**  \n- **Type:** Bearer  \n  This indicates that a bearer token is required for authentication.\n- **Bearer Token:**  \n  - **Key:** token  \n    Represents the token used for authentication.\n  - **Value:** BearerToken  \n    Placeholder for the actual bearer token value. It should be replaced with a valid token.\n  - **Type:** string  \n    Specifies that the token is a string.\n\n**Headers:**  \n- **Key:** (Empty)  \n  No specific headers are defined for this request, indicating that default headers are being used.\n- **Value:** (Empty)  \n  No specific value is provided for headers.\n- **Type:** default  \n  Indicates that this header configuration is in its default state.\n- **Disabled:** true  \n  This means that the headers are not currently active.\n\n**Body:**  \n- **Mode:** raw  \n  The body data is being sent in a raw format.\n- **Raw Data:**  \n  ```json\n  {\n    \"accountId\": \"accountId\", \n    \"sessionId\": \"sessionId\", \n    \"type\": \"candidate\", \n    \"candidate\": \"candidate:842163049 1 udp 1677729535 192.168.1.1 54400 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag EEtu network-id 1 network-cost 10\"\n  }\n  ```\n  - **accountId:**  \n    This field represents the unique identifier associated with the user's account. It should be replaced with the actual account ID.\n  - **sessionId:**  \n    This field holds the unique identifier for the session during which the candidate is being created. This should be replaced with the actual session ID.\n  - **type:**  \n    This field indicates the type of signal being sent. In this case, it is set to \"candidate,\" indicating that this signal relates to a network candidate.\n  - **candidate:**  \n    This field contains a detailed string representation of the candidate. It includes various attributes:\n    - **candidate ID:** `candidate:842163049`\n    - **component ID:** `1`\n    - **protocol:** `udp`\n    - **priority:** `1677729535`\n    - **IP address:** `192.168.1.1`\n    - **port:** `54400`\n    - **candidate type:** `typ srflx`\n    - **relayed address:** `raddr 0.0.0.0`\n    - **relayed port:** `rport 0`\n    - **generation:** `0`\n    - **username frag:** `ufrag EEtu`\n    - **network ID:** `network-id 1`\n    - **network cost:** `network-cost 10`\n  \n**Options:**  \n- **Raw:**  \n  - **Language:** json  \n    Specifies that the raw body data is formatted as JSON. \n\nThis information provides insight into how to configure the request body, authentication, and endpoint specifics for creating a candidate signal."
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Candidate - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"signalId\":\"signalId\", \"type\": \"candidate\",\"candidate\": \"candidate:842163049 1 udp 1677729535 192.168.1.1 54400 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag EEtu network-id 1 network-cost 10\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/candidate/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "candidate",
+            "update"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Signal - Candidate - Update\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"details\": {\n        \"method\": \"PUT\": \"This specifies the HTTP method used for the request, which is PUT, indicating that the request is intended to update existing data.\",\n        \"url\": \"http://localhost:3000/api/signal/candidate/update\": \"This is the endpoint where the update request will be sent. It is hosted on a local server and specifies the resource to be updated, which is the signal candidate.\",\n        \"headers\": [\n          {\n            \"key\": \"\": \"This indicates there are no specific headers being passed in the request.\",\n            \"value\": \"\": \"There is no value associated with any headers.\",\n            \"type\": \"default\": \"This signifies that the header is of default type.\",\n            \"disabled\": true: \"This indicates that the header is disabled and not being sent with the request.\"\n          }\n        ],\n        \"body\": {\n          \"mode\": \"raw\": \"This indicates that the body of the request is being sent in raw format rather than as form data or URL-encoded.\",\n          \"raw\": \"{\\\"accountId\\\":\\\"accountId\\\", \\\"sessionId\\\":\\\"sessionId\\\", \\\"signalId\\\":\\\"signalId\\\", \\\"type\\\": \\\"candidate\\\",\\\"candidate\\\": \\\"candidate:842163049 1 udp 1677729535 192.168.1.1 54400 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag EEtu network-id 1 network-cost 10\\\"}\": \"This is the actual data being sent in the body of the request. It is a JSON string that includes the following fields: \\n- accountId: Represents the identifier for the account associated with the signal.\\n- sessionId: Indicates the session related to the candidate update.\\n- signalId: Identifies the specific signal that is being updated.\\n- type: This is set to 'candidate', indicating the type of information being sent.\\n- candidate: Contains the data for the candidate which includes various networking parameters such as candidate name, priority, and other attributes necessary for the signaling process.\",\n          \"options\": {\n            \"raw\": {\n              \"language\": \"json\": \"This indicates that the raw body content is formatted in JSON, ensuring that the server interprets it correctly.\"\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Candidate - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/candidate/get?accountId=accountId&sessionId=sessionId&signalId=signalId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "candidate",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "signalId",
+              "value": "signalId"
+            }
+          ]
+        },
+        "description": "- **name**: This is the name of the API endpoint, which is \"Signal - Candidate - Get\". It indicates that this endpoint is used to retrieve information related to candidates within a signal context.\n\n- **request**: This object contains all the details necessary to make the API request.\n\n  - **auth**: This section specifies the authentication method used for this request.\n  \n    - **type**: Indicates the type of authentication. Here, it is set to \"bearer\", which means a bearer token is required for authorization.\n    \n    - **bearer**: This array contains information about the bearer token.\n    \n      - **key**: Represents the name of the token parameter, which is \"token\".\n      \n      - **value**: This is the actual token that provides access to the API. In this case, it is labeled as \"BearerToken\", which should be replaced with an actual token.\n      \n      - **type**: Describes the data type of the key value. It is set to \"string\", indicating that the token is a string.\n\n  - **method**: Specifies the HTTP method used for the request. This endpoint uses \"GET\", indicating that it retrieves data from the server.\n\n  - **url**: This is the endpoint URL that the request will target. The URL contains query parameters:\n  \n    - **accountId**: A parameter representing the identifier for the account. This will need to be replaced with a specific account ID value.\n    \n    - **sessionId**: A parameter indicating the identifier for the session. This should be replaced with the actual session ID you want to use.\n    \n    - **signalId**: A parameter representing the identifier for the signal. This also needs to be replaced with the specific signal ID.\n\n  - **headers**: This array contains any headers to be sent with the request.\n  \n    - **key**: This is the name of a header, which is currently empty, indicating no additional headers are set.\n    \n    - **value**: This is the value for the header key, also currently empty.\n    \n    - **type**: Specifies the type of the header, set to \"default\".\n    \n    - **disabled**: This boolean indicates whether the header is disabled. It is set to true, meaning this header will not be sent with the request.\n\n  - **body**: Represents the body of the request, which can hold data when sending requests that require a payload.\n  \n    - **mode**: Indicates the format of the body. Here it is set to \"raw\", which means the body will contain raw data.\n    \n    - **raw**: This is where the raw data would go. Currently, it is empty, indicating that no data will be sent in the request body. For a GET request, this is typically not used."
+      },
+      "response": []
+    },
+    {
+      "name": "Signal - Candidate - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"signalId\":\"signalId\", \"type\": \"candidate\",\"candidate\": \"candidate:842163049 1 udp 1677729535 192.168.1.1 54400 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag EEtu network-id 1 network-cost 10\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signal/candidate/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "signal",
+            "candidate",
+            "delete"
+          ]
+        },
+        "description": "### API Endpoint: Signal - Candidate - Delete\n\n#### Request Details\n\n- **Auth**\n  - **Type**: Bearer\n    - This specifies the authentication method used for the request. A bearer token is required for authorization.\n    - **Bearer Token**: \n      - **Key**: `token`\n      - **Value**: `BearerToken`\n      - **Type**: string\n      - This is the actual token that must be included in the authorization header to authenticate the request.\n\n- **Method**\n  - **Type**: POST\n    - The HTTP method used for the request, which is POST. This method typically indicates that we are sending data to the server to create or update a resource.\n\n- **URL**\n  - **Endpoint**: `http://localhost:3000/api/signal/candidate/delete`\n    - This is the location on the server where the request will be sent. The endpoint is designed to handle the deletion of a candidate signal.\n\n- **Headers**\n  - **Key**: (empty string)\n  - **Value**: (empty string)\n  - **Type**: default\n  - This header field is currently disabled and contains no additional headers. It can be modified to include any necessary headers in the future.\n\n- **Body**\n  - **Mode**: raw\n    - This indicates that the body of the request will be sent as raw data, as opposed to form-data or x-www-form-urlencoded.\n  - **Raw Data**:\n    - The body contains a JSON string with the following fields:\n      - **accountId**: `\"accountId\"`\n        - Represents the unique identifier for the account associated with this request.\n      - **sessionId**: `\"sessionId\"`\n        - Stands for the unique session identifier for the current communication session.\n      - **signalId**: `\"signalId\"`\n        - This is the unique identifier for the specific signal that needs to be deleted.\n      - **type**: `\"candidate\"`\n        - This field indicates the type of the data being sent, specifying that it pertains to a candidate.\n      - **candidate**: \n        - This string contains information about the candidate. It comprises various parameters such as:\n          - ID: `candidate:842163049`\n          - Priority: `1`\n          - Protocol: `udp`\n          - Port: `54400`\n          - IP Address: `192.168.1.1`\n          - Type: `srflx`\n          - Remote Address: `0.0.0.0`\n          - Remote Port: `0`\n          - Generation: `0`\n          - Username Fragment: `ufrag EEtu`\n          - Network ID: `network-id 1`\n          - Network Cost: `network-cost 10`\n        - This information is necessary for identifying and accurately deleting the candidate signal in the system.\n\n  - **Options**\n    - **Raw**: \n      - **Language**: JSON\n        - Specifies that the raw data format is JSON, which is commonly used for structuring data sent to APIs."
+      },
+      "response": []
+    }
+  ]
+}

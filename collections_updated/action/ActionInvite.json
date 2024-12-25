@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "a0936b36-f75f-4506-814b-32f13673e9d7",
+    "name": "ActionInvite",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Invite - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didInvite\": false,\n    \"inviteType\": \"freind\",\n    \"isAccepted\": false,\n    \"isRejected\": false,\n    \"isIgnored\": false,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/invite/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "invite",
+            "create"
+          ]
+        },
+        "description": "### Detailed Description of Each Data in the Endpoint - Action - Invite - Create\n\n#### Request Details\n\n- **name**: Indicates the name of the API request, \"Action - Invite - Create\".\n\n- **request**: Contains all the details required to make the API request.\n\n  - **auth**: Specifies the authentication method needed to access the API.\n    \n    - **type**: The type of authentication used, which in this case is \"bearer\".\n      \n    - **bearer**: An array that holds the necessary authentication information.\n      \n      - **key**: The specific identifier for the token, labeled as \"token\".\n      \n      - **value**: The actual bearer token value to be used for authentication, represented as \"BearerToken\".\n      \n      - **type**: Specifies that the type of value is a string.\n\n  - **method**: The HTTP method used for the API request. Here, it is set to \"POST\", indicating that data is being sent to the server.\n\n  - **url**: The endpoint URL to which the request is sent. In this case, it is \"http://localhost:3000/api/action/invite/create\".\n\n  - **headers**: An array for including any request headers. Currently, there is one header entry which is set to be disabled.\n    \n    - **key**: Represents the name of the header, which is empty in this case.\n    \n    - **value**: The value for the header, which is also empty.\n    \n    - **type**: The type of header, listed as \"default\".\n    \n    - **disabled**: Indicates that this header is disabled.\n\n  - **body**: Contains the data that is sent along with the request.\n    \n    - **mode**: The mode of data being sent. This is set to \"raw\", indicating that the body contains raw data.\n    \n    - **raw**: The actual raw data being sent in JSON format, detailed below:\n      \n      - **sessionId**: A unique identifier for the session, represented as \"sessionId\".\n      \n      - **accountId**: The identifier for the user's account, marked as \"accountId\".\n      \n      - **path**: The specific path related to the invite, formatted as a string, such as \"/live/channel/video123\".\n      \n      - **targetType**: The type of target for the invitation, which could refer to a video or user, set here as \"videoId\".\n      \n      - **targetId**: The unique identifier of the target item, listed as \"videoId\".\n      \n      - **sourceType**: Indicates the type of source for the invitation, marked as \"accountId\", which may refer back to the user's account.\n      \n      - **sourceId**: The unique identifier of the source item, also shown as \"accountId\".\n      \n      - **didInvite**: A boolean field indicating whether the invite has been sent already, defaulting to `false`.\n      \n      - **inviteType**: Represents the type of invite being sent, such as to a \"friend\".\n      \n      - **isAccepted**: A boolean that shows whether the invite has been accepted or not, defaulting to `false`.\n      \n      - **isRejected**: A boolean indicating if the invite has been rejected, defaulting to `false`.\n      \n      - **isIgnored**: A boolean indicating if the invite has been ignored, defaulting to `false`.\n      \n      - **name**: A placeholder for the name associated with the invite, currently empty.\n      \n      - **description**: A placeholder for a description of the invite, currently empty.\n      \n      - **tags**: A field for any tags related to the invite, currently empty.\n\n    - **options**: Additional configuration options for the raw data format. \n\n      - **raw**: Indicates the settings for raw data.\n        \n        - **language**: Specifies the programming or data language being used, in this case, it is \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Invite - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didInvite\": false,\n    \"inviteType\": \"freind\",\n    \"isAccepted\": false,\n    \"isRejected\": false,\n    \"isIgnored\": false,\n    \"name\": \"update\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"inviteId\":\"inviteId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/invite/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "invite",
+            "update"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: This describes the endpoint and its purpose. In this case, it is for updating an invite action.\n\n- **request**: This section contains all the details necessary to make the HTTP request.\n\n  - **auth**: Specifies the authentication method used for the request.\n    - **type**: Indicates that the authentication type is a bearer token.\n    - **bearer**: Contains the details of the bearer token used for authentication.\n      - **key**: The key under which the token is provided (\"token\").\n      - **value**: The actual bearer token value, which identifies the user making the request.\n      - **type**: Indicates the type of the bearer token as a string.\n\n  - **method**: The HTTP method used for this request. Here, it is set to \"PUT,\" indicating that this request will be used to update existing resources.\n\n  - **url**: The endpoint URL where the request will be sent. In this case, it points to a local server at `http://localhost:3000/api/action/invite/update`.\n\n  - **headers**: This section includes any custom headers that need to be sent with the request.\n    - **key**: The name of the header (\"Client-UUID\").\n    - **value**: The value for the header, which is a unique identifier for the client making the request.\n    - **type**: Specifies that this is a default type header.\n\n  - **body**: The body of the request contains the data being sent to the server in raw format.\n    - **mode**: Indicates the formatting of the body, which is set to \"raw.\"\n    - **raw**: Here is the actual JSON data being sent in the request body.\n      - **sessionId**: A unique identifier for the session related to the invite action.\n      - **accountId**: The account identifier for the user making the invitation.\n      - **path**: The path to the resource, indicating where the invite is directed (e.g., a specific video).\n      - **targetType**: The type of entity being targeted by the invite (in this case, a video).\n      - **targetId**: The identifier for the target entity (e.g., videoId).\n      - **sourceType**: The type of source for the invite, usually corresponding to the account type (e.g., accountId).\n      - **sourceId**: The identifier for the source of the invitation (e.g., accountId).\n      - **didInvite**: A boolean flag indicating whether the invite has been sent.\n      - **inviteType**: The type of invite being sent (e.g., \"friend\").\n      - **isAccepted**: A boolean flag indicating whether the invite has been accepted.\n      - **isRejected**: A boolean flag indicating whether the invite has been rejected.\n      - **isIgnored**: A boolean flag indicating whether the invite has been ignored.\n      - **name**: A descriptive name for this invite update action.\n      - **description**: A text field intended for additional details about the invite (currently empty).\n      - **tags**: A field for associated tags (currently empty).\n      - **inviteId**: The unique identifier for this specific invite, used for reference in the update.\n\n  - **options**: Additional options for the request body.\n    - **raw**: Specifies the format of the raw body.\n      - **language**: Indicates that the language of the raw data is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Invite - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/invite/get/?inviteId=inviteId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "invite",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "inviteId",
+              "value": "inviteId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This is an API request for retrieving an invitation based on specific identifiers. Below is a detailed description of each piece of data in this request:\n\n- **name**: \"Action - Invite - Get\"\n  - This is the name of the API request, indicating that it is intended to retrieve (get) an invite action.\n\n- **request**: This section contains all the details required to make the API call.\n  \n  - **auth**: Specifies the type of authentication required to access the API.\n    \n    - **type**: \"bearer\"\n      - Indicates that bearer token authentication will be used.\n    \n    - **bearer**: An array containing authentication details.\n      \n      - **key**: \"token\"\n        - Represents the key used for the bearer token in the authentication process.\n        \n      - **value**: \"BearerToken\"\n        - This is a placeholder for the actual token that will be used to authenticate requests to the API. Users need to replace this with a valid token.\n        \n      - **type**: \"string\"\n        - Specifies that the value of the token is a string.\n\n  - **method**: \"GET\"\n    - Indicates the HTTP method to be used for the request. In this case, it is a GET request, which is used to retrieve data from the server.\n\n  - **url**: \"http://localhost:3000/api/action/invite/get/?inviteId=inviteId&sessionId=sessionId&accountId=accountId\"\n    - This is the endpoint URL for the API request. It contains placeholders for query parameters that must be replaced with actual values when making the request:\n    \n      - **inviteId**: A unique identifier for the invitation that you want to retrieve.\n        \n      - **sessionId**: A unique identifier for the session associated with the invite. \n\n      - **accountId**: The account identifier to specify the account related to the invitation.\n\n  - **headers**: A collection of HTTP headers to be sent with the request.\n    \n    - **key**: \" \" (empty)\n      - This field is reserved for specifying a header key but is currently empty.\n        \n    - **value**: \" \" (empty)\n      - This field is reserved for specifying a header value but is currently empty.\n     \n    - **type**: \"default\"\n      - Indicates that this is a standard header type.\n      \n    - **disabled**: true\n      - This indicates that the header is currently disabled and will not be included in the request.\n\n  - **body**: Contains information about the request body.\n    \n    - **mode**: \"raw\"\n      - Indicates that the body of the request is in raw format.\n        \n    - **raw**: \"\"\n      - The raw body currently has no content. For this GET request, a body is generally not required.\n\nThis description outlines the structure and purpose of the data in this API request, providing clarity for users on how to utilize the collection in Postman."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Invite - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/invite/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "invite",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### API Endpoint: Action - Invite - Get All\n\n**Description of Request Data:**\n\n- **Auth**: This section describes the authentication method required to access the API. The request uses a bearer token for security.\n  - **Type**: The authentication type is set to \"bearer\", indicating that a token is needed for access.\n  - **Bearer**: Contains an array with a single object that defines the token.\n    - **Key**: The key is labeled as \"token\", this is the identifier for the token.\n    - **Value**: The value is set to \"BearerToken\", this should be replaced with an actual token string that grants access to the API.\n    - **Type**: The type is specified as \"string\", indicating that the value should be a string format.\n\n- **Method**: This defines the HTTP method used for the request, which is \"GET\". This method is used to retrieve information from the server.\n\n- **URL**: This specifies the endpoint where the request is sent. \n  - **Base URL**: \"http://localhost:3000/api/action/invite/all/\" is the root of the endpoint.\n  - **Query Parameters**: \n    - **sessionId**: This parameter is used to specify the current session identifier, to filter results relevant to that session.\n    - **accountId**: This parameter denotes the account identifier, it helps in retrieving invites related to a specific account.\n\n- **Headers**: This section allows for additional header fields to be sent with the request. \n  - **Key**: Currently left empty which means no additional headers are set.\n  - **Value**: Matches the key, indicating no value is provided.\n  - **Type**: Default values are assigned, which means it is a standard header type.\n  - **Disabled**: Set to true, meaning this header is currently inactive and won’t be included in the request.\n\n- **Body**: This defines the data to be sent along with the request.\n  - **Mode**: Set to \"raw\", indicating that the body data format is unprocessed and sent as plain text.\n  - **Raw**: The raw data section is empty since a GET request typically does not have a body. \n\nThis endpoint is used to fetch all invite actions based on the provided session ID and account ID while requiring a valid token for access."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Invite - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"inviteId\":\"inviteId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/invite/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "invite",
+            "delete"
+          ]
+        },
+        "description": "Here is a detailed description of each data element in the provided API endpoint:\n\n- **name**: This is the name of the API action being described. It is labeled \"Action - Invite - Delete,\" indicating that the endpoint is used to delete an invitation.\n\n- **request**: This object contains all the details necessary to make the API request.\n\n  - **auth**: This section specifies the authentication method used for the request.\n    - **type**: Indicates the type of authentication required, which is \"bearer\" in this case.\n    - **bearer**: This array holds the specific details for the bearer token used for authentication.\n      - **key**: The identifier for the bearer token, set as \"token.\"\n      - **value**: The placeholder for the actual session ID, represented as \"sessionId.\"\n      - **type**: Indicates the data type of the value, which is \"string.\"\n\n  - **method**: This is the HTTP method used for the request. It is set to \"POST,\" meaning data will be sent to the server.\n\n  - **url**: This is the endpoint URL where the API request is sent. It is specified as \"http://localhost:3000/api/action/invite/delete,\" indicating that it targets the delete action for invitations on a local server.\n\n  - **headers**: This section contains any HTTP headers that may be necessary for the request.\n    - This entry contains an empty key and value, and is marked as \"disabled,\" meaning it won't be included in the request.\n\n  - **body**: This section includes the data sent in the body of the request.\n    - **mode**: Indicates the format of the request body. It is set to \"raw,\" which means the body is sent as plain text.\n    - **raw**: This is the actual content being sent in the body of the request. The JSON structure includes:\n      - **sessionId**: The ID of the current session, which is necessary for identifying the user's session.\n      - **accountId**: The ID of the account associated with the invitation, represented here as \"accountId.\"\n      - **inviteId**: The ID of the specific invitation to be deleted, represented as \"inviteId.\"\n\nThis detailed description should help users understand the purpose and structure of the API request for deleting an invitation."
+      },
+      "response": []
+    }
+  ]
+}

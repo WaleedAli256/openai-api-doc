@@ -1,0 +1,727 @@
+{
+  "info": {
+    "_postman_id": "0ed8cbb1-dd27-4326-a790-7eff0176137e",
+    "name": "VideoDetails",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Video - Details - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"streamType\":\"Live\",\"searchType\":\"Game\",\"title\":\"Fortune's Basketball Challenge\",\"description\":\"Basketball game featuring amazing plays and challenges.\",\"tags\":\"basketball,game,challenge\",\"channel\":\"Fortune's Basketball Channel\",\"category\":\"Board\",\"subCategory\":\"Outdoor Party\",\"started\":false,\"paused\":false,\"stopped\":false,\"scheduleDate\":\"2024-02-01\",\"scheduleTime\":\"18:00:00\",\"streamHours\":1,\"coverPhotoUrl\":\"basketball-cover-url.jpg\",\"voteTokenQuantity\": 100,\"votingTimeReset\":\"5\",\"voteButtonQuantity\":4,\"voteButtonText1\":\"Layup\",\"voteButtonText2\":\"Dunk\",\"voteButtonText3\":\"3 Point\",\"voteButtonText4\":\"Free Throw\",\"isVoteResultsVisible\": true,\"isRewardsEnabled\": false,\"isTournamentEnabled\": true, \"isPlayerTournament\": false, \"isTeamTournament\": false,\"tournamentButtonText1\":\"Hit\",\"tournamentButtonText2\":\"Miss\",\"streamPlaybackUrl\":\"basketball-stream-url\",\"streamLocatorName\":\"basketball-locator-name\",\"streamAssetName\":\"basketball-asset-name\",\"platformPlaybackUrls\": [\"https://youtube.com/channel/fortune/sports-basketball-12345\", \"https://www.twitch.com/fortune/sports-basketball-12345\"],\"platformEventUrls\": [\"https://eventbrite.com/events/beladed-fortune-sports-basketball-12345\", \"https://www.meetup.com/events/beladed-fortune-sports-basketball-12345\"],\"primaryCameraName\":\"Sony 4K Ultra HD WebCam\",\"primaryMicrophoneName\":\"WirelessAudioTek Device\",\"primarySpeakerName\":\"Bose-Mega-Speaker 2.0\",\"additionalCameras\":[{\"camera\":\"camera-2\", \"microphone\":\"mic-2\"},{\"camera\":\"camera-3\", \"microphone\":\"mic-3\"}]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "create"
+          ]
+        },
+        "description": "### Video - Details - Create Endpoint Description\n\nThe following details describe the data required for creating video details using the API.\n\n- **sessionId**: Unique identifier for the current session. Used to track and manage sessions for video streaming.\n\n- **accountId**: Unique identifier for the account associated with the video. This allows linking the video to a user's specific account.\n\n- **channelId**: Unique identifier for the channel where the video will be streamed. This is used to identify the specific channel context.\n\n- **streamType**: Specifies the type of stream, such as \"Live\" or \"Recorded\". In this case, it indicates that the stream is live.\n\n- **searchType**: Indicates the content type being searched for, set as \"Game\" here. This could be used for categorizing content.\n\n- **title**: The title of the video. Here it is set to \"Fortune's Basketball Challenge\", summarizing the video’s primary focus.\n\n- **description**: Provides a short description of the video content. In this example, it describes the video as a basketball game featuring amazing plays and challenges.\n\n- **tags**: A comma-separated list of tags related to the video. Used for categorization and improving searchability, such as \"basketball,game,challenge\".\n\n- **channel**: The name of the channel where the video is hosted. In this case, it's \"Fortune's Basketball Channel\".\n\n- **category**: Broad category under which the video falls. This is set as \"Board\", representing the type of content.\n\n- **subCategory**: More specific classification of the content, noted as \"Outdoor Party\", indicating the setting or type of the event.\n\n- **started**: Boolean value indicating whether the stream has started; here it is set to false, meaning it has not yet begun.\n\n- **paused**: Boolean value indicating if the stream is currently paused. It is also set to false.\n\n- **stopped**: Boolean value indicating if the stream has ended. This is set to false, showing that the stream has not yet stopped.\n\n- **scheduleDate**: The date scheduled for the video to be streamed. In this case, set to \"2024-02-01\".\n\n- **scheduleTime**: The time designated for the start of the stream, noted as \"18:00:00\".\n\n- **streamHours**: Indicates the expected duration of the stream in hours, which is set to 1 hour.\n\n- **coverPhotoUrl**: URL pointing to the cover photo image of the video, here noted as \"basketball-cover-url.jpg\".\n\n- **voteTokenQuantity**: Number of tokens available for voting, set to 100 in this case.\n\n- **votingTimeReset**: Time period for resetting voting, noted as \"5\", though the unit (seconds/minutes) should be specified.\n\n- **voteButtonQuantity**: Total number of voting buttons available during the stream. This is set to 4.\n\n- **voteButtonText1**, **voteButtonText2**, **voteButtonText3**, **voteButtonText4**: Text labels for each of the voting buttons, allowing users to choose options such as \"Layup\", \"Dunk\", \"3 Point\", and \"Free Throw\".\n\n- **isVoteResultsVisible**: Boolean flag that indicates if the results of the votes will be visible to the audience. It's set to true, meaning viewers will see the results.\n\n- **isRewardsEnabled**: Boolean value indicating whether rewards for participation in the stream are enabled. This is set to false.\n\n- **isTournamentEnabled**: Boolean value that states if a tournament feature is enabled during the stream; here it is set to true.\n\n- **isPlayerTournament**: A flag indicating if the tournament is player-based, set to false, implying that it's not focused solely on players.\n\n- **isTeamTournament**: A flag signaling whether the tournament is team-based, set to false, implying that it does not involve teams.\n\n- **tournamentButtonText1**, **tournamentButtonText2**: Labels for the tournament buttons, which are \"Hit\" and \"Miss\" for voting during tournament scenarios.\n\n- **streamPlaybackUrl**: URL where the video stream can be accessed for playback, noted as \"basketball-stream-url\".\n\n- **streamLocatorName**: Identifies the name used to locate the stream, in this case, \"basketball-locator-name\".\n\n- **streamAssetName**: Specifies the name of the asset related to the stream, here it is \"basketball-asset-name\".\n\n- **platformPlaybackUrls**: List of URLs for various platforms where the playback of the video can be viewed, including links to YouTube and Twitch.\n\n- **platformEventUrls**: List of URLs for event-related information about the video on platforms like Eventbrite and Meetup.\n\n- **primaryCameraName**: Name of the primary camera used for the stream, set to \"Sony 4K Ultra HD WebCam\".\n\n- **primaryMicrophoneName**: Name of the main microphone used during the stream, here it is \"WirelessAudioTek Device\".\n\n- **primarySpeakerName**: Name of the primary speaker setup for the audio during the stream, noted as \"Bose-Mega-Speaker 2.0\".\n\n- **additionalCameras**: Array containing information about additional cameras and microphones used in the stream. Each object includes a \"camera\" and \"microphone\" key that specifies their names."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"streamType\":\"Live\",\"searchType\":\"Game\",\"title\":\"Fortune's Basketball Challenge\",\"description\":\"Basketball game featuring amazing plays and challenges.\",\"tags\":\"basketball,game,challenge\",\"channel\":\"Fortune's Basketball Channel\",\"category\":\"Board\",\"subCategory\":\"Outdoor Party\",\"started\":false,\"paused\":false,\"stopped\":false,\"scheduleDate\":\"2024-02-01\",\"scheduleTime\":\"18:00:00\",\"streamHours\":1,\"coverPhotoUrl\":\"basketball-cover-url.jpg\",\"voteTokenQuantity\": 100,\"votingTimeReset\":\"5\",\"voteButtonQuantity\":4,\"voteButtonText1\":\"Layup\",\"voteButtonText2\":\"Dunk\",\"voteButtonText3\":\"3 Point\",\"voteButtonText4\":\"Free Throw\",\"isVoteResultsVisible\": true,\"isRewardsEnabled\": false,\"isTournamentEnabled\": true, \"isPlayerTournament\": false, \"isTeamTournament\": false,\"tournamentButtonText1\":\"Hit\",\"tournamentButtonText2\":\"Miss\",\"streamPlaybackUrl\":\"basketball-stream-url\",\"streamLocatorName\":\"basketball-locator-name\",\"streamAssetName\":\"basketball-asset-name\",\"platformPlaybackUrls\": [\"https://youtube.com/channel/fortune/sports-basketball-12345\", \"https://www.twitch.com/fortune/sports-basketball-12345\"],\"platformEventUrls\": [\"https://eventbrite.com/events/beladed-fortune-sports-basketball-12345\", \"https://www.meetup.com/events/beladed-fortune-sports-basketball-12345\"],\"primaryCameraName\":\"Sony 4K Ultra HD WebCam\",\"primaryMicrophoneName\":\"WirelessAudioTek Device\",\"primarySpeakerName\":\"Bose-Mega-Speaker 2.0\",\"additionalCameras\":[{\"camera\":\"camera-2\", \"microphone\":\"mic-2\"},{\"camera\":\"camera-3\", \"microphone\":\"mic-3\"}]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Video - Details - Update\n\n#### Request\n- **Auth**\n  - **Type**: Specifies the type of authentication used for the request.\n  - **Bearer**: This uses a bearer token for authorization.\n    - **Key**: \"token\" - This is the identifier for the bearer token.\n    - **Value**: \"BearerToken\" - This is a placeholder for the actual bearer token string required for authentication.\n    - **Type**: Indicates that the value is a string.\n\n- **Method**: \n  - **PUT** - This method is used to update existing video details.\n\n- **URL**: \n  - **http://localhost:3000/api/video/details/update** - This is the endpoint where the request will be sent to update video details.\n\n- **Headers**\n  - **Key**: \"Client-UUID\" - This is a unique identifier for the client making the request.\n    - **Value**: \"ClientUUID\" - This is a placeholder for the actual client UUID.\n    - **Type**: This indicates that it's a default header.\n\n#### Body\n- **Mode**: \n  - **raw** - The body content is sent as raw data.\n  \n- **Raw Data**: This is the JSON string containing the details of the video to be updated. Each field is described below:\n\n  - **sessionId**: Unique identifier for the session during which the video is being updated.\n\n  - **accountId**: Unique identifier for the account associated with the video.\n\n  - **channelId**: Unique identifier for the channel on which the video is hosted.\n\n  - **videoId**: Unique identifier for the video being updated.\n\n  - **streamType**: Specifies the type of stream (e.g., \"Live\" indicates a live stream).\n\n  - **searchType**: Type of search related to the video, e.g., \"Game\" indicates that the video's content is game-related.\n\n  - **title**: Title of the video (e.g., \"Fortune's Basketball Challenge\").\n\n  - **description**: Brief description of the video content (e.g., \"Basketball game featuring amazing plays and challenges.\").\n\n  - **tags**: Comma-separated keywords related to the video (e.g., \"basketball,game,challenge\").\n\n  - **channel**: Name of the channel hosting the video (e.g., \"Fortune's Basketball Channel\").\n\n  - **category**: Main category the video falls under (e.g., \"Board\").\n\n  - **subCategory**: More specific classification of the video (e.g., \"Outdoor Party\").\n\n  - **started**: Boolean value indicating whether the video has started streaming (e.g., false).\n\n  - **paused**: Boolean value indicating whether the streaming is paused (e.g., false).\n\n  - **stopped**: Boolean value indicating whether the streaming has stopped (e.g., false).\n\n  - **scheduleDate**: Date when the video is scheduled to start streaming (e.g., \"2024-02-01\").\n\n  - **scheduleTime**: Time when the video is scheduled to start streaming (e.g., \"18:00:00\").\n\n  - **streamHours**: Duration of the stream in hours (e.g., 1 hour).\n\n  - **coverPhotoUrl**: URL of the cover photo associated with the video (e.g., \"basketball-cover-url.jpg\").\n\n  - **voteTokenQuantity**: Number of tokens available for voting (e.g., 100).\n\n  - **votingTimeReset**: Time reset interval for voting in minutes (e.g., \"5\").\n\n  - **voteButtonQuantity**: Number of voting options available (e.g., 4).\n\n  - **voteButtonText1-4**: Text for each voting button (e.g., \"Layup\", \"Dunk\", \"3 Point\", \"Free Throw\").\n\n  - **isVoteResultsVisible**: Boolean indicating if the results of the votes are visible to users (e.g., true).\n\n  - **isRewardsEnabled**: Boolean indicating if rewards are enabled for this video (e.g., false).\n\n  - **isTournamentEnabled**: Boolean indicating if a tournament feature is enabled (e.g., true).\n\n  - **isPlayerTournament**: Boolean indicating if a player tournament is being held (e.g., false).\n\n  - **isTeamTournament**: Boolean indicating if a team tournament is being held (e.g., false).\n\n  - **tournamentButtonText1-2**: Text for buttons in the tournament (e.g., \"Hit\", \"Miss\").\n\n  - **streamPlaybackUrl**: URL for streaming playback (e.g., \"basketball-stream-url\").\n\n  - **streamLocatorName**: Name of the stream locator (e.g., \"basketball-locator-name\").\n\n  - **streamAssetName**: Name of the stream asset (e.g., \"basketball-asset-name\").\n\n  - **platformPlaybackUrls**: List of URLs for playback on different platforms (e.g., links to YouTube or Twitch).\n\n  - **platformEventUrls**: List of event URLs related to the video (e.g., links to Eventbrite or Meetup).\n\n  - **primaryCameraName**: Name of the primary camera used for the stream (e.g., \"Sony 4K Ultra HD WebCam\").\n\n  - **primaryMicrophoneName**: Name of the primary microphone used for audio (e.g., \"WirelessAudioTek Device\").\n\n  - **primarySpeakerName**: Name of the primary speaker used for sound output (e.g., \"Bose-Mega-Speaker 2.0\").\n\n  - **additionalCameras**: Array containing additional camera and microphone pairs used for the stream, each specifying a camera and microphone."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Update - Start Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"streamType\":\"Live\",\"searchType\":\"Game\",\"title\":\"Fortune's Basketball Challenge\",\"description\":\"Basketball game featuring amazing plays and challenges.\",\"tags\":\"basketball,game,challenge\",\"channel\":\"Fortune's Basketball Channel\",\"category\":\"Board\",\"subCategory\":\"Outdoor Party\",\"started\":true,\"paused\":false,\"stopped\":false,\"scheduleDate\":\"2024-02-01\",\"scheduleTime\":\"18:00:00\",\"streamHours\":1,\"coverPhotoUrl\":\"basketball-cover-url.jpg\",\"voteTokenQuantity\": 100,\"votingTimeReset\":\"5\",\"voteButtonQuantity\":4,\"voteButtonText1\":\"Layup\",\"voteButtonText2\":\"Dunk\",\"voteButtonText3\":\"3 Point\",\"voteButtonText4\":\"Free Throw\",\"isRewardsEnabled\": false,\"isTournamentEnabled\": true,\"tournamentButtonText1\":\"Hit\",\"tournamentButtonText2\":\"Miss\",\"streamPlaybackUrl\":\"basketball-stream-url\",\"streamLocatorName\":\"basketball-locator-name\",\"streamAssetName\":\"basketball-asset-name\",\"platformPlaybackUrls\": [\"https://youtube.com/channel/fortune/sports-basketball-12345\", \"https://www.twitch.com/fortune/sports-basketball-12345\"],\"platformEventUrls\": [\"https://eventbrite.com/events/beladed-fortune-sports-basketball-12345\", \"https://www.meetup.com/events/beladed-fortune-sports-basketball-12345\"],\"primaryCameraName\":\"Sony 4K Ultra HD WebCam\",\"primaryMicrophoneName\":\"WirelessAudioTek Device\",\"primarySpeakerName\":\"Bose-Mega-Speaker 2.0\",\"additionalCameras\":[{\"camera\":\"camera-2\", \"microphone\":\"mic-2\"},{\"camera\":\"camera-3\", \"microphone\":\"mic-3\"}]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: Video - Details - Update - Start Stream\n\n**Request Method**: PUT  \n**Request URL**: `http://localhost:3000/api/video/details/update`\n\n#### Authentication\n- **Auth Type**: Bearer Token\n  - **Token Details**:\n    - **Key**: `token`\n    - **Value**: `BearerToken` (The actual value should be substituted with a valid bearer token for authorization).\n    - **Type**: string\n\n#### Headers\n- **Client-UUID**: \n  - **Key**: `Client-UUID`\n  - **Value**: `ClientUUID` (Placeholder for the unique identifier of the client making the request).\n  - **Type**: default\n\n#### Request Body (JSON Format)\n- **sessionId**: Identifier for the current streaming session.\n- **accountId**: Unique identifier for the user's account associated with the video.\n- **channelId**: Identifier for the channel under which the video is being streamed.\n- **videoId**: Unique identifier for the video being updated.\n- **streamType**: Type of stream, here it specifies as \"Live\".\n- **searchType**: The manner in which the video will be searched, in this case, it is set to \"Game\".\n- **title**: Title of the video, for example, \"Fortune's Basketball Challenge\".\n- **description**: A brief description of the video content, for instance, \"Basketball game featuring amazing plays and challenges.\"\n- **tags**: Comma-separated keywords related to the video, such as \"basketball,game,challenge\".\n- **channel**: The name of the channel that the video belongs to, e.g., \"Fortune's Basketball Channel\".\n- **category**: The main category of the content, here classified as \"Board\".\n- **subCategory**: Further categorization, in this case \"Outdoor Party\".\n- **started**: Boolean indicating if the stream has started (true/false).\n- **paused**: Boolean indicating if the stream is currently paused (true/false).\n- **stopped**: Boolean indicating if the stream has stopped (true/false).\n- **scheduleDate**: Date when the stream is scheduled to occur, formatted as \"YYYY-MM-DD\" (example: \"2024-02-01\").\n- **scheduleTime**: Time when the stream is scheduled to start, formatted as \"HH:MM:SS\" (example: \"18:00:00\").\n- **streamHours**: Duration of the stream in hours (example: 1).\n- **coverPhotoUrl**: URL link to the cover photo for the stream (example: \"basketball-cover-url.jpg\").\n- **voteTokenQuantity**: Number of tokens available for voting (example: 100).\n- **votingTimeReset**: Time duration for resetting the voting, given in seconds (example: \"5\").\n- **voteButtonQuantity**: The number of voting buttons available to users (example: 4).\n- **voteButtonText1 to voteButtonText4**: Texts for each voting button (examples: \"Layup\", \"Dunk\", \"3 Point\", \"Free Throw\").\n- **isRewardsEnabled**: Boolean value indicating if rewards are enabled for this stream (true/false).\n- **isTournamentEnabled**: Boolean value indicating if tournaments are enabled (true/false).\n- **tournamentButtonText1 to tournamentButtonText2**: Texts for buttons related to the tournament (examples: \"Hit\", \"Miss\").\n- **streamPlaybackUrl**: URL link for live stream playback (example: \"basketball-stream-url\").\n- **streamLocatorName**: The name used for locating the stream (example: \"basketball-locator-name\").\n- **streamAssetName**: The name of the asset for the stream (example: \"basketball-asset-name\").\n- **platformPlaybackUrls**: Array of URLs for playback on various platforms (example: YouTube and Twitch).\n- **platformEventUrls**: Array of URLs to events associated with the stream (example: Eventbrite and Meetup links).\n- **primaryCameraName**: Name of the primary camera used for the stream (example: \"Sony 4K Ultra HD WebCam\").\n- **primaryMicrophoneName**: Name of the primary microphone used for the audio (example: \"WirelessAudioTek Device\").\n- **primarySpeakerName**: Name of the primary speaker system used (example: \"Bose-Mega-Speaker 2.0\").\n- **additionalCameras**: Array of additional cameras, each with their respective camera and microphone identifiers (example: \"camera-2\" with \"mic-2\", \"camera-3\" with \"mic-3\").\n\nThis description outlines the parameters and details that must be included in the request body for the purpose of updating video details to start a stream. Each field has specific expectations related to the content and format."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Update - Pause Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"streamType\":\"Live\",\"searchType\":\"Game\",\"title\":\"Fortune's Basketball Challenge\",\"description\":\"Basketball game featuring amazing plays and challenges.\",\"tags\":\"basketball,game,challenge\",\"channel\":\"Fortune's Basketball Channel\",\"category\":\"Board\",\"subCategory\":\"Outdoor Party\",\"started\":true,\"paused\":true,\"stopped\":false,\"scheduleDate\":\"2024-02-01\",\"scheduleTime\":\"18:00:00\",\"streamHours\":1,\"coverPhotoUrl\":\"basketball-cover-url.jpg\",\"voteTokenQuantity\": 100,\"votingTimeReset\":\"5\",\"voteButtonQuantity\":4,\"voteButtonText1\":\"Layup\",\"voteButtonText2\":\"Dunk\",\"voteButtonText3\":\"3 Point\",\"voteButtonText4\":\"Free Throw\",\"isRewardsEnabled\": false,\"isTournamentEnabled\": true,\"tournamentButtonText1\":\"Hit\",\"tournamentButtonText2\":\"Miss\",\"streamPlaybackUrl\":\"basketball-stream-url\",\"streamLocatorName\":\"basketball-locator-name\",\"streamAssetName\":\"basketball-asset-name\",\"platformPlaybackUrls\": [\"https://youtube.com/channel/fortune/sports-basketball-12345\", \"https://www.twitch.com/fortune/sports-basketball-12345\"],\"platformEventUrls\": [\"https://eventbrite.com/events/beladed-fortune-sports-basketball-12345\", \"https://www.meetup.com/events/beladed-fortune-sports-basketball-12345\"],\"primaryCameraName\":\"Sony 4K Ultra HD WebCam\",\"primaryMicrophoneName\":\"WirelessAudioTek Device\",\"primarySpeakerName\":\"Bose-Mega-Speaker 2.0\",\"additionalCameras\":[{\"camera\":\"camera-2\", \"microphone\":\"mic-2\"},{\"camera\":\"camera-3\", \"microphone\":\"mic-3\"}]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "update"
+          ]
+        },
+        "description": "### API Endpoint: Video - Details - Update - Pause Stream\n\n#### Request Information\n- **Auth Type**: Bearer\n  - **Key**: token\n  - **Value**: BearerToken\n  - **Type**: string\n  - This identifies the user making the request through a bearer token for authentication.\n\n- **Method**: PUT\n  - This HTTP method is used to update the current state of the video stream details.\n\n- **URL**: `http://localhost:3000/api/video/details/update`\n  - This is the endpoint where the request is sent to update the video stream details.\n\n- **Headers**:\n  - **Key**: Client-UUID\n    - **Value**: ClientUUID\n    - **Type**: default\n    - This header carries a unique identifier for the client making the request, ensuring the request can be tracked and managed effectively.\n\n#### Body Parameters (in JSON format)\n- **sessionId**: \n  - A unique identifier for the current session of the video stream.\n\n- **accountId**: \n  - The ID associated with the user's account for tracking purposes.\n\n- **channelId**: \n  - An identifier for the channel where the video stream is hosted.\n\n- **videoId**: \n  - A unique identifier for the video being updated.\n\n- **streamType**: \n  - Indicates the type of stream. In this case, it's set to \"Live\".\n\n- **searchType**: \n  - Specifies the type of search for the video, here it's set to \"Game\".\n\n- **title**: \n  - The title of the video stream, which is \"Fortune's Basketball Challenge\".\n\n- **description**: \n  - Brief description of the video stream, detailing it as a basketball game featuring amazing plays and challenges.\n\n- **tags**: \n  - Keywords related to the video for searchability, including \"basketball\", \"game\", and \"challenge\".\n\n- **channel**: \n  - Name of the channel broadcasting the video, which is \"Fortune's Basketball Channel\".\n\n- **category**: \n  - The main category of the video, labeled as \"Board\".\n\n- **subCategory**: \n  - A more specific category within the main category, noted as \"Outdoor Party\".\n\n- **started**: \n  - A boolean value indicating whether the stream has started; true indicates that it has.\n\n- **paused**: \n  - A boolean value that shows if the stream is paused; true means the stream is currently paused.\n\n- **stopped**: \n  - Indicates if the stream has stopped; false means the stream is still ongoing or paused.\n\n- **scheduleDate**: \n  - The date scheduled for the video stream, set to \"2024-02-01\".\n\n- **scheduleTime**: \n  - The time scheduled for the video stream, specified as \"18:00:00\".\n\n- **streamHours**: \n  - Duration of the stream in hours, which is set to 1.\n\n- **coverPhotoUrl**: \n  - The URL for the cover photo of the video, noted as \"basketball-cover-url.jpg\".\n\n- **voteTokenQuantity**: \n  - Number of tokens available for users to vote with, set to 100.\n\n- **votingTimeReset**: \n  - The time reset for voting, indicated as \"5\" seconds.\n\n- **voteButtonQuantity**: \n  - Total number of voting buttons available; here it is 4.\n\n- **voteButtonText1, voteButtonText2, voteButtonText3, voteButtonText4**: \n  - Text labels for the voting buttons, allowing user interaction with options like \"Layup\", \"Dunk\", \"3 Point\", and \"Free Throw\".\n\n- **isRewardsEnabled**: \n  - Indicates if rewards are enabled for this stream; set to false.\n\n- **isTournamentEnabled**: \n  - A flag showing whether a tournament is enabled for this stream; set to true.\n\n- **tournamentButtonText1, tournamentButtonText2**: \n  - Text labels for buttons in the tournament feature, including \"Hit\" and \"Miss\".\n\n- **streamPlaybackUrl**: \n  - A URL for the live playback of the stream, given as \"basketball-stream-url\".\n\n- **streamLocatorName**: \n  - The name of the stream locator, referred to as \"basketball-locator-name\".\n\n- **streamAssetName**: \n  - The name for the stream asset, listed as \"basketball-asset-name\".\n\n- **platformPlaybackUrls**: \n  - An array of URLs for playback on different platforms, including links to YouTube and Twitch.\n\n- **platformEventUrls**: \n  - An array of event URLs for related platforms like Eventbrite and Meetup.\n\n- **primaryCameraName**: \n  - The name of the primary camera used for the stream, which is \"Sony 4K Ultra HD WebCam\".\n\n- **primaryMicrophoneName**: \n  - Name of the primary microphone used, here it is \"WirelessAudioTek Device\".\n\n- **primarySpeakerName**: \n  - The name of the primary speaker used for the stream, specified as \"Bose-Mega-Speaker 2.0\".\n\n- **additionalCameras**: \n  - An array of objects specifying additional cameras"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Update - Stop Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"streamType\":\"Live\",\"searchType\":\"Game\",\"title\":\"Fortune's Basketball Challenge\",\"description\":\"Basketball game featuring amazing plays and challenges.\",\"tags\":\"basketball,game,challenge\",\"channel\":\"Fortune's Basketball Channel\",\"category\":\"Board\",\"subCategory\":\"Outdoor Party\",\"started\":true,\"paused\":false,\"stopped\":true,\"scheduleDate\":\"2024-02-01\",\"scheduleTime\":\"18:00:00\",\"streamHours\":1,\"coverPhotoUrl\":\"basketball-cover-url.jpg\",\"voteTokenQuantity\": 100,\"votingTimeReset\":\"5\",\"voteButtonQuantity\":4,\"voteButtonText1\":\"Layup\",\"voteButtonText2\":\"Dunk\",\"voteButtonText3\":\"3 Point\",\"voteButtonText4\":\"Free Throw\",\"isRewardsEnabled\": false,\"isTournamentEnabled\": true,\"tournamentButtonText1\":\"Hit\",\"tournamentButtonText2\":\"Miss\",\"streamPlaybackUrl\":\"basketball-stream-url\",\"streamLocatorName\":\"basketball-locator-name\",\"streamAssetName\":\"basketball-asset-name\",\"platformPlaybackUrls\": [\"https://youtube.com/channel/fortune/sports-basketball-12345\", \"https://www.twitch.com/fortune/sports-basketball-12345\"],\"platformEventUrls\": [\"https://eventbrite.com/events/beladed-fortune-sports-basketball-12345\", \"https://www.meetup.com/events/beladed-fortune-sports-basketball-12345\"],\"primaryCameraName\":\"Sony 4K Ultra HD WebCam\",\"primaryMicrophoneName\":\"WirelessAudioTek Device\",\"primarySpeakerName\":\"Bose-Mega-Speaker 2.0\",\"additionalCameras\":[{\"camera\":\"camera-2\", \"microphone\":\"mic-2\"},{\"camera\":\"camera-3\", \"microphone\":\"mic-3\"}]}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Video - Details - Update - Stop Stream\n\n**Request Type:** PUT  \n**URL:** `http://localhost:3000/api/video/details/update`\n\n#### Authentication\n- **Auth Type:** Bearer Token\n  - **Token Key:** `token`\n  - **Token Value:** The actual bearer token used for authorization, represented as `BearerToken`.\n\n#### Headers\n- **Client-UUID:** A unique identifier for the client making the request, represented as `ClientUUID`.\n\n#### Body Parameters (in JSON format)\n1. **sessionId:** Identifier for the current streaming session.\n2. **accountId:** Identifier for the account associated with the stream.\n3. **channelId:** Identifier for the specific channel hosting the video.\n4. **videoId:** Unique ID for the video being updated.\n5. **streamType:** Indicates the type of stream; in this case, set to \"Live\".\n6. **searchType:** Specifies the type of content for search; here it is defined as \"Game\".\n7. **title:** The title of the video; for example, \"Fortune's Basketball Challenge\".\n8. **description:** A brief description of the video content, e.g., \"Basketball game featuring amazing plays and challenges.\"\n9. **tags:** Comma-separated keywords relevant to the video, such as \"basketball,game,challenge\".\n10. **channel:** The name of the channel broadcasting the content, like \"Fortune's Basketball Channel\".\n11. **category:** The main category of the video; here it is \"Board\".\n12. **subCategory:** A finer classification of the content, specified as \"Outdoor Party\".\n13. **started:** A boolean indicating whether the stream has started; set to `true`.\n14. **paused:** A boolean indicating if the stream is paused; set to `false`.\n15. **stopped:** A boolean indicating if the stream has stopped; set to `true`.\n16. **scheduleDate:** Date when the stream is scheduled to start, formatted as \"YYYY-MM-DD\" (e.g., \"2024-02-01\").\n17. **scheduleTime:** Time when the stream is scheduled to start, formatted as \"HH:MM:SS\" (e.g., \"18:00:00\").\n18. **streamHours:** Duration of the stream in hours, set to `1`.\n19. **coverPhotoUrl:** URL to the cover photo for the stream, represented as \"basketball-cover-url.jpg\".\n20. **voteTokenQuantity:** The number of tokens available for voting, set to `100`.\n21. **votingTimeReset:** Specifies the reset time for voting in seconds; here it is `5`.\n22. **voteButtonQuantity:** Number of voting buttons available, set to `4`.\n23. **voteButtonText1:** Text for the first voting button, which is \"Layup\".\n24. **voteButtonText2:** Text for the second voting button, \"Dunk\".\n25. **voteButtonText3:** Text for the third voting button, \"3 Point\".\n26. **voteButtonText4:** Text for the fourth voting button, \"Free Throw\".\n27. **isRewardsEnabled:** A boolean indicating whether rewards are enabled; set to `false`.\n28. **isTournamentEnabled:** A boolean indicating if tournaments are enabled; set to `true`.\n29. **tournamentButtonText1:** Text for the first tournament button, \"Hit\".\n30. **tournamentButtonText2:** Text for the second tournament button, \"Miss\".\n31. **streamPlaybackUrl:** URL to access the playback of the stream, represented as \"basketball-stream-url\".\n32. **streamLocatorName:** Name used to identify the stream location, set as \"basketball-locator-name\".\n33. **streamAssetName:** Name of the stream asset, represented as \"basketball-asset-name\".\n34. **platformPlaybackUrls:** An array of URLs where the stream can be viewed on other platforms, including:\n   - `https://youtube.com/channel/fortune/sports-basketball-12345`\n   - `https://www.twitch.com/fortune/sports-basketball-12345`\n35. **platformEventUrls:** An array of URLs for events associated with the stream, including:\n   - `https://eventbrite.com/events/beladed-fortune-sports-basketball-12345`\n   - `https://www.meetup.com/events/beladed-fortune-sports-basketball-12345`\n36. **primaryCameraName:** Name of the primary camera used for the stream, for example, \"Sony 4K Ultra HD WebCam\".\n37. **primaryMicrophoneName:** Name of the primary microphone used, represented as \"WirelessAudioTek Device\".\n38. **primarySpeakerName:** Name of the primary speaker used for audio output, set as \"Bose-Mega-Speaker 2.0\".\n39. **additionalCameras:** An array of additional camera configurations, where each object contains:\n   - **camera:** Identifier for the additional camera (e.g., \"camera-2\").\n   - **microphone:** Identifier for the microphone associated with the additional camera (e.g., \"mic-2\"). \n\nThis endpoint is designed to update the details of an ongoing or scheduled video stream, including information about the session, media assets, voting options, and platform integrations."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/get/?videoId=videoId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "videoId",
+              "value": "videoId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Video - Details - Get\n\n#### Request Authentication\n- **Auth Type**: Bearer\n  - The request requires a bearer token for authentication.\n  - **Bearer Token**: A string token is needed to validate the request. Replace `\"BearerToken\"` with your actual token.\n    - **Key**: `token` - This is the identifier for the bearer token.\n    - **Value**: The actual token string that grants access to the API.\n\n#### HTTP Method\n- **Method**: GET\n  - This endpoint uses the GET method to retrieve data.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/video/details/get/?videoId=videoId&accountId=accountId`\n  - This is the endpoint to fetch video details.\n  - **URL Parameters**:\n    - **videoId**: The unique identifier for the video. Replace `videoId` with the actual ID of the video you want to retrieve details for.\n    - **accountId**: The unique identifier for the user account associated with the video. Replace `accountId` with the actual account ID.\n\n#### Request Headers\n- **Headers**: \n  - No additional headers are required for this request. Currently, there is a placeholder present with empty key and value, which is disabled.\n\n#### Request Body\n- **Body**: \n  - The request does not require a body when using the GET method. The body mode is set to \"raw\", but it remains empty. \n\nPlease ensure to fill in the videoId and accountId in the URL before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Endpoint Description: Video - Details - Get All**\n\n- **Name**: This endpoint retrieves details of all videos associated with a specific account.\n\n- **Request**: This section outlines the specifics of how to make the request.\n\n  - **Auth**: Authentication details required to access the endpoint.\n    - **Type**: The method of authentication used here is \"Bearer\", which is a token-based authentication method.\n    - **Bearer**: This is an array that contains the authentication token details.\n      - **Key**: Identifier for the token; here, it is labeled as \"token\".\n      - **Value**: This contains the actual bearer token used for authentication, denoted as \"BearerToken\". Replace this with the actual token to authenticate the request.\n      - **Type**: Specifies the data type of the token value, in this case, it is a string.\n\n  - **Method**: This indicates the type of HTTP request being made. The method used here is \"GET\", which is used to retrieve data from the specified resource.\n\n  - **URL**: This is the endpoint's address you will request data from.\n    - Base URL: `http://localhost:3000/api/video/details/all/`\n    - Query Parameter: `accountId=accountId` indicates that you are required to provide an account ID to retrieve video details associated with that specific account. Replace \"accountId\" with the actual account ID as needed.\n\n  - **Headers**: This section is intended for additional information sent with the request.\n    - **Key**: Represents the header key used in the HTTP request.\n    - **Value**: Holds the corresponding value for the key.\n    - **Type**: Indicates the type of header; specified as \"default\" in this context.\n    - **Disabled**: shows whether this header is active; in this case, it is marked as disabled (not active) and contains no values.\n\n  - **Body**: This is where you can provide the body content of the request, if applicable.\n    - **Mode**: Indicates the format type of the body; set to \"raw\" in this particular request, implying that the body is not populated in this instance.\n    - **Raw**: This property is empty, showing that no raw data needs to be sent in the body for this GET request. \n\nThis endpoint is primarily used to fetch comprehensive video details linked with a specified account."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Get All by Category Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/all/?accountId=accountId&categoryId=categoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "categoryId",
+              "value": "categoryId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Details - Get All by Category Id\n\n- **Name**: Video - Details - Get All by Category Id\n  - This indicates the endpoint is designed to fetch all video details associated with a specific category ID.\n\n- **Request**: \n  - This defines the structure of the HTTP request that will be sent to the server.\n\n  - **Auth**: \n    - **Type**: bearer\n      - This indicates that the endpoint requires bearer token authentication for secure access.\n    - **Bearer**: \n      - **Key**: token\n        - This refers to the authentication key used to access the API.\n      - **Value**: BearerToken\n        - Here, \"BearerToken\" is a placeholder for the actual token that will be required in the request for authentication.\n      - **Type**: string\n        - This signifies that the token is expected to be in string format.\n\n  - **Method**: GET\n    - This indicates that the request method to be used is GET, which is typically used to retrieve data from the server.\n\n  - **URL**: \n    - `\"http://localhost:3000/api/video/details/all/?accountId=accountId&categoryId=categoryId\"`\n      - This is the endpoint URL that specifies where the request will be sent. \n      - The URL contains query parameters:\n        - **accountId**: This is a placeholder for the ID of the account whose videos are being requested.\n        - **categoryId**: This is a placeholder for the ID representing the category of videos to retrieve.\n\n  - **Headers**: \n    - This section can be used to specify additional HTTP headers for the request. \n    - In this case, there is an entry, but it is currently empty/inactive:\n      - **Key**: \"\" (empty)\n        - This means there is no specific header key being sent along with the request.\n      - **Value**: \"\" (empty)\n        - No value is assigned to the key.\n      - **Type**: default\n        - Specifies the type of header, although this header is disabled.\n      - **Disabled**: true\n        - Indicates that this header is currently not being used in the request.\n\n  - **Body**: \n    - The body of the request contains data sent to the server, but since this is a GET request:\n      - **Mode**: raw\n        - Normally used to handle raw data, but not applicable here since GET requests don’t typically carry a body.\n      - **Raw**: \"\"\n        - No payload is included in the request body.\n\n### Summary:\nThis endpoint is for retrieving a collection of video details based on a specific account ID and category ID. Authentication is done via a bearer token in a GET request format, which makes it necessary to provide valid credentials to access the data."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Get All by Category Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/all/?accountId=accountId&category=Board",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "category",
+              "value": "Board"
+            }
+          ]
+        },
+        "description": "```json\n{\n  \"description\": {\n    \"endpoint_name\": \"Video - Details - Get All by Category Name\",\n    \"request_description\": {\n      \"authentication\": {\n        \"type\": \"bearer\",\n        \"details\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\",\n            \"description\": \"This is the authorization token required to access the endpoint. It must be provided in the format 'Bearer <your_token>'.\"\n          }\n        ]\n      },\n      \"method\": {\n        \"type\": \"GET\",\n        \"description\": \"This indicates that the request is a GET request, which is used to retrieve data from the server.\"\n      },\n      \"url\": {\n        \"value\": \"http://localhost:3000/api/video/details/all/?accountId=accountId&category=Board\",\n        \"description\": \"This is the URL to access the endpoint. The URL includes query parameters such as 'accountId' and 'category'. Replace 'accountId' with the actual ID of the account and 'Board' with the desired category to filter the results.\"\n      },\n      \"headers\": {\n        \"details\": [\n          {\n            \"key\": \"\",\n            \"value\": \"\",\n            \"type\": \"default\",\n            \"disabled\": true,\n            \"description\": \"This section is for additional headers if needed. Currently, it is disabled and does not contain any headers.\"\n          }\n        ]\n      },\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\",\n        \"description\": \"This indicates that the request body is empty for this GET request. There is no body content needed when fetching data.\"\n      }\n    }\n  }\n}\n```"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Get All by SubCategory Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/all/?accountId=accountId&subCategoryId=subCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "subCategoryId",
+              "value": "subCategoryId"
+            }
+          ]
+        },
+        "description": "### Video - Details - Get All by SubCategory Id\n\n**Endpoint Overview:**\nThis API endpoint retrieves a collection of video details based on a specified SubCategory Id.\n\n#### Request Details:\n\n- **Auth:**\n  - **Type:** Bearer\n    - This API requires bearer token authentication. Users must provide a valid bearer token to access the endpoint.\n  - **Bearer:**\n    - **Key:** token\n    - **Value:** BearerToken\n    - **Type:** string  \n      This is where the bearer token is specified. It should be replaced with an actual token for authentication.\n\n- **Method:**\n  - **Type:** GET  \n    This indicates that the request is a GET request, which is used to retrieve data from the server.\n\n- **URL:**\n  - **Structure:** `http://localhost:3000/api/video/details/all/?accountId=accountId&subCategoryId=subCategoryId`\n    - This is the endpoint URL to which the GET request is sent.\n    - **Parameters:**\n      - **accountId:** This query parameter should be replaced with the actual Account Id associated with the request.\n      - **subCategoryId:** This query parameter should be replaced with the actual SubCategory Id for which video details are requested.\n\n- **Headers:**\n  - **Key:** (empty)\n  - **Value:** (empty)\n  - **Type:** default\n  - **Disabled:** true  \n    This section is intended for any additional headers that may be required, but currently, it's empty and disabled. You can enable and add headers if needed.\n\n- **Body:**\n  - **Mode:** raw  \n    Indicates that the body of the request is in raw format.\n  - **Raw:** (empty)  \n    No request body is needed for this GET request, as it is designed solely to retrieve data based on the query parameters provided in the URL.\n\n### Summary\nThis endpoint is designed to obtain a list of video details filtered by a specific account and subcategory. Ensure the correct bearer token is included and replace the placeholder parameters with actual values before making the request. "
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Get All by SubCategory Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/all/?accountId=accountId&subCategory=Outdoor%20Party",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "subCategory",
+              "value": "Outdoor%20Party"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Video - Details - Get All by SubCategory Name\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/video/details/all/?accountId=accountId&subCategory=Outdoor%20Party\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    }\n  },\n  \"description\": {\n    \"name\": \"Describes the endpoint that retrieves video details based on the specified subcategory.\",\n    \"request\": {\n      \"auth\": {\n        \"description\": \"This section indicates that the request uses bearer token authentication. The token should be included in the authorization header to access the API safely.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"description\": \"This represents the key for the bearer token. It should be replaced with a valid token string to authorize the request.\"\n          }\n        ]\n      },\n      \"method\": \"This specifies that the HTTP method for the request is GET, used to retrieve data from the server.\",\n      \"url\": \"This is the URL endpoint that the request is sent to. It includes query parameters for accountId and subCategory, which filter the video details returned.\",\n      \"headers\": [\n        {\n          \"key\": \"This field is empty, indicating no specific headers are set for this request.\",\n          \"value\": \"Also empty, meaning no additional header values are provided.\",\n          \"type\": \"default\",\n          \"disabled\": \"This indicates that the header is disabled and does not get sent with the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"This indicates that there is no request body required for this GET request, as it does not send data to the server.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Get All by Channel Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/all/?accountId=accountId&channelId=channelId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "channelId",
+              "value": "channelId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Details - Get All by Channel Id\n\n#### Overall Purpose:\nThis endpoint retrieves a list of video details associated with a specific channel identified by the channel ID, using a provided account ID.\n\n#### Detailed Breakdown:\n\n- **Name**: \n  - The name of this API request is \"Video - Details - Get All by Channel Id,\" indicating its purpose to fetch all video details for a specific channel.\n\n- **Request**:\n  - This section contains all the details necessary to perform the API request.\n\n  - **Authentication**:\n    - **Type**: The authentication method is a Bearer token. This means that access to this endpoint requires a valid token for authorization.\n    - **Bearer**: \n      - **Key**: This specifies the key for the token, labeled as \"token.\"\n      - **Value**: This should be replaced with the actual Bearer token when making the request, formatted as \"BearerToken.\"\n      - **Type**: The token is a string type, indicating that it should be a textual representation of the token value.\n\n  - **Method**:\n    - The HTTP method used for this request is GET, which is used to retrieve data from the specified resource.\n\n  - **URL**: \n    - The endpoint URL is \"http://localhost:3000/api/video/details/all/?accountId=accountId&channelId=channelId.\" \n    - Here, you need to replace \"accountId\" with the actual ID of the account and \"channelId\" with the actual ID of the channel you are querying.\n\n  - **Headers**: \n    - This section is currently empty and disabled. Typically, any additional HTTP headers that may be needed for the request can be specified here. Since this is empty, no extra headers are being sent with the request.\n\n  - **Body**: \n    - **Mode**: This specifies that the request body is in raw format.\n    - **Raw**: The body is currently empty and does not require any data to be sent with the GET request.\n\n#### Summary:\nThis endpoint allows users to retrieve video details based on both an account ID and a channel ID. Proper authorization via a Bearer token is necessary, and users need to ensure they replace the placeholder values in the URL with actual IDs for the request to succeed."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Get All by Channel Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/all/?accountId=accountId&channel=Basketball",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "channel",
+              "value": "Basketball"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Details - Get All by Channel Name\n\nThis endpoint retrieves detailed information about all videos associated with a specific channel name.\n\n#### Components of the Request:\n\n- **Authorization**:\n  - **Type**: Bearer Authentication\n  - **Description**: This endpoint requires a bearer token for authentication. The token must be included in the request header to access the data securely.\n  - **Token Example**: `BearerToken` (replace with an actual token)\n\n- **HTTP Method**:\n  - **Method**: GET\n  - **Description**: This endpoint uses the GET method to request data from the server.\n\n- **URL**:\n  - **Endpoint URL**: `http://localhost:3000/api/video/details/all/`\n  - **Query Parameters**: \n    - `accountId`: This parameter should be replaced with the specific account ID for which the video details are being requested.\n    - `channel`: Set to `Basketball`, or any desired channel name to filter results accordingly.\n\n- **Headers**:\n  - **Headers Array**: Currently empty and disabled. No custom headers are required for this request, but you can add headers if needed based on the application's requirements.\n\n- **Body**:\n  - **Body Mode**: Raw\n  - **Body Content**: The body is empty for this GET request, as no data payload is sent with the request.\n\nThis endpoint is designed to return a complete list of video details that belong to the specified channel, allowing users to access specific content easily."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Details - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/details/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "details",
+            "delete"
+          ]
+        },
+        "description": "### API Endpoint: Video - Details - Delete\n\n#### Request Method\n- **Method**: POST  \n  This indicates that the request will send data to the specified URL to delete video details.\n\n#### Authentication\n- **Auth Type**: Bearer  \n  This endpoint requires bearer token authentication, which means you need to include a token that represents your session.\n\n- **Bearer Token Details**:\n  - **Key**: token  \n    This is the key used to identify the bearer token.\n  - **Value**: sessionId  \n    This is the actual session identifier that grants access to the API. Users need to replace this with their own valid session identifier.\n  - **Type**: string  \n    This indicates that the token is a string type.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/video/details/delete`  \n  This is the endpoint where the delete request will be sent. It is currently set to a local server.\n\n#### Request Headers\n- **Headers**:  \n  - No specific headers are currently set, but the option is available. The default header setting is disabled.\n\n#### Request Body\n- **Body Mode**: Raw  \n  Indicates that the body of the request will be sent as raw JSON.\n\n- **Raw Body Content**: \n```json\n{\n  \"sessionId\": \"sessionId\",\n  \"accountId\": \"accountId\",\n  \"videoId\": \"videoId\"\n}\n```\n  - **sessionId**: This field should contain the session identifier used for authentication to ensure that the request is valid.\n  - **accountId**: This should be the identifier for the account associated with the video you want to delete.\n  - **videoId**: This is the identifier for the specific video whose details you are requesting to delete.\n\nUsers need to replace `sessionId`, `accountId`, and `videoId` with the actual identifiers to perform the deletion of video details."
+      },
+      "response": []
+    }
+  ]
+}

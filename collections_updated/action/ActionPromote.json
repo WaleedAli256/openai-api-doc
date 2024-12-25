@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionPromote",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Promote - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"promote1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/promote/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "promote",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Promote - Create\n\nThis API endpoint allows users to create a promotion action. Below is a detailed description of each data component used in this request.\n\n#### Authentication\n- **Type**: Bearer Token\n  - **Key**: `token`\n  - **Value**: `BearerToken` (This is a placeholder for the actual bearer token that authenticates the user making the request.)\n\n#### Request Details\n- **Method**: POST\n  - This specifies that the request will be creating a new resource on the server.\n\n- **URL**: `http://localhost:3000/api/action/promote/create`\n  - This is the endpoint where the request is sent to create a promotion.\n\n#### Headers\n- **Key**: (Empty)\n  - This field is currently not being used, as indicated by the empty value and the `disabled` status being true. Headers can be crucial for certain requests and might need to be configured based on the API's requirements.\n\n#### Request Body\n- **Mode**: Raw\n  - The request body is sent in a raw format, which is typically in JSON.\n\n##### JSON Payload Structure:\n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"promote1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}\n```\n\n- **sessionId**: \n  - A unique identifier for the session related to this promotion action. It helps track the context in which the promotion occurs.\n\n- **accountId**: \n  - The identifier of the account initiating the promotion. This is crucial for associating the promotion with the correct user.\n\n- **path**: \n  - The path to the resource being promoted. In this example, it indicates a specific live video channel.\n\n- **targetType**: \n  - Specifies the type of target for the promotion. In this case, it is set to \"streamer,\" indicating that the promotion will aim toward a streamer.\n\n- **targetId**: \n  - The unique identifier for the target being promoted. Here, it represents the video being promoted.\n\n- **sourceType**: \n  - Defines the type of source from which the promotion originates. It is set to \"accountId,\" indicating that the source is the account itself.\n\n- **sourceId**: \n  - Similar to `accountId`, this is the identifier for the source account.\n\n- **tokenAmount**: \n  - Specifies the amount of tokens to be used for the promotion. In this case, it is set to 20 tokens.\n\n- **name**: \n  - A name for the promotion, which helps in identifying it later. Here it is labeled \"promote1.\"\n\n- **description**: \n  - An optional field for additional details about the promotion. It is currently empty.\n\n- **tags**: \n  - An optional field to include any relevant tags for better categorization of the promotion. It is currently empty.\n\nThis endpoint is designed to streamline the promotion creation process, allowing users to easily configure their promotion parameters for effective marketing."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Promote - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"promoteId\":\"promoteId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/promote/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "promote",
+            "update"
+          ]
+        },
+        "description": "### Action - Promote - Update Endpoint Description\n\nThis is a PUT request to update a promotion action on a specified target. Below is a detailed description of the request components.\n\n#### Request Overview\n- **Method**: PUT\n- **Endpoint URL**: `http://localhost:3000/api/action/promote/update`\n\n#### Authentication\n- **Auth Type**: Bearer token authentication is used to authorize the request.\n  - **Token**: A string representing the bearer token required for authentication. Replace `BearerToken` with the actual token value.\n\n#### Headers\n- **Client-UUID**: A unique identifier for the client making the request. Replace `ClientUUID` with the actual UUID to identify the client.\n\n#### Body Parameters\nThe body of the request is in JSON format and contains the following fields:\n\n1. **sessionId**: A string representing the session identifier associated with the promotion action.\n\n2. **accountId**: A string that specifies the unique identifier for the account initiating the promotion.\n\n3. **promoteId**: A string that identifies the unique promotion action being updated.\n\n4. **path**: A string indicating the path where the video or content is located, such as `/live/channel/video123`. This provides context about the specific content being promoted.\n\n5. **targetType**: A string denoting the type of target for the promotion, such as \"streamer\". This helps specify who or what is receiving the promotion.\n\n6. **targetId**: A string that indicates the unique identifier for the target of the promotion, such as a video ID.\n\n7. **sourceType**: A string that represents the type of source initiating the promotion, e.g., \"accountId\".\n\n8. **sourceId**: A string indicating the unique identifier for the source that owns the promotion, generally the same as `accountId`.\n\n9. **tokenAmount**: An integer representing the amount of tokens being used for the promotion. In this case, it is set to `20`.\n\n10. **name**: A string that stores the name associated with the promotion. Here, it is `\"Farooq\"`.\n\n11. **description**: A string providing additional details about the promotion. This is set to `\"this is description\"`.\n\n12. **tags**: A string of tags associated with the promotion, used for categorization or searchability. In this case, it is set to `\"xyz\"`.\n\n### Summary\nThis endpoint allows users to update promotion actions by providing details such as session ID, account information, target details, the number of tokens, and descriptive information. Make sure to replace placeholders with actual values when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Promote - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/promote/get/?promoteId=promoteId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "promote",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "promoteId",
+              "value": "promoteId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Promote - Get\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"method\": \"GET\",\n    \"url\": \"http://localhost:3000/api/action/promote/get/?promoteId=promoteId&sessionId=sessionId&accountId=accountId\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"\"\n    }\n  }\n}\n\n### Description of Each Data:\n\n- **name**: This is the title of the API request. It is clearly labeled as \"Action - Promote - Get,\" indicating that this request is related to promoting an action.\n\n- **request**: This object encapsulates all the details required to make the API call.\n\n  - **auth**: This section specifies the authentication method required for the API request. Here, it is set to bearer token authentication.\n\n    - **type**: Indicates the type of authentication used, which is \"bearer\" in this instance.\n\n    - **bearer**: An array containing objects for bearer token configuration.\n\n      - **key**: Represents the identifier for the bearer token, which is named \"token.\"\n\n      - **value**: This is where the actual bearer token is provided, represented as \"BearerToken.\" This will typically be replaced with an actual token when making a request.\n\n      - **type**: Specifies the data type of the value, which is set to \"string.\"\n\n  - **method**: This signifies the HTTP method to be used for the request. In this case, it is a \"GET\" request, meaning the API will retrieve data.\n\n  - **url**: This is the endpoint URL where the API request will be sent. It specifies the base URL (`http://localhost:3000/api/action/promote/get/`) and includes query parameters for `promoteId`, `sessionId`, and `accountId`, which are placeholders that need to be filled in with actual values when making the request.\n\n    - **promoteId**: A query parameter representing the ID of the promotion to be fetched.\n\n    - **sessionId**: A query parameter representing the session ID associated with the promotion request.\n\n    - **accountId**: A query parameter for the account ID related to the request.\n\n  - **headers**: This array is for any additional HTTP headers that may be needed for the request.\n\n    - **key**: The name of the header. In this case, it is empty.\n\n    - **value**: The value of the header, which is also empty here.\n\n    - **type**: The type of the header, set to \"default.\"\n\n    - **disabled**: A boolean that indicates whether this header is currently active or not. Here, it is `true`, meaning this header will not be sent with the request.\n\n  - **body**: This section specifies the body of the request.\n\n    - **mode**: This indicates the format of the request body. It is set to \"raw,\" which means that the body will contain raw data.\n\n    - **raw**: The actual content of the request body in raw format. Currently, this is empty since GET requests typically do not have a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Promote - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/promote/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "promote",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description\n\n**Name:** Action - Promote - Get All  \nThis endpoint is used to retrieve a list of all promotions associated with a specific session and account.\n\n#### Request Structure\n\n- **Authentication:**\n  - **Type:** Bearer Token\n    - This endpoint requires a bearer token for authentication. The token is passed in the Authorization header of the request.\n  \n  - **Key:** token\n    - The key for the bearer token.\n  \n  - **Value:** BearerToken\n    - This is a placeholder for the actual bearer token that should be used for authentication.\n  \n  - **Type:** string\n    - Indicates that the token value should be a string.\n\n- **Method:**\n  - **GET**\n    - Specifies that this request will retrieve data from the server.\n\n- **URL:**\n  - **http://localhost:3000/api/action/promote/all/?sessionId=sessionId&accountId=accountId**\n    - This is the endpoint's URL.\n    - **Path:** /api/action/promote/all/\n    - **Query Parameters:**\n      - **sessionId:** Represents the unique identifier for a session. This is required to filter the promotions.\n      - **accountId:** Represents the unique identifier for an account. This is required to filter the promotions.\n\n- **Headers:**\n  - There are currently no custom headers included in the request.\n  - The header entry is disabled and does not contain any key-value pairs.\n\n- **Body:**\n  - **Mode:** raw\n    - Indicates the format of the body, which in this case is set to raw.\n    \n  - **Raw:** \n    - The body is empty as this is a GET request, and typically does not require a body.\n\n### Usage\nUsers should replace `BearToken` with a valid authentication token, and provide actual values for `sessionId` and `accountId` in the URL to successfully call this endpoint and receive the promotions data."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Promote - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"promoteId\":\"promoteId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/promote/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "promote",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Action - Promote - Delete\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"This indicates that the authentication method used for this request is Bearer Token authentication. A token is required to access this endpoint.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This is the key used to specify the type of authentication. In this case, it's set to 'token'.\",\n            \"value\": \"sessionId\": \"This is the placeholder value representing the session ID that must be provided as part of the authentication to access the endpoint.\",\n            \"type\": \"string\": \"This indicates that the value of the token is a string.\"\n          }\n        ]\n      },\n      \"method\": \"POST\": \"This specifies that the HTTP method used for this request is POST, which is typically used to send data to the server.\",\n      \"url\": \"http://localhost:3000/api/action/promote/delete\": \"This is the endpoint URL where the request will be sent. It points to the local server running on port 3000 and targets the action promote delete functionality.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"This field is currently empty, meaning no additional headers will be sent with the request.\",\n          \"value\": \"\": \"Since the key is empty, this value is also not utilized.\",\n          \"type\": \"default\": \"This indicates that the header type is default, but since the key and value are empty, this header is effectively disabled.\",\n          \"disabled\": true: \"This indicates that this header is currently disabled and will not be included in the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"This indicates that the body of the request is formatted as raw data rather than in a predefined format such as JSON or form data.\",\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"promoteId\\\":\\\"promoteId\\\"}\": \"This is the body of the request containing raw JSON data. It includes three fields: 'sessionId', 'accountId', and 'promoteId', which should be replaced with actual values for the request to be processed successfully.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

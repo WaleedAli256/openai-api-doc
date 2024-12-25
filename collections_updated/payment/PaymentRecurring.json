@@ -1,0 +1,1414 @@
+{
+  "info": {
+    "_postman_id": "12ccf653-18fa-40d8-9512-a35863e4f906",
+    "name": "PaymentRecurring",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2560458"
+  },
+  "item": [
+    {
+      "name": "Recurring - AmazonPay- Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"recurringId\": \"recurringId\",\r\n    \"source\": {\r\n        \"merchantMetadata\": {\r\n            \"merchantReferenceId\": \"A36BNHYWASP372\",\r\n            \"merchantStoreName\": \"AmazonTestStoreFront\",\r\n            \"noteToBuyer\": \"Some Note to buyer\",\r\n            \"customInformation\": \"some\"    \r\n        }\r\n    },\r\n    \"isSaveRecurring\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"amazonpay\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - AmazonPay- Update\". It utilizes the PUT method for data transmission, implying that it's expected to update the information on the server. To utilize this endpoint, you will direct requests to \"http://localhost:3000/api/payment/recurring/update\". \n\nThe request body should be of `raw` mode with the following keys:\n\n1. `accountId` - This should contain the unique identification number for the account you intend to update.\n\n2. `sessionId` - This is the unique identification associated with each individual session when updating.\n\n3. `recurringId` - This unique ID is related to the recurring payment that you're updating.\n\n4. `source` - This is an object that consists of:\n   - `merchantMetadata` - This nested object contains more data such as:\n       - `merchantReferenceId` - A unique ID number that references the merchant.\n       -  `merchantStoreName` - The name of the merchant's storefront.\n       -  `noteToBuyer` - Miscellaneous notes intended for the buyer.\n       -  `customInformation` - This could contain any additional or custom details that you might want to include.\n5. `isSaveRecurring` - It should be set to `true` for recurring payments to be saved.\n\n6. `isPrimary` - By setting this as `true`, this account is denoted as the main account.\n\n7. `provider` - This key should have the value \"amazonpay\", indicating that AmazonPay is the added provider for payments.\n\nThe JSON language is required for the raw body options. \n\nPlease make sure all these values are provided correctly for a successful request."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - AmazonPay - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/get/?recurringId=recurringId&provider=amazonpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "recurringId",
+              "value": "recurringId"
+            },
+            {
+              "key": "provider",
+              "value": "amazonpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint named \"Recurring - AmazonPay - Get\" uses the GET HTTP method signifying a read action. It is primarily designed for fetching the recurrent payment information related to AmazonPay. The endpoint is running locally on port 3000.\n\nThe URL to access the API endpoint is: http://localhost:3000/api/payment/recurring/get/.\n\nThe URL includes the following query parameters:\n\n1. \"recurringId\": This value is used for identifying the recurring payment that the client wants to fetch. RecurringId should be provided as part of the query string to perform the get operation.\n\n2. \"provider\": This parameter should hold the value 'amazonpay'. It is a mandatory field that helps in understanding that this request is specifically for getting AmazonPay recurring payment details.\n\n3. \"accountId\": This is another required query parameter, which represents the account ID associated with the payment. The associated account's data will be fetched based on this accountId from the database.\n\n4. \"sessionId\": The sessionId in the query parameters is used for managing the user's session. By looking at the sessionId, the server will know who is making the request and act accordingly.\n\nThis endpoint does not require any additional headers. It is designed to be clear and intuitive, providing useful information about recurring payments via AmazonPay. Please ensure to replace the query strings with actual data before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - AmazonPay - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"recurringId\": \"recurringId\",\r\n    \"provider\": \"amazonpay\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "delete"
+          ]
+        },
+        "description": "This endpoint, named \"Recurring - AmazonPay - Delete\", is designed to make a POST request to the payment services. The purpose is to delete a recurring AmazonPay payment linked to the provided account and session identifiers. \n\nThe detailed description of each data point that this endpoint uses is as follows:\n\n1. `name`: This is the name of the endpoint. Here, it is \"Recurring - AmazonPay - Delete\", which signifies that this endpoint is used for deleting a recurring AmazonPay transaction.\n\n2. `request`: This field contains the details of the HTTP request to be made.\n\n3. `method`: This represents the HTTP method to be used for making the request. In this context, it is set to \"POST\", implying that a new resource will be created at the specified URL.\n\n4. `url`: Represents the URL where the request will be sent. For this endpoint, it's http://localhost:3000/api/payment/recurring/delete, meaning the local server on port 3000 is being used.\n\n5. `headers`: This is an array that should contain any headers that need to be sent as part of the request. There are none specified in this instance.\n\n6. `body`: This field contains the payload that is to be sent with the request. In this context, the `mode` is \"raw\", which allows sending unprocessed data directly in the body.\n\n7. `raw`: This includes the actual data to be sent in the request body in JSON language. \n\n    a. `accountId`: This is the unique identifier of the account from which the recurring payment is to be deleted.\n\n    b. `sessionId`: The unique identifier of the session during which the deletion request is made.\n\n    c. `recurringId`: This is the unique identifier of the recurring payment that is to be deleted.\n\n    d. `provider`: This indicates the payment service provider, which in this case is \"amazonpay\".\n   \n8. `options`: These are extra settings that will be used when delivering the request. In this case, we're specifying that the `language` of the raw data is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - AuthorizeNet - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\":{\r\n        \"name\": \"Sample subscription\",\r\n        \"amount\": \"10.29\",\r\n        \"trialAmount\": \"0.00\",\r\n        \"paymentSchedule\": {\r\n            \"interval\": {\r\n                \"length\": \"1\",\r\n                \"unit\": \"months\"\r\n            },\r\n            \"startDate\": \"2024-08-30\",\r\n            \"totalOccurrences\": \"12\",\r\n            \"trialOccurrences\": \"1\"\r\n        },\r\n        \"profile\": {\r\n            \"customerProfileId\": \"39931060\",\r\n            \"customerPaymentProfileId\": \"36223863\",\r\n            \"customerAddressId\": \"37726371\"\r\n        }\r\n    },\r\n    \"isSaveRecurring\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"authorizenet\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "create"
+          ]
+        },
+        "description": "1. `name`: This is the name of the API endpoint. In this case, it's \"Recurring - AuthorizeNet - Create\". This name is generally used to identify the endpoint. \n\n2. `request`: This object contains all the details pertaining to the API request.\n\n   - `method`: Specifies the HTTP method used for the request. Here, the POST method is used, meaning we're submitting some data to be processed by a specific resource.\n\n   - `url`: This is the API endpoint URL where the request will be sent. Here, the request is sent to \"http://localhost:3000/api/payment/recurring/create\".\n   \n3. `headers`: It's currently empty but normally it carries additional information (like authorization tokens, content type etc.) sent with the request to the server.\n\n4. `body`: This part contains the actual data you want to send to the server. Here, it is sent in raw format.\n\n   - `mode`: This describes the type of data being sent. In this case, it's set to \"raw\".\n\n   - `raw`: This contains the actual raw data body. In this case, it's a JSON object consisting of several properties:\n\n     - `accountId`, `sessionId`: These might represent user session details.\n     - `source`: This contains subscription-related details such as the subscription name, amount, trial amount, payment schedule, etc.\n     - `paymentSchedule`: This outlines the frequency of the payment being made.\n     - `profile`: This holds customer information such as the customer profile ID, payment profile ID, and address Id.\n     - `isSaveRecurring`: Its value indicates if the recurring payment needs to be saved. Here, it's set to true.\n     - `isPrimary`: Its value indicates whether this recurring payment option is the primary one for the user. Here, it's set to false.\n     - `provider`: This refers to the payment gateway provider, 'authorizenet' in this case.\n\n5. `options`: These are additional parameters used to customize the request. Here, it's setting the language of the raw body to 'json'.\n   \nThis endpoint is used to process a recurring payment request for a specific user using the AuthorizeNet payment gateway. It creates a new recurring payment profile and returns the payment profile's details in the response."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - AuthorizeNet - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"recurringId\": \"recurringId\",\r\n    \"source\":{\r\n        \"name\": \"Sample subscription\",\r\n        \"amount\": \"10.29\",\r\n        \"trialAmount\": \"0.00\",\r\n        \"paymentSchedule\": {\r\n            \"interval\": {\r\n                \"length\": \"1\",\r\n                \"unit\": \"months\"\r\n            },\r\n            \"startDate\": \"2024-08-30\",\r\n            \"totalOccurrences\": \"12\",\r\n            \"trialOccurrences\": \"1\"\r\n        },\r\n    \"isSaveRecurring\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"authorizenet\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "update"
+          ]
+        },
+        "description": "**Endpoint name**: Recurring - AuthorizeNet - Update\n\n**Method** : PUT\n\n**URL** : http://localhost:3000/api/payment/recurring/update\n\nThis endpoint is used for updating the recurring payment details of a user's account in an AuthorizeNet payment system.\n\n**Headers**: No specific headers are required from the client's request for this endpoint.\n\n**Request Body**:\n\nThe request body is a raw JSON object that contains the following fields:\n\n- **accountId**: A unique string that represents the user's account ID.\n- **sessionId**: A unique string that indicates the user's current session.\n- **recurringId**: A unique string associated with the recurring payment information.\n- **source**: An object that holds the details of the subscription and payment schedule.\n   - **name**: The name of the subscription.\n   - **amount**: The subscription's payment amount.\n   - **trialAmount**: The trial amount for the subscription, typically set to '0.00'.\n   - **paymentSchedule**: An object that provides details of the payment schedule.\n     - **interval**: An object that contains the 'length' and 'unit' for the recurring payment frequency. \n       - **length**: The number of units such as '1'. \n       - **unit**: The time metric for the recurring payment such as 'months'.\n     - **startDate**: The date in 'YYYY-MM-DD' format when the subscription is due to start.\n     - **totalOccurrences**: The total number of times the recurring payment will occur.\n     - **trialOccurrences**: The number of trial occurrences for the subscription.\n- **isSaveRecurring**: A boolean value that indicates whether the recurring payment details should be saved ('true') or not ('false').\n- **isPrimary**: A boolean value that indicates whether this is the primary account ('true') or not ('false').\n- **provider**: The string 'authorizenet', which indicates the payment provider.\n\n**Options**: This is a configuration field for setting up the request options.\n- **raw**: Specifies how the server should interpret the body of the request.\n  - **language**: Specifies that the server should treat the body as JSON.\n  \nThis endpoint does not put out any special response. If the PUT operation is successful, the record will be updated. If it fails, an error will be thrown. The specifics depend on server setup."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - AuthorizeNet - GetByid",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/get/?recurringId=recurringId&provider=authorizenet&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "recurringId",
+              "value": "recurringId"
+            },
+            {
+              "key": "provider",
+              "value": "authorizenet"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - AuthorizeNet - GetByid\" and it utilizes a GET request method. This means that it is designed to retrieve data from a specific resource.\n\nFor the URL, the endpoint hits \"http://localhost:3000/api/payment/recurring/get/\". This particular URL path points to a specific operation targeted at retrieving recurring payments information using the AuthorizeNet provider.\n\nThe parameters included in the URL are:\n\n- `recurringId`: This parameter is intended for providing the distinct identifier specifically assigned for the recurring payment. You will need to replace \"recurringId\" with the actual ID to fetch the relevant data.\n\n- `provider`: This parameter is intended to specify the payment gateway/provider. In this case, data is retrieved using the AuthorizeNet payment provider. The value \"authorizenet\" indicates the payment gateway used for the recurring payment in question.\n\n- `accountId`: This parameter specifies the unique identifier for the associated account. You will need to replace \"accountId\" with the actual Account ID to fetch the relevant data.\n\n- `sessionId`: This parameter specifies the unique identifier for the current session. You will need to replace \"sessionId\" with the actual session ID that is currently being used.\n\nThe request does not include any headers, which means there's no additional meta-data contained in the request apart from the endpoint, method, and URL parameters.\n\nAs a user of this collection, you should replace these placeholders with valid values to properly use this endpoint. All values are set via the URL in a standard x-www-form-urlencoded format."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - AuthorizeNet - All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/getAll/?provider=authorizenet&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "authorizenet"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "1. \"name\":\n\nThe \"name\" field contains the value \"Recurring - AuthorizeNet - All\". This implies the name of the API endpoint. It suggests that this endpoint is related to recurring payments through the AuthorizeNet payment gateway.\n\n2. \"request\":\n\nThe \"request\" field is an object that contains several other fields needed to fulfill the API request, including the method, URL, and headers.\n\n3. \"method\":\n\nThe \"method\" field contains the value \"GET\". This specifies the HTTP method used for the API request, indicating that information is being retrieved from the server.\n\n4. \"url\":\n\nThe \"url\" field contains the URL that the API request will be sent to, which is \"http://localhost:3000/api/payment/recurring/getAll/?provider=authorizenet&accountId=accountId&sessionId=sessionId\". \n\nThis URL suggests that this API endpoint retrieves all recurring payments from a local server at port 3000. The parameters passed in the URL indicate the payment provider, account ID, and session ID for which recurring payments are to be retrieved.\n\n    - \"provider\": This parameter has a value of \"authorizenet\", specifying that the payment gateway used is AuthorizeNet.\n    \n    - \"accountId\": This parameter should be replaced with the actual account ID for which recurring payments are to be retrieved.\n    \n    - \"sessionId\": This parameter should be replaced with the actual session ID associated with the retrieval of the recurring payments.\n\n5. \"headers\":\n\nAlthough the \"headers\" field is empty in this case, it's typically used to provide extra information in the HTTP request. This may include specifications about the request body format, setting cookies, and authorization purposes.\n   \n6. No data is being passed in the body of the request for this API endpoint. As per the provided data, the body of the HTTP request is not utilized in this API endpoint. This is common for GET requests that have URL parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - AuthorizeNet - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"recurringId\": \"9333354\",\r\n    \"provider\": \"authorizenet\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "delete"
+          ]
+        },
+        "description": "This endpoint named 'Recurring - AuthorizeNet - Delete' is used to delete a recurring payment via AuthorizeNet.\n\nThe request method is HTTP POST which is used to send data to the server to create or update a resource.\n\nThe URL in the request is `http://localhost:3000/api/payment/recurring/delete`. This is the network address where this API call is made to delete a recurring payment.\n\nThis request does not include any headers. Headers are optional parameters that can contain additional information about the request.\n\nThe body of the request contains the payload that will be processed by the server:\n- \"mode\": The body mode is set to \"raw\" which means we can send any data in any format.\n- \"raw\": The raw body is a JSON-formatted string that contains the data to be processed by the server. The keys included in the payload are:\n    - \"accountId\": A unique identifier for the account. Replace `accountId` with the actual account ID.\n    - \"sessionId\": A unique identifier for the session. Replace `sessionId` with the actual session ID.\n    - \"recurringId\": The identifier for the recurring payment that needs to be deleted. Replace `9333354` with the actual recurring ID.\n    - \"provider\": The payment provider which is set to \"authorizenet\" indicating that the payment is processed using AuthorizeNet.\n\nThe \"options\" parameter specifies additional configuration settings for the request:\n- The \"raw\" option's \"language\" is set to JSON which means the content in the \"raw\" body will be treated as JSON data when sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - NowPayments - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n            \"sub_partner_id\": 1129812484,\r\n            \"title\": \"second sub plan 1011\",\r\n            \"interval_day\": 1,\r\n            \"amount\": 0.5,\r\n            \"currency\" : \"usd\"\r\n        },\r\n    \"isSaveRecurring\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"nowpayments\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - NowPayments - Create\". It accepts a POST request and its URL is http://localhost:3000/api/payment/recurring/create.\n\nThe endpoint does not require any specific headers. The body of the request should be in raw mode and in JSON language. It contains the following properties:\n\n1. \"accountId\" - A string that indicates the account id. It's a unique identifier for each account.\n\n2. \"sessionId\" - A string that represents the session id. This is also a unique identifier that corresponds to the specific session in which the request is made.\n\n3. \"source\" - A nested object with the following properties:\n   - \"sub_partner_id\" - An integer that signifies the id of the sub partner.\n   - \"title\" - A string which represents the title of the sub plan.\n   - \"interval_day\" - An integer that specifies the interval day for the recurring payment. It represents the number of days between each recurring payment.\n   - \"amount\" - A float that indicates the amount for the recurring payment.\n   - \"currency\" - A string that denotes the currency for the recurring payment. Here the currency used is \"usd\" (United States Dollar).\n\n4. \"isSaveRecurring\" - A boolean that indicates whether the recurring payment information is saved or not. If it is true, the recurring payment is saved.\n\n5. \"isPrimary\" - A boolean indicating whether the provided payment method is the primary method for the account. If it is false, the provided payment method is not the primary method.\n\n6. \"provider\" - A string that signifies the provider of the payment service. In this case, the provider is \"nowpayments\".\n\nEach of these keys is necessary to successfully create a recurring payment using this API. This description should provide all the information necessary to understand the request to be made to this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - NowPayments - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n            \"sub_partner_id\": 1129812484,\r\n            \"title\": \"second sub plan 1011\",\r\n            \"interval_day\": 1,\r\n            \"amount\": 0.5,\r\n            \"currency\" : \"usd\"\r\n        },\r\n    \"isSaveRecurring\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"nowpayments\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - NowPayments - Update\". It is used for updating a recurring payment through NowPayments service. The request made to this endpoint should be of the type PUT and should be sent to the 'http://localhost:3000/api/payment/recurring/update' URL.\n\nIn the body of the request, multiple data are sent, which are detailed below:\n\n1. `accountId`: This is a unique identifier associated with the user's account.\n2. `sessionId`: This refers to the unique session ID corresponding to a specific user interaction event.\n3. `source`: This is an object that contains several values.\n    - `sub_partner_id`: This is the unique number assigned to a specific sub-partner.\n    - `title`: This represents the title or name for the given recurring payment plan.\n    - `interval_day`: This specifies the number of days between each recurring payment.\n    - `amount`: This is the amount to be paid in each recurring payment.\n    - `currency`: This is the currency in which the payment is made, in this case it is `usd`.\n4. `isSaveRecurring`: This is a boolean data. If set to true, it indicates that the recurring payment information should be saved.\n5. `isPrimary`: This is another boolean data. If set to false, it indicates that this is not the primary payment method.\n6. `provider`: This field indicates the service provider used for the payment. In this case, it is 'nowpayments'.\n\nThe mode of the body of the request is 'raw' and the data is in JSON format.\n\nThis request does not include any additional headers."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - NowPayments - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/get/?recurringId=recurringId&provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "recurringId",
+              "value": "recurringId"
+            },
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is a GET request that is responsible for retrieving recurring payment information from a given payment provider called \"NowPayments\". \n\nThe detailed breakdown of each data is as follows:\n\n1. \"name\": Specifies the name of the API endpoint. In this case, the name \"Recurring - NowPayments - Get\" indicates that this endpoint is used to get recurring payment details from \"NowPayments\".\n\n2. \"request\": This is a container for the details about the API request.\n   - \"method\": This API uses the GET method, which retrieves, or gets, data from a server.\n   \n3. \"url\": The URL points to where the request will be sent. This specific URL(\"http://localhost:3000/api/payment/recurring/get/\") is structured to be sent to your local server at port 3000. It also points to the route for getting recurring payment details.\n\n   The URL contains the following query parameters:\n   - \"recurringId\": The ID associated with the recurring payment to be retrieved. This must be provided for the endpoint to function correctly.\n   - \"provider\": The provider parameter is set to \"nowpayments\", specifying that NowPayments is the provider for the recurring payment. \n   - \"accountId\": This is the user's account ID tied to the recurring payment.\n   - \"sessionId\": This refers to the session ID that ties the API call to a specific active session.\n   \n4. \"headers\": This is an empty array in this instance. If there were data present, headers might include additional specifications or instructions for the API request. For example, content type or authorization details could be specified here. However, since it is empty, no additional specifics are given with this API request.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - NowPayments - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/getAll/?provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is named \"Recurring - NowPayments - Get All\". It utilizes a GET HTTP method to retrieve all recurring payment details related to the NowPayments provider from the server.\n\nBelow is a detailed explanation of each data member:\n\n- \"name\": This is the name of the endpoint, \"Recurring - NowPayments - Get All\", it is used to identify this specific endpoint among others.\n\n- \"request\": This section outlines the request that will be sent to the server. \n\n- \"method\": this is the HTTP method being used for the request, \"GET\". GET is a request method that is used to request data from a resource. \n\n- \"url\": this is the URL where the request will be sent. For this endpoint, the URL is \"http://localhost:3000/api/payment/recurring/getAll/\". \n\n- \"?provider=nowpayments&accountId=accountId&sessionId=sessionId\": In the URL, \"?\" indicates the start of the query string and \"&\" is used to separate different query parameters. \"provider\", \"accountId\" and \"sessionId\" are query parameters that filter the data based on the user preferences. \"provider\" is set to \"nowpayments\" showing that NowPayments is the payment provider. \"accountId\" and \"sessionId\" are identifiers for user's account and session, respectively. Note: Change 'accountId' and 'sessionId' values to actual account ID and session ID while making the request.\n\n- \"headers\": Headers allow the client and the server to pass additional information with the request or the response. For this endpoint, the \"headers\" array is empty, indicating that there are no additional headers in the request. \n\nThis endpoint does not carry any payload, it does not include a request body as it is a GET call. Any necessary information is passed as a part of the URL parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - NowPayments - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"recurringId\": \"recurringId\",\r\n    \"provider\": \"nowpayments\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - NowPayments - Delete\". Its purpose is for deleting a recurring payment from the NowPayments provider. \n\n1. **Request Method:** The method used for this endpoint is POST, indicating that the customer wants to submit some data to perform an action on the server.\n\n2. **URL:** The URL where the request should be sent to is \"http://localhost:3000/api/payment/recurring/delete\". This signifies that the application is running on the local machine (localhost) and listening to port 3000. The specific API endpoint is given by '/api/payment/recurring/delete' which is used to delete a recurring payment.\n\n3. **Headers:** Headers field is currently empty, meaning there are no additional headers being sent in this request. Headers are usually used to specify additional parameters like content type, authentication tokens, and others.\n\n4. **Body:** The request body in 'raw' mode is used to add any additional data needed by the server.\n\nHere's a breakdown of the bit of data in the body:\n\n     - **accountId:** This is a placeholder for an account ID. It represents the unique identifier for the user's account from which the recurring payment is being deleted.\n\n     - **sessionId:** This is a placeholder for a session ID. It is used to identify the particular session in which the user is deleting the recurring payment.\n\n     - **recurringId:** This represents the unique identifier of the recurring payment that will be deleted.\n\n     - **provider:** This is set as \"nowpayments\", indicating that the recurring payment to be deleted is handled by the NowPayments provider.\n\n5. **Body options:** This entails the specific characteristics of the body content. In this case, it specifies that the language of the 'raw' body content is JSON.\n\nThis description provides users with important information on how to use the endpoint and what each field represents."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - PayPal - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": false, \"provider\": \"paypal\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - PayPal - Create\". \n\nIt is a POST request that aims to create a new recurring PayPal payment. The request should be sent to the following URL: http://localhost:3000/api/payment/recurring/create\n\nThe header of this endpoint doesn't require any specific information. \n\nThere are multiple data inputs required in the body of the request:\n\n1. \"accountId\": This is a unique identifier associated with each user account. You need to replace \"accountId\" with the actual account Id.\n\n2. \"sessionId\": This is an identification number related to your session. This should be replaced with the real session Id.\n\n3. \"source\": This field is currently set to null and does not require any specific data.\n\n4. \"isSaveRecurring\": This is a boolean value which, when set to 'true', directs the system to save this payment as a recurring payment. If this field is set to 'false', the payment won't be saved as recurring.\n\n5. \"isPrimary\": This is another boolean value. When set to 'true', the payment will be set as the primary payment method. If 'false', this payment method won't be set as primary.\n\n6. \"provider\": This field should be filled with the name of the payment provider. In this case, it is \"paypal\".\n\nFor the \"options\" in the body:\n\n1. \"raw\" - \"language\": This specifies the language format that the body raw data should be written in. For this instance, it is in JSON format.\n\nPlease replace the placeholder values in the body with actual data before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - PayPal - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": true, \"provider\": \"paypal\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "update"
+          ]
+        },
+        "description": "The data object provided is for an API endpoint called \"Recurring - PayPal - Update\". This endpoint is used to update the recurring PayPal payment details. Here's a detailed breakdown of the data:\n\n- `name`: The name of the endpoint. This field has a string value of \"Recurring - PayPal - Update\".\n\n- `request`: This object holds the details of the request being made to the API.\n\n   - `method`: This is a type of HTTP method that will be used to send the request. The value here is \"PUT\", which means this endpoint is for updating existing data.\n\n   - `url`: This is the exact URL where the API request will be made. The provided URL is \"http://localhost:3000/api/payment/recurring/update\".\n\n- `headers`: An empty array here indicates that there are no additional HTTP headers being sent with this request.\n\n- `body`: The body field contains information sent to the API.\n\n   - `mode`: This field represents how the request body is formatted. The \"raw\" value means raw data will be sent in the body.\n\n   - `raw`: This field holds the raw data that will be sent in the body. The keys here are:\n   \n      - `accountId`: Your account identifier.\n      - `sessionId`: Your session identifier.\n      - `recurringId`: Identifier of the recurring payment.\n      - `source`: Payment source. This is set to 'null', which means there’s no specific payment source indicated.\n      - `isSaveRecurring`: A boolean field that indicates if the recurring payment is saved. If true, the recurring payment is saved.\n      - `isPrimary`: A Boolean indicating whether this should be the primary method of payment on the account. If true, this becomes the primary payment method.\n      - `provider`: Defines the payment provider. The provided value is \"paypal\".\n   \n   - `options`: This object holds the options for the body.\n\n       - `raw`: Further options for handling the raw body.\n\n         - `language`: Language that the raw data should be interpreted as. Here, the provided value is \"json\", which suggests that the data should be treated as JSON format.\n         \nThis endpoint would be used to modify a user's recurring payment details with PayPal. The modified details include whether the payment method has been saved, if it's the primary payment method, and more."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - PayPal - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/get/recurringId?provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "get",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "\"name\": This is the title of the endpoint. It is called \"Recurring - PayPal - Get\", showing that the endpoint is used for getting recurring payments related information using PayPal.\n\n\"request\": This field includes all the information needed to make the request.\n\n\"method\": This field specifies the HTTP method for the request. The method is \"GET\", which means this endpoint is used to retrieve data.\n\n\"url\": This is the URL that the request goes to. The provided URL is \"http://localhost:3000/api/payment/recurring/get/recurringId?provider=paypal&accountId=accountId&sessionId=sessionId\". \n\nThe parameters in the URL include:\n\n1. \"provider\": This parameter indicates which payment provider is being used. In this case, it's PayPal.\n2. \"accountId\": This is the identifier of the account that's making the request. You need to provide the appropriate account ID when making the request.\n3. \"sessionId\": This is the identifier for a particular user session. You need to provide the appropriate session ID when making the request.\n4. \"/recurringId\": This is a parameter signifying the recurring transaction. The recurringId needs to be provided in the endpoint.\n\n\"headers\": This section is for specifying any headers that need to be included with the HTTP request. In this case, no additional headers are needed."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - PayPal - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/getAll/recurringId?provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "getAll",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Recurring - PayPal - Get All\". It's a GET request which retrieves all information relevant to recurring PayPal transactions.\n\nThe URL used for this request is \"http://localhost:3000/api/payment/recurring/getAll/recurringId\". \n\nThis endpoint uses the query parameters as follows:\n\n- `provider`: This parameter is set as `paypal`. It specifies the payment provider.\n- `accountId`: This parameter represents the account identifier, which corresponds to the specific user's account.\n- `sessionId`: This parameter represents the current session's unique identifier. It affirms the session that's currently active.\n\nPlease note that there are no custom headers included in this endpoint. For any request to work, it will rely solely on the default headers that come with your chosen HTTP client.\n\nBe reminded as well that the success of the request will depend on accurate values for `provider`, `accountId`, and `sessionId` parameters. Providing incorrect details may likely result in error responses.\n\nThis endpoint will be valuable in managing recurring payments by obtaining related information from PayPal, such as the status, transaction history, and other essential details centred around the defined `accountId` and `sessionId`."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - PayPal - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"provider\": \"paypal\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "delete"
+          ]
+        },
+        "description": "This API endpoint is entitled `Recurring - PayPal - Delete` and it is designated to handle `POST` requests at this URL: `http://localhost:3000/api/payment/recurring/delete`. \n\nThe core functionality of this endpoint revolves around deleting recurring PayPal payments in your application.\n\nThe request does not require any specific headers to be set. The body of the request is expected to be a `raw` format and construction of it adheres to the JSON language syntax rules. \n\nLet's discuss the main components of the request body:\n\n-  `accountId`: This refers to the unique identifier of an account in your system. It will be used in the process to specify which account's recurring payment should be deleted. \n\n-  `sessionId`: A unique identifier signifying a particular session in your application. It's used for tracking and maintaining state about the user session across multiple requests.\n\n-  `recurringId`: This is the unique identifier for the recurring transaction that needs to be cancelled. It's how the system differentiates one recurring payment from another.\n\n-  `provider`: This is a string that indicates the provider for the transaction system. In this case, it always uses the value `paypal` as it deals specifically with PayPal transactions.\n\nThe `options` section contains a `language` parameter set to `json`. This parameter informs the system that the content of the \"raw' body of the request should be interpreted as a JSON object. \n\nPlease note that values and keys in `raw` body should be quoted to follow JSON syntax properly. \n\nThis endpoint should be used when a recurring PayPal payment needs to be deleted from the system. The response from this endpoint will confirm whether or not the deletion has been successful."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Stripe - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"customer\": \"customerId\",\r\n        \"items\": [\r\n            {\r\n                \"price\": \"priceId\"\r\n            }\r\n        ]\r\n    },\r\n    \"isSaveRecurring\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - Stripe - Create\". It is a POST request to the URL \"http://localhost:3000/api/payment/recurring/create\". Its purpose is to create a new recurring payment in Stripe.\n\nThe request doesn't contain any specific headers.\n\nBelow is a detailed explanation of the data included in the body of the request:\n\n- \"accountId\": This is intended to represent the account ID of the user who is creating the recurring payment.\n  \n- \"sessionId\": This field corresponds to the session during which the user is creating the recurring payment.\n\n- \"source\": This object contains details about the payment source:\n  \n   - \"customer\": This is intended to represent the customer ID in Stripe.\n  \n   - \"items\": This is an array of item(s) with their respective prices:\n  \n       - \"price\": This is supposed to represent the ID of the specific price for the item.\n\n- \"isSaveRecurring\": This field is a Boolean value. If set to true, it indicates that the recurring payment details will be saved for future use.\n\n- \"isPrimary\": This is another Boolean value. if set to true, it indicates that the source of payment is marked as a user's primary source.\n\n- \"provider\": This is intended to indicate the payment provider. In this case, it's set as 'stripe'.\n\nIn the \"options\" field, \"raw\" object represent the format of the original data, in this case, the language is set to 'json'. This endpoint assumes that the body of the request will be sent as raw JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Stripe - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": true, \"provider\": \"stripe\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - Stripe - Update\". It allows you to update information related to recurring payments with the Stripe payment provider. It uses the HTTP method `PUT` and its URL is `http://localhost:3000/api/payment/recurring/update`.\n\nNo additional headers are required for this request.\n\nThe body of the request contains this JSON object:\n\n```\n{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"recurringId\":\"recurringId\",\n    \"source\": null,\n    \"isSaveRecurring\": true,\n    \"isPrimary\": true,\n    \"provider\": \"stripe\"\n}\n```\nThe JSON is in `raw` mode and uses the `json` language. The keys in this JSON have the following meanings:\n\n- `accountId`: This key carries the account identifier to which the recurring payment is linked. Replace this with the real account ID.\n- `sessionId`: This is the session ID associated with the recurring payment update request. Replace this with the real session ID.\n- `recurringId`: This contains the identifier of the recurring payment you want to update. Replace this with the real recurring payment ID.\n- `source` : This is the source of the payment. It's currently set to null, but it can be replaced with a payment source ID if any.\n- `isSaveRecurring`: This boolean value determines whether or not the recurring payment option will be saved. It's currently set to true, change it as per your requirement.\n- `isPrimary`: This boolean value determines whether or not this recurring payment is the primary one. It's currently set to true, adjust it according to your needs.\n- `provider`: This is the payment provider. It is currently set to \"stripe\". You should not change this value, unless another provider is used."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Stripe - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/get/recurringId?provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "get",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is categorized under the title 'Recurring - Stripe - Get'. \n\n1. **Name**: It signifies the title of the endpoint. For this case, it is 'Recurring - Stripe - Get'.\n\n2. **Request**: It contains all the necessary details regarding the method to be employed, the URL and any potential headers that are required for the request.\n\n   a. **Method**: This field indicates the HTTP method in use. For this endpoint, the 'GET' method is used; which is generally used to retrieve data.\n\n   b. **URL**: This denotes the specific location where the request is to be sent. The structure of the URL placeholders is 'http://localhost:3000/api/payment/recurring/get/recurringId?provider=stripe&accountId=accountId&sessionId=sessionId'. From this structure, there are variable parts (placeholders) that need to be replaced by actual values related to the recurring payment. \n\n   - 'localhost:3000' specifies where the server is running.\n   - In '/api/payment/recurring/get/recurringId', 'recurringId' should be replaced with actual recurring payment's id.\n   - 'provider=stripe' represents that the recurring payment service provider is Stripe.\n   - 'accountId=accountId' and 'sessionId=sessionId' are placeholders that would need to be replaced with the actual account and session IDs.\n\n   c. **Headers**: This array is left blank in this API meaning there are no special headers used for this request. Headers could potentially include fields such as Content-Type or Authorization based on requirements."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Stripe - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/getAll/recurringId?provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "getAll",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - Stripe - Get All\". It is a GET request that is used for retrieving all recurring payments in Stripe.\n\nThe URL for the request is 'http://localhost:3000/api/payment/recurring/getAll/recurringId'. This URL is structured to make a call to the local server and then pull from the 'payment' API. Within this API, it aims to retrieve all recurring payments, identified by an ID ('recurringId').\n\nThe parameters appended to the URL are:\n\n1. \"provider\": This parameter specifies the payment provider to use, which in this case is 'Stripe'.\n\n2. \"accountId\": This parameter is used to specify the user's account ID from which the details are to be fetched. Replace 'accountId' with the actual account ID of the user.\n\n3. \"sessionId\": This parameter represents the session ID, which could correspond to a particular browsing session or user session for tracking purposes. Replace 'sessionId' with the actual session ID.\n\nThe request does not include additional HTTP headers.\n\nRemember to replace the 'recurringId', 'accountId', and 'sessionId' in the URL with real values when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Stripe - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"provider\": \"stripe\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is for deleting a recurring payment resource from Stripe. It is titled \"Recurring - Stripe - Delete\". \n\nThe API request method for this endpoint is POST, and the URL for accessing this endpoint is \"http://localhost:3000/api/payment/recurring/delete\". It doesn't require any specific headers. \n\nThe request body should be in raw mode with the language set to JSON. \n\nThe request payload contains the following four critical fields: \n\n1. \"accountId\":  This field is meant to capture the unique identifier of the account. You should replace \"accountId\" with the actual account Id to which the recurring payment belongs. \n\n2. \"sessionId\": This is the unique identifier of the session. Replace \"sessionId\" with the actual session Id from which you are making the request. \n\n3. \"recurringId\": This field includes the unique identifier of the recurring payment that you desire to delete. Substitute \"recurringId\" with the actual Id of the recurring payment.\n\n4. \"provider\": This string type field indicates the payment gateway provider. For this endpoint, the value should be \"stripe\", as this functionality is tailored to interact with the Stripe payment gateway. \n\nEnsure you replace the placeholder values with actual data when making requests using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - BitPay - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": false, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "create"
+          ]
+        },
+        "description": "Endpoint Name: \"Recurring - BitPay - Create\"\n\nMethod: POST\n\nURL: http://localhost:3000/api/payment/recurring/create\n\nHeaders: No headers are included.\n\nThis endpoint has a body section which consists of the following data:\n\n1. \"accountId\": A unique identifier representing the account to which the recurring payment is linked. This field expects a string input.\n\n2. \"sessionId\": A unique identifier assigned to a specific session during which the recurring payment is being setup. Also, it expects a string format.\n\n3. \"source\": This field is used to specify the origin or source of the recurring payment. In the current context, this field is set to null. Please ensure to update it in accordance to your needs.\n\n4. \"isSaveRecurring\": This is a boolean field used to indicate whether the recurring payment settings are to be saved. When set to true, the recurring payment settings are saved.\n\n5. \"isPrimary\": Another boolean field, it indicates whether this recurring payment should be treated as the primary mode of payment. If set to false, it implies that this is not a primary payment source.\n\n6. \"provider\": This field specifies the provider for the recurring payment system. In this context, it is set as \"bitpay\".\n\nThe body of the request is in raw format, written in JSON language as specified by the value of the \"language\" key in the \"options\" section."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - BitPay - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": true, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - BitPay - Update\". It is used to modify existing recurring payment details for the BitPay provider. It uses the PUT method, indicating that it updates data on the server at the specified URL: `http://localhost:3000/api/payment/recurring/update`.\n\nThere are several data entries within the Request object:\n\n1. `accountId` indicates the unique identification associated with the account. It is required for identification purposes to ensure the updates are applied to the correct account.\n\n2. `sessionId` is a unique identifier for the specific session. This data helps in maintaining the user's session and is needed for authentication and interaction purposes throughout the session life cycle.\n\n3. `recurringId` is a unique identifier for a specific recurring payment. This is crucial for identifying which recurring payment needs to be updated.\n\n4. `source` specifies the origin of the transaction. However, it is null here, indicating it's not providing any specific origin information for this request. \n\n5. `isSaveRecurring` is a boolean data that indicates whether the recurring payment details should be saved for future use. If it's `true`, the system will store the recurring payment details. Otherwise, it will not.\n\n6. `isPrimary` is also boolean data which signifies whether this recurring payment is the primary method of payment. When set to `true`, this recurring payment will be treated as the primary payment method.\n\n7. `provider` refers to the payment gateway provider. In this case, the provider is 'bitpay', which is an online payment service that allows users to accept cryptocurrencies.\n\nThe headers array is currently empty, meaning there are no additional HTTP headers to send with the request. \n\nThe `body` section of the request is sent in 'raw' mode with the 'json' language option. This means the body contents are presented in a stringified JSON format, allowing structured data to be sent within the request body. \n\nOverall, this endpoint should be used when you want to make changes to an existing recurring payment set up with the 'bitpay' provider."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - BitPay - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/get/recurringId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "get",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is used to retrieve Recurring Payments from the BitPay system. The details of the data present in this endpoint are as follows:\n\n1. \"name\": This field specifies the name of the endpoint, in this case, it is \"Recurring - BitPay - Get\". This name is used to identify the purpose of the endpoint easily.\n\n2. \"request\": This field includes the details about the request made to retrieve the data. The subfields include:\n   - \"method\": This specifies the HTTP method used for the request which is \"GET\" in this case. The GET method is used to retrieve data from a server at the specified resource.\n  \n   - \"url\": This is the resource Locator at which the request is to be sent. The URL here is: \"http://localhost:3000/api/payment/recurring/get/recurringId?provider=bitpay&accountId=accountId&sessionId=sessionId\". This URL specifies that the data is being retrieved from the local server to get the recurring payment details using the \"recurringId\", \"provider\", \"accountId\", and \"sessionId\".\n\n      - \"recurringId\" is a parameter included in the url to identify the specific recurring payment.\n      - \"provider\" in this URL shows that the provider is \"bitpay\". This field may change depending on the provider.\n      - \"accountId\" and \"sessionId\" are the parameters used for the authentication of the account from which the recurring payment details are being retrieved.\n   \n3. \"headers\": This field would include request details like content type, authentication etc. In this sample, no headers have been provided. This field would be provided according to the requirements of the server from where the data would be retrieved."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - BitPay - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/getAll/recurringId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "getAll",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - BitPay - Get All\". It is designed to fetch all recurring payments from the BitPay payment provider. \n\n1. Method: The HTTP method is GET, which means this endpoint is used to retrieve data.\n\n2. URL: The URL specifies where to send the request. The full URL is 'http://localhost:3000/api/payment/recurring/getAll/recurringId'\n\n3. Query Params: The URL includes the following query parameters. Be sure to replace these with your own values when using this endpoint:\n   - provider=bitpay: This parameter is used to specify the payment provider. In this case, it is BitPay.\n   - accountId=accountId: This is used to input your account ID associated with BitPay. Replace 'accountId' with your actual account ID.\n   - sessionId=sessionId: This parameter is used to input your session ID. Replace 'sessionId' with your actual session ID.\n\nNote: The 'recurringId' in the URL seems to be a placeholder. Replace it with the actual recurring payment ID you wish to fetch.\n\n4. Headers: The endpoint currently does not require any specific headers. \n\nTherefore, to successfully use this endpoint, replace the placeholders in the URL with your own 'provider', 'accountId', 'sessionId', and 'recurringId'. Finally, send a GET request to the resulting URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - BitPay - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is for a post request titled \"Recurring - BitPay - Delete\". It is designed to manage recurring payments processed by BitPay. Using this endpoint, you can delete the existing recurring payments set up on your account.\n\n1. \"name\": This field indicates the name of the request. For this endpoint, the request name is \"Recurring - BitPay - Delete\".\n\n2. \"method\": This field identifies the HTTP method used for the API request. Here, the method is POST, which is generally used to send data to a server to create/update a resource.\n\n3. \"url\": It is the API endpoint url where the request needs to be sent. For this API, the url is \"http://localhost:3000/api/payment/recurring/delete\".\n\n4. \"headers\": This field contains the list of headers to be sent along with the HTTP request. Currently, it is an empty array, which means no additional headers are required for this API request.\n\n5. \"body\": This object includes the data being sent with the request. Here, the body is sent as a raw JSON. It contains four fields.\n     \n   - \"accountId\": This should contain the unique account id for which the recurring payment needs to be deleted.\n   \n   - \"sessionId\": This is a unique identifier for a specific user session. You must supply a valid session id that corresponds to the account.\n   \n   - \"recurringId\": This is the identifier for the recurring payment that you wish to delete.\n   \n   - \"provider\": This specifies the payment provider. In this case, it is 'bitpay', thus this API endpoint is for deleting a recurring payment set up on BitPay. \n\n6. \"options\": This field contains additional options on how the request body should be treated. The only option present is \"raw\" with a language sub property set to \"json\". This means that the body content should be treated as raw JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - CashApp - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": false, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - CashApp - Create\". It is a POST method that is used to create a new recurring payment on CashApp. The URL for this endpoint is \"http://localhost:3000/api/payment/recurring/create\". \n\nThe endpoint doesn't require any headers to be sent. \n\nHowever, it does require a body, which should be sent in raw JSON format. The body of the request should include the following data:\n\n- `accountId`: This represents the unique ID tied to the user's account. It's a required field used to identify which account to set up the recurring CashApp payment for.\n\n- `sessionId`: This identifier is used for session tracking and management. It's typically generated upon login and can be used to keep track of user's interaction within a session.\n\n- `source`: This field is nullable, meaning it can be left out or given a null value, it's not necessarily required. It is yet unclear from the provided information what it is meant to hold when provided.\n\n- `isSaveRecurring`: This is a boolean data type. A true value implies that the recurring payment should be saved, while a false value means it should not be saved.\n\n- `isPrimary`: This is also a boolean data type indicating whether the payment method being created should be set as the primary method for the account. A true value sets the method as primary, while a false value means it's not.\n\n- `provider`: This signifies the payment provider used for the recurring payment setup. In this case, the provider is \"cashapp\".\n\nIn the 'options' object, the 'language' key is set to 'json' to indicate that the raw data should be treated as a JSON object.\n\nBeing a POST request, it may create a new recurring payment on user's CashApp linked to the account specified by the accountId."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - CashApp - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": true, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "update"
+          ]
+        },
+        "description": "This data represents a HTTP request on the endpoint `http://localhost:3000/api/payment/recurring/update` that is used to update a recurring payment associated with 'CashApp'. \n\nThe HTTP method for this request is 'PUT', which is typically used when you wish to update an existing resource. \n\nIn the request, the body of the data is written in 'raw' mode and is formatted in JSON (JavaScript Object Notation) language as specified in the options.\n\nThe JSON data includes several properties which are explained below:\n\n- `accountId`: This is likely to be the unique identifier associated with the user's account in the system.\n\n- `sessionId`: This usually represents a specific user's session which is typically unique to each user and can be used to track activities within a session time frame.\n\n- `recurringId`: This probably refers to the unique identifier for a specific recurring payment.\n\n- `source`: This field currently has a 'null' value. Depending on the system this might be used to indicate the source of the payment, for instance, which bank or platform the payment was sent from.\n\n- `isSaveRecurring`: This is a boolean value that indicates whether the recurring payment setup should be saved or not. If true, the system will save this for future transactions. \n\n- `isPrimary`: If true, this indicates that this payment method is the primary one for the user. \n\n- `provider`: This refers to the service provider for the recurring payment. In this case, it is 'cashapp'.\n\nThis description should provide a basic understanding of the data represented in this endpoint. Keep in mind that details could vary based on specific implementation details of your system."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - CashApp - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/get/recurringId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "get",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This field is titled \"Recurring - CashApp - Get\". It denotes the name of the endpoint, which in this case is for getting recurring transactions via CashApp.\n\n2. \"request\": This section contains details about the HTTP request to be made. \n\n    a. \"method\": This field shows that the HTTP request method is \"GET\". This implies that the method used for sending HTTP request is to retrieve data from specific resource.\n\n    b. \"url\": This URL (\"http://localhost:3000/api/payment/recurring/get/recurringId?provider=cashapp&accountId=accountId&sessionId=sessionId\") specifies the resource where the request should be sent. It includes four parameters:\n\n         - 'recurringId': It denotes the ID for the recurring transaction you are querying.\n         - 'provider': This is a query parameter whereby you specify you are using the 'cashapp' as the service provider for the recurring payment.\n         - 'accountId': This parameter signifies the unique id associated with the account in context within the cashapp.\n         - 'sessionId': This parameter defines the unique session identifier during which the ‘get’ operation is being performed.\n\n3. \"headers\": This section is currently empty. This is where you would include additional metadata in the form of HTTP headers in your request, if necessary."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - CashApp - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/getAll/recurringId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "getAll",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled 'Recurring - CashApp - Get All' and is configured for an HTTP GET request. It is used to retrieve all recurring payments that have been set up within a specific CashApp account. \n\n- 'name': This represents the name of the endpoint, which in this case is 'Recurring - CashApp - Get All'.\n- 'request': This refers to the actions needed to fetch the requested data.\n- 'method': GET is used to request data from a specified resource.\n- 'url': This is the path where the API will be sending a GET request. In this case, it's set to: 'http://localhost:3000/api/payment/recurring/getAll/recurringId'. The URL also includes several query parameters passed after the '?'. These are:\n   -'provider': This specifies that the provider is 'cashapp'.\n   -'accountId': This is used to specify the account from which to fetch the recurring transactions. The actual accountId should be provided here when making the actual call.\n   -'sessionId': This is used to maintain the session in which the request is made. The actual sessionId should be provided here when making the actual call.\n- 'headers': Currently, this object is empty, indicating no specific headers are needed for this request. In some cases, headers might include additional data, like authentication information. "
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - CashApp - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named `Recurring - CashApp - Delete`. It's used to delete the recurring payment in CashApp. This is a `POST` request which needs to be sent to `http://localhost:3000/api/payment/recurring/delete`.\n\nThere are several parts of the request data which are as follows:\n\n- `name`: This is just the name of the API endpoint. In this case, it's \"Recurring - CashApp - Delete\". This tells you that the API is to handle deletion of a recurring payment for the CashApp service.\n\n- `request`: This is the object which includes all the details related to the HTTP request to be made. This includes method, url, headers, and body of the request.\n\n- `method`: It represents the HTTP method used for this request, which is `POST` in this case.\n\n- `url`: This is the endpoint's URL where the request is sent.\n\n- `headers`: There are no headers included in this request, hence it's an empty array [].\n\n- `body`: This is where the data sent with the request is specified. It has further parts `mode`, `raw`, and `options`.\n\n     - `mode`: It represents the form in which data is sent. Here, it's `raw`, signifying that data is to be sent as raw input.\n  \n     - `raw`: This is the actual data sent with the request. It includes `accountId`, `sessionId`, `recurringId`, and `provider`. \n        \n        - `accountId`: This is the identifier for the account related to the recurring payment.\n        \n        - `sessionId`: This represents the current session id for the operation.\n        \n        - `recurringId`: This holds the identifier for the recurring payment you wish to delete.\n        \n        - `provider`: This represents the payment service provider. In this case, it's `cashapp`.\n   \n     - `options`: These are additional settings for the `raw` data, in this case specifying the language as `json`.\n          \nPlease replace the placeholders for `accountId`,`sessionId`, and `recurringId` with actual values while making the POST request."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Venmo - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": false, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "create"
+          ]
+        },
+        "description": "This endpoint is titled \"Recurring - Venmo - Create\". It's a POST request and designed to create a new recurring payment in Venmo.\n\nThe request URL is http://localhost:3000/api/payment/recurring/create, indicating that it is associated with the Payment API, specifically for creating recurring payments.\n\nIt doesn't include any specified headers but the body of the request contains multiple fields, each of which has its own functionality:\n\n- \"accountId\": It is a unique identifier associated with each account. You need to provide the specific account id for which you want to create the recurring payment.\n\n- \"sessionId\": The session identifier. It represents the unique session during which the operation to create a recurring payment is performed.\n\n- \"source\": It will hold the source of the payment. Currently, this is set as null.\n\n- \"isSaveRecurring\": A boolean flag indicating if the recurring payment needs to be saved. If this is set to true, the recurring payment will be saved for future use.\n\n- \"isPrimary\": This is another boolean field determining whether this particular payment method is primary or not. If set as false, this means the payment method is not a primary one.\n\n- \"provider\": This field specifies the payment provider. In this case, it is \"Venmo\".\n\nThe \"options\" field contains an object with \"raw\", which specifies the language format of the body request, here it is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Venmo - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": true, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "update"
+          ]
+        },
+        "description": "The endpoint \"Recurring - Venmo - Update\" performs the action of updating recurring payments with a PUT request method.\n\n- URL: This is the location at which this PUT service can be accessed. For the current case, it is \"http://localhost:3000/api/payment/recurring/update\"\n\nThe body of this endpoint comprises several data fields which are detailed as follows:\n\n- accountId: This field is used to identify the account which is associated with the recurring payment. It's a unique identifier for each account in system.\n\n- sessionId: This field is used to identify the specific user session during which the request was made. This is typically used for session tracking and managing the user's actions during a particular session.\n\n- recurringId: This field signifies the unique ID which is associated with the recurring payment that needs to be updated.\n\n- source: This field is used to describe the source of the funds for the recurring payment. In the data provided, the source is not explicitly mentioned and is set as null.\n\n- isSaveRecurring: This field is a boolean flag which indicates whether to save this payment information for recurring payments in the future. If it's true, the payment information will be stored for future use.\n\n- isPrimary: This field is also a boolean flag that denotes whether the provided payment method should be considered as the primary payment method. Setting it to true means that it will be used as the default payment method.\n\n- provider: This field represents the payment gateway or service provider. In this case, it's set to \"venmo\".\n\n- options: These are extra settings that modify the functionality of the request. In this endpoint, it tells that the language used for the raw data in the body is JSON. It indicates the format of the data being sent."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Venmo - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/get/recurringId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "get",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint named \"Recurring - Venmo - Get\" is responsible for fetching the details of recurring payments made through the Venmo payment provider. \n\nMethods:\n- It uses the HTTP `GET` method to retrieve information.\n\nURL: \n- The base URL is `http://localhost:3000/api/payment/recurring/get/recurringId`.\n- It requires query parameters, which are `provider`, `accountId` and `sessionId`.\n\nQuery Parameters:\n- The `provider` parameter accepts the name of the payment provider, which in this case is 'venmo'.\n- The `accountId` parameter should be provided with the account ID of the user in concern. \n- The `sessionId` parameter is required to validate the current user session for security purposes.\n\nHeaders: \n- No headers are required for this endpoint.\n\nNow, users using this API endpoint should replace 'recurringId', 'accountId', and 'sessionId' with actual values to retrieve recurring payment details of a specific Venmo account. Please note that the user must have valid session ID to ensure security and privacy."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Venmo - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/getAll/recurringId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "getAll",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - Venmo - Get All\". It uses the \"GET\" method to fetch all reoccurring transactions for a specific recurringId associated with a given Venmo account.\n\nThe URL for the endpoint is \"http://localhost:3000/api/payment/recurring/getAll/recurringId\". The URL contains several parameters:\n\n1. \"provider\" - This parameter specifies the payment provider, in this case, \"venmo\".\n2. \"accountId\" - This parameter indicates the account ID affiliated with the specific recurring transaction. This value should be replaced with the actual account ID while making the request.\n3. \"sessionId\" - This parameter shows the session ID for the current session. It is used for tracking and maintaining the state of a particular user session. Replace it with the actual session ID when making the request.\n\nThe endpoint currently doesn't require any headers to be sent in the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Venmo - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "delete"
+          ]
+        },
+        "description": "This API endpoint is named \"Recurring - Venmo - Delete\". It is a POST request that is directed to the URL \"http://localhost:3000/api/payment/recurring/delete\". This endpoint doesn't require any additional headers. \n\nIn the body of the request, there are several pieces of data meant to be sent in a raw JSON format. The parameters include:\n\n1. \"accountId\": This is the unique identifier for the account that the request pertains to. It should be noted that \"accountId\" is a placeholder in this context, and when using this API the actual account ID of the relevant account should be provided.\n\n2. \"sessionId\": This parameter is used to identify the active session associated with the request. The exact session ID should replace \"sessionId\" when using this endpoint.\n\n3. \"recurringId\": This value represents the ID of the recurring payment that is to be deleted. When using this endpoint, replace \"recurringId\" with the unique identifier of the recurring payment in question.\n\n4. \"provider\": This signifies the payment provider used for the transaction. In this case, \"venmo\" is the provider, indicating that Venmo is being used for processing the transaction.\n\nLastly, the \"options\" object contains additional settings for sending the request. It specifies that the request body is to be sent in raw JSON format with \"language\" set to \"json\". This setting ensures that the server correctly interprets the data in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Zelle - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": false, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - Zelle - Create\" it is called via a POST method. It's used to create a new recurring payment with the Zelle service.\n\nURL: The endpoint URL is [http://localhost:3000/api/payment/recurring/create]. This URL is structured specifically for the testing environment with the localhost address and is likely to change in production.\n\nHeaders: The request does not require any specific headers. \n\nBody: The request body should be a JSON object containing several properties:\n\n1. `accountId`: This is a required field. It should be a string that provides the account ID associated with the user. The user's transactions will be performed in reference to this account ID.\n\n2. `sessionId`: This is another required field. It should be a string that provides the unique session ID. This is presumably used for tracking individual sessions to verify the user's state and track activities.\n\n3. `source`: This field can be set to null. If necessary, it could include more information about the transaction or user.\n\n4. `isSaveRecurring`: This field should be a boolean. If set to true, it indicates that the transaction is a recurring one and should be saved for potential future recurring transactions.\n\n5. `isPrimary`: This field should be a boolean. If set to true, it will set the transaction as a primary transaction for the user's account.\n\n6. `provider`: This field should be a string indicating the payment provider. In this case, the provider is \"zelle\". This is essential in determining how the transaction will be processed, according to the payment provider.\n\nOptions: The options field provides additional settings for the body field. Here, it's set to \"language\": \"json\" indicating that the body field should be parsed as JSON.\n\nOverall, this endpoint helps to facilitate recurring payments with Zelle, an online payment method, making it easier to handle automated transactions."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Zelle - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"source\": null,\"isSaveRecurring\": true,\"isPrimary\": true, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "update"
+          ]
+        },
+        "description": "1. `name`: This is the name of the API Endpoint and it is labelled as \"Recurring - Zelle - Update\".\n\n2. `request`: This field describes the entire HTTP request details.\n\n   - `method`: This indicates the HTTP method or verb that is being used for this request, which in this case is \"PUT\". It is used to update an existing resource.\n   \n   - `url`: The URL field contains the endpoint where the request is being sent: \"http://localhost:3000/api/payment/recurring/update\".\n\n   - `headers`: This field is for any meta-data associated with the API request. It's currently empty, meaning no additional data is being sent with the request.\n\n   - `body`: This includes the content or the data of the request.\n        \n      - `mode`: The mode field indicates that the data format is \"raw\".\n        \n      - `raw`: Contains the actual data being sent in the request. \n          \n         - `accountId`: This is the account identification in string format to update the payment detail.\n            \n         - `sessionId`: Session ID in string format representing the user session during which the update is being made.\n            \n         - `recurringId`: Identification of recurring payment which is to be updated.\n            \n         - `source`: The source of the payment. Currently set to null implying no specific source is assigned.\n            \n         - `isSaveRecurring`: Boolean field that checks whether the recurring payment needs to be saved or not. It's currently set to true, meaning the recurring payment needs to be saved.\n            \n         - `isPrimary`: Indicates if the recurring payment is the primary payment mode. It's currently set to true, meaning it is set as the primary payment mode.\n        \n         - `provider`:  Specifies the payment provider. Here it is mentioned as \"zelle\", which represents Zelle payment.\n        \n      - `options`: This defines the options of raw data.\n          \n         - `raw`: This field allows for custom raw data options.\n              \n            - `language`: The language field indicates that the data format used is \"json\".\n   \nThe endpoint described is used to update existing recurring payments through Zelle. The account information, session details, and recurring payment details would be needed as input."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Zelle - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/get/recurringId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "get",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - Zelle - Get\". It's designed to retrieve information about recurring payments processed through the Zelle payment service.\n\n1. Request Method:\nThe request method is \"GET\". This HTTP verb is typically used to retrieve data from a specific resource. \n\n2. URL:\nThe URL is \"http://localhost:3000/api/payment/recurring/get/recurringId\". It provides the path to the API that we'll be interacting with. This URL is designed to fetch recurring payment information from a Zelle payment service.\n\n3. Query Parameters:\n\n- provider: This query parameter is used to specify the payment provider. In this case, it is set to \"zelle\".\n\n- accountId: This is a query parameter used to pass the unique identifier of the account for which you want to fetch the recurring payment details. You will need to replace 'accountId' with the actual account ID.\n \n- sessionId: This is a query parameter that represents the session ID. It's used to maintain session state in the application. Replace 'sessionId' with your actual session ID.\n\n4. Headers: \nThere are no specified headers in this request. Headers are often used to provide additional instructions to the server such as auth tokens or specific content-types required by the server. If needed, they would be included here.\n\nWhen you make a request to this endpoint with the appropriate parameters, it will return the details about recurring payments made through Zelle for the specified account and session."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Zelle - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/getAll/recurringId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "getAll",
+            "{{recurringId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - Zelle - Get All\". It is used to retrieve all the recurring transactions happening through the Zelle service.\n\nMethod: `GET`\n\nURL: `http://localhost:3000/api/payment/recurring/getAll/recurringId?provider=zelle&accountId=accountId&sessionId=sessionId`\n\nDescription of Each Data:\n\n1. `http://localhost:3000/api/payment/recurring/getAll/recurringId` - This is the base URL which the application will hit to retrieve the recurring Zelle transactions.\n\n2. `provider=zelle` - This is a query parameter denoting the service provider \"Zelle\". This parameter is mandatory and needs to be included in the endpoint.\n\n3. `accountId` - This is another query parameter which indicates the account ID of the client using the service. Replace `accountId` in the URL with the actual account ID when making a request.\n\n4. `sessionId` - This is a further query parameter indicating the session of the client on the website. Replace `sessionId` in the URL with the actual session ID when making a request.\n\nThis endpoint does not require any headers to be passed along with the request. It is also to be noted that the method of request is \"GET\", which indicates data is being retrieved or fetched from the server."
+      },
+      "response": []
+    },
+    {
+      "name": "Recurring - Zelle - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"recurringId\":\"recurringId\",\"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/recurring/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "recurring",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Recurring - Zelle - Delete\". It is designed to delete a recurring Zelle payment in the database. It is a 'POST' request which sends data to the specified URL.\n\nThe URL for this particular request is \"http://localhost:3000/api/payment/recurring/delete\". Essentially, it implies that we are working with a payment API on a local server and specifically dealing with recurring payments deletion.\n\nThe request doesn't include any headers. Headers in API requests define the operating parameters of an HTTP transaction.\n\nThereafter, we have the body of the request. This is where the details about the recurring payment that should be deleted are defined:\n\n- 'Mode' indicates the data formatted expected by the endpoint. For this endpoint, the data should come in 'raw', unprocessed form.\n\n- 'Raw' holds the payload data being sent to the API. In this case, it has four fields in JSON format:\n\n  - 'accountId': This is assumed to be the unique identifier of the account from which the recurring payment is set up.\n  \n  - 'sessionId': This is likely a unique identifier for the session in which the delete request is made. It could be used for maintaining session state and tracking.\n\n  - 'recurringId': This is most likely the unique identifier for the recurring payment that is to be deleted.\n\n  - 'provider': As the name suggests, this field specifies who is the service provider of the payment system. It is set to 'Zelle' for this request.\n  \n- 'Options: Raw:Language' indicates the language used to display the raw payload data mentioned above, which is JSON in this case.\n\nPlease ensure to replace the 'accountId', 'sessionId', and 'recurringId' with actual values while making a request to the API.\n\nThis endpoint needs adequate permissions for handling delete operations for recurring payments."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,1311 @@
+{
+  "info": {
+    "_postman_id": "f2ecda41-9434-49a4-ab65-ea18b19969a7",
+    "name": "MediaAudio",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Media - Audio - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "1. \"name\": This is the title or name of the endpoint. For this case, it is known as \"Media - Audio - Create\".\n\n2. \"request\": This includes the main function associated with the provided API. Information about how the API should process the provided data is contained inside.\n\n3. \"auth\": This includes parameters associated with authentication and authorization. Here, the type is \"bearer\", used commonly with HTTP APIs to provide access. The bearer token, passed as a string, is used to authenticate the API request.\n\n4. \"method\": This is the HTTP method used for the request. In this case, the endpoint is using a POST method, which is used to send data to a server to create a new resource.\n\n5. \"url\": This is the URL endpoint where the API request is sent to. The full URL here is \"http://localhost:3000/api/media/audio/create\".\n\n6. \"headers\": These are additional properties sent with the request. This field is currently empty in the provided data and set to disabled.\n\n7. \"body\": This contains parameters associated with the request body. The mode is set to \"raw\", indicating that it involves sending arbitrary data in the post body. 'options' specify the language used, which is JSON here. \n\n    - \"sessionId\", \"accountId\": Identification parameters.\n    - \"name\", \"description\": Details about the media file being created.\n    - \"tags\": Relevant tags for searchability.\n    - \"contentType\": The media type, here it is \"application/mp3\" i.e., an mp3 audio file.\n    - \"contentLength\": The size of the content, set to zero here.\n    - \"targetKey\": The key associated with the specific media data.\n    - \"compressUsing\": This indicates the compression method used, here it is \"Base64\".\n    - \"isCompressed\": A boolean indicating if the data is compressed.\n    - \"isPrivate\": A boolean indicating if the media is private.\n    - \"data\": The actual raw data for the media."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Video",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "The endpoint \"Media - Audio - Create - For Video\" allows the creation of an audio media corresponding to a video. This is a POST method which sends data to a specified resource. The endpoint is to be added at the end of the base URL, http://localhost:3000/api/media/audio/create.\n\nThe request to this endpoint uses Bearer token authentication. You are supposed to replace 'BearerToken' with your actual bearer token. The data type for the token is a string.\n\nThough the header information is available. It is currently set to disabled and thus, does not require any key or value to be passed.\n\nThe body of this request is in raw JSON format with several parameters:\n\n- \"sessionId\": The session ID of the user. It's a string type parameter that should be replaced with the actual session ID.\n- \"accountId\": The account ID of the user. Should be replaced with a real account ID.\n- \"videoId\": The ID of the corresponding video for which audio media is being created. Replace it with the actual video ID.\n- \"name\": The name of the media being created.\n- \"description\": A brief description about the media.\n- \"tags\": Keywords associated with the media. They are comma-separated strings.\n- \"contentType\": The type of content. In this case, it should be \"application/mp3\" indicating that the content is an audio file.\n- \"contentLength\": The length of the content. It's presently set to 0, but it should be the actual length of the content.\n- \"targetKey\": The identification key for the target. Here, it's set as \"profilePhotoUrl\".\n- \"compressUsing\": The compression algorithm used. Here, 'Base64' is used.\n- \"isCompressed\": A boolean value that signifies whether or not the content is compressed.\n- \"isPrivate\": This field is a boolean that indicates if the media is private or public. When true, the media is private, else it's public.\n- \"data\": This field represents actual content data. The ellipsis (...) should be replaced with the base64 encoded representation of your audio file. \n\nPlease note, JSON data should be valid and properly formatted. The \"options\" section indicates the language of the raw data is JSON. \n\nPlease replace all placeholders with actual values as per your requirements while using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Channel",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "\"Media - Audio - Create - For Channel\" is the name of this endpoint. It serves to create a new audio entry for a channel within the Media server.\n\n\"request\" is the top-level object which contains data about the API request.\n\n\"auth\" is an object that deals with authorisation logic. This request uses a \"bearer\" type authentication, where a \"token\" key contains the provided \"BearerToken\" value. The \"type\" of this token is a \"string\".\n\nThe \"method\" of this request is \"POST\". This means the request will be used to send data to the server. \n\n\"url\" is the location where the post request will be sent. In this case, it is \"http://localhost:3000/api/media/audio/create\".\n\n\"headers\" is an array containing headers to be sent with the request. Here, a default header is defined but it has been disabled and it won't be attached in actual request. \n\n\"body\" is where the main content of the request lives. It is sent in \"raw\" mode, with the contents being a JSON stringified object. \n\nInside \"raw\", we have a variety of parameters like:\n\n- \"sessionId\", \"accountId\", \"channelId\" are string value represents the unique identifiers for the session, account and channel respectively.\n- \"name\" refers to the name of the media that is to be created.\n- \"description\" provides a brief explanation about the media.\n- \"tags\" contain keywords relating to the media, separated by commas.\n- \"contentType\" indicates the media type format, in this case, \"application/mp3\".\n- \"contentLength\" represents the length of the content to be sent, it is 0 by default.\n- \"targetKey\" seems to point at \"profilePhotoUrl\". It could stand for a specific location where the media would be stored or representing an attribute of uploaded media.\n- \"compressUsing\" represents the compression type, here it's \"Base64\".\n- \"isCompressed\" is a boolean showing if the media content needs to be compressed or not.\n- \"isPrivate\" is another boolean indicating if this media is private or not.\n- \"data\" is where the actual audio file data would be inserted.\n\nFinally, \"options\" is an object which contains settings to be modified. Here, the \"language\" of the 'raw' body has been set to \"JSON\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"streamId\":\"streamId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called 'Media - Audio - Create - For Stream'. It is used to create an audio media for a specific stream. Here's the description of each field:\n\n'default' is the key that contains the value 'BearerToken'. This is a string type of value. The 'auth' object represents the type of authentication to be used. In this case, it's 'bearer', which means it uses Bearer Token for authentication.\n\nThe 'request' is a POST type implying that we're sending data to a server to create/update a resource. The URL for our current service request is 'http://localhost:3000/api/media/audio/create'.\n\nThe 'headers' are currently disabled and do not have any key-value pairs.\n\nIn the 'body' of the request, the 'mode' is set to 'raw', meaning it enables you to send data without any added serialization. The 'raw' value contains following data fields:\n\n- 'sessionId': The ID of the session in which the media is being created.\n- 'accountId': The ID of the account creating the media.\n- 'streamId': The ID representing the stream for which the media is being created.\n- 'channelId': The ID that represents the channel of the stream.\n- 'name': The name of the media file to be created.\n- 'description': A textual description of the media content.\n- 'tags': Labels that can be used to categorize the media.\n- 'contentType': The type of the media content that is being created; in this case, it's 'application/mp3'.\n- 'contentLength': The length of the content. Currently it's set to 0.\n- 'targetKey': The attribute name - which is 'profilePhotoUrl' in this instance.\n- 'compressUsing': The method used for compression which in this case is 'Base64'.\n- 'isCompressed': A boolean showing whether the file is compressed or not, true mean it's compressed.\n- 'isPrivate': A boolean showing whether the file is private or public, false means it's public.\n- 'data': Contains the actual data content.\n\nThe 'options' defines the language of data in the 'raw' as 'json'."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "Here's the detailed description of each data point for the \"Media - Audio - Create - For Team\" endpoint:\n\n- `name:` This field identifies the name of the endpoint, which is 'Media - Audio - Create - For Team'.\n\n- `request:` Contains all the details related to making the HTTP request. \n\n- `auth:` Specifies the type of authentication required for this endpoint. \n   - `type:` The authentication mechanism used here is of the 'bearer' type.\n   - `bearer:` Contains an array of bearer token which is used for authorization.\n      - `key:` The name of the field for bearer token, which is 'token'.\n      - `value:` The actual token value, which in this case is a placeholder 'BearerToken'.\n      - `type:` Specifies that the 'token' is a string.\n\n- `method:` This is the HTTP method used for the request, which is POST in this case.\n\n- `url:` The URL where the request is made. 'http://localhost:3000/api/media/audio/create' is used as the endpoint.\n\n- `headers:` Contains an array of headers sent with the request. Right now it is empty and is disabled.\n\n- `body:` Contains information about the data sent in the body of the request\n   - `mode:` Indicates the way the body content is formatted for the request. The content is in the 'raw' format.\n   - `raw:` Contains the raw body data in JSON format.\n   - `options:` Specifies the options for formatting the raw data.\n      - `raw:` Inside it, the 'language' option is set to 'json' implying that the raw data should be interpreted as JSON.\n\nThe raw body JSON contains:\n- `sessionId:` The ID of the session.\n- `accountId:` The ID of the account.\n- `teamId:` The ID of the team.\n- `name:` The name of the media file.\n- `description:` A brief description of the media file.\n- `tags:` Various tags for the media file, such as 'second' and 'media'.\n- `contentType:` The MIME type of the media file, which is 'application/mp3'.\n- `contentLength:` The length of the content, which is 0.\n- `targetKey:` Key under which content should be stored, in this case its 'profilePhotoUrl'.\n- `compressUsing:` The compression method used, which is 'Base64'.\n- `isCompressed:` Indicates whether the file is compressed. Here, it is true.\n- `isPrivate:` Indicates whether the file is private. Here, it is false.\n- `data:` The actual encoded data of your file."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"profileId\":\"accountId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "\"Media - Audio - Create - For Profile\" - This is the name of the endpoint. It indicates that it's used to create a new audio media for a specific profile.\n\nThe \"request\" object encapsulates all the elements related to the API request. \n\nIn the \"auth\" section, it tells us the type of authentication being used, which in this case, is a bearer token authentication. The \"key\" is \"token\" and the expected \"value\" is the bearer token in string format.\n\nThe \"method\" field - Specifies the HTTP method used for the request, here it's a POST method, which means data is sent to the API to create a new resource.\n\n\"url\" - Is the address where the post request is to be sent. This should be replaced with the correct URL depending on your application's server address.\n\n\"headers\" - An array of headers to be sent with the request. In this case, there isn't any specified header, the value is empty. \n\nThe \"body\" section describes the body content of this HTTP request. The \"mode\" is raw, suggesting that we're sending a raw body. \n\nThe \"raw\" data is a JSON string representing the actual data to be sent in the body. This data includes:\n- \"sessionId\", \"accountId\" and \"profileId\": identifiers for the session, account, and profile, respectively.\n- \"name\" and \"description\": the name and description of the media being created.\n- \"tags\": tags related to the media.\n- \"contentType\": the MIME type of the media, in this case, it's an mp3 file.\n- \"contentLength\": length of the content that is being posted. It's zero here and would typically be replaced with the actual content length.\n- \"targetKey\": the target S3 bucket key for the media file, \n- \"compressUsing\": the compression method used (Base64 in this case),\n- \"isCompressed\": a boolean representing whether or not the media is compressed.\n- \"isPrivate\": a boolean that indicates whether the media is private or not.\n- \"data\": the media file data, in this case, it's represented by \"...\", which would typically be replaced by actual data.\n\nLastly, the \"options\" field represents the specifications for the raw body. It can contain various properties. In this case, it only contains \"language\", which is set to json, indicating that data is in json format.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Tournament",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tournamentId\":\"tournamentId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "This API endpoint is named \"Media - Audio - Create - For Tournament\". It's used to create new audio media for a specific tournament. Below is a description of the data associated with this endpoint:\n\n- **name**: This field is self-explanatory; it refers to the name of the API endpoint.\n\n- **request**: Contains detailed information about the request being made. \n\n- **auth**: Gives information on how the API endpoint should be authenticated. This particular one is using a bearer token. The \"token\" key should be replaced with your actual Bearer Token.\n\n- **method**: This specifies that the POST method is used to send data to the API endpoint.\n\n- **url**: This is the link to the API endpoint. http://localhost:3000/api/media/audio/create is the endpoint where the request will be made. \n\n- **headers**: This includes extra instructions to guide the API on how to process the request. The API Endpoint doesn't require headers hence none are provided.\n\n- **body**: Contains the payload for the request. \n\n  - **mode**: The mode is set to \"raw\", meaning that the data sent in the body of the API request will be raw (json format in this case).\n\n  - **raw**: This contains the raw data that is going to be sent in the body. This data includes sessionId, accountId, tournamentId, name, description, tags, contentType which should be 'application/mp3' for audio files, contentLength in bytes, targetKey, compressUsing indicating compression method, isCompressed, isPrivate indicating if the media is private and data in the required format.\n\n  - **options**: Indicates that the raw data should be treated as JSON.\n\n  Let's briefly explain each of the fields in the body payload:\n\n  - **sessionId**: This should contain the session Id of the user.\n  - **accountId**: This should contain the account Id.\n  - **tournamentId**: This should contain the Id of the tournament.\n  - **name**: This represents the name of the media progress.\n  - **description**: Detailed information about the uploaded media.\n  - **tags**: Associated tags for the media file.\n  - **contentType**: This should be 'application/mp3' for audio files.\n  - **contentLength**: The size of the file in Bytes.\n  - **targetKey**: The key identifier for the media file. This could represent the file location in some cases.\n  - **compressUsing**: Defines the compression method used in packaging the file.\n  - **isCompressed**: A boolean indicating whether or not the file is compressed.\n  - **isPrivate**: A Boolean indicating the visibility of the media file, i.e., whether it is private or public.\n  - **data**: The actual serialized contents of your audio file."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Advertisement",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"advertisementId\":\"advertisementId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Audio - Create - For Advertisement\" and it is used to submit a Post request in order to create audio media for an advertisement. \n\nThe request requires \"bearer\" type authentication. The \"token\" is the key - you will need to replace \"BearerToken\" with your unique token in order for the request to successfully authenticate.\n\nThe endpoint URL is \"http://localhost:3000/api/media/audio/create\". Replace \"localhost:3000\" with the address of your own hosting server, if necessary.\n\nThe \"headers\" include default values. However, this part is currently disabled.\n\nThe \"body\" of the request is in raw mode and the supporting data needs to be in JSON format. \n\nThe body includes the following fields:\n\n- \"sessionId\": a unique identifier for the current session.\n- \"accountId\": the unique identifier of the user/account associated with this request.\n- \"advertisementId\": a unique identifier for the advertisement to which this audio media belongs.\n- \"name\": the name you will assign to this audio media.\n- \"description\": a detailed account or commentary to explain more on what the audio media is about.\n- \"tags\": keywords or phrases which help to identify the audio media.\n- \"contentType\": the format of the audio file. The endpoint is designed to handle mp3 content.\n- \"contentLength\": the length of the audio content in bytes. Currently, it is set to zero.\n- \"targetKey\": the attribute to which the media content will be attached. In this case, \"profilePhotoUrl\".\n- \"compressUsing\": the type of compression applied on the content. Here, it is compressed using 'Base64'.\n- \"isCompressed\": indicates if the content is compressed or not. True means it is indeed compressed.\n- \"isPrivate\": setting this field to true means the audio file will be private, not publicly accessible.\n- \"data\": holds the actual data of your audio file. Replace the \"...\" with your base64 encoded audio data.\n\nPlease ensure to replace the placeholders with actual values that are pertinent to your application while posting the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Loyalty",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"loyaltyId\":\"loyaltyId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "\"name\": This field identifies the API endpoint's name, which in this case is \"Media - Audio - Create - For Loyalty\". This can be taken as the function of this API endpoint.\n\n\"request\": This field contains all information related to how to make a request for this API.\n\n\"auth\": Within the request field, \"auth\" contains the authorization method required to interact with the API endpoint. The \"type\" is set to \"bearer\", indicating that bearer authorization is required, and the bearer token should be provided as a string under the \"token\" field.\n\n\"method\": The HTTP method for this request is \"POST\", meaning data should be sent to the server to create new information.\n\n\"url\": This field contains the URL that the request will be made to\n\n\"headers\": This is for passing additional information with the HTTP request to the server. The default header key and value are blank and disabled in this case. \n\n\"body\": This field contains the data that will be sent to the server. \n\n\"mode\": It specifies that the body of the HTTP request will be sent in the 'raw' format. \n\n\"raw\": This is the actual data being sent in the HTTP body. This specific data is in JSON format containing information related to audio/media like, sessionId, accountId, loyaltyId, name, description, tags, and additional properties such as contentType, contentLength, targetKey, compressUsing, isCompressed, isPrivate, etc.\n\n\"options\": These are optional settings, in this example, the language for raw data is defined as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Promotion",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"promotionId\":\"promotionId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Audio - Create - For Promotion\" and it's used to create a new promotional audio media.\n\n1. **Auth** \n   - This endpoint requires Bearer Token authentication. The key for the token is \"token\" and you should replace \"BearerToken\" with your actual bearer token.\n\n2. **Request Method**\n   - The HTTP method for this endpoint is POST. \n\n3. **URL**\n   - The URL for the API is \"http://localhost:3000/api/media/audio/create\". \n\n4. **Headers**\n   - This endpoint doesn't require any additional headers, the header field in this request is currently disabled.\n\n5. **Body**\n   - The Body of the request is in raw JSON format where a number of parameters are set.\n     - \"sessionId\": It indicates the session Id.\n     - \"accountId\": Indicates the user's account Id.\n     - \"promotionId\": It signifies the promotion Id for which the media is created.\n     - \"name\": Provide the name of the media.\n     - \"description\": A brief description about the media\n     - \"tags\": You can tag the media for easy categorization. (for example: \"second\", \"media\")\n     - \"contentType\": The type of the content to be posted. Here it's \"application/mp3\", which indicates an MP3 audio file.\n     - \"contentLength\": Specifies the size or length of the content. It's currently set to 0.\n     - \"targetKey\": The field to store the content's URL. Here it's \"profilePhotoUrl\".\n     - \"compressUsing\": The algorithm used to compress the data. It's set to \"Base64\" in this case.\n     - \"isCompressed\": A boolean field indicating whether the content is compressed or not.\n     - \"isPrivate\": A boolean field indicating if the media is private or not.\n     - \"data\": The actual data of the media to be created.\n\n6. **Options**\n   - The raw request body contains JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Create - For Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"rewardId\":\"rewardId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Audio - Create - For Reward\". It consists of several components such as authentication, request method, URL, headers, and body.\n\n1. Authentication: The authentication type is bearer, utilizing a token with the key \"token\" and its value placeholder as \"BearerToken\". The data type of the bearer token is a string. This token will likely need to be replaced with a valid bearer token for actual use.\n\n2. Request method: The request method for this endpoint is POST. POST is typically used to send data to a server to create/update a resource.\n\n3. URL: The URL where this request is being sent is \"http://localhost:3000/api/media/audio/create\". It likely represents a local development server's address for the audio creation operation.\n\n4. Headers: The headers field is set to \"default\" type and is disabled. It has blank key and value fields, indicating no additional information is being sent in the header.\n\n5. Body: The request body is in raw format, with the language being JSON. The properties in the JSON object are:\n   - \"sessionId\": Represents the ID of the session.\n   - \"accountId\": Denotes the account's unique Id.\n   - \"rewardId\": Signifies the unique Id of the reward.\n   - \"name\": Name of the media file.\n   - \"description\": Description about the media file.\n   - \"tags\": Tags associated with the media file.\n   - \"contentType\": The type of the content, in this case, it's an \"application/mp3\", indicating it's an MP3 audio file.\n   - \"contentLength\": The length of the content, currently set to 0.\n   - \"targetKey\": A key to target, currently set to \"profilePhotoUrl\".\n   - \"compressUsing\": The method used to compress the file, currently set to \"Base64\".\n   - \"isCompressed\": A boolean indicating whether the file is compressed or not.\n   - \"isPrivate\": A boolean indicating whether the file is private or not.\n   - \"data\": Placeholder for the actual data of the file."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Media - Audio - Update\", is designed to update specific audio media details on the server. Here's a breakdown of each data associated:\n\n- `name`: The name of this endpoint. \"Media - Audio - Update\" indicates the endpoint is for updating audio media.\n\n- `request`: This field encapsulates all the details about the request being sent to the server.\n\n  - `auth`: Specifies the authentication method used for this endpoint. In this case, it uses the Bearer token authentication. \n    - `type`: Type of the authentication used. The value \"bearer\" represents bearer token authorization.\n    - `bearer`: An array of objects(consisting of key-value pairs) for the bearer token.\n      - `key`: Here it's 'token' which represents the key required for token authentication.\n      - `value`: This field will be replaced with the actual bearer token when making the request.\n\n  - `method`: The HTTP verb, \"PUT\", that indicates this endpoint is to update existing data on the server.\n\n  - `url`: The URL to which the request will be sent. In this case, it's an API running on your local machine at port 3000.\n\n  - `headers`: Headers sent with the request. Here only one header, `Client-UUID`, is sent and will contain the client's unique identification number.\n\n  - `body`: Includes the data you send to the server. Its mode is 'raw'.\n\n    - `mode`: Represents the format of the data being sent. Here, raw format is used.\n    - `raw`: This field contains JSON data, which includes all of the audio media details that you want to update. Let's describe each value:\n\n      - `audioId`: The identifier of the audio file you want to modify.\n      - `sessionId`: Current user's session identifier.\n      - `accountId`: Current user's account identifier.\n      - `name`: The new name for the audio file.\n      - `description`: The new description for the audio file.\n      - `tags`: The new tags separated by commas for the audio file.\n      - `contentType`: The format of the audio file. In this case, it's an mp3 file.\n      - `contentLength`: The size of the audio file. Here, it's set to 0.\n      - `targetKey`: The object key in the database where the media will be stored, here it represents the profile photo url.\n      - `compressUsing`: The method used to compress the audio file, here it's Base64.\n      - `isCompressed`: A boolean value representing whether the audio file is compressed or not.\n      - `isPrivate`: A boolean value identifying whether the audio file is private (true) or public (false).\n      - `data`: This field will contain the actual audio data.\n\n    - `options`: It offers settings for 'raw' mode and specifies language as JSON, which indicates 'raw' data should be treated as JSON.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Video",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named `Media - Audio - Update - For Video`. It is used to update audio media associated with a video. The request to this endpoint uses the `PUT` method. The authentication method used is `Bearer Token`. \n\n1. `auth`: This property is for authentication. It requires a bearer token to authenticate the request.\n\n   - `type`: This indicates the type of authentication, which in this case is 'bearer'.\n   - `bearer`: This object contains the token used for authentication. Replace `BearerToken` with your valid bearer token.\n   \n2. `method`: This is the HTTP method used for the request, in this case `PUT`.\n\n3. `url`: This is the URL of the endpoint to which the request is made. More specifically, this is the address of the API on your localhost server at port 3000 to update media audio.\n\n4. `headers`: This contains custom headers to be included in the network request. \n\n   - `Client-UUID`: This field is used for client tracking and should be replaced with your actual Client UUID.\n   \n5. `body`: This contains the data to be sent in the HTTP request body. \n\n   - `mode`: This indicates the formatting of the data, which in this case is raw.\n   - `raw`: This contains the raw data in JSON format.\n     - `audioId`: The ID is a unique identifier for the audio file.\n     - `sessionId`: The ID of the session.\n     - `accountId`: The ID associated with the account.\n     - `videoId`: The ID associated with the video.\n     - `name`: The name of the media.\n     - `description`: Description of the media.\n     - `tags`: Relevant tags associated with the media.\n     - `contentType`: The type of content being uploaded (application/mp3 for audio files).\n     - `contentLength`: The size of the content in bytes.\n     - `targetKey`: The key used to identify the destination for this data.\n     - `compressUsing`: The method used for compression, in this case 'Base64'.\n     - `isCompressed`: A boolean indicating whether the data has been compressed.\n     - `isPrivate`: A boolean indicating the privacy status of the Media.\n     - `data`: The actual media data represented as a string.\n   - `options`: These are the additional options for raw data.\n     - `language`: This specifies that the language of the raw data is JSON.\n\nPlease replace variables like `BearerToken`, `ClientUUID`, `audioId` etc with your actual values while sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Channel",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "The endpoint `Media - Audio - Update - For Channel` is used to update attributes and properties of an audio file associated with a specific channel. \n\n1. `Auth` field contains the `bearer` type authentication with `token` field providing the bearer token for authenticating the request. The token needs to be a string. \n\n2. `Request method`: It's a PUT method which means this endpoint is used to update existing resources.\n\n3. `url`: The URL for the API endpoint is `http://localhost:3000/api/media/audio/update`, this is where the request is sent.\n\n4. `headers`: This section contains the `Client-UUID` which is a globally unique identifier for the client.\n\n5. `body`: This section contains all the input data. \n   - The mode is `raw`, meaning that raw data should be input as string. \n   - This input should include:\n         - `audioId`: Identifier for the audio file.\n         - `sessionId`: Session identifier.\n         - `accountId`: Identifier for the account.\n         - `channelId`: Identifier for the channel.\n         - `name`: The name for this audio media.\n         - `description`: A short description about the media.\n         - `tags`: Keywords associated with this media, separated by commas.\n         - `contentType`: Indicates the media type, here it is application/mp3.\n         - `contentLength`: The length of the audio file. Here it is set to 0 which could be a placeholder value.\n         - `targetKey`: The target key for specifying where exactly the media relation lies. For example: `profilePhotoUrl`.\n         - `compressUsing`: The technique used to compress the file. In this case it is `Base64`.\n         - `isCompressed`: A boolean value indicating whether the file is compressed or not.\n         - `isPrivate`: If set to true, the media will not be publicly accessible.\n         - `data`: The actual audio file data.\n\n   - The options field, indicates that the language being used is `json`.\n\nThis endpoint updates existing audio associated with given channel and client details based on the given body parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"streamId\":\"streamId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "The \"Media - Audio - Update - For Stream\" endpoint provides functionality to update audio media for a stream. It must be sent as a PUT request.\n\n**Auth:**\nThe endpoint requires bearer token authentication. This is specified by the \"token\" key and it's value should be your BearerToken.\n\n**URL:**\nThe URL for this endpoint is http://localhost:3000/api/media/audio/update\n\n**Headers:**\nThe request requires a header of the key \"Client-UUID\". The value should be the unique identifier associated with the client making the request.\n\n**Body:**\nThe request body should be in raw format, containing JSON. Inside this JSON, several keys are required to update the media content:\n\n*   \"audioId\": This should hold the ID of the audio clip you wish to update.\n*   \"sessionId\": The session ID that the audio clip belongs to.\n*   \"accountId\": The account ID that owns the media file.\n*   \"streamId\": The stream's unique identifier that the media belongs to.\n*   \"channelId\": The channel's unique identifier where the stream is present.\n*   \"name\": The new name for your audio media file.\n*   \"description\": A brief description of your audio media file.\n*   \"tags\": A list of tags associated with the media, for easy searching and categorizing purpose.\n*   \"contentType\": The media content type, in this case, should be \"application/mp3\".\n*   \"contentLength\": The size of the media file in bytes.\n*   \"targetKey\": The key where the media content is saved, for instance, \"profilePhotoUrl\".\n*   \"compressUsing\": The compression method used. In this example, it's \"Base64\".\n*   \"isCompressed\": A boolean value indicating whether the file is compressed or not.\n*   \"isPrivate\": A boolean value indicating if the media is private or for public viewing.\n*   \"data\": The actual media content in the form of a string.\n\nThe raw body should be sent in \"json\" language, as indicated in the options field."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "This endpoint is called \"Media - Audio - Update - For Team\". It is designed to update audio media for a specific team. The endpoint uses the `PUT` HTTP method, suggesting that it is used to update an existing resource on the server. \n\nIt uses Bearer token authorization, so you'll need to replace `BearerToken` with your actual token. This is specified under the `auth` section of the request.\n\nThe endpoint's URL is `http://localhost:3000/api/media/audio/update`. This is where your request will be sent.\n\nIn the request headers, there is a `Client-UUID`, where you'll need to replace `ClientUUID` with your actual client's UUID. This is necessary to identify the client making the request.\n\nThe payload of the request (or the 'body') is in raw JSON format. Here are the properties it accepts:\n\n- `audioId`: A unique identifier for the audio media that you are updating.\n- `sessionId`: Your current session's identifier.\n- `accountId`: The account that owns the audio media.\n- `teamId`: The team that the audio media is associated with.\n- `name`: The new name of your audio media.\n- `description`: A brief explanation of the audio media.\n- `tags`: Keywords related to the audio media, separated by commas.\n- `contentType`: The media type of your audio. In this case, it's `application/mp3`.\n- `contentLength`: The length of the content, in bytes. At this case, it's 0 but you need to update it based on your audio file size.\n- `targetKey`: In this case, it's `profilePhotoUrl`, suggesting this audio media is meant for profile photos.\n- `compressUsing`: The method used to compress the audio media. This example uses the `Base64` method.\n- `isCompressed`: A boolean that determines whether the sender has compressed the audio media.\n- `isPrivate`: A boolean that sets whether the audio media is available publicly or only to a select group.\n- `data`: This field should contain the actual audio data, bytes, url or base64 encoded depending on the system used.\n\nReplace each field value with your actual data. Make sure your payload follows this format to successfully update your audio media."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"profileId\":\"accountId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Audio - Update - For Profile\". It's a PUT request used to update audio media for a given profile. \n\n1. **Auth**: This request utilizes bearer token authorization. The token should be provided in the 'BearerToken' placeholder. It's a string type value.\n\n2. **Method**: As mentioned, the request method is PUT indicating it's for updating existing resources.\n\n3. **URL**: The endpoint for this API is \"http://localhost:3000/api/media/audio/update\". Note, the localhost domain is used here as placeholder, replace it according to your application domain.\n\n4. **Headers**: The header uses a default type 'Client-UUID'. The value 'ClientUUID' is a placeholder and needs to be replaced with the real Client UUID.\n\n5. **Body**: The body of the request is in raw JSON format. It contains fields such as 'audioId', 'sessionId', 'accountId', 'profileId', 'name', 'description', 'tags', 'contentType', 'contentLength', 'targetKey', 'compressUsing', 'isCompressed', 'isPrivate', and 'data'. Detailed descriptions of these fields are as follows: \n   - **audioId**: The unique ID of audio which you want to update.\n   - **sessionId**: The session ID of the current user.\n   - **accountId**: The account ID of the user.\n   - **profileId**: The profile ID of the user.\n   - **name**: The new name/title of media (in this case, audio).\n   - **description**: A brief description of the media.\n   - **tags**: Any tags associated with the media. Tags are separated by commas.\n\n   media file/data related fields:\n   - **contentType**: The type of content you're trying to upload, in this case, it's specified as 'application/mp3' indicating that the media is a mp3 file.\n   - **contentLength**: The length of the content. This is provided as '0' which is a placeholder, replace it with the actual length.\n   - **targetKey**: The target key where this data needs to be saved, here it is 'profilePhotoUrl'.\n   - **compressUsing**: The compression method used. The current value is 'Base64'.\n   - **isCompress**: A boolean value that indicates whether the content is compressed or not.\n   - **isPrivate**: A boolean value that shows if the media is private or public.\n   - **data**: The actual binary data of the mp3 audio file.\n\n6. **Options**: The body option suggests that the language used is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Tournament",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tournamentId\":\"tournamentId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Audio - Update - For Tournament\". It's a PUT request used for updating audio media related to a specific tournament. Here are the details of each data provided in this endpoint:\n\n1. `auth`: This contains the authentication information which is using the bearer authentication scheme, having the key as 'token' which indicates where to place the actual token, and its value 'BearerToken' needs to be replaced by the actual bearer token for the user.\n\n2. `method`: This denotes the HTTP method used for the request. Here, PUT method indicates that this is an update operation.\n\n3. `url`: This is the API endpoint where the request will be sent, running on localhost port 3000.\n\n4. `headers`: This contains the key-value pairs to be sent in the header of the request. It has a single header 'Client-UUID' to be replaced with Client's UUID.\n\n5. `body`: This section includes the actual content of the message which is sent to the server.\n    - `mode`: It is set to 'raw', specifying that the body content is in the raw format.\n    - `raw`: It expects a JSON object with the following keys:\n        - `audioId`, `sessionId`, `accountId`, and `tournamentId` are identifiers and should be replaced with the relevant IDs.\n        - `name` and `description` hold the name and description details of the audio media respectively.\n        - `tags` are labels attached to the audio media file.\n        - `contentType` is the type of media being sent, in this case 'application/mp3'.\n        - `contentLength` holds the size of the content. It is currently set to zero meaning it would be set dynamically.\n        - `targetKey` field represents the attribute the media should be attached to, here 'profilePhotoUrl'.\n        - `compressUsing` and `isCompressed` together indicate the media has been compressed using Base64 encoding.\n        - `isPrivate` is a boolean which indicates whether the media file is private (true) or public (false).\n        - `data` holds the actual media content in this case, it's placeholder data and should be replaced with actual file data.\n    - `options`: This indicates the language of the content to be parsed, which is JSON in this case."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Advertisement",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"advertisementId\":\"advertisementId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "1. **name:** This field indicates the name of the endpoint. In this case, the endpoint name is \"Media - Audio - Update - For Advertisement\", which typically means this endpoint is used to update media audio for advertisements.\n\n2. **request:** This field contains details about the the HTTP request that will be sent.\n\n3. **auth:** This part contains the authentication type and the details necessary for the authentication. Here, we are using Bearer token authentication. The \"key\" is the \"token\" and the \"value\" is the \"BearerToken\". This means an authentication header is sent in each HTTP request with a bearer token as its value. \n\n4. **method:** This field indicates the HTTP method used for the API call. In this case, the method is PUT, which is typically used to update an existing resource.\n\n5. **url:** This is the API's endpoint URL. Here, the URL is \"http://localhost:3000/api/media/audio/update\". This endpoint is presumably where the media audio resources are being updated.\n\n6. **headers:** This is where custom HTTP headers are added. In this case, a \"Client-UUID\" header is being added with the value \"ClientUUID\". This header might be used to identify unique clients.\n\n7. **body:** This contains the data that is sent up along with the API request.  \n  - **mode:** The mode for this API call is \"raw\" meaning the request body contains raw data.  \n  - **raw:** This contains the raw data in JSON format that will be sent along with the API call. It consists of the audioId, sessionId, accountId, name, description, tags, contentType, contentLength, targetKey, compressUsing, isCompressed, isPrivate, and data. These are presumably various details about the media to be updated.  \n  - **options:** This field relates to any additional options for the body of the API. For this API, the raw data language is specified as json.\n\nRemember to replace the fields such as \"BearerToken\", \"audioId\", \"sessionId\", etc., with actual values before making the API call."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Loyalty",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"loyaltyId\":\"loyaltyId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "This is an API endpoint for updating audio media for a loyalty program. The request type is PUT and the URL is http://localhost:3000/api/media/audio/update.\n\nIt uses bearer token authentication, which is stipulated by the \"type\" field under \"auth\". \"bearer\" contains the security token needed for gaining access to the API resource.\n\nThe token is specified by the \"key\" field with value \"token\". The \"value\" field contains the actual bearer token and the \"type\" field indicates that this token is a string.\n\nIn the headers, there's a \"Client-UUID\" key that uniquely identifies the client making this request. It is set a default type header.\n\nThe \"request\" object includes information about the audio media being updated. This is sent in the form of a raw JSON body. \n\nThe \"audioId\", \"sessionId\", \"accountId\", and \"loyaltyId\" are unique identifiers for the audio, session, account, and loyalty respectively.\n  \n\"name\" and \"description\" give a name and description of the media.\n\n\"tags\" are additional metadata keywords associated with the media.\n\n\"contentType\" indicates the media type of the audio, which in this case is an mp3 format.\n\n\"contentLength\" details the length of the audio in bytes.\n\n\"targetKey\" denotes the reference name used to identify and access the media.\n\n\"compressUsing\" sets the compression method for the audio data, which here is Base64.\n\n\"isCompressed\" indicates whether the audio data is compressed. Here it is set to true.\n\n\"isPrivate\" sets whether the media is private. If set to false, the media is accessible to all.\n\n\"data\" field holds the actual binary or base64 encoded audio data. The actual data is not included in the example request.\n  \nThe \"options\" object holds additional settings that influence the behavior of the request. Here, the \"language\" parameter is used to specify that the body content should be treated as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Promotion",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"promotionId\":\"promotionId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Audio - Update - For Promotion\". It is used to update promotional audio files in the media. It uses a PUT method which is typically used when you want to modify a singular resource which is already a part of resources collection.\n\nAuthentication for the endpoint is of type 'bearer'. This means a bearer token is used for authorization. In the field named 'token', replace the 'BearerToken' with your actual bearer token.\n\nThe URL for this endpoint is \"http://localhost:3000/api/media/audio/update\". It points to your local server at port 3000 specifically updating media audio.\n\nHeader includes a 'Client-UUID'. This is the unique identifier for the client making the request. Replace 'ClientUUID' with actual client UUID.\n\nIn the body, content is expected in 'raw' format with a language of 'json'. \n\nThe body includes fields: \n1. \"audioId\": Identifier of the audio file to update.\n2. \"sessionId\": Your session ID.\n3. \"accountId\": Your account ID.\n4. \"promotionId\": Identifier of the promotion related to the audio file.\n5. \"name\": The new name of your audio file.\n6. \"description\": New description for the audio file.\n7. \"tags\": Text labels associated with the audio file for easier discovery.\n8. \"contentType\": It should be 'application/mp3' for audio files.\n9. \"contentLength\": Size of the audio file in bytes.\n10. \"targetKey\": Keyword to target the audio file.\n11. \"compressUsing\": Compression format used, here it's 'Base64'.\n12. \"isCompressed\": A boolean field which states if the file is compressed or not, here it is set to true.\n13. \"isPrivate\": A boolean field which indicates if the file is private or not, here it is set as not private (false).\n14. \"data\": Contains the actual content of the file.\n\nRemember to replace the placeholders in the 'raw' field with your actual parameters in curly braces."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Update - For Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"audioId\":\"audioId\",\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"rewardId\":\"rewardId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/mp3\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "update"
+          ]
+        },
+        "description": "The given endpoint \"Media - Audio - Update - For Reward\" is designed to update audio media and associate it with a reward in the system. The endpoint interacts with the media audio update service and operates through a PUT method.\n\n- `\"name\"`: This is the name of the endpoint, and it provides a brief description of the endpoint's function.\n\n- `\"request\"`: This specifies the permissible HTTP method, in our case, it's PUT. It is used to update existing information.\n\nIn the request object, we have:\n\n- `\"auth\"`: This authenticates the user making the request. It uses bearer token authorization. The `\"bearer\"` array implements this authentication method, where `\"token\"` is the label for the token value, `\"BearerToken\"`, which is a placeholder for your actual token.\n\n- `\"url\"`: This is the URL where the request will be sent. \n\n- `\"headers\"`: This contains additional parameters that are needed by the API to process the request. Here `Client-UUID` is used as a unique identifier to identify the client sending the request.\n\nThe request `\"body\"` contains the data to be updated:\n\n- `\"raw\"`: This contains all the data passed for the update function in JSON format. Key-value pairs inside the JSON object include:\n\n  - `\"audioId\"`: The unique identifier associated with the audio that needs to be updated.\n  - `\"sessionId\"`: Identifies user session.\n  - `\"accountId\"`: Account identity to which the audio belongs.\n  - `\"rewardId\"`: Reward identity with which the audio needs to be associated.\n  - `\"name\"`: New name for the audio.\n  - `\"description\"`: New textual description about the audio.\n  - `\"tags\"`: Keywords associated with the audio for categorization or identification.\n  - `\"contentType\"`: The format of the audio file (i.e., application/mp3).\n  - `\"contentLength\"`: The size of the audio file.\n  - `\"targetKey\"`: The attribute in the database where the audio URL is stored (i.e., profilePhotoUrl).\n  - `\"compressUsing\"`: The algorithm used for compression (i.e., Base64).\n  - `\"isCompressed\"`: Boolean variable indicating compression status.\n  - `\"isPrivate\"`: Boolean variable indicating whether the updated media is private or public.\n  - `\"data\"`: The raw audio data.\n\n- `\"options\"`: Additional communication options. Used here to specify the language of the raw data in the body (Json in this case)."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/get/?audioId=audioId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "audioId",
+              "value": "audioId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is called \"Media - Audio - Get\" and is used to retrieve audio files from a media server. \n\nThe authentication method is a \"Bearer token\". The token key and value should be filled out in the `auth` field. \n\nThe request method is \"GET\". The server communicates via this verb to retrieve data.\n\nThe URL indicates where the server is located. In this instance, the server is on `localhost` port `3000` and the API route is `/api/media/audio/get/`. \n\nThere are 3 parameters in the URL: `audioId`, `sessionId`, and `accountId`. The `audioId` helps identify the specific audio media to be fetched. The `sessionId` helps in maintaining the state between different API requests. The `accountId` helps in identifying the user associated with the media. Replace these placeholders with actual values before firing the API request.\n\nThe `headers` field contains potential headers that can be sent along with the URL; however, in this case, it is empty and disabled, meaning no additional data is intended to be sent in the request header. \n\nThe `body` field contains the format and content of the body data sent with the request. The mode is `raw` which means the data is sent in the textual format in the body. But in this case, there's no data in `raw` field meaning no data is expected to be sent in the body of the API request. \n\nIn summary, this endpoint is a GET request for fetching audio media, authenticated with a Bearer token, and the request is sent with specific `audioId`, `sessionId` and `accountId` embedded in the URL. No additional headers or body framework is required."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Get - Download Media",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/get/?audioId=audioId&sessionId=sessionId&accountId=accountId&download=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "audioId",
+              "value": "audioId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "download",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This endpoint documentation is for a service named \"Media - Audio - Get - Download Media\". Here are the detailed descriptions for each piece of data in this endpoint.\n\n1. \"name\": This field indicates the name of the API endpoint. In this case, the endpoint is named \"Media - Audio - Get - Download Media\".\n\n2. \"request\": This object contains all necessary information and properties to perform the actual API request. \n\n3. \"auth\": This object contains the authentication information needed to access the endpoint. \n   \n   - \"type\": The type of authentication required by the endpoint. In this case, it's a \"bearer\" authentication.\n   \n   - \"bearer\": This is an array, containing an object that holds the key-value information about the authentication token.\n     \n     - \"key\": This is the name of the authentication token, in this case, it's \"token\".\n    \n     - \"value\": This is the value of the authentication token, 'BearerToken' is a placeholder for the actual token used.\n       \n     - \"type\": This specifies the data type of the token value. It's a \"string\" type in this scenario.\n\n4. \"method\": This is the HTTP method type for making the request to the API endpoint. In this case, the request type is \"GET\".\n\n5. \"url\": This is the actual API endpoint URL to which the request is made. Here, \"http://localhost:3000/api/media/audio/get/?audioId=audioId&sessionId=sessionId&accountId=accountId&download=1\" is the endpoint URL.\n\n   - The parameters ('audioId', 'sessionId', 'accountId', 'download') in the URL are placeholders for actual values that will be passed in the actual request. \n\n6. \"headers\": This is an array of any header key-value pairs that need to be passed in with the request. In this case, no headers are included as the \"disabled\" field is set to true.\n\n7. \"body\": The request body is included here. In this case, the request does not contain any body. \n\n   - \"mode\": Specifies the mode of the body, in this case, it's 'raw' indicating a raw input of request data. \n\n   - \"raw\": The actual raw data to be sent in the body of the request. It's empty in this scenario as no body is being sent."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Get - For Public",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/get/?audioId=audioId&public=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "audioId",
+              "value": "audioId"
+            },
+            {
+              "key": "public",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Media - Audio - Get - For Public\". It is a GET request used to fetch audio data for the public based on the provided audio ID.\n\n1. **Authentication:** The endpoint uses Bearer authentication. A token (\"BearerToken\") should be provided in order to authenticate the request. The token should be a string type. \n\n2. **Method:** GET: This method is used when you are trying to get data from a specified resource. \n\n3. **URL:** The URL where the request is sent is \"http://localhost:3000/api/media/audio/get/\". Two URL parameters are required, 'audioId' and 'public'. \n   - 'audioId' represents the unique identifier for each audio and should be replaced with the actual audio id.\n   - 'public' is a flag to denote whether the audio is available for the public. If it's set to 1, it means the audio is available for the public.\n\n4. **Headers:** Although a key-value pair for headers is provided, it is currently empty and is disabled, which means it will not be sent along with your request.\n\n5. **Body:** The body of the request is set to be in raw mode. However, as this is a GET request, no actual body data is sent in the request. The provided 'raw' field is empty and will be ignored."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is called \"Media - Audio - Get All\" and it falls under the GET method. This endpoint's purpose is to fetch all data related to an audio media in the database by querying with specific parameters.\n\nThe main elements of this endpoint are:\n\n- **Name**: This signifies the name of the API endpoint which in this context is \"Media - Audio - Get All\". It's used for pulling all audio media data.\n\n- **Request**: This object contains the details for the server request.\n\n- **Auth**: Authorization details are contained within this object and it has several components:\n    - **Type**: The type of authentication used, which is 'bearer' in this case.\n    - **Bearer**: It contains an object that has the authentication token, `BearerToken` and its type which is string.\n\n- **Method**: This attribute specifies the HTTP request method to be used when making the request to the endpoint, in this case, it's `GET`.\n\n- **URL**: This is the address to which the HTTP request is being sent. It features query parameters that can be dynamically set and used for unique identification while returning the data. The URL here is `http://localhost:3000/api/media/audio/all/?sessionId=sessionId&accountId=accountId`. This endpoint should return all audio files for the provided `sessionId` and `accountId`.\n\n- **Headers**: They are used to send additional information along with the request. No specific `key-value` pair has been provided here. They are disabled in this case.\n\n- **Body**: This attributes hold any extra data that needs to be sent to the server. In this case, it is empty (`raw: \"\"`) because GET request doesn’t use the body to send data to the server.\n\nRemember to replace `\"BearerToken\"`, `\"sessionId\"` and `\"accountId\"` with actual values while testing or running this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Audio - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"audioId\":\"audioId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/audio/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "audio",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is titled \"Media - Audio - Delete\". It features a request method of \"POST\", which implies this endpoint is used for deleting a specified audio media from the web server.\n\nThe authentication required for this endpoint is of type \"bearer\". This entails providing a token in the bearer field with the key \"token\" that's linked with your \"sessionId\". This is a string type field and represents the session ID of the user making the request.\n\nThe URL, \"http://localhost:3000/api/media/audio/delete\", is where the request is sent. This path signifies that the endpoint is intended for deleting audio media.\n\nIn the headers section, a default type header is mentioned. Its key-value pairs are undefined and this header is disabled indicating it may not be necessary for the request.\n\nThe main data that is required while making the request is embedded in the raw body of the request payload. It takes the \"raw\" form and needs to be sent as a JSON string.\n\nThe raw body needs to include three properties: \"sessionId\", \"accountId\", \"audioId\". The \"sessionId\" is a repeat of the session ID that is assigned during logging in. This identifies the client's session.\n\nThe \"accountId\" property is also a string and represents the user's account ID. It is necessary to ensure that the operation is performed for the correct user's account. \n\nLast but not least, the \"audioId\" is another string property in the raw payload. This should correlate to the specific ID of the audio media file that you want to be deleted. The system uses this to know the exact audio file to remove in the database or storage.\n\nRemember to appropriately replace the \"sessionId\", \"accountId\", and \"audioId\" placeholders with actual values when you intend to execute the request."
+      },
+      "response": []
+    }
+  ]
+}

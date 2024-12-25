@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "1fdbc554-e167-4bb8-99ff-d52dbf22e34e",
+    "name": "ActionSearch",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Search - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didSearch\": true,\n    \"query\": \"example search\",\n    \"queryId\": \"dhasikdhjk23sd\",\n    \"filter\": \"spam\",\n    \"filterId\": \"jdaslk2\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/search/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "search",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Action - Search - Create\n\n#### Request Method\n- **Method**: POST  \n  This endpoint uses the POST HTTP method to create a new search action.\n\n#### URL\n- **URL**: `http://localhost:3000/api/action/search/create`  \n  This is the local address where the API endpoint can be accessed for creating a search action.\n\n#### Authentication\n- **Auth Type**: Bearer  \n  This endpoint requires bearer token authentication.\n  - **Token**:  \n    - **Key**: `token`  \n      The key used to identify the token in the header.\n    - **Value**: `BearerToken`  \n      Placeholder for the actual bearer token that grants access to the API.\n\n#### Headers\n- **Headers**:  \n  Contains key-value pairs sent with the request.  \n  - **Key**: *Not specified*  \n    - No specific headers are required for this request. This entry is disabled.\n\n#### Request Body\n- **Body Mode**: Raw  \n  The request body is sent in raw JSON format.\n\n- **JSON Structure**:  \n  The following fields are included in the JSON body:\n\n  1. **sessionId**:  \n     - Type: String  \n     A unique identifier for the current session.\n\n  2. **accountId**:  \n     - Type: String  \n     The identifier for the user's account.\n\n  3. **path**:  \n     - Type: String  \n     The path where the action is taking place, e.g., the URL of a video.\n\n  4. **targetType**:  \n     - Type: String  \n     Specifies the type of target for the action, e.g., 'videoId'.\n\n  5. **targetId**:  \n     - Type: String  \n     The identifier of the target, e.g., a specific video ID.\n\n  6. **sourceType**:  \n     - Type: String  \n     Specifies the type of source from where the action is derived.\n\n  7. **sourceId**:  \n     - Type: String  \n     The identifier of the source, e.g., the account ID.\n\n  8. **didSearch**:  \n     - Type: Boolean  \n     Indicates whether a search action was performed (true/false).\n\n  9. **query**:  \n     - Type: String  \n     The search query entered by the user, e.g., \"example search\".\n\n  10. **queryId**:  \n      - Type: String  \n      A unique identifier for the specific search query, e.g., 'dhasikdhjk23sd'.\n\n  11. **filter**:  \n      - Type: String  \n      Indicates the type of filter applied to the search results, e.g., 'spam'.\n\n  12. **filterId**:  \n      - Type: String  \n      A unique identifier for the specific filter applied, e.g., 'jdaslk2'.\n\n  13. **name**:  \n      - Type: String  \n      Optional name for the search action.\n\n  14. **description**:  \n      - Type: String  \n      Optional description providing more details about the search action.\n\n  15. **tags**:  \n      - Type: String  \n      Optional tags associated with the search action for easier categorization.\n\n#### Summary\nThis endpoint allows the creation of a search action by providing necessary identifiers, search parameters, and optional metadata to accurately describe the action being taken. Use this whenever a new search is initiated in your application."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Search - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didSearch\": true,\n    \"query\": \"example search updated\",\n    \"queryId\": \"dhasikdhjk23sd\",\n    \"filter\": \"spam\",\n    \"filterId\": \"jdaslk2\",\n    \"searchId\": \"searchId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/search/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "search",
+            "update"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: This is the title of the API request, indicating that this action will search and update relevant data.\n\n- **request**: This field contains all the details necessary to perform the request.\n\n  - **auth**: Specifies the authentication method used for this request.\n  \n    - **type**: Indicates the type of authentication. Here it is set to \"bearer\", which means a token will be used for access.\n    \n    - **bearer**: This holds the actual token needed for authentication.\n    \n      - **key**: This is the identifier for the token, labeled as \"token\".\n      \n      - **value**: This represents the actual bearer token required for authentication, labeled as \"BearerToken\".\n      \n      - **type**: Describes the data type of the token, which is set to \"string\".\n\n  - **method**: This indicates the HTTP method used for the request. In this case, it is a \"PUT\" method, typically used for updating existing resources.\n\n  - **url**: This is the endpoint where the request is sent. Here it is set to \"http://localhost:3000/api/action/search/update\", which suggests that the action is performed on a local server.\n\n  - **headers**: This is an array that contains header information sent along with the request.\n  \n    - **key**: Identifies the header. In this case, it is \"Client-UUID\".\n    \n    - **value**: This is the unique identifier for the client, labeled as \"ClientUUID\".\n    \n    - **type**: Indicates the type of the header, which is set to \"default\".\n\n  - **body**: This section holds the payload that will be sent with the request.\n  \n    - **mode**: Defines how the body is structured. It is set to \"raw\", meaning the data will be sent as-is, without any transformations.\n    \n    - **raw**: This contains the actual data being sent, represented in JSON format:\n    \n      - **sessionId**: This is a unique identifier for the session related to the action.\n  \n      - **accountId**: This represents the ID of the account associated with the action.\n  \n      - **path**: This is the specific resource path being accessed or modified, such as a video or channel (e.g., \"/live/channel/video123\").\n  \n      - **targetType**: Describes the type of target being updated or searched, in this case, it is specified as \"videoId\".\n  \n      - **targetId**: This is the ID of the target resource being manipulated or queried.\n  \n      - **sourceType**: Indicates the type of source for the search or update, here identified as \"accountId\".\n  \n      - **sourceId**: This is the ID of the source account associated with the action.\n  \n      - **didSearch**: A boolean value indicating whether a search action was performed.\n  \n      - **query**: This represents the search query that is being updated, for example, \"example search updated\".\n  \n      - **queryId**: A unique identifier for the search query.\n  \n      - **filter**: This specifies any filters applied to the search action, such as \"spam\".\n  \n      - **filterId**: A unique identifier for the filter being applied.\n  \n      - **searchId**: This is the identifier for the search operation.\n  \n      - **name**: This field is meant for the name associated with the action, currently left empty.\n  \n      - **description**: This allows for the addition of a description related to the action, currently left empty.\n  \n      - **tags**: This is for adding any relevant tags associated with the action, currently left empty.\n  \n    - **options**: This allows for additional settings for the body.\n    \n      - **raw**: This holds settings specific to raw body data.\n      \n        - **language**: Indicates the format of the raw data, which is set to \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Search - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/search/get/?searchId=searchId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "search",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "searchId",
+              "value": "searchId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Search - Get\n\n#### Authentication\n- **Type**: Bearer\n  - This request requires bearer token authentication. A valid token must be included in the request headers to access the API.\n  - **Key**: `token`\n    - Represents the authorization token needed for authentication.\n  - **Value**: `BearerToken`\n    - A placeholder for the actual bearer token that should be substituted before making the request.\n  - **Type**: String\n    - The token must be a string value.\n\n#### Request Details\n- **Method**: GET\n  - This endpoint uses the GET method, which is typically used to retrieve data from a specified resource.\n\n- **URL**: `http://localhost:3000/api/action/search/get/?searchId=searchId&sessionId=sessionId&accountId=accountId`\n  - This is the endpoint's address. It is structured to include query parameters for specifics.\n  - **Query Parameters**:\n    - **searchId**: A parameter used to specify the identifier for the search action. This should be replaced with the actual search ID.\n    - **sessionId**: A session identifier that may be used to track the user's session. Replace this with the actual session ID.\n    - **accountId**: Identifies the account associated with the search. This needs to be replaced with the actual account ID.\n\n#### Headers\n- An empty header is included by default:\n  - **Key**: `\"\"`\n    - Currently, there is no header key specified.\n  - **Value**: `\"\"`\n    - Currently, there is no header value specified.\n  - **Disabled**: true\n    - This header is not active; it will not be sent with the request.\n\n#### Body\n- **Mode**: Raw\n  - Indicates the format of the body content, which in this case, is set to raw text.\n- **Raw**: `\"\"`\n  - The body is currently empty, meaning no additional data is being sent with the request. No content is required for a GET request.\n\nMake sure to provide actual values for the placeholder fields (`BearerToken`, `searchId`, `sessionId`, `accountId`) when using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Search - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/search/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "search",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Action - Search - Get All\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/action/search/all/?sessionId=sessionId&accountId=accountId\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    }\n  },\n  \"details\": {\n    \"auth\": {\n      \"description\": \"Authentication information for the API request. This endpoint requires a Bearer Token for authorization.\",\n      \"token\": {\n        \"description\": \"The key used for authorization, which should be replaced with a valid token prior to making the request.\"\n      }\n    },\n    \"method\": {\n      \"description\": \"The HTTP method used for this request. In this case, it is a GET request, which is used to retrieve data.\"\n    },\n    \"url\": {\n      \"description\": \"The endpoint URL for the API request. This includes placeholders for sessionId and accountId that need to be replaced with actual values when executing the request.\",\n      \"example\": \"http://localhost:3000/api/action/search/all/?sessionId=yourSessionId&accountId=yourAccountId\"\n    },\n    \"headers\": {\n      \"description\": \"This section contains any additional headers for the request. Currently, there are no headers set, and the default header field is disabled.\"\n    },\n    \"body\": {\n      \"description\": \"The body of the request. This request does not require a body since it is a GET request. The mode is set to raw, but no content is needed.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Search - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"searchId\":\"searchId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/search/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "search",
+            "delete"
+          ]
+        },
+        "description": "### Action - Search - Delete Endpoint Description\n\n#### Request Object\n- **Auth**: This section specifies the authentication method used for the API request.\n  - **Type**: The type of authentication is \"bearer,\" which means the request will include a token that grants access to the endpoint.\n  - **Bearer**: This array contains the details of the bearer token.\n    - **Key**: The name of the field, which is \"token\" in this case.\n    - **Value**: This represents where the actual token is stored, referred to as \"sessionId.\"\n    - **Type**: Indicates the data type of the value, which is a string.\n\n- **Method**: The HTTP method for the request is \"POST.\" This means that the request is intended to send data to the server to perform an action (in this case, deleting a search).\n\n- **URL**: The endpoint URL for this request is \"http://localhost:3000/api/action/search/delete.\" This is the URL on the local server where the delete action will be performed.\n\n- **Headers**: This section includes any additional headers that may be necessary for the request.\n  - Since there are currently no headers specified (the key and value are empty), this header is disabled and will not be sent with the request.\n\n#### Request Body\n- **Mode**: The body mode is set to \"raw,\" indicating that the body content is sent as plain text rather than in a specific format like form data or URL-encoded data.\n\n- **Raw**: This is the actual data sent within the body of the request. It is a JSON string that contains:\n  - **sessionId**: A unique identifier for the user's session, used for authentication to verify the identity of the user making the request.\n  - **accountId**: This identifies the specific account associated with the action being performed. It allows the server to know which account's search is to be deleted.\n  - **searchId**: This represents the unique identifier of the specific search to be deleted. It tells the server which search record should be removed.\n\nThis endpoint is designed to allow users to delete a specific search associated with their account by providing the necessary identifiers in the request body."
+      },
+      "response": []
+    }
+  ]
+}

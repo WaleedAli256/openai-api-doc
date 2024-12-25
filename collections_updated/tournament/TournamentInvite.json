@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "TournamentInvite",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tournament - Invite - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Invite\",\"description\":\"This invite is my second invite\",\"tags\":\"second,invite\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isInvitePrivate\":true,\"isTournamentOnly\":false,\"isInviteDefault\":true,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/invite/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "invite",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Tournament - Invite - Create\n\n#### Authentication\n- **Auth Type**: Bearer Token\n  - **Token**: A string that represents the authentication token required to access this endpoint. The token should be prefixed with \"Bearer\".\n\n#### Request Method\n- **Method**: POST\n  - This indicates that the request is used to create a new tournament invite.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/tournament/invite/create`\n  - This is the endpoint where the POST request will be sent to create a tournament invite.\n\n#### Request Headers\n- **Headers**: Currently includes an empty header which is disabled, indicating that no additional headers are needed for this request.\n\n#### Request Body\n- **Body Mode**: Raw\n  - The body of the request contains a JSON object with various parameters required to create a tournament invite.\n\n##### Body Parameters:\n- **sessionId**: `sessionId`\n  - A unique identifier for the session associated with the tournament invite.\n  \n- **accountId**: `accountId`\n  - The unique identifier for the account that is sending the invite.\n\n- **name**: `\"My Second Invite\"`\n  - The name of the tournament invite being created.\n\n- **description**: `\"This invite is my second invite\"`\n  - A brief description of the invite providing additional context.\n\n- **tags**: `\"second,invite\"`\n  - Tags associated with the invite which can help in categorization or searchability.\n\n- **profilePhotoUrl**: `\"https://example.com/profile.jpg\"`\n  - URL to the profile photo that will be associated with the invite.\n\n- **coverPhotoUrl**: `\"https://example.com/cover.jpg\"`\n  - URL to the cover photo that will be displayed with the invite.\n\n- **minimumTipAmount**: `10`\n  - The minimum tip amount that can be offered with this invite.\n\n- **categoryId**: `\"category123\"`\n  - A unique identifier for the category this invite falls under.\n\n- **category**: `\"General\"`\n  - The name of the category assigned to this invite.\n\n- **subCategoryId**: `\"subCategory456\"`\n  - A unique identifier for the sub-category this invite falls under.\n\n- **subCategory**: `\"Specific\"`\n  - The name of the sub-category assigned to this invite.\n\n- **isInvitePrivate**: `true`\n  - A boolean indicating whether the invite is private. If true, it can only be seen by invited participants.\n\n- **isTournamentOnly**: `false`\n  - A boolean indicating whether the invite is only for tournament participants. If true, non-participant viewers cannot access it.\n\n- **isInviteDefault**: `true`\n  - A boolean indicating whether this is the default invite configuration. \n\n- **isPreLiveTournamentAds**: `true`\n  - A boolean that determines if advertising is enabled before the tournament goes live.\n\n- **isPostLiveTournamentAds**: `true`\n  - A boolean indicating if advertising is enabled after the tournament is finished.\n\n- **breakPreLiveVideoUrl**: `\"https://example.com/break-pre-live.mp4\"`\n  - URL to a video that will be shown during breaks before the tournament goes live.\n\n- **breakPostLiveVideoUrl**: `\"https://example.com/break-post-live.mp4\"`\n  - URL to a video that will be displayed during breaks after the tournament has ended."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Invite - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"inviteId\":\"inviteId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Invite 2.0\",\"description\":\"This invite is my second invite\",\"tags\":\"second,invite\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isInvitePrivate\":true,\"isTournamentOnly\":false,\"isInviteDefault\":true,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/invite/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "invite",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Tournament - Invite - Update\n\n**Request Type:** PUT  \n**URL:** `http://localhost:3000/api/tournament/invite/update`  \n\n#### Authentication\n- **Auth Type:** Bearer  \n  This endpoint requires bearer token authentication to ensure only authorized users can update tournament invites.\n  - **Key:** `token`  \n    The authorization token required for the request. Replace `\"BearerToken\"` with the actual bearer token.\n\n#### Headers\n- **Client-UUID**  \n  - **Key:** `Client-UUID`  \n    This header should contain a unique identifier for the client making the request. Replace `\"ClientUUID\"` with the actual UUID.\n\n#### Body\nThe body of the request should be a JSON object containing the following fields:\n\n1. **inviteId**  \n   - **Description:** Unique identifier for the invite that is being updated. Replace `\"inviteId\"` with the actual invite ID.\n\n2. **sessionId**  \n   - **Description:** Identifier for the session associated with this invite. Replace `\"sessionId\"` with the actual session ID.\n\n3. **accountId**  \n   - **Description:** Identifier for the account that the invite is associated with. Replace `\"accountId\"` with the actual account ID.\n\n4. **name**  \n   - **Description:** The title or name of the invite. Replace `\"My Second Invite 2.0\"` with the desired name.\n\n5. **description**  \n   - **Description:** A brief description of the invite. Replace `\"This invite is my second invite\"` with an appropriate description.\n\n6. **tags**  \n   - **Description:** Tags associated with the invite for categorization purposes. Replace `\"second,invite\"` with relevant tags separated by commas.\n\n7. **profilePhotoUrl**  \n   - **Description:** URL for the profile photo associated with the invite. Replace `\"https://example.com/profile.jpg\"` with the actual image URL.\n\n8. **coverPhotoUrl**  \n   - **Description:** URL for the cover photo associated with the invite. Replace `\"https://example.com/cover.jpg\"` with the actual image URL.\n\n9. **minimumTipAmount**  \n   - **Description:** Minimum tip amount required for the invite. Replace `10` with the actual minimum amount.\n\n10. **categoryId**  \n    - **Description:** Unique identifier for the category that the invite falls under. Replace `\"category123\"` with the actual category ID.\n\n11. **category**  \n    - **Description:** The main category name for the invite. Replace `\"General\"` with the category name.\n\n12. **subCategoryId**  \n    - **Description:** Unique identifier for the subcategory of the invite. Replace `\"subCategory456\"` with the actual subcategory ID.\n\n13. **subCategory**  \n    - **Description:** The subcategory name for the invite. Replace `\"Specific\"` with the appropriate subcategory name.\n\n14. **isInvitePrivate**  \n    - **Description:** Boolean value indicating if the invite is private. Set as `true` for private or `false` for public.\n\n15. **isTournamentOnly**  \n    - **Description:** Boolean value indicating if the invite is only applicable for tournaments. Set as `true` for tournament only, `false` otherwise.\n\n16. **isInviteDefault**  \n    - **Description:** Boolean value indicating if this invite is a default invite. Set as `true` for default, `false` otherwise.\n\n17. **isPreLiveTournamentAds**  \n    - **Description:** Boolean value indicating if ads should be shown before the tournament goes live. Set as `true` to enable, `false` to disable.\n\n18. **isPostLiveTournamentAds**  \n    - **Description:** Boolean value indicating if ads should be shown after the tournament has ended. Set as `true` to enable, `false` to disable.\n\n19. **breakPreLiveVideoUrl**  \n    - **Description:** URL for a video that will be shown during pre-live breaks. Replace `\"https://example.com/break-pre-live.mp4\"` with the actual video URL.\n\n20. **breakPostLiveVideoUrl**  \n    - **Description:** URL for a video that will be shown during post-live breaks. Replace `\"https://example.com/break-post-live.mp4\"` with the actual video URL.\n\nAll values in the body should be replaced with actual data relevant to the invite being updated."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Invite - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/invite/get/?inviteId=inviteId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "invite",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "inviteId",
+              "value": "inviteId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Tournament - Invite - Get\n\n**Name:** This request is named \"Tournament - Invite - Get\".\n\n**Authentication:**\n- **Type:** Bearer\n  - This endpoint requires authentication using a bearer token.\n  - **Token Details:**\n    - **Key:** token\n    - **Value:** BearerToken (This should be replaced with your actual bearer token)\n    - **Type:** string (Indicates that the token is in string format)\n\n**Request Method:** \n- **Method:** GET\n  - This is a GET request, meaning it is used to retrieve data from the server.\n\n**Request URL:** \n- **URL:** `http://localhost:3000/api/tournament/invite/get/?inviteId=inviteId&sessionId=sessionId&accountId=accountId`\n  - This is the endpoint to access. \n  - **Parameters:**\n    - **inviteId:** This parameter should be replaced with the specific ID of the tournament invite you wish to retrieve.\n    - **sessionId:** This parameter should be replaced with the ID of the session related to the tournament.\n    - **accountId:** This parameter should be replaced with the account ID of the user requesting the invite.\n\n**Headers:**\n- **Key:** None specified\n- **Value:** None specified\n- **Type:** default\n- **Disabled:** true\n  - No custom headers are needed for this request; the header section is disabled by default.\n\n**Body:**\n- **Mode:** raw\n  - This indicates the type of body content expected in the request.\n- **Raw:** (Empty)\n  - No body content is needed for this GET request, so this field is left empty.\n\nThis provides clear guidelines for using the \"Tournament - Invite - Get\" endpoint, ensuring users understand the required inputs and structure for a successful API call."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Invite - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/invite/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "invite",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Endpoint Description: Tournament - Invite - Get All**\n\n- **Name**: This refers to the name of the endpoint, which indicates that it is used to retrieve all invitation details related to tournaments.\n\n- **Request**: This section contains the information about how to structure the request for this endpoint.\n\n  - **Auth**: Specifies the authentication method used to access the endpoint. It requires a bearer token to authenticate the request.\n  \n    - **Type**: Indicates the type of authentication being used, which is \"bearer\" in this case.\n    \n    - **Bearer**: An array containing authentication details.\n    \n      - **Key**: This identifies the parameter for the bearer token, labeled as \"token\".\n      \n      - **Value**: Here, you should replace \"BearerToken\" with your actual bearer token value when making the request.\n      \n      - **Type**: Describes the data type of the token, which is specified as \"string\".\n\n  - **Method**: This indicates the HTTP method used for the request, which is \"GET\". It means that this endpoint retrieves data from the server.\n  \n  - **URL**: The endpoint's URL used to access the resource. In this case, it points to the local server and requires two query parameters:\n  \n    - **sessionId**: A placeholder for the session identifier, which should be replaced with the actual session ID when making the request.\n    \n    - **accountId**: A placeholder for the account identifier, which should also be replaced with the actual account ID.\n  \n  - **Headers**: This section is for any additional HTTP headers you might want to include in your request. Currently, this is empty and disabled, indicating no extra headers are currently necessary.\n\n  - **Body**: This section specifies the request payload.\n  \n    - **Mode**: The mode indicates the format of the body; it is set to \"raw\", meaning no structured data is being sent.\n    \n    - **Raw**: The actual body data is empty in this example, meaning no additional data is required when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Invite - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"inviteId\":\"inviteId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/invite/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "invite",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint: Tournament - Invite - Delete\n\n#### Request-Type:\n- **Method**: This endpoint uses the **POST** method to delete an invite.\n\n#### URL:\n- **URL**: The endpoint is accessed via **http://localhost:3000/api/tournament/invite/delete**. \n  - This is the local server address where the API is hosted for handling the tournament invite deletion.\n\n#### Authentication:\n- **Auth Type**: The request requires **bearer token authentication**.\n  - **Token**: A bearer token must be included for authentication. \n  - The token format is defined as:\n    - **Key**: \"token\" \n    - **Value**: The actual value should be replaced with the user's session ID.\n    - **Type**: \"string\", indicating that the session ID is provided as a string.\n\n#### Headers:\n- **Headers**: The request does not have any active headers defined.\n  - The enabled state of the header is set to **disabled**, and both the **key** and **value** are empty.\n  \n#### Body:\n- **Body Type**: The body of the request is in **raw** format.\n- **Content**: The body contains JSON data structured as follows:\n  - **sessionId**: This should be replaced with the user's actual session ID that is used for authentication.\n  - **accountId**: This should be replaced with the user's account ID, required to specify which account is making the deletion request.\n  - **inviteId**: This should be replaced with the specific invite ID that needs to be deleted.\n\n### JSON Structure in Request Body:\n```json\n{\n  \"sessionId\": \"sessionId\",\n  \"accountId\": \"accountId\",\n  \"inviteId\": \"inviteId\"\n}\n```\n- Make sure to replace the placeholders (`sessionId`, `accountId`, `inviteId`) with actual values before sending the request."
+      },
+      "response": []
+    }
+  ]
+}

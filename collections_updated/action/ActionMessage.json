@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "f6f9971b-c1a8-49c2-a33f-e3ddef37def9",
+    "name": "ActionMessage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Message - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didMessage\": true,\n    \"text\": \"Hello\",\n    \"priority\": \"high\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/message/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "message",
+            "create"
+          ]
+        },
+        "description": "### Action - Message - Create Endpoint Description\n\nThis endpoint allows users to create a message action within a specified context. Below is a detailed description of each data field used in the request:\n\n- **auth**: This section includes authentication details required to access the endpoint.\n  - **type**: Specifies the type of authentication used. In this case, it is \"bearer\" authentication.\n  - **bearer**: Contains the information about the bearer token used for authorization.\n    - **key**: This defines the name of the token field. It is usually \"token\".\n    - **value**: This field contains the actual token value, which should be formatted as \"BearerToken\".\n    - **type**: Denotes the format of the value, which is a \"string\".\n\n- **method**: Indicates the HTTP method to be used for the request. In this case, it is \"POST\", which means data will be sent to the server to create a new resource.\n\n- **url**: The endpoint's URL where the request will be sent. The provided URL is \"http://localhost:3000/api/action/message/create\". This implies the API is hosted locally on port 3000.\n\n- **headers**: This field is used to include any additional information in the request headers.\n  - **key**: This is the name of the header. In this case, it is left empty.\n  - **value**: This holds the value for the corresponding header, which is also empty here.\n  - **type**: Indicates the type of header, which is \"default\".\n  - **disabled**: A boolean that indicates whether this header is active or inactive. Here, it is set to true, meaning this header is currently disabled.\n\n- **body**: This contains the content of the request that will be sent to the server.\n  - **mode**: The format of the data being sent. It is set to \"raw\", meaning the data will be sent as plain text.\n  - **raw**: This is the actual JSON data that will be sent in the request body. It includes several fields:\n    - **sessionId**: This is a unique identifier for the session associated with the message. Replace \"sessionId\" with the actual session identifier.\n    - **accountId**: This field refers to the unique identifier of the account on which the action is being performed. Replace \"accountId\" with the actual account identifier.\n    - **path**: This indicates the path to the resource that the message is associated with, such as a video channel, formatted as \"/live/channel/video123'.\n    - **targetType**: Specifies the type of target for the message; in this case, it is set to \"videoId\".\n    - **targetId**: This is the unique identifier for the target resource. Replace \"videoId\" with the appropriate video identifier.\n    - **sourceType**: Indicates the type of source from which the message originates. Here it is set to \"accountId\".\n    - **sourceId**: This field identifies the source resource, typically the account's ID, which should match the actual account identifier.\n    - **didMessage**: A boolean field that indicates whether a message was sent. Here, it's set to true.\n    - **text**: This is the content of the message being sent. The example provided is \"Hello\".\n    - **priority**: Indicates the priority level of the message. Possible values could include \"high\", \"medium\", or \"low\". In this case, it is set to \"high\".\n    - **name**: An optional field that can hold a name related to the message. It is left empty in this example.\n    - **description**: An optional field intended for further description of the message. It is also left empty.\n    - **tags**: An optional field for any tags associated with the message, left empty here.\n\n- **options**: This contains additional settings for the raw data.\n  - **raw**: Specifies the language format of the raw data. It is set to \"json\", indicating that the body content is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Message - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didMessage\": true,\n    \"text\": \"Hello World!\",\n    \"priority\": \"high\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"messageId\": \"messageId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/message/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "message",
+            "update"
+          ]
+        },
+        "description": "### Action - Message - Update Endpoint Description\n\n#### Request Details:\n- **Method**:  \n  Specifies the HTTP method for the request. In this case, it is a `PUT`, which is typically used to update existing resources.\n\n- **URL**:  \n  The endpoint for the request is `http://localhost:3000/api/action/message/update`, where the action for updating a message will be handled.\n\n#### Authorization:\n- **Auth Type**:  \n  The request requires bearer token authentication. This means that the client needs to provide a valid token to access this endpoint.\n\n- **Bearer Token**:  \n  A placeholder for the authentication token used in the request. It should be replaced with the actual bearer token value. \n\n#### Headers:\n- **Client-UUID**:  \n  A header that carries a unique identifier for the client making the request. This helps the server recognize which client is sending the request.\n\n#### Body Parameters:\n- **sessionId**:  \n  A unique identifier for the session in which the message is being processed. This should be replaced with the actual session ID.\n\n- **accountId**:  \n  The ID of the account that owns the message or is associated with the request. Should be replaced with the actual account ID.\n\n- **path**:  \n  The path of the resource being targeted by the message. This indicates where the message will be applied, e.g., a specific video resource.\n\n- **targetType**:  \n  Indicates the type of the target for the message. In this case, it's a `videoId`, specifying that the message is directed at a video resource.\n\n- **targetId**:  \n  The ID of the target resource (video in this case) that the update affects. This should be replaced with the actual target ID.\n\n- **sourceType**:  \n  This specifies the type of source responsible for generating the message. Here it is defined as `accountId`.\n\n- **sourceId**:  \n  The ID of the source from which the message originates. This should correspond to the actual source ID.\n\n- **didMessage**:  \n  A boolean value indicating whether the message was sent or delivered. This is a flag to show the status of the message.\n\n- **text**:  \n  The content of the message being updated. It can be any string text; in this case, it is initialized to \"Hello World!\".\n\n- **priority**:  \n  An indication of the message's importance. It can have values like `high`, `medium`, or `low`, specifying how critical the message is.\n\n- **name**:  \n  A field that can be used to provide a name for the message. It is currently empty and can be filled with a descriptive name.\n\n- **description**:  \n  This field allows for a more detailed description of the message. It is empty by default but can be used to add context.\n\n- **tags**:  \n  A space where tags can be added to categorize or label the message. It is also empty by default.\n\n- **messageId**:  \n  A unique identifier for the message being updated. This should be filled in with the actual message ID you wish to reference.\n\n#### Body Format:\n- **Mode**:  \n  The body format is set to `raw`, indicating that the data being sent is in raw format and will be treated as a single block of text.\n\n- **Language**:  \n  The format of the data in the body is specified as `json`, meaning that the content should adhere to the JSON structure."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Message - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/message/get/?messageId=messageId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "message",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "messageId",
+              "value": "messageId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Message - Get\n\n**Description**: This endpoint is used to retrieve a specific message from the server based on the provided identifiers.\n\n---\n\n#### Request\n\n- **Auth**:\n  - **Type**: `bearer` - This indicates that the request requires bearer token authentication.\n  - **Bearer**:\n    - **Key**: `token` - The key used for authentication.\n    - **Value**: `BearerToken` - A placeholder for the actual token that needs to be provided for authorization.\n    - **Type**: `string` - The data type of the value is a string.\n\n- **Method**: `GET` - This HTTP method is used to request data from the specified resource.\n\n- **URL**: \n  ```\n  http://localhost:3000/api/action/message/get/?messageId=messageId&sessionId=sessionId&accountId=accountId\n  ```\n  - This is the endpoint URL where the request is sent. \n  - **Query Parameters**:\n    - `messageId`: This parameter identifies the specific message you want to retrieve. Replace `messageId` with the actual ID of the message.\n    - `sessionId`: This parameter identifies the session related to the message retrieval. Replace `sessionId` with the actual ID of the session.\n    - `accountId`: This parameter identifies the account that contains the message. Replace `accountId` with the actual account ID.\n\n- **Headers**:\n  - There are currently no headers specified. The header entry is disabled, which means it will not be included in the request. If any headers are needed for this endpoint in the future, they should be added here.\n\n- **Body**:\n  - **Mode**: `raw` - This indicates that the body of the request is in raw format. \n  - **Raw**: \n    - The body of the request is empty (`\"\"`). Since this is a `GET` request, it typically does not require a body. \n\n---\n\n### Note\nMake sure to replace the placeholder values (`BearerToken`, `messageId`, `sessionId`, `accountId`) with actual valid data when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Message - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/message/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "message",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Message - Get All\n\n- **Name**: Action - Message - Get All\n  - This is the name of the API endpoint that retrieves all messages related to a specific action.\n\n- **Request**:  \n  - This section outlines the configuration needed to make the request to the API.\n\n  - **Auth**:  \n    - **Type**: bearer\n      - This indicates that the request is authenticated using Bearer Token authentication.\n    - **Bearer**: \n      - This is an array that contains the authentication details.\n      - **Key**: token \n        - The name/key used for the token in the authentication.\n      - **Value**: BearerToken \n        - This is a placeholder for the actual token needed for authentication.\n      - **Type**: string \n        - Indicates that the token value is a string.\n\n  - **Method**:\n    - **GET**\n      - Specifies that this endpoint uses the GET HTTP method to retrieve information.\n\n  - **URL**: \n    - `http://localhost:3000/api/action/message/all/?sessionId=sessionId&accountId=accountId`\n      - This is the endpoint URL where the request will be sent.\n      - It includes query parameters:\n        - **sessionId**: sessionId\n          - A placeholder for the session identifier, which may be required for context or security purposes.\n        - **accountId**: accountId\n          - A placeholder for the account identifier, which may specify which user's messages to retrieve.\n\n  - **Headers**: \n    - An array of header fields to be included in the request.\n    - Each header consists of:\n      - **Key**: (currently empty)\n        - This is where you can define custom headers if necessary.\n      - **Value**: (currently empty)\n        - This is where you specify the value for the custom header.\n      - **Type**: default\n        - Indicates the default type of header.\n      - **Disabled**: true\n        - This means that this header is currently not in use. \n\n  - **Body**: \n    - **Mode**: raw\n      - Indicates that the body of the request is sent as raw data, although in this case, no data is provided.\n    - **Raw**: \n      - This field is empty, meaning no request body content is required for this GET request. \n\nThis endpoint is used to fetch all messages related to actions tied to a user session and account. Ensure that the correct bearer token and query parameters are provided when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Message - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"messageId\":\"messageId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/message/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "message",
+            "delete"
+          ]
+        },
+        "description": "### Action - Message - Delete\n\n#### Request Overview\nThis endpoint is used to delete a specific message from the system. It requires authentication and the relevant identifiers for the session, account, and message that needs to be deleted.\n\n#### Request Details\n\n- **Authentication**:\n  - **Type**: Bearer Token\n  - **Bearer Token**: This uses a bearer token for authentication.\n    - **Key**: `token` \n    - **Value**: `sessionId` \n    - **Type**: This is specified as a string. The `sessionId` acts as the authorization credential to validate the user's session.\n\n- **Method**: \n  - **Type**: POST \n  - This method is used to request the deletion of a message.\n\n- **URL**:\n  - **Endpoint**: `http://localhost:3000/api/action/message/delete`\n  - This is the endpoint that handles the delete request for messages.\n\n- **Headers**: \n  - No headers are specified. The default header configuration is disabled.\n\n- **Body**:\n  - **Mode**: Raw\n  - **Content**: The body of the request is in raw JSON format containing the following fields:\n    - **sessionId**: This is the unique identifier for the user's session. It is used to authenticate the user making the request.\n    - **accountId**: This is the unique identifier for the user's account. It links the action to a specific account in the system.\n    - **messageId**: This is the unique identifier for the message that needs to be deleted. It specifies which message the system should remove.\n\n#### Summary\nThe \"Action - Message - Delete\" endpoint allows users to delete a message by providing the necessary identifiers for session, account, and message. It requires a valid bearer token for authentication and sends the necessary data in the body of the POST request."
+      },
+      "response": []
+    }
+  ]
+}

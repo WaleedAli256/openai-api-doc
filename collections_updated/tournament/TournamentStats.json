@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "TournamentStats",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tournament - Stats - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Stats\",\"description\":\"This stats is my second stats\",\"tags\":\"second,stats\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isStatsPrivate\":true,\"isTournamentOnly\":false,\"isStatsDefault\":true,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/stats/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "stats",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Tournament - Stats - Create\n\nThis API endpoint is used to create statistics related to a tournament. Below is a detailed description of each data field included in the request body.\n\n#### Request Details\n\n- **Auth Type**: \n  - The request requires bearer token authentication. Users must provide a valid token to authorize the request.\n\n#### URL\n- **Endpoint URL**: \n  - This is the URL where the request is sent. It is set to `http://localhost:3000/api/tournament/stats/create`.\n\n#### Request Body\n\n- **sessionId**: \n  - A unique identifier for the tournament session. This helps to associate the stats with a specific tournament session.\n\n- **accountId**: \n  - The unique identifier for the user account. This links the created stats to the user's account in the system.\n\n- **name**: \n  - The name given to the statistics being created. This should be a descriptive title that clearly indicates what these stats represent.\n\n- **description**: \n  - A detailed description of the statistics. This provides additional context about the stats being created, helping users understand their purpose.\n\n- **tags**: \n  - A string of comma-separated tags that describe the statistics. These tags can help in categorization and searching for similar stats later on.\n\n- **profilePhotoUrl**: \n  - A URL pointing to the profile photo associated with the stats. This image can represent the creator or the nature of the stats.\n\n- **coverPhotoUrl**: \n  - A URL for the cover photo related to the stats. This is typically displayed as a background image for the stats page.\n\n- **minimumTipAmount**: \n  - A numeric value that specifies the minimum amount users can tip while interacting with the stats. It sets a baseline for contributions.\n\n- **categoryId**: \n  - The unique identifier for the category under which these stats fall. This helps in organizing stats into broader classes.\n\n- **category**: \n  - The name or label of the category. This is a human-readable version of the categoryId and helps users quickly identify the category of the stats.\n\n- **subCategoryId**: \n  - A unique identifier for any specific subcategory further detailing the main category. This adds an additional layer of classification.\n\n- **subCategory**: \n  - The name or label of the subcategory. It gives more context about the specific type of stats being created.\n\n- **isStatsPrivate**: \n  - A boolean value indicating whether the stats should be visible only to the creator (true) or shared publicly (false).\n\n- **isTournamentOnly**: \n  - A boolean indicating if these stats are exclusively for tournament-related activities. When true, it means the stats are not applicable outside of tournament settings.\n\n- **isStatsDefault**: \n  - A boolean that designates whether these stats are the default stats associated with the tournament. Default stats may have standard settings or rules.\n\n- **isPreLiveTournamentAds**: \n  - A boolean indicating whether advertisements should be shown before the live tournament begins. This can be used for promotional purposes.\n\n- **isPostLiveTournamentAds**: \n  - A boolean indicating if advertisements can be shown after the live tournament has concluded. Useful for generating revenue through ads.\n\n- **breakPreLiveVideoUrl**: \n  - A URL to a video that can be played during breaks before the tournament starts. This can enhance user engagement during waiting times.\n\n- **breakPostLiveVideoUrl**: \n  - A URL for a video that can play during breaks after the tournament has concluded. Similar to the pre-live video, this keeps users engaged post-event.\n\n### Summary\nThis endpoint facilitates the creation of tournament-related statistics with comprehensive configurations, allowing users to personalize and manage their stats effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Stats - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"statsId\":\"statsId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Stats 2.0\",\"description\":\"This stats is my second stats\",\"tags\":\"second,stats\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isStatsPrivate\":true,\"isTournamentOnly\":false,\"isStatsDefault\":true,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/stats/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "stats",
+            "update"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n**Endpoint Name:**\n- **Tournament - Stats - Update**\n  \n**Request:**\n- **Auth:** \n  - **Type:** Bearer\n  - **Bearer:** \n    - **Key:** token\n      - **Value:** BearerToken\n      - **Type:** string\n      - *This key is used to pass an authorization token that validates the user making the request.*\n\n- **Method:** \n  - **PUT**\n  - *Indicates that this request is meant to update existing data.*\n\n- **URL:** \n  - **http://localhost:3000/api/tournament/stats/update**\n  - *The endpoint where the request is sent to update tournament stats.*\n\n- **Headers:** \n  - **Client-UUID:** \n    - **Key:** Client-UUID\n      - **Value:** ClientUUID\n      - **Type:** default\n      - *This is a unique identifier for the client making the request, used for identification purposes.*\n\n- **Body:** \n  - **Mode:** raw\n  - **Raw Content:** \n    - *A JSON object containing the data for the update operation. The fields are as follows:*\n\n1. **statsId:**\n   - *String identifier for the specific stats being updated.*\n\n2. **sessionId:**\n   - *Identifier for the tournament session associated with the stats.*\n\n3. **accountId:**\n   - *Identifier for the user's account that owns these stats.*\n\n4. **name:**\n   - *A string representing the name of the stats being updated.*\n\n5. **description:**\n   - *A string providing a description of the stats.*\n\n6. **tags:**\n   - *Comma-separated string of tags for categorizing the stats.*\n\n7. **profilePhotoUrl:**\n   - *String URL for the profile photo associated with the stats.*\n\n8. **coverPhotoUrl:**\n   - *String URL for the cover photo associated with the stats.*\n\n9. **minimumTipAmount:**\n   - *Numeric value indicating the minimum amount for tips related to this stats.*\n\n10. **categoryId:**\n    - *String identifier for the category of the stats.*\n\n11. **category:**\n    - *A string specifying the main category of the stats.*\n\n12. **subCategoryId:**\n    - *String identifier for the sub-category of the stats.*\n\n13. **subCategory:**\n    - *A string for the specific sub-category of the stats.*\n\n14. **isStatsPrivate:**\n    - *Boolean value indicating whether the stats are private or public.*\n\n15. **isTournamentOnly:**\n    - *Boolean indicating if these stats apply only to tournaments.*\n\n16. **isStatsDefault:**\n    - *Boolean specifying if these stats are set as default stats for the account.*\n\n17. **isPreLiveTournamentAds:**\n    - *Boolean indicating if ads are shown during pre-live tournaments.*\n\n18. **isPostLiveTournamentAds:**\n    - *Boolean indicating if ads are shown after live tournaments.*\n\n19. **breakPreLiveVideoUrl:**\n    - *String URL for a video to be shown during pre-live breaks.*\n\n20. **breakPostLiveVideoUrl:**\n    - *String URL for a video to be shown during post-live breaks.*\n\n*This detailed breakdown of the body fields provides clarity on the necessary data for updating tournament stats and the expected format for each field.*"
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Stats - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/stats/get/?statsId=statsId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "stats",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "statsId",
+              "value": "statsId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Tournament - Stats - Get\n\n- **Endpoint Name**: Tournament - Stats - Get  \n  This is the name of the API endpoint, designated for retrieving tournament statistics.\n\n- **Request**: This is the section detailing how the request is structured.\n\n  - **Auth**: \n    - **Type**: Bearer  \n      The authentication method being used is Bearer Token, which is a common way to secure APIs.\n    - **Bearer**: \n      - **Key**: token  \n        This is the identifier for the authentication token.\n      - **Value**: BearerToken  \n        This is a placeholder for the actual bearer token which is required to authenticate the request.\n      - **Type**: string  \n        Specifies that the token should be provided as a string.\n\n  - **Method**: GET  \n    Indicates the HTTP method used for this request. A GET request is typically used to retrieve data from the server.\n\n  - **URL**: http://localhost:3000/api/tournament/stats/get/?statsId=statsId&sessionId=sessionId&accountId=accountId  \n    This is the endpoint URL where the request is sent. The parameters include:\n    - **statsId**: statsId  \n      This parameter should be replaced with the actual ID of the statistics being requested.\n    - **sessionId**: sessionId  \n      This parameter should be replaced with the actual session ID associated with the tournament session.\n    - **accountId**: accountId  \n      This parameter should be replaced with the actual account ID of the user making the request.\n\n  - **Headers**:  \n    This section describes the headers sent with the request.\n    - **Key**: empty  \n      There are no additional headers specified, as indicated by the empty key.\n    - **Value**: empty  \n      Since there are no additional headers provided, the value is also empty.\n    - **Type**: default  \n      The header type is set to default.\n    - **Disabled**: true  \n      This indicates that the header is currently disabled and will not be sent with the request.\n\n  - **Body**:  \n    This section outlines the body of the request.\n    - **Mode**: raw  \n      Specifies that the body will be sent in raw format, which is typically for custom data types.\n    - **Raw**: empty  \n      The body is currently empty, which means no additional data will be sent with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Stats - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/stats/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "stats",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n**Name**: \n- This identifies the endpoint as \"Tournament - Stats - Get All\". It signifies that this endpoint is used to retrieve statistics for all tournaments.\n\n**Request Auth**:\n- **Type**: Indicates that the authorization method used for the request is \"bearer\", which means the client must provide a token for access.\n  - **Bearer**: This array contains authorization details.\n    - **Key**: The name of the authorization parameter, which is \"token\".\n    - **Value**: The token itself, represented here as \"BearerToken\". Users should replace this with their actual bearer token.\n    - **Type**: Specifies the type of value, which is \"string\".\n\n**Method**:\n- This is the HTTP method used for the request, which is \"GET\". It means the endpoint is designed to retrieve data from the server without modifying any resources.\n\n**URL**:\n- **Base URL**: \"http://localhost:3000\" indicates that the API is being hosted locally on port 3000.\n- **Endpoint Path**: \"/api/tournament/stats/all/\" specifies the resource to be accessed, which is all the statistics for tournaments.\n- **Query Parameters**:\n  - **sessionId**: This is a query parameter that represents the unique identifier for the user's session. Users need to replace \"sessionId\" with the actual session ID.\n  - **accountId**: Another query parameter that represents the account identifier of the user making the request. This should be replaced with the actual account ID.\n\n**Headers**:\n- This is an array that specifies additional metadata with the request. In this case, it contains an empty header, which is marked as \"disabled\". Users can utilize this section to add any necessary headers if required by their implementation.\n\n**Body**:\n- **Mode**: The body mode is set to \"raw\", which means that the request will not contain any additional content in the body—it's empty here.\n- **Raw**: The raw body data is empty, indicating that no payload is sent with this GET request.\n\nThis endpoint provides a straightforward way for users to fetch all tournament statistics as long as they provide the correct authorization token and the appropriate query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Stats - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"statsId\":\"statsId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/stats/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "stats",
+            "delete"
+          ]
+        },
+        "description": "### Tournament - Stats - Delete\n\n**Overview:**  \nThis endpoint is designed to delete statistics associated with a specific tournament. It requires authentication and accepts a JSON payload containing identifiers necessary for the deletion process.\n\n**Request Details:**\n\n- **Auth Type:** Bearer Token  \n  Users must provide a bearer token for authorization. This token is used to validate the user's session.\n\n- **Method:** POST  \n  This endpoint uses the POST method to send a request for deletion.\n\n- **URL:**  \n  The endpoint to which the request is sent is `http://localhost:3000/api/tournament/stats/delete`. This is a local server endpoint.\n\n**Headers:**  \nThere are no specific headers required for this request. However, a default header has been included but is currently disabled.\n\n**Body:**  \nThe request body is sent in raw JSON format and requires the following fields:\n\n- **sessionId:**  \n  This string represents the current user's session ID, which is necessary for authentication and to verify the valid state of the user's session.\n\n- **accountId:**  \n  This string indicates the ID of the user's account associated with the tournament stats being deleted.\n\n- **statsId:**  \n  This string represents the unique identifier of the tournament stats that the user wishes to delete.\n\n**Example Body Format:**  \n```json\n{\n  \"sessionId\": \"sessionId\",\n  \"accountId\": \"accountId\",\n  \"statsId\": \"statsId\"\n}\n```\n\nMake sure to replace `\"sessionId\"`, `\"accountId\"`, and `\"statsId\"` with the respective values applicable to the request."
+      },
+      "response": []
+    }
+  ]
+}

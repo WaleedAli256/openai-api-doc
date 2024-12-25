@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "b3448b51-fb51-433b-91a5-d73933ffc804",
+    "name": "ActionReject",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Reject - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didReject\": true,\n    \"reason\": \"inappropriate content\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tag\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reject/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reject",
+            "create"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Action - Reject - Create\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"POST\",\n      \"url\": \"http://localhost:3000/api/action/reject/create\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"path\\\": \\\"/live/channel/video123\\\",\\n    \\\"targetType\\\": \\\"videoId\\\",\\n    \\\"targetId\\\": \\\"videoId\\\",\\n    \\\"sourceType\\\": \\\"accountId\\\",\\n    \\\"sourceId\\\": \\\"accountId\\\",\\n    \\\"didReject\\\": true,\\n    \\\"reason\\\": \\\"inappropriate content\\\",\\n    \\\"name\\\": \\\"\\\",\\n    \\\"description\\\": \\\"\\\",\\n    \\\"tag\\\": \\\"\\\"\\n}\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\"\n          }\n        }\n      }\n    }\n  },\n  \"details\": {\n    \"auth\": {\n      \"type\": \"bearer\": This indicates that the request requires bearer token authentication.\n      \"bearer\": [\n        {\n          \"key\": \"token\": This is the key used for the authentication.\n          \"value\": \"BearerToken\": This is a placeholder for the actual token that grants access to the API.\n          \"type\": \"string\": This indicates that the value of the token is a string.\n        }\n      ]\n    },\n    \"method\": \"POST\": This specifies that the request method is POST, which is used to send data to the server to create a new resource.\n    \n    \"url\": \"http://localhost:3000/api/action/reject/create\": This is the endpoint URL where the POST request is sent to create an action to reject content.\n\n    \"headers\": [\n      {\n        \"key\": \"\": Indicates the name of the header, which is currently empty.\n        \"value\": \"\": Indicates the value of the header, which is also currently empty.\n        \"type\": \"default\": Specifies that this header type is default.\n        \"disabled\": true: This means that this header is currently disabled and won't be sent with the request.\n      }\n    ],\n\n    \"body\": {\n      \"mode\": \"raw\": This indicates the type of body data being sent, which is in raw format.\n      \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"path\\\": \\\"/live/channel/video123\\\",\\n    \\\"targetType\\\": \\\"videoId\\\",\\n    \\\"targetId\\\": \\\"videoId\\\",\\n    \\\"sourceType\\\": \\\"accountId\\\",\\n    \\\"sourceId\\\": \\\"accountId\\\",\\n    \\\"didReject\\\": true,\\n    \\\"reason\\\": \\\"inappropriate content\\\",\\n    \\\"name\\\": \\\"\\\",\\n    \\\"description\\\": \\\"\\\",\\n    \\\"tag\\\": \\\"\\\"\\n}\": This is the JSON data that will be sent in the body of the request, containing the details of the rejection action.\n      \"options\": {\n        \"raw\": {\n          \"language\": \"json\": This indicates that the language format of the raw body data is JSON.\n        }\n      }\n    },\n    \"bodyFields\": {\n      \"sessionId\": \"sessionId\": This is the ID of the current session, which is needed to keep track of ongoing actions.\n      \"accountId\": \"accountId\": This is the ID of the account, indicating which user is making the request.\n      \"path\": \"/live/channel/video123\": This represents the path of the content that is being acted upon.\n      \"targetType\": \"videoId\": This indicates the type of target that is being rejected, in this case, a video ID.\n      \"targetId\": \"videoId\": This is the specific ID of the video that is being rejected.\n      \"sourceType\": \"accountId\": This indicates the source type of the content, which is from an account ID.\n      \"sourceId\": \"accountId\": This indicates the specific account ID that is the source of the content.\n      \"didReject\": true: This flag indicates that the action taken is indeed a rejection.\n      \"reason\": \"inappropriate content\": This field provides a reason for the rejection, stating the content was inappropriate.\n      \"name\": \"\": This is a placeholder for any name associated with the rejection, currently empty.\n      \"description\": \"\": This is a placeholder for any description related to the rejection, currently empty.\n      \"tag\": \"\": This is a placeholder for any tags that may be associated with the rejection, currently empty.\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reject - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didReject\": false,\n    \"reason\": \"none\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tag\": \"\",\n    \"rejectId\":\"rejectId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reject/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reject",
+            "update"
+          ]
+        },
+        "description": "### Detailed Description of each Data in the Endpoint\n\n**Endpoint Overview**  \nThis endpoint is designed to update the rejection status of actions in a system. It requires a PUT request and is authenticated via a bearer token.\n\n#### Request Structure\n\n1. **Authentication**\n   - **Type**: Bearer\n     - This specifies that the request uses bearer token authentication.\n   - **Token**: \n     - This is where you will input your authentication token. It is essential for gaining access to the API resources.\n\n2. **Method**\n   - **PUT**: \n     - This indicates that the request will update an existing resource or create a new resource if it does not exist.\n\n3. **URL**\n   - **Endpoint URL**: `http://localhost:3000/api/action/reject/update`\n     - This is the local server address where the request will be sent to perform the action of updating the rejection status.\n\n4. **Headers**\n   - **Header Key**: `Client-UUID`\n     - This header is used to pass the client's universally unique identifier. It is required by the server to identify the client making the request.\n   - **Header Value**: `ClientUUID`\n     - You will need to replace this with your actual client UUID.\n\n5. **Request Body**\n   - **Mode**: Raw\n     - The body is sent as a raw JSON string.\n   - **Content**: \n     ```json\n     {\n       \"sessionId\": \"sessionId\",\n       \"accountId\": \"accountId\",\n       \"path\": \"/live/channel/video123\",\n       \"targetType\": \"videoId\",\n       \"targetId\": \"videoId\",\n       \"sourceType\": \"accountId\",\n       \"sourceId\": \"accountId\",\n       \"didReject\": false,\n       \"reason\": \"none\",\n       \"name\": \"\",\n       \"description\": \"\",\n       \"tag\": \"\",\n       \"rejectId\": \"rejectId\"\n     }\n     ```\n     \n   - **Field Descriptions**:\n     - **sessionId**: \n       - Unique identifier for the session in which the action is being performed. It is necessary for tracking the context of the action.\n     - **accountId**: \n       - Unique identifier for the account associated with the action. It represents the user or entity executing the request.\n     - **path**: \n       - The specific path where the action is tied, indicating the resource's location (e.g., a video).\n     - **targetType**: \n       - This specifies the type of the target being acted upon. In this case, it indicates that the target is identified by a video ID.\n     - **targetId**: \n       - The unique identifier for the target resource (e.g., a video ID) that may be rejected.\n     - **sourceType**: \n       - This indicates the type of source the action is originating from, typically an account ID.\n     - **sourceId**: \n       - The unique identifier for the source account that is related to the action.\n     - **didReject**: \n       - A boolean flag that indicates whether the action was rejected (true) or not (false). Defaulting to false means it was not rejected.\n     - **reason**: \n       - A textual explanation for the rejection, if applicable. If not rejected, it may be set to \"none\" or left blank.\n     - **name**: \n       - An optional name associated with the rejection record. This can be left blank if not needed.\n     - **description**: \n       - Optional field to add more details regarding the rejection. It can also be left blank.\n     - **tag**: \n       - Optional labeling for the rejection record that can help with categorization.\n     - **rejectId**: \n       - Unique identifier for this rejection action. This helps track individual rejection actions and may be required for further processes."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reject - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reject/get/?rejectId=rejectId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reject",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "rejectId",
+              "value": "rejectId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: The name of the API request is \"Action - Reject - Get\". This indicates that the endpoint is related to retrieving action details, specifically for a rejection process.\n\n- **request**: This is the main object containing all the details related to the API request.\n\n  - **auth**: This section defines the authentication method required to access the endpoint.\n    - **type**: The type of authentication being used is \"bearer\". This means that the API requires a bearer token for secure access.\n    - **bearer**: This is an array containing the authentication details.\n      - **key**: This is the name of the token parameter. It is labeled \"token\", indicating that it is the key for the bearer token.\n      - **value**: This is the placeholder for the actual token being used for authentication. The placeholder shows \"BearerToken\", which should be replaced with a valid token.\n      - **type**: This defines the data type of the value. It is set as \"string\", meaning the token should be in string format.\n\n  - **method**: This indicates the HTTP method used for the request. In this case, it is \"GET\", which is typically used for retrieving data from the server.\n\n  - **url**: This is the endpoint URL to which the request will be sent. It consists of the base URL \"http://localhost:3000/api/action/reject/get/\" followed by query parameters:\n    - **rejectId**: This is a query parameter that needs to be specified for determining the specific rejection action to retrieve.\n    - **sessionId**: This is another query parameter that identifies the user session associated with the request.\n    - **accountId**: This query parameter is used to specify the account related to the rejection action being requested.\n\n  - **headers**: This section defines any custom headers that should be sent with the request.\n    - **key**: Currently, there are no custom headers specified, as the key is empty.\n    - **value**: Similarly, there is no value set for any headers.\n    - **type**: The type is set to \"default\".\n    - **disabled**: This is set to true, meaning that these headers are currently disabled and not included in the request.\n\n  - **body**: This section represents the body content of the request.\n    - **mode**: The body mode is set to \"raw\", indicating that the body content is raw data without any specific format.\n    - **raw**: This is left empty, suggesting that there is no body content required for this GET request.\n\nThis endpoint is designed to retrieve information about a rejection action based on the specified identifiers while ensuring the request is authenticated via a bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reject - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reject/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reject",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Reject - Get All Endpoint Description\n\n- **Name**: Action - Reject - Get All\n  - This is the name of the API request that is used to retrieve all rejected actions.\n\n- **Request**:\n  - **Auth**:\n    - **Type**: Bearer\n      - Specifies that the authentication mechanism used is bearer token authentication.\n    - **Bearer**:\n      - An array that contains the authentication token.\n      - **Key**: token\n        - The identifier for the token field in the request.\n      - **Value**: BearerToken\n        - The actual token value needed for authorization (replace with a valid token).\n      - **Type**: string\n        - Indicates that the token value is a string.\n\n  - **Method**: GET\n    - This is the HTTP method used for the request. A GET method is used to retrieve data from the specified resource.\n\n  - **URL**: \n    - `http://localhost:3000/api/action/reject/all/?sessionId=sessionId&accountId=accountId`\n      - This is the endpoint where the API request is sent. \n      - It contains query parameters:\n        - **sessionId**: A placeholder for the session identifier, which should be replaced with the actual session ID.\n        - **accountId**: A placeholder for the account identifier, which should be replaced with the actual account ID.\n  \n  - **Headers**:\n    - An array of headers to be included in the request.\n    - The current header key and value are empty, and the header is disabled. This means no additional headers will be sent with the request.\n\n  - **Body**:\n    - **Mode**: raw\n      - Indicates that the body of the request is sent in raw format.\n    - **Raw**: \n      - This field is empty, meaning no body content is sent in the request.\n\nThis endpoint is designed to retrieve all actions that have been rejected based on the provided session and account identifiers. Adjust the sessionId and accountId in the URL parameters as needed before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reject - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"rejectId\":\"rejectId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reject/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reject",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint: Action - Reject - Delete\n\n- **Name**: This specifies the name of the action being executed, which is \"Action - Reject - Delete\". It indicates that this API call is intended to reject and delete a specific action.\n\n- **Request**: This section contains details about how to execute the API request.\n\n  - **Auth**: This defines the authentication method used for the API call.\n    - **Type**: Indicates that the authentication method is \"bearer\", meaning it uses a bearer token for access.\n    - **Bearer**: This is an array that contains the specific parameters needed for the bearer token.\n      - **Key**: Indicates the name of the token field, which is \"token\".\n      - **Value**: Specifies a placeholder value for the token, which is \"sessionId\". This will need to be replaced with the actual session ID when making the request.\n      - **Type**: Indicates that the type of value provided for the token is a string.\n\n  - **Method**: This specifies the HTTP method used for the request, which is \"POST\". This indicates that data will be sent to the server.\n\n  - **URL**: This is the endpoint where the request is sent. In this case, the URL is \"http://localhost:3000/api/action/reject/delete\". This indicates that the action will be processed at this location on the server.\n\n  - **Headers**: This section lists any headers that should be included in the request.\n    - **Key**: This is currently empty, meaning no specific header key will be sent with the request.\n    - **Value**: This value is also empty, indicating that there is no associated value with the key.\n    - **Type**: The type is set to \"default\" but is disabled, making this header inactive.\n\n  - **Body**: This specifies the data being sent with the request.\n    - **Mode**: This indicates the type of data mode being used, which is set to \"raw\". This means the body content is sent as a raw string.\n    - **Raw**: This section contains the actual data payload being sent in the request body. The format is JSON and includes three fields:\n      - **sessionId**: This is a placeholder for the session ID. It should be replaced with the actual session ID when making a request.\n      - **accountId**: This represents the account ID associated with the action being rejected and deleted. This should also be replaced with the actual account ID.\n      - **rejectId**: This is the identifier of the specific action to be rejected and deleted. It needs to be replaced with the actual reject ID when the request is made."
+      },
+      "response": []
+    }
+  ]
+}

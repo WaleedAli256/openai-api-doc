@@ -1,0 +1,1966 @@
+{
+  "info": {
+    "_postman_id": "030e1145-1bae-4871-8f27-742eb7d35127",
+    "name": "SearchResults",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Search - Results - By Query ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/filter/?queryId=queryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "filter",
+            ""
+          ],
+          "query": [
+            {
+              "key": "queryId",
+              "value": "queryId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - By Query ID\n\n- **Name**: Search - Results - By Query ID\n  - This is the title of the API request, which indicates its functionality related to fetching search results based on a specific Query ID.\n\n- **Request**: \n  - Contains all the details needed to execute the API call.\n\n  - **Auth**: \n    - Specifies the authentication method used for the API request.\n    \n    - **Type**: \n      - The type of authentication used, which in this case is Bearer.\n      \n    - **Bearer**: \n      - This is an array containing the information for bearer token authentication.\n      \n      - **Key**: \n        - Refers to the identifier for the token, which is simply labeled as \"token\".\n        \n      - **Value**: \n        - The value for the token; it should be replaced with an actual bearer token, here represented as \"BearerToken\".\n        \n      - **Type**: \n        - Indicates the data type of the token value, specified as a string.\n\n  - **Method**: \n    - The HTTP method that will be used to make the request. In this case, it is a GET request, which retrieves data from the server.\n\n  - **URL**: \n    - The complete endpoint to access the API, which includes a placeholder for Query ID. The format is \"http://localhost:3000/api/search/results/filter/?queryId=queryId\".\n    \n    - **queryId**: \n      - This is a placeholder in the URL that should be replaced with the actual Query ID value when making the request.\n\n  - **Headers**: \n    - An array of HTTP headers to be sent along with the request.\n\n    - **Key**: \n      - This field is currently empty, indicating that no custom header keys are specified for this request.\n      \n    - **Value**: \n      - Similarly, this field is also empty, meaning there are no specific values for custom headers.\n      \n    - **Type**: \n      - The type of the header is default, meaning it does not follow any special format.\n      \n    - **Disabled**: \n      - Set to true, indicating that this header is not actively being sent with the request.\n\n  - **Body**: \n    - Represents the body of the request, which is not utilized in a GET request.\n\n    - **Mode**: \n      - The mode for the body is specified as raw, indicating raw data would typically be provided here if needed.\n      \n    - **Raw**: \n      - This field is empty, indicating that no raw data is included in this request body.\n\nThis detailed description provides context and clarification on the structure and components of the \"Search - Results - By Query ID\" endpoint for users utilizing the Postman API collection."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - By Query ID and Filter ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/filter/?queryId=queryId&filterId=filterId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "filter",
+            ""
+          ],
+          "query": [
+            {
+              "key": "queryId",
+              "value": "queryId"
+            },
+            {
+              "key": "filterId",
+              "value": "filterId"
+            }
+          ]
+        },
+        "description": "This endpoint is used to retrieve search results based on a specific query ID and filter ID. Below are the details of each component involved in this request:\n\n- **name**: The name of this endpoint is \"Search - Results - By Query ID and Filter ID\". This identifies the purpose of the API call.\n\n- **request**: This section outlines the details of the API request being made.\n\n  - **auth**: Specifies the authentication method required to access this endpoint.\n  \n    - **type**: The type of authentication used is \"bearer\", which means the request must include a bearer token for authorization.\n    \n    - **bearer**: An array containing the necessary authorization details.\n    \n      - **key**: The name of the token parameter required for the request.\n      \n      - **value**: A placeholder for the actual bearer token, represented as \"BearerToken\". This should be replaced with the appropriate token for the API user.\n      \n      - **type**: Indicates that the value should be treated as a string.\n  \n  - **method**: The HTTP method used for this request is \"GET\". This is typically used for retrieving data from the server.\n\n  - **url**: This is the endpoint URL where the request is sent. It includes:\n  \n    - **base URL**: \"http://localhost:3000/api/search/results/filter/\" indicating the server address and path to the resource.\n    \n    - **queryId**: A placeholder for the query ID which is required to identify the specific search parameters used.\n    \n    - **filterId**: A placeholder for the filter ID that is applied to the search results. \n  \n  - **headers**: This section contains the headers that can be sent with the request.\n  \n    - **key**: An empty field indicating that there are no custom headers being used in this request.\n    \n    - **value**: Corresponding value for the key is also empty as it is currently disabled.\n    \n    - **type**: Indicates the type of header, which is set to \"default\".\n    \n    - **disabled**: This indicates whether the header is active or inactive for this request. Here, it is set to true, meaning the header will not be sent.\n\n  - **body**: This section describes the body of the request.\n  \n    - **mode**: Indicates the mode of the request body. It is set to \"raw\", meaning raw data is expected to be sent.\n    \n    - **raw**: This is an empty field indicating that no raw body data is included with the request.\n\nThis description should help users to understand how to utilize this endpoint effectively in their API calls."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - By Query ID and Filter String",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/filter/?queryId=queryId&filter=channel",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "filter",
+            ""
+          ],
+          "query": [
+            {
+              "key": "queryId",
+              "value": "queryId"
+            },
+            {
+              "key": "filter",
+              "value": "channel"
+            }
+          ]
+        },
+        "description": "### Description of the Endpoint Data\n\n- **name**: The name of the endpoint is \"Search - Results - By Query ID and Filter String.\" This indicates that the endpoint will be used to search for results based on a specific query ID and a filter string.\n\n- **request**: This section contains all the details regarding the request that will be sent to the API.\n\n  - **auth**: This part specifies the authentication method required for accessing the endpoint. \n    - **type**: The authentication type is \"bearer,\" indicating that a token is needed to authenticate the request.\n    - **bearer**: Here, an array of bearer tokens is specified. In this case:\n      - **key**: This represents the name of the token field, which is labeled as \"token.\"\n      - **value**: This shows the value that needs to be sent in the request, marked as \"BearerToken.\" Users will replace this placeholder with their actual token.\n      - **type**: The type specifies that this value should be treated as a string.\n\n  - **method**: This indicates the HTTP method to be used for the request, which is \"GET.\" This method is typically used to retrieve data from the specified resource.\n\n  - **url**: This is the URL endpoint where the request will be sent. It is structured as follows:\n    - **http://localhost:3000/api/search/results/filter/**: The base URL for the API.\n    - **?queryId=queryId**: This is a query parameter where users should input the specific ID related to the search query.\n    - **&filter=channel**: This represents another query parameter where users can apply a filter, indicated here as \"channel.\" Users can replace this with their desired filter string.\n\n  - **headers**: This section contains any headers that will be included in the request.\n    - In this instance, the key and value fields are empty, and the header is marked as disabled, indicating that no additional headers are currently in use for this request.\n\n  - **body**: This part defines the body of the request.\n    - **mode**: The mode is set to \"raw,\" meaning the body will contain raw data.\n    - **raw**: This field is empty, indicating that no additional data needs to be sent in the request body for this particular GET request. Users generally do not need to include a body for GET requests. \n\nThis description provides a clear understanding of how to use the endpoint to search for results based on a query ID and filter string."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - By Query String",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/filter/?query=nike",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "filter",
+            ""
+          ],
+          "query": [
+            {
+              "key": "query",
+              "value": "nike"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - By Query String\n\n- **Name**: Search - Results - By Query String  \n  This is the name of the API endpoint used for retrieving search results based on a specified query string.\n\n- **Request**: This section outlines the characteristics of the request that will be sent to the API.\n\n  - **Auth**: Authentication details for accessing the endpoint.\n    - **Type**: bearer  \n      Specifies that the authorization method used is the Bearer token.\n    - **Bearer**: An array containing authentication details for the Bearer token.\n      - **Key**: token  \n        The identifier for the authentication token.\n      - **Value**: BearerToken  \n        A placeholder representing the actual token needed for authentication. This token must be provided to successfully access the API.\n      - **Type**: string  \n        Indicates that the token value should be in string format.\n\n  - **Method**: GET  \n    This signifies that the HTTP method used for the request is GET, which is typically used to retrieve data from the server.\n\n  - **URL**: http://localhost:3000/api/search/results/filter/?query=nike  \n    The endpoint's URL where the API request is directed. It specifies that the search results will be filtered based on the query parameter \"query\" with the value \"nike.\"\n\n  - **Headers**: Additional information sent along with the request.\n    - **Key**: (empty string)  \n      This field is currently unused and does not contain any specific header key.\n    - **Value**: (empty string)  \n      This field is currently unused and does not contain any specific header value.\n    - **Type**: default  \n      The default type for the header.\n    - **Disabled**: true  \n      Indicates that this header is currently disabled and will not be sent with the request.\n\n  - **Body**: The content of the request.\n    - **Mode**: raw  \n      This indicates that the body will contain raw data.\n    - **Raw**: \"\"  \n      The body of the request is empty, meaning no additional data will be sent in the request body. \n\nThis endpoint allows users to search for results by a query string, making it simple to filter results based on user input."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - By Query String and Filter String",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/filter/?query=Fortune&filter=channel",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "filter",
+            ""
+          ],
+          "query": [
+            {
+              "key": "query",
+              "value": "Fortune"
+            },
+            {
+              "key": "filter",
+              "value": "channel"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - By Query String and Filter String\n\nThis endpoint allows users to perform a search operation based on a specified query string and filter criteria. Below is a detailed description of each data field involved in this API request.\n\n#### Request Method\n- **Method:** `GET`\n  - This indicates that the request is retrieving data from the server. No data is being altered or created.\n\n#### URL\n- **URL:** `http://localhost:3000/api/search/results/filter/?query=Fortune&filter=channel`\n  - This is the endpoint for accessing search results. \n  - It is currently set to search with the query \"Fortune\" and applies a filter based on the \"channel\" criteria. \n\n#### Authentication\n- **Auth Type:** `Bearer`\n  - The request requires a Bearer token for authentication. This type of authentication ensures that the user is verified before accessing the endpoint.\n\n- **Bearer Token:**\n  - **Key:** `token`\n  - **Value:** `BearerToken`\n  - **Type:** `string`\n    - This is where you will replace \"BearerToken\" with your actual token. It provides the necessary credentials for accessing the API. \n\n#### Request Headers\n- **Headers:** \n  - An empty header is provided in the template, which is disabled. You can add additional headers if necessary, such as Content-Type or Authorization, depending on your specific requirements for the request.\n\n#### Body\n- **Body:**\n  - **Mode:** `raw`\n  - **Raw Content:** `\"\"`\n    - The body is currently empty, which is typical for GET requests since they do not usually require a body. Additional parameters can be passed via the URL instead.\n\nThis endpoint is designed for searching and obtaining filtered results, making it useful for retrieving specific information based on the user’s input. Make sure to replace the placeholder values as needed to successfully utilize the endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get - By Username",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/get/?username=fortunevieyra_",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "fortunevieyra_"
+            }
+          ]
+        },
+        "description": "### Endpoint Description\n\n**Name:** Search - Results - Get - By Username  \nThis endpoint is used to retrieve search results based on a specific username.\n\n#### Request Details:\n\n- **Auth:** \n  - **Type:** bearer \n    - This indicates that the request requires a bearer token for authentication. \n  - **Bearer Token:** \n    - **Key:** token \n      - The identifier for the token expected in the request.\n    - **Value:** BearerToken \n      - This should be replaced with the actual bearer token for authorization.\n    - **Type:** string \n      - Indicates that the token should be provided as a string.\n\n- **Method:** \n  - **GET:** \n    - This indicates that the request method is GET, which is used to retrieve data from the server.\n\n- **URL:** \n  - **Endpoint URL:** \n    - `http://localhost:3000/api/search/results/get/?username=fortunevieyra_`\n      - This is the full URL where the request is sent. It includes the base URL and the query parameter. \n      - The `username` parameter in the query string specifies the username for which the search results will be fetched. In this instance, the username is set to `fortunevieyra_`.\n\n- **Headers:** \n  - This section currently contains an empty header object.\n    - **Key:** (no key specified) \n      - This indicates there are no custom headers being sent with the request.\n    - **Value:** (no value specified) \n      - This indicates there is no corresponding value.\n    - **Disabled:** true \n      - This indicates that any specified header is disabled and not included in the request.\n\n- **Body:** \n  - **Mode:** raw \n    - Indicates that the body of the request is in raw format. \n  - **Raw:** \n    - This section is empty, meaning there is no request body sent with the GET request.\n\n### Summary:\nThis API endpoint allows users to obtain search results using a specific username as a query parameter. Ensure to include a valid bearer token in the request for authentication purposes. The request method is GET, and there are no additional custom headers or body content needed for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get - By Account Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/get/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Search - Results - Get - By Account Id\n\n#### Request Details:\n\n- **Auth**: This section describes the authorization method used for the request.\n  - **Type**: The authentication method is a bearer token. This means that the request requires a token to verify the user's identity and access permissions.\n  - **Bearer**: \n    - **Key**: This indicates the name of the token used for authorization.\n    - **Value**: This is a placeholder where users should replace \"BearerToken\" with their actual token.\n    - **Type**: Specifies that the token is in string format.\n\n- **Method**: This indicates the HTTP method used for the request, which is \"GET.\" This method is typically used for retrieving data from the server.\n\n- **URL**: This is the endpoint that the request will be sent to. It consists of:\n  - **Base URL**: `http://localhost:3000/api/search/results/get/`\n  - **Query Parameter**: `?accountId=accountId` - This parameter specifies the account ID for which search results are being requested. Users should replace \"accountId\" in the URL with the actual account ID they want to query.\n\n- **Headers**: This section allows the inclusion of any additional header information needed for the request.\n  - **Key**: Currently empty, indicating that no specific header key is used.\n  - **Value**: Also empty, meaning no specific value is provided for any headers.\n  - **Type**: The type is set to \"default.\"\n  - **Disabled**: This is marked as true, meaning that this header will not be sent with the request.\n\n- **Body**: This section defines the body of the request.\n  - **Mode**: Set to \"raw,\" indicating that the body content will be sent as raw text.\n  - **Raw**: The content of the body is empty in this case, which is typical for a \"GET\" request as they usually do not contain a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get - By Team Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/get/?team=NikeShoes",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "team",
+              "value": "NikeShoes"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - Get - By Team Name\n\n- **Name**: This is the title of the API request, indicating that it is used to search for results by a specific team name.\n\n- **Request**: This section outlines the specifics of the request being made to the API.\n\n  - **Auth**: This specifies the type of authentication required to access the endpoint.\n    - **Type**: Indicates that the authorization method used is a bearer token.\n    - **Bearer**: This section contains the details about the bearer token needed for authentication.\n      - **Key**: The name of the token parameter, which in this case is \"token.\"\n      - **Value**: This is where the actual token should be inserted. The placeholder is \"BearerToken,\" indicating that a valid bearer token should be supplied here.\n      - **Type**: Specifies that the token is of type string.\n\n  - **Method**: This indicates that the HTTP method used for this request is GET, meaning that data is being retrieved from the server.\n\n  - **URL**: This is the endpoint address for the API request. In this case, it is a local server URL used for testing, which searches for results related to the team \"NikeShoes.\"\n\n  - **Headers**: This section is intended for any request headers that may need to be included with the API call, though none have been specified here.\n    - **Key**: Currently empty, suggesting that no additional headers are being added.\n    - **Value**: Also empty, indicating that there are no values associated with additional headers.\n    - **Type**: Set to \"default,\" indicating it as a standard header type.\n    - **Disabled**: The header is marked as disabled, meaning it will not be included in the request.\n\n  - **Body**: This part defines the request body content for the API call.\n    - **Mode**: This is set to \"raw,\" meaning that the body content is provided as raw text.\n    - **Raw**: Currently empty, indicating that there is no body content included in this GET request, which is typical since GET requests do not usually send body data.\n\nThis API request is designed to retrieve search results based on a specified team name, requiring authentication via a bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get - By Channel Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/get/?channel=MyNikeChannel",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channel",
+              "value": "MyNikeChannel"
+            }
+          ]
+        },
+        "description": "### API Name: Search - Results - Get - By Channel Name\n\n#### Request\n\n- **Auth**: \n  - **Type**: Indicates the kind of authentication used for the request. Here, it uses \"bearer\" token authentication.\n  - **Bearer**: Details about the bearer token.\n    - **Key**: This is the identifier for the token, labeled as \"token\".\n    - **Value**: The actual token value that is used for authentication. It follows the format \"BearerToken\".\n    - **Type**: Indicates that the value is a string.\n\n- **Method**: \n  - Specifies the HTTP method for the request, which in this case is \"GET\". This method is used to retrieve data from the specified resource.\n\n- **URL**: \n  - The endpoint to which the request is sent. It is structured as:\n    - **Base URL**: `http://localhost:3000`\n      - This denotes that the API is running locally on port 3000.\n    - **Path**: `/api/search/results/get/`\n      - Specifies the specific path to access the search results.\n    - **Query Parameter**: `?channel=MyNikeChannel`\n      - This part of the URL is used to pass specific parameters to the API. Here, it retrieves results for the channel named \"MyNikeChannel\".\n\n- **Headers**: \n  - This section defines any additional headers that may be sent with the request.\n    - **Key**: Initially left empty, indicating no specific header is defined.\n    - **Value**: Also left empty, suggesting there is no value associated with the header.\n    - **Type**: Marked as \"default\", which means it's a standard header type.\n    - **Disabled**: Set to true, indicating that this header will not be sent with the request.\n\n- **Body**: \n  - Describes the content being sent in the request.\n    - **Mode**: Indicates the format of the body content. Here, it is set to \"raw\".\n    - **Raw**: Currently empty, implying no body content is sent with a GET request, as is standard practice.\n\nThis endpoint is designed to allow users to fetch search results based on a specified channel name."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get - By Tournament Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?tournament=NikeAdidasTournament",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tournament",
+              "value": "NikeAdidasTournament"
+            }
+          ]
+        },
+        "description": "### API Endpoint Description\n\n**Name:** Search - Results - Get - By Tournament Name\n\n**Request Details:**\n\n1. **Authentication:**\n   - **Type:** Bearer\n   - **Bearer Token:** This is a required token for authentication. It should be included in the request to verify the identity of the user. The format of the token is generally \"Bearer [actual_token]\". The placeholder used here is \"BearerToken\", which should be replaced with a valid token.\n\n2. **Method:**\n   - **GET:** This request uses the GET method, which is used to retrieve data from the specified resource without any side effects like altering data on the server. The request is made to fetch results related to a specific tournament.\n\n3. **URL:**\n   - **Endpoint URL:** The request is sent to `http://localhost:3000/api/search/results/all/?tournament=NikeAdidasTournament`. This URL specifies the endpoint for searching results. The parameter `tournament=NikeAdidasTournament` indicates that the search is filtered for results corresponding to the \"NikeAdidasTournament\".\n\n4. **Headers:**\n   - **Header 1:** There are currently no custom headers set as the key and value fields are empty, and the header is disabled. This means no additional headers are added to the request.\n\n5. **Body:**\n   - **Mode:** The body mode is set to \"raw\", but since this request does not send any data, the raw field is empty. This indicates that there is no need to send any body content for this GET request.\n\n### Summary\n\nThis endpoint is designed to retrieve search results filtered by the specified tournament name. Proper authentication is required, with a bearer token needed to access the data. The query is made explicitly to gather information on the \"NikeAdidasTournament\" results. No additional headers or body data are necessary for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Videos",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=videos&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "videos"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Search - Results - Get All - Videos\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/search/results/all/?find=videos&accountId=accountId\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    }\n  }\n}\n\n- **name**: This indicates the name of the API endpoint, which is used for searching all video results.\n\n- **request**: This section contains all the details about the API request that will be made.\n\n  - **auth**: This outlines the authentication method being used for the request.\n  \n    - **type**: Specifies the type of authentication which in this case is 'bearer'.\n    \n    - **bearer**: This array contains the authentication token required to access the endpoint.\n    \n      - **key**: This is a label for the token which indicates it's a 'token'.\n      \n      - **value**: This value should be replaced with your actual bearer token for authorization, represented here by \"BearerToken\".\n      \n      - **type**: This indicates the data type of the value, which is a string.\n\n  - **method**: This specifies the HTTP method to be used for the request, which in this case is GET. This means the request is intended to retrieve data.\n\n  - **url**: This is the endpoint URL where the API can be accessed. The included query parameters are:\n  \n    - **find**: This parameter specifies that the search is to be focused on 'videos'.\n    \n    - **accountId**: This is a placeholder for the user's account ID that may be needed to filter or identify results related to a specific user.\n\n  - **headers**: This section is meant for including additional HTTP headers, although no headers are specified here (the provided entry is empty and disabled).\n\n  - **body**: This part of the request is used to send data to the server. In this case:\n  \n    - **mode**: Indicates the format of the request body, which is set to 'raw'.\n    \n    - **raw**: Contains the raw data to be sent. Here it is empty, which indicates that no body data is required for this GET request.\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Videos By Search",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=videos&accountId=accountId&video=hello",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "videos"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "video",
+              "value": "hello"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Search - Results - Get All - Videos By Search\",\n  \"description\": \"This endpoint retrieves all video results based on the search criteria provided in the URL parameters.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ],\n      \"description\": \"Authentication is required to access this endpoint. A bearer token must be provided in the authorization header.\"\n    },\n    \"method\": \"GET\",\n    \"description\": \"The HTTP method used for this request is GET, which is used to retrieve data from the server.\",\n    \"url\": \"http://localhost:3000/api/search/results/all/?find=videos&accountId=accountId&video=hello\",\n    \"description\": \"The endpoint URL is structured to include parameters for the search query. 'find' specifies the type of content to search for (videos), 'accountId' is a placeholder for the user's account ID, and 'video' specifies the keyword to search (in this case, 'hello').\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true,\n        \"description\": \"No additional headers are required for this request other than the authorization bearer token.\"\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"\",\n      \"description\": \"The request does not contain a body, as data is provided through the URL parameters only.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Channels",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=channels&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "channels"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - Get All - Channels\n\n- **Name**: This is the identifier for the API request, indicating that this endpoint is used to search and retrieve all channels based on specific criteria.\n\n- **Request**: This section outlines the details required to make the API request.\n\n  - **Auth**: This specifies the authentication method used to access the API. In this case, a bearer token is required.\n\n    - **Type**: Indicates the type of authentication. Here, it is set to \"bearer,\" which is a common way to secure APIs.\n\n    - **Bearer**: This is where the actual token is specified for authentication.\n\n      - **Key**: This is a placeholder identifying the type of value being passed. Here it is labeled \"token.\"\n\n      - **Value**: This is the actual authorization token that needs to be prefixed with \"Bearer.\" It should be replaced with the actual token when making requests.\n\n      - **Type**: This denotes the data type of the value. It is set to \"string,\" indicating the token is a text-based value.\n\n  - **Method**: This indicates the HTTP method to be used for the request. It is set to \"GET,\" meaning this request will retrieve data from the server.\n\n  - **URL**: This is the endpoint where the API request will be sent.\n\n    - The base URL is \"http://localhost:3000/api/search/results/all/,\" which suggests it's a local environment.\n    \n    - The query parameters included here are:\n      - **find**: This parameter is set to \"channels,\" indicating that the search will specifically look for channel results.\n      - **accountId**: This placeholder should be replaced with the actual account identifier to filter results based on a specific user account.\n\n  - **Headers**: This section is meant for including any HTTP headers in the request.\n\n    - **Key**: This represents the header name but is left empty here. It can be used for additional headers if needed.\n\n    - **Value**: Corresponds to the value of the header, also left empty for now.\n\n    - **Type**: Identifies the header type, set to \"default,\" which is typically used for standard headers.\n\n    - **Disabled**: This is a flag indicating that this header is currently not active (disabled).\n\n  - **Body**: This section is used to define the request body data.\n\n    - **Mode**: Indicates the format of the body being sent. It is set to \"raw,\" indicating that raw text will be used.\n\n    - **Raw**: Represents the content of the body. It is currently empty, indicating no additional data is required for the request.\n\nThis endpoint is primarily used to search for channels related to a specific account using the provided parameters and authentication method."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Channels By Search",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=channels&accountId=accountId&tags=my,nike",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "channels"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "tags",
+              "value": "my,nike"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - Get All - Channels By Search\n\n- **Name**: This is the name of the API request, which indicates that it is used to search for channels and retrieve results based on specific criteria.\n\n- **Request**: This section outlines the details required to perform the API call.\n\n  - **Auth**: Specifies the authentication method used to access the API.\n    - **Type**: Indicates the type of authentication being used. In this case, it is \"bearer,\" which suggests that the API requires a bearer token for access.\n    - **Bearer**: This contains an array of objects representing the authentication details.\n      - **Key**: Represents the name of the token variable. Here it is labeled as \"token.\"\n      - **Value**: This is the actual bearer token used to authenticate the request. The placeholder \"BearerToken\" denotes where the actual token should be placed.\n      - **Type**: Defines the data type of the token value. It is specified as a \"string.\"\n\n  - **Method**: The HTTP method being used for the request. This is set to \"GET,\" meaning the API will retrieve data without altering anything on the server.\n\n  - **URL**: The endpoint URL for the API request, which consists of the base URL and query parameters. The base URL is \"http://localhost:3000/api/search/results/all/\", and the query parameters are:\n    - **find**: The parameter set to \"channels,\" indicating that the search will focus on channel results.\n    - **accountId**: A placeholder for the specific account identifier needed to filter results to a particular user or account.\n    - **tags**: A list of comma-separated tags that will assist in refining search results. In this context, the tags are \"my\" and \"nike.\"\n\n  - **Headers**: This section includes any HTTP headers that may be included with the request.\n    - **Key**: This field is currently empty, indicating that there are no additional headers specified.\n    - **Value**: Corresponds to the key and is also empty, reinforcing that no specific headers are provided.\n    - **Type**: Indicates the type of the header; it is set to \"default.\"\n    - **Disabled**: A boolean value indicating whether this header is active or not. It is set to true, meaning this header will not be included in the request.\n\n  - **Body**: Details about the request body, which is sent along with the request. \n    - **Mode**: The mode is set to \"raw,\" indicating that the body data will be in its raw form.\n    - **Raw**: This field is currently empty, signifying that no body content will be sent with the request, which is typical for GET requests as they usually do not contain a request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Teams",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=teams&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "teams"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### API Endpoint: Search - Results - Get All - Teams\n\n**Description:** This endpoint retrieves all search results specifically related to teams.\n\n#### Request Details:\n\n- **Auth**: \n  - Type: Bearer Token Authentication\n  - This requires a token string for authentication purposes.\n    - **Key**: `token`\n    - **Value**: `BearerToken` (Replace this with your actual token)\n    - **Type**: Indicates that the value is a string.\n\n- **Method**: \n  - **GET** - This indicates that the request is fetching data from the server.\n\n- **URL**: \n  - `http://localhost:3000/api/search/results/all/?find=teams&accountId=accountId`\n    - This is the endpoint URL where the request is sent.\n    - **Query Parameters**:\n      - **find**: Specifies that the search is focused on teams.\n      - **accountId**: This needs to be replaced with the actual account ID you want to search results for.\n\n- **Headers**: \n  - Currently, there are no headers set (the key and value fields are empty and the header is disabled).\n\n- **Body**: \n  - **Mode**: Raw\n  - Since this is a GET request, the body is empty, indicating that no additional data is sent with the request.\n\n### Summary:\nThis endpoint is designed to fetch all teams based on the provided account ID. Make sure to replace `BearerToken` with a valid bearer token for authentication and `accountId` with the specific account ID required for your search. The request does not include any headers or additional body content."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Teams By Search",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=teams&accountId=accountId&team=nike",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "teams"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "team",
+              "value": "nike"
+            }
+          ]
+        },
+        "description": "### Endpoint: Search - Results - Get All - Teams By Search\n\n**Name:**\n- The name of this endpoint is \"Search - Results - Get All - Teams By Search\". This indicates that the endpoint is used for retrieving all teams based on a search query.\n\n**Request:**\n\n- **Auth:**\n  - **Type:** The authorization method used for this API request is Bearer token authentication. This means that a token is required to access the endpoint.\n  - **Bearer:** This section contains the details about the bearer token.\n    - **Key:** This field denotes the name of the token, which is specified as \"token\".\n    - **Value:** The placeholder value is \"BearerToken\". This should be replaced with the actual bearer token when making the request.\n    - **Type:** The type of the value is specified as \"string\", meaning the token should be provided as a string.\n\n- **Method:**\n  - The HTTP method for this request is \"GET\". This indicates that data is being retrieved from the server rather than sent or modified.\n\n- **URL:**\n  - The request is made to the following URL: `http://localhost:3000/api/search/results/all/?find=teams&accountId=accountId&team=nike`.\n  - **Base URL:** `http://localhost:3000/api/search/results/all/` is the endpoint where the request is directed.\n  - **Query Parameters:**\n    - **find:** This parameter is set to \"teams\", indicating that the search is specifically for teams.\n    - **accountId:** This is a placeholder for the actual account ID. It should be filled in with the specific account identifier relevant to the search.\n    - **team:** This parameter is set to \"nike\". It specifies that the search should include the team named Nike.\n\n- **Headers:**\n  - This section currently contains an entry where both the key and value are empty. The type is \"default\" and this header is marked as disabled. This means that no custom headers are being sent with this request.\n\n- **Body:**\n  - **Mode:** The mode of the body is set to \"raw\".\n  - **Raw:** The body content is empty. Since this is a GET request, typically, no body is included in the request.\n\nThis endpoint is designed for users to fetch teams related to a specific search criteria by providing necessary parameters such as account ID and the team name they are looking for. It requires a valid bearer token for authentication to ensure that the request is authorized."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Tournaments",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=tournaments&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "tournaments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint \"Search - Results - Get All - Tournaments\"\n\n- **name**: This is the title of the API endpoint, indicating its purpose. In this case, it is used to retrieve all tournament results from the search functionality.\n\n- **request**: This section contains all the details necessary to make the API request.\n\n  - **auth**: This field specifies the authentication method required for the request.\n    - **type**: This indicates the type of authentication being used. Here it is \"bearer,\" which means the request will require a Bearer token.\n    - **bearer**: This is an array of objects specifying the token necessary for authentication.\n      - **key**: This is the field name for the token.\n      - **value**: This contains the actual Bearer token. The example shows \"BearerToken,\" which should be replaced with a valid token when making the request.\n      - **type**: This indicates the data type of the value; in this case, it is a string.\n\n  - **method**: The HTTP method used for the request. This is set to \"GET,\" which means the request is intended to retrieve data from the server.\n\n  - **url**: The endpoint URL that will be requested. This example points to a local server's search results API for tournaments. It includes query parameters for finding tournaments and an account ID.\n    - **find**: This query parameter is set to \"tournaments,\" indicating that the request is specifically looking for tournament results.\n    - **accountId**: This query parameter requires the user to provide an account ID. It is used to filter results associated with a specific account.\n\n  - **headers**: An array of HTTP headers for the request. In this case, it is empty as there are no additional headers needed for this request.\n    - **key**: The header field name, which is not provided here.\n    - **value**: The value associated with the header, which is also not given here.\n    - **type**: This indicates the type of the header; it's set to \"default.\"\n    - **disabled**: This is a boolean value indicating whether this header is active. Here it is set to true, meaning this header is currently disabled.\n\n  - **body**: This field describes the body of the request.\n    - **mode**: This indicates the mode of the body, which is set to \"raw.\" This means the body can contain a raw data format.\n    - **raw**: This contains the actual body content of the request. In this case, it is empty as a GET request usually does not include a body.\n\nThis description provides essential information for understanding how to utilize this endpoint effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Tournaments By Search",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=tournaments&accountId=accountId&tournament=nikevsadidas",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "tournaments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "tournament",
+              "value": "nikevsadidas"
+            }
+          ]
+        },
+        "description": "### Search - Results - Get All - Tournaments By Search\n\nThis API endpoint retrieves all tournament results based on a specified search query. Below is a detailed description of the information for each data element in this request.\n\n- **name**: The title of the API request. It indicates that this endpoint is used to search for and retrieve tournament results based on user-defined criteria.\n\n- **request**: This section outlines the details of the HTTP request that will be sent to the server.\n\n  - **auth**: This specifies the authentication method required to access the API. In this case, it uses a Bearer Token for authorization.\n  \n    - **type**: Indicates that the authentication type is a Bearer token.\n\n    - **bearer**: This is an array containing the details needed for the Bearer token.\n    \n      - **key**: The key identifying the type of authentication.\n      \n      - **value**: This should be replaced with the actual Bearer token value that is used for authentication.\n      \n      - **type**: States the format of the token, which is a string in this context.\n\n  - **method**: The HTTP method for this request, which is \"GET\". This means the request will retrieve data without making any alterations to it.\n\n  - **url**: The endpoint URL to which the request is sent. This includes query parameters for the search:\n    \n    - **find=tournaments**: This parameter indicates that the search should focus on tournaments.\n    \n    - **accountId=accountId**: This parameter should be replaced with the actual account ID being queried. It is used to filter the results based on the user's account.\n    \n    - **tournament=nikevsadidas**: This parameter specifies the name of the tournament being searched for. Replace this with the relevant tournament name when making the request.\n\n  - **headers**: Contains additional information to be sent with the request. \n\n    - **key**: There is no key provided for headers in this case, which means no additional headers are required.\n    \n    - **value**: No value is specified, indicating that no additional header values are necessary.\n    \n    - **type**: Default indicates the type of header, though it's not used here as the header is disabled.\n    \n    - **disabled**: Set to true, indicating that this header will not be included in the request.\n\n  - **body**: This section does not contain any body content, as this is a GET request. \n\n    - **mode**: Indicates the mode of the body; it's set to \"raw\".\n    \n    - **raw**: No raw data is provided since GET requests typically do not require a body. \n\nOverall, this endpoint is designed for searching and retrieving detailed information about tournaments based on various parameters, ensuring that the user can effectively filter and access the relevant tournament data."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Messages",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=messages&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "messages"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Search - Results - Get All - Messages\n\n#### Description of Data\n\n- **name**: This is the title of the request within the API collection. It identifies the request for retrieving all message search results.\n\n- **request**: This object contains the details necessary to perform the API request.\n\n  - **auth**: Specifies the authentication method required for this request.\n  \n    - **type**: The authentication type being used; in this case, it is a Bearer token.\n\n    - **bearer**: An array that includes the details of the bearer token to be used for authentication.\n\n      - **key**: This represents the label for the token parameter. It is set as \"token\".\n\n      - **value**: This holds the actual bearer token required for authentication. In this example, it is labeled as \"BearerToken\" but should be replaced with a valid token.\n\n      - **type**: The type of the bearer token, which is specified as \"string\".\n\n  - **method**: The HTTP method used for the request. Here, it is set to \"GET,\" indicating that the request will retrieve data.\n\n  - **url**: The endpoint URL where the request is sent. It consists of the base URL (http://localhost:3000) along with the path (/api/search/results/all/) and query parameters which include:\n  \n    - `find=messages`: This parameter specifies that the search is focused on messages.\n    \n    - `accountId=accountId`: This parameter is likely intended to filter the results based on a specific account. The placeholder \"accountId\" should be replaced with an actual account ID.\n\n  - **headers**: A collection of headers to include in the request. In this case, there is a single key-value pair that is currently disabled and does not have a specified key or value. This can be used to add any required headers upon enabling.\n\n  - **body**: This section provides information about the request body.\n  \n    - **mode**: The mode is set to \"raw\", indicating that the body content is not structured in a specific format (like JSON).\n    \n    - **raw**: The content of the request body is empty in this case, meaning no data will be sent in the body of the request. \n\n### Summary\n\nThis endpoint is intended for fetching all message results related to a specific account, using Bearer token authentication in a GET request format. Make sure to replace the placeholders with actual values for successful execution."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Messages By Search",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=channels&accountId=accountId&message=abc",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "channels"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "message",
+              "value": "abc"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - Get All - Messages By Search\n\n**Name**: Search - Results - Get All - Messages By Search  \nThis endpoint retrieves messages based on specific search parameters from the server that handles messaging data.\n\n---\n\n#### Request Details:\n\n- **Authentication**:  \n  - Type: Bearer Token  \n    - This endpoint requires authentication via a bearer token. The token should be included in the request header to access the endpoint.\n\n- **Method**:  \n  - GET  \n    - This request uses the GET method to retrieve data. No changes will be made to the server's data, and the request is used solely for fetching information.\n\n- **URL**:  \n  - `http://localhost:3000/api/search/results/all/?find=channels&accountId=accountId&message=abc`  \n    - This is the URL to which the GET request will be sent. It includes query parameters that specify the details of the search.\n\n#### Query Parameters:\n\n- **find**:  \n  - This parameter specifies the type of search to perform. In this case, it is set to \"channels\", indicating that the search results will be filtered to channels.\n\n- **accountId**:  \n  - This parameter is used to specify the unique identifier for the account associated with the messages being searched. It allows the request to query only relevant messages for that specific account.\n\n- **message**:  \n  - This parameter contains the search term \"abc\", indicating that the search will look for messages that contain this specific text string.\n\n---\n\n#### Headers:\n\n- **Headers**:  \n  - Currently, there are no custom headers being sent with this request as indicated by the empty key and value. A default header is present but disabled; therefore, it does not influence the request.\n\n---\n\n#### Body:\n\n- **Body**:  \n  - Mode: Raw  \n    - The body of the request is empty, as GET requests typically do not include a body. Any information required for processing the request should be included in the URL as query parameters.\n\n---\n\nThis endpoint is useful for dynamically searching for messages within different channels based on the specified criteria. Ensure that the bearer token is valid for authentication.\n\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Comments",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=comments&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "comments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - Get All - Comments\n\n- **Name:** Search - Results - Get All - Comments  \n  This is the identifier for the API request, indicating that it is used to retrieve all comments from search results.\n\n- **Request:**\n  - **Auth:**  \n    - **Type:** bearer  \n      This indicates that the request requires bearer token authentication.\n    - **Bearer:**  \n      - **Key:** token  \n        The key for the bearer token authentication.\n      - **Value:** BearerToken  \n        This placeholder should be replaced with the actual bearer token for authentication.\n      - **Type:** string  \n        Indicates that the value should be a string.\n\n  - **Method:** GET  \n    This specifies that the request method is GET, which is used to retrieve data from the server.\n\n  - **URL:**  \n    `http://localhost:3000/api/search/results/all/?find=comments&accountId=accountId`  \n    This is the endpoint URL where the request is sent. It includes:\n    - **Base URL:** `http://localhost:3000/api/search/results/all/`  \n    - **Query Parameters:**  \n      - **find=comments**  \n        This parameter indicates that the search should return comments specifically.  \n      - **accountId=accountId**  \n        This parameter is a placeholder for the account ID which should be replaced with an actual account ID to filter the results.\n\n  - **Headers:**  \n    An array to define any additional headers for the request.\n    - **Key:** (empty)  \n    The key for the header is currently empty.\n    - **Value:** (empty)  \n    The value for the header is currently empty.\n    - **Type:** default  \n    Indicates that this is a default type header.\n    - **Disabled:** true  \n    This header is currently disabled and will not be sent with the request.\n\n  - **Body:**  \n    - **Mode:** raw  \n      Indicates that the body content is raw and does not conform to any particular format.\n    - **Raw:** \"\"  \n      The raw body content is empty, meaning no additional data is sent with the request.\n\nThis endpoint allows users to fetch all comments related to a specific account by using the specified account ID in the query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - Comments By Search",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?find=comments&accountId=accountId&comment=abc",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "find",
+              "value": "comments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "comment",
+              "value": "abc"
+            }
+          ]
+        },
+        "description": "### Description of Data for Endpoint: Search - Results - Get All - Comments By Search\n\n- **name**: This is the title of the API request. It indicates that the request is for searching results specifically for comments.\n\n- **request**: This section contains all the information needed to make the API request.\n\n  - **auth**: This part specifies the authentication method used for the request.\n  \n    - **type**: Indicates the type of authentication being used. In this case, it is \"bearer,\" which means a token is needed for access.\n    \n    - **bearer**: An array that contains the details for the bearer token.\n    \n      - **key**: This label identifies the type of authentication token provided.\n      \n      - **value**: The value of the token. It is prefixed with \"Bearer\" to specify the type of token being sent.\n      \n      - **type**: Specifies the data type of the token, which is a string in this case.\n  \n  - **method**: Indicates the HTTP method used for the request. Here, it is set to \"GET,\" which is used to retrieve data from the server.\n\n  - **url**: This is the endpoint where the request will be sent. It includes the base URL and parameters for finding comments, specifically looking for comments containing \"abc\" linked to a specific account.\n  \n    - **find**: This parameter is set to \"comments,\" indicating that the search is specifically for comments.\n    \n    - **accountId**: This parameter will specify the unique identifier for the account from which comments are being searched.\n    \n    - **comment**: This parameter is used to filter the comments by the keyword \"abc.\"\n  \n  - **headers**: This section contains additional information that might be sent with the request.\n  \n    - **key**: No specific key is listed, indicating that no custom headers are being sent.\n    \n    - **value**: No specific value is provided.\n    \n    - **type**: Defaults to \"default,\" suggesting standard header use.\n    \n    - **disabled**: This property is set to true, indicating that this header will not be included in the request.\n\n  - **body**: This part is used to define the body of the request, which is not applicable for a GET request as it typically does not contain a body.\n  \n    - **mode**: Indicates the type of body being used. It is set to \"raw,\" which usually refers to standard text or a specific format.\n    \n    - **raw**: This is blank, meaning that no body data will be sent with the GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - By Account Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?accountId=accountId&find=all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "find",
+              "value": "all"
+            }
+          ]
+        },
+        "description": "## Endpoint: Search - Results - Get All - By Account Id\n\n### Request Details\n\n- **Auth**: The authentication method used for this request is Bearer Token. This means that the request requires an access token to authorize the user. \n\n  - **Type**: indicates the type of authentication. In this case, it's \"bearer\".\n  \n  - **Bearer**: This contains the token details needed for authentication.\n    - **Key**: the field name for the bearer token, which is labeled as \"token\".\n    - **Value**: the actual token to be used for authentication is indicated as \"BearerToken\". This should be replaced with a valid token when making requests.\n    - **Type**: refers to the data type of the token, which is \"string\".\n\n- **Method**: This indicates the HTTP method used for the request. The method for this request is \"GET\", meaning it is used to retrieve data from the server.\n\n- **URL**: This is the endpoint where the request will be sent. The URL for this request is:\n  ```\n  http://localhost:3000/api/search/results/all/?accountId=accountId&find=all\n  ```\n  - `accountId`: This is a path parameter that needs to be replaced with the actual account ID for which results are being fetched.\n  - `find`: This parameter is set to \"all\", indicating that all results associated with the given account ID should be retrieved.\n\n- **Headers**: This section allows for additional header information to be sent with the request. However, in this case, it is empty and currently disabled, meaning no custom headers are being sent along with the request.\n\n- **Body**: This indicates the body of the request. Since it's a GET request, traditionally, it does not have a body. \n  - **Mode**: The mode is set to \"raw\", indicating that the body could potentially contain raw data.\n  - **Raw**: The raw body content is empty in this case, as GET requests typically do not include any body data.\n\n### Summary\nThis endpoint is designed to retrieve all search results associated with a specified account by sending a GET request with the necessary authentication token and the account ID included in the query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - By Username",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?username=fortunevieyra_&find=all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "fortunevieyra_"
+            },
+            {
+              "key": "find",
+              "value": "all"
+            }
+          ]
+        },
+        "description": "**Endpoint Description: Search - Results - Get All - By Username**\n\nThis API request allows users to retrieve all search results based on a specified username.\n\n**Request Details:**\n\n- **Auth:**\n  - **Type:** The authentication method used for this request is Bearer token. This is a standard method for API authentication.\n  - **Bearer:** This field contains the token information required for authorization.\n    - **Key:** This indicates that the type of authentication being used is a token.\n    - **Value:** This is where the actual token should be placed. Replace \"BearerToken\" with the actual token required for authentication.\n    - **Type:** This specifies that the token is of string type.\n\n- **Method:** The HTTP method used for this request is GET. This indicates that the request is intended to retrieve data from the server.\n\n- **URL:** The URL specifies the endpoint for the request.\n  - The base URL is `http://localhost:3000/api/search/results/all/`.\n  - The query parameters included are:\n    - `username=fortunevieyra_`: This parameter is used to specify the username for which the results are being searched.\n    - `find=all`: This parameter indicates that the request should return all results associated with the provided username.\n\n- **Headers:** \n  - In this case, there are no headers included in the request, as indicated by the empty key and value fields. This section is currently disabled and does not carry any information.\n\n- **Body:**\n  - **Mode:** The body mode is set to raw. This indicates that the body is intended for raw data input.\n  - **Raw:** The raw field is currently empty, meaning no data needs to be sent in the body of this GET request. Typically, GET requests do not require a body.\n\nThis detailed description should help other users understand the purpose and structure of the request for retrieving search results based on a username."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - By Team Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?team=NikeShoes&find=all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "team",
+              "value": "NikeShoes"
+            },
+            {
+              "key": "find",
+              "value": "all"
+            }
+          ]
+        },
+        "description": "### API Endpoint Description: Search - Results - Get All - By Team Name\n\n- **Name**: This endpoint is labeled as \"Search - Results - Get All - By Team Name\", indicating that it retrieves search results based on a specified team name.\n\n#### Request Details:\n- **Auth**:\n  - **Type**: The authentication method used is \"bearer\", which typically requires a token for access.\n  - **Bearer**: A list containing a single object that holds the following details:\n    - **Key**: \"token\" – identifies the type of authorization being provided.\n    - **Value**: \"BearerToken\" – the actual token string that grants access to the endpoint.\n    - **Type**: \"string\" – denotes that the token is represented in string format.\n\n- **Method**: The HTTP method used for this request is \"GET\". This is generally used for retrieving data from the server.\n\n- **URL**: The endpoint URL is:\n  ```\n  http://localhost:3000/api/search/results/all/?team=NikeShoes&find=all\n  ```\n  This URL is used to access the search results for the team named \"NikeShoes\". The query parameter `find=all` suggests that all results related to this team name are to be retrieved.\n\n- **Headers**:\n  - An empty header object is present, indicating that no additional headers are being sent with the request. The `disabled` flag is set to true, meaning this header will not be included in the request.\n\n- **Body**:\n  - **Mode**: The body mode is set to \"raw\". This means that the request does not contain any structured data and is instead sending a raw request.\n  - **Raw**: The raw body content is empty, indicating that no data is being sent in the request body.\n\n### Summary\nThis endpoint is configured to retrieve all search results associated with the \"NikeShoes\" team name using a GET request. A bearer token is required for authorization, but no additional headers or body content are provided with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - By Channel Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?channel=MyNikeChannel&find=all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channel",
+              "value": "MyNikeChannel"
+            },
+            {
+              "key": "find",
+              "value": "all"
+            }
+          ]
+        },
+        "description": "### Description of the API Endpoint Data:\n\n- **Name**: This is the name of the API endpoint, which is \"Search - Results - Get All - By Channel Name.\" It indicates that this endpoint is used to retrieve all search results associated with a specific channel name.\n\n- **Request**: This section provides details about how the API request should be structured.\n\n  - **Auth**: This specifies the authentication required to access the endpoint. In this case, it uses bearer token authentication.\n    - **Type**: The authentication type is specified as \"bearer,\" meaning that a token is needed to authorize the request.\n    - **Bearer**: It contains the following properties:\n      - **Key**: This is labeled as \"token,\" indicating the type of the token used for authentication.\n      - **Value**: The value is set to \"BearerToken,\" which should be replaced with the actual bearer token for the request.\n      - **Type**: This is indicated as \"string,\" specifying that the token is in string format.\n\n  - **Method**: This indicates the HTTP method used for the request, which is a \"GET.\" This means that the endpoint is designed to retrieve data from the server.\n\n  - **URL**: This is the endpoint URL where the request is sent. It is specified as:\n    ```\n    http://localhost:3000/api/search/results/all/?channel=MyNikeChannel&find=all\n    ```\n    - **channel**: In the URL, this query parameter is set to \"MyNikeChannel,\" which specifies the channel name for which the search results are being requested.\n    - **find**: This parameter is set to \"all,\" indicating that all search results related to the specified channel should be retrieved.\n\n  - **Headers**: This section lists the headers that accompany the request.\n    - **Key**: There is a key specified, which is currently empty.\n    - **Value**: The corresponding value is also empty.\n    - **Type**: The type is marked as \"default,\" meaning it does not require any specific format.\n    - **Disabled**: This field is set to true, indicating that this header is currently not active and will not be sent with the request.\n\n  - **Body**: This section describes the body of the request.\n    - **Mode**: The mode is set to \"raw,\" indicating that the body content will be sent in a raw format.\n    - **Raw**: The raw content is empty, signifying that no body content is being sent in this GET request.\n\nThis detailed description provides clarity on the structure and requirements for using this API endpoint effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get All - By Tournament Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?tournament=NikeAdidasTournament&find=all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tournament",
+              "value": "NikeAdidasTournament"
+            },
+            {
+              "key": "find",
+              "value": "all"
+            }
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n**Endpoint Name:**  \nSearch - Results - Get All - By Tournament Name  \nThis endpoint is used to retrieve search results for a specific tournament based on its name.\n\n**Request Method:**  \nGET  \nThis method is used to request data from the specified resource without modifying it.\n\n**Request URL:**  \nhttp://localhost:3000/api/search/results/all/?tournament=NikeAdidasTournament&find=all  \nThis URL points to the API where the search request is made. The query parameters include:\n- `tournament`: Specifies the name of the tournament for which results are being searched. In this case, the tournament is \"NikeAdidasTournament.\"\n- `find`: Indicates the type of search to perform. The value \"all\" suggests that the request aims to retrieve all relevant results related to the specified tournament.\n\n**Authorization:**  \n- **Auth Type:** Bearer  \nThe authorization method used here is bearer token authentication. This requires providing a token in the request header to authenticate the user.\n\n- **Bearer Token:**  \n  - **Key:** token  \n    This is the key used for the bearer token in the request header.\n  - **Value:** BearerToken  \n    This is a placeholder value that should be replaced with an actual bearer token. The bearer token is a string that provides access to protected resources in the API.\n  - **Type:** string  \n    This indicates that the value for the bearer token is of type string.\n\n**Headers:**  \n- The headers section currently contains an entry with empty key and value fields. However, it is marked as \"disabled,\" meaning no additional headers are included in the request at this time.\n\n**Body:**  \n- **Mode:** raw  \nThe request body mode is set to \"raw,\" indicating that the request does not contain any data payload beyond the query parameters in the URL.\n- **Raw:**  \n  No content is included in the raw body of the request, which is typical for a GET request since data is usually sent through query parameters.\n\nThis documentation should help users understand how to use this endpoint and what parameters are required for a successful API call."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get Videos - By Username",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?username=fortunevieyra_&find=videos",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "fortunevieyra_"
+            },
+            {
+              "key": "find",
+              "value": "videos"
+            }
+          ]
+        },
+        "description": "### API Endpoint: Search - Results - Get Videos - By Username\n\n#### Description of each data field:\n\n- **name**: This is the title of the request which indicates that the request will fetch video results based on a specified username.\n\n- **request**: This section contains all the details required to make the API call.\n  \n  - **auth**: This field specifies the type of authentication required for the API request. In this case, it uses Bearer token authentication.\n    \n    - **type**: Indicates the method of authentication being used; here it is set to \"bearer\".\n    \n    - **bearer**: This is an array that contains authentication details.\n      \n      - **key**: Represents the name of the token field in the request.\n      \n      - **value**: This is where you should place your actual bearer token to authenticate the request. The example value given is \"BearerToken\", which is a placeholder.\n      \n      - **type**: Specifies the data type of the value; here it is defined as \"string\".\n\n  - **method**: This defines the HTTP method used for the request. In this case, it is a \"GET\" request, which means it is used to retrieve data from the server.\n\n  - **url**: This is the endpoint to which the request is sent. It includes a query parameter for the username (\"username=fortunevieyra_\") and an additional parameter (\"find=videos\") to specify that the results should be video content. The base URL is \"http://localhost:3000/api/search/results/all/\".\n\n  - **headers**: This section contains request headers, though the current setup has a disabled header that is empty. Headers can be used for additional information but in this request, no additional headers are specified.\n\n  - **body**: This section describes the body of the request. For a GET request, the body is typically not used, which is reflected here.\n  \n    - **mode**: Indicates how the body is structured. Here it is set to \"raw\", which is often used for sending unformatted data.\n    \n    - **raw**: This field is empty because GET requests generally do not include a body; therefore, no raw content is provided.\n\nThis entire setup is designed to search for video content associated with a specific username and can be directly integrated into Postman for testing and interaction with the associated API."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get Videos - By Channel Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?channel=MyNikeChannel&find=videos",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channel",
+              "value": "MyNikeChannel"
+            },
+            {
+              "key": "find",
+              "value": "videos"
+            }
+          ]
+        },
+        "description": "### API Endpoint Description: Search - Results - Get Videos - By Channel Name\n\n- **Name**: This describes the purpose of the endpoint, which is to search for video results specifically by a specified channel name.\n\n- **Request**:\n  - **Authentication**:\n    - **Type**: The endpoint requires bearer token authentication. This means that a token must be provided to access the resource.\n    - **Bearer**: This contains the details for the bearer token authentication.\n      - **Key**: This indicates the parameter name for the bearer token, which is `token`.\n      - **Value**: This is where the actual bearer token should be placed, in this example it's represented as `BearerToken`.\n      - **Type**: The type of the bearer token is specified as a string.\n\n  - **Method**: The HTTP method used for this request is `GET`, indicating that it is retrieving information rather than modifying or creating data.\n\n  - **URL**: The endpoint URL being accessed is `http://localhost:3000/api/search/results/all/`. The query parameters appended to this URL are:\n    - **channel**: This parameter specifies the name of the channel to search for; in this case, it is set to `MyNikeChannel`.\n    - **find**: This parameter indicates what type of content to search for, which is specified as `videos`.\n\n  - **Headers**: This section is used for any additional headers that may be required for the request. \n    - Here, there is an empty header which is currently disabled and does not impact the request.\n\n  - **Body**: \n    - **Mode**: The request body mode is set to `raw`, meaning no specific format is applied.\n    - **Raw**: This section is currently empty, indicating no additional data is being sent in the body of the request.\n\nThis endpoint is designed to retrieve video results associated with a specified channel name, and it requires a valid bearer token for authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get Channels - By Username",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?username=fortunevieyra_&find=channels",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "fortunevieyra_"
+            },
+            {
+              "key": "find",
+              "value": "channels"
+            }
+          ]
+        },
+        "description": "- **Name**: This is the name of the API endpoint, which is \"Search - Results - Get Channels - By Username\". It describes the purpose of the request, indicating it will fetch channel information based on a specified username.\n\n- **Request**: This section contains details about how to make the API request.\n\n    - **Auth**: This specifies the authentication method used for the request.\n    \n        - **Type**: Indicates that the type of authentication used is \"bearer\". This generally means a bearer token is required to authorize the request.\n        \n        - **Bearer**: This is an array that holds the authentication token details.\n        \n            - **Key**: This specifies the type of value being sent, in this case, it is \"token\", which indicates that a token is needed for authentication.\n            \n            - **Value**: This is where the actual token should be placed. The example provided is \"BearerToken\", which is a placeholder and should be replaced with a valid bearer token for authentication.\n            \n            - **Type**: This indicates the data type of the value, which is \"string\", meaning the value should be a string format.\n\n    - **Method**: This indicates the HTTP method used for the request, which is \"GET\". A GET request is used to retrieve data from the specified resource.\n\n    - **URL**: This is the endpoint being accessed. The provided URL is \"http://localhost:3000/api/search/results/all/?username=fortunevieyra_&find=channels\". It includes parameters:\n        - **username**: This query parameter specifies the username to search for, in this case, \"fortunevieyra_\".\n        - **find**: This query parameter is set to \"channels\", indicating that the request is looking for channels associated with the provided username.\n\n    - **Headers**: This section contains any headers that may be sent with the request.\n    \n        - **Key**: This field is currently empty, indicating that no specific header keys are being utilized for this request.\n        \n        - **Value**: This field is also empty, suggesting there is no additional data being sent in the headers.\n        \n        - **Type**: This indicates the type of header being used, which is \"default\".\n        \n        - **Disabled**: This is set to true, meaning any headers defined here are currently not active and will not be sent with the request.\n\n    - **Body**: This section would define the body of the request, which is relevant for certain types of requests (like POST or PUT).\n\n        - **Mode**: Indicates the mode of the body, here it is \"raw\".\n        \n        - **Raw**: This area is empty, meaning no raw data is being sent with this request. For a GET request, it is typical to have no body content."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get Channels - By Account Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?accountId=accountId&find=channels",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "find",
+              "value": "channels"
+            }
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n**Name**: \n- This is the name of the API endpoint, \"Search - Results - Get Channels - By Account Id\". It indicates that this endpoint is used to search for channel results based on an account ID.\n\n**Request**: \n- This section outlines the details necessary to make a request to the API.\n\n  **Auth**: \n  - This specifies the authentication method required to access the endpoint.\n  \n    **Type**: \n    - Indicates that the authentication type is \"bearer\", meaning a token is needed for access.\n\n    **Bearer**: \n    - This contains the bearer token details.\n    \n      **Key**: \n      - The key here is \"token\", which identifies the specific parameter being sent in the authorization header.\n\n      **Value**: \n      - This represents the value of the token that is required to authenticate the request. \"BearerToken\" is a placeholder for the actual token value.\n\n      **Type**: \n      - This indicates the data type of the token, which is specified as \"string\".\n\n  **Method**: \n  - The HTTP method used for this request is \"GET\". This means the request is intended to retrieve data from the specified resource.\n\n  **URL**: \n  - This is the endpoint's address where the API request will be sent. The URL provided is:\n    ```\n    http://localhost:3000/api/search/results/all/?accountId=accountId&find=channels\n    ```\n    - \"localhost:3000\" refers to the local server and port where the API is hosted.\n    - The query parameters include:\n      - `accountId=accountId`: This should be replaced with the actual account ID of interest.\n      - `find=channels`: This indicates that the search is specifically looking for channels.\n\n  **Headers**: \n  - This section is used to specify any additional request headers. \n    - The provided header is empty with no key or value set, and it is marked as \"disabled\", meaning it will not be included in the request.\n\n  **Body**: \n  - This section defines the payload of the request. \n    - The mode is set to \"raw\", which allows for the sending of raw data.\n    - The \"raw\" field is empty, meaning no body data will be sent with the GET request, which is typical for GET requests since they usually do not include a request body.\n\nThis detailed description provides clarity on how to interact with this specific API endpoint for retrieving channel results by account ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get Teams - By Username",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?username=fortunevieyra_&find=teams",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "fortunevieyra_"
+            },
+            {
+              "key": "find",
+              "value": "teams"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - Get Teams - By Username\n\n**Name:**  \nSearch - Results - Get Teams - By Username\n\n**Request Details:**\n\n- **Authentication:**\n  - **Type:** Bearer\n    - This indicates that the request uses bearer token authentication.\n  - **Bearer:** \n    - **Key:** token\n      - This is the key used for the bearer token.\n    - **Value:** BearerToken\n      - This is the placeholder value for the bearer token that authorizes the user. Replace with a valid token for authentication.\n    - **Type:** string\n      - Indicates that the bearer token is treated as a string.\n\n- **Method:**  \n  - **GET**\n    - This method is used to retrieve data from the specified resource.\n\n- **URL:**  \n  - `http://localhost:3000/api/search/results/all/?username=fortunevieyra_&find=teams`\n    - This is the endpoint used to search for teams based on a specific username. \n    - The query parameters:\n      - **username=fortunevieyra_**\n        - The username to search for teams associated with. In this example, it is set to \"fortunevieyra_\".\n      - **find=teams**\n        - Specifies that the search should return results related to teams.\n\n- **Headers:**\n  - This section is currently empty and disabled.\n    - You may not need to provide any additional headers for this request. If required in the future, you can enable and specify the headers here.\n\n- **Body:**\n  - **Mode:** raw\n    - This indicates that the body of the request is in raw format.\n  - **Raw:** \n    - The body is currently empty as this is a GET request, which typically does not send a body.\n\n**Summary:**  \nThis endpoint allows users to search for teams associated with a specific username by sending a GET request with a bearer token for authentication. The response will provide details of the teams found for the provided username. Use the specified URL and replace the bearer token with a valid one for successful access."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get Teams - By Tournament Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?tournament=NikeAdidasTournament&find=teams",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tournament",
+              "value": "NikeAdidasTournament"
+            },
+            {
+              "key": "find",
+              "value": "teams"
+            }
+          ]
+        },
+        "description": "**Endpoint Name: Search - Results - Get Teams - By Tournament Name**\n\n**Request Details:**\n\n- **Authentication:**\n  - This endpoint requires bearer token authentication. The token is included in the authorization header.\n  - **Key:** \"token\" - This key represents the authorization type.\n  - **Value:** \"BearerToken\" - This placeholder should be replaced with the actual bearer token needed for authentication.\n  - **Type:** \"string\" - This indicates that the value should be a string.\n\n- **HTTP Method:**\n  - The method used for this request is \"GET\". This is typically used to retrieve data from the server.\n\n- **URL:**\n  - The endpoint to access is: `http://localhost:3000/api/search/results/all/?tournament=NikeAdidasTournament&find=teams`\n  - The URL consists of several components:\n    - **Base URL:** `http://localhost:3000` - This indicates that the server is running locally on the standard port 3000.\n    - **Path:** `/api/search/results/all/` - This path indicates that the request is for retrieving search results.\n    - **Query Parameters:** \n      - `tournament=NikeAdidasTournament` - This specifies the name of the tournament for which the teams are being searched.\n      - `find=teams` - This indicates that the request is specifically looking for team data.\n\n- **Headers:**\n  - There are no active headers defined for this request as shown by the empty key and value.\n  - The header is marked as \"disabled,\" indicating it will not be included in the request.\n\n- **Body:**\n  - The body of the request is empty, as indicated by:\n    - **Mode:** \"raw\" - This signifies that the body is expected to contain raw data, but in this case, it is empty.\n    - **Raw:** \"\" - No raw data is provided in the body of the request.\n\nThis endpoint is designed to fetch the list of teams associated with a specified tournament name from the API. Ensure that you provide a valid bearer token for authorization before making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get Tournaments - By Username",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?username=fortunevieyra_&find=tournaments",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "username",
+              "value": "fortunevieyra_"
+            },
+            {
+              "key": "find",
+              "value": "tournaments"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - Get Tournaments - By Username\n\n**Request Type:** GET  \nThis endpoint is used to retrieve tournament results associated with a specific username.\n\n**URL:** \n`http://localhost:3000/api/search/results/all/?username=fortunevieyra_&find=tournaments`  \n- This is the address where the request is sent.\n- The query parameters included in the URL are:\n  - `username=fortunevieyra_`: This specifies the username for which tournament results are being searched.\n  - `find=tournaments`: This indicates that the search is specifically for tournaments.\n\n**Authorization:** \n- **Type:** Bearer  \n- This endpoint requires a Bearer token for authentication, which is used to secure API access. \n\n**Bearer Token Details:**\n- **Key:** token  \n- The parameter name for the token.\n- **Value:** BearerToken  \n- This would be replaced with the actual bearer token used for authentication. \n- **Type:** string  \n- Indicates that the value should be in string format.\n\n**Headers:** \n- The request may include headers, but currently, no specific headers are defined.\n- The header entry shown is disabled, meaning it will not be sent with the request.\n\n**Body:** \n- **Mode:** raw  \n- Indicates that the body content will be in raw format. \n- **Raw:** \"\"  \n- There is no data sent in the request body for this GET request, as it is not necessary for retrieving the tournament results.\n\n### Summary:\nThis endpoint is designed to retrieve tournament data based on a provided username. It requires authentication via a Bearer token and does not require any request body or additional headers."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Results - Get Tournaments - By Team Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/results/all/?team=NikeShoes&find=tournaments",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "results",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "team",
+              "value": "NikeShoes"
+            },
+            {
+              "key": "find",
+              "value": "tournaments"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Search - Results - Get Tournaments - By Team Name\n\n**Endpoint Name**: This endpoint is used to search for tournaments by a specific team name.\n\n**Request Type**: \n- **Method**: `GET` \n  - This indicates that the request will retrieve data from the server and will not modify any resources.\n\n**Authorization**:\n- **Auth Type**: `Bearer`\n  - This type of authentication requires a bearer token to be included in the request for access to the endpoint.\n  - **Token Structure**:\n    - **Key**: \"token\" \n      - This is the name of the header that carries the authorization token.\n    - **Value**: \"BearerToken\" \n      - This placeholder represents the actual bearer token needed for authentication. Users should replace this with their valid token.\n    - **Type**: \"string\" \n      - This indicates that the token value is a string.\n\n**URL**: \n- `http://localhost:3000/api/search/results/all/?team=NikeShoes&find=tournaments`\n  - This is the request URL used to access the endpoint. \n  - Query parameters explained:\n    - **team=NikeShoes**: This parameter specifies the name of the team whose tournaments are being searched. In this case, the team name is \"NikeShoes\".\n    - **find=tournaments**: This parameter indicates that the search is specifically looking for tournaments associated with the specified team.\n\n**Headers**: \n- The header section currently shows an empty key and value pair and is marked as disabled.\n  - This means no additional headers are being sent with the request. Users can add custom headers if needed.\n\n**Body**:\n- **Mode**: `raw`\n  - Indicates that the body of the request doesn’t contain any data since it's a GET request.\n- **Raw**: \n  - The raw data section is empty, which is expected for a GET request as the parameters needed are included in the URL.\n\n### Summary\nThis endpoint allows users to retrieve a list of tournaments by providing the specific team name in the query parameters, all while ensuring security through bearer token authentication. No additional headers or body content are required for the GET request.\n"
+      },
+      "response": []
+    }
+  ]
+}

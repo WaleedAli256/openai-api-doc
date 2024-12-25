@@ -1,0 +1,1850 @@
+{
+  "info": {
+    "_postman_id": "7858f438-3cda-4b00-b5f2-e82474fc499d",
+    "name": "PaymentCharge",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2560458"
+  },
+  "item": [
+    {
+      "name": "Charge - Square - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\":{\r\n        \"cardId\": \"cnon:card-nonce-ok\",\r\n        \"customerId\": \"PF9MGB6CEK4YYG3D5QHPHQ23NG\",\r\n        \"amount\": 100,\r\n        \"currency\": \"USD\",\r\n        \"description\": \"Test Created Payment\"\r\n    },\r\n    \"isSaveRecurring\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"square\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - Square - Create ++\". It is set up to POST a request to the URL \"http://localhost:3000/api/payment/charge/create\". There are no unique headers attached to this request.\n\nThe body of the request is in raw format. The expected language for the body is JSON. The following fields are included with the defined values and descriptions:\n\n1. \"accountId\": Represents the unique identifier for an account. It should contain the valid id of the account you want to connect to.\n\n2. \"sessionId\": Represents the unique identifier for a session. It should contain a valid session id that is active for the account you want to charge.\n\n3. \"source\": This object encapsulates multiple details required for the payment, explained below: \n     a. \"cardId\": This is the identifier of the card to be charged. Placeholder value is \"cnon:card-nonce-ok\". Replace it with a valid card nonce from the card you want to charge.\n     b. \"customerId\": This is the unique identifier for the customer. Replace the placeholder with a valid customer id.\n     c. \"amount\": This is the amount to be charged. It is currently set to 100. Replace it with the desired charge amount.\n     d. \"currency\": This is the type of currency to be used for the transaction. Currently, it's set to USD.\n     e. \"description\": This field is used to provide additional details about the payment. Presently it is set to \"Test Created Payment\".\n\n4. \"isSaveRecurring\": A boolean value expected here to determine if this payment should be set up as a recurring charge. It is currently set to true. \n\n5. \"isPrimary\": A boolean value expected to specify if the provider is the primary mode of payment. It is currently set to false.\n    \n6. \"provider\": The name of the service provider to be used for the transaction. It is currently set to \"square\".\n   \nThis endpoint should be utilized to create a charge in the Square payment system. Replace the placeholder values with the actual values for a successful transaction."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Square - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"chargeId\": \"z1wfr2zrfCsIWwLi4vOiakzdQkDZY\",\r\n    \"source\":{\r\n        \"amount\": 250,\r\n        \"currency\": \"USD\"\r\n    },\r\n    \"isSaveRecurring\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"square\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "This endpoint is designed to update charge information in the Square payment system. \n\n1. **name:** It signifies the name of the endpoint, which is \"Charge - Square - Update\". This means this endpoint is meant to update charge information for the Square payment platform.\n\n2. **request:** It contains all the request information for the endpoint.\n\n- **method:** The HTTP method here is \"PUT\" which is typically used to update existing resource in REST API.\n\n- **url:** This is the URL where the request needs to be sent. Currently, it is set to a localhost URL which is \"http://localhost:3000/api/payment/charge/update\".\n\n- **headers:** Headers area is currently empty because there are no additional HTTP headers to be sent along with the request.\n\n- **body:** This contains the content that needs to be sent to the server. The body is sent in \"raw\" format, meaning it is a string of text. It is sending the JSON data in raw format.\n\n- **raw:** The raw field contains the actual JSON data to be sent in the request body.\n\n  - **accountId:** This denotes the unique ID associated with an account in the payment system.\n\n  - **sessionId:** This is the unique identifier for the current session of the user.\n\n  - **chargeId:** This is a unique ID associated with the specific charge that needs to be updated.\n\n  - **source:** This object contains two properties, \"amount\" and \"currency\". \"Amount\" is the actual amount to be charged and \"currency\" denotes in which currency the amount is going to be charged. In this case, the amount is 250 and the currency is in USD (US Dollars).\n\n  - **isSaveRecurring:** This is a boolean field determining whether this charge should be saved as a recurring charge. It is set to true meaning this charge will be saved as a recurring charge.\n\n  - **isPrimary:** This is a boolean field determining whether this is a primary charge or not. It is set to true meaning this is a primary charge.\n\n  - **provider:** This is the name of the payment provider. In this case, it's 'square'.\n    \n- **options:** This provides additional configuration options related to how the data in the body field should be interpreted. Here, the \"language\" option is set to \"json\", meaning the data in the \"raw\" field should be interpreted as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Square - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/?provider=square&accountId=accountId&sessionId=sessionId&chargeId=ZQ7HFE4KJ0JBJKPGV1DCCBAA3W",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "square"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "chargeId",
+              "value": "ZQ7HFE4KJ0JBJKPGV1DCCBAA3W"
+            }
+          ]
+        },
+        "description": "This endpoint is a GET request, named \"Charge - Square - Get\". It's designed to retrieve charge information from a payment gateway, specifically Square. Here are the detailed descriptions of each data:\n\n1. `name`: This indicates the title or identifier of the endpoint, which is \"Charge - Square - Get\". This name is used to recognize and call the particular endpoint in the API collection.\n\n2. `request`: This contains the essential information for the API request.\n   - `method`: This specifies the HTTP method used to send the request. In this case, `GET` is used, which is typically used for retrieving information.\n   - `url`: This is the endpoint to which the request is sent. The URL is `http://localhost:3000/api/payment/charge/get/`, with the inclusion of specific query parameters that are critical for defining the request.\n\n3. `url Parameters`: The additional parameters at the end of the URL are key-value pairs that are important for the request.\n   - `provider`: This parameter specifies the payment gateway that the specified endpoint uses, which is `square` in this case.\n   - `accountId`: This parameter is used to determine the account for which the charge information should be fetched. Replace `accountId` with the actual ID of the account you want to fetch data for.\n   - `sessionId`: This parameter represents the session during which the charge was made. Replace `sessionId` with the actual ID of the desired session.\n   - `chargeId`: The `chargeId` is the identifier for the specific charge you want information about. Replace `ZQ7HFE4KJ0JBJKPGV1DCCBAA3W` with the actual ID of the charge.\n\n4. `headers`: This is currently empty in this request. The `headers` section usually includes specific headers (such as authorization tokens, content type, etc.) needed for the request to be successfully processed.\n\nOverall, this is a charge information retrieval request for payments made through Square, mapped to a specific account and session, identified via the accountId, sessionId, and chargeId parameters. The response will contain details about the specified charge."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Square - getAll",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/?provider=square&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "square"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Charge - Square - getAll\" which represents an HTTP request that retrieves all charge data from Square Payment API. \n\nThe request contains several components:\n\n1. \"Method\": This attribute details the type of HTTP method used for the request. For this specific request, it is a \"GET\" method, which is used to retrieve data.\n\n2. \"Url\": This attribute represents the Uniform Resource Locator (URL) where the request is sent to. The URL for this request is \"http://localhost:3000/api/payment/charge/getAll/?provider=square&accountId=accountId&sessionId=sessionId\". This URL can be broken down into several parts:\n\n    i. \"http://localhost:3000\": local host URL indicating request is sent and received within the same system. \"3000\" is the port number where your server is listening.\n    \n    ii. \"/api/payment/charge/getAll\": The specific resource that you want to obtain data from, in this case, it is referring to the Charge details from the payment module. \n    \n    iii. \"?provider=square&accountId=accountId&sessionId=sessionId\": Query parameters passed in the URL. They are used to provide the application with additional data or perform additional operations on the server. In this context, \"provider=square\" specifies that the provider is Square; \"accountId=accountId\" where accountId should be replaced by the actual Account ID; and \"sessionId=sessionId\" where sessionId should be replaced by the actual Session ID. \n\n3. \"Headers\": This attribute contains any optional headers that you want to send with your HTTP request. In this case, headers are not being used and are empty. These can be used to define the nature of the data in the body of the request or response, set cookies, etc.\n\nRemember to replace \"accountId\" and \"sessionId\" in the URL with actual Account and Session IDs respectively before making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Square - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"chargeId\": \"z1wfr2zrfCsIWwLi4vOiakzdQkDZY\",\r\n    \"provider\": \"square\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete?performCompleteOrCancel=cancel",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "performCompleteOrCancel",
+              "value": "cancel"
+            }
+          ]
+        },
+        "description": "This endpoint is designed to delete a specific charge on the Square payment platform. \n\n- `name`: The name of the endpoint, which is \"Charge - Square - Delete\". It gives a clear indication that the purpose of this endpoint is to delete a charge in the Square platform.\n\n- `request`: This outlines details for the HTTP request. This contains four key parts: \n   - `method`: This signifies the HTTP method used for the request, which in this case is \"POST\".\n   - `url`: The API endpoint's URL where the request needs to be sent. The \"performCompleteOrCancel\" parameter shows whether the transaction will be cancelled or completed, which in this case is cancel.\n   \n- `headers`: This field represents the headers to be included in the HTTP request. In this case, it is empty, which means no custom headers are required.\n\n- `body`: This part of the request contains the actual data that we want to send to the API. The request body here is sent in JSON format in \"raw\" mode. \n\n  It comprises of four elements:\n  - `accountId`: The identifier of the Square account where the charge is linked.\n  - `sessionId`: The session ID which signifies the specific session where the operation will take place.\n  - `chargeId`: The unique identifier which refers to the charge to be deleted.\n  - `provider`: The name of the payment provider, which in this case is \"square\".\n\n- `options`: This field contains additional parameters that can be provided for the HTTP request. Here, the \"language\" is set as \"json\" which means that the server expects the request body to be in JSON format. \n\nPlease ensure to replace the placeholders in the request body with actual data before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Checkout - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"source\": {\n            \"type\": \"card\",\n            \"number\": \"4242424242424242\",\n            \"expiry_month\": 12,\n            \"expiry_year\": 2024,\n            \"cvv\": \"100\",\n            \"name\": \"John Doe\"\n        },\n        \"currency\": \"USD\",\n        \"amount\": 1100,\n        \"payment_type\": \"Regular\",\n        \"reference\": \"ORDER 1234\",\n        \"description\": \"Mint Tea\",\n        \"processing_channel_id\": \"pc_dtuclkid2cnulkisycgxyoanla\",\n        \"customer\": {\n            \"email\": \"customer@gmail.com\",\n            \"name\": \"customer 1\"\n        },\n        \"metadata\": {\n            \"value\": \"My value\"\n        }\n    },\n    \"isSaveCharge\": true,\n    \"isPrimary\": false,\n    \"provider\": \"checkout\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Charge - Checkout - Create ++\". It is a POST request and is used to create a payment charge through the \"checkout\" payment gateway.\n\nURL: The endpoint URL is \"http://localhost:3000/api/payment/charge/create\". \n\nHeaders: This endpoint does not require any headers.\n\nBody: The body of this request needs to be sent in raw format, specifically in JSON language. The parameters and their explanations are as follows:\n\n- `accountId`: The account identification string.\n\n- `sessionId`: Session identification string. \n\n- `source`: This is an object that contains credit card information and transaction details like:\n     - `type`: Type of payment source, in this case, a \"card\".\n     - `number`: The card number.\n     - `expiry_month`: The month when the card expires.\n     - `expiry_year`: The year when the card expires.\n     - `cvv`: Card CVV number.\n     - `name`: Name on the card. \n\n- `currency`: The currency in which the transaction is processed. e.g., \"USD\"\n\n- `amount`: Numeric value of the transaction amount.\n\n- `payment_type`: The type of the payment. e.g., \"Regular\".\n\n- `reference`: A reference string for the transaction.\n\n- `description`: A string describing the purpose of the transaction.\n\n- `processing_channel_id`: Identifier for the processing channel to be used.\n\n- `customer`: Object holding customer details like:\n     - `email`: The email of the customer.\n     - `name`: The name of the customer.\n\n- `metadata`: An object holding any additional data related to the transaction.\n\n- `isSaveCharge`: A boolean value indicating if the charge details are to be saved. If set to `true`, the charge details will be saved.\n\n- `isPrimary`: This is a boolean value indicating if the payment source is primary. If set to false, the source is not primary.\n\n- `provider`: The payment gateway provider. In this case, it's \"checkout\". \n\nNotes: Replace placeholder values like \"ACCOUNTID\", \"SESSIONID\", \"4242424242424242\" etc with real-world values according to the nature of your application and transactions."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Checkout - Update",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"source\": {\n            \"type\": \"card\",\n            \"number\": \"4242424242424242\",\n            \"expiry_month\": 12,\n            \"expiry_year\": 2024,\n            \"cvv\": \"100\",\n            \"name\": \"John Doe\"\n        },\n        \"currency\": \"USD\",\n        \"amount\": 1100,\n        \"payment_type\": \"Regular\",\n        \"reference\": \"ORDER 1234\",\n        \"description\": \"Mint Tea\",\n        \"processing_channel_id\": \"pc_dtuclkid2cnulkisycgxyoanla\",\n        \"customer\": {\n            \"email\": \"customer@gmail.com\",\n            \"name\": \"customer 1\"\n        },\n        \"metadata\": {\n            \"value\": \"My value\"\n        }\n    },\n    \"isSaveCharge\": true,\n    \"isPrimary\": false,\n    \"provider\": \"checkout\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "The data represents the \"Charge - Checkout - Update\" endpoint request structure for updating a payment charge. This endpoint uses a POST method. Below is a detailed explanation of each field.\n\n1. `name`: The name of this endpoint is \"Charge - Checkout - Update\".\n\n2. `request`: Contains the details of the HTTP request.\n\n   * `method`: The HTTP method used, here it's \"POST\".\n   \n   * `url`: The endpoint URL where you can send the request, which is \"http://localhost:3000/api/payment/charge/update\".\n\n   * `headers`: This represents the headers to pass with the request, it's currently empty.\n\n   * `body`: Contains the payload of the request. It is in raw JSON format. \n    \n     * `accountId`: The Account identifier.\n     \n     * `sessionId`: The Session identifier.\n     \n     * `source`: The source object contains the payment source details.\n     \n         * `type`: The card type.\n         \n         * `number`: The card number.\n         \n         * `expiry_month`: The card's expiration month.\n         \n         * `expiry_year`: The card's expiration year.\n         \n         * `cvv`: The card's CVV value.\n         \n         * `name`: Cardholder's name.\n         \n     * `currency`: The currency in which payment is made.\n     \n     * `amount`: The amount being charged.\n     \n     * `payment_type`: The payment type. Here it's \"Regular\".\n     \n     * `reference`: Any reference value related to the payment.\n     \n     * `description`: A brief description of the charge.\n     \n     * `processing_channel_id`: This is a unique identifier of the processing channel.\n     \n     * `customer`: Contains the customer details.\n         \n         * `email`: Customer's email address.\n         \n         * `name`: Name of the customer.\n         \n     * `metadata`: This contains any additional data associated with the payment.\n     \n   * `isSaveCharge`: Boolean value to determine whether the charge should be saved or not.\n\n   * `isPrimary`: Boolean value to indicate if the payment method is primary or not.\n\n   * `provider`: Defines the payment provider. Here it's \"checkout\".\n\n3. `options`: Contains additional options for processing the raw payload of the request. Specifically, it specifies that the language of the raw data is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Checkout - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/?chargeId=pay_3smrlfhccysennyn4w5sa2g6ya&provider=checkout&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "chargeId",
+              "value": "pay_3smrlfhccysennyn4w5sa2g6ya"
+            },
+            {
+              "key": "provider",
+              "value": "checkout"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Charge - Checkout - Get\". It uses the HTTP GET method for data retrieval. The data associated with this endpoint is defined by the parameters sent within the URI (Uniform Resource Identifier). Each parameter is as described below:\n\n1. `name`: This represents the name of the endpoint in the API collection. In this case, the name is \"Charge - Checkout - Get\". This suggests that the endpoint is used to retrieve charge-related information from the checkout process.\n\n2. `request`: This object contains the details of the API request.\n\n3. `method`: This property, found under the 'request' object, indicates the HTTP method used. Here, the GET method is used, signifying that the API will retrieve information based on the provided parameters.\n\n4. `url`: This is the server's address to which the request will be sent. It also contains the path to the API endpoint `/api/payment/charge/get/` which, given the name of the endpoint, likely retrieves payment charge information associated with a checkout process.\n\n5. `chargeId`: This query parameter, appended to the url with the key `chargeId`, signifies the unique identifier of the specific charge record you wish to retrieve. This must be provided for the server to understand which charge to fetch.\n\n6. `provider`: This parameter, `provider`, is another query parameter also appended to the url. It specifies the provider of the checkout service. In this case, the provider is indicated as 'checkout'. \n\n7. `accountId`: This query parameter, `accountId`, specifies the unique identifier of the user's account. It's necessary for the server to understand which user account the charge is associated with.\n\n8. `sessionId`: This query parameter, `sessionId`, signifies the unique id of the active session. This could be used for tracking or handling multiple requests during the same session.\n\nThe `headers` field is currently an empty array, which suggests that no additional header information is required for this request. However, in different contexts, this might include data like content-type or authentication tokens."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Checkout - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/?provider=checkout&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "checkout"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is labelled as \"Charge - Checkout - Get All\". \n\nThe request made by this endpoint is a GET request. GET request is a type of HTTP method used to retrieve data from a server. Generally, it is used to request data from a specified resource.\n\nThe URL for this request is \"http://localhost:3000/api/payment/charge/getAll/?provider=checkout&accountId=accountId&sessionId=sessionId\". This URL targets the localhost with the port number 3000. This is generally used during the development phase where the developers test an API on their local machine before deploying it to the live server. \n\nOn this local server, it accesses the 'api' route which further gets directed to 'payment' section. Inside the 'payment' section, it accesses 'charge' and then the 'getAll' method. The 'getAll' method is generally meant to fetch all the available records.\n\nThere are three query parameters present in the URL, which are 'provider', 'accountId', 'sessionId'.\n \n1. 'provider' parameter: It specifies the payment gateway provider. In this case, it is set to 'checkout'.\n \n2. 'accountId' parameter: It is used to specify the unique id of an account for identification on the payment gateway.\n \n3. 'sessionId' parameter: It is used to maintain a session between the client and the server. This can be used for activities like maintaining a logged-in session or tracking user activity.\n\nThe 'headers' field is currently empty in this endpoint, which means no further information like content-type or authorization tokens are being sent in this API call."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Checkout - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"chargeId\": \"pay_3smrlfhccysennyn4w5sa2g6ya\",\n    \"provider\": \"checkout\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - Checkout - Delete\". It is a POST method which signifies that it is generally used to send data to be processed to a specified resource. \n\nThe URL for the API is \"http://localhost:3000/api/payment/charge/delete\", where 'localhost:3000' signifies the local server at port 3000, 'api' represents application programming interface, 'payment' suggests it's related to payment operations, 'charge' is likely relating to specific transaction charges and 'delete' means it's used to delete a particular charge.\n\nThe 'headers' field is currently empty. Headers are often used to tell the server what formats it's able to interpret or give additional information about the request.\n\nIn the 'body' field, 'mode' is set to 'raw'. This shows that you're sending the data as is, without any specific formatting.\n\nThe 'raw' field which is nested under 'body', contains the actual data being sent in the request. This data is in JSON format as specified in 'options' field. \n\nThe 'raw' JSON data includes four fields:\n1. \"accountId\": This refers to the unique identifier of the account associated with the charge.\n2. \"sessionId\": This field likely refers to the unique identifier of the current session.\n3. \"chargeId\": This refers to the specific identifier for the charge that you intend to delete. 'pay_3smrlfhccysennyn4w5sa2g6ya' seems like a sample charge ID.\n4. \"provider\": This field indicates the payment gateway provider. In this case, it's 'checkout'. This would be useful to decide which service to use for various operations related to payments.\n\nFinally, in 'options', 'language' is set to 'json', indicating that the data sent in 'raw' is in JSON format.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - AmazonPay - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"chargePermissionId\": \"S01-5030207-8737627\",\n        \"amount\": 15.10,\n        \"currencyCode\": \"USD\"\n    },\n    \"isSaveCharge\": true,\n    \"isPrimary\": false,\n    \"provider\": \"amazonpay\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - AmazonPay - Create\". It is designed to make a POST request to generate a charge using Amazon Pay on the specified server (http://localhost:3000/api/payment/charge/create). \n\n- The `accountId` is a string representing the unique ID of the account on which the charge is being made.\n- The `sessionId` is a string representing the unique ID for the user session in which the charge process is currently active.\n- The `source` object contains three key items:\n  - `chargePermissionId` represents the unique identifier for charge permission provided by Amazon Pay. For instance, \"S01-5030207-8737627.\"\n  - `amount` is the total amount to be charged and it should be a number representing this value in decimal format. For example, 15.10.\n  - `currencyCode` stands for the code of the currency in which the payment transaction is being carried out. Like USD for US Dollar.\n- The `isSaveCharge` is a Boolean that defines whether the charge information should be saved for future transactions. It will be set to true if the charge info needs to be saved and false otherwise.\n- The `isPrimary` is another Boolean which will be set to true if the payment method being used is the primary one for the user and false otherwise.\n- The `provider` is a string denoting the provider for the transaction, in this case, it is 'amazonpay'.\n\nThe raw data for the body of the request is sent in JSON format as indicated in the `options` object under `body`. The `headers` array is currently empty, this indicates there are no extra headers being sent with the request. \n\nThis endpoint is a part of the Amazon Pay integration and its primary use is to facilitate the creation of a new charge for a user."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - AmazonPay - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/?chargeId=S01-5030207-8737627-C090008&provider=amazonpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "chargeId",
+              "value": "S01-5030207-8737627-C090008"
+            },
+            {
+              "key": "provider",
+              "value": "amazonpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "Endpoint Name: The name data refers to the title of this endpoint which is \"Charge - AmazonPay - Get\". This name indicates that it's an endpoint associated with retrieving charge details for an AmazonPay transaction.\n\nRequest: The request data comprises all the necessary information needed to send a valid request to the server.\n\n- Method: \"GET\" method signifies that the information/ data is being fetched or obtained from the provided server.\n\nURL: \nThis is the address or location where the request needs to be sent, which in this case is, \"http://localhost:3000/api/payment/charge/get/?chargeId=S01-5030207-8737627-C090008&provider=amazonpay&accountId=accountId&sessionId=sessionId\".\n\n- \"http://localhost:3000/api/payment/charge/get/\" forms the base of the API where the request is sent.\n- The parameters following the \"?\" in the URL are query parameters.\n\nQuery Parameters:\n\n- chargeId: A unique identifier \"S01-5030207-8737627-C090008\" for a specific charge within the system. It is used to retrieve the details of a specific payment charge.\n\n- provider: This indicates the payment service provider for this specific charge. In this case, the provider is \"amazonpay\". It states that the transaction should be carried out using AmazonPay.\n\n- accountId: It is a placeholder for the account ID. It is the unique identifier for the user's account.\n\n- sessionId: This is a placeholder for the session ID. It manages the interactions in a single session for a specific user.\n\nHeaders: This field is currently empty but it usually contains additional information such as content type or authentication information. In this case, there are no extra headers provided."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - AmazonPay - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"chargeId\": \"S01-4428260-7423078-C049493\",\n    \"provider\": \"amazonpay\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is called \"Charge - AmazonPay - Delete\". It is a POST request that interacts with a payment module in our server, specifically with the AmazonPay function. The URL for this endpoint is \"http://localhost:3000/api/payment/charge/delete\".\n\nThe request doesn't include any headers. However, it does have a body payload with raw JSON format. \n\nIn the request body, there are several key data points:\n\n\"accountId\": This field holds the unique identifier for the account associated with the transaction. The accountId should be replaced with actual account ID when using this endpoint.\n\n\"sessionId\": This field holds the session identifier for the current user operation. When making a request, you should replace \"sessionId\" with the actual session ID.\n\n\"chargeId\": This indicates the ID of the charge that should be deleted. For example, in \"S01-4428260-7423078-C049493\", replace it with the actual charge ID that you want to delete.\n\n\"provider\": This field signifies the platform for the payment transaction. In this endpoint, it's hardcoded as \"amazonpay\" which indicates Amazon Pay as the provider.\n\nThe \"options\" attribute in the body object defines that the language used in raw mode is 'json'. This is mostly a configuration for the way the request body is shown in the client making the request, instructing it to apply JSON formatting.\n\nIn conclusion, this endpoint deletes a selected charge detail in an AmazonPay payment operation for a specific user's account using a specific session ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Adyen - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"amount\": {\n            \"currency\": \"USD\",\n            \"value\": 1\n        },\n        \"reference\": \"20240910002\",\n        \"paymentMethod\": {\n            \"type\": \"scheme\",\n            \"encryptedCardNumber\": \"test_4111111111111111\",\n            \"encryptedExpiryMonth\": \"test_03\",\n            \"encryptedExpiryYear\": \"test_2030\",\n            \"encryptedSecurityCode\": \"test_737\"\n        },\n        \"returnUrl\": \"https://localhost:7071\",\n        \"merchantAccount\": \"BeladedIncECOM\"\n    },\n    \"isSaveCharge\": true,\n    \"isPrimary\": false,\n    \"provider\": \"adyen\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint, named \"Charge - Adyen - Create ++\", is a POST request intended to create a new payment charge. It can be accessed via the URL \"http://localhost:3000/api/payment/charge/create\".\n\nThe request has several components in its body:\n\n1. \"accountId\": This is the account identifier of the user who is initiating the payment.\n\n2. \"sessionId\": This represents a unique session ID related to the current user's session.\n\n3. \"source\": This object contains detailed information about the payment:\n\n   - \"amount\": This object has two properties, \"currency\" and \"value\". \"currency\" represents the type of currency being used in the payment (e.g. USD), and \"value\" specifies the amount to charge.\n\n   - \"reference\": This is a unique identifier for the transaction, possibly an invoice or order number.\n\n   - \"paymentMethod\": This object contains credit card details:\n     - \"type\": The type of payment method being used, such as a scheme for a credit card.\n     - \"encryptedCardNumber\", \"encryptedExpiryMonth\", \"encryptedExpiryYear\", \"encryptedSecurityCode\": These are the encrypted credit card details.\n\n   - \"returnUrl\": This is the URL where users are redirected post-payment.\n\n   - \"merchantAccount\": This specifies the merchant account to be used for the transaction.\n\n4. \"isSaveCharge\": This is a boolean value indicating whether to save this charge information for future reference.\n\n5. \"isPrimary\": This is a boolean value indicating if the payment method being used is the user's primary payment method.\n\n6. \"provider\": This specifies the payment provider being used to process the payment, in this case \"adyen\".\n\nThe request body, formatted as raw JSON, should be composed following the given structure. Note that the \"language\" in the \"options\" set to \"json\" indicates that the request content is expected to be in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Adyen - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"chargeId\": \"GSTXKNGMLLXDX875\",\n    \"source\": {\n        \"merchantAccount\": \"BeladedIncECOM\",\n        \"amount\": {\n            \"currency\": \"USD\",\n            \"value\": 2\n        },\n        \"reference\": \"20240913001\"\n    },\n    \"isSaveCharge\": true,\n    \"isPrimary\": false,\n    \"provider\": \"adyen\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "1. **name**: \"Charge - Adyen - Update\" - It refers to the name/description of the endpoint that is associated with updating charges made via Adyen.\n\n2. **request**: This defines the request parameters that the endpoint expects.\n\n    a. **method**: \"PUT\" - The HTTP method used to make the request. Here, it's a PUT method, which is often used to update an existing resource.\n\n    b. **url**: \"http://localhost:3000/api/payment/charge/update\" - The URL where the request has to be made, which is an endpoint of a local server for updating payment charges.\n\n    c. **headers** - If any HTTP headers are required they would be specified here. But in this case, it's an empty array as there are no headers.\n\n    d. **body**: This is the content of the request which provides the required parameters as a raw JSON string.\n\n        i. **mode**: \"raw\" - Defines the format of the body content. The body contains raw JSON data.\n\n        ii. **raw**: This is the actual JSON request data. It contains several parameters:\n\n            - **accountId** and **sessionId**: Identifies the user's session in your system.\n\n            - **chargeId**: It's a unique identifier associated with the charge to be updated.\n\n            - **source**: Contains information regarding the payment such as the merchantAccount, amount with currency and value and a reference.\n\n            - **isSaveCharge**: Boolean, if set to true, it means saving this charge for future transactions is requested.\n\n            - **isPrimary**: Boolean, if set to false, it indicates this isn't the primary payment method of the user.\n\n            - **provider**: The name of the payment provider, in this case, 'adyen'.\n                \n        iii. **options**: An option for processing the request. Here, raw JSON structure is defined to be parsed as \"json\".\n\nThis endpoint seems to deal with the task of updating payment charges made via Adyen for a specific user session. The entire raw body of the request is essential to fulfil the update process. The response to this request should be handled accordingly based on the provider's documentation."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Adyen - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"chargeId\": \"NRM5HXXMLLXDX875\",\n    \"source\": {\n        \"reference\": \"20240913002\",\n        \"merchantAccount\": \"BeladedIncECOM\"\n    },\n    \"provider\": \"adyen\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - Adyen - Delete\". It is a POST request and pertains to deleting an existing charge information linked with the Adyen payment gateway. Its URL is \"http://localhost:3000/api/payment/charge/delete\".\n\nHere are the data fields included in the body of the request:\n\n1. \"accountId\": This field specifies the identifier of your user account. You should replace \"accountId\" with your actual account ID.\n\n2. \"sessionId\": This is used to maintain a session state between the client and the server. Replace \"sessionId\" with the active session ID to which the charge is linked.\n\n3. \"chargeId\": This refers to the unique identifier tied to the particular charge that you want to delete. In this example, it is \"NRM5HXXMLLXDX875\".\n\n4. \"source\": Contains further details about the specific charge.\n    - \"reference\": This is an identifying number associated with the charge. In this instance, the reference is \"20240913002\".\n    - \"merchantAccount\": This represents the merchant's Adyen account name. Here, it is \"BeladedIncECOM\".\n\n5. \"provider\": Specifies the name of the payment provider. In this case, 'adyen' indicates that the Adyen payment gateway is being used.\n\nThe body data of this request is in JSON format, as per the \"options\" specified in the request. Please ensure to replace all placeholder data with your own valid data when making this request.\n\nPlease note: This endpoint does not contain any specific HTTP headers. Also, you should be careful while deleting charge records as this action is usually irreversible."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - AuthorizeNet - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"amount\": \"5\",\n        \"payment\": {\n            \"cardNumber\": \"5424000000000015\",\n            \"expirationDate\": \"2025-12\",\n            \"cardCode\": \"999\"\n        },\n        \"lineItems\": [\n            {\n                \"itemId\": \"1\",\n                \"name\": \"vase\",\n                \"description\": \"Cannes logo\",\n                \"quantity\": \"18\",\n                \"unitPrice\": \"45.00\"\n            }\n        ],\n        \"tax\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"duty\": {\n            \"amount\": \"8.55\",\n            \"name\": \"duty name\",\n            \"description\": \"duty description\"\n        },\n        \"shipping\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"poNumber\": \"456654\",\n        \"customer\": {\n            \"id\": \"99999456654\"\n        },\n        \"billTo\": {\n            \"firstName\": \"Ellen\",\n            \"lastName\": \"Johnson\",\n            \"company\": \"Souveniropolis\",\n            \"address\": \"14 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"shipTo\": {\n            \"firstName\": \"China\",\n            \"lastName\": \"Bayles\",\n            \"company\": \"Thyme for Tea\",\n            \"address\": \"12 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"userFields\": [\n            {\n                \"name\": \"MerchantDefinedFieldName1\",\n                \"value\": \"MerchantDefinedFieldValue1\"\n            },\n            {\n                \"name\": \"favorite_color\",\n                \"value\": \"blue\"\n            }\n        ]\n    },\n    \"isSaveCharge\": true,\n    \"isPrimary\": false,\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This is a POST API request titled \"Charge - AuthorizeNet - Create ++\". It is used to create a charge in the payment system using the AuthroizeNet provider. The endpoint for this request is \"http://localhost:3000/api/payment/charge/create\".\n\nThe body of the request contains several key-value pairs:\n\n1. `accountId`: This is the account ID associated with the payment.\n2. `sessionId`: This is a unique identifier for the session.\n3. `source`: Under this, several details about the transaction and the customer are provided.\n   - `amount`: This is the amount that is to be charged.\n   - `payment`: Contains card details.\n     - `cardNumber`: The card number to be charged.\n     - `expirationDate`: The expiration date of the card.\n     - `cardCode`: The card verification code.\n   - `lineItems`: An array of objects where each object contains item details: item ID, name, description, quantity, and unit price.\n   - `tax`: The amount of tax, followed by its name and description.\n   - `duty`: The amount of duty, followed by its name and description.\n   - `shipping`: The cost of shipping, followed by its name and description.\n   - `poNumber`: This is the purchase order number.\n   - `customer`: It includes the customer's unique identifier.\n   - `billTo`: This is the billing address of the customer which includes name, company, address, city, state, zip, and country.\n   - `shipTo`: This is the shipping address of the customer which also includes name, company, address, city, state, zip, and country.\n   - `userFields`: An array of user-defined fields. Each field will have a name and a value.\n4. `isSaveCharge`: A boolean value indicating if the charge details are to be saved.\n5. `isPrimary`: A boolean value indicating if the charge is a primary charge.\n6. `provider`: This denotes the payment gateway provider. In this case, it is 'authorizenet'.\n\nFor the message body raw data, the language is set to JSON. The headers field is left empty indicating no additional parameters are included in this API request header. \n\nRemember to replace all the placeholders (like \"accountId\", \"sessionId\", etc.) with actual data while using this API request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - AuthorizeNet - update",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"amount\": \"5\",\n        \"payment\": {\n            \"cardNumber\": \"5424000000000015\",\n            \"expirationDate\": \"2025-12\",\n            \"cardCode\": \"999\"\n        },\n        \"lineItems\": [\n            {\n                \"itemId\": \"1\",\n                \"name\": \"vase\",\n                \"description\": \"Cannes logo\",\n                \"quantity\": \"18\",\n                \"unitPrice\": \"45.00\"\n            }\n        ],\n        \"tax\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"duty\": {\n            \"amount\": \"8.55\",\n            \"name\": \"duty name\",\n            \"description\": \"duty description\"\n        },\n        \"shipping\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"poNumber\": \"456654\",\n        \"customer\": {\n            \"id\": \"99999456654\"\n        },\n        \"billTo\": {\n            \"firstName\": \"Ellen\",\n            \"lastName\": \"Johnson\",\n            \"company\": \"Souveniropolis\",\n            \"address\": \"14 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"shipTo\": {\n            \"firstName\": \"China\",\n            \"lastName\": \"Bayles\",\n            \"company\": \"Thyme for Tea\",\n            \"address\": \"12 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"userFields\": [\n            {\n                \"name\": \"MerchantDefinedFieldName1\",\n                \"value\": \"MerchantDefinedFieldValue1\"\n            },\n            {\n                \"name\": \"favorite_color\",\n                \"value\": \"blue\"\n            }\n        ]\n    },\n    \"isSaveCharge\": true,\n    \"isPrimary\": false,\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - AuthorizeNet - update\" and it uses the POST method. The aim of this endpoint is to update the information related to a charge on AuthorizeNet. The endpoint URL is \"http://localhost:3000/api/payment/charge/update\".\n\nBelow are the details for each data:\n\n- \"accountId\": This represents the unique identifier of the account. It needs to be replaced with the actual account ID.\n- \"sessionId\": This field represents the session ID and it needs to be replaced with the actual session ID.\n- \"source\": This object holds information about the payment source.\n  - \"amount\": This is the amount to be charged.\n  - \"payment\": This is an object that holds information about the card used for payment.\n    - \"cardNumber\": This is the card number for the payment card.\n    - \"expirationDate\": This is the expiration date of the card.\n    - \"cardCode\": This is the 3-digit CVV code of the card.\n  - \"lineItems\": This is an array that contains details about the items that are included in the charge.\n    - \"itemId\": This is the unique ID of the item.\n    - \"name\": This is the name of the item.\n    - \"description\": This is the description of the item.\n    - \"quantity\": This is the quantity of the item that was ordered.\n    - \"unitPrice\": This is the price per unit of the item.\n  - \"tax\", \"duty\", and \"shipping\": These objects hold information about the tax, duty, and shipping costs respectively. They have similar structure and include \"amount\", \"name\", and \"description\".\n  - \"poNumber\": This corresponds to the purchase order number.\n  - \"customer\": This object holds the customer's identification information.\n    - \"id\": This is the unique ID of the customer.\n  - \"billTo\" and \"shipTo\": These objects hold the billing and shipping information respectively. They include \"firstName\", \"lastName\", \"company\", \"address\", \"city\", \"state\", \"zip\", and \"country\".\n  - \"userFields\": This is an array that can store any additional user-defined data. Each item within the array is an object with \"name\" and \"value\" properties.\n- \"isSaveCharge\": This is a boolean value that indicates whether the charge info should be saved.\n- \"isPrimary\": This is a boolean that indicates whether this payment method should be set as the primary payment method.\n- \"provider\": This is a string field to specify the provider name, in this case, it is \"authorizenet\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - AuthorizeNet - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/?chargeId=92391a26-25d6-4927-bde4-42a414af3daa&provider=authorizenet&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "chargeId",
+              "value": "92391a26-25d6-4927-bde4-42a414af3daa"
+            },
+            {
+              "key": "provider",
+              "value": "authorizenet"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is referred to as 'Charge - AuthorizeNet - Get'. \n\nThe request method is 'GET', which is generally used to request data from a resource. \n\nThe URL where the request is sent to is 'http://localhost:3000/api/payment/charge/get/'. \n\nThe endpoint receives four parameters:\n1. `chargeId`: This is a unique identifier for a particular charge and it is expected to be a string (e.g., '92391a26-25d6-4927-bde4-42a414af3daa').\n2. `provider`: This specifies the payment provider. In this case, the provider name is authorizenet which presents that payment processing will be handled by Authorize.Net.\n3. `accountId`: This refers to the unique ID of the account for which the charge is being processed. The actual identifier needs to be passed.\n4. `sessionId`: This refers to the unique identifier of a session. The actual session identifier ought to be passed. \n\nFinally, the request has an empty array for the headers. This suggests that there are no additional headers being sent with the request. In other cases, this array might include elements like authorization tokens, or information about the client/browser making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - AuthorizeNet - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/?provider=authorizenet&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "authorizenet"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint, named as \"Charge - AuthorizeNet - Get All\", is used to retrieve all charges made through the AuthorizeNet payment provider. It uses the HTTP GET method indicating it's used for data retrieval without affecting any change in the data state.\n\nHere's the breakdown of the data contained within this endpoint:\n\n1. `name`: This is the identifier for the endpoint. In this case, 'Charge - AuthorizeNet - Get All' suggests that this endpoint relates to charging activities carried out using AuthorizeNet and is responsible for fetching all related charges.\n\n2. `request`: This encompasses details related to the HTTP request made to the API. \n\n    - `method`: This is the HTTP method used for making request to the API. 'GET' is used for fetching data from the API.\n\n    - `url`: This is the HTTP(S) address or API route where the request will be sent. `http://localhost:3000/api/payment/charge/getAll/` is the route in this case. Several parameters or query strings follow this path:\n\n        - `provider=authorizenet`: This parameter specifies that the payment provider for this request is AuthorizeNet.\n\n        - `accountId=accountId`: It's a placeholder which is to be replaced by an actual 'accountId' representing a unique account within the system.\n\n        - `sessionId=sessionId`: Similarly, 'sessionId' is a placeholder that's typically replaced by the unique id of a user's current session.\n\n3. `headers`: This is usually populated with key-value pairs of metadata that describe the requested body or additional information like content type, authorization details etc. In this case, the headers are empty which indicates no additional metadata is sent with this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - AuthorizeNet - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"chargeId\": \"1234567890\",\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This endpoint pertains to the 'Charge - AuthorizeNet - Delete' operation. It uses the `POST` method indicating that it sends data to the server to create a new resource. The endpoint URL is `http://localhost:3000/api/payment/charge/delete`, which indicates that it's a local API dealing with payment charge operations, specifically the deletion of a charge.\n\nThe request does not have any specified headers, therefore it won't contain any additional parameters that can define the aspects of the request, like defining the format of the body content.\n\nThe request body mode is set to `raw`, indicating that the data sent to the server is unformatted text or series of bytes. The raw body data is in `JSON` format, as defined in the `options` object.\n\nThe body data in the raw format includes:\n\n1. `\"accountId\"`: This key holds the account ID as the value. This is typically a unique value that identifies the user's account.\n\n2. `\"sessionId\"`: This is the session ID; usually a unique value generated at the beginning of a session. It is used by the system to track an user's session and maintain continuity.\n\n3. `\"chargeId\"`: This key holds the unique charge ID. It is used to identify the specific transaction to be deleted.\n\n4. `\"provider\"`: This key represents the name of the payment provider. In the given data, the provider is set as `authorizenet`, which indicates that the payment procedure is conducted by the Authorize.Net payment gateway.\n\nAll these details must be correctly filled with actual data before the API call to successfully delete a charge."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - NowPayments - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"price_amount\": 3999.5,\r\n        \"price_currency\": \"usd\",\r\n        \"pay_currency\": \"btc\",\r\n        \"ipn_callback_url\": \"https://nowpayments.io\",\r\n        \"order_id\": \"RGDBP-21314\",\r\n        \"order_description\": \"Apple Macbook Pro 2019 x 1\"\r\n    },\r\n    \"isSaveCharge\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"nowpayments\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint, named \"Charge - NowPayments - Create ++\", is used to create a payment charge using the NowPayments service. It requires a POST request to the URL \"http://localhost:3000/api/payment/charge/create\". \n\nThere are several key data fields involved in this request:\n\n- \"accountId\" : This field accepts a string that represents the unique identifier of the user's account in the system.\n\n- \"sessionId\" : This field takes in a string that represents the session id of the current user.\n\n- \"source\" : This object wraps up the information required for the payment. This information includes:\n  - \"price_amount\" : The total payable amount, represented as a numerical float value.\n  - \"price_currency\" : The currency code in which the payment needs to be made, here it is \"usd\".\n  - \"pay_currency\" : The cryptocurrency through which the customer wishes to pay, in this case, Bitcoin (btc).\n  - \"ipn_callback_url\" : The URL to receive instant payment notifications, here it is \"https://nowpayments.io\".\n  - \"order_id\" : A unique order id given to the payment charge, represented here by the string \"RGDBP-21314\".\n  - \"order_description\" : A short description of the order, here the string is \"Apple Macbook Pro 2019 x 1\".\n\n- \"isSaveCharge\" : This Boolean field indicates whether the system should save this charge for future use. If it's true, the charge will be saved.\n\n- \"isPrimary\": This Boolean field shows whether this method is the primary method of payment. If it's false, this is not the primary method.\n\n- \"provider\" : The name of the payment service provider, in this case, it is \"nowpayments\".\n\nThe content of the request is in the raw format and written in the JSON language."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - NowPayments - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": true, \"provider\": \"nowpayments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "The provided endpoint named \"Charge - NowPayments - Update\" is used to update payment charge information in NowPayments system. It uses the HTTP method PUT, indicating that it is used to update existing resources.\n\nThe URL for this request is \"http://localhost:3000/api/payment/charge/update\". Note that \"localhost:3000\" should typically be replaced by the server's address where your payment system is hosted. \n\nIn terms of headers, no headers are needed for this request.\n\nThe request body is indicated in 'raw' mode and is written in 'json' language as indicated under the options. Here's a breakdown of the individual data fields in the request body:\n\n1. **accountId**: This is an identifier for the account associated with the payment charge. Replace \"accountId\" with your specific account Id.\n\n2. **sessionId**: This refers to the unique session ID. Replace \"sessionId\" with the corresponding session identifier.\n\n3. **chargeId**: This is an identifier for the charge that needs to be updated. You need to replace \"chargeId\" with the Id of the charge that should be updated.\n\n4. **source**: This field can be used for providing any source information. Note that the value is null in the given instance.\n\n5. **isSaveCharge**: This is a boolean field indicating whether the charge should be saved. In this example, it's set to true, meaning the charge will be saved.\n\n6. **isPrimary**: This is another boolean field indicating if this charge is the primary one. In this example, it's also set as true, meaning it will be marked as the primary charge.\n\n7. **provider**: This field is used to indicate the provider of your payment system, in this instance, it's set as \"nowpayments\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - NowPayments - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/?chargeId=chargeId&provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "chargeId",
+              "value": "chargeId"
+            },
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Charge - NowPayments - Get\". It represents a GET request used to retrieve payment charge information from the NowPayments service. This is executed through various parameters and data entries included in the URL string:\n\n1. \"url\": This is the API call address. It indicates where the request will be sent. In this case, the URL is \"http://localhost:3000/api/payment/charge/get/\". This suggests that it targets the payment charge retrieval function of the local application running on port 3000.\n\n2. \"chargeId\": This parameter is part of the URL. It is unique for each payment charge transaction. It is used to identify the specific transaction that we want to retrieve its information. Replace \"chargeId\" on the URL with the actual ID of the desired transaction.\n\n3. \"provider\": This parameter indicates the payment provider. It's included in the URL and in this case, it's set to \"nowpayments\". Other providers might be available depending on the application. Replace \"provider\" on the URL with the name of the payment provider you are interested in.\n\n4. \"accountId\": This parameter is also part of the URL. It represents the account under which the payment transaction was initiated. Replace \"accountId\" on the URL with the actual account ID linked to the transaction.\n\n5. \"sessionId\": This parameter is included in the URL like the rest. It refers to the unique session ID when the transaction was initiated. Replace \"sessionId\" on the URL with the actual session ID related to the transaction.\n\n6. \"method\": This refers to the HTTP method used for this request. In this case, it is a GET request. GET is used to request data from a specified resource.\n\n7. \"headers\": This item is an array that holds the information to be added to the HTTP request header. In this case, it is empty, which means no additional header information is supplied with this API request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - NowPayments - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/?provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Charge - NowPayments - Get All\". It's a GET request, meaning it's used to retrieve information from a server. The data you receive using this endpoint relates to charges processed through NowPayments.\n\nFollowing is the detailed description of each data point:\n\n- name: This is the endpoint name. \"Charge - NowPayments - Get All\" refers to an operation to retrieve all the NowPayments charge data.\n\n- request: This outlines the nature of the request being made to the server.\n\n- method: The request method is \"GET\". This is a type of HTTP method used to retrieve data from the server.\n\n- url: This is the URL that the request will hit. In this case, the base URL is \"http://localhost:3000/api/payment/charge/getAll/\". This is followed by a query string starting with a '?'. Following this '?' are key-value pairs, separated by the '&' symbol.\n\n- provider: This query parameter determines which provider's data the request should retrieve. Here, the provider is set to 'nowpayments', which means the request will return data related to charges processed through NowPayments.\n\n- accountId: This is an identifier used to retrieve charges related to a specific account. You need to replace 'accountId' with the actual account ID.\n\n- sessionId: This is an identifier used to retrieve data relevant to a specific session. You need to replace 'sessionId' with the actual session ID.\n\n- headers: It's an array that would include any additional HTTP headers you would want to include with your request. Currently, this array is empty. In other scenarios, you might add authentication tokens or other request-related information here."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - NowPayments - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"provider\": \"nowpayments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - NowPayments - Delete\". It is intended to facilitate the deletion of charges from the NowPayments provider. \n\nThe request method for this endpoint is \"POST\". The URL which this endpoint hits is \"http://localhost:3000/api/payment/charge/delete\". This is the server-local address of the API endpoint which facilitates the deletion of NowPayments charges.\n\nThere are no headers included in this request. Headers are often used to send additional information about the request. However, in this case, no such extra information is being sent.\n\nThe request body is in raw JSON format and contains the following data fields:\n\n1. \"accountId\": This field is used to specify the account associated with the charge that needs to be deleted.\n   \n2. \"sessionId\": The sessionId field is typically used to track the user's interaction with the website/session. In this context, it is used to identify the session in which the charge was made.\n   \n3. \"chargeId\": This is the unique identifier of the charge that needs to be deleted.\n   \n4. \"provider\": This field indicates the provider of the payment service. In this case, the provider is set to \"nowpayments\".\n\nThe \"options\" field specifies how the body data should be interpreted. In this case, it is set to interpret the raw body data as JSON. JSON, or JavaScript Object Notation, is a common data format with diverse uses in data interchange, including that of representing structured data in a human-readable form. Here, the language field under options is set as \"json\", meaning that the input will be parsed as a JSON object."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - PayPal - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"intent\": \"CAPTURE\",\r\n        \"purchase_units\": [\r\n            {\r\n                \"reference_id\": \"d9f80740-38f0-11e8-b467-0ed5f89f718b\",\r\n                \"amount\": {\r\n                    \"currency_code\": \"USD\",\r\n                    \"value\": \"100.00\"\r\n                }\r\n            }\r\n        ],\r\n        \"payment_source\": {\r\n            \"paypal\": {\r\n                \"experience_context\": {\r\n                    \"payment_method_preference\": \"IMMEDIATE_PAYMENT_REQUIRED\",\r\n                    \"brand_name\": \"BeladedIncECOM\",\r\n                    \"locale\": \"en-US\",\r\n                    \"landing_page\": \"LOGIN\",\r\n                    \"shipping_preference\": \"SET_PROVIDED_ADDRESS\",\r\n                    \"user_action\": \"PAY_NOW\",\r\n                    \"return_url\": \"https://example.com/returnUrl\",\r\n                    \"cancel_url\": \"https://example.com/cancelUrl\"\r\n                }\r\n            }\r\n        }\r\n    },\r\n    \"isSaveCharge\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint titled \"Charge - PayPal - Create ++\" is for creating a new payment charge using PayPal. Its characteristics are described below:\n\n- Request Method: POST. This means that it is used to submit data to be processed to a specified resource.\n\n- Request URL: http://localhost:3000/api/payment/charge/create. This is the specific location where the request should be sent.\n\nThe request is composed of several components outlined below within the body in raw format:\n\n- `accountId`: This is the unique identification number for the user's account.\n\n- `sessionId`: This denotes the specific session ID for the user's current interaction with the app.\n\n- `source`: This object contains several items that instruct how the payment should be processed:\n   - `intent`: Specifies the action that the payment provider (PayPal) needs to take. Here, 'CAPTURE' means an intent to capture the payment immediately.\n   - `purchase_units`: Contains details about the purchase. In this case, a single purchase is denoted by a reference ID and an amount object holding the currency code (USD) and the value (100.00).\n   - `payment_source`: Contains information about the payment source, which in this case is PayPal. The `experience_context` provides user experience information such as payment method preference, brand name, locale, landing page type, shipping preference, user action (pay now), return URL, and cancel URL.\n   \n- `isSaveCharge`: This boolean field indicates whether the charge should be saved for future reference. If true, the charge will be saved.\n\n- `isPrimary`: This boolean field denotes whether the payment method is the primary method for the user's account.\n\n- `provider`: This field specifies the provider of the payment service. In this case, 'paypal' is the provider.\n\nThe options field specifies that the raw data language should be interpreted as JSON.\n\nPlease replace placeholders such as `accountId`, `sessionId`, `https://example.com/returnUrl`, and `https://example.com/cancelUrl` with actual values when making requests."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - PayPal - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"chargeId\": \"chargeId\",\r\n    \"source\": [\r\n        {\r\n            \"op\": \"replace\",\r\n            \"path\": \"/purchase_units/@reference_id==PUHF/shipping/address\",\r\n            \"value\": {\r\n                \"address_line_1\": \"2211 N First Street\",\r\n                \"address_line_2\": \"Building 17\",\r\n                \"admin_area_2\": \"San Jose\",\r\n                \"admin_area_1\": \"CA\",\r\n                \"postal_code\": \"95131\",\r\n                \"country_code\": \"US\"\r\n            }\r\n        }\r\n    ],\r\n    \"isSaveCharge\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "This endpoint is titled \"Charge - PayPal - Update\". It uses the PUT method to update a payment charge on your local development server at the URL http://localhost:3000/api/payment/charge/update.\n\nLet me explain all the data present in the body of the request:\n\n- \"accountId\": This is an identifier unique to each account. The account for which the payment charge is being updated would have its ID here.\n\n- \"sessionId\": This is a unique identifier for the session in which the charge details are updated. \n\n- \"chargeId\": A unique identifier that represents the specific payment charge that's being updated.\n\n- \"source\": An array which contains operation details for the update. In this case, there is one item:\n    - \"op\": The operation to perform. Here, it's \"replace\".\n    - \"path\": The location of the data to be modified. Here, it's the shipping address details under 'purchase_units' with a reference ID of 'PUHF'.\n    - \"value\": The new value to replace the old one. Here, it corresponds to an address in San Jose, complete with various details like address lines, administrative areas, postal code, and country code.\n\n- \"isSaveCharge\": A boolean value indicating whether or not to save this charge update. If it's true, this means the charge changes will be saved.\n\n- \"isPrimary\": A Boolean value. If true, the given account and session are considered primary.\n\n- \"provider\": The provider of the payment service. In this case, it's PayPal.\n\nOptions denote the format in which we are sending the request body. This is specified as a 'raw' JSON object. It means that the body of the PUT request is being sent as raw JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - PayPal - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/?chargeId=chargeId&provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "chargeId",
+              "value": "chargeId"
+            },
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Charge - PayPal - Get\". It uses a GET HTTPmethod to retrieve information pertaining to a specific charge processed through PayPal. \n\nComponents of this endpoint include:\n\n- `Method`: This is a GET request. It retrieves data from a specified resource.\n\n- `URL`: This URL indicates where the request is sent. In this case, \"http://localhost:3000/api/payment/charge/get/\" is the resource from which the data is requested. \n\n- `chargeId`: This is a parameter included in the URL query that specifies the unique identifier for the charge that we want to retrieve information about.\n\n- `provider`: This parameter in the URL query denotes the payment provider involved, which in this example is \"paypal\".\n\n- `accountId`: Included in the URL query, this parameter refers to the unique identifier for the user's account associated with the charge.\n\n- `sessionId`: This is also a parameter in the URL query. It refers to the unique identifier for the specific session in which the charge was made.\n\n- `Headers`: This field is currently empty. Headers can hold additional information (such as authentication data) about the HTTP request. If needed, this field would contain such details. \n\nOverall, use this endpoint when you want to query for specific information related to payment charges via PayPal. Ensure to provide correct and valid 'chargeId', 'provider', 'accountId' and 'sessionId' values in the query parameter."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - PayPal - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/?provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "Endpoint Name: Charge - PayPal - Get All\n\nThe endpoint \"Charge - PayPal - Get All\" uses a GET method. It's purposed to retrieve all PayPal related charge data.\n\nRequest Method: GET\n\nThis endpoint uses the GET HTTP method. This method is used when you need to retrieve data from the server. In this case, it retrieves the details of all charges made through PayPal.\n\nRequest URL: http://localhost:3000/api/payment/charge/getAll/?provider=paypal&accountId=accountId&sessionId=sessionId\n\nThis is the URL that the request is sent to. \n\n- The base URL is http://localhost:3000 \n- The path is /api/payment/charge/getAll/\n- The URL includes three query parameters:\n\n1. provider: This parameter is set to 'paypal' indicating that the retrieved charges should be those associated with PayPal.\n\n2. accountId: This parameter should be replaced with the actual account ID for which the charges should be retrieved. \n\n3. sessionId: This parameter should be replaced with the actual session ID to ensure the request is session-specific. The session ID can be used for tracking purposes or for validating access.\n\nHeaders: \n\nThe request doesn't require any custom HTTP headers. However standard HTTP headers like 'Content-Type' or 'Accept' based on the client and server agreement can be automatically included in the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - PayPal - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"provider\": \"paypal\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - PayPal - Delete\". It's designed to allow a post request to delete a specific charge associated with PayPal from the payment system of your application. Here's a detailed explanation of each data point:\n\n- **name**: The name field indicates the purpose or functionality of this endpoint. In this case, the endpoint is used to delete a specific PayPal charge.\n  \n- **request**: This section details how the request is made.\n\n- **method**: The method is set to \"POST\", meaning this endpoint is expecting to receive information, typically in the form of JSON, sent in the body of the request.\n\n- **url**: This is the specific address where the request is made, hence, to use this endpoint, users would send a POST request to http://localhost:3000/api/payment/charge/delete.\n\n- **headers**: Headers provide additional parameters that can be sent along with the request. Currently, no additional parameters are passed in this request.\n\n- **body**: The contenct of the request being sent:\n \n  - **mode**: The mode being used here is 'raw', indicating that the content of the request isn't preprocessed by any particular formatting rule.\n\n  - **raw**: This field contains the raw request body as a string of text. The string contains keys \"accountId\", \"sessionId\", \"chargeId\", and \"provider\", which expect assigned values. The \"accountId\" is your account identifier, \"sessionId\" is your session identifier, \"chargeId\" is the specific charge you want to delete, and \"provider\" is the payment provider used, which is PayPal in this case.\n\n- **options**: This part offers additional customization for your request.\n\n  - **raw**: This section enables you to specify what language the raw data should be treated as. In this case, the language is set to JSON, so the text in the raw body will be parsed as JSON.\n\nOverall, to use this endpoint, users should send a POST request to the provided URL, with a JSON body containing the desired \"accountId\", \"sessionId\", \"chargeId\", and \"provider\" values. This will result in the deletion of the specific PayPal charge from your payment system."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Stripe - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": false, \"provider\": \"stripe\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - Stripe - Create ++\". It represents a POST HTTP request method to create a charge in Stripe, which is a payment gateway. The following fields provide detailed information:\n\n\"request\": This is the primary part of the API end point.\n- \"method\": 'POST' is the type of request method which indicates the request will be used to send data to be processed to a specified resource.\n- \"url\": 'http://localhost:3000/api/payment/charge/create' is the URL which this request will hit. It is used to create a payment charge.\n\n\"headers\": This field currently is an empty array, meaning no additional headers are necessary for this request.\n\n\"body\": This is the data that we're sending with our POST request.\n- \"mode\": 'raw' tells us that the body data is sent in a raw format.\n- \"raw\": This is a JSON string with the following key-value pairs:\n  - \"accountId\": This is the identifier for the account initiating the payment.\n  - \"sessionId\": This is the identifier for the session in which the payment is being made.\n  - \"source\": It indicates source of the payment, currently it is set to null.\n  - \"isSaveCharge\": A boolean flag that, if true, indicates the charge should be stored for future reference.\n  - \"isPrimary\": A boolean flag indicating whether this charge is the primary charge. It is currently set to false.\n  - \"provider\": Indicates the provider for the charge. In this case, it is \"stripe\".\n\n\"options\": This describes the body structure or language for the request.\n- \"raw\": This data contains a single key-value pair 'language': 'json', indicating the language used in the 'raw' section of the 'body' is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Stripe - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": true, \"provider\": \"stripe\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "This endpoint, entitled \"Charge - Stripe - Update\", is designed to update the information related to a particular payment charge in the Stripe payment provider. This endpoint uses the PUT HTTP method, signifying that it updates existing data. The base URL of this endpoint is http://localhost:3000/api/payment/charge/update.\n\nDetails of each data entity being sent in the request:\n\n1. \"name\": This indicates the name of the endpoint which is \"Charge - Stripe - Update\". It is the identifier for this endpoint.\n\n2. \"method\": This indicates the HTTP method that the endpoint uses. In this case, it's PUT, which means this endpoint is used to update existing information.\n\n3. \"url\": This is the URL of the endpoint from where the charge updates can be performed.\n\n4. \"headers\": This is an array where any necessary HTTP headers would be sent. Currently, no headers are being sent in this request as it's an empty array.\n\n5. \"body\": This contains the pertinent information of the request that needs to be updated.\n\n   - \"mode\": \"raw\" signifies that the required data will be sent in raw format.\n   \n   - \"raw\": This field contains the actual details that need to be updated:\n \n        - \"accountId\": The identification string of the user's account.\n        - \"sessionId\": The identification string for the current session.\n        - \"chargeId\": The unique identification of the charge that needs to be updated.\n        - \"source\": The original source of the charge. Currently, it's null, implying the source isn't being modified.\n        - \"isSaveCharge\": A Boolean value indicating if the updated charge details should be saved. In this case, it's set to true, meaning the updated details will be saved.\n        - \"isPrimary\": A Boolean value that, when set to true, means this is the primary or main charge. \n        - \"provider\": This indicates the payment provider, which is \"stripe\" in this case.\n        \n   - \"options\": this object includes the raw option with \"language\" key signifying that the raw value will be sent as a JSON formatted string."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Stripe - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/?chargeId=chargeId&provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "chargeId",
+              "value": "chargeId"
+            },
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint named \"Charge - Stripe - Get\" is a GET type HTTP request that calls to retrieve specific data from the Stripe payment system. \n\nThe request is executed through the URL: http://localhost:3000/api/payment/charge/get/ which holds the application host and the API path. This endpoint is related to fetching information about a charge from the Stripe payment system.\n\nEmbedded in the URL are four query parameters which are crucial pieces of data to consider:\n\n1. \"chargeId\" - This required query parameter refers to the unique identifier of a specific charge in the Stripe payment system. It helps to retrieve the details for that particular transaction.\n\n2. \"provider\" - This required query parameter specifies the payment gateway. In this case, it's set to 'stripe'. This way, the system knows that the Stripe provider should handle the request.\n\n3. \"accountId\" - This required query parameter is the unique ID of the user account associated with the charge. It helps to link the charge to a specific user within the system.\n\n4. \"sessionId\" - This is a required query parameter which is used for session tracking. It uniquely identifies the user's current active session. \n\nAt last, this endpoint doesn't contain any specific headers, which means any standard or default headers your HTTP client sets are all that are sent."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Stripe - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/?provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint refers to 'Charge - Stripe - Get All'. This API endpoint is configured to retrieve data from your local server (http://localhost:3000/api/payment/charge/getAll/). This endpoint fetches all the charges related specifically to the Stripe payment provider. \n\nHere's a breakdown of the provided data:\n\n1. `name` - This is the name of the endpoint. It's used to identify this particular API endpoint. The name 'Charge - Stripe - Get All' signifies that this endpoint is designed to get all charge data related to Stripe.\n\n2. `request` - This object contains all the details necessary to make the API request. \n\n    a. `method` - The 'GET' method is being used, which means the API endpoint is expected to retrieve or read data.\n\n    b. `url` - This specifies the location where the request is sent. In this case, the local server's /api/payment/charge/getAll/ route is the destination. \n    \n    c. `headers` - Currently, no additional headers are being sent with this request.\n\n3. `url parameters` - The URL contains several parameters:\n\n    a. `provider` - This parameter indicates the payment gateway you are using. In this case, the value is 'stripe'. \n\n    b. `accountId` - It refers to the unique identifier of the account in question. You need to replace 'accountId' with the actual account ID.\n\n    c. `sessionId` - This parameter represents the unique identifier of the session during which the transactions were made. You should replace 'sessionId' with the actual session ID. \n\nPlease replace the placeholders 'accountId' and 'sessionId' with actual values when using this endpoint. \n\nThis endpoint doesn't include any request body or additional headers which means it relies solely on the URL parameters to perform the action. It's a straight-forward API call meant to retrieve all the charge data associated with the given Stripe account and session."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Stripe - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"chargeId\": \"chargeId\",\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This is a detailed explanation of the API endpoint named \"Charge - Stripe - Delete\". \n\n1. Name: This endpoint is named \"Charge - Stripe - Delete\" which suggests it is used to handle the deletion of charges in relation to Stripe, the payment provider.\n\n2. Request: This field contains detailed information about the request that will be sent to the endpoint.\n   - Method: The HTTP method used for this request is POST, which is generally used to submit data to be processed to a specified resource.\n   \n   - URL: This is the endpoint to which the request will be sent. In this case, it is running on a local server at port 3000 and the route to the endpoint is \"/api/payment/charge/delete\".\n   \n   - Headers: This field is currently empty, indicating that no special headers are required for this request.\n   \n   - Body: This field contains the details of the data that is sent as a part of the request.\n     - Mode: The mode being used here is \"raw\" which means the body contains data as it is, without any specific encoding.\n     - Raw: This section contains the actual raw data that will be sent in the body of the request. It consists of four parameters.\n       - accountId: This is the unique identifier for the user's account.\n       - sessionId: This is the unique identifier for the current session.\n       - chargeId: This is the unique identifier for the charge that needs to be deleted.\n       - provider: This specifies the payment provider which is \"stripe\" in this case.\n     - Options: This field contains additional formatting options for the raw data.\n       - Raw: Here, the language is specified as JSON, indicating that the raw data will be transmitted in JSON format.\n\nIn summary, this endpoint is used to delete a specific charge associated with a user's account and session using Stripe as the payment provider. The request is of the 'Post' type, and it requires four parameters: 'accountId', 'sessionId', 'chargeId', and 'provider'."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - BitPay - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": false, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Charge - BitPay - Create\" and it is designed to create a new charge using the BitPay provider.\n\nHere are the details of each request parameters used in the endpoint:\n\n1. **Method**: POST - This endpoint is using the HTTP POST method which is used to send data to create a new resource.\n\n2. **URL**: \"http://localhost:3000/api/payment/charge/create\" - This is the endpoint where the request is sent. It is designed to start a new charge operation in the BitPay provider.\n\n3. **Headers**: Empty - This suggests that there are no additional headers required for this API endpoint.\n\n4. **Body**: \n  - mode: \"raw\" - This means that the body of the request is sent as a string.\n  - raw: This object represents the actual payload that is sent in the body of the request. Let's detail the fields:\n    - accountId: Your account identifier.\n    - sessionId: Your session identifier.\n    - source: This field is set to `null` in this case which means it is not required or not used in this particular request.\n    - isSaveCharge: Set to `true`, indicating that the created charge should be saved.\n    - isPrimary: Set to `false`, indicating that this charge is not primary.\n    - provider: The payment provider which is set to \"bitpay\" here.\n  - options: \n    - raw: This is used to specify that the language of the raw data is JSON.\n\nRemember, when using this endpoint, replace \"localhost:3000\" with the actual server's URL. Also, replace \"accountId\" and \"sessionId\" with your actual account and session IDs. If you want to use another provider, replace \"bitpay\" with the name of that provider. For instance, if you want to use \"stripe\" as your payment gateway, replace \"bitpay\" with \"stripe\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - BitPay - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": true, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "This endpoint is used to update a payment charge by sending a PUT request to http://localhost:3000/api/payment/charge/update. Here is a detailed description of each piece of data in the endpoint request:\n\n1. \"name\": This refers to the name of the endpoint. For this case, it is \"Charge - BitPay - Update\". It is generally used for identifying the specific endpoint interaction.\n\n2. \"request\": This object defines the HTTP request properties.\n\n3. \"method\": \"PUT\" specifies the HTTP method to use when making the request to the server. In this case, PUT method is used which is typically utilized to update existing server resources with data.\n\n4. \"url\": This is the address where the request will be sent. The provided URL is an API endpoint related to payment charge update.\n\n5. \"headers\": This is an array that could contain HTTP headers to include with the request. Currently, it is empty which means there are no specific headers provided.\n\n6. \"body\": This is the data that will be sent as the request payload.\n\n7. \"mode\": The parameter \"raw\" under \"mode\" indicates that the payload is sent in raw form.\n\n8. \"raw\": This is the JSON string that contains the actual data to be sent in the payload.\n\n   - \"accountId\": The identifier of the user's account.\n   - \"sessionId\": The identifier of the user's session.\n   - \"chargeId\": Identifier of the charge to be updated.\n   - \"source\": The source of the charge. It is assigned as null, which suggests that there might be no specific source.\n   - \"isSaveCharge\": A boolean field that indicates whether the charge should be saved. True means it will be saved.\n   - \"isPrimary\": A boolean field which, when true, indicates that this is the primary or main charge.\n   - \"provider\": Name of the payment provider, here it is \"bitpay\".\n\n9. \"options\": Controls various optional parameters. In this case, it's used to specify the \"language\" as \"json\" in \"raw\" mode.\n\nPlease replace \"accountId\", \"sessionId\", and \"chargeId\" parameters with actual values in your API call."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - BitPay - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/chargeId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            "{{chargeId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "In this API endpoint, there are several pieces of data each of which contains specific information about a certain task it carries out. Here's a detailed description of each:\n\n1. \"name\": This piece of data is a name identifier for the particular API call. In this case, it is named \"Charge - BitPay - Get\". This suggests that this API is likely used to obtain charge-related data from a service known as BitPay.\n\n2. \"request\": The request object contains all the details of the HTTP request to be made. \n\n3. \"method\": This defines the type of HTTP request method being used. For this API call, a \"GET\" method is used which generally is used for retrieving data from a server. In this case, it is expected to fetch some charge-related data.\n\n4. \"url\": This is the Uniform Resource Locator and signifies where exactly the request is being sent to. It is essentially the address the API call would be made to that hosts the desired resource. \"http://localhost:3000/api/payment/charge/get/chargeId?provider=bitpay&accountId=accountId&sessionId=sessionId\" suggests that the charge-related data is being retrieved from a resource located on the same machine (localhost) which is listening on the port 3000, for a specific 'chargeId'.\n\n5. \"provider\": This indicates the platform providing the payment service. In this instance, BitPay is the provider.\n\n6. \"accountId\": This is typically a unique identifier corresponding to a specific account on the payment provider platform (BitPay) within the application. This should be replaced with the actual account ID in use cases.\n\n7. \"sessionId\": This represents a session identifier associated with the user interaction/host from which the API request is being made. It should be replaced with the actual session ID in real-life scenarios.\n\n8. \"headers\": This is an array that contains any custom HTTP headers that the developer might want to include in their request. As per the given data, no headers are being sent with this request.\n\nEach of these pieces of data is crucial and serves its individual purpose. Modifying any part of this data will impact the response of the API call that is the final outcome of this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - BitPay - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/chargeId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            "{{chargeId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is called \"Charge - BitPay - Get All\". It's a GET request, meaning it's used to retrieve data from a specified resource in the server, in this case from a localhost running on port 3000.\n\nThe URL path is \"/api/payment/charge/getAll/chargeId\". Here, 'api' indicates that it's an application programming interface that the server exposes for clients to interact with it. 'Payment' suggests that it involves some function related to payment processing. 'Charge' might imply that it's related to some form of transaction. 'GetAll' suggests that it fetches all instances of a certain data type, in this case, 'chargeId', which might be a unique identifier for charges or transactions.\n\nThe endpoint takes multiple parameters:\n\n1. 'provider': This query parameter specifies the payment provider which, in this case, is 'bitpay'. It's used to configure which payment provider's API should be used for processing the transaction.\n\n2. 'accountId': This query parameter represents a unique ID tied to an account. It could be the ID of the user's account in the payment provider system.\n\n3. 'sessionId': This query parameter might be for identifying a specific session or a single period of user interaction with the site. This ID can be used to correlate requests from a client during a single session.\n\nLastly, there are no header values specified in the request, implying that no extra information is needed to be sent in the request beyond what is provided in the URL and parameters. However, in a real use case, headers might include information such as authentication tokens or content types."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - BitPay - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - BitPay - Delete\". It uses the POST method, sending a request to the \"http://localhost:3000/api/payment/charge/delete\" url. \n\n1. **Name**: This parameter defines the name of the endpoint namely, `Charge - BitPay - Delete`. This gives you a hint that this endpoint can be used to delete a charge made via BitPay.\n\n2. **Request**: This field encompasses the method, url, headers, body, and options for the request. \n\n    - **Method**: It uses the `POST` method, used when you want to send some data to the server, for example, file update, form data, etc.\n      \n    - **URL**: This is the address to which the request will be made, here the endpoint is a local address set up on port 3000 for deleting a payment charge.\n\n    - **Headers**: This endpoint does not require any specific headers to be sent with the request.\n      \n    - **Body**: This contains the main content of the POST request. It includes several parameters such as \"accountId\", \"sessionId\", \"chargeId\", and \"provider\".\n        \n        - **accountId** : This is an identifier associated with the account making the request.\n        \n        - **sessionId** : This is a unique identifier that tracks a user's session. \n        \n        - **chargeId** : The unique identifer for the charge that needs to be deleted.\n        \n        - **provider** : The provider of the payment gateway, which in this case is \"BitPay\".\n      \n    - **Options**: \"raw\" mode is selected, indicating that the input will be a plain text. The `language` is set to JSON, specifying that the raw data will have a JSON format.\n\nPlease ensure that all required data in the body parameter are properly filled as they are essential to successfully make the request and get the desired response."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - CashApp - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": false, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - CashApp - Create\". It is used to initiate a payment charge using the CashApp platform.\n\nBelow is a brief description of each data point:\n\n1. `name`: This field indicates the name of the endpoint. In our current context, the name of the endpoint is \"Charge - CashApp - Create\", which is essentially used for processing payment charges via CashApp.\n\n2. `request`: This object represents the actual HTTP request information being sent to the server.\n\n    - `method`: This field holds the HTTP method of the request. The method here is \"POST\", indicating data is being submitted to the resource at the URL specified.\n   \n    - `url`: This is the address to which the request will be sent. This endpoint is hosted locally and listens on port 3000, specifically at `http://localhost:3000/api/payment/charge/create`.\n\n    - `headers`: This would normally contain any headers to be sent with the request, but it's empty in this case.\n\n    - `body`: This is the part of the HTTP request that contains any data being sent to the server. Here, the body is sent in raw format and contains several fields:\n      \n        - `accountId`: This is the unique identifier for the account initiating the payment.\n        - `sessionId`: This represents a unique session instance, likely for tracking or maintaining the state of the transaction.\n        - `source`: The source of payment, however, it is null in this context.\n        - `isSaveCharge`: A boolean flag to indicate whether the charge information should be saved for future use. This value is true meaning the charge data will be saved.\n        - `isPrimary`: This is a boolean flag that helps in identifying whether the payment method used is the primary one. It is false in this context.\n        - `provider`: The name of the payment provider. Here, it is set to \"cashapp\", indicating that this charge will be processed through CashApp.\n\n3. `options`: This nested object defines options for how the body’s `raw` field is treated. Here, it specifies that the language of the raw data is JSON.\n \nRemember to replace `accountId` and `sessionId` in the `body` section with actual values before making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - CashApp - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": true, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - CashApp - Update\". The purpose of this endpoint is to update payment charge details using the CashApp provider. It is a PUT request to the \"http://localhost:3000/api/payment/charge/update\" URL.\n\nHere are the details about the data this endpoint expects you to provide:\n\n1. \"Name\": This is the name of this API endpoint, which is \"Charge - CashApp - Update\" in this case.\n\n2. \"Method\": Describes the type of HTTP action to be taken. It's set to \"PUT\", which is used to update an existing resource.\n\n3. \"URL\": This is the link to which the request has to be sent. The endpoint is http://localhost:3000/api/payment/charge/update\n\n4. \"Headers\": Headers usually contain additional information required by the server to process the request. Here, no headers are needed.\n\n5. \"Body\": This contains the data to be sent to the server. The \"mode\" is set to \"raw\", which means the content is sent as it is without any transformations. The option of language is set to \"json\". \n\nValid fields in the body are:\n\n   - \"accountId\": This is the account identifier which is involved in the payment update process.\n   - \"sessionId\": The unique identifier for the current session.\n   - \"chargeId\": Unique id of the payment charge that needs to be updated.\n   - \"source\": Represents the source of the charge (e.g., payment method). Here, it has a null value.\n   - \"isSaveCharge\": A boolean flag indicating whether to save the payment information for future payments.\n   - \"isPrimary\": A boolean that states whether the payment method is primary or not.\n   - \"provider\": This refers to the payment provider used, here it is \"cashapp\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - CashApp - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/chargeId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            "{{chargeId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Charge - CashApp - Get\". It represents a 'GET' request used for retrieving charge related information related to the CashApp. \n\n1. \"name\": The name of this API endpoint is \"Charge - CashApp - Get\". This briefly describes the function of this endpoint, i.e., obtaining charge information from CashApp.\n\n2. \"request\": This object contains all the details of the API request,\n   \n   2.1. \"method\": This field represents an HTTP method, which in this case is 'GET'. A 'GET' request is used to request data from a specified resource.\n\n   2.2. \"url\": This field corresponds to the URL where the request will be sent. The URL signifies the location of the resource on the server. Here, it's referencing an API running on localhost (http://localhost:3000) at the path '/api/payment/charge/get/chargeId', with query parameters provider, accountId, and sessionId.\n\n   2.2.1. \"provider\": This is a query parameter in the URL, its value in this case is 'cashapp'. It specifies the payment provider.\n\n   2.2.2. \"accountId\": This is another query parameter. It represents the unique ID of the account for which we want to get the charge information.\n\n   2.2.3. \"sessionId\": This is a required query parameter. It represents the unique session ID of the user.\n\n3. \"headers\": This is an array that holds an object for each HTTP header. In this case, it appears empty. However, headers are often used to give more information about the request body or response, or set cookies and authorization details.\n   \nIn conclusion, this API endpoint is utilized to retrieve charge information from CashApp for a particular account using a specific sessionId."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - CashApp - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/chargeId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            "{{chargeId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Charge - CashApp - Get All\". \n\nThe method used in this endpoint is a GET request, which is generally used to retrieve data from the server.\n\nAs for the URL, it indicates where the API is sending or receiving data from. Here, it seems to be a local development server, specifically on \"http://localhost:3000/api/payment/charge/getAll/chargeId\". Several query parameters follow the main endpoint. These parameters are: \n\n1. \"provider=cashapp\": This query parameter likely indicates the payment provider involved in the charge. In this case, it's set to 'cashapp'.\n\n2. \"accountId=accountId\": This parameter probably represents the account ID of the user making the payment. It should be replaced with the relevant account's ID.\n\n3. \"sessionId=sessionId\": This parameter most likely represents the session ID for the current user's session. It should be replaced with the actual session ID.\n\nLastly, there are currently no headers included. Headers are pieces of information sent with the HTTP request, and they can be used to contain various data such as authentication tokens, content type, etc. Obviously, since none are provided, there's nothing of this nature to describe in the current context."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - CashApp - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is called \"Charge - CashApp - Delete\". It is designed to delete a charge made through the CashApp service, residing on a local server.\n\n1. `Method`: This endpoint uses the \"POST\" HTTP method. This method is commonly used when you want to send data to the server, which can then update the current resource state.\n\n2. `URL`: The URL where this API endpoint can be accessed is: http://localhost:3000/api/payment/charge/delete. The request is sent to the /api/payment/charge/delete path on the localhost server running on port 3000.\n\n3. `Headers`: There are no additional headers required to be set for this API endpoint.\n\n4. `Body`: The body of the request carries the data that needs to be sent to the server to delete the charge. It needs to be constructed in raw JSON format. Here are the parameters that should be included in the body:\n   - `accountId`: This is the unique identifier of the account from which the charge has been made.\n   - `sessionId`: This is an identifier for the session in which the charge was created.\n   - `chargeId`: This is the unique identifier for the charge that needs to be deleted.\n   - `provider`: The payment provider used. Here it defaults to \"cashapp\".\n\n5. `Options`: The options object just informs the system that the language used in the body of the JSON response is JSON.\n\nRemember to replace accountId, sessionId and chargeId with actual values while making calls to the API. They are placeholder values here."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Venmo - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": false, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint creates a charge using Venmo as a payment provider. Here are the specific details of each data:\n\n1. \"name\": The name of the endpoint. This particular endpoint is named \"Charge - Venmo - Create.\"\n\n2. \"request\": An object holding all request information including method, URL, headers, and body.\n\n3. \"method\": This signifies the HTTP method used for this endpoint. In this case, it is a \"POST\" method indicating that data will be sent to the server to create a new resource.\n\n4. \"url\": This is the endpoint URL which is \"http://localhost:3000/api/payment/charge/create\".\n\n5. \"headers\": Part of the HTTP request, it currently doesn't contain any additional information. \n\n6. \"body\": This is where you provide additional data to process on the server. The body contains an object that has three properties called \"mode\", \"raw\", and \"options\".\n\n       - \"mode\": This property indicates that the raw data type will be sent in the request body.\n       - \"raw\": This part contains the actual data to be processed.\n            - \"accountId\": A unique identifier for the account.\n            - \"sessionId\": A unique identifier for the session.\n            - \"source\": This currently does not have any value assigned, but it might be used to specify the source of the transaction.\n            - \"isSaveCharge\": A boolean that signifies whether the charge should be saved. Setting it to true means that the charge will be saved.\n            - \"isPrimary\": A boolean that determines whether this is a primary transaction. Setting it to false means it’s not a primary transaction.\n            - \"provider\": The payment gateway provider. In this case, it is 'venmo'.\n        - \"options\": Inside options, you can specify several options for the request. It has a \"raw\" property:\n            - \"raw.language\": This refers to the language format used for the raw data in the body, which is JSON in this case.\n\nIt's important to replace \"accountId\" and \"sessionId\" with valid values when you're using this API."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Venmo - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": true, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "This API endpoint contains information regarding the update of a Venmo charge. The key data descriptions are as follows:\n\n1. `name`: This refers to the name of the endpoint. In this case, \"Charge - Venmo - Update\" indicates that this endpoint is used to update a charge made via Venmo.\n\n2. `request`: This refers to the HTTP request that is being sent.\n\n     - `method`: It refers to the type of HTTP method used. \"PUT\" is used when you want to modify a resource on the server.\n   \n     - `url`: This is the address to which the request is being directed. It will call the server at localhost port 3000 at the specific endpoint `/api/payment/charge/update`.\n\n     - `headers`: These are used to send additional information to the server. In this case, no additional headers are required or included.\n\n     - `body`: This contains the actual request content that you want to send to your server.\n\n        - `mode`: It's set to \"raw\", meaning the server will read the included data exactly as it's sent.\n\n        - `raw`: It contains user data sent to the server. This should be replaced with real user values before making the request.\n\n            - `accountId`: The account ID associated with the target user. This should be replaced with the actual account ID.\n  \n            - `sessionId`: The session ID linked with the current session. This should be replaced with the actual session ID.\n  \n            - `chargeId`: The specific ID for the charge that needs to be updated. This should be replaced with the actual charge ID.\n  \n            - `source`: The source is set to null here. This can be updated to represent the source of the charging object.\n\n            - `isSaveCharge`: A boolean flag that is set to true, indicating if the charge should be saved for future use.\n\n            - `isPrimary`: A boolean flag that is set to true, indicating if the charge should be set as the user's primary charge option.\n\n           - `provider`: It refers to the payment provider. In this case, it's set to \"venmo.\"\n\n        - `options`: This contains options for processing the request.\n  \n            - `raw`: It denotes that options are provided for raw data input.\n  \n                - `language`: It's set to \"json\", meaning all the included data should be in JSON format.\n   \nThis detailed description of each data piece in the given endpoint will help users understand what each data represents and how to use it effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Venmo - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/chargeId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            "{{chargeId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is associated with obtaining information related to charges made via the Venmo payment service. The specific information pertains to the details of the charge. \n\n1. \"name\": \"Charge - Venmo - Get\" - This field identifies the purpose of this endpoint. In this case, it is used for fetching data related to a specific charge made through Venmo.\n\n2. \"request\": - This section contains the specifications of how the request to the server should be made.\n\n3. \"method\": \"GET\" - This is the HTTP method used to make the request. Here, it is the GET method, which is used to retrieve data from the server.\n\n4. \"url\": - This is the URL of the API endpoint. This URL is what is used in API clients to make the request to the server.\n\n5. \"http://localhost:3000/api/payment/charge/get/chargeId?provider=venmo&accountId=accountId&sessionId=sessionId\" - This is the full URL path of the endpoint. Here's the breakdown:\n    - \"http://localhost:3000\": This is the base URL of the API. This part generally remains the same for all API endpoints of a single application.\n    - \"/api/payment/charge/get/chargeId\": This is the endpoint path. This particular endpoint is used to fetch the charge data using the charge ID.\n    - \"?provider=venmo&accountId=accountId&sessionId=sessionId\": These are the query parameters for the request. They are used for filtering data on the server before it's sent to the client. The provider is 'venmo', accountId is the account ID of the user, and the sessionId is the session ID of the user.\n\n6. \"headers\": [] - This field contains any additional HTTP headers that might be necessary for the request. Headers are typically used to include metadata with the HTTP request. At this instance, no additional headers are required for this request.\n\nRemember to replace 'chargeId', 'accountId' and 'sessionId' with actual values when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Venmo - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/chargeId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            "{{chargeId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled 'Charge - Venmo - Get All'. It corresponds to a GET request, meaning it is designed to retrieve data without modifying any. All data retrieved would be related to charges with Venmo. \n\nThe request URL for this endpoint is 'http://localhost:3000/api/payment/charge/getAll/chargeId?provider=venmo&accountId=accountId&sessionId=sessionId'. This URL is hitting the 'payment' resource on the 'localhost' server at port 3000. More specifically, it gets all charges related to a specific charge Id.\n\nThe URL contains several parameters that are critical to obtain the correct data:\n\n1. 'provider': This parameter is used to specify the payment service provider. In this case, 'venmo' is the hardcoded value, meaning all results will be associated with Venmo. \n\n2. 'accountId': This parameter represents the account ID. You should replace 'accountId' with the actual account identifier for which you want to retrieve charge details.\n\n3. 'sessionId': As for the 'sessionId', it represents the current session's unique identifier. This value should be replaced with the actual session ID when making the request. \n\nCurrently, there are no headers specified for this endpoint. Headers carry additional information in HTTP requests and responses. For this particular endpoint, no such additional information is required or provided by the API."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Venmo - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This particular data payload provides the details for an API endpoint named \"Charge - Venmo - Delete\". This endpoint carries out a POST request to the provided URL, which accepts and processes requests for deleting a payment charge made through Venmo. Here's a summary of the structure and purpose of each component:\n\n1. `name`: This is the name you’ve assigned to the endpoint, in this case, it's \"Charge - Venmo - Delete\". This typically indicates the functionality that this endpoint provides.\n\n2. `request`: It encompasses all the details the server needs to process the request.\n\n3. `method`: It's set to \"POST\", indicating the type of HTTP request being made. A POST request is typically used when you need to send some data to the server, in this case, to delete a charge.\n\n4. `url`: This is the URL on which the API endpoint is hosted. In this case, it's \"http://localhost:3000/api/payment/charge/delete\". This is where the POST request will be sent.\n\n5. `headers`: This section is empty in the current payload. Headers usually contain additional parameters that the server needs to process the request. For instance, they can include authentication tokens or specify the data format.\n\n6. `body`: This carries the data you need to send to the server. \n\n   - `mode`: It's currently set to \"raw\", this means your parameters will be sent as is, without any encoding or extra formatting.\n   \n   - `raw`: The raw body of a request includes the exact data you want to send. Here, you are passing four fields: \"accountId\", \"sessionId\", \"chargeId\", and \"provider\". The \"accountId\" is the identifier for the account, \"sessionId\" is the session id, \"chargeId\" is the identifier for a specific charge that you want to delete, and \"provider\" is the payment provider, in this case, its value is set as 'venmo'.\n   \n   - `options`: This is used to specify extra options for your payload.\n   \n     - `raw`: This sets extra options for the 'raw' mode. Here, it's used to specify that the request body will be in `JSON` format. \n\nThis endpoint will hence be used by developers wishing to delete charges made via Venmo. Please ensure to replace the placeholders for accountId, sessionId, and chargeId with actual values before sending a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Zelle - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": false, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - Zelle - Create\". It is designed to create a payment charge using the Zelle payment method. \n\nThe request uses the \"POST\" method, which means it's used to submit data to be processed to the identified resource. The URL that the request is sent to is 'http://localhost:3000/api/payment/charge/create'. \n\nThe request body is in raw mode, representing an unparsed sequence of characters. The data sent via this method is in JSON format (Javascript Object Notation, a human-readable and easy-to-parse data exchange format).\n\nThe data included in the body are as follows:\n\n- `accountId`: This field is used to specify the unique identifier for the account undertaking the transaction. Replace \"accountId\" with the actual account ID.\n  \n- `sessionId`: This field requires the session ID value. It is the unique identifier for the current transaction session. Replace \"sessionId\" with the active session ID.\n  \n- `source`: This field is for providing the source of the funds for the payment. However, in this given case it's null as Zelle doesn't require any source.\n  \n- `isSaveCharge`: This is a boolean (true or false) field. If set to 'true', it means that the charge information for this transaction should be saved for future reference or use.\n\n- `isPrimary`: This is another boolean field. If set to 'true', it implies that the current payment method (Zelle) is set as the primary method of payment. In this case, it is set to 'false', meaning that Zelle is not the primary method.\n  \n- `provider`: This field represents the payment provider. In this case, it is set to \"zelle\". You may replace this with other providers if needed.\n\nInside the 'options' field, the 'language' is set to 'json'. This indicates that the request body is coded in JSON language."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Zelle - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"source\": null,\"isSaveCharge\": true,\"isPrimary\": true, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "update"
+          ]
+        },
+        "description": "`name`: This indicates the name of the API endpoint. In this case, it's \"Charge - Zelle - Update\". This name typically represents the purpose of the endpoint. For example, this endpoint presumably updates information related to a Zelle charge in some way.\n\n`request`: This field is an object that defines the HTTP request made to the endpoint.\n\n- `method`: The HTTP method used for the request. In this case, it's `PUT`, which is typically used for updating an existing resource.\n\n- `url`: This is the URL where the request is being sent. It points to an API on your local machine (`localhost`) on port `3000`.\n\n- `headers`: HTTP headers let the client and the server pass additional information with the request or the response. In this case, there are no extra headers defined.\n\n- `body`: This is the data that is sent with the request. The `body` field here is an object.\n\n    - `mode`: The method of sending the body's data. Here, it's set to `raw` which implies the data would be sent as a string.\n\n    - `raw`: The actual data to be sent in the body. It appears to be in JSON format, contains different fields representing different data parameters. Each of these parameters has different roles:\n        - `accountId`: Likely represents the unique identifier for a user's account.\n        - `sessionId`: Likely represents the unique identifier for the current session.\n        - `chargeId`: Likely represents the unique identifier for the charge that will be updated.\n        - `source`: Its value is null. It might usually represent the origin of the charge.\n        - `isSaveCharge`: A boolean value, which when true, suggests that the charge should be saved. \n        - `isPrimary`: This could mean that this particular charge is the main or primary charge for the account.\n        - `provider`: This signifies the provider of the charge source. Here, it's set to `Zelle`.\n\n    - `options`: Defines any extra settings for the body. Here, it indicates that the language of the raw data is `json`."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Zelle - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/get/chargeId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "get",
+            "{{chargeId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Charge - Zelle - Get\". It's designed to retrieve details about a specific charge from the Zelle payment provider.\n\nIt uses the GET method, which is typically used when you're trying to read or retrieve data from a resource.\n\n\"url\": This is the path from where the API endpoint can be accessed. It's set to \"http://localhost:3000/api/payment/charge/get/chargeId\". In this URL:\n- \"localhost:3000\" indicates that the API server is running locally on port 3000.\n- \"api/payment/charge/get/chargeId\" is the specific path on the server where our endpoint is located. The \"chargeId\" part in our example is a placeholder for the actual charge ID that you need to provide to get charge details.\n\nThe endpoint accepts two query parameters in the URL: \n- \"provider\" is used to indicate the payment provider, in this case, it's set to \"zelle\".\n- \"accountId\" is used to specify the account ID from which the charge was made. This should be replaced with the actual account ID.\n- \"sessionId\" is used to keep track of the user session. The actual session ID should be provided here.\n\n\"headers\": This field is currently empty, indicating that the endpoint does not require any specific HTTP headers. However, in some cases, headers might include additional data that is needed for the request, such as API tokens or keys for authentication.\n\nPlease note that actual values should replace placeholders accordingly, and URL parameters should properly URL encoded if they contain special characters or spaces."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Zelle - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/getAll/chargeId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "getAll",
+            "{{chargeId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "\"Name\" field:\n\nThe \"name\" field holds the title or description of the API call. In this case, \"Charge - Zelle - Get All\" denotes that this API is used to retrieve all charges made through Zelle.\n\n\"Request\" field:\n\nThe \"request\" field contains the necessary information to perform the API call. The method, url, and headers are required sub-fields inside this section.\n\n\"Method\" sub-field:\n\nThe \"method\" sub-field contains the HTTP method used in the API call. In this case, \"GET\" method is used which suggests that this request is used to retrieve or get data from the server.\n\n\"Url\" sub-field:\n\nThe \"url\" sub-field contains the specific endpoint or route to which the API call is intended. Here, \"http://localhost:3000/api/payment/charge/getAll/chargeId\" shows the destination address of this API call. \"localhost:3000\" is the host and port on which the server is running. \"/api/payment/charge/getAll/chargeId\" is the route or the path on the server side where the needed data resides.\n\nInside the URL, there are several parameters: \"provider\" which is used to specify the payment provider for the charges (in this case 'zelle'), \"accountId\" to specify the account from which the payments were made and \"sessionId\" to specify the user session to provide an added layer of security and uniqueness to each request made.\n\n\"Headers\" sub-field:\n\nThe \"headers\" sub-field is an array that contains the HTTP headers to be included with the HTTP request. In this case, it's been left empty which suggests that this request doesn't require any additional information to be sent as part of the headers."
+      },
+      "response": []
+    },
+    {
+      "name": "Charge - Zelle - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"chargeId\":\"chargeId\",\"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/charge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "charge",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Charge - Zelle - Delete\". The main function of this endpoint is to delete a previously created Zelle charge from an account. Following are the details about the data in this endpoint:\n\n1. **Name**: Name here signifies the title or the identity of the endpoint. In this case, it is 'Charge - Zelle - Delete'.\n\n2. **Request**: It refers to the details of the HTTP request to be made against this endpoint.\n\n    a. **Method**: This indicates the HTTP request method to use. For this endpoint, it is POST, which is typically used to send data to the server, creating a new resource.\n\n    b. **URL**: This indicates the endpoint's location or address, which in this case is 'http://localhost:3000/api/payment/charge/delete'.\n\n    c. **Headers**: Headers can contain more info about the request. Currently, the headers array is empty.\n\n    d. **Body**: Contains the data you want to send to the API. \n    \n        i. **Mode**: The mode here is 'raw,' signifying that you can enter the data you want to send with the request directly.\n\n        ii. **Raw**: This field contains the actual data that is to be sent along with the POST request in a JSON format. The `accountId` is the ID of the account where the charge is located, `sessionId` is the ID of the current session, `chargeId` is the ID of the charge that needs to be deleted, and `provider` is the type of payment provider which in this case is 'zelle'.\n       \n        iii. **Options**: Controls some additional parameters of the request. The `raw` option is set to define the language to be used for the content of the 'raw' field, which here is 'json'. \n\nPlease ensure to replace the placeholders for `accountId`, `sessionId`, `chargeId` with actual values while making the request."
+      },
+      "response": []
+    }
+  ]
+}

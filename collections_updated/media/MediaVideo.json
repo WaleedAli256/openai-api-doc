@@ -1,0 +1,1311 @@
+{
+  "info": {
+    "_postman_id": "6f31a64c-0ebc-4a0f-a3a1-ea437fb33b00",
+    "name": "MediaVideo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Media - Video - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "This endpoint is titled \"Media - Video - Create\" and it is used to create a new video media record. It requires a `POST` method and communicates with the `http://localhost:3000/api/media/video/create` URL.\n\nThe API requires bearer token authentication. The token should be inserted in the place of \"BearerToken\". \n\nIn the request body, the API accepts a raw JSON object with several properties:\n\n- `\"sessionId\"`: It represents the unique identifier of a session. It accepts a string data type.\n- `\"accountId\"`: This is the unique identifier for the account that is creating the video. It takes a string value.\n- `\"name\"`: This refers to the name of the media or video being created. It expects a string value like \"My Second Media\".\n- `\"description\"`: This is a description of the media or video. It provides extra details and context about what the media is about. It takes a string value.\n- `\"tags\"`: These are additional identifiers or labels for the media. The tags are stored as a single string but are separated by commas. For example, \"second, media\".\n- `\"contentType\"`: This specifies the type of content being sent in the request. It is expressed in MIME Types.\n- `\"contentLength\"`: It is the length of the content in bytes. The data type is a number.\n- `\"targetKey\"`: This is the key reference for where the content will be stored, possibly on a separate storage service or database. It is represented as a string.\n- `\"compressUsing\"`: This indicates the method by which the content is compressed. In this case, Base64 encoding is used.\n- `\"isCompressed\"`: This boolean field indicates whether the content is compressed or not. It is set to `true` if the content is compressed.\n- `\"isPrivate\"`: Another boolean field, indicating whether the video is private or not. If it is set to `false`, the video is not private.\n- `\"data\"`: This is where the actual content data would be passed. It accepts string data, often in encoded or serialized format, representing the content to be uploaded.\n\nThe header part is set to default, there are no custom headers specifically defined for this endpoint. Please set the headers as per your requirements. The \"disabled\" status indicates that no additional headers are being passed. Note, the headers for auth and content-type are handled separately by the endpoint.\n  \nPlease ensure the language set for the raw data entry is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Video",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "1. \"name\": This contains the name of the endpoint. Here, it is \"Media - Video - Create - For Video\". It simply means that this API endpoint is used to create a new video media.\n\n2. \"request\": This object contains all the necessary information and parameters needed to make a request to the endpoint.\n\n3. \"auth\": This object is responsible for authorization. It includes:\n   - \"type\": The type of authorization used. Here, it is \"bearer\", which usually means bearer token authorization.\n   - \"bearer\": An array that holds an object with details about the bearer token.\n     - \"key\": The key used for the token. Here, it is \"token\".\n     - \"value\": The value of the token. Here, it is \"BearerToken\".\n     - \"type\": The data type of the token. Here, it is a string.\n\n4. \"method\": This defines the type of HTTP request. Here, it is \"POST\", indicating that this API will create a new resource or data.\n\n5. \"url\": This is the endpoint's URL, where the request will be sent.\n\n6. \"headers\": This is an array of objects for setting the HTTP headers.\n\n7. \"body\": This object contains the data to be sent with the POST request. \n   - \"mode\": The mode of request body. Here, it is \"raw\", meaning the body data is in raw format.\n   - \"raw\": A raw string of data to be sent in request body. Here, we're sending parameters like sessionId, accountId, videoId, name, description, tags, content type, content length, target key, compression method, compression status, privacy status, and actual data.\n   - \"options\": An object specifying options for the 'raw' mode.\n     - \"raw\": An object specifying the language of raw data.\n\nIn conclusion, this endpoint, named \"Media - Video - Create - For Video\", uses a POST request to send authorization and data in the body to the specified URL \"http://localhost:3000/api/media/video/create\", and creates a new video media."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Channel",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "This endpoint is described as `Media - Video - Create - For Channel` which indicates that it is used to create video content for a specific channel.\n\nThe request uses a `POST` method, which informs the server that it should create or update the resource defined. The URL of the service is `http://localhost:3000/api/media/video/create`. \n\nThe `auth` key explains how the request is authenticated. This request uses the 'bearer' type of authentication. `BearerToken` is specified as the token value that should be sent to the server to authorize the request. The type of this 'BearerToken' is a 'string'.\n\nThere's a `headers` field that is currently empty, but it could contain additional information required by the server to process the request correctly.\n\nThe `body` of the request contains the relevant information needed to complete the creation of the video. It's in the `raw` mode, which means that you can directly write text as the request. The body data is written in the JSON language.\n\nThe content of the body includes:\n\n- `sessionId`: Required, a unique id for the current session.\n- `accountId`: Required, an identifier linked to the user's account.\n- `channelId`: Required, the identifier assigned to the channel where the video will be uploaded.\n- `name`: The name of the media file.\n- `description`: Brief information about the media file.\n- `tags`: Labels or keywords associated with the media file.\n- `contentType`: Defines the media type of the resource, in this case, 'application/webm'.\n- `contentLength`: The size of the media file, currently marked as zero.\n- `targetKey`: The property where the uploaded media file will be stored.\n- `compressUsing`: The method used to compress the media file, using 'Base64' for this request.\n- `isCompressed`: A boolean value that shows whether the media file is compressed or not.\n- `isPrivate`: A boolean value that defines whether the media file is private or public.\n- `data`: The actual data content of the media file, which is currently marked as `\"...\"`. \n\nNote: Almost all of these body fields are assumed to be of the type string except for `contentLength`, `isCompressed`, `isPrivate` (which are numbers and boolean types respectively).\n\nPlease ensure you replace the placeholder values with actual values before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"streamId\":\"streamId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Video - Create - For Stream\". It refers to a POST request that is used to create a new video for a particular stream. \n\n- The 'auth' field indicates that this endpoint uses bearer token authentication. A \"token\" with value \"BearerToken\" and type \"string\" needs to be supplied in the bearer auth field.\n\n- The endpoint's 'url' is \"http://localhost:3000/api/media/video/create\". This URL is where the POST request will be sent to create the media.\n\n- The 'headers' field is currently empty and disabled. If some kind of header is needed, such as Content-Type or Accept, this is where they would be placed.\n\n- Within the 'body' field, the 'mode' is set to \"raw\", indicating that the request body should be sent as is. The data to be submitted is a JSON object as indicated by the 'language' option under 'options->raw'. \n\nThe JSON object contains the following:\n\n    - \"sessionId\": This is likely a unique identifier for the session.\n    - \"accountId\": A unique identifier for the account.\n    - \"channelId\": A unique identifier for the channel.\n    - \"streamId\": A unique identifier for the stream.\n    - \"name\": The name of the media file being sent.\n    - \"description\": A short description of the media file.\n    - \"tags\": These are keywords associated with the media file.\n    - \"contentType\": The type of content, in this case, \"application/webm\".\n    - \"contentLength\": The size of the content, currently it's 0.\n    - \"targetKey\": The attribute of the object where the media file should be placed.\n    - \"compressUsing\": The type of compression used, in this case, \"Base64\".\n    - \"isCompressed\": A boolean flag indicating whether or not the media file is compressed.\n    - \"isPrivate\": A boolean flag for privacy status of the media file. If false, the media is available to all, if true it is private.\n    - \"data\": The actual media data, represented as \"...\". \n\nThis information would need to be replaced with actual values when sending a request.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "The endpoint \"Media - Video - Create - For Team\" allows you to create a new video media for a particular team using a POST request. \n\nThe entire POST request is authenticated using a Bearer token authorization, represented by the \"auth\" object. The token value for authentication is contained in the \"value\" field of the \"bearer\" array.\n\nThe request is made to the URL \"http://localhost:3000/api/media/video/create\". Although a header object is present in the request, it is currently empty and disabled.\n\nThe body of this POST request is in raw JSON format. The key-value pairs in the JSON object are described as follows:\n\n- `sessionId`: This represents an active session ID.\n  \n- `accountId`: This refers to a unique identifier for the user's account.\n\n- `teamId`: This indicates a unique identifier for the team for which the video media is being created.\n  \n- `name`: The name of the video being created is represented by this field.\n  \n- `description`: This field provides a brief description about the video media content.\n  \n- `tags`: This field can contain one or more tags related to the video media. They are generally used for better organization or searchability.\n\n- `contentType`: Specifies the media type of the video. Here, it is \"application/webm\".\n\n- `contentLength`: Represents the length of the video content. Here it's denoted as 0.\n  \n- `targetKey`: Key name for where the result content should be stored. In this case, it is stored under \"profilePhotoUrl\".\n  \n- `compressUsing`: Specifies the compression method used, here it is Base64.\n  \n- `isCompressed`: A boolean value that indicates whether the content is compressed or not. In this case, the value is \"true\", stating that the content is compressed.\n\n- `isPrivate`: A boolean value that shows whether the video is private or not. Here, the value is \"false\", indicating that the media is publicly accessible.\n  \n- `data`: The actual data of the video content in compressed or raw format. Data is represented as \"....\" here.\n\nFinally, in \"options\", the language of the raw body is specified as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"profileId\":\"accountId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "Here is the detailed description of all the given data:\n\n1. `\"name\": \"Media - Video - Create - For Profile\"` - This specifies the name of the endpoint. It's used for creating the video media for a profile.\n\n2. `\"request\": {...}` - All the information required to make the request to the endpoint.\n\n    - `\"auth\": {...}` - The authentication method for the endpoint request.\n        - `\"type\": \"bearer\"` - Specifies the authentication type as bearer token authentication.\n        - `\"bearer\": [...]` - This is an array with information regarding the bearer token.\n        - `\"key\": \"token\"` - Defines the key for the bearer token. It's \"token\" in this context.\n        - `\"value\": \"BearerToken\"` - The value provided for the bearer token. Replace \"BearerToken\" with your valid bearer token.\n        - `\"type\": \"string\"` - Specifies the type of the key value. In this case, it's a string.\n\n    - `\"method\": \"POST\"` - An HTTP POST request method which is used to submit data to the service.\n\n    - `\"url\": \"http://localhost:3000/api/media/video/create\"` - The URL to which the request will be made.\n\n    - `\"headers\": [...]` - An array that stores the headers for the request. It's empty in this context.\n\n    - `\"body\": {...}` - Contains the data that will be sent with the POST request.\n        - `\"mode\": \"raw\"` - Specifies that the body of the POST request is sent as raw data.\n        - `\"raw\": \"{...}\"` - The actual raw data in JSON format that will be sent in the body of the POST request.\n        - `\"options\": {...}` - Defines the options that are to be used for the raw payload\n            - `\"raw\": {...}` - Specifies the type of mode.\n            - `\"language\": \"json\"` - Defines the language of the payload which is JSON in this case.\n\nThe raw data contains keys such as `sessionId`, `accountId`, `profileId`, `name` , `description`, `tags`, `contentType`, `contentLength`, `targetKey`, `compressUsing`, `isCompressed`, `isPrivate` and `data`. Each of these keywords should be replaced with appropriate values based on your specific needs."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Tournament",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tournamentId\":\"tournamentId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named `Media - Video - Create - For Tournament`. It is designed to create a media video for a specific tournament. Here's a detailed look at the data it uses:\n\n- The request is authenticated through a `Bearer token`. This means that you need to include a valid token in your request header to gain authorized access.\n\n- The request uses the `POST` method. This type of HTTP method is typically used to send data to a server to create a resource.\n\n- The URL for this request is `http://localhost:3000/api/media/video/create`. This is where the request is sent to.\n\n- As for the headers, by default, it's set to be disabled and no key-value pair is supplied in this example. But normally headers might contain more information for the server to process the request.\n\n- The request body contains various fields:\n\n  - \"sessionId\": This represents the session's unique identifier.\n  \n  - \"accountId\": This represents the account's unique identifier.\n  \n  - \"tournamentId\": This represents the tournament's unique identifier.\n  \n  - \"name\": This provides a name for the media.\n  \n  - \"description\": This gives a description of the media being created.\n  \n  - \"tags\": These are keywords or labels that categorize the media.\n  \n  - \"contentType\": This indicates the media file type. In this example, it is a WebM (Web Media) file.\n  \n  - \"contentLength\": This indicates the length of the content. In this case, it is set to 0.\n  \n  - \"targetKey\": This indicates the target destination for this operation, for example, `profilePhotoUrl`.\n  \n  - \"compressUsing\": This represents the type of compression algorithm used, in this case 'Base64'.\n  \n  - \"isCompressed\": This is a boolean value that indicates if the data is compressed.\n  \n  - \"isPrivate\": This is a boolean value that indicates whether the media is private.\n  \n  - \"data\": This holds the actual media data.\n  \n- In the request body `options`, the data language is set to `json`, meaning that the data sent to the server should be in the form of a JSON (JavaScript Object Notation) object.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Advertisement",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"advertisementId\":\"advertisementId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "The endpoint \"Media - Video - Create - For Advertisement\" takes a POST request for creating video media for an advertisement. The following data is passed in the request:\n\n1. `auth`: It is a field for authentication. It uses Bearer Token for authorization where you have to provide a string value as a token.\n\n2. `method`: It specifies the HTTP method for the request. Here, 'POST' method is used.\n\n3. `url`: It is the URL where the request will be sent. \n\n4. `headers`: It contains any HTTP headers that you want to be included with your request. In this case, no headers are provided as it is disabled.\n\n5. `body`: It contains the details of the video media.\n   \n   - `mode`: It indicates the format of the body of the request. Here, it is 'raw' suggesting the data is sent in plain text format.\n\n   - `raw`: It contains the actual details of the media video which is in JSON format. \n\n     - `sessionId`: Unique identifier for a session.\n\n     - `accountId`: Unique identifier for an account.\n\n     - `advertisementId`: Unique identifier for an advertisement.\n\n     - `name`: The name given to the video media.\n\n     - `description`: A brief descriptor for the media.\n\n     - `tags`: Labels associated with the media.\n\n     - `contentType`: The media format is 'application/webm'.\n\n     - `contentLength`: It indicates the length of the video content.\n\n     - `targetKey`: The name of the field where the URL of the profile picture will be stored.\n\n     - `compressUsing`: The algorithm used for compression.\n\n     - `isCompressed`: A boolean flag indicating if the video media is compressed or not.\n\n     - `isPrivate`: A boolean flag indicating if the video media is private or not.\n\n     - `data`: The actual content data of the video.\n\n   - `options`: It is a field providing an optional language setting. The language is set to 'json' here. \n\nNote: All the string values would be replaced with actual data in the real implementation."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Loyalty",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"loyaltyId\":\"loyaltyId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "\"name\": This field represents the name of the endpoint in question, which is \"Media - Video - Create - For Loyalty\". It is used to identify the endpoint within an API collection.\n\n\"request\": This is the main sub-object within the API call that holds details about the request type, url, and other important parameters.\n\n\"auth\": Under the 'request', 'auth' is a sub-object that contains authentication details for the API.\n\n  - \"type\": This refers to the type of authentication that this API uses, which is \"bearer\" in this case.\n  - \"bearer\" is the array, inside which an object contains additional bearer token details.\n    - \"key\": Represents the key parameter needed for authorizing the API which is 'token' here.\n    - \"value\": It holds the value of the corresponding key mentioned, here it is 'BearerToken'.\n    - \"type\": This field specifies the type of value which is provided, in this case, it's a 'string'.\n\n\"method\": This field denotes the HTTP method type for the API call. In this scenario, it is a \"POST\" call indicating that the data is sent to the server to create a resource.\n\n\"url\": This determines the endpoint to which the API call is made. Here, it is \"http://localhost:3000/api/media/video/create\".\n\n\"headers\": The 'headers' is an array, it contains details for setting the HTTP headers data. The current object within the array is empty and is set to disabled. So, the default value will be used.\n\n\"body\": This field contains the data that needs to be sent to the API in HTTP request body.\n\n - \"mode\": This specifies the format of the body data which in this case is 'raw'.\n - \"raw\": It contains the JSON data representing details about a media entry to be created, like sessionId, accountId, name, description etc.\n - \"options\": This holds configuration for the 'raw' data, specifying it as a JSON language data.\n\nEach field within the \"raw\" string:\n - \"sessionId\": This is an identification string for the session.\n - \"accountId\": This is an identification string for the account.\n - \"loyaltyId\": This represents the id string corresponding to a loyalty program.\n - \"name\", \"description\", \"tags\": These are individual parameters for the media to be created.\n - \"contentType\": This specifies the content type of the media.\n - \"contentLength\": This represents the length of the content.\n - \"targetKey\": This sets the target key of the media content.\n - \"compressUsing\": This denotes how the content is being compressed.\n - \"isCompressed\": This field indicates whether the content is compressed.\n - \"isPrivate\": This field indicates if the media content is private.\n - \"data\": This represents the actual content data."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Promotion",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"promotionId\":\"promotionId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Video - Create - For Promotion\". It is used to create a new media item, specifically a video, for a promotion. This is a POST request. \n\nIn terms of authorization, this endpoint uses bearer authentication. The 'bearer' field should contain a token, referred to as 'BearerToken', that is sent as a string.\n\nThe request is made to the following URL: \"http://localhost:3000/api/media/video/create\". Note, though, that no additional headers are sent with this request.\n\nIn the body of the request, several pieces of data are being sent:\n\n- \"sessionId\": This represents a unique session ID and should be replaced with the actual session identifier.\n- \"accountId\": This is the unique ID of the account creating the media.\n- \"promotionId\": This is the unique ID of the promotion to which the media is being added.\n- \"name\": This field contains the name of the media item being created.\n- \"description\": Here, the user can provide a brief explanation or details about the media item.\n- \"tags\": Tags are keywords or labels that categorize and group your media entry. Separate multiple tags with a comma.\n- \"contentType\": This denotes what type your media is. In this case, it's showing 'application/webm'.\n- \"contentLength\": This represents the length of your content. Replace '0' with actual content length.\n- \"targetKey\":  This key targets the field that will store the URL of uploaded file. In this case, it targets the 'profilePhotoUrl' field.\n- \"compressUsing\": This field describes the method used to compress the media data. Here, 'Base64' encoding is used.\n- \"isCompressed\": This is a boolean value indicating whether the media data is compressed or not. 'true' means it is compressed.\n- \"isPrivate\": This is a boolean value indicating whether the media is private or not. 'false' means it is not private.\n- \"data\": This represents the actual content of the media item in the form of a Base64 string, denoted here as \"...\", which should be replaced with your actual media data.\n\nThe language used in the body of the request is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Create - For Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"rewardId\":\"rewardId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Video - Create - For Reward\" and its function is to create a new video media for a particular reward. The request is authenticated using a bearer token, which is a type of HTTP authentication method. \n\nThe request method is POST, which means it's used to send data to the server to create a new resource. The endpoint URL where this data is sent is \"http://localhost:3000/api/media/video/create\".\n\nThere are headers included in the request but they are currently disabled and not holding any key-value pair.\n\nThe body of the request contains the data that you are sending to the server. This data is being sent in raw JSON format which has the following elements:\n\n- `sessionId`: The unique ID for the session. This is a string.\n- `accountId`: The unique ID for the account involved in creating the media. This also is a string.\n- `rewardId`: The unique ID for the reward for which this media is being created. This is also a string.\n- `name`: The name of the media being created.\n- `description`: A brief description of the media being created.\n- `tags`: Tags attached to the media for categorizing or labeling. Multiple tags are separated by comas.\n- `contentType`: The MIME type of the content. In this case, it's `application/webm` which is typically used for web video files.\n- `contentLength`: The length of the content, expressed in bytes. In this case, it's set to 0, indicating the length is yet to be determined.  \n- `targetKey`: The key specifying where the media is to be used in the user's profile.\n- `compressUsing`: The method of compression used, in this case 'Base64'.\n- `isCompressed`: Determines if the media file is compressed. A boolean value, true indicates that it is compressed.\n- `isPrivate`: Determines if the media file is private or publicly accessible. A boolean value, false indicates that it is publicly accessible.\n- `data`: The actual content of the media in string format, represented by '...'. \n\nFinally, the body has additional options for raw data wherein the language being used is specified, in this case, JSON. \n\nKeep in mind when using this endpoint, always replace placeholders with actual data to be sent for proper functioning."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Video - Update\". It uses a PUT request method, implying that it is used to update details of an existing video media.\n\n**Authentication:** The request requires bearer token authentication. You must provide a token string under the `\"token\"` key. \n\n**URL:** To hit the endpoint, make a PUT request to the following URL: `http://localhost:3000/api/media/video/update`.\n\n**Headers:** Along with the request, one header is required, specifically `Client-UUID`. its value should be provided with the `ClientUUID`.\n\n**Payload (body):** The payload to this endpoint needs to be raw JSON data that includes the following properties:\n\n- `sessionId`: The ID of the session in which the video is being updated.\n\n- `accountId`: The account ID associated with the video.\n\n- `videoId`: The unique ID of the video you're updating.\n\n- `name`: The new name of the video.\n\n- `description`: A brief description related to the video.\n\n- `tags`: Tags related to the video, can be multiple and comma-separated.\n\n- `contentType`: The media format of the video, in this case, it's `application/webm`.\n\n- `contentLength`: The size of the content in bytes.\n\n- `targetKey`: Key in which the location of stored video is saved, such as '`profilePhotoUrl`.\n\n- `compressUsing`: Compression method used for the video.\n\n- `isCompressed`: A boolean to indicate whether the video is compressed.\n\n- `isPrivate`: A boolean to indicate whether the video is private.\n\n- `data`: The actual data for the video.\n\n**Body options:** The chosen language for the raw data is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Video",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "The endpoint described \"Media - Video - Update - For Video\", allows users to update details about an existing video media. This is what each data value represents:\n\n- \"Method\" - This shows the HTTP method used for the request. Here, 'PUT' indicates that an existing resource is being updated.\n  \n- \"auth\" - Our authentication details are here. A bearer token is required for authorization.\n  - \"type\" - This is the type of authorization being used—in this case, \"bearer\".\n  - \"bearer\" - Contains the \"key\" as 'token' and its \"value\" as 'BearerToken', providing access.\n\n- \"url\" - This is the URL where the HTTP request is sent to. This specific URL updates media video details.\n\n- \"headers\" - This contains additional parameters passed with the web request in the header for the server to process:\n  - \"Client-UUID\" - Acts as a unique client identifier.\n\n- \"body\" - This contains the information being sent to the server. \n  - \"mode\" - The mode of data being sent to the server—here it's \"raw\".\n  - \"raw\" - This contains the raw JSON payload which has the following details:\n    - \"sessionId\", \"accountId\", \"videoId\" - Identifiers for the session, account, and video respectively.\n    - \"name\" and \"description\" - Name and description of the media.\n    - \"tags\" - Tags associated with the media.\n    - \"contentType\" - The media content type.\n    - \"contentLength\" - The length of content. It's 0, likely indicates that it's handled automatically.\n    - \"targetKey\" - Keyword used to identify specific data.\n    - \"compressUsing\" - Type of compression being used.\n    - \"isCompressed\" - Indicates if the data is compressed.\n    - \"isPrivate\" - Indicates the privacy status of the media.\n    - \"data\" - Contains the actual data to be sent to the server.\n  - \"options\" - Contains additional specific options for the body data, indicating that the raw data is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Channel",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\",\"channelId\":\"channelId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "Endpoint Name: `Media - Video - Update - For Channel`\n\nThis API endpoint is used to update a particular media video for a specific channel.\n\nIt requires a `PUT` request method and is located at the following URL: `http://localhost:3000/api/media/video/update`.\n\nAuthentication:\nThis endpoint requires bearer token authentication. The key-value of the bearer token is placed under \"auth\". More specifically, `\"token\"` is the key and a string type `\"BearerToken\"` is the value.\n\nHeaders:\nThis API endpoint expects a \"Client-UUID\" key in headers that identifies the client. Its value is represented by \"ClientUUID\".\n\nBody:\nIn the body of the request (specify 'raw' mode), several items are needed:\n1. `sessionId`: The session Id for current user, generally to distinguish the user.\n2. `accountId`: The unique identifier of the account.\n3. `videoId`: The unique identifier of the video.\n4. `channelId`: The unique identifier of the channel.\n5. `name`: The name of the media.\n6. `description`: The description of the media.\n7. `tags`: The tags associated with the media. Multiple tags can be separated by commas.\n8. `contentType`: The media content type, in this case, `application/webm`.\n9. `contentLength`: The size or length of the media content. Set to '0' if it is not applicable or unknown.\n10. `targetKey`: The targeted key of the media, in this case, `profilePhotoUrl`.\n11. `compressUsing`: The compression technique used for the media file, which is `Base64`.\n12. `isCompressed`: Flashed to 'true' if compression is applied on the media file.\n13. `isPrivate`: Flashed to 'false' if the media file is public. Set to `true` if it's private.\n14. `data`: The actual data of the media file.\n\nOptions:\nIn body options part of request, 'raw' is selected option with a language type 'json'. Hence, the information in body needs to be JSON formatted."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"streamId\":\"streamId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "This endpoint is entitled \"Media - Video - Update - For Stream\". It uses a \"PUT\" request to update video details that are stored with a unique identifier in a media library. \n\nTo authenticate this request, it uses the \"Bearer\" authentication type. You must provide a token in the \"token\" field. This token would be the BearerToken accredited for this data transaction.\n\nThe service listens at the url: \"http://localhost:3000/api/media/video/update\". \n\nThere's a requirement for a unique client identification, which is supplied via the headers under the \"Client-UUID\" key.\n\nThe body of the request must carry the following fields in JSON format:\n\n- \"sessionId\": An identifier for the session.\n- \"accountId\": The account that is associated with this session.\n- \"streamId\": The stream that the media file pertains to.\n- \"channelId\": The channel that the media content belongs to.\n- \"videoId\": The unique identifier for the video.\n- \"name\": The preferred title for the media content.\n- \"description\": A detailed description of the media.\n- \"tags\": Associated tags for the media content that are comma-separated.\n- \"contentType\": The media content's file type (e.g., mp4, webm).\n- \"contentLength\": The length of the media content in seconds.\n- \"targetKey\": Also known as a field name, required for adding the media.\n- \"compressUsing\": The compression format used (e.g., Base64, zlib).\n- \"isCompressed\": A Boolean indicating if the media content is compressed.\n- \"isPrivate\": A Boolean indicating media privacy, meaning if true the media file will only be visible to specific people or groups.\n- \"data\": The raw binary data of the media file needs to be stated in this field.\n\nThe \"options\" key indicates that the data should be read as raw JSON. That's why the value of 'language' in 'options' attribute is 'json'."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "The endpoint \"Media - Video - Update - For Team\" uses HTTP 'PUT' method. It's used for updating video media for a particular team. The endpoint requires bearer authentication and the bearer token needs to be included in the auth field.\n\nIt contains several data properties:\n\n- **name**: Represents the name of the endpoint.\n- **request**: It includes the request type or the HTTP verb. For this case, it is 'PUT'.\n- **auth**: Authorization details for the API call. This API uses bearer token type for authentication.\n   - **type**: Represents the type of Authorization which is 'bearer'.\n   - **bearer**: An array containing bearer token details.\n     - **token**: Bearer token string for the API call. Signifies that the API call need a bearer type authentication.\n    \n- **method**: HTTP method used for the request which is 'PUT'.\n- **url**: The URL to which the request will be sent. \n- **headers**: Contains header information required by the API. \n  - **Client-UUID**: A unique identifier assigned to the client that will also be unique for each request. \n\n- **body**: The content of the HTTP request sent to the server. It is structured as per 'raw' mode, and JSON is the language to be used.\n  - **mode**: Represents the mode of the body which is 'raw'.\n  - **raw**:\n    - **sessionId**: Session id of the user making the API call.\n    - **accountId**: Account id of the user to which the video belongs.\n    - **teamId**: Id of the team for which the video is being updated.\n    - **videoId**: Id of the video that is being updated.\n    - **name**: New name for the video.\n    - **description**: Description for the video.\n    - **tags**: Represents the tags related to the video.\n    - **contentType**: Type of the content. In this case, 'application/webm'.\n    - **contentLength**: The length of the content.\n    - **targetKey**: The target key where this video should be stored.\n    - **compressUsing**: The technique used for compressing the video, 'Base64' in this case.\n    - **isCompressed**: Boolean indicating whether the video is compressed or not.\n    - **isPrivate**: Boolean indicating whether the video is private or not.\n    - **data**: The actual video data. \n  - **options**: Additional optional parameters can be added here. \n    - **raw**: Language in which body is expressed. \n\nPlease replace the dummy values with actual required values while making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Profile",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"profileId\":\"accountId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "The endpoint \"Media - Video - Update - For Profile\" is a PUT HTTP method responsible for updating a specific video media for a user profile. The data handled by this endpoint include:\n\n1. `auth`: This is for authentication purposes and uses the bearer token method. It takes a `token` value of the type `string` as the user's authentication key.\n\n2. `method`: This defines the HTTP method. In this case, it's `PUT` which usually means the request will update data on the server.\n\n3. `url`: This is the address of the API endpoint, which in this case is `http://localhost:3000/api/media/video/update`.\n\n4. `headers`: An array of headers used by the endpoint. This array includes a `Client-UUID` key which is used to uniquely identify the client making the request. Its value is set to \"ClientUUID\".\n\n5. `body`: This contains the actual contents of the message sent to the server. \n    - `mode`: Specifies that the body is in `raw` format.\n    - `raw`: Contains the detailed JSON string of the video update information which includes:\n      - `sessionId`, `accountId`, `profileId`, `videoId` to uniquely identify the session, account, profile and video respectively.\n      - `name` and `description` for the name and description of the video.\n      - `tags` for categorizing the video.\n      - `contentType` and `contentLength` specified for the content metadata.\n      - `targetKey` for the profile photo URL.\n      - `compressUsing` and `isCompressed` fields are all about the compression method used and whether the data is compressed or not.\n      - `isPrivate` specifies whether the video should be private (visible to only the owner) or public.\n      - `data` contains the actual video file in a compatible format.\n    - `options`: Specifies the `language` of the body content, in this case, `json`.\n\nThis endpoint allows the client to update specific video media associated with a user's profile with new details provided in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Tournament",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tournamentId\":\"tournamentId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "The 'Media - Video - Update - For Tournament' endpoint is used to update a specific video media associated with a tournament. Here are the detailed descriptions of the data in each field:\n\n- `name`: This field is a string that represents the name of this endpoint which in this case is 'Media - Video - Update - For Tournament'.\n\n- `request`:\n  - `auth`: Contains information for the authorization of the request.\n    - `type`: Shows the type of authorization. here, \"bearer\" means bearer token is being used for authorization.\n    - `bearer`: This array holds the `token` key which has a `value` of \"BearerToken\". It basically stores the bearer token required to authorize the request. The `type` for this token is \"string\".\n    \n  - `method`: Shows the HTTP method used for the request which is \"PUT\" in this case. This method is used for updating data.\n  \n  - `url`: This URL is where the request will be sent to and in this case it is 'http://localhost:3000/api/media/video/update'.\n  \n  - `headers`: Contains the additional information to be sent with the request and in this particular case, it includes:\n    - `Client-UUID`: This key is used to hold unique identifier for the client.\n    \n  - `body`: The payload or the main content of the request.\n    - `mode`: Indicates how the body will be sent. In this case, it is in the raw format.\n    - `raw`: Contains the actual data in raw format. This includes:\n      - `sessionId`: A unique identifier for the current user's session.\n      - `accountId`: The unique identifier for the account.\n      - `tournamentId`: The identifier for the tournament.\n      - `videoId`: The identifier for the video that is to be updated.\n      - `name`: The new name of the video.\n      - `description`: The new description of the video.\n      - `tags`: The new tags for the video.\n      - `contentType`: The type of the video content.\n      - `contentLength`: The length of the video content.\n      - `targetKey`: The key where the returned video URL will be saved.\n      - `compressUsing`: The compression format of the video.\n      - `isCompressed`: Flag that indicates if the video is compressed or not.\n      - `isPrivate`: Flag that indicates if the video is private or not.\n      - `data`: The actual video data.\n    - `options`: Contains any optional adjustments for handling the request body and here it demonstrates that the raw data language type is `json`.\n  \nThis detailed description should serve as a guide for understanding each data in this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Advertisement",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"advertisementId\":\"advertisementId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Media - Video - Update - For Advertisement\". \n\nIt uses a PUT request (indicated by the \"method\" field) for updating a video that might be used for advertisement. The URL for this endpoint is \"http://localhost:3000/api/media/video/update\".\n\nThe request is authorized using the bearer authentication method (\"auth\" object), where a string type token (\"BearerToken\") must be provided.\n\nA unique identifier per client application (\"Client-UUID\") is required in the headers.\n\nIn the body of the request:\n\n- `sessionId`: A unique identifier for the session in which the client is operating.\n- `accountId`: Identifier for the user's account.\n- `advertisementId`: Identifier for the specific advertisement which uses the video.\n- `videoId`: The identification attribute of the video that needs to be updated.\n- `name`: Specifies the new name of the media. \n- `description`: Provides a brief explanation or details about the media.\n- `tags`: The tags that are associated with the media.\n- `contentType`: This represents the media format, in this case, \"application/webm\".\n- `contentLength`: Represents the length of the media content.\n- `targetKey`: Identifies the URL where the profile photo resides.\n- `compressUsing`: Specifies the compression method in use, here it's \"Base64\".\n- `isCompressed`: This is a boolean value indicating whether the media is compressed or not.\n- `isPrivate`: A boolean value indicating whether the media content is private or accessible to others.\n- `data`: This most likely contains the actual media data or a pointer to where the media data resides.\n\nThe mode of the body is 'raw', and the raw data should be in JSON language, as specified in the \"options\" field."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Loyalty",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"loyaltyId\":\"loyaltyId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "\"name\": This field is used to name the API endpoint. In this case, it is named as \"Media - Video - Update - For Loyalty\".\n\n\"request\": This specifies the type of request which is being made to this API endpoint.\n\n\"auth\": This field holds the authentication type and the credentials used. In this scenario, the Bearer token authentication method is used. The \"key\" stores the kind of credential and the \"value\" holds the actual credential.\n\n\"request.method\": This field specifies the HTTP method used for making the request. In this case, it is PUT.\n\n\"url\": This is the actual URL where the request is sent. In this scenario, the request is being made to a local server on port 3000 on the route /api/media/video/update.\n\n\"request.headers\": Contains headers that provide the client information to the server, in this case, the Client-UUID key.\n\n\"request.body\": This field contains the request payload which is being sent along with the request. It is of type 'raw' which suggests that the payload is being sent as a raw JSON string. \nHere are the fields in the body:\n- sessionId, accountId, loyaltyId, videoId are identifiers for the session, account, loyalty program and video respectively.\n- name is used to update the name of the video.\n- description for updating the video's description.\n- tags are used to categorize the video.\n- contentType is the type of the content being sent.\n- contentLength is the size of the video content in bytes.\n- targetKey: it represents the field in the database which would be updated.\n- compressUsing: Method used for compression such as 'Base64'.\n- isCompressed: Boolean indicator of whether the content has been compressed or not.\n- isPrivate: This field indicates if the video is private or public.\n- data: This is likely the actual binary data of the video.\n\n\"request.body.options\": This field stores the settings for formatting or interpreting the payload. In this case, the payload is expected to be in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Promotion",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"promotionId\":\"promotionId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "This endpoint is titled \"Media - Video - Update - For Promotion\". \n\nThe request type is a \"PUT\" method. It's used to update an existing media record typically intended for promotion purposes. The URL for the endpoint is \"http://localhost:3000/api/media/video/update\".\n\nFor authentication, it uses a 'bearer token'. The value should be replaced with a valid, authorized bearer token for access.\n\nA 'Client-UUID' is required in the header, which identifies the client making the request.\n\nIn the body of the request, it takes the following data:\n\n- 'sessionId': This should be replaced with a valid session Id for the ongoing session.\n- 'accountId': This should be replaced with a valid account Id associated with the session.\n- 'promotionId': This should be replaced with a valid promotion Id that the media is planned for.\n- 'videoId': This should be replaced with the actual video Id that's being updated.\n- 'name': This is where you put the new media name for update.\n- 'description': This is intended for the description update for the media.\n- 'tags': These are keywords related to the media. For multiple tags, separate them by commas.\n- 'contentType': This specifies the type of video content, in this case it's 'application/webm'.\n- 'contentLength': This is the size or length of the content which is expected to be updated. Initially set to zero.\n- 'targetKey': The key representing the targeted field in the database to update.\n- 'compressUsing': This states the type of compression used, in this case it's 'Base64'.\n- 'isCompressed': This is a Boolean field to state if the Video is compressed or not.\n- 'isPrivate': This is another Boolean field to state if the media is private or not.\n- 'data': This is where you put the payload for the media content to be updated.\n\nThe format of the body content is in JSON. The above mentioned data to replace with actual values are all strings."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Update - For Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"rewardId\":\"rewardId\",\"videoId\":\"videoId\",\"name\":\"My Second Media\",\"description\":\"This media is my second media\",\"tags\":\"second,media\",\"contentType\":\"application/webm\",\"contentLength\":0,\"targetKey\":\"profilePhotoUrl\",\"compressUsing\":\"Base64\",\"isCompressed\":true,\"isPrivate\":false,\"data\":\"...\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Media - Video - Update - For Reward\", is used to update a specific video related to a reward. It's a PUT request, which suggests it's used to update existing information. This API will need to be called using Bearer Token Authentication, hence, a token value will be supplied in the form of 'BearerToken' under the type of bearer authentication.\n\nThere are certain metadata passed as headers, specifically 'Client-UUID' which will be the unique identifier for the client invoking the request.\n\nThe body of the request includes several key-value pairs:\n\n1. 'sessionId': The unique identifier of the session.\n2. 'accountId': The unique identifier of the user's account.\n3. 'rewardId': The unique identifier of the reward for which the video is being updated.\n4. 'videoId': The unique identifier of the video which is being updated.\n5. 'name': The new name that you want to assign to the video.\n6. 'description': A brief detail about the video.\n7. 'tags': Keywords related to the video which will be updated separated by commas.\n8. 'contentType': The specific filetype of the content being uploaded, in this case 'application/webm'.\n9. 'contentLength': The size of the video file. Although it's set to zero now, it's expected to be filled with the actual size of the file.\n10. 'targetKey': Presumably the key where the URL of the video will be stored, in this case 'profilePhotoUrl'.\n11. 'compressUsing': The method used for compression, in this case 'Base64'.\n12. 'isCompressed': A flag indicating whether the video is compressed or not. Here, it's true indicating the video is compressed.\n13. 'isPrivate': A flag indicating the privacy status of the media, where false indicates that it is public.\n14. 'data': The content of the video as a string, shown here as '...'.\n\nNote: The JSON data for the request is sent as raw data, indicated by the \"mode\" key in the body of the request. The language of the raw data is JSON, indicated by \"language\" key under \"options\" on \"raw\".\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/get/?videoId=videoId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "videoId",
+              "value": "videoId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This data field represents the name of the endpoint. In this case, the name given is \"Media - Video - Get\", indicating the endpoint is designed to retrieve video media.\n\n2. \"request\": This data field contains information about the request that will be sent to the API. \n\n3. \"auth\": This subsection under \"request\" describes the authorization method used for the API request. In this case, it is of \"bearer\" type.\n\n4. \"bearer\": This is an array related to the \"bearer\" type of authentication. It contains an object with key-value pairs that provides more detailed info about the authorization. \n\n5. \"key\": This is the identifier by which the authentication token is recognized. Here, the key is \"token\".\n\n6. \"value\": This is the actual authentication token being used. In this instance, the value of the token is \"BearerToken\".\n\n7. \"type\": Represents the type of the value being passed in the bearer array. It is of type \"string\".\n\n8. \"method\": This specifies the HTTP method used for the request. Here, the method is \"GET\", indicating that we're retrieving data from the server.\n\n9. \"url\": This is the actual URL where the API request will be sent. This URL includes \"videoId\", \"sessionId\", and \"accountId\" as parameters.\n\n10. \"headers\": An array that would normally contain any additional headers to be sent with the request. In this case, it is empty and disabled.\n\n11. \"body\": This contains data that needs to be sent along with the request but isn't part of the URL.\n\n12. \"mode\": It defines how the request body is formatted. Here, \"raw\" indicates that the body content is transmitted to the server without any form of encoding.\n\n13. \"raw\": This is the exact data that will be sent with the request in raw format. In this case, the raw field is empty which suggests that no body data will be transmitted with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Get - Download Media",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/get/?videoId=videoId&sessionId=sessionId&accountId=accountId&download=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "videoId",
+              "value": "videoId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "download",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "The described endpoint behaves as follows:\n\n1. **name**: \"Media - Video - Get - Download Media\". This indicates the purpose of the endpoint, in this case, it's used to retrieve and download media files, specifically videos.\n\n2. **request**: This object describes the actual HTTP request sent to the server.\n\n   - **auth**: This object describes the authentication method used for the request.\n   \n     - **type**: \"bearer\". This indicates that a bearer token is being used for authentication.\n     \n     - **bearer**: This is an array containing information about the bearer token used for authentication. It has a single object with the following properties:\n     \n       - **key**: \"token\". This specifies the name of the bearer token.\n       - **value**: \"BearerToken\". This should be replaced by the actual bearer token string during the API call. \n       - **type**: \"string\". This indicates that the bearer token will be a string.\n\n   - **method**: \"GET\". This is the HTTP method used for the request. GET is used to request data from a server.\n\n   - **url**: This is the URL where the API request will be sent. It includes parameters such as videoId, sessionId, accountId, and download. The actual values should be replaced during the API call. \n\n   - **headers**: This is an array that should contain any additional headers to be included with the request. Currently, it contains a default (empty and disabled) header. \n      \n   - **body**: This object has fields used to specify the body of the request. \"Mode\" is set to \"raw\" and \"raw\" is set to an empty string, which means that the body of the request is currently empty.\n\nPlease keep in mind that individuals using this endpoint should replace the placeholders 'BearerToken', 'videoId', 'sessionId', etc. with actual values to make the API call correctly. Always ensure the provided bearer token is valid for the account."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Get - For Public",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/video/get/?videoId=videoId&public=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "video",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "videoId",
+              "value": "videoId"
+            },
+            {
+              "key": "public",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This endpoint is named as \"Media - Video - Get - For Public\". It refers to a functionality which retrieves media, specifically videos for public viewing. \n\n1. Auth: This is the authorization part of the endpoint. It uses bearer token type authorization.\n   - Key: It identifies the name of the token, which is \"token\" here.\n   - Value: It is the actual token value, here represented as 'BearerToken'. \n   - Type: This tells us what type of data the bearer token is. The type here is string.\n\n2. Request Method: The HTTP method used for this endpoint is 'GET'. This method is primarily designed to retrieve data from the server.\n\n3. URL: \"http://localhost:3000/api/media/video/get/?videoId=videoId&public=1\". This is the URL that will be hit when sending the endpoint request. It contains two parameters:\n   - videoId: This parameter is to provide the unique identifier of the video you want to retrieve.\n   - public: This parameter determines if the video is meant for public viewing. The value of 1 implies it is for the public.\n\n4. Headers: The header fields are not currently used in this endpoint request. It contains an empty key and value. The 'disabled' attribute set to true indicates that this header field may have future uses but is currently not being used.\n\n5. Body: Here the mode is set as 'raw' which means it can send data without any processing. But currently, no data is to be sent in the body, hence it is empty."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/media/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "media",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Endpoint Description:**\n\n**Name: \"Media - Video - Get All\"**\nThis is the label or identifier of the endpoint. It suggests that this endpoint's primary task is to retrieve (Get) all video media.\n\n**Request:**\nIt covers various aspects regarding the API request that will be made.\n\n**Auth-->Type: \"bearer\"**\nThis refers to the authentication method that is employed for this request. Bearer authentication (also called token authentication) is an HTTP authentication scheme that involves security tokens called bearer tokens. The name \"Bearer authentication\" can be understood as \"give access to the bearer of this token\".\n\n**Auth-->Bearer-->Key: \"token\"**\nThis is the key information required for bearer authorization. It's typically named 'token'.\n\n**Auth-->Bearer-->Value: \"BearerToken\"**\nThis is the actual bearer token for authentication. Replace \"BearerToken\" with the real bearer token.\n\n**Auth-->Bearer-->Type: \"string\"**\nThis indicates the data type of the bearer token. In this case, it is a string.\n\n**Method: \"GET\"**\nThis defines the HTTP method to be used when making the API request. A 'GET' request is used to request data from a resource.\n\n**URL: \"http://localhost:3000/api/media/media/all/?sessionId=sessionId&accountId=accountId\"**\nThis is the API's endpoint URL. The parameters 'sessionId' and 'accountId' should be replaced with actual session and account id values.\n\n**Headers:**\nThese are additional parameters that can be sent with the request. At present, there isn't any specific key-value pair given.\n\n**Body-->Mode: \"raw\"**\nThis indicates the data mode for the body of the request. The 'raw' mode allows you to write text, JSON, XML or HTML requests directly in the text editor.\n\n**Body-->Raw: \"\"**\nSince it's a GET request, no body data needs to be sent, which is why this field is empty.\n\nRemember to replace all placeholder values with actual data before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Media - Video - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/media/media/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "media",
+            "media",
+            "delete"
+          ]
+        },
+        "description": "- `\"name\": \"Media - Video - Delete\"`: This represents the name of the API endpoint. It indicates that this endpoint is used to delete media, specifically videos, in the application.\n\n- `\"request\":`: This object contains details about the HTTP request made to the endpoint.\n\n- `\"auth\":`: This object contains authentication information required to access the endpoint. \n  - `\"type\": \"bearer\"`: Indicates that the endpoint uses Bearer token authentication.\n  - `\"bearer\":`: This array contains objects representing individual bearer tokens.\n    - `\"key\": \"token\"`: The string that should be used as a key for the bearer token in request headers.\n    - `\"value\": \"sessionId\"`: The string that should be used as the value of the bearer token. In this case, it indicates that the session id should be provided as the token.\n    - `\"type\": \"string\"`: The data type of the value - sessionId is a string.\n\n- `\"method\": \"POST\"`: This instructs the HTTP request to use the POST method, indicating that information will be sent to the server to create or update a resource.\n\n- `\"url\": \"http://localhost:3000/api/media/media/delete\"`: This is the URL where the HTTP request will be sent to perform the operation.\n\n- `\"headers\":`: This array contains objects representing individual HTTP headers to be included in the request.\n  - Note that the `\"key\": \"\"` and `\"value\": \"\"` are empty. This might be a template for users to include any other headers needed for the request.\n  - `\"type\": \"default\"`: The type of HTTP header. It is set to default, meaning it is not any special, predefined type of header.\n  - `\"disabled\": true` This header is disabled, and will not be sent along with the HTTP request.\n\n- `\"body\":`: This object contains data that will be sent to the server.\n  - `\"mode\": \"raw\"`: The body data will be sent in raw format, meaning it is a string of text exactly as it appears in the `\"raw\"` field.\n  - `\"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"videoId\\\":\\\"videoId\\\"}\"`: This is the actual data to be sent. Keys (`sessionId`, `accountId`, `videoId`) represent parameter names, and the corresponding values are placeholders, indicating that actual session ID, account ID, and video ID should be provided when making the request."
+      },
+      "response": []
+    }
+  ]
+}

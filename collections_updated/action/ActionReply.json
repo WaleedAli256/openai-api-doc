@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "9815388d-92b5-4713-921a-89fb1d05037c",
+    "name": "ActionReply",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Reply - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reply/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reply",
+            "create"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Action - Reply - Create\": \"This is the name of the API endpoint which is responsible for creating a reply action.\",\n    \n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"This indicates that the endpoint requires bearer token authentication to secure access, ensuring only authorized users can make requests.\",\n        \n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This is the key used to identify the bearer token authorization.\",\n            \"value\": \"BearerToken\": \"This is a placeholder for the actual bearer token, which should be replaced with a valid token to authenticate the request.\",\n            \"type\": \"string\": \"This specifies that the value of the token is expected to be a string.\"\n          }\n        ]\n      },\n      \n      \"method\": \"POST\": \"This specifies the HTTP method used for the request. In this case, it is a POST request, which is typically used to create new resources.\",\n      \n      \"url\": \"http://localhost:3000/api/action/reply/create\": \"This is the endpoint URL that the request will be sent to. It is a local server URL for creating a reply action.\",\n      \n      \"headers\": [\n        {\n          \"key\": \"\": \"This field is currently empty, indicating that there are no additional headers required for this request.\",\n          \"value\": \"\": \"The value field is also empty, which means there are no values set for the headers.\",\n          \"type\": \"default\": \"Indicates that the type of the header is default and it is currently disabled.\",\n          \"disabled\": true: \"This shows that this particular header is not active and will not be sent with the request.\"\n        }\n      ],\n      \n      \"body\": {\n        \"mode\": \"raw\": \"This indicates that the body of the request will be sent as raw data.\",\n        \n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"path\\\": \\\"/live/channel/video123\\\",\\n    \\\"targetType\\\": \\\"videoId\\\",\\n    \\\"targetId\\\": \\\"videoId\\\",\\n    \\\"sourceType\\\": \\\"accountId\\\",\\n    \\\"sourceId\\\": \\\"accountId\\\"\\n}\": \"This is a JSON object containing parameters required for creating the reply action. It includes several fields:\",\n        \n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\": \"This specifies that the raw data being sent is formatted as JSON.\"\n          }\n        }\n      }\n    },\n\n    \"parameters\": {\n      \"sessionId\": \"This represents the session identifier, used to track the current session of the user.\",\n      \"accountId\": \"This indicates the unique identifier for the user's account sending the reply.\",\n      \"path\": \"This provides the specific path related to the content being replied to, indicating its location.\",\n      \"targetType\": \"This specifies the type of content being targeted for the reply. In this case, it is identified by videoId.\",\n      \"targetId\": \"This denotes the unique identifier of the target content, such as the video that is being replied to.\",\n      \"sourceType\": \"This indicates the type of the source of the reply, which is identified by accountId.\",\n      \"sourceId\": \"This represents the unique identifier of the source from which the reply originates, typically the same as accountId.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reply - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"replyId\":\"replyId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reply/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reply",
+            "update"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"This is the name of the action to be performed. It indicates the purpose of the API call, which in this case is to update a reply.\",\n    \n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"Defines the type of authentication being used for the API request. In this case, it uses Bearer Token authentication.\",\n        \n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This is the key for the Bearer Token in the authentication header.\",\n            \"value\": \"BearerToken\": \"This is where the actual Bearer Token value would be placed for authentication.\",\n            \"type\": \"string\": \"Indicates the data type of the token value, which is a string.\"\n          }\n        ]\n      },\n      \n      \"method\": \"PUT\": \"Specifies that this API request is using the HTTP PUT method, which is typically used to update existing resources.\",\n      \n      \"url\": \"http://localhost:3000/api/action/reply/update\": \"The endpoint URL where the API request is directed. It includes the base URL and the specific path for updating a reply.\",\n      \n      \"headers\": [\n        {\n          \"key\": \"Client-UUID\": \"This is the key for the Client UUID that is being sent in the request header.\",\n          \n          \"value\": \"ClientUUID\": \"This is where the actual Client UUID value should be placed. It is used for client identification.\",\n          \n          \"type\": \"default\": \"Indicates the data type for the header value, which is set to default.\"\n        }\n      ],\n      \n      \"body\": {\n        \"mode\": \"raw\": \"Specifies the format of the request body. 'raw' indicates that the body is to be sent as raw data.\",\n        \n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"path\\\": \\\"/live/channel/video123\\\",\\n    \\\"targetType\\\": \\\"videoId\\\",\\n    \\\"targetId\\\": \\\"videoId\\\",\\n    \\\"sourceType\\\": \\\"accountId\\\",\\n    \\\"sourceId\\\": \\\"accountId\\\",\\n    \\\"replyId\\\":\\\"replyId\\\"\\n}\": \"This is the actual JSON payload being sent in the request body. It contains key-value pairs where each key is a specific attribute related to the reply update.\",\n        \n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\": \"Indicates that the language of the raw body content is JSON, which is a common format for API requests.\"\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reply - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reply/get/?replyId=replyId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reply",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "replyId",
+              "value": "replyId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Detailed Description of Endpoint: Action - Reply - Get\n\n- **name**: Action - Reply - Get  \n  This is the name of the API endpoint, indicating that it handles retrieval actions related to replies.\n\n- **request**:  \n  This object encapsulates all the details regarding the API request configuration.\n\n  - **auth**:  \n    This field defines the authentication method required for the request.\n\n    - **type**: \"bearer\"  \n      Specifies that bearer token authentication is used to authorize access to the resource.\n\n    - **bearer**:  \n      This array contains the bearer token information.\n\n      - **key**: \"token\"  \n        This is the identifier for the token in the request, indicating what to expect in the authorization header.\n\n      - **value**: \"BearerToken\"  \n        This represents the actual bearer token value that will be sent with the request. It should be replaced with a valid token.\n\n      - **type**: \"string\"  \n        Indicates that the value of the token is formatted as a string.\n\n  - **method**: \"GET\"  \n    Denotes the HTTP method used for this request. In this case, it is a GET request, which is typically used to retrieve data from a server.\n\n  - **url**:  \n    The URL endpoint to which the request is sent.\n\n    - **http://localhost:3000/api/action/reply/get/**  \n      This is the base URL for the API. The local server runs on port 3000, and this endpoint is specifically for getting reply information.\n\n    - **query parameters**:  \n      The URL includes several query parameters used to specify the request further.\n\n      - **replyId**: \"replyId\"  \n        This parameter should be replaced with the ID of the reply you wish to fetch.\n\n      - **sessionId**: \"sessionId\"  \n        This parameter should be replaced with the ID of the session associated with the reply.\n\n      - **accountId**: \"accountId\"  \n        This parameter should be replaced with the ID of the account that owns the reply.\n\n  - **headers**:  \n    This array would contain any HTTP headers that are necessary for the request.\n\n    - **key**: \"\"  \n      The key for the header, currently remains empty.\n\n    - **value**: \"\"  \n      The value for the header, currently remains empty.\n\n    - **type**: \"default\"  \n      Indicates the type of header, which is currently set to default.\n\n    - **disabled**: true  \n      This field shows that this header is not currently active; it won't be sent with the request.\n\n  - **body**:  \n    This object defines the body of the request, which is not utilized in the case of a GET request.\n\n    - **mode**: \"raw\"  \n      This indicates that the body content would be in raw format.\n\n    - **raw**: \"\"  \n      Currently, there is no body content included in this request, as GET requests generally do not require a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reply - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reply/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reply",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Data\n\n- **name**: The name of this API request is \"Action - Reply - Get All\". It indicates that the purpose of this request is to retrieve all replies related to a specific action.\n\n- **request**: This object contains all the necessary details required to execute the API request.\n\n  - **auth**: Specifies the authentication method used to secure the API request.\n    \n    - **type**: Indicates the type of authentication, which is \"bearer\". This means that a token will be required for accessing the API.\n    \n    - **bearer**: This is an array containing the authentication data needed for the bearer token.\n      \n      - **key**: This is the key for the token field, labeled as \"token\".\n      \n      - **value**: This is where the actual token goes, marked here as \"BearerToken\". This should be replaced with the actual token when making requests.\n      \n      - **type**: Indicates the type of the value, which is a \"string\".\n\n  - **method**: Specifies the HTTP method to be used for the request, which is \"GET\". This method is utilized for retrieving data from the server.\n\n  - **url**: The endpoint URL to which the request is sent. It consists of:\n    \n    - Base URL: \"http://localhost:3000/api/action/reply/all/\"\n    - Query Parameters: \n      - `sessionId`: A placeholder representing the session ID that needs to be passed with the request.\n      - `accountId`: A placeholder representing the account ID that needs to be provided with the request.\n\n  - **headers**: An array that specifies any headers that need to be included in the request. In this case, it contains:\n    \n    - **key**: Currently empty, meaning no additional headers are being sent.\n    \n    - **value**: Also empty, indicating no values are defined.\n    \n    - **type**: Set as \"default\", which is a standard type for headers payload.\n    \n    - **disabled**: Set to true, meaning this header is not active and will not be sent with the request.\n\n  - **body**: Represents the body of the request. The mode is set to \"raw\", meaning the body content would be raw data.\n    \n    - **raw**: Currently empty, indicating that there is no body content to send with this GET request.\n\nThis description clarifies each component of the API request and helps users understand how to use the endpoint effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Reply - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"replyId\":\"replyId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/reply/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "reply",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Reply - Delete\",\n  \"description\": \"This API endpoint is designed to delete a specific reply associated with a user's action. Below is a detailed explanation of the data in the request.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"sessionId\",\n          \"type\": \"string\"\n        }\n      ],\n      \"description\": \"Authentication is performed using a bearer token. The token is a sessionId that validates the user's identity and permission to access the resource.\"\n    },\n    \"method\": \"POST\",\n    \"description\": \"The method used for this request is POST, indicating that the client is sending data to the server to perform the delete action.\"\n    \"url\": \"http://localhost:3000/api/action/reply/delete\",\n    \"description\": \"The URL specifies the location of the API endpoint for deleting a reply. It points to the local server running on port 3000.\"\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"description\": \"Currently, no specific headers are required for this request as the header field is disabled. Additional headers can be added if needed in the future.\",\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"The body of the request is in raw JSON format containing the necessary identifiers for the delete operation.\",\n      \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"replyId\\\":\\\"replyId\\\"}\",\n      \"description\": {\n        \"sessionId\": \"This is the session ID used for authentication and must match the user's current session.\",\n        \"accountId\": \"This is the unique identifier for the user's account from which the reply will be deleted.\",\n        \"replyId\": \"This is the identifier of the specific reply that needs to be deleted.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

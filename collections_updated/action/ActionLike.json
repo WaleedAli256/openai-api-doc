@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "dd557b34-5820-4889-b7a4-0ebd1addcf8a",
+    "name": "ActionLike",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Like - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didLike\": true,\n    \"isUndo\": false,\n    \"name\":\"\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/like/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "like",
+            "create"
+          ]
+        },
+        "description": "### Action - Like - Create Endpoint Description\n\n#### Request Details\n\n- **Auth Type**: Bearer Token\n  - **Token**: A security token that authorizes access to the endpoint. Replace `BearerToken` with your actual bearer token.\n\n- **HTTP Method**: POST\n  - This method is used to send data to the server to create a new resource. In this case, it is used to express a \"like\" action.\n\n- **URL**: \n  - The endpoint for the request is `http://localhost:3000/api/action/like/create`. This is where the request will be sent.\n\n#### Headers\n\n- **Headers**: Currently, there are no headers specified and any default headers are disabled.\n\n#### Request Body\n\n- **Mode**: Raw\n  - This mode allows you to send the request body in raw format. The body is specified in JSON format.\n\n- **Raw Body**: \n  ```json\n  {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"path\": \"/live/channel/video123\",\n      \"targetType\": \"videoId\",\n      \"targetId\": \"videoId\",\n      \"sourceType\": \"accountId\",\n      \"sourceId\": \"accountId\",\n      \"didLike\": true,\n      \"isUndo\": false,\n      \"name\": \"\",\n      \"description\": \"\",\n      \"tags\": \"\"\n  }\n  ```\n\n  #### Body Fields Description\n\n  - **sessionId**: Identifies the current session. Replace `sessionId` with the actual session identifier for tracking user interactions.\n  \n  - **accountId**: The unique identifier for the user account acting in this request. Replace `accountId` with the specific account ID of the user.\n  \n  - **path**: Specifies the path to the resource being interacted with, such as a video or channel. It indicates where the action is taking place (e.g., `/live/channel/video123`).\n  \n  - **targetType**: Defines the type of the target that is being liked. In this case, it is set to `videoId`, indicating that the target of the like is a video.\n  \n  - **targetId**: The unique identifier for the target resource that is being liked. Replace `videoId` with the actual ID of the video.\n  \n  - **sourceType**: Specifies the type for the source of the like action. It is set to `accountId`, indicating that the like comes from a user account.\n  \n  - **sourceId**: The unique identifier for the source of the like action. It should be the same as `accountId` in this context.\n\n  - **didLike**: A boolean value indicating whether the like action was performed. Set to `true` to denote that the user has liked the resource.\n  \n  - **isUndo**: A boolean value indicating whether this action is intended to undo a previous like. Set to `false` if it is a new like action rather than an undo.\n  \n  - **name**: Optional field for a name related to the like action. It can be left blank if not used.\n\n  - **description**: Optional field for a description related to the like action. It can be left blank if not applicable.\n\n  - **tags**: Optional field for any associated tags. It can be left blank if no tags are necessary. \n\nEnsure to replace the placeholder values in the request body with actual data before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Like - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didLike\": false,\n    \"isUndo\": true,\n    \"name\":\"\",\n    \"description\":\"\",\n    \"tags\":\"\",\n    \"likeId\":\"likeId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/like/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "like",
+            "update"
+          ]
+        },
+        "description": "### Action - Like - Update Endpoint Description\n\nThis documentation outlines the details of the \"Action - Like - Update\" endpoint, which is used to update the like status of a specific video. The request method is PUT and requires authentication via a bearer token.\n\n#### Request Details\n\n- **Auth Type:**\n  - The request uses bearer token authentication.\n  - The token is passed in the authorization header using the format: `Bearer BearerToken`.\n\n- **HTTP Method:**\n  - PUT: This method is used to update existing resources.\n\n- **URL:**\n  - `http://localhost:3000/api/action/like/update`: This is the endpoint used to update the like action for a specific video.\n\n- **Headers:**\n  - **Client-UUID:** \n    - This header contains the unique identifier for the client making the request, which is used for tracking and analytics. It should be replaced with the actual UUID of the client.\n\n#### Request Body\n\nThe body of the request is in JSON format and contains the following fields:\n\n- **sessionId:**\n  - A unique identifier for the user session, used to track the user's current interaction.\n\n- **accountId:**\n  - The unique identifier for the user's account. This indicates which user's like action is being updated.\n\n- **path:**\n  - The path to the specific video resource being affected, in this case, it follows the format `/live/channel/video123`, where `video123` should be replaced with the actual video's identifier.\n\n- **targetType:**\n  - Indicates the type of target being liked. In this case, it specifies that the target is identified by `videoId`.\n\n- **targetId:**\n  - The unique identifier for the video that is being liked or unliked.\n\n- **sourceType:**\n  - This field indicates the type of source of the like action. Here it uses `accountId` to specify that the source is based on the user account.\n\n- **sourceId:**\n  - This is the same as the `accountId` and represents the source account performing the action.\n\n- **didLike:**\n  - A boolean value indicating whether the user liked the video (`true` for liked, `false` for unliked).\n\n- **isUndo:**\n  - A boolean value indicating whether the action is intended to undo a previous like status. Setting this to `true` will remove a like if it exists.\n\n- **name:**\n  - A string field reserved for a name associated with the like action. It can be left empty if not needed.\n\n- **description:**\n  - A string field reserved for a description associated with the like action. It can be left empty if not needed.\n\n- **tags:**\n  - A field for any tags related to the like action. It is optional and can be left empty.\n\n- **likeId:**\n  - A unique identifier for the specific like action being updated. This is necessary to reference the previous like status.\n\nOverall, this endpoint effectively allows the user to update whether they like or dislike a specific video while providing all necessary identifiers and information."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Like - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/like/get/?likeId=likeId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "like",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "likeId",
+              "value": "likeId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Like - Get Endpoint Description\n\n- **Endpoint Name**: Action - Like - Get  \n  This is the name of the API endpoint that is used to retrieve the details of a like action.\n\n- **Request Type**:  \n  `GET`  \n  Specifies that this request is a GET request, which is used to fetch data from the server.\n\n- **Authorization**:  \n  - **Type**: `bearer`  \n    This indicates that bearer token authentication is used for this request.\n  - **Bearer Token**:  \n    - **Key**: `token`  \n      The name of the authentication parameter.\n    - **Value**: `BearerToken`  \n      A placeholder for the actual bearer token which is required for authentication.\n    - **Type**: `string`  \n      This denotes that the value of the token should be a string.\n\n- **URL**:  \n  `http://localhost:3000/api/action/like/get/?likeId=likeId&sessionId=sessionId&accountId=accountId`  \n  The address of the API endpoint that will be called. It includes query parameters:\n  - **likeId**: Specifies the ID of the like action to retrieve.\n  - **sessionId**: Indicates the ID of the user session.\n  - **accountId**: Refers to the user account ID associated with the like.\n\n- **Headers**:  \n  - **Key**: (empty)  \n    No headers are specified, which means the request will not carry any additional header information.\n  - **Value**: (empty)  \n    No corresponding value for the header as it is disabled.\n  - **Type**: `default`  \n    Indicates the default type of the header.\n  - **Disabled**: `true`  \n    This means that the header has been disabled and will not be sent with the request.\n\n- **Body**:  \n  - **Mode**: `raw`  \n    Indicates that the body of the request is in a raw format.\n  - **Raw**: (empty)  \n    The body of the request is empty, meaning no data is sent with this GET request. \n\nThis endpoint is designed to retrieve information about a specific like action based on the parameters provided in the URL. It requires a valid bearer token for authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Like - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/like/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "like",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Like - Get All\n\n#### Request Details:\n\n- **Auth**: \n  - **Type**: Bearer\n    - This type of authentication requires a valid bearer token to access the endpoint. \n  - **Bearer Token**:\n    - **Key**: `token`\n      - This is the key used to access the bearer token.\n    - **Value**: `BearerToken`\n      - This represents the actual bearer token that needs to be included in the request for authentication purposes.\n    - **Type**: `string`\n      - Indicates that the token value is a string data type.\n\n- **Method**: \n  - **GET**\n    - This specifies that the request method is GET, which is used to retrieve data from the server.\n\n- **URL**: \n  - `http://localhost:3000/api/action/like/all/?sessionId=sessionId&accountId=accountId`\n    - This is the endpoint URL where the request will be sent.\n    - **sessionId**: This is a query parameter representing the unique identifier for the user’s current session.\n    - **accountId**: This is another query parameter that corresponds to the unique identifier of the user’s account for which the likes are being retrieved.\n\n- **Headers**: \n  - An array of headers that can be included in the request.\n    - **Key**: An empty string, which means no specific key is provided.\n    - **Value**: An empty string, indicating no particular value is supplied.\n    - **Type**: `default`\n      - This shows the default type for the header entry.\n    - **Disabled**: `true`\n      - This means that the header is currently disabled and will not be sent with the request.\n\n- **Body**:\n  - **Mode**: `raw`\n    - This indicates that the body of the request is sent in raw format.\n  - **Raw**: \n    - An empty string, meaning no data is being sent in the body of the request. The GET method typically does not require a body.\n\n### Summary:\nThis request is used to retrieve all \"like\" actions for a specific account based on the session identifier provided. Authentication is achieved using a bearer token in the request. The generated URL includes query parameters to specify which session and account to target, but no additional headers or body content is needed."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Like - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"likeId\":\"likeId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/like/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "like",
+            "delete"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n#### Name\n- **Action - Like - Delete**: This is the identifier for the API endpoint that handles the deletion of a like action.\n\n#### Request\n- This section outlines the details of the API request.\n\n##### Authentication\n- **Auth Type**: The authentication method used is Bearer token.\n- **Bearer**: A token is required to authenticate the request.\n  - **Key**: Refers to the name of the token which in this case is \"token\".\n  - **Value**: The value for the token parameter is set to \"sessionId\". This should be replaced with an actual session identifier when making the request.\n  - **Type**: The type of the token is indicated as a string, which specifies the format of the value.\n\n##### Method\n- **Method**: The HTTP method used for this request is POST. This indicates that the request will submit data to the server for processing.\n\n##### URL\n- **URL**: This points to the endpoint where the request is directed. In this case, it is \"http://localhost:3000/api/action/like/delete\", which is the local server address for deleting a like.\n\n##### Headers\n- **Headers**: This section can include additional metadata for the request.\n  - **Key**: An empty key indicates that there are no custom headers added for this request.\n  - **Value**: The associated value is also empty.\n  - **Type**: The default type is noted, but it is currently disabled, implying that it will not be included in the request.\n\n##### Body\n- **Body**: Contains the actual data being sent with the request.\n  - **Mode**: The body is configured in \"raw\" mode, meaning that the data is sent as plain text rather than a form-encoded string.\n  - **Raw**: The raw data being sent is in JSON format:\n    - **sessionId**: This should be replaced with the actual session identifier of the user making the request.\n    - **accountId**: This field represents the identifier for the user's account associated with the like action.\n    - **likeId**: This is the identifier of the like that is to be deleted. \n\nMake sure to replace the placeholders with the appropriate values when making a request to this endpoint."
+      },
+      "response": []
+    }
+  ]
+}

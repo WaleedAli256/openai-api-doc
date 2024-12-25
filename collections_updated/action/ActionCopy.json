@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "ab08ea73-03f8-4794-acc4-92b59bc07c17",
+    "name": "ActionCopy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Copy - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didCopy\": true,\n    \"text\": \"this is copied text\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/copy/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "copy",
+            "create"
+          ]
+        },
+        "description": "### Action - Copy - Create\n\n#### Request Details:\n- **Auth**: \n  - **Type**: This specifies the authentication method used for the request. It is set to \"bearer\".\n  - **Bearer**: This section contains details for bearer token authentication.\n    - **Key**: Indicates the type of authentication used, labeled as \"token\".\n    - **Value**: Contains the bearer token which is used to authenticate the request. Placeholder value provided as \"BearerToken\".\n    - **Type**: Specifies the data type for the token, which is a \"string\".\n\n- **Method**: \n  - The HTTP method used for the request is \"POST\". This indicates that data will be sent to the server to create a new resource.\n\n- **URL**: \n  - The endpoint URL where the request is sent. In this case, it is `http://localhost:3000/api/action/copy/create`, which suggests that the API is being tested locally.\n\n- **Headers**: \n  - An array that can contain header key-value pairs for the request. Currently, no specific headers are provided (keys and values are blank) and this entry is marked as disabled.\n\n- **Body**:\n  - **Mode**: Indicates the body format used in the request, which is set to \"raw\". This implies the payload is sent in its raw form.\n  - **Raw**: This is where the actual data sent in the body of the request is defined. The following JSON structure is provided:\n    - **sessionId**: A unique identifier for the session during which the copy action is performed.\n    - **accountId**: The ID of the account from which the content is being copied.\n    - **path**: The path of the resource that is being copied, in this example it references a video.\n    - **targetType**: Defines the type of target for the copy operation. In this case, it is set to \"videoId\".\n    - **targetId**: The specific identifier of the target video where the content is being copied.\n    - **sourceType**: Defines the type of source from which the content is copied, currently set as \"accountId\".\n    - **sourceId**: The unique identifier of the source account being referenced.\n    - **didCopy**: A boolean indicating whether the copy operation has been completed, set to `true` in this instance.\n    - **text**: A text field to provide any additional description or remarks regarding the copied content, with a placeholder message \"this is copied text\".\n    - **name**: A field to specify a name for the copied content, left blank as it currently stands.\n    - **description**: A field for providing a description of the copied content, also left blank.\n    - **tags**: A field for including any tags related to the copied resource, currently left empty.\n\nThis postman request is designed to copy resources within a specified account and to define the specifics of the copy operation being performed."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Copy - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didCopy\": true,\n    \"text\": \"this is updated text\",\n    \"copyId\": \"copyId\",\n    \"name\": \"update\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/copy/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "copy",
+            "update"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n#### Request Details\n- **Request Type**: PUT\n  - This endpoint uses the HTTP PUT method, which is typically used to update existing resources.\n\n- **URL**: `http://localhost:3000/api/action/copy/update`\n  - This is the endpoint where the request will be sent. It points to a local server running on port 3000 and accesses the `api/action/copy/update` path.\n\n#### Authentication\n- **Auth Type**: Bearer Token\n  - This request requires authentication using a bearer token. You must include this token in the request to access the endpoint securely.\n\n- **Bearer Token**:\n  - **Key**: `token`\n    - This is the key used to specify the authentication token.\n  - **Value**: `BearerToken`\n    - The actual token you will use for authentication. Replace `BearerToken` with the valid token.\n  - **Type**: string\n    - The datatype of the token is a string.\n\n#### Headers\n- **Header Key**: `Client-UUID`\n  - This header is required to identify the client making the request.\n  \n- **Header Value**: `ClientUUID`\n  - Replace `ClientUUID` with the actual UUID of the client.\n\n- **Header Type**: default\n  - Indicates this is a standard header type.\n\n#### Request Body\n- **Body Mode**: raw\n  - The request body is sent as raw data instead of form-encoded or other types.\n\n- **Content**: \n  - The body must be in JSON format, structured as follows:\n\n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didCopy\": true,\n    \"text\": \"this is updated text\",\n    \"copyId\": \"copyId\",\n    \"name\": \"update\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}\n```\n\n- **Field Descriptions**:\n    - **sessionId**: Identifier for the session. Replace with the actual session ID.\n    - **accountId**: Identifier for the account. Replace with the actual account ID.\n    - **path**: The path where the video is located. For example, `/live/channel/video123`.\n    - **targetType**: Specifies the type of target. In this case, it is a `videoId`.\n    - **targetId**: The ID of the item being targeted. Should be replaced with the actual video ID.\n    - **sourceType**: Indicates the type of source, which is `accountId` here.\n    - **sourceId**: The ID of the source account. Replace with the actual source account ID.\n    - **didCopy**: A boolean value indicating whether the copy was successful (`true` means it was copied).\n    - **text**: This field contains the text to be updated. Replace with the desired updated text.\n    - **copyId**: Identifier for the copy action. Replace with the actual copy ID.\n    - **name**: A string to name the update; in this case, it is set as `update`.\n    - **description**: A field for an optional description; currently empty.\n    - **tags**: A field for optional tags; currently empty.\n\n#### Summary\nThis request updates an existing copy action on a specified video. Ensure that all placeholders are replaced with actual values when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Copy - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/copy/get/?copyId=copyId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "copy",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "copyId",
+              "value": "copyId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Action - Copy - Get\n\n**Description:** This endpoint is used to retrieve details about a specific copy action based on the provided identifiers. \n\n#### Request Details:\n\n- **Authentication:**\n  - **Type:** Bearer Token\n    - This method requires authentication through a bearer token, which must be included in the request for access to the resource.\n\n- **Method:** \n  - **GET:** This HTTP method is used to request data from the specified resource.\n\n- **URL:** \n  - `http://localhost:3000/api/action/copy/get/?copyId=copyId&sessionId=sessionId&accountId=accountId`\n    - This is the endpoint URL for the API. It contains placeholders that need to be replaced with actual values before making the request:\n      - `copyId`: The unique identifier for the copy action you want to retrieve.\n      - `sessionId`: The identifier for the session related to the copy action.\n      - `accountId`: The identifier for the account associated with the copy action.\n      \n- **Headers:**\n  - **Key:** *(Not specified)*\n    - Currently, no headers are included in the request. You can add additional headers if necessary. The entry is disabled and does not influence the request.\n\n- **Body:**\n  - **Mode:** Raw\n    - This indicates the body of the request is not being used since it's a GET method. \n  - **Raw:** *(Empty)*\n    - There are no raw body data elements included since a GET request does not require body content.\n\n**Note for Users:** Ensure to replace the placeholders in the URL with actual values when making the request. Authentication is mandatory, and you must obtain a valid bearer token to access this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Copy - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/copy/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "copy",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### API Endpoint: Action - Copy - Get All\n\n#### Method\n- **GET**: This endpoint uses the GET HTTP method to retrieve data.\n\n#### URL\n- **http://localhost:3000/api/action/copy/all/?sessionId=sessionId&accountId=accountId**\n  - **Base URL**: `http://localhost:3000/api/action/copy/all/`\n  - **Query Parameters**:\n    - **sessionId**: This parameter is used to identify the user session for which data is being requested.\n    - **accountId**: This parameter specifies the account from which data is being retrieved.\n\n#### Authentication\n- **Auth Type**: Bearer Token\n  - **Key**: `token`: This is the key identifier for the authentication token.\n  - **Value**: `BearerToken`: This should be replaced with the actual bearer token used for authentication.\n  - **Type**: string: Indicates that the token value is of string type.\n\n#### Headers\n- **Headers**: No custom headers are specified in this request. The default header entry is present but is disabled, meaning it will not be included in the request.\n\n#### Body\n- **Body Mode**: Raw\n  - **Raw Content**: There is no body content for this GET request, as it retrieves data without needing to send additional information to the server. The raw section is empty.\n\nThis endpoint is designed for retrieving all instances of \"copy\" actions associated with a specific session and account, providing a way to view data relevant to that particular context."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Copy - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"copyId\":\"copyId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/copy/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "copy",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Copy - Delete\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"sessionId\",\n            \"type\": \"string\"\n          }\n        ],\n        \"description\": \"This section defines the authentication method required to access the endpoint. A bearer token, which is a type of access token, is used for authentication. The 'token' key represents the key for the authentication token, and 'sessionId' is a placeholder for the actual session token value that should be used.\"\n      },\n      \"method\": \"POST\",\n      \"description\": \"This specifies the HTTP method to be used when making the request. In this case, the POST method indicates that data will be sent to the server to create or modify resources.\"\n      \"url\": \"http://localhost:3000/api/action/copy/delete\",\n      \"description\": \"This is the endpoint URL where the request is sent. It is the API route for performing the delete action on a copy. The localhost indicates that the API is likely being tested on a local server running on port 3000.\"\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"description\": \"This section contains the headers to be sent with the request. In this case, the header fields are empty and marked as disabled, indicating that no additional headers are being sent with this request.\"\n      \"body\": {\n        \"mode\": \"raw\",\n        \"description\": \"This specifies the format of the request body being sent. The 'raw' mode indicates that the body is a raw JSON string rather than form data or other formats.\",\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"copyId\\\":\\\"copyId\\\"}\",\n        \"description\": \"This is the content of the request body in raw JSON format. It includes three fields: 'sessionId', which is needed for user session identification; 'accountId', which uniquely identifies the account being accessed; and 'copyId', which identifies the specific copy to delete. Each of these fields must be populated with their respective values when making the request.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

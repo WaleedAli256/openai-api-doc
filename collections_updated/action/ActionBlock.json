@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "02f761c8-dda3-458f-8a2e-caeed017f645",
+    "name": "ActionBlock",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Block - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/block/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "block",
+            "create"
+          ]
+        },
+        "description": "### Action - Block - Create\n\n#### Request\n\n- **Authorization**\n  - **Type**: Bearer\n    - **Key**: `token`\n      - **Value**: A string that represents the bearer token required for authorization. This token is used to authenticate the request to ensure that the user has the necessary permissions to perform the action.\n\n- **Method**: \n  - **POST**: This HTTP method is used to send data to the server for creating a new resource.\n\n- **URL**: \n  - `http://localhost:3000/api/action/block/create`: This is the endpoint where the request is sent. It is the local server address which handles the blocking action creation.\n\n- **Headers**: \n  - Currently, there are no specific headers being set since the provided key-value pair is disabled. Typically, headers can be used to provide additional context to the request, such as content-type or any necessary custom headers.\n\n#### Body\n- **Mode**: \n  - **Raw**: The body of the request is formatted as raw JSON.\n\n- **Raw Content**: \n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}\n```\n\n- **JSON Fields**:\n  - **sessionId**: A unique identifier for the session during which the block action is being created. This helps in associating the action with a particular user session.\n  \n  - **accountId**: The ID of the account requesting to block content. This connects the block action to a specific user.\n\n  - **path**: A string that specifies the route of the content that is being blocked. In this example, it refers to a live channel and includes the identifier for the video.\n\n  - **targetType**: Indicates the type of the target being blocked, in this instance, it is specified as a `videoId`.\n\n  - **targetId**: The unique identifier for the content (such as a video) that is being targeted for blocking.\n\n  - **sourceType**: Defines the type of account that is initiating the block action. It is represented here as `accountId`.\n\n  - **sourceId**: Refers to the ID of the account from which the block action is initiated. It should correspond to the `accountId`.\n\n  - **name**: An optional field where the user can provide a name for the block action. This could be used to label the action for easier identification.\n\n  - **description**: An optional field for a brief explanation or notes about the block action being created.\n\n  - **tags**: This field can be used to include keywords or tags associated with the block action, assisting in categorization or retrieval of information later.\n\nThese details should help users understand the requirements and structure of the request when creating a block action through the specified API endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Block - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"blockId\": \"blockId\",\n    \"name\": \"update\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/block/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "block",
+            "update"
+          ]
+        },
+        "description": "### Action - Block - Update\n\n#### Request Authentication\n- **Auth Type:** Bearer\n  - A token is required to authenticate the request. This is provided in the format of a Bearer token.\n\n#### HTTP Method\n- **Method:** PUT\n  - This request utilizes the PUT method, typically used for updating resources on a server.\n\n#### URL\n- **Endpoint URL:** `http://localhost:3000/api/action/block/update`\n  - This is the URL to which the PUT request is sent for updating a block action.\n\n#### Headers\n- **Client-UUID:** \n  - This header should contain a unique identifier for the client making the request. It's used to distinguish requests from different clients.\n\n#### Body\n- **Body Mode:** Raw\n  - The body content is sent in raw format, specifically as a JSON object.\n\n##### JSON Body Content\n- **sessionId:** \n  - This is the identifier for the current session. It should be a unique value related to the user's session.\n\n- **accountId:** \n  - This is the identifier for the user's account. It signifies which account is relevant for the block update.\n\n- **path:** \n  - This specifies the path to the resource that is being updated. For example, it may indicate the location of a video being blocked.\n\n- **targetType:** \n  - This indicates the type of the target for the action being taken. In this case, it specifies that the target is identified by a video ID.\n\n- **targetId:** \n  - This is the identifier for the target resource, particularly the ID of the video that is being updated.\n\n- **sourceType:** \n  - This specifies the type of the source related to the action. Here, it indicates that the source references an account ID.\n\n- **sourceId:** \n  - This is the identifier for the source, corresponding to the account that is executing the action.\n\n- **blockId:** \n  - This is the unique identifier for the block action being updated.\n\n- **name:** \n  - A name or title for the update action. This can be used to identify the purpose of the block update.\n\n- **description:** \n  - An optional field where additional details about the block update can be provided. It can be left empty if not applicable.\n\n- **tags:** \n  - This field can be used to associate tags with the update for better categorization and identification. It may also be left empty if no tags are necessary. \n\nThis describes how to construct a PUT request for updating a block action in the given API, with each component of the request clearly defined."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Block - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/block/get/?blockId=blockId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "block",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "blockId",
+              "value": "blockId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Block - Get\n\nThis endpoint is used to retrieve information about a specific block action. Below is a detailed explanation of each component involved in this request.\n\n#### Request Information\n\n- **Auth**: The request requires bearer token authentication.\n  - **Type**: Specifies the type of authentication used, which is \"bearer\" in this case.\n  - **Bearer**: This section contains the authentication details.\n    - **Key**: The key for the token, labeled as \"token\".\n    - **Value**: This should be replaced with the actual bearer token when making the request. It uses the placeholder \"BearerToken\".\n    - **Type**: The expected data type for the token, which is \"string\".\n\n- **Method**: The HTTP method used for this request is \"GET\", indicating that the client is requesting data from the server.\n\n- **URL**: The endpoint URL to be accessed, which includes query parameters for the request. The format is as follows:\n  - `http://localhost:3000/api/action/block/get/?blockId=blockId&sessionId=sessionId&accountId=accountId`\n    - **blockId**: This is a placeholder for the unique identifier of the block you are querying. Replace with the actual block ID.\n    - **sessionId**: A placeholder for the session ID related to the request. This should be replaced with the actual session ID.\n    - **accountId**: This is a placeholder for the account ID associated with the block. Replace with the actual account ID.\n\n- **Headers**: This section is for any additional headers that might be necessary for the request. In this case:\n  - **Key**: The header key is empty, which means no specific header is required.\n  - **Value**: The corresponding value is also empty.\n  - **Type**: Marked as \"default\", indicating a standard header is used.\n  - **Disabled**: This header is currently disabled, meaning it will not be sent with the request.\n\n- **Body**: The request body details.\n  - **Mode**: The body mode is set to \"raw\", indicating that it's expected to contain raw data in the request.\n  - **Raw**: The body is currently empty, which means no data will be sent in the body of the request.\n\nThis endpoint is typically used to get the status or details of a specific action block, and proper values should be provided for each query parameter to ensure accurate results."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Block - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/block/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "block",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Block - Get All\n\n- **Name**: Action - Block - Get All\n  - This is the title of the API request that indicates its purpose, which is to retrieve all blocked actions.\n\n- **Request Method**: GET\n  - This specifies that the HTTP method used for the request is GET, meaning it is intended to fetch data from the server.\n\n- **Request URL**: \n  - `http://localhost:3000/api/action/block/all/?sessionId=sessionId&accountId=accountId`\n  - This URL points to the API endpoint that is called to get a list of all blocked actions. It includes two query parameters:\n    - **sessionId**: This parameter should be replaced with the actual session ID, which is used to identify the session when retrieving the blocked actions.\n    - **accountId**: This parameter should be replaced with the actual account ID, used to specify which account's blocked actions you want to retrieve.\n\n- **Authentication**: \n  - This request uses bearer token authentication. A token is required to authorize the request and must be included in the headers.\n  \n  - **Auth Type**: Bearer\n    - This indicates that the authentication mechanism being used is a bearer token, which is typically a string that grants access to the API resources.\n  \n  - **Bearer Token**: \n    - **Key**: token\n      - The key used to reference the token in the authentication process.\n    - **Value**: BearerToken\n      - This is a placeholder for the actual bearer token needed for authorization. Users must replace \"BearerToken\" with their valid token to access the endpoint.\n    - **Type**: string\n      - The datatype of the token, which is a string.\n\n- **Headers**: \n  - The request contains an empty headers array, indicating that no additional headers are needed for this request. There is a potentially disabled header entry, signifying that it could be used if required in the future.\n\n- **Body**: \n  - **Mode**: raw\n    - This signifies that no body data is sent with the request, as it is a simple GET request.\n  - **Raw**: \"\"\n    - This indicates that there is no raw body content to include in the request.\n\nThis endpoint is designed to retrieve a collection of blocked actions based on the provided session and account identifiers, requiring appropriate authentication to function correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Block - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"blockId\":\"blockId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/block/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "block",
+            "delete"
+          ]
+        },
+        "description": "### Description of Data for Endpoint: Action - Block - Delete\n\n- **name**: This is the title of the endpoint, indicating that this action is intended to delete a block in the system.\n\n- **request**: This section defines the details of the HTTP request that will be made to the endpoint.\n\n  - **auth**: This section specifies the type of authentication required to access the endpoint. In this case, it uses bearer token authentication.\n\n    - **type**: Indicates the kind of authentication used (bearer token in this case).\n    \n    - **bearer**: This is an array that contains the details for the bearer token authentication.\n\n      - **key**: Refers to the parameter name for the bearer token (in this case, it is labeled \"token\").\n      \n      - **value**: This indicates the value that is expected in the token field (set as \"sessionId\" for this specific request).\n      \n      - **type**: Represents the data type of the value (which is a string here).\n\n  - **method**: Specifies the HTTP method used for this request. This is a POST request, which means data is being sent to the server to perform a specific action.\n\n  - **url**: This is the endpoint's URL where the request will be sent. Here, the request will be sent to \"http://localhost:3000/api/action/block/delete\".\n\n  - **headers**: This section could include any additional headers that need to be sent with the request.\n\n    - **key**: This field is intended to specify the name of the header but is currently empty.\n    \n    - **value**: Corresponds to the header's value and is also empty.\n\n    - **type**: Indicates the type of header, but since no header is specified, it is marked as \"default\".\n\n    - **disabled**: This indicates whether this particular header is enabled or disabled for the request. In this case, it is disabled.\n\n  - **body**: This section contains the actual data being sent in the request body.\n\n    - **mode**: Specifies the format of the request body; in this case, it is set to \"raw\", meaning it will contain raw JSON data.\n\n    - **raw**: This field contains the actual JSON string that will be sent in the body of the request. It includes the following parameters:\n    \n      - **sessionId**: This is a parameter representing the session identifier for the user/application making the request.\n      \n      - **accountId**: This represents the unique identifier for the user's account that owns the block.\n      \n      - **blockId**: This indicates the unique identifier for the block that is to be deleted."
+      },
+      "response": []
+    }
+  ]
+}

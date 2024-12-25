@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionSuspend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Suspend - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"suspend1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suspend/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suspend",
+            "create"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Suspend - Create\",\n  \"description\": \"This API endpoint is used to create a suspend action for a specific streaming session. Below are the details of the data required for this request.\",\n\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"description\": \"The authentication method used for this request is Bearer token. The user must provide a valid BearerToken to access the API.\",\n    \n    \"method\": \"POST\",\n    \"description\": \"This specifies that the request method is POST, indicating that we are sending data to the server to create a new resource.\",\n\n    \"url\": \"http://localhost:3000/api/action/suspend/create\",\n    \"description\": \"This is the endpoint URL where the suspend action request is sent. It indicates that the action occurs within the local server at port 3000 in the 'api/action/suspend/create' route.\",\n\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"description\": \"Currently, there are no headers provided in this request, and the existing default header is disabled. If specific headers are required, they should be added here.\",\n\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"The body of the request is sent in raw format, specifically in JSON, containing the necessary data for creating a suspend action.\",\n\n      \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\",\\n    \\\"accountId\\\": \\\"accountId\\\",\\n    \\\"path\\\": \\\"/live/channel/video123\\\",\\n    \\\"targetType\\\": \\\"streamer\\\",\\n    \\\"targetId\\\": \\\"videoId\\\",\\n    \\\"sourceType\\\": \\\"accountId\\\",\\n    \\\"sourceId\\\": \\\"accountId\\\",\\n    \\\"tokenAmount\\\": 20,\\n    \\\"name\\\": \\\"suspend1\\\",\\n    \\\"description\\\": \\\"\\\",\\n    \\\"tags\\\": \\\"\\\"\\n}\",\n      \"description\": \"This JSON object includes the parameters needed to create a suspend action. Details are as follows:\",\n      \n      \"parameters\": {\n        \"sessionId\": {\n          \"description\": \"A unique identifier for the session that is being suspended.\"\n        },\n        \"accountId\": {\n          \"description\": \"The unique identifier for the account that is associated with the suspend action.\"\n        },\n        \"path\": {\n          \"description\": \"The path that specifies the location or resource linked to the suspend action, such as a live streaming channel.\"\n        },\n        \"targetType\": {\n          \"description\": \"Indicates the type of entity being targeted by the suspend action. In this case, it is set to 'streamer'.\"\n        },\n        \"targetId\": {\n          \"description\": \"The unique identifier for the target entity, which may refer to a specific video or stream.\"\n        },\n        \"sourceType\": {\n          \"description\": \"Denotes the type of source for the suspend action. Here, the source is associated with an account ID.\"\n        },\n        \"sourceId\": {\n          \"description\": \"This is the unique identifier for the source of the action, typically the account ID.\"\n        },\n        \"tokenAmount\": {\n          \"description\": \"The quantity of tokens involved in the suspend action. In this case, it is set to 20.\"\n        },\n        \"name\": {\n          \"description\": \"A designated name for the suspend action, here it is 'suspend1'.\"\n        },\n        \"description\": {\n          \"description\": \"An optional field for providing additional details about the suspend action. Currently, it is empty.\"\n        },\n        \"tags\": {\n          \"description\": \"An optional field for adding tags related to the suspend action. Currently, it is empty.\"\n        }\n      },\n\n      \"options\": {\n        \"raw\": {\n          \"language\": \"json\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Suspend - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"suspendId\":\"suspendId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suspend/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suspend",
+            "update"
+          ]
+        },
+        "description": "### Description of API Endpoint: Action - Suspend - Update\n\n- **Name**: Action - Suspend - Update  \n  The name of the API endpoint indicating that it is used to update suspension actions for a specific account or user.\n\n- **Request**:  \n  This section contains details about the request being made to the API.\n\n  - **Auth**:  \n    Information regarding the authentication method used for this request.\n    \n    - **Type**: bearer  \n      Specifies that a bearer token is used for authentication.\n      \n    - **Bearer**:  \n      Contains the details of the authentication token.\n      \n      - **Key**: token  \n        The name or key of the authentication parameter.\n        \n      - **Value**: BearerToken  \n        The actual token used to authorize the request. Replace \"BearerToken\" with the valid token.\n\n      - **Type**: string  \n        Indicates that the value of the token is a string.\n\n  - **Method**: PUT  \n    This indicates that the HTTP method used for the request is PUT, typically used for updating resources.\n\n  - **URL**: http://localhost:3000/api/action/suspend/update  \n    The endpoint URL where the request is sent. It points to a local server address and defines the specific resource being accessed or modified.\n\n  - **Headers**:  \n    Includes additional information sent along with the request.\n\n    - **Key**: Client-UUID  \n      A unique identifier for the client making the request.\n\n    - **Value**: ClientUUID  \n      The actual UUID for the client. Replace \"ClientUUID\" with the actual client UUID used for identifying the request.\n\n    - **Type**: default  \n      Specifies the default type for the header.\n\n  - **Body**:  \n    Contains the payload of the request, typically in JSON format. It consists of several parameters used to update the suspension action.\n\n    - **Mode**: raw  \n      Indicates that the request body is in raw format, allowing the use of custom JSON data.\n\n    - **Raw**:  \n      The actual JSON data to be sent with the request, formatted as follows:\n\n      - **sessionId**: \"sessionId\"  \n        Unique identifier for the session. Replace \"sessionId\" with the actual session ID.\n\n      - **accountId**: \"accountId\"  \n        The identifier for the account being suspended. Replace \"accountId\" with the actual account ID.\n\n      - **suspendId**: \"suspendId\"  \n        Unique identifier for the suspension action. Replace \"suspendId\" with the relevant ID.\n\n      - **path**: \"/live/channel/video123\"  \n        The path indicating where the suspension action affects, typically a live channel or video. \n\n      - **targetType**: \"streamer\"  \n        The type of target that is being affected by the suspension, e.g., a streamer.\n\n      - **targetId**: \"videoId\"  \n        The identifier for the specific target item (such as a video) being suspended. \n\n      - **sourceType**: \"accountId\"  \n        Specifies the type of the source from which information is being pulled, such as an account.\n\n      - **sourceId**: \"accountId\"  \n        Identifier for the source account. Replace \"accountId\" with the actual source account ID.\n\n      - **tokenAmount**: 20  \n        The amount of tokens that are relevant to the suspension action. \n\n      - **name**: \"Farooq\"  \n        A name associated with the action, likely indicating who is performing the suspension or whose account is affected.\n\n      - **description**: \"this is description\"  \n        A text field providing additional context or information about the suspension action. \n\n      - **tags**: \"xyz\"  \n        Tags associated with the suspension action to categorize or identify it."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Suspend - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suspend/get/?suspendId=suspendId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suspend",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "suspendId",
+              "value": "suspendId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Suspend - Get\n\nThis API endpoint is designed to retrieve information related to a specific suspend action. Below is a detailed description of each component involved in the request.\n\n#### Request Information:\n\n- **Auth**: \n  - **Type**: Specifies that the authentication method used is Bearer Token.\n  - **Bearer**: \n    - **Key**: This denotes the authorization key used in the request.\n    - **Value**: This is where you will insert the actual token required for authorization. Replace \"BearerToken\" with your valid token.\n    - **Type**: Indicates the data type of the token as a string.\n\n- **Method**: \n  - The HTTP method used for this request is `GET`. This implies that the request is intended to retrieve data from the server.\n\n- **URL**: \n  - This is the endpoint where the request is sent. The URL is structured as follows:\n    - **Base URL**: `http://localhost:3000/api/action/suspend/get/`\n    - **Query Parameters**:\n      - **suspendId**: Replace `suspendId` with the unique identifier for the suspend action you want to query.\n      - **sessionId**: Replace `sessionId` with the identifier for the session related to this action.\n      - **accountId**: Replace `accountId` with the identifier for the account you wish to retrieve information for.\n\n- **Headers**: \n  - This section can include additional HTTP headers required for the request. Currently, it is empty and disabled.\n\n- **Body**:\n  - The body of the request is set to `raw` mode and is blank. For a `GET` request, traditionally, you do not send a body, so this section does not require any data. \n\nMake sure to update the placeholders in the URL with actual values before executing the request to ensure it works correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Suspend - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suspend/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suspend",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Suspend - Get All\n\n**Description:** This endpoint retrieves a list of all suspended actions associated with a specified session and account.\n\n- **Request Type:** GET  \n  The HTTP method used to request data from the server.\n\n- **URL:** `http://localhost:3000/api/action/suspend/all/?sessionId=sessionId&accountId=accountId`  \n  The endpoint URL where the request is sent. It includes query parameters:\n  - **sessionId:** This parameter should contain the unique identifier for the session you are interested in.\n  - **accountId:** This parameter should contain the unique identifier for the account associated with the session.\n\n- **Authentication:** Bearer Token  \n  This endpoint requires authentication via a bearer token. The token must be included in the request to verify the user's identity.\n\n  - **Bearer Token Structure:**\n    - **Key:** `token`  \n      The name of the token parameter.\n    - **Value:** `BearerToken`  \n      Replace `BearerToken` with the actual token string to authenticate the request.\n    - **Type:** string  \n      Indicates that the token is a string type.\n\n- **Headers:**  \n  No additional headers are required for this request. An empty header is provided but is currently disabled.\n\n- **Body:**  \n  The body of the request is empty since this is a GET request and typically does not send data in the body. The mode is set to `raw` with no content.\n\nThis endpoint will return a list of all actions that have been suspended for the specified session and account. Ensure that you replace the placeholder values in the URL and the bearer token with valid data before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Suspend - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"suspendId\":\"suspendId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/suspend/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "suspend",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Suspend - Delete\n\n- **Name**: Action - Suspend - Delete  \n  This is the name of the API request that outlines the action to suspend or delete a session.\n\n- **Request Object**: This section contains all details related to the request being made to the API.\n\n  - **Auth**: This subsection describes the authentication method used for the request.    \n    - **Type**: `bearer`  \n      This indicates that the request uses Bearer Token authentication.\n    - **Bearer**: This is an array that holds information about the authorization token.\n      - **Key**: `token`  \n        This represents the name of the authentication key that is expected in the request.\n      - **Value**: `sessionId`  \n        This is a placeholder for the actual session ID that needs to be provided for authentication.\n      - **Type**: `string`  \n        This specifies that the value associated with \"token\" is a string.\n\n  - **Method**: `POST`  \n    This indicates that the request uses the POST method to send data to the server.\n\n  - **URL**: `http://localhost:3000/api/action/suspend/delete`  \n    This is the endpoint URL where the request is being sent. It indicates that the action pertains to suspending or deleting a session.\n\n  - **Headers**: This section is intended for request headers.\n    - **Key**: *(empty)*  \n      No specific header key is provided in this request.\n    - **Value**: *(empty)*  \n      No specific header value is provided in this request.\n    - **Type**: `default`  \n      This denotes the type of header, even though it's currently disabled.\n    - **Disabled**: `true`  \n      This indicates that the provided header is currently not active and won’t be sent with the request.\n\n  - **Body**: This section contains the data that will be sent in the body of the POST request.\n    - **Mode**: `raw`  \n      This indicates that the body content is in raw format.\n    - **Raw**: `{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"suspendId\":\"suspendId\"}`  \n      This is the actual body data being sent in JSON format. It consists of:\n        - **sessionId**: A placeholder for the session ID to be suspended or deleted.\n        - **accountId**: A placeholder for the user account ID associated with the session.\n        - **suspendId**: A placeholder for the ID of the suspension action being referenced.\n\nOverall, this endpoint is designed to suspend or delete a session associated with a specific account, using Bearer Token authentication to ensure secure access to the API."
+      },
+      "response": []
+    }
+  ]
+}

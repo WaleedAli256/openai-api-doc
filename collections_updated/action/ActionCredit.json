@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "2d19121a-5341-4ebf-88ac-e580690072a7",
+    "name": "ActionCredit",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Credit - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"isAccepted\": true,\n    \"isCredited\": false,\n    \"isReversed\": false,\n    \"reverseStatus\": \"pending\",\n    \"utilityType\": \"token\",\n    \"name\": \"Sample Video Name\",\n    \"description\": \"Sample video description.\",\n    \"tags\":\"\",\n    \"tokenAmount\": 20\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/credit/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "credit",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Credit - Create\n\nThis API endpoint is used to create a credit action related to a specific video. Below is a detailed description of each data parameter used in the request body.\n\n#### Request Body Parameters:\n\n- **sessionId**: \n  - Type: String\n  - Description: A unique identifier for the session during which the credit action is initiated.\n\n- **accountId**: \n  - Type: String\n  - Description: Represents the identifier of the account that is involved in the credit action.\n\n- **path**: \n  - Type: String\n  - Description: The endpoint path to the video resource, which is typically in the format of `/live/channel/{videoId}`.\n\n- **targetType**: \n  - Type: String\n  - Description: Indicates the type of target for the credit action. In this case, it's set to \"videoId\", identifying that the target is a specific video.\n\n- **targetId**: \n  - Type: String\n  - Description: The unique identifier for the target video that is receiving the credit.\n\n- **sourceType**: \n  - Type: String\n  - Description: The type of source from which the credit is being drawn. This is labeled as \"accountId\", indicating that the credit is sourced from a user account.\n\n- **sourceId**: \n  - Type: String\n  - Description: The unique identifier of the source account that is providing the credit.\n\n- **isAccepted**: \n  - Type: Boolean\n  - Description: A flag that indicates whether the credit action has been accepted. Set to `true` means acceptance.\n\n- **isCredited**: \n  - Type: Boolean\n  - Description: A flag that indicates whether the credit has been successfully applied. Set to `false` means it has not yet been credited.\n\n- **isReversed**: \n  - Type: Boolean\n  - Description: A flag that indicates whether the credit action has been reversed. Set to `false` means there has been no reversal.\n\n- **reverseStatus**: \n  - Type: String\n  - Description: This parameter describes the status of any potential reversal action. Set to \"pending\" indicates that a reversal is awaited.\n\n- **utilityType**: \n  - Type: String\n  - Description: Specifies the type of utility being awarded through the credit. In this instance, it is set to \"token\".\n\n- **name**: \n  - Type: String\n  - Description: The name of the video to which the credit is associated.\n\n- **description**: \n  - Type: String\n  - Description: A description of the video associated with the credit. This provides more context or information about the video.\n\n- **tags**: \n  - Type: String\n  - Description: A field intended for tags related to the video. This can be used for categorization or searching but is left empty in this instance.\n\n- **tokenAmount**: \n  - Type: Number\n  - Description: The amount of tokens assigned to the credit action. In this case, the value is set to 20.\n\n### Authentication:\n\n- **Auth Type**: Bearer Token\n  - Description: The request requires authentication via a bearer token where valid credentials must be provided for the action to be processed. The token value should replace \"BearerToken\" in actual requests. \n\n### HTTP Method:\n\n- **Method**: POST\n  - Description: The HTTP method used for this request is POST, indicating that this request is intended to create a new resource (in this case, a credit action). \n\n### URL:\n\n- **Endpoint URL**: \n  - Description: `http://localhost:3000/api/action/credit/create`\n  - This is the URL where the request is sent to create the credit action. Adjust the base URL as needed for the production environment. \n\n### Headers:\n\n- **Headers**: \n  - Description: No headers are specified in the request template, but additional custom headers may be added as needed (though the default header shown is disabled). \n\nThis comprehensive description should aid users in understanding the requirements and parameters needed for the Action - Credit - Create API request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Credit - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"isAccepted\": true,\n    \"isCredited\": false,\n    \"isReversed\": false,\n    \"reverseStatus\": \"pending\",\n    \"utilityType\": \"token\",\n    \"name\": \"Sample Video Name update\",\n    \"description\": \"Sample video description.\",\n    \"tags\": \"\",\n    \"tokenAmount\": 50,\n    \"creditId\": \"creditId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/credit/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "credit",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Action - Credit - Update\n\n#### Request\n\n- **Auth**: \n  - **Type**: Bearer \n    - This indicates that the request uses bearer token authentication.\n    - **Key**: `token`\n    - **Value**: This is a placeholder for the actual bearer token used in authentication, represented as `BearerToken`. It should be replaced with a valid token for real requests.\n\n- **Method**: PUT \n  - This HTTP method indicates that the request is used for updating existing resources.\n\n- **URL**: \n  - This is the endpoint for updating credit actions. The specified URL is `http://localhost:3000/api/action/credit/update`.\n\n- **Headers**:\n  - **Key**: `Client-UUID` \n    - This header is used to identify the client making the request.\n    - **Value**: `ClientUUID` is a placeholder for the actual UUID of the client that should be used in real requests.\n\n#### Body\n\n- **Mode**: Raw \n  - This specifies that the body of the request is in raw format.\n\n- **Raw Content**: \n  - This is a JSON formatted string which contains the data for updating a credit action. Each field is detailed below:\n  - **sessionId**:  \n    - This refers to the unique identifier for the user session during which the credit action is being performed. It should be replaced with the actual session ID.\n    \n  - **accountId**: \n    - This is the unique identifier for the account related to the credit action. It should also be replaced with the actual account ID.\n\n  - **path**: \n    - This represents the specific path or location for the relevant content. In this case, it appears to be the path to a video resource, in this example, `\"/live/channel/video123\"`.\n\n  - **targetType**: \n    - This indicates the type of target being affected by the credit action. For this request, it is set to `videoId`, suggesting that the action is related to a video.\n\n  - **targetId**: \n    - This is the unique identifier for the target resource, which in this case should be replaced with the actual identifier of the video to be credited.\n\n  - **sourceType**: \n    - This indicates the type of source of the credit. Here, it is set to `accountId`, which signifies that the source of the credit action relates to an account.\n\n  - **sourceId**: \n    - Similar to `accountId`, this is the unique identifier for the account used as the source of the credit. It should be replaced with the actual account ID.\n\n  - **isAccepted**: \n    - This boolean field indicates whether the credit action has been accepted, set to `true` in this case.\n\n  - **isCredited**: \n    - This boolean field indicates whether the credit has actually been applied, set to `false` in this case.\n\n  - **isReversed**: \n    - This boolean field indicates whether the credit action has been reversed, set to `false` in this case as well.\n\n  - **reverseStatus**: \n    - This field indicates the current status of any reversal action related to the credit, set to `\"pending\"` in this case.\n\n  - **utilityType**: \n    - This indicates the type of utility being used for the credit action, here it is set to `\"token\"`.\n\n  - **name**: \n    - This is the name of the video related to the credit action. The example name provided is `\"Sample Video Name update\"`.\n\n  - **description**: \n    - This field provides a brief description of the video linked to the action. The example text is `\"Sample video description.\"`.\n\n  - **tags**: \n    - This field is intended for any associated tags related to the video. It's currently empty but can be filled with relevant tags.\n\n  - **tokenAmount**: \n    - This indicates the amount of tokens that are being credited or involved in the action. In this case, it is set to 50.\n\n  - **creditId**: \n    - This field provides the unique identifier for the credit action being updated. The placeholder value is `\"creditId\"` which should be replaced with the actual credit ID in real use cases."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Credit - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/credit/get/?creditId=creditId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "credit",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "creditId",
+              "value": "creditId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of the Endpoint Data\n\n- **name**: The name of the API request is \"Action - Credit - Get\". This indicates it is concerned with retrieving credit-related information.\n\n- **request**: This section contains all the details needed to make the API call.\n\n  - **auth**: This indicates the type of authentication used for the request.\n    - **type**: Specifies that bearer token authentication is being used.\n    - **bearer**: This array contains the authentication details.\n      - **key**: The name of the token parameter; in this case, it is \"token\".\n      - **value**: The value that should be used for the token, which is represented as \"BearerToken\". This should be replaced with an actual token when making the request.\n      - **type**: Indicates that the type of value is a string.\n\n  - **method**: The HTTP method for the request. Here, it is a \"GET\" request, which is used to retrieve data from the specified resource.\n\n  - **url**: The endpoint URL where the API request will be sent. It consists of the base URL `http://localhost:3000/api/action/credit/get/`, followed by query parameters that include:\n    - **creditId**: A parameter representing the ID of the credit record to be retrieved. It should be replaced with an actual credit ID when making the request.\n    - **sessionId**: A parameter representing the session ID associated with the request. This should be substituted with an actual session ID.\n    - **accountId**: A parameter representing the account ID for which the credit information is being requested. This needs to be replaced with an actual account ID.\n\n  - **headers**: This section is for custom HTTP headers that are sent with the request.\n    - The current header is empty, indicating no additional headers are being used in this request.\n    - The **disabled** flag is set to true, meaning this header is not currently active.\n\n  - **body**: This section defines the body of the request.\n    - **mode**: Indicates the format of the body content. Here, it is set to \"raw\", which means the body is a direct string input.\n    - **raw**: The body of the request does not contain any data, as it is empty.\n\nThese details provide a complete picture of how to use this API endpoint to retrieve credit information by supplying the appropriate parameters and authentication token."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Credit - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/credit/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "credit",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Credit - Get All\n\n- **Name**: Action - Credit - Get All  \n  This is the identifier for the API call, indicating that it retrieves all credit-related actions.\n\n- **Request**:  \n  The details of the HTTP request necessary to access this endpoint.\n\n  - **Auth**:  \n    This specifies the authentication method used for the request.\n    \n    - **Type**: Bearer  \n      Indicates that Bearer token authentication is being used.\n\n    - **Bearer**:  \n      An array that contains the information required for bearer token authentication.\n      \n      - **Key**: token  \n        This key describes the type of token that will be used for authentication.\n        \n      - **Value**: BearerToken  \n        Replace \"BearerToken\" with an actual token to authenticate the request.\n\n      - **Type**: string  \n        Specifies that the value for the token is a string.\n\n  - **Method**: GET  \n    This indicates that the request will retrieve data from the server.\n\n  - **URL**:  \n    The endpoint URL where the request will be sent.\n    - `http://localhost:3000/api/action/credit/all/` is the base URL.\n    - **Query Parameters**:\n      - **sessionId**: A unique identifier for the user session. This should be provided as a parameter in the URL.\n      - **accountId**: The identifier for the user’s account. This should also be included as a parameter in the URL.\n\n  - **Headers**:  \n    Each header includes specific information about the request.\n    \n    - **Key**: (empty)  \n      Currently, there are no headers added for this request. This means the default headers will be used.\n      \n    - **Value**: (empty)  \n      No specific value is set for the header key.\n      \n    - **Type**: default  \n      Indicates that this header is a standard header type.\n\n    - **Disabled**: true  \n      Shows that the header is not active and will not be sent with the request.\n\n  - **Body**:  \n    No request body is needed for this GET request.\n\n    - **Mode**: raw  \n      Indicates that the body, if there were to be any, would be in raw format. \n\n    - **Raw**: \"\"  \n      This field is empty, confirming that no additional data needs to be sent in the body of the request.\n\nThis endpoint is designed to fetch all credit actions related to a specific account within a user's active session. Make sure to provide valid session and account IDs to retrieve the correct data."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Credit - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"creditId\":\"creditId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/credit/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "credit",
+            "delete"
+          ]
+        },
+        "description": "### Action - Credit - Delete\n\n**Request Type**: POST  \n**Endpoint**: `http://localhost:3000/api/action/credit/delete`  \n\n**Authentication**:  \n- **Type**: Bearer Token  \n  - **Token**: This is a string that represents the user's session ID, used for authenticating the request. \n\n**Headers**:  \n- Currently, there are no headers specified. The default header configuration is disabled.\n\n**Request Body**:  \n- The body of the request is in raw JSON format. It contains the following key-value pairs:\n  - **sessionId**: A string parameter that represents the user's active session, which is required for authentication.\n  - **accountId**: A string parameter that identifies the account associated with the credit that needs to be deleted.\n  - **creditId**: A string parameter that uniquely identifies the credit entry to be deleted from the account. \n\nThis endpoint is designed to delete a specific credit entry from a user's account, requiring proper authentication and identification of the credit to be removed."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "ManageAnalytics",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Manage - Analytics - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Analytics\",\"description\":\"This analytics is my second analytics\",\"tags\":\"second,analytics\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isAnalyticsPrivate\":true,\"isTournamentOnly\":false,\"isAnalyticsDefault\":true,\"isPreLiveManageAds\":true,\"isPostLiveManageAds\":true,\"breakPreLiveManageUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveManageUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/analytics/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "analytics",
+            "create"
+          ]
+        },
+        "description": "The data provided represents an API request endpoint titled \"Manage - Analytics - Create\". The following is a detailed breakdown of each data field:\n\n1. `name`: This string field indicates the name of the endpoint, which is \"Manage - Analytics - Create\".\n\n2. `request`: This object represents the entire HTTP request.\n\n3. `auth`: This object holds the authentication details required to access the endpoint.\n     - `type`: Specifies the type of authentication being used, in this case \"bearer\".\n     - `bearer`: This is an array containing bearer token information, which includes:\n          - `key`: The key name for the bearer token, here it's \"token\".\n          - `value`: The bearer token placeholder value.\n          - `type`: The data type of the bearer token value, which is a \"string\".\n\n4. `method`: The string value representing the HTTP method to be used for the request, which is \"POST\".\n\n5. `url`: This string represents the full URL to which the request is to be sent.\n\n6. `headers`: This array currently contains an empty object since there are no specified headers for the request.\n\n7. `body`: The body of the request.\n     - `mode`: Represents how the body of the request will be sent. Here, it's set as \"raw\".\n     - `raw`: Contains the raw JSON body of the request. It includes fields such as `sessionId`, `accountId`, `name`, `description`, `tags`, `profilePhotoUrl`, `coverPhotoUrl`, `minimumTipAmount`, `categoryId`, `category`, `subCategoryId`, `subCategory`, `isAnalyticsPrivate`, `isTournamentOnly`, `isAnalyticsDefault`, `isPreLiveManageAds`, `isPostLiveManageAds`, `breakPreLiveManageUrl` and `breakPostLiveManageUrl`. All keys are explained by their names.\n     - `options`: Settings for how the body of the request is to be treated. In this case, it specifies the language of the raw body as JSON.\n\nPlease make sure to replace all placeholder values like \"BearerToken\", \"sessionId\", \"accountId\" and others with actual values before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Manage - Analytics - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"analyticsId\":\"analyticsId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Analytics 2.0\",\"description\":\"This analytics is my second analytics\",\"tags\":\"second,analytics\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isAnalyticsPrivate\":true,\"isTournamentOnly\":false,\"isAnalyticsDefault\":true,\"isPreLiveManageAds\":true,\"isPostLiveManageAds\":true,\"breakPreLiveManageUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveManageUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/analytics/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "analytics",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Manage-Analytics-Update\", is designed to update details about an existing analytics data using the PUT method.\n\nA bearer token is required in the `auth` field for authorization. The format expected is a string including the `BearerToken` to be replaced with your bearer token.\n\nThe request URL is `http://localhost:3000/api/manage/analytics/update` by default, but you must replace `localhost:3000` with your server's domain name and port number.\n\nIn the `headers`, a \"Client-UUID\" key must be provided containing a unique client user identifier. \n\nIn the request `body`, it expects raw JSON data with the following keys:\n\n- `analyticsId`: The unique identifier for the analytics.\n- `sessionId`: The unique identifier for the session.\n- `accountId`: The ID of the account that registered analytics.\n- `name`: The name of your analytics.\n- `description`: A textual description of your analytics.\n- `tags`: Keywords separated by commas, to identify your analytics.\n- `profilePhotoUrl`: The URL of the profile photo related to your analytics.\n- `coverPhotoUrl`: The URL of the cover photo related to your analytics.\n- `minimumTipAmount`: The minimum amount for tipping.\n- `categoryId`: The ID of the category the analytics belongs to.\n- `category`: The name of the category.\n- `subCategoryId`: The ID of the sub-category the analytics falls under.\n- `subCategory`: The name of the sub-category\n- `isAnalyticsPrivate`: A boolean value indicating if the analytics is private.\n- `isTournamentOnly`: A boolean value indicating if the analytics is for tournament purposes only.\n- `isAnalyticsDefault`: A boolean value indicating if the analytics is set to default.\n- `isPreLiveManageAds`: A boolean value indicating if the pre-live manage ads are on.\n- `isPostLiveManageAds`: A boolean value indicating if the post-live manage ads are on.\n- `breakPreLiveManageUrl`: The URL of the pre-live manage ads' break video.\n- `breakPostLiveManageUrl`: The URL of the post-live manage ads' break video.\n\nReplace the placeholders in the key-value pairs with your actual data."
+      },
+      "response": []
+    },
+    {
+      "name": "Manage - Analytics - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/analytics/get/?analyticsId=analyticsId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "analytics",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "analyticsId",
+              "value": "analyticsId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "Here's a detailed description of each data point in this endpoint:\n\n1. `\"name\": \"Manage - Analytics - Get\"`: This is the name given to the endpoint function. It suggests that this API is used to manage and fetch analytics data.\n\n2. `\"request\": {}`: This encapsulates all the necessary details required for an API request. It contains: \n   * `\"auth\": {}`: Determines the method of authentication for the API request.\n   * `\"type\": \"bearer\"`: Specifies the type of authentication. In this case, a 'Bearer' token is used for authentication.\n   * `\"bearer\": [...]`: This is an array of bearer tokens. It consists of:\n     * `\"key\": \"token\"`: The name of the header field to be sent with the request.\n     * `\"value\": \"BearerToken\"`: The actual bearer token value that authenticates the request.\n     * `\"type\": \"string\"`: Indicates the data type of the token, which is a string.\n \n3. `\"method\": \"GET\"`: The HTTP method used for the request. In this case, we are using a GET request to retrieve data.\n\n4. `\"url\": \"http://localhost:3000/api/manage/analytics/get/?...\"`: This is the endpoint of the API. The data to be fetched (analyticsId, sessionId, accountId) are passed as query parameters.\n\n5. `\"headers\": [...]`: Includes an array of objects that represent HTTP headers to be sent along with the request. In this case, there is no active header as it is disabled by setting `\"disabled\":true`.\n\n6. `\"body\": {}`: Represents the message body of the request.\n   * `\"mode\": \"raw\"`: This specifies that the option to input the body content is in raw format.\n   * `\"raw\": \"\"`: Since the method used is GET and it does not transmit a payload, this raw string is empty.\n \nThis endpoint is designed to fetch specific analytics data pertaining to the provided 'analyticsId', 'sessionId', and 'accountId'. The API uses Bearer Token authentication to validate requests."
+      },
+      "response": []
+    },
+    {
+      "name": "Manage - Analytics - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/analytics/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "analytics",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "\"name\": This is the title or label of the API endpoint. In this case, \"Manage - Analytics - Get All\" identifies the endpoint responsible for fetching all analytics records under the manage category.\n\n\"auth\": This specifies the type of authorization required to access the endpoint. This API endpoint uses the Bearer authentication scheme, as denoted by the type attribute.\n\n  \"Bearer\": This is an array of objects that holds important information related to the Bearer authentication:\n\n    \"key\": This indicates the name of the item of the bearer authentication. Here, the key is a \"token\".\n    \n    \"value\": This represents the value of the BearerToken to be used in the API request.\n    \n    \"type\": This indicates the data type of the value of the bearer token which is a string here.\n\n\"method\": This refers to the HTTP request method used to access the endpoint. Here, it's using the GET method, which retrieves data from a server based on specified parameters.\n\n\"url\": This is the Uniform Resource Locator (URL) of the server that hosts the API. This endpoint can be accessed via \"http://localhost:3000/api/manage/analytics/all\". It also contains query parameters \"sessionId\" and \"accountId\" that could be substituted with valid values during actual API calls.\n\n\"headers\": This array represents additional parameters that can be included in the header section of the HTTP request. The default header is disabled here as denoted by the \"disabled\" key.\n\n\"body\": The body of the HTTP request is specified in this section:\n\n  \"mode\": This indicates how to interpret the data in the \"raw\" key. In this case, \"raw\" mode is used. \n  \n  \"raw\": It contains the body content for the API request, which is empty here as designated by \"\". This would mean that no additional data is being sent in the body of the request. Usually, this is where you'd input the necessary request payload depending on the API's requirements."
+      },
+      "response": []
+    },
+    {
+      "name": "Manage - Analytics - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"analyticsId\":\"analyticsId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/manage/analytics/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "admin",
+            "analytics",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Manage - Analytics - Delete\". It's designed to handle the deletion of analytic data. \n\nHere are the details for each part of the endpoint: \n\n1. **auth**: This object contains information about the required authorization method for this endpoint.\n   - **type**: This field should hold the string \"bearer\", specifying that a bearer token is necessary for authorization.\n   - **bearer**: This array lists all bearer tokens required for access; in this case, there is only one: \"token\".\n      - **key**: \"token\": This indicates that the bearer token's name is \"token\".\n      - **value**: \"sessionId\": This shows that the token should hold the value \"sessionId\".\n      - **type**: \"string\" indicates that the token would be of string data type.\n\n2. **method**: This field shows that a \"POST\" HTTP method is used for this API endpoint.\n\n3. **url**: This field contains the URL \"http://localhost:3000/api/manage/analytics/delete\" where the request will be sent.\n\n4. **headers**: This is an array that usually contains details about key and value of the headers to be included in the request. However, in this case, it is empty, meaning no extra headers are required.\n\n5. **body**: This object contains information about the body of the request.\n   - **mode**: This field should hold the string \"raw\", indicating that the body is in raw format.\n   - **raw**: This field contains a JSON object with three properties: \"sessionId\", \"accountId\", and \"analyticsId\". Each of these properties should have string values. These values are used to identify the session, the account, and the specific analytics data point that is to be deleted respectively."
+      },
+      "response": []
+    }
+  ]
+}

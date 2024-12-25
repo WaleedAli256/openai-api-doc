@@ -1,0 +1,589 @@
+{
+  "info": {
+    "_postman_id": "9ee3b5b9-95e7-41f0-9596-2b70e328073f",
+    "name": "VideoStatic",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Video - Static - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"searchType\":\"Game\",\"title\":\"Sample Video Title\",\"description\":\"Sample video description.\",\"tags\":\"tag1,tag2\",\"channelId\":\"channelId\",\"category\":\"Comedy\",\"subCategory\":\"Improv\",\"scheduleDate\":\"2024-02-01\",\"scheduleTime\":\"18:00:00\",\"coverPhotoUrl\":\"sample-cover-url.jpg\",\"isRewardsEnabled\":false,\"videoUrl\":\"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Video - Static - Create\n\n#### Authentication\n- **Type**: Bearer\n  - **Key**: Token\n    - This is the authentication token required to access the endpoint. It should be a valid bearer token prefixed with \"Bearer \".\n\n#### Request Method\n- **Method**: POST\n  - This request uses the POST method to submit data to the specified URL.\n\n#### URL\n- **URL**: `http://localhost:3000/api/video/static/create`\n  - This is the endpoint where the request will be made to create a static video.\n\n#### Headers\n- **Headers**: \n  - Currently, there are no specific headers provided as `disabled: true`. This means no additional headers are currently set.\n\n#### Request Body\n- **Body**:\n  - **Mode**: Raw\n    - The body of the request is sent in raw format.\n  - **Raw**: \n    - A JSON string containing the following fields:\n      - **sessionId**: `sessionId`\n        - This is a unique identifier for the user session.\n      - **accountId**: `accountId`\n        - This identifies the user’s account in the system.\n      - **searchType**: `Game`\n        - Indicates the type of content being categorized; in this case, it's a game.\n      - **title**: `Sample Video Title`\n        - This is the title of the video being created.\n      - **description**: `Sample video description.`\n        - A brief description providing more information about the video.\n      - **tags**: `tag1,tag2`\n        - Tags associated with the video, used to categorize or enhance searchability.\n      - **channelId**: `channelId`\n        - The identifier for the channel under which the video will be categorized.\n      - **category**: `Comedy`\n        - The main category under which the video falls, in this instance, comedy.\n      - **subCategory**: `Improv`\n        - A more specific category related to the main category, denoting improv content.\n      - **scheduleDate**: `2024-02-01`\n        - The date when the video is scheduled to be published.\n      - **scheduleTime**: `18:00:00`\n        - The time at which the video is set to be published on the schedule date.\n      - **coverPhotoUrl**: `sample-cover-url.jpg`\n        - A URL pointing to the cover photo image for the video.\n      - **isRewardsEnabled**: `false`\n        - A boolean indicating whether rewards are enabled for viewers of this video.\n      - **videoUrl**: `http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4`\n        - The URL where the actual video file is hosted.\n\n#### Options\n- **Options**: \n  - **Raw**:\n    - **Language**: JSON\n      - Indicates that the raw data format is JSON, which is necessary for parsing and processing the input data correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"staticId\":\"staticId\",\"searchType\":\"Game\",\"title\":\"Sample Video Title\",\"description\":\"Sample video description.\",\"tags\":\"tag1,tag2\",\"channelId\":\"channelId\",\"category\":\"Comedy\",\"subCategory\":\"Improv\",\"scheduleDate\":\"2024-02-01\",\"scheduleTime\":\"18:00:00\",\"coverPhotoUrl\":\"sample-cover-url.jpg\",\"isRewardsEnabled\":false,\"videoUrl\":\"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Video - Static - Update\n\n**Method**: PUT\n\n**Request URL**: `http://localhost:3000/api/video/static/update`\n\n#### Authentication\n\n- **Auth Type**: Bearer\n  - **Token**: A string value that represents the bearer token needed for authentication. It should have the format `BearerToken`.\n\n#### Headers\n\n- **Client-UUID**: A unique identifier for the client making the request. This value should be replaced with a relevant UUID to identify the client.\n\n#### Request Body\n\nThe request body is in JSON format and contains the following fields:\n\n- **sessionId**: A unique identifier for the session associated with the request. This should be replaced with the actual session ID.\n\n- **accountId**: The unique identifier for the user's account. Replace this value with the actual account ID.\n\n- **staticId**: The unique identifier for the static video that needs to be updated. This should be replaced with the actual static video ID.\n\n- **searchType**: Describes the type of search associated with the video. For this request, the value should be set to \"Game\".\n\n- **title**: The title of the video. This is the name that will be displayed and must be provided.\n\n- **description**: A brief description of the video content. This field should be filled with an overview or summary of the video.\n\n- **tags**: A comma-separated list of tags associated with the video. These tags help categorize the content and improve searchability.\n\n- **channelId**: The unique identifier for the channel under which the video is categorized. Replace this with the relevant channel ID.\n\n- **category**: The main category under which the video falls. For this request, the value is \"Comedy\".\n\n- **subCategory**: The subcategory within the main category. For this request, the value is \"Improv\".\n\n- **scheduleDate**: The date for scheduling the video in the format `YYYY-MM-DD`. In this request, the sample date is `2024-02-01`.\n\n- **scheduleTime**: The time for scheduling the video in the format `HH:MM:SS`. In this request, the sample time is `18:00:00`.\n\n- **coverPhotoUrl**: The URL of the cover photo for the video. This value should point to the location of the cover image (e.g., `sample-cover-url.jpg`).\n\n- **isRewardsEnabled**: A boolean value indicating whether rewards should be enabled for this video. Set this to `true` or `false` based on the requirement. In this request, it is set to `false`.\n\n- **videoUrl**: The URL pointing to the location of the actual video content. For this request, the sample URL is `http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4`.\n\n### Summary\n\nThis endpoint allows users to update existing static video entries by providing necessary identifiers and metadata in the request body. Proper authentication and required headers must be included in the request for successful processing."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/get/?channelId=channelId&staticId=staticId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channelId",
+              "value": "channelId"
+            },
+            {
+              "key": "staticId",
+              "value": "staticId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Video - Static - Get\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"Authentication method used is bearer token, which requires a valid token for access.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"The specific key representing the authentication token required for the API request.\",\n            \"value\": \"BearerToken\": \"A placeholder indicating where the actual bearer token should be placed in the request.\",\n            \"type\": \"string\": \"Indicates that the token should be provided as a string.\"\n          }\n        ]\n      },\n      \"method\": \"GET\": \"The HTTP method used for the request, which in this case is GET, meaning the request is intended to retrieve data.\",\n      \"url\": \"http://localhost:3000/api/video/static/get/?channelId=channelId&staticId=staticId\": \"The endpoint URL where the API request is sent. It includes parameters for channelId and staticId, which should be replaced with actual values when making the request.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"An empty key A placeholder for any custom headers that may be added, currently not in use.\",\n          \"value\": \"\": \"Placeholder for header values; currently not in use.\",\n          \"type\": \"default\": \"Indicates the default type of header; currently, the header is disabled.\",\n          \"disabled\": true: \"Indicates that this header is currently disabled and will not be sent with the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"The type of body content being sent with the request, which is in raw format (not currently used in a GET request).\",\n        \"raw\": \"\": \"An empty value, as the GET request typically doesn't send a body.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/all/?channelId=channelId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channelId",
+              "value": "channelId"
+            }
+          ]
+        },
+        "description": "### Video - Static - Get All Endpoint Description\n\n**Name**: Video - Static - Get All  \nThis endpoint retrieves a list of all static videos associated with a specific channel.\n\n**Request**:\n\n- **Auth**:\n  - **Type**: Bearer  \n    This specifies that the request requires authentication via a bearer token.\n    \n  - **Bearer**:\n    - **Key**: token  \n      This is the authorization key for the request.\n      \n    - **Value**: BearerToken  \n      This should be replaced with the actual token that authorizes the user. Ensure the token is prefixed with the word \"Bearer\" followed by the actual token string.\n      \n    - **Type**: string  \n      This indicates that the value should be a string.\n\n- **Method**: GET  \n  This specifies that the request method is GET, which is used to retrieve data without modifying it.\n\n- **URL**:  \n  `http://localhost:3000/api/video/static/all/?channelId=channelId`\n  - This is the endpoint URL to access static videos. The `channelId` query parameter should be replaced with the actual ID of the channel for which the videos are being requested.\n\n- **Headers**:\n  - **Key**: \"\"  \n    This indicates that no specific HTTP header is set for this request.  \n      \n  - **Value**: \"\"  \n    There is currently no value associated with the key above.  \n\n  - **Type**: default  \n    This shows the header type is default.  \n\n  - **Disabled**: true  \n    This flag indicates that the header is currently disabled and will not be sent with the request.\n\n- **Body**:\n  - **Mode**: raw  \n    The request body format is raw, meaning no specific format like JSON or form data is being used.\n    \n  - **Raw**: \"\"  \n    The body of the request is empty, indicating that no additional data needs to be sent with this GET request.\n\n### Summary\nThis endpoint is used to fetch all static video entries for a specified channel by sending a GET request with the required bearer token for authentication. The `channelId` in the URL must be appropriately replaced with the actual ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Get All by Category Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/all/?staticId=staticId&categoryId=categoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "staticId",
+              "value": "staticId"
+            },
+            {
+              "key": "categoryId",
+              "value": "categoryId"
+            }
+          ]
+        },
+        "description": "- **Name**: Video - Static - Get All by Category Id  \n  This refers to a specific API endpoint used to retrieve a list of static videos filtered by a specified category ID.\n\n- **Request**:  \n  This section details the specifications of the HTTP request that will be sent to the API.\n\n  - **Auth**:  \n    This specifies the authentication method required to access the API.\n\n    - **Type**: Bearer  \n      Indicates that the request uses bearer token authentication.\n\n    - **Bearer**:  \n      This contains the actual token required for authentication.\n\n      - **Key**: token  \n        The identifier for the token that will be used in the request.\n\n      - **Value**: BearerToken  \n        This should be replaced with the actual bearer token necessary for authentication when making the request.\n\n      - **Type**: string  \n        Indicates that the token is expected to be in string format.\n\n  - **Method**: GET  \n    This indicates that the request will use the HTTP GET method, which is typically used to retrieve data from the server.\n\n  - **URL**:  \n    The endpoint URL is where the request is sent.\n\n    - **Base URL**: http://localhost:3000/api/video/static/all/  \n      This is the base address for the API which handles static videos.\n\n    - **Query Parameters**:  \n      - `staticId=staticId`  \n        This parameter should be replaced with the specific ID of the static video to filter results.\n\n      - `categoryId=categoryId`  \n        This parameter should be replaced with the specific ID of the category to filter the videos by category.\n\n  - **Headers**:  \n    This section is for HTTP headers that may need to be included in the request.\n\n    - **Key**: (empty)  \n      Currently, there is no specific header key defined for this request.\n\n    - **Value**: (empty)  \n      There is no specific value defined for the header.\n\n    - **Type**: default  \n      Indicates that the header type is set to the default status.\n\n    - **Disabled**: true  \n      This indicates that the specified header is currently disabled and will not be included in the request.\n\n  - **Body**:  \n    This specifies the body of the request.\n\n    - **Mode**: raw  \n      Indicates that the body of the request will be sent in raw format.\n\n    - **Raw**:  \n      The body is currently empty and will not include any raw data when the request is made."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Get All by Category Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/all/?staticId=staticId&category=Board",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "staticId",
+              "value": "staticId"
+            },
+            {
+              "key": "category",
+              "value": "Board"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Static - Get All by Category Name\n\n- **Name:** This is the title of the API endpoint, which indicates that it retrieves all static videos associated with a specific category name.\n\n- **Request:**\n  - **Auth:**\n    - **Type:** Specifies the type of authentication being used for the request. In this case, it is \"bearer,\" which is a common method for securing API requests using tokens.\n    - **Bearer:** Contains the authentication credentials.\n      - **Key:** Identifies the token used for authentication. Here it shows as \"token.\"\n      - **Value:** This is the actual value of the bearer token. It should be provided in the format \"BearerToken\" (this is a placeholder and should be replaced with a valid token).\n      - **Type:** Indicates the data type of the token. In this instance, it is specified as \"string.\"\n  \n  - **Method:** Specifies the HTTP method used for the request. This endpoint utilizes the \"GET\" method, which is used to retrieve data.\n\n  - **Url:** This is the endpoint's URL where the API request is sent. \n    - It includes two query parameters: \n      - `staticId`: A placeholder for the static ID (should be replaced with an actual ID).\n      - `category`: This parameter specifies the name of the category for which videos are being requested. In this case, it is set to \"Board.\"\n\n  - **Headers:**\n    - This section can include various HTTP headers. In this example, the header is empty with no key or value specified. The header is also marked as disabled, meaning it does not currently contribute to the request.\n\n  - **Body:**\n    - **Mode:** Indicates the content type of the request body. It is set to \"raw,\" meaning that the user can input raw data.\n    - **Raw:** This section is where you can specify the body content, but in this case, it is empty, indicating that no data needs to be sent with the request.\n\nThis endpoint can be used to fetch all static videos belonging to a specific category by providing the relevant static ID and category name in the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Get All by SubCategory Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/all/?staticId=staticId&subCategoryId=subCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "staticId",
+              "value": "staticId"
+            },
+            {
+              "key": "subCategoryId",
+              "value": "subCategoryId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Static - Get All by SubCategory Id\n\n- **Name**: This endpoint is designated to retrieve all static videos associated with a specific subcategory identified by its unique subcategory ID.\n\n- **Request**: Represents the HTTP request parameters required to access this endpoint.\n\n  - **Auth**: \n    - **Type**: Indicates that the authentication method is Bearer token.\n    - **Bearer**: An authorization token is required for access.\n      - **Key**: The key for the bearer token authorization, labeled as \"token\".\n      - **Value**: Placeholder for the provided bearer token, which should begin with \"Bearer\" followed by the actual token.\n      - **Type**: Specifies that the token is a string.\n\n  - **Method**: The HTTP method used for this request is GET, which is typical for retrieving data from a server.\n\n  - **URL**: This section contains the endpoint's URL, which is made up of:\n    - **Base URL**: `http://localhost:3000/api/video/static/all/`\n    - **Query Parameters**: \n      - `staticId`: A parameter to specify the ID of the static video content.\n      - `subCategoryId`: A parameter to specify the ID of the subcategory from which to retrieve videos.\n\n- **Headers**: \n  - Currently, there are no custom headers included in the request. One entry is present but is disabled and contains empty fields.\n\n- **Body**: \n  - **Mode**: Specified as 'raw', indicating that no specific format (like JSON or form-data) is being used.\n  - **Raw**: No body content is required for this GET request, hence this field is left empty.\n\nThis endpoint allows users to fetch all static video items associated with a particular subcategory by providing the necessary static ID and subcategory ID as query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Get All by SubCategory Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/all/?staticId=staticId&subCategory=Party%20Time",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "staticId",
+              "value": "staticId"
+            },
+            {
+              "key": "subCategory",
+              "value": "Party%20Time"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Video - Static - Get All by SubCategory Name\n\n**Name**: Video - Static - Get All by SubCategory Name  \nThis endpoint retrieves all static video entries that belong to a specific subcategory.\n\n**Request Details**:\n\n- **Auth**: \n  - **Type**: Bearer\n    - This indicates that the API request uses bearer token authentication. The user must include a valid token for authentication.\n\n  - **Bearer**: \n    - **Key**: token \n      - The key used to send the bearer token.\n      \n    - **Value**: BearerToken \n      - This is a placeholder for the actual token value that needs to be provided for authorization. Replace \"BearerToken\" with a valid token string.\n      \n    - **Type**: string \n      - Indicates that the value for the bearer token should be in string format.\n\n- **Method**: GET  \n  - This specifies the HTTP method used for the request, which is GET in this case. It means the request is intended to retrieve data.\n\n- **URL**: \n  - `http://localhost:3000/api/video/static/all/?staticId=staticId&subCategory=Party%20Time` \n  - This is the endpoint where the request is sent. It includes query parameters:\n    - **staticId**: \n      - A placeholder parameter that needs to be replaced with an actual static ID value to filter the video results.\n      \n    - **subCategory**: \n      - This specifies the subcategory for the video retrieval. In this example, it is set to \"Party Time\". The value \"Party%20Time\" is URL-encoded, representing a space in the actual request.\n\n- **Headers**: \n  - An array that includes the HTTP headers to be sent with the request. In this case, there are no headers specified (the array contains an entry with empty keys and values) and the header is marked as disabled. Headers may be included for content type or other requirements as needed.\n\n- **Body**: \n  - **Mode**: raw \n    - This specifies that the body of the request is in raw format. \n\n  - **Raw**: \n    - An empty string, meaning no additional data is sent in the body of the request for a GET method.\n\nThis endpoint is designed for users who need to fetch all static videos filtered by a specific subcategory, using proper authentication to secure the request. Ensure to replace placeholders with real values when making the API call."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Get All by Channel Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/all/?accountId=accountId&channelId=channelId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "channelId",
+              "value": "channelId"
+            }
+          ]
+        },
+        "description": "### Description of API Endpoint: Video - Static - Get All by Channel Id\n\n- **Name**: This endpoint is called \"Video - Static - Get All by Channel Id.\" It is designed to retrieve a list of static videos associated with a specified channel.\n\n- **Request**:\n  - **Auth**: The request requires bearer token authentication. The token should be provided in the `Authorization` header as `Bearer <token>`.\n  - **Method**: The HTTP method used for this request is GET. This method is used to request data from the specified resource.\n  \n- **URL**: \n  - The endpoint URL is structured as follows: `http://localhost:3000/api/video/static/all/?accountId=accountId&channelId=channelId`.\n  - You need to replace `accountId` and `channelId` in the URL with the respective values to specify the account and the channel from which you want to retrieve video data.\n\n- **Headers**: \n  - The request may include headers, though in this case, there are currently no active headers (all header fields are empty and are marked as disabled). You can add custom headers if required by the API.\n\n- **Body**: \n  - The body of the request is set to \"raw\" mode. However, no body content is required or provided for this GET request, as it retrieves data instead of sending it.\n\nThis endpoint is useful for obtaining a collection of static videos linked to a particular channel under a specified account, enabling users to manage video content effectively.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Get All by Channel Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/all/?accountId=accountId&channel=Fortune",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "channel",
+              "value": "Fortune"
+            }
+          ]
+        },
+        "description": "### API Endpoint Description\n\n#### Name:\n**Video - Static - Get All by Channel Name**\n- This endpoint retrieves all static videos associated with a specific channel name.\n\n#### Request:\n\n- **Auth**:\n  - **Type**: \"bearer\"\n    - This indicates that the request requires authentication using a bearer token.\n  - **Bearer**:\n    - **Key**: \"token\"\n      - This represents the key used for authentication.\n    - **Value**: \"BearerToken\"\n      - This is a placeholder for the actual bearer token. Users should replace this with their own valid token.\n    - **Type**: \"string\"\n      - This indicates that the token should be provided as a string.\n\n- **Method**: \"GET\"\n  - This specifies that the request method used to access the endpoint is a GET request, which means data will be fetched from the server.\n\n- **URL**: \n  - `\"http://localhost:3000/api/video/static/all/?accountId=accountId&channel=Fortune\"`\n  - This is the endpoint where the request will be sent. It consists of the following components:\n    - **Base URL**: `http://localhost:3000`\n      - This indicates that the server is running locally on port 3000.\n    - **Path**: `/api/video/static/all/`\n      - This specifies the resource being accessed, which is a collection of static videos.\n    - **Query Parameters**:\n      - `accountId=accountId`\n        - This parameter should be replaced with the actual account ID to filter the videos associated with that account.\n      - `channel=Fortune`\n        - This parameter specifies the channel name for which the videos are being retrieved. In this case, it is set to \"Fortune\".\n\n- **Headers**:\n  - An array of headers that can be sent with the request.\n    - **Key**: \"\"\n      - This is currently empty and implies no custom headers are being added to the request.\n    - **Value**: \"\"\n      - This is also empty, reflecting that there are no specific values set for the headers.\n    - **Type**: \"default\"\n      - This indicates the type of header being used.\n    - **Disabled**: true\n      - This means that this header will not be sent with the request.\n\n- **Body**:\n  - **Mode**: \"raw\"\n    - Indicates that the body content is sent as raw data.\n  - **Raw**: \"\"\n    - This is empty, suggesting that no data is required to be sent in the body of the request for this GET operation.\n\n### Summary\nThis endpoint is designed to fetch all static videos for a specified channel associated with a given account ID. It requires bearer token authentication and uses a GET request method. Ensure to replace placeholder values with actual data where necessary."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Static - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/static/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "static",
+            "delete"
+          ]
+        },
+        "description": "### Description of the Endpoint \"Video - Static - Delete\"\n\n- **Name**: \n  - This is the name of the API endpoint which is used for deleting a static video.\n\n- **Request**: \n  - This section contains the details required to make the API call.\n\n  - **Auth**: \n    - **Type**: \n      - Specifies the authentication method used for this request. In this case, it is set to \"bearer\" which requires a token for authorization.\n    - **Bearer**: \n      - This is an array that contains the authentication details. The following details are included:\n        - **Key**: \n          - The identifier for the token, which in this case is \"token\".\n        - **Value**: \n          - Represents the session identifier that is required for validating the user's session.\n        - **Type**: \n          - Indicates the data type of the token, which is set to \"string\".\n\n  - **Method**: \n    - This specifies the HTTP method used for the request. The method chosen here is \"POST\", indicating that data will be sent to the server to perform the delete operation.\n\n  - **URL**: \n    - This is the endpoint where the delete request is sent. For this API call, the URL is \"http://localhost:3000/api/video/static/delete\".\n\n  - **Headers**: \n    - This section includes the headers that can be sent along with the request. In this case, there is an entry but it is disabled and has no key or value set.\n\n  - **Body**: \n    - This section contains the data that will be sent in the body of the request.\n    - **Mode**: \n      - The format of the body data. It is set to \"raw\", meaning the data will be sent as a raw JSON string.\n    - **Raw**: \n      - This is the actual data being sent in the body. It is a JSON object containing:\n        - **sessionId**: \n          - The ID representing the current user session.\n        - **accountId**: \n          - The ID of the account associated with the video that is to be deleted.\n        - **videoId**: \n          - The ID of the video that is being targeted for deletion. \n\nUse this information as a guide to understand how to interact with the \"Video - Static - Delete\" API endpoint effectively."
+      },
+      "response": []
+    }
+  ]
+}

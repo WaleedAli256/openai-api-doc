@@ -1,0 +1,1233 @@
+{
+  "info": {
+    "_postman_id": "c6c5dac4-796c-4d9e-bd99-8d623b458e1f",
+    "name": "PaymentPayout",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2560458"
+  },
+  "item": [
+    {
+      "name": "Payout - Square - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/card/get/?provider=square&accountId=accountId&sessionId=sessionId&cardId=ccof:CA4SEFZspcQ7Py9BTX_j4-bnUPooAg",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "card",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "square"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "cardId",
+              "value": "ccof:CA4SEFZspcQ7Py9BTX_j4-bnUPooAg"
+            }
+          ]
+        },
+        "description": "This endpoint represents a GET request to the 'Payout - Square - Get' service.\n\n1. \"name\": This field contains the name of the request. It is \"Payout - Square - Get\", indicating that it is a service to get payout information from the Square payment platform.\n\n2. \"request\": This field encapsulates the details about the HTTP request being sent.\n\n3. \"method\": This field denotes the HTTP method to be used for the request, which is \"GET\". GET is used to request data from a resource.\n\n4. \"url\": This field contains the URL to which the request will be sent. It is \"http://localhost:3000/api/payment/card/get\". The query parameters following the \"?\" in the URL are \"provider=square\", \"accountId=accountId\", \"sessionId=sessionId\" and \"cardId=ccof:CA4SEFZspcQ7Py9BTX_j4-bnUPooAg\". \n\n    - \"provider=square\": This parameter specifies the provider of the card payment service, which is 'square' in this case.\n   \n    - \"accountId=accountId\": This is the unique identifier for the user's account. It should be replaced with the user's actual account ID for making the request.\n   \n    - \"sessionId=sessionId\": This is the unique identifier for the current session. It should be replaced with the actual session ID when making request.\n  \n    - \"cardId=ccof:CA4SEFZspcQ7Py9BTX_j4-bnUPooAg\": This parameter represents the card identifier. Replace it with the actual cardId when making a request. This ID is used by Square to uniquely identify a card.\n\n5. \"headers\": This field contains an array that would typically include any HTTP headers to be sent with the request. Right now, it's empty, indicating no extra headers are being sent with this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Square - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/getAll/?provider=square&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "square"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "customerId",
+              "value": "EQ0ZQW60RE4ZXA5JVDVGWV9B3R",
+              "disabled": true
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Payout - Square - Get All\", is responsible for retrieving all the payout information from the payment provider named 'Square'. The procedure uses the HTTP GET method. \n\nLet's review the various attributes included in the endpoint:\n\n1. **\"name\":**\n\n   This attribute represents the name of the endpoint. In this case, \"Payout - Square - Get All\" signifies that this endpoint is used to fetch all payout details related to Square.\n\n2. **\"request\":**\n\n   This attribute incorporates all the details related to the client's HTTP request. It comprises the method, URL, and a list of headers.\n\n3. **\"method\":**\n\n   The attribute represents the type of HTTP request made. For this endpoint, the HTTP method is 'GET'. This means that data is being retrieved from a specified resource.\n\n4. **\"url\":**\n\n   The attribute contains the endpoint URL where the request will be directed. Here the URL is 'http://localhost:3000/api/payment/payout/getAll/'. It is a localhost URL, which signifies that this API is being consumed locally, typically for development or testing purposes.\n\n5. **Query parameters:** \n\n    There are three query parameters appended to the URL:\n\n    a. **\"provider\":** This parameter is used to specify the name of the payment provider. In this case, the provider is 'Square'. \n\n    b. **\"accountId\":** This parameter is used to enter the account ID associated with Square. The precise ID must be placed in the placeholder 'accountId'.\n\n    c. **\"sessionId\":** This parameter is used to represent an individual API session. The appropriate session ID should be substituted for the placeholder 'sessionId'.\n\n6. **\"headers\":**\n\n   The HTTP headers allow the client and server to pass additional information with an HTTP request or response. For this endpoint, the headers list is empty, indicating there are no additional headers to be passed with this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - NowPayments - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": false, \"provider\": \"nowpayments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "create"
+          ]
+        },
+        "description": "This endpoint is a part of Payout API that is used to create a new payout using NowPayments. The details of all the data in the endpoint are as follows:\n\nEndpoint URL: http://localhost:3000/api/payment/payout/create\nHTTP Method: POST\n\nRequest Body Parameters:\n- `accountId`: It represents the unique identifier of the account for which the payout is to be created. This field is required and should be a text string.\n\n- `sessionId`: It is a unique identifier for the current session. This is a required field which can be obtained after a successful login. This field is used for session tracking and maintaining the user's state during the session.\n\n- `source`: This is an optional field and it can be NULL. If provided, it describes the source from which the payout is originated. It should be a text string.\n\n- `isSavePayout`: It is a boolean field to specify whether the payout details should be saved for future use or not. If set to true, the payout is saved, otherwise not. It is required but its default value is false if not provided.\n\n- `isPrimary`: It is a boolean field used to specify whether this payout is the primary payout method or an alternate method. This field is optional and its default value is false if not provided.\n\n- `provider`: It is the name of the payment service provider. In this case, it should be 'nowpayments'. This field is required and should be a text string.\n\nHeaders: There are no headers required for this API endpoint.\n\nAll the above data has to be sent in the body of the request as raw JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - NowPayments - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": true, \"provider\": \"nowpayments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "update"
+          ]
+        },
+        "description": "This endpoint is primarily used to update a payout. Its name is \"Payout - NowPayments - Update\". It employs a PUT HTTP method, demonstrating that it's used to make modifications to an existing resource. The URL for the endpoint is \"http://localhost:3000/api/payment/payout/update\". With this endpoint, no custom headers are required, hence the empty \"headers\" array.\n\nInto the request body several parameters are supplied both required and optional:\n\n1. \"accountId\": This is a mandatory field. It is used to specify the unique identifier associated with the account for which the update operation is to be performed.\n\n2. \"sessionId\": This field is also required, which is used as a unique id for the session.\n\n3. \"payoutId\": This mandatory field takes in a unique identifier used to specify the particular payout record to update.\n\n4. \"source\": This optional field could be used to define the source from where the payout is initiated. It is nullable and therefore can be left blank if the source is not applicable or known.\n\n5. \"isSavePayout\": This is a Boolean field that determines if the payout information should be saved. It is set to true by default, indicating that the information should be saved.\n\n6. \"isPrimary\": This is another Boolean field that indicates whether the payout is the primary one or not. When it is set to true, it implies the payout is primary.\n\n7. \"provider\": This field denotes the provider for the payout. In this case, the provider is \"nowpayments\", but it can be modified to match the provider as per requirement.\n\nThe \"options\" section signifies additional parameters that control how the request is handled. In this case, it indicates that the language used is 'json', suggesting that the \"raw\" input should be interpreted as a JSON object."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - NowPayments - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/get/payoutId?provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "get",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Payout - NowPayments - Get\". It's designed to retrieve details of a specific payout from the NowPayments service.\n\nField Descriptions:\n\n- **name**: This is the name of the endpoint. It serves as a unique identifier and a brief description of the endpoint.\n\n- **request**: This object contains all the details about the HTTP request that will be made to this endpoint.\n  \n    - **method**: This specifies the HTTP method that should be used when making the request to this endpoint. In this case, it specifies to use the 'GET' method which is typically used to retrieve data from a server.\n  \n    - **url**: This is the URL where the request will be sent. It consists of host address followed by specific path to the API (`http://localhost:3000/api/payment/payout/get/payoutId`). There's also a query string appended to the URL that specifies three parameters: `provider`, `accountId`, and `sessionId`. These parameters must be replaced with the correct values before the request is sent:\n    \n        - `provider`: This query parameter should specify the payment provider. In this case, it is \"nowpayments\".\n        \n        - `accountId`: This query parameter should specify the account identifier. The actual account ID needs to be passed here.\n        \n        - `sessionId`: This query parameter should specify the session identifier. The actual session ID should be passed here. \n\n- **headers**: This is currently an empty array, implying that no additional HTTP headers are sent with the request. This can be populated with any necessary headers."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - NowPayments - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/getAll/payoutId?provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "getAll",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is labeled as \"Payout - NowPayments - Get All\". It represents a feature that allows you to retrieve all payout information related to a specific account, from a specific provider named NowPayments.\n\nMethod: It uses the GET method, commonly used to request data from a resource. As GET does not alter the database, it is a safe method that can be executed multiple times without having any side effects.\n\nURL: The URL it uses is \"http://localhost:3000/api/payment/payout/getAll/payoutId\". This suggests that the API is running locally on port 3000. The data is accessed through the \"api/payment/payout/getAll/payoutId\" endpoint.\n\nQuery Parameters: It involves three query parameters:\n\n1. \"provider=nowpayments\": This parameter is used to specify the name of the payout provider.\n\n2. \"accountId=accountId\": This parameter represents the unique identifier assigned to each account by the platform. You need to replace the \"accountId\" in the URL with the ID of the account for which you desire to obtain the payout details.\n\n3. \"sessionId=sessionId\": This parameter is used for session management and security purposes. It represents a unique ID which is generated whenever a session is initiated. You need to replace the \"sessionId\" in the URL with your current session's ID.\n\nHeaders: No headers are required for making a request to this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - NowPayments - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"provider\": \"nowpayments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is titled \"Payout - NowPayments - Delete\". It's used for deleting a specific payout made through 'NowPayments'. \n\nThe request method for this endpoint is POST, and its URL is http://localhost:3000/api/payment/payout/delete.\n\nThis endpoint does not require any headers, but it has a body that needs to be sent in raw format. It expects JSON language for the contents of the 'raw' field.\n\nHere are the different pieces of data that it requires:\n\n1. \"accountId\": This is the unique identifier of the account that's associated with the payout. It should be a string.\n\n2. \"sessionId\": This captures the unique session ID during a specific operation. It is also intended to be provided as a string.\n\n3. \"payoutId\": This is the unique identifier for the payout that you're aiming to delete. It's also a string.\n\n4. \"provider\": This is the payment provider involved in the payout. In this case, since the provider is 'NowPayments', this field should always be populated with the string \"nowpayments\".\n\nThese pieces of data are all required in order to properly process a payout deletion request via this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - PayPal - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"sender_batch_header\": {\r\n            \"sender_batch_id\": \"Payouts_2024_100008\",\r\n            \"email_subject\": \"You have a payout!\",\r\n            \"email_message\": \"You have received a payout! Thanks for using our service!\"\r\n        },\r\n        \"items\": [\r\n            {\r\n                \"recipient_type\": \"EMAIL\",\r\n                \"amount\": {\r\n                    \"value\": \"9.87\",\r\n                    \"currency\": \"USD\"\r\n                },\r\n                \"note\": \"Thanks for your patronage!\",\r\n                \"sender_item_id\": \"201403140001\",\r\n                \"receiver\": \"hanhluongse@gmail.com\",\r\n                \"alternate_notification_method\": {\r\n                    \"phone\": {\r\n                        \"country_code\": \"91\",\r\n                        \"national_number\": \"9999988888\"\r\n                    }\r\n                },\r\n                \"notification_language\": \"fr-FR\"\r\n            },\r\n            {\r\n                \"recipient_type\": \"PHONE\",\r\n                \"amount\": {\r\n                    \"value\": \"112.34\",\r\n                    \"currency\": \"USD\"\r\n                },\r\n                \"note\": \"Thanks for your support!\",\r\n                \"sender_item_id\": \"201403140002\",\r\n                \"receiver\": \"91-734-234-1234\"\r\n            },\r\n            {\r\n                \"recipient_type\": \"PAYPAL_ID\",\r\n                \"amount\": {\r\n                    \"value\": \"5.32\",\r\n                    \"currency\": \"USD\"\r\n                },\r\n                \"note\": \"Thanks for your patronage!\",\r\n                \"sender_item_id\": \"201403140003\",\r\n                \"receiver\": \"G83JXTJ5EHCQ2\",\r\n                \"purpose\": \"GOODS\"\r\n            }\r\n        ]\r\n    },\r\n    \"isSavePayout\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Payout - PayPal - Create ++\". It's a POST request to the URL \"http://localhost:3000/api/payment/payout/create\". The endpoint doesn't include any additional headers. The body of the request is in raw JSON format and includes several properties:\n\n1. \"accountId\": This is presumably the ID of the account making the payout. It is provided as a string.\n\n2. \"sessionId\": This appears to be the session ID associated with the payout operation, provided as a string.\n\n3. \"source\": This object includes the details of the payout request.\n    - \"sender_batch_header\": An object containing details of the batch that contains the payout.\n        - \"sender_batch_id\": The ID of the batch.\n        - \"email_subject\": The subject line for the email the payout recipient will receive.\n        - \"email_message\": The message the recipient will receive in the email informing them of the payout.\n\n    - \"items\": An array containing details of each individual payout in the batch. Each object in the array includes the following properties:\n        - \"recipient_type\": The method by which the recipient will receive the payout. It can be \"EMAIL\", \"PHONE\", or \"PAYPAL_ID\".\n        - \"amount\": An object containing two properties: \"value\" (the amount of the payout) and \"currency\" (the type of currency the payout is in, e.g. \"USD\").\n        - \"note\": A message to be included with the payout.\n        - \"sender_item_id\": The ID of the individual payout.\n        - \"receiver\": The address or identifier where the payout should be sent. This could be an email address, phone number, or PayPal ID, depending on the \"recipient_type\".\n        - \"alternate_notification_method\": An optional object which can be used if \"recipient_type\" is \"EMAIL\". It consists of a \"phone\" object that has \"country_code\" and \"national_number\".\n        - \"notification_language\": An optional property that can be used to specify the language for notifications. \n        - \"purpose\": An optional property only used when \"recipient_type\" is \"PAYPAL_ID\". It refers to what the payment is for.\n\n4. \"isSavePayout\": A Boolean indicating whether the payout should be saved (presumably for record-keeping purposes).\n\n5. \"isPrimary\": A Boolean indicating whether this is a primary payout or not.\n\n6. \"provider\": This field indicates the payment provider, in this case, \"paypal\".\n\nIn the body options, \"language\" is set to \"json\", indicating that the body text should be interpreted as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - PayPal - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"payoutId\": \"payPalPayoutId\",\r\n    \"source\": null,\r\n    \"isSavePayout\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "update"
+          ]
+        },
+        "description": "This API endpoint is named \"Payout - PayPal - Update\" and it is designed to update the payment details in PayPal payouts. It uses the PUT HTTP method and the URL for this endpoint is http://localhost:3000/api/payment/payout/update. \n\nThe request body has various properties which are as follows:\n\n1. `accountId` (String): An identifier that is associated with each account of a user. It's used for tracking individual accounts.\n\n2. `sessionId` (String): This is another unique identifier which is created every time a user starts a session on PayPal. It aids in managing individual user sessions.\n\n3. `payoutId` (String): Unique identifier for each payment operation performed through PayPal. This ID is used to track a specific payment transaction.\n\n4. `source` (Null): This field currently is set to null. It could be used for indicating the payment source such as bank account, credit card etc., in future.\n\n5. `isSavePayout` (Boolean): This is a flag indicating whether the payout details should be saved or not for future transactions. If it is set to 'true', the payout info would be stored.\n\n6. `isPrimary` (Boolean): This flag determines whether the payout option currently being handled should be treated as the primary payout option or not. If marked true, it means the respective payout is a user's primary choice for receiving payouts.\n\n7. `provider` (String): This indicates the name of the provider for the payment transaction. In this case, the provider is 'paypal'. \n\nThe response data has not been provided here, but it would likely include information about whether or not the update to the PayPal payout was successful.\n\nPlease remember that this endpoint requires the payload to be sent in raw format with a JSON language specification. The headers array is empty, i.e., no particular HTTP headers are required for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - PayPal - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/get/?payoutId=payPalPayoutId&provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "payoutId",
+              "value": "payPalPayoutId"
+            },
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is called \"Payout - PayPal - Get\". The specifics for each data in this endpoint are as follows:\n\n1. `name`: The name attribute represents the title of the endpoint. Here, it's \"Payout - PayPal - Get\", suggesting that this endpoint retrieves the Payout details for a specific PayPal transaction.\n\n2. `request`: The request object contains the details of the http request that is to be sent.\n\n    a. `method`: The request method. Here, it is `GET`, which means this endpoint retrieves data.\n\n    b. `url`: This is the URL to where the client will send the HTTP request. It consists of a host (`http://localhost:3000`), path (`/api/payment/payout/get/`), and query parameters (`payoutId`, `provider`, `accountId`, `sessionId`). The query parameters are:\n\n        i. `payoutId`: This parameter takes the value of a specific PayPal Payout id. You should replace 'payPalPayoutId' with the actual id of the payout for which you want to retrieve details.\n\n       ii. `provider`: The provider parameter is for the name of the payment provider. In this case, it takes the value `paypal`.\n\n      iii. `accountId`: This parameter takes the value of a specific account id. Please replace 'accountId' with the actual account id.\n\n       iv. `sessionId`: The sessionId parameter requires the session information connected to this request. Replace 'sessionId' with the appropriate session id.\n\n    c. `headers`: This is an array where you can define the headers you will send along with your request. If you need to include headers such as authorization or content type, you will place them here. However, in this particular endpoint, there are no headers defined hence it is an empty array.\n\nRemember to replace placeholder values with respective actual data before making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - PayPal - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/getAll/?provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Payout - PayPal - Get All\" and its primary purpose is to retrieve all the payout details associated with a PayPal account.\n\nThe request type for this endpoint is \"GET\". This means you only request data from the server without making any changes on the server's side.\n\nThe endpoint URL is \"http://localhost:3000/api/payment/payout/getAll/\". Your request will be sent to this URL. The base URL is \"http://localhost:3000\" which typically refers to your local machine when you're developing a web server. The \"/api/payment/payout/getAll/\" part of the URL signifies that you are referring to an API resource that handles all the operations related to getting all the payout details of a certain payment method.\n\nThis endpoint also includes query parameters which are parts of the URL that are needed for filtering or processing the request. In this case, there are three query parameters used:\n\n1. \"provider=paypal\" - This specifies that the provider for the payout details you want to retrieve is PayPal. This is crucial for the server to know where to look for your payout information.\n2. \"accountId=accountId\" - This is where you put the unique identifier of your account. By providing this, you allow the server to locate the specific account to retrieve the payout information from.\n3. \"sessionId=sessionId\" - This represents your current session ID. It usually plays a critical role in maintaining the state of your session as you interact with the server.\n\nLastly, the \"headers\" field in the request object is currently empty. Headers are used to take metadata associated with the request or response. In this case, you are not sending any extra information apart from the request URL and method. If needed, fields like authentication tokens or content type can be added to the headers."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - PayPal - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"payoutId\": \"payPalPayoutId\",\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "delete"
+          ]
+        },
+        "description": "This endpoint refers to \"Payout - PayPal - Delete\" and it allows users to delete existing payout records associated with PayPal.\n\nData variables used in this endpoint:\n\n1. `method`: The type of HTTP request. For this endpoint, it is a \"POST\". This indicates the server expects to receive data to be processed.\n\n2. `url`: The location where the request is being sent in the server. It typically hosts the API and endpoint where the request will be processed. In this case, it's \"http://localhost:3000/api/payment/payout/delete\", which seems to be used for deleting a payout record in your local server.\n\n3. `headers`: This is currently empty. Headers are typically used to define the operating parameters of an HTTP request or response.\n\n4. `body`: This contains the actual data that you want to send in your POST request. The `mode` is \"raw\" indicating that the request body is unformatted. The `raw` field contains a JSON object, where you specify the data to be sent to the server:\n\n   * `accountId`: The identification for account associated with the payout.\n   \n   * `sessionId`: Session identifier for the payout process.\n   \n   * `payoutId`: This implies the unique identification of the payout made via PayPal.\n  \n   * `provider`: Specifies the service provider for the payout (in this case, \"paypal\").\n\n5. `options`: These are additional settings for the request. The `raw` object inside specifies the `language` of the request's body as \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Stripe - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"amount\": 1100,\r\n        \"currency\": \"usd\"\r\n    },\r\n    \"isSavePayout\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"stripe\",\r\n    \"company\": \"\",\r\n    \"type\": \"\",\r\n    \"address1\": \"\",\r\n    \"address2\": \"\",\r\n    \"structure\": \"\",\r\n    \"taxid\": \"\",\r\n    \"birthdayDay\": \"\",\r\n    \"birthdayMonth\": \"\",\r\n    \"birthdayYear\": \"\",\r\n    \"lastFourSSN\": \"4444\",\r\n    \"country\": \"US\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Payout - Stripe - Create ++\". It's a POST request made to the URL \"http://localhost:3000/api/payment/payout/create\".\n\nIn the body of the request, a JSON object is being sent with various fields. Here's a breakdown of each field:\n\n1. \"accountId\": This field is used to specify the unique ID of your user's account. You should replace \"accountId\" with your actual account ID.\n\n2. \"sessionId\": This field signifies the unique ID for the session. \"sessionId\" should be replaced with the actual session ID.\n\n3. \"source\": This is an object that contains two fields: \"amount\" and \"currency\". \"amount\" is the amount to be paid out, in this case, it's 1100. \"currency\" represents the currency in which the amount is denoted. The current set currency is US dollar (usd).\n\n4. \"isSavePayout\": This is a boolean field. If its value is set to true, the payout details will be saved. Otherwise, they won't be saved.\n\n5. \"isPrimary\": This is also a boolean field. If true, it denotes that the payout method being created is the primary one.\n\n6. \"provider\": The field indicates the provider of the payment service. In this case, it's \"stripe\".\n\n7. \"company\", \"type\", \"address1\", \"address2\", \"structure\", \"taxid\", \"birthdayDay\", \"birthdayMonth\", \"birthdayYear\": These fields are currently empty. They are potentially used for additional details about the account holder.\n\n8. \"lastFourSSN\": This field holds the last four digits of user's Social Security Number(SSN). For example, it's currently set to 4444.\n\n9. \"country\": The country of the user. Here, it's set to \"US\".\n\nRemember, this raw JSON data is set in \"raw\" mode under body and the language is specified as \"json\" as under options.\n\nPlease replace all placeholders with actual data before making the request for it to work properly."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Stripe - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"payoutId\": \"stripePayoutId\",\r\n    \"source\": {\r\n        \"amount\": 1100,\r\n        \"currency\": \"usd\"\r\n    },\r\n    \"isSavePayout\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "update"
+          ]
+        },
+        "description": "This API endpoint is for updating payout details on Stripe.\n\n1. **name:** This field represents the name of the API endpoint, in this case, it's \"Payout - Stripe - Update\".\n\n2. **request:** This object represents the HTTP request details.\n\n   - **method:** This denotes the HTTP method used for API request which is \"PUT\" in this case, indicating an update operation.\n\n   - **url:** This is the URL where the API request will hit, which is \"http://localhost:3000/api/payment/payout/update\".\n\n   - **headers:** This is an empty array, indicating there are no additional headers required for this API request.\n\n   - **body:** This contains the payload or data of the API request:\n\n     - **mode:** This signifies the mode of framing the request payload. It's set to \"raw\", implying the data is a direct input without any format conversions.\n    \n     - **raw:** This contains the actual data which will be sent with the request. It's a JSON containing important information for updating payout details:\n  \n       - **accountId:** The unique ID related to the account.\n      \n       - **sessionId:** The unique ID related to the current session.\n      \n       - **payoutId:** The unique ID of the payout on Stripe that needs to be updated.\n      \n       - **source:** This object contains the payout details:\n\n         - **amount:** The amount for the payout. Here, it's 1100.\n            \n         - **currency:** The currency in which the payout is to be made. Here, it's in 'usd' (United States Dollar).\n           \n       - **isSavePayout:** A boolean flag indicating whether the payout details are to be saved. It's set to true here, implying the details will be saved.\n\n       - **isPrimary:** A boolean flag indicating whether the payout is the primary one. It's set to true here, implying this is the primary payout.\n\n       - **provider:** The payment provider for the payout. Here, it's \"stripe\".\n\n     - **options:** Defines the preferred options in the body:\n\n       - **raw:** Sets the format of language used in request, here it's JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Stripe - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/get/?payoutId=stripePayoutId&provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "payoutId",
+              "value": "stripePayoutId"
+            },
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is titled \"Payout - Stripe - Get\". It is designed to retrieve payout information related to a specific payment carried out via Stripe. The following defines each element of the endpoint data:\n\n1. **name**: The given name of this endpoint is \"Payout - Stripe - Get\". The name indicates that the endpoint is related to retrieving payout information from the Stripe payment gateway.\n\n2. **request**: This key encapsulates all the main data pertinent for the API request.\n\n    - **method**: The HTTP method for the request is \"GET\". It is used to request data from a specified resource. Here, it seeks data from the provided URL.\n\n    - **url**: This is the resource locator for the \"Payout - Stripe - Get\" API. The exact endpoint is at \"http://localhost:3000/api/payment/payout/get/\". There are also query parameters toward the end of the URL that specify the (`payoutId`, `provider`, `accountId`, `sessionId`). Each of these parameters is described below:\n\n        - **payoutId**: This is the unique id provided by Stripe for a particular payout. Replace it with the Stripe payout id of the payout you are querying.\n\n        - **provider**: This identifies the payment gateway used. In this case, it would always be 'stripe'.\n\n        - **accountId**: This is the account identifier in your system. Replace it with the unique id of the account you are interested in.\n\n        - **sessionId**: This is an identifier for the session in which the payout operation was carried out. Replace it with the relevant session id.\n    \n    - **headers**: This is an array where you can define request headers if needed. Currently, it's empty, meaning no specific headers are required for this API endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Stripe - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/getAll/?provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Payout - Stripe - Get All\". As the name suggests, this endpoint is designed to retrieve all payout information associated with a particular account on Stripe, a third-party payment processing system. \n\n1. `Request method`: A GET method is being employed here, which is used to request data from a specific resource. It reads and retrieves the information but doesn’t change anything in the database.\n\n2. `URL`: The URL \"http://localhost:3000/api/payment/payout/getAll/\" refers to your local server. It directs the GET request to an API endpoint named '/api/payment/payout/getAll'. \n\n   - `provider=stripe`: The 'provider' attribute in the URL refers to the payment processing system the operation is being performed with. Here it is set to 'stripe'.\n   \n   - `accountId=accountId`: This refers to a specific identifier used by Stripe to associate the request to a specific account. The 'accountId' here should be replaced with actual Stripe account Id when making the request.\n\n   - `sessionId=sessionId`: This refers to a unique identifier that is generated per individual session. This helps to identify the session through which the operations are being performed. Replace 'sessionId' with unique session ID when making the request.\n\n3. `Headers`: The headers value is an array and it appears to be currently empty. It is typically where you would define specifics about the request, such as the content type or authorization information. If required, headers can be added for additional configuration. \n\nThis endpoint is designed to interact with the Stripe API to retrieve all payouts belonging to the account-id from the session provided. It does not appear to modify any data - simply retrieves the existing payout information."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Stripe - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"payoutId\": \"stripePayoutId\",\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "delete"
+          ]
+        },
+        "description": "This endpoint, named \"Payout - Stripe - Delete\", executes a POST request, which implies that it is used to send data to a server to create a new resource.\n\nThe entire endpoint has the following key aspects:\n\n1. \"name\": This indicates the name of the endpoint, in this case it is \"Payout - Stripe - Delete\". \n\n2. \"request\": This outlines the main elements of the endpoint's request; it includes method, url, headers and body.\n\n3. \"method\": The request type for this endpoint is POST, indicating that it's used to send data to server.\n\n4. \"url\": The URL specifies the server to which the request is sent. Here, http://localhost:3000/api/payment/payout/delete is the destination of the request.\n\n5. \"headers\": This section is currently empty, which means no additional HTTP headers are sent with the request.\n\n6. \"body\": This contains the actual data that will be sent in the POST request. \n\nInside the body, we have:\n\na. \"mode\": The mode for the body data is specified as \"raw\", which means the data is sent as a string without any processing or encoding.\n\nb. \"raw\": This is the raw data in string format. \n\ni. \"accountId\": This is a placeholder for the account Id information. You need to replace \"accountId\" with actual account Id while using this.\n\nii. \"sessionId\": This is a placeholder for the session Id information. You need to replace \"sessionId\" with the actual session Id.\n\niii. \"payoutId\": This is a placeholder for the Stripe payout Id information. You need to replace \"stripePayoutId\" with actual Stripe payout Id.\n\niv. \"provider\": This characterizes the provider of the payout service. As described, the provider is \"stripe\".\n\nc. \"options\": Specifies additional settings for how the body data should be treated.\n\ni. \"raw\": Contains additional settings for raw mode; Language is set to json, which indicates that the data format of raw body is JSON.\n\nKeep in mind to replace all placeholders with actual values before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - BitPay - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": false, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "create"
+          ]
+        },
+        "description": "The data in this endpoint corresponds to the functionality, \"Payout - BitPay - Create\". \n\n1. \"name\": This defines the name or title of the API endpoint. Here the name is \"Payout - BitPay - Create\" which indicates that this endpoint is used to create a payout in BitPay.\n\n2. \"request\": This object tells us about how the request is made in this endpoint.\n\n    - \"method\": It tells us the method of the request and here it states \"POST\", which means the data is being sent to the server to create a new BitPay payout.\n\n    - \"url\": This provides the URL of the API endpoint where the request is being sent. It is currently set to \"http://localhost:3000/api/payment/payout/create\".\n\n    - \"headers\": An empty list is provided here, which means there are no extra headers in the request.\n\n    - \"body\": This contains information about what data the request body is sending in raw mode.\n  \n        - \"mode\": This \"raw\" value signifies that the data will be sent in unprocessed form.\n\n        - \"raw\": It contains a JSON string with fields \"accountId\", \"sessionId\", \"source\", \"isSavePayout\", \"isPrimary\" and \"provider\". \n          - \"accountId\": The identifier for a specific account. \n          - \"sessionId\": The identifier for the current user session.\n          - \"source\": The source from which payout is made. It is set to null by default, meaning no particular source is specified.\n          - \"isSavePayout\": A boolean where \"true\" indicates that the payout will be saved.\n          - \"isPrimary\": A boolean where \"false\" indicates that this payout is not the primary one.\n          - \"provider\": The provider to process the payout, in this case, it's \"bitpay\".\n\n        - \"options\": This contains settings applied to the raw data.\n            - \"raw\": It signifies that the language used is JSON.\n\nPlease note that id values like \"accountId\" and \"sessionId\" should be replaced with actual values for a successful payout request."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - BitPay - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": true, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "update"
+          ]
+        },
+        "description": "The endpoint `http://localhost:3000/api/payment/payout/update` is a `PUT` request named \"Payout - BitPay - Update\" intended for updating the payout details on BitPay. It accepts a raw JSON payload in the body with multiple parameters, each with distinct importance.\n\n- `accountId` (String): This is the unique identifier of the account in the system whose payout information is being updated. The value of accountId should be replaced with the accountId of the user.\n\n- `sessionId` (String): This represents the specific session for the user interaction. It helps associate the payout update request with a particular session of a user. Replace it with the actual sessionId.\n\n- `payoutId` (String): This is the unique identifier for the particular payout that needs to be updated. This should be replaced with the real payoutId that relates to a specific payout tied to the accountId mentioned above.\n\n- `source` (any): This can contain source of the request. It is currently set to `null`, meaning it's not being used at the moment. The type and need for this parameter might change based on your payload requirements.\n\n- `isSavePayout` (Boolean): This flag indicates whether the payout should be saved in the system after being updated. Setting this to `true` would cause the system to preserve the payout information in the database for potential future use.\n\n- `isPrimary` (Boolean): This is another flag that designates whether the payout being updated is the primary one for the user associated with the specified accountId. If set to `true`, this payout would be set as the default or primary payout method.\n\n- `provider` (String): This parameter is for the payment service provider. In this raw payload, its value is set to 'bitpay', indicating BitPay is the chosen provider for the payout.\n\nPlease make sure to replace the placeholders such as \"accountId\", \"sessionId\", \"payoutId\" with their actual values in production.\n\nThis information is a part of the headers or body of the request, and does not have any associated parameters in the URL or query strings. The request does not have any specified headers at this moment. You may need to add authorization headers depending on the security configuration of your API."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - BitPay - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/get/payoutId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "get",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Payout - BitPay - Get\" and it is used to retrieve payout information from a BitPay provider. It utilizes the HTTP GET method, which means it is designed to request data from a specified resource.\n\nThe resource in this case is defined by the URL \"http://localhost:3000/api/payment/payout/get/payoutId\". This URL implies a local server is being used (localhost) at port 3000, with access paths leading to an API designed for processing payments. \n\nThe final part of the URL, \"payoutId\", appears to be a placeholder for a unique identifier specific to each payout instance. You would normally replace this with the actual unique operand while making the API call.\n\nThree query parameters are used to further specify the request:\n\n1. \"provider\" – denotes the provider of the payment service. In this case, it is set to \"bitpay\", indicating that the payout information is being requested from a BitPay provider.\n\n2. \"accountId\" – denotes the unique identifier for the user's account associated with the BitPay provider. This would typically be replaced with the actual unique id of the account from which the payout is processed.\n\n3. \"sessionId\" – denotes the unique identifier for the user's current session. This would typically be replaced with the actual unique session id generated when the user session was initiated.\n\nThe empty \"headers\" array implies that no extra header data is required for this request. However, depending on the use-case, this section might be populated with relevant information such as authentication tokens, content type specifications etc."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - BitPay - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/getAll/payoutId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "getAll",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Payout - BitPay - Get All\". \n\n- It uses the GET HTTP method, indicating it primarily fetches and retrieves data from the server, without making significant changes. \n\n- The actual URL is as follows: \"http://localhost:3000/api/payment/payout/getAll/payoutId?provider=bitpay&accountId=accountId&sessionId=sessionId\" \n\nThe URL contains several important pieces of data:\n\n1. \"http://localhost:3000\": It is the base URL that refers to your local machine, on port 3000. This is generally used in development stages for local testing and debugging.\n\n2. \"/api/payment/payout/getAll/payoutId\": This is the API route or endpoint where the actual function is called. This suggests that a user can retrieve all details about payout information pertaining to a specific payoutId from the BitPay provider.\n\n3. \"?provider=bitpay\": This is a query parameter for specifying payment provider information. In this case, the provider being used is \"bitpay\".\n\n4. \"accountId=accountId\": This too, is a query parameter. It is used to specify the account from which the payout information is being queried.\n\n5. \"sessionId=sessionId\": This query parameter is used for session tracking. The specific sessionId needs to be provided to maintain the continuity and context of the user's session.\n\nThe endpoint doesn't include any additional HTTP request headers. This implies that it doesn't require any special type of content type or authentication tokens. However, this can vary based on server implementation.\n\nOverall, this endpoint allows you to fetch all payout-related data for a specified payoutId, associated with a particular account ID and session ID, from the BitPay payment provider. Please replace 'bitpay', 'accountId', and 'sessionId' with actual values while making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - BitPay - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Payout - BitPay - Delete\".\n\nMethod: It uses the \"POST\" method, which means it is designed to send or submit data to be processed to a specified resource.\n\nURL: The endpoint's URL is \"http://localhost:3000/api/payment/payout/delete\". This is the specific web address where the designed tasks or requests are directed.\n\nHeaders: Headers are not specified in this particular endpoint, so it does not need additional parameters that define the operating parameters of an HTTP request.\n\nBody: This is the main part of the endpoint and contains the following data:\n\n1. \"mode\" is set to \"raw\", which means the data sent in the body is not in key-value pairs but as a plain text format.\n\n2. \"raw\" is a JSON object with four properties:\n  - \"accountId\": This is likely the identifier for the account that's making the payout.\n  - \"sessionId\": This likely refers to a unique identifier generated for an individual session of the user interacting with the application.\n  - \"payoutId\": This is likely the unique identifier of the specific payout that you wish to delete.\n  - \"provider\": This is set to \"bitpay\" indicating that the provider of this payout service is BitPay.\n\n3. \"options\" is another nested JSON object with the property:\n  - \"raw\". which has a sub-property called \"language\" set to \"json\". It indicates that the language used in this request body is JSON (JavaScript Object Notation)."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - CashApp - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": false, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Payout - CashApp - Create\". \n\nIt uses the \"POST\" method to send data to the server, which indicates that it creates new resources.\n\nThe URL where the request is sent to is \"http://localhost:3000/api/payment/payout/create\". This URL structure indicates that it is likely related to the creation of a CashApp payout on a local server.\n\nThe headers array is currently empty. Headers contain more information about the data being sent or request made.\n\nThe body of the request contains:\n  - `mode`: This is set to \"raw\", indicating the data in the request will be sent as a string.\n  - `raw`: This contains the actual data that will be sent in the request, formatted as a JSON string with the following fields:\n    - `accountId`: This is likely a unique identifier for the user making the payout.\n    - `sessionId`: This could be an identifier for the current user session.\n    - `source`: The source of the payout is not provided, hence it is null.\n    - `isSavePayout`: A boolean that determines whether the payout should be saved or not.\n    - `isPrimary`: A boolean that determines whether the payout method is the primary one for the user or not.\n    - `provider`: Specifies that the provider for this payout request is \"cashapp\".\n\n`options` are optional settings that specify how the request is sent. Here, there's an option \"raw\" with a \"language\" sub setting specifying that the language of the raw data is json."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - CashApp - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": true, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Payout - CashApp - Update\", which is used to update information of a cash payout via CashApp.\n\nThe endpoint uses the PUT HTTP method, indicating it is designed for updating existing resources. \n\nThe URL for this endpoint is http://localhost:3000/api/payment/payout/update.\n\nCurrently, this endpoint does not require any additional custom headers. \n\nThe request body of this endpoint must be in the raw JSON format. Here's an explanation for each individual field in the request body: \n\n- \"accountId\": This field should contain the unique identifier of an account associated with the payout. It's required and should be string type.\n\n- \"sessionId\": This field should contain the unique ID related to the session in which the payout update is taking place. It's required and should be string type.\n\n- \"payoutId\": This field should contain the unique identifier for the specific payout that should be updated. It's required and should be string type.\n\n- \"source\": This is an optional field. It can contain data about the source from which the payout is made, if any. If there's no specific information, this field can be set to null.\n\n- \"isSavePayout\": This is a boolean field indicating whether the updated payout structure should be saved for future use. If true, the payout structure will be saved.\n\n- \"isPrimary\": This is another boolean field, indicating whether this payout structure should be set as the primary one. If true, this payout structure will be set as primary.\n\n- \"provider\": This field represents the financial service provider for the payout which is here set to \"cashapp\".\n\nThe options part specifies that the language of the raw body content is JSON. It's an optional piece of information in case any formatting or syntax highlighting is required for the body content."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - CashApp - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/get/payoutId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "get",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Payout - CashApp - Get\". It is designed to retrieve payout information from the CashApp payment provider. \n\nThe request uses the GET method and the URL is \"http://localhost:3000/api/payment/payout/get/payoutId?provider=cashapp&accountId=accountId&sessionId=sessionId\". \n\nThe key components of the URL are explained below:\n\n1. \"http://localhost:3000\" is the base URL where the service is hosted.\n2. \"/api/payment/payout/get/payoutId\" is the path in the service that handles this specific form of request. It will get the payout details of given 'payoutId' from the service.\n3. \"?provider=cashapp&accountId=accountId&sessionId=sessionId\" are query parameters that carry specific user information:\n   - \"provider=cashapp\": It identifies the payment provider as 'cashapp'.\n   - \"accountId=accountId\": It is used to specify the account ID for which the operation is performed.\n   - \"sessionId=sessionId\": This is the session ID, which helps in managing user sessions, tracking activities, and maintaining the security.\n\nAt this moment, no headers have been defined for the request. Headers can be defined to carry some additional details like request method, client type, content type, etc. \n\nPlease replace the placeholders 'payoutId', 'accountId', and 'sessionId' with actual values while making a query to this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - CashApp - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/getAll/payoutId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "getAll",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "Endpoint Name: \"Payout - CashApp - Get All\"\n\nThis endpoint is designed to retrieve all payout details linked to a specific CashApp account.\n\nUser Parameters:\n\n- `payoutId`: This unique identifier is used to query the appropriate payout data for a specific transaction in the system. \n\n- `provider`: The \"provider\" parameter represents the name of the payout provider. In this given endpoint, it's set to \"cashapp\" which means the payout information will be fetched from the CashApp system.\n\n- `accountId`: This parameter holds the unique identifier of a user's CashApp account.\n\n- `sessionId`: The 'SessionId' further ensures the security as it represents a unique session established during a user's login in the application. This parameter helps in identifying and authorizing the user's session to ensure the requested data is pertaining to the right user.\n\nHeader Parameters: This endpoint does not require any specific header parameters.\n\nRequest Method: GET\n\nThe GET method is used when you are trying to get (or retrieve) data from a resource. Here, this resource is \"http://localhost:3000/api/payment/payout/getAll/payoutId?provider=cashapp&accountId=accountId&sessionId=sessionId\" which fetches the CashApp payout details.\n\nURL: The Uniform Resource Locator (URL) defines the route of the API at which the function related to this endpoint resides. This particular URL resides locally on the device at port 3000. It contains the path \"api/payment/payout/getAll/payoutId\" followed by the aforementioned parameters.\n\nIn general, this endpoint will allow you to retrieve all the payout details associated with a specific user's CashApp account based on the user's specific session and CashApp account ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - CashApp - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is for the Payout - CashApp - Delete function. Let's break down the primary aspects of the API request.\n\n- \"name\": The name is \"Payout - CashApp - Delete\". This implies that this function is used to delete payout information for a CashApp transaction.\n\n- \"method\": The method is POST. This indicates that this API is sending data to a specific resource to update it, or in this case, delete certain payout information.\n\n- \"url\": The URL, \"http://localhost:3000/api/payment/payout/delete\", is the location on the server named \"localhost\" at port 3000 where the API request will interact with the appropriate resource.\n\n- \"headers\": There are no custom headers. Custom headers are often used in POST requests for things like authentication or setting the content type.\n\n- \"body\": The body contains the essential information being sent by the API.\n     - \"mode\": The mode is \"raw\", implying that the body content is sent in a raw format.\n     - \"raw\": Raw data is in a JSON format, which includes four fields: \"accountId\", \"sessionId\", \"payoutId\", and \"provider\".\n         - \"accountId\": This field represents the unique identifier of the account involved in the payout transaction.\n         - \"sessionId\": This field represents the unique session identifier, typically used for authentication purposes.\n         - \"payoutId\": This field represents the unique identifier of the specific payout to be deleted.\n         - \"provider\": The provider is set to \"cashapp\", indicating the payment method is via the application CashApp.\n\n- \"options\": Under options, again the body is specified to be \"raw\" and language is \"json\", confirming that the API request body should be in raw JSON format.\n\nIn conclusion, this POST request is used to delete specific payout information for CashApp transactions based on provided accountId, sessionId, and payoutId."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Venmo - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": false, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "create"
+          ]
+        },
+        "description": "This endpoint is used to create a payout with Venmo. Let's break down what each data signifies:\n\n- `name`: \"Payout - Venmo - Create\", represents the name of the endpoint. It's used to create a payout transaction using Venmo service.\n\n- `request`: Contains all the necessary details for making the payout request. It's a container for the data needed to execute the request.\n \n- `method`: \"POST\", HTTP method used to deliver the data. In this case, it's POST, means it will send data to the server to create a new resource.\n\n- `url`: \"http://localhost:3000/api/payment/payout/create\", the URL to which the request will be sent. It will make the request to a local server at port 3000, under the path /api/payment/payout/create.\n\n- `headers`: An array that should contain any necessary headers for the request. Currently, it's empty, meaning that no specific headers were needed for this request.\n\n- `body`: Contains data meant to be sent to the server. It's where the important information to create the payout is held.\n\n- `mode`: \"raw\", the type of data that's being sent. In this case, raw data will be sent.\n\n- `raw`: A JSON object containing key-value pairs that characterise the payment operation. \n  - `accountId`:  This is the unique identifier of the account making the payout.\n  - `sessionId`: This is the unique identifier for the session during which the payout is being created.\n  - `source`: The source from which the payout funds will be drawn. It's currently set to null which could mean a default or previously saved source will be used.\n  - `isSavePayout`: A boolean that indicates whether this payout should be saved for future transactions. When it is set to `true`, the payout source is saved.\n  - `isPrimary`: A boolean that indicates if the payout method is the primary one for the user account. When set to `false`, it means this is not the primary payout method.\n  - `provider`: The service provider used for the payout, in this case, \"venmo\".\n\n- `options`: Contains additional parameters for how the request body should be handled. \n  - `raw`: Contains settings specific to raw body mode. \n    - `language`: \"json\", specifies the data format of the raw body, in this case, json format."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Venmo - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": true, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named `Payout - Venmo - Update`. It uses a `PUT` request method and the URL for accessing this endpoint is `http://localhost:3000/api/payment/payout/update`.\n\nIn terms of data that is sent in the request, we have the following:\n\n- `accountId` : This field is used to identify unique user account in your system. It must be provided in string format.\n\n- `sessionId` : This field denotes a unique session ID associated with the user's current interaction or operation in your system. It also needs to be provided in a string format.\n\n- `payoutId` : It is the unique identifier of a payout to be updated. This must be provided as a string.\n\n- `source`: This is a field where the source of payout can be specified. However, in our case, this value is set to `null`, implying that no specific source is getting recorded in this request.\n\n- `isSavePayout` : This is a boolean field that defines if the payout detail should be saved or not. If it's set to `true`, it indicates that the payout detail will be saved in your system; if it's `false`, the payout detail would not be saved.\n\n- `isPrimary` : This is another boolean field. If its value is `true`, it indicates the payout set as a primary payout source for the user.  If it's `false`, the payout isn't set as a primary source.\n\n- `provider` : This field specifies the payout provider, which, in this case, is `venmo`. \n\nThe 'headers' field is empty which means no extra header data is needed.\n\nBody content is sent as raw JSON and the language option for the raw data is set as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Venmo - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/get/payoutId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "get",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "Endpoint name: Payout - Venmo - Get\n\nThis endpoint retrieves payout information from Venmo using the following parameters:\n\n1. **request.method**: This field specifies the HTTP request method. The required method for this endpoint is GET. The GET method is used to request data from a resource.\n\n2. **request.url**: This field specifies the URL where the request will be sent. The current URL `http://localhost:3000/api/payment/payout/get/payoutId` indicates that this endpoint is running on the local server (localhost) at port 3000. The resource path is /api/payment/payout/get/payoutId. The 'payoutId' appears to be a placeholder that should be replaced with the actual payout ID when making the request.\n\n3. **provider=venmo**: This is a query parameter in the request URL which specifies the payment provider \"venmo\". It implies that the payout details will be fetched from Venmo.\n\n4. **accountId=accountId**: This is another query parameter in the request URL. It is a placeholder that should be replaced with the actual account ID. The account ID in the context of payments usually refers to the unique ID associated with the user's account from where the payment will be made.\n\n5. **sessionId=sessionId**: This is a query parameter in the request URL and is a placeholder that should be replaced with the session ID. Session ID typically serves as a unique identifier associated with a current session, which typically expires after a certain period of time or once the user logs out. \n\n6. **request.headers**: This field specifies HTTP headers. Headers let the client and the server pass additional information with an HTTP request or response. However, no headers are required for this endpoint as the headers field is an empty array.\n\nRemember to replace placeholders within the request URL with actual values when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Venmo - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/getAll/payoutId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "getAll",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This is an API endpoint named \"Payout - Venmo - Get All\". It's a 'GET' request, typically used to retrieve data from the provided API.\n\n**URL**: \nThe enduring URL for this API endpoint is 'http://localhost:3000/api/payment/payout/getAll/payoutId'. This URL indicates that the API operates locally (specified by 'localhost:3000'), and calls for information about all payout records under a specific Payout ID within the payment API.\n\nThere are three query parameters appended to this URL:\n\n1. `provider`: This query parameter allows users to specify the payout provider (in this case, it's set to 'venmo'). Venmo is a type of online payment transfer platform. It's used to filter the results returned by this 'GET' request to only those relating to this provider.\n\n2. `accountId`: This query parameter is used to identify the specific account from which the payout information is required. You need to provide a valid account ID to get the accurate data associated with that account.\n\n3. `sessionId`: This query parameter represents the session identifier that uniquely identifies a user's session. It may be used for tracking or validation purposes.\n\n**Headers**:\nIn this request, no additional headers are provided or required. Headers typically contain information such as encoding, languages, formats the client can understand, etc. But for this API, no such specifics are mentioned. Please add headers as required by your API's specifications or requirements."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Venmo - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Payout - Venmo - Delete\". Its purpose is to delete a Venmo payout record from your system.\n\nMethod:\nThe HTTP method applied to this endpoint is \"POST\". This method is typically used to submit data to the server for processing.\n\nURL:\nThe URL where this request is made is \"http://localhost:3000/api/payment/payout/delete\". The path suggests that this endpoint will delete a \"/payment/payout\" instance.\n\nHeaders:\nAs per the provided data, there are no additional headers required for sending this request.\n\nBody:\nThe body of the request should be in raw JSON format. This is specified by the \"mode\" field. Below are the details for the parameters in the body of the JSON.\n\n- accountId: This field is meant to contain the account ID of the user. The value for this field will be the unique identifier for the user's account.\n- sessionId: This field is meant to contain the session ID. This would be a unique ID to represent a specific session of the user.\n- payoutId: This field is meant to contain the payout ID to be deleted. The identifier for the specific Venmo payout transaction which should be removed from the system.\n- provider: This field must contain the string \"venmo\". Presumably, this field is used to determine what payment service provider the payoutId belongs to.\n\nOptions:\nThe options field indicates some additional specifications for the request. Here it specifies that the language of the raw input is JSON. This means the data in the \"raw\" field should follow JSON syntax and structure."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Zelle - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": false, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "create"
+          ]
+        },
+        "description": "This endpoint is titled \"Payout - Zelle - Create\". It makes a POST request to the URL \"http://localhost:3000/api/payment/payout/create\", thus is utilized to create a new payout using Zelle as the payment provider.\n\nUnder the \"request\" object, there are several properties:\n\n1. \"method\": This signifies the HTTP method, and in this case, it's set to 'POST'. This essentially means that the server creates or replaces the resource at the provided URL.\n\n2. \"url\": This contains the endpoint for the API call. This URL refers to where the payment payout is created.\n\nUnder the nested \"body\" object, we have:\n\n1. \"mode\": This specifies that the payload is sent in 'raw' format.\n\n2. \"raw\": This is a stringified JSON payload carrying a number of properties:\n   - \"accountId\": This represents the identification of the account holder.\n   - \"sessionId\": It signifies the individual session ID for the account.\n   - \"source\": When filled, this property might refer to the origin of the payment. However, it is set to null, indicating that this information is not included for this request.\n   - \"isSavePayout\": A boolean value. If set to true, the payout information is stored for future payouts.\n   - \"isPrimary\": A boolean value to mark the payout method as primary or not. False in this case intends the payout method won't be set as primary.\n   - \"provider\": Here, it is set to 'Zelle', signifying that Zelle is the chosen payout provider.\n\n3. \"options\": Under the options, \"raw\" and \"language\": \"json\" are set, indicating that the language and format used to transmit data is JSON.\n\nThis request does not include headers, indicated by the \"headers\": [] field.\n\nWhen utilizing this API endpoint, ensure the proper accountId and sessionId values are passed for creating a new payout, set the desired options regarding saving the payout and marking it as primary, and specify the provider as 'Zelle'."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Zelle - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"source\": null,\"isSavePayout\": true,\"isPrimary\": true, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "update"
+          ]
+        },
+        "description": "This endpoint is titled \"Payout - Zelle - Update.\" It performs a PUT request, a type of HTTP method that is generally used to update existing resources. The URL for this endpoint is http://localhost:3000/api/payment/payout/update, which seems to suggest that it is used to update existing payout information for a payment.\n\nThe body of the request contains several fields:\n\n1. \"accountId\" - This field likely holds a unique identifier for the account that the payout is being updated for.\n\n2. \"sessionId\" - This is also some unique identifier and it probably refers to the specific session in which the update is being made.\n\n3. \"payoutId\" - This field presumably houses a unique identifier specifically for the payout that is being updated.\n\n4. \"source\" - The endpoint accepts null for this field, suggesting that it is optional. Its use is not specified here.\n\n5. \"isSavePayout\" - This is a boolean field that suggests whether the updated payout details should be saved or not. \n\n6. \"isPrimary\" - Another boolean field, possibly indicating whether this payout is set as the default or main payout method for the account.\n\n7. \"provider\" - This field appears to specify who the payout provider is. In this case, it's given as Zelle, an online payments company.\n\nThese fields are sent as raw, which means that they are not encoded in any way before being sent. They are also all written in JSON language. The request does not seem to include any specific headers. Overall, this endpoint appears to be for updating payout information for a payment in the identified account and session."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Zelle - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/get/payoutId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "get",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is for the \"Payout - Zelle - Get\" service. \n\n- \"name\": This refers to the name of the endpoint, which in this case is \"Payout - Zelle - Get\". This is the name that will be used to identify this endpoint in the API collection.\n\n- \"request\": This is a JSON object that holds all the details of the request that will be made to this endpoint.\n\n- \"method\": This is the HTTP method that will be used to make the request to this endpoint. In this case, the method is GET.\n\n- \"url\": This is the URL of the endpoint. For this service, the URL is \"http://localhost:3000/api/payment/payout/get/payoutId\". This is the link where the request will be sent.\n\n- \"provider\": This is a query parameter in the URL that specifies the payment provider. For this endpoint, the provider is \"zelle\".\n\n- \"accountId\": This is another query parameter in the URL that identifies the account making the payout. Each account will have a unique accountId which should be provided to get details about a specific payout.\n\n- \"sessionId\": This is another query parameter in the URL used for session management. This sessionId will be unique for every session and helps in identifying and maintaining the session for the given user.\n\n- \"headers\": Headers are often used to provide additional information about the request. In this case, no specific headers have been provided, which means the endpoint uses default headers or doesn't require any additional header information."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Zelle - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/getAll/payoutId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "getAll",
+            "{{payoutId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint `http://localhost:3000/api/payment/payout/getAll/payoutId?provider=zelle&accountId=accountId&sessionId=sessionId` provides the function \"Payout - Zelle - Get All\". \n\n1. **name**: This field identifies the name of the backend function that the endpoint connects to. In this case, \"Payout - Zelle - Get All\" signifies that it is a function meant to fetch all the payout details related to the Zelle platform.\n\n2. **request**: This object provides information about the HTTP request that will be made to the endpoint.\n\n3. **method**: This field indicates the HTTP method used for the request. In this case, the \"GET\" method shows that the function is retrieving data from the server.\n\n4. **url**: This field provides the URL/location to which the request is sent. It consists of the base URL (`http://localhost:3000`), the endpoint path (`/api/payment/payout/getAll/payoutId`), and query parameters (`provider=zelle&accountId=accountId&sessionId=sessionId`). \n\n- \"provider=zelle\" indicates that the payments provider is Zelle. \n- \"accountId=accountId\" instructs the function to pull data related to a specific account, determined by replacing \"accountId\" in the URL with the actual account ID.\n- \"sessionId=sessionId\" is a unique identifier to validate the session from which the request was made, necessary for security purposes. \n\n5. **headers**: This field is an array, that contains metadata in the form of key-value pairs to be sent as part of the HTTP request. In this case, no custom headers are included with the request. Additional header information might be needed based on the server configuration. \n\nPlease make sure to replace \"accountId\" and \"sessionId\" with the actual account and session IDs when using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Payout - Zelle - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"payoutId\":\"payoutId\",\"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/payout/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "payout",
+            "delete"
+          ]
+        },
+        "description": "This endpoint, \"Payout - Zelle - Delete\", allows you to delete a specific payout through Zelle.\n\nEndpoint URL:\nThis endpoint is located at `http://localhost:3000/api/payment/payout/delete`.\n\nHTTP Method:\nThis endpoint uses the `POST` method.\n\nRequest Headers:\nThis endpoint does not require any headers.\n\nRequest Body:\nThe request body should be in `raw` format and in `JSON` language. The fields included in the request body are:\n\n- `accountId`: This field is used to identify the account related to the payout operation. Replace the value `accountId` with the unique identifier of the account.\n\n- `sessionId`: This field is used for session identification and should be replaced with the specific `sessionId`.\n\n- `payoutId`: This field is used to identify the specific payout that you want to delete. Replace `payoutId` with the unique identifier of the payout.\n\n- `provider`: The provider field represents the payout service provider. In this case, the provider is `Zelle`.\n\nPlease replace `accountId`, `sessionId`, and `payoutId` with the actual values for the operation."
+      },
+      "response": []
+    }
+  ]
+}

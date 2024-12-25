@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "50b0805e-613a-42b0-8fdc-150038c6c9ce",
+    "name": "ActionConfirm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Confirm - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"isUndo\": false,\n    \"isIgnore\": false,\n    \"name\":\"this is name\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/confirm/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "confirm",
+            "create"
+          ]
+        },
+        "description": "### Action - Confirm - Create Endpoint\n\n**Request Method:** POST  \n**Request URL:** http://localhost:3000/api/action/confirm/create\n\n#### Authentication\n- **Type:** Bearer Token\n  - **Token Key:** `token`: This represents the bearer token required for authentication.\n  - **Value:** `BearerToken`: Placeholder for the actual bearer token to be used.\n\n#### Headers\n- **Key:** (No specific key provided) \n  - **Value:** (No specific value provided)\n  - **Type:** Default (this header is currently disabled)\n\n#### Request Body\nThe body of the request is expected to be in raw JSON format, containing the following fields:\n\n1. **sessionId**\n   - **Description:** A unique identifier for the session during which this action is taking place. It helps in tracking user sessions effectively.\n\n2. **accountId**\n   - **Description:** The unique identifier associated with the account that is performing this action. This is essential for identifying the user or entity corresponding to the action.\n\n3. **path**\n   - **Description:** The specific path or URL indicating where the action is targeting, such as a link to a video or resource.\n\n4. **targetType**\n   - **Description:** Specifies the type of target the action is aimed at. For example, it could be a `videoId`, signifying that the action relates to a specific video resource.\n\n5. **targetId**\n   - **Description:** A unique identifier for the target resource, such as a specific video ID, that is being acted upon.\n\n6. **sourceType**\n   - **Description:** This indicates the type of source from which the action originates. For instance, it could be `accountId`, reflecting the user account initiating the process.\n\n7. **sourceId**\n   - **Description:** A unique identifier for the source that initiated the action, such as the account ID from which the request is issued.\n\n8. **isUndo**\n   - **Description:** A boolean value that determines whether the action is intended to undo a previous action. If true, it signifies that the user wishes to reverse the last action taken.\n\n9. **isIgnore**\n   - **Description:** A boolean value indicating whether the action should be ignored for any reason. If true, the action may not be processed or might be disregarded.\n\n10. **name**\n    - **Description:** A user-defined name for the action being created. This helps in identifying the action in future references or logs.\n\n11. **description**\n    - **Description:** A field for additional information about the action. This can provide context or details that assist others in understanding the purpose of the action.\n\n12. **tags**\n    - **Description:** A field to include tags associated with the action for better categorization and retrieval purposes in the application.\n\nThis JSON structure provides all necessary data for creating a new action confirmation and should be adapted to specific requirements during implementation."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Confirm - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"confirmId\": \"confirmId\",\n    \"isUndo\": true,\n    \"isIgnore\": true,\n    \"name\": \"this is updated name\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/confirm/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "confirm",
+            "update"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: \n  - \"Action - Confirm - Update\" \n  - This is the name of the API request, indicating its purpose is to confirm and update an action.\n\n- **request**: \n  - This object contains all the details needed to make the API request.\n\n  - **auth**: \n    - Defines the authentication method used for the request.\n    \n    - **type**: \n      - \"bearer\"\n      - Indicates that bearer token authentication is being used.\n\n    - **bearer**: \n      - This is an array that contains the bearer token for authentication.\n      \n      - **key**: \n        - \"token\"\n        - This is the identifier for the bearer token field.\n\n      - **value**: \n        - \"BearerToken\"\n        - Placeholder for the actual bearer token required for authorization.\n\n      - **type**: \n        - \"string\"\n        - Specifies that the value for the bearer token is of string type.\n\n  - **method**: \n    - \"PUT\"\n    - This indicates that the HTTP method used for the request is PUT, which is typically used for updating resource data.\n\n  - **url**: \n    - \"http://localhost:3000/api/action/confirm/update\"\n    - This is the endpoint URL where the request will be sent, pointing to the local server for action confirmation and updates.\n\n  - **headers**: \n    - An array containing the required request headers.\n    \n    - **key**: \n      - \"Client-UUID\"\n      - This is the identifier for the client-specific unique identifier in the request headers.\n\n    - **value**: \n      - \"ClientUUID\"\n      - Placeholder for the actual UUID value associated with the client.\n\n    - **type**: \n      - \"default\"\n      - Indicates that this header follows the default type and structure.\n\n  - **body**: \n    - This part contains the main content of the request, structured in JSON format.\n\n    - **mode**: \n      - \"raw\"\n      - Specifies that the request body is sent in raw format.\n\n    - **raw**: \n      - The actual content being sent in the body of the request.\n      \n      - It contains the following key-value pairs:\n      \n        - **sessionId**: \n          - \"sessionId\"\n          - Represents the ID for the session related to the action being confirmed.\n\n        - **accountId**: \n          - \"accountId\"\n          - Identifies the account associated with the action.\n\n        - **path**: \n          - \"/live/channel/video123\"\n          - This is the URL path to the live channel or resource being targeted in the update.\n\n        - **targetType**: \n          - \"videoId\"\n          - Specifies the type of target resource, which in this case is a video.\n\n        - **targetId**: \n          - \"videoId\"\n          - This indicates the specific ID of the video being targeted for the update.\n\n        - **sourceType**: \n          - \"accountId\"\n          - This indicates that the source of the action is the account ID.\n\n        - **sourceId**: \n          - \"accountId\"\n          - Specifies the ID of the source account related to the action.\n\n        - **confirmId**: \n          - \"confirmId\"\n          - Represents the ID used to confirm the action.\n\n        - **isUndo**: \n          - true\n          - A boolean indicating whether the action should be undone or not.\n\n        - **isIgnore**: \n          - true\n          - A boolean signaling whether to ignore the action or not.\n\n        - **name**: \n          - \"this is updated name\"\n          - Represents the updated name for the action or resource.\n\n        - **description**: \n          - \"\"\n          - A field for providing a description of the action, currently empty.\n\n        - **tags**: \n          - \"\"\n          - A field for any associated tags with the action, currently empty.\n\n    - **options**: \n      - This object defines additional settings for the request body.\n      \n      - **raw**: \n        - This indicates that the content is in raw format.\n        \n        - **language**: \n          - \"json\"\n          - Specifies that the raw body content is formatted as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Confirm - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/confirm/get/?confirmId=confirmId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "confirm",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "confirmId",
+              "value": "confirmId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Confirm - Get\n\nThis endpoint is used to retrieve confirmation details based on specific identifiers. Below is a detailed description of each component of the request:\n\n- **Name**: This defines the endpoint's name as \"Action - Confirm - Get\".\n\n- **Request**: This section outlines the specifics of the API request.\n\n  - **Auth**: This part specifies the authentication method used for the request.\n    \n    - **Type**: Indicates that bearer token authentication is used.\n\n    - **Bearer**: Contains details about the token required for authentication.\n      \n      - **Key**: The identifier for the bearer token. Here it is labeled as \"token\".\n      \n      - **Value**: The actual bearer token string needed for authorization, represented as \"BearerToken\".\n      \n      - **Type**: Indicates that this value is a string.\n\n  - **Method**: Specifies the HTTP method for the request. In this case, it is set to \"GET\", meaning the request is meant to retrieve data.\n\n  - **URL**: The endpoint URL for the request. It includes the base URL followed by the route to the action confirmation. The URL structure indicates three query parameters:\n    \n    - **confirmId**: A required identifier for the confirmation process.\n    \n    - **sessionId**: A required identifier for the session related to the action.\n    \n    - **accountId**: A required identifier for the account associated with the action.\n\n  - **Headers**: This section contains any headers that might be sent with the request. In this example:\n    \n    - **Key**: Currently empty, indicating no specific headers are included.\n    \n    - **Value**: Also empty, confirming no specific value is set for headers.\n    \n    - **Type**: Set to \"default\", indicating it's a standard header.\n    \n    - **Disabled**: This is set to `true`, meaning the header is not currently active and will not be sent with the request.\n\n  - **Body**: This section describes the body of the request.\n    \n    - **Mode**: This indicates the format of the body content. In this case, it is set to \"raw\", indicating that the body content can be sent in a raw format.\n    \n    - **Raw**: The field is left empty, meaning there is no body content being sent in the request.\n\nOverall, this endpoint retrieves confirmation data based on the supplied identifiers with the necessary authorization through a bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Confirm - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/confirm/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "confirm",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description\n\n**Name:** Action - Confirm - Get All\n\n**Request Details:**\n\n- **Auth:**  \n  This section specifies the type of authentication required to access the endpoint. It uses bearer token authentication.\n  - **Type:** The method of authentication is 'bearer'.\n  - **Bearer:** This array contains authentication token details.\n    - **Key:** The name of the token parameter.\n    - **Value:** A placeholder for the bearer token value. This will be replaced with the actual token when making the request.\n    - **Type:** Indicates the data type of the token, which is a string.\n\n- **Method:**  \n  The HTTP method used for this request is 'GET'. This method retrieves data from the specified resource without modifying it.\n\n- **URL:**  \n  This is the endpoint's URL where the request will be sent.\n  - **Base URL:** `http://localhost:3000/` - This means the server is running locally on port 3000.\n  - **Path:** `/api/action/confirm/all/` - This indicates that we are accessing the 'confirm' action under the 'action' API.\n  - **Query Parameters:** \n    - `sessionId=sessionId` - A placeholder for the session ID, which identifies the user session.\n    - `accountId=accountId` - A placeholder for the account ID, which identifies the user's account.\n\n- **Headers:**  \n  This section lists any additional headers that may be sent along with the request.\n  - **Key:** Indicates the name of the header.\n  - **Value:** Specifies the value of the header.\n  - **Type:** Specifies the type of the header (default).\n  - **Disabled:** This header is currently disabled and will not be sent with the request.\n\n- **Body:**  \n  This part defines the body of the request.\n  - **Mode:** The body mode is set to 'raw', indicating that the body is intended to be sent as-is without any formatting.\n  - **Raw:** There is no raw body content for this GET request, as typically GET requests do not have a body.\n\nThis endpoint is designed to retrieve all confirmation actions based on the provided session ID and account ID. Users will need to replace the placeholder values in the URL and the bearer token with actual values to successfully make a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Confirm - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"confirmId\":\"confirmId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/confirm/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "confirm",
+            "delete"
+          ]
+        },
+        "description": "### API Endpoint Description: Action - Confirm - Delete\n\n- **Name**: Action - Confirm - Delete\n  - This is the name of the API endpoint that is used for confirming and deleting an action.\n\n- **Request**:\n  - The entire request structure for the API call, which includes authentication, HTTP method, URL, headers, and the body of the request.\n\n  - **Auth**:\n    - **Type**: Bearer\n      - This specifies that bearer token authentication is used to authorize the request, which is a common method for API security.\n\n    - **Bearer**:\n      - An array containing the authentication details.\n      \n      - **Key**: token\n        - This signifies the type of token being used for authentication.\n\n      - **Value**: sessionId\n        - This represents the actual value of the token, which is the session ID required for the current user session.\n\n      - **Type**: string\n        - Indicates that the value provided is a string type.\n\n  - **Method**: POST\n    - This indicates that the request method being used is POST, which is typically used to send data to the server.\n\n  - **URL**: \n    - `http://localhost:3000/api/action/confirm/delete`\n      - This is the endpoint URL where the request is being sent. It points to a local server running on port 3000.\n\n  - **Headers**:\n    - An array that would typically contain additional metadata for the request.\n    \n    - Currently, the header is empty with a disabled state:\n      - **Key**: (empty)\n      - **Value**: (empty)\n      - **Type**: default\n      - **Disabled**: true\n        - This means that no additional headers are set, and the header section is currently inactive.\n\n  - **Body**:\n    - **Mode**: Raw\n      - Indicates that the request body is in a raw format rather than using form or file uploads.\n\n    - **Raw**: \n      - This is the actual data being sent in the body of the request, represented in JSON format:\n      ```json\n      {\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"confirmId\": \"confirmId\"\n      }\n      ```\n      - **sessionId**: Represents the user's current session ID to maintain state during the operation.\n      - **accountId**: Represents the identifier for the account associated with the action to be deleted.\n      - **confirmId**: Represents the unique identifier confirming the action that is meant to be deleted. \n\nThis description should assist other users in understanding how to appropriately use this API endpoint."
+      },
+      "response": []
+    }
+  ]
+}

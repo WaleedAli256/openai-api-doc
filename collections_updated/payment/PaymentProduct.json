@@ -1,0 +1,1820 @@
+{
+  "info": {
+    "_postman_id": "628dbe40-c5d0-4ada-b82e-61a4c5a27aea",
+    "name": "PaymentProduct",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2560458"
+  },
+  "item": [
+    {
+      "name": "Product - Square - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"name\": \"Gold Plan\",\n        \"type\": \"service\",\n        \"price\": 1.00,\n        \"currency\": \"usd\",\n        \"cryptocurrency\": \"BTC\",\n        \"active\": true,\n        \"description\": \"Gold Plan\",\n        \"images\": [],\n        \"marketing_features\": [],\n        \"metadata\": {},\n        \"shippable\": true\n    },\n    \"isSaveProduct\": true,\n    \"isPrimary\": false,\n    \"provider\": \"square\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "This endpoint - `http://localhost:3000/api/payment/product/create`, is named as \"Product - Square - Create ++\".  It is a POST method which is used for creating a new product with different properties within the payment system.\n\nHere is the description of each data involved in this endpoint:\n\n- **\"name\"**: Refers to the name of this endpoint, it helps developers clearly identify the purpose of this endpoint.\n\n- **\"request\"**: Contains the details about HTTP request such as method, url, and other request data.\n\n- **\"method\"**: Specifies the HTTP method used to send the request. In this case it's 'POST'.\n\n- **\"url\"**: Represents the URL where the request is sent, it specifies the location of the resource on the server.\n\n- **\"headers\"**: (Currently Empty) Can be used to pass additional information with the HTTP request.\n\n- **\"body\"**: Contains the actual request data that will be sent to the server. Its mode is 'raw'.\n\n- **\"raw\"**: Contains the json data. This includes:\n\n  - **\"accountId\" & \"sessionId\"**: user session and identification information.\n  - **\"source\"**: This is the object describing the product.\n      - **\"name\" & \"description\"**: Name and brief details of the product.\n      - **\"type\"**: The type of product, such as physical goods, services etc.\n      - **\"price\" & \"currency\"**: The price of product in the mentioned currency.\n      - **\"cryptocurrency\"**: The type of cryptocurrency that is accepted for the product. Here, it is 'BTC' (Bitcoin).\n      - **\"active\"**: Its value determines whether the product is currently available for purchase.\n      - **\"images\"** & **\"marketing_features\"** (currently empty): They could be used to hold the URLs of the product's images and its marketing features data.\n      - **\"metadata\"** (currently empty): A place to store some additional, custom data on the product.\n      - **\"shippable\"**: A boolean determining whether the product is shippable or not.\n\n  - **\"isSaveProduct\"**: A boolean that determines whether the product should be saved.\n  \n  - **\"isPrimary\"** : A boolean that determines if the product is the primary one.\n  \n  - **\"provider\"**: The payment provider, here it is 'square'.\n\n- **\"options\"**: Contains optional settings. In this case it sets the 'language' option to 'json'."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Square - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"productId\": \"8adf9456-7094-4847-9f31-3adbf6137d3e\",\n    \"source\": {\n        \"name\": \"Gold Pro\"\n    },\n    \"isSaveProduct\": true,\n    \"isPrimary\": false,\n    \"provider\": \"square\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "This endpoint, titled \"Product - Square - Update\", is used to update a product within the Payment API. It uses the HTTP method \"PUT\" and can be accessed via the given URL: \"http://localhost:3000/api/payment/product/update\". No specific headers are required for this request. \n\nThe payload, or body of the request, must be in \"raw\" mode and structured as a JSON object. Let's break down each of its properties:\n\n- \"accountId\": This required string field should contain the account ID related to the product that needs to be updated.\n\n- \"sessionId\": Here, you should provide the session ID associated with the request. This is also a required string field.\n\n- \"productId\": This is the unique identifier for the product to be updated. It should be a string in the UUID format.\n\n- \"source\": This is an object field that contains the \"name\" property. The \"name\" property should contain a string value that represents the new name for the product.\n\n- \"isSaveProduct\": This is a boolean field. When it's set to true, the updated product will be saved. If false, the product will be updated but not saved.\n\n- \"isPrimary\": This boolean field indicates whether the updated product should be set as the primary product. If it's set to true, this product will take priority over other products.\n\n- \"provider\": This is a string field representing the payment provider's name. In this case, the value should be set as \"square\".\n\nThe payload options specify that the language used in the raw body is JSON. This means that the body should be formatted as a valid JSON object."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Square - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/?productId=8adf9456-7094-4847-9f31-3adbf6137d3e&provider=square&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "productId",
+              "value": "8adf9456-7094-4847-9f31-3adbf6137d3e"
+            },
+            {
+              "key": "provider",
+              "value": "square"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is designed to fetch a specific product details.\n\n\"Product - Square - Get\" : This refers to the unique name of the API endpoint. It is structured as \"Product - [Payment Provider] - [HTTP Method]\". In this case, \"Square\" is the payment provider and \"Get\" is the HTTP method signifying this API call is used to retrieve information.\n\n\"request\" : This is the main part of the API endpoint that includes all the necessary information to make the HTTP request.\n\n\"method\": \"GET\" : This specifies the HTTP method used for the request. \"GET\" is a request method to retrieve information from the server using a given URI.\n\n\"url\" : The URL/URI where the API request is sent. The URL includes query parameters which provide details required by the API.\n\n- \"productId=8adf9456-7094-4847-9f31-3adbf6137d3e\": The query parameter 'productId' is a unique identifier for the product that needs to be retrieved.\n    \n- \"provider=square\": The 'provider' query parameter specifies the payment provider for the product. In this case, the payment provider is 'Square'.\n    \n- \"accountId=accountId\": 'accountId' is another query parameter signifying the unique identifier associated with the user's account.\n    \n- \"sessionId=sessionId\": 'sessionId' is the identifier of the session in which the API call is being made.\n\n\"headers\" : This refers to the HTTP headers. This field is currently an empty array in the provided data, implying there are no additional headers required for this API call."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Square - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/?provider=square&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "square"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Product - Square - Get All\". It is associated with a GET request for fetching all the product data from the Square payment provider. \n\n1. \"name\": This is the name of the endpoint. It signifies what exactly this API call is supposed to do. In this case, the task is to get all the product details from the Square payment provider. \n\n2. \"request\": It contains details about the type of HTTP request and provides essential information about the uniform resource locator (URL), headers, and body, if any. \n\n   - \"method\": It represents the HTTP method being used for the request. In this case, the method is GET, which is used to retrieve the information from the specified resource, without making any changes to the data.\n \n   - \"url\": This is the endpoint URL where the request will be sent. The URL is 'http://localhost:3000/api/payment/product/getAll/'. \n    \n3. Query Parameters: To this URL, additional parameters are added for specificity: \n\n   - \"provider\": This signifies the payment provider. The value given in the parameter is 'square', which signifies that the required data concerns the Square payment provider.\n\n   - \"accountId\": This is the unique identifier commonly used to reference the user's account with the Square payment provider. The value for this should replace 'accountId' in the URL. \n\n   - \"sessionId\": This represents the current session of the active user. The value for this should replace 'sessionId' in the URL. \n\n4. \"headers\": This usually contains metadata related to the HTTP request. In this case, however, no headers are provided, hence it is an empty array. \n\nThis endpoint, therefore, retrieves all the product details pertaining to a specific account from the Square payment provider. The accountId and sessionId must be provided for successful retrieval of the data."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Square - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"productId\": \"8adf9456-7094-4847-9f31-3adbf6137d3e\",\n    \"provider\": \"square\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "1. \"name\": This data field represents the name of the request, which in this case is \"Product - Square - Delete.\" It acts as a title or descriptor for the specific function that this API call executes.\n\n2. \"request\": This data field encapsulates all the information required to make the API request.\n\n3. \"method\": This subfield under \"request\" defines the HTTP method for the request. Here, it is \"POST\", which is used to submit data to be processed to a specified resource.\n\n4. \"url\": This subfield under \"request\" provides the URL endpoint to which the request is aimed. In this case, the endpoint is for deleting a product at \"http://localhost:3000/api/payment/product/delete.\"\n\n5. \"headers\": This subfield under \"request\" typically contains additional information such as the accepted response type, format, authorization details, etc. Here, this field is empty, indicating no such data is sent with the request.\n\n6. \"body\": This data field under \"request\" contains the main content of the request. It comprises the data required by the server to process the request.\n\n7. \"mode\": This subfield under \"body\" specifies the type of data that \"body\" contains. Here, it is set to \"raw,\" indicating that the data is sent in unprocessed form.\n\n8. \"raw\": This subfield under \"body\" contains the actual data to be sent to the server for processing. \n\n   - \"accountId\": This represents the unique identifier for the user's account.\n   - \"sessionId\": It signifies the unique identifier for the user's current active session.\n   - \"productId\": This is the unique identifier of the product that needs to be deleted.\n   - \"provider\": Here, it's set to \"square,\" indicating the payment provider for the product deletion request.\n\n9. \"options\": This data field provides additional data about how the \"body\" should be handled.\n   \n   - \"raw\": This subfield under \"options\" specifies that the data in the \"raw\" field of the body should be treated as \"json\" language."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AmazonPay - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"name\": \"Gold Plan\",\n        \"type\": \"service\",\n        \"price\": 1.00,\n        \"currency\": \"usd\",\n        \"cryptocurrency\": \"BTC\",\n        \"active\": true,\n        \"description\": \"Gold Plan\",\n        \"images\": [],\n        \"marketing_features\": [],\n        \"metadata\": {},\n        \"shippable\": true\n    },\n    \"isSaveProduct\": true,\n    \"isPrimary\": false,\n    \"provider\": \"amazonpay\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "\"name\": This field specifies the name of the operation as \"Product - AmazonPay - Create ++\".\n\n\"request\": This field contains the details of the HTTP request.\n\n\"method\": This represents the HTTP method. In this case, it's \"POST\" which is used to submit data to be processed to the specified resource.\n\n\"url\": This is the endpoint URL where the API request is sent. It is \"http://localhost:3000/api/payment/product/create\" in this case.\n\n\"headers\": This is an array for request headers. It's empty here, indicating no additional headers are being sent with the request.\n\n\"body\": This field contains the content of the request, which here is set to raw data (JSON).\n\n\"raw\": This is the actual JSON payload which will be sent in the body of the request. \n\n\"accountId\": This value is used to identify the account user while making a payment.\n\n\"sessionId\": This value is used to identify the session when making a payment.\n\n\"source\": This holds the information of the product.\n\n\"name\": The name of the product, in this case, it's \"Gold Plan\".\n\n\"type\": This indicates the type of product. Here, it's a \"service\".\n\n\"price\": This is the price of the product. The value is 1.00 here.\n\n\"currency\": The type of currency in which the price is denoted. Here, it's \"usd\".\n\n\"cryptocurrency\": The type of cryptocurrency accepted. Here, it's \"BTC\".\n\n\"active\": This indicates if the product is active. Here, it's set to true.\n\n\"description\": The textual description of the product. Here, it's \"Gold Plan\".\n\n\"images\": This is an array for any product images. It's left empty here.\n\n\"marketing_features\": This is an array for marketing features of the product. It's left empty here.\n\n\"metadata\": This is meant for additional details about the product as a dictionary. It's left empty here.\n\n\"shippable\": This indicates whether the product is shippable. Here, it is set to true.\n\n\"isSaveProduct\": It denotes whether to save the product information. Here, it's set to true.\n\n\"isPrimary\": It denotes whether this payment method is the primary method for the user. Here, it's set to 'false'.\n\n\"provider\": This indicates the payment provider. In this case, it's \"amazonpay\".\n\n\"options\": This contains additional settings for the request. Here, it specifies that the \"raw\" body should be sent as \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AmazonPay - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"productId\": \"0b3e95db-4f12-4136-8215-8064b8ba63c9\",\n    \"source\": {\n        \"name\": \"Gold  Gol\"\n    },\n    \"isSaveProduct\": true,\n    \"isPrimary\": false,\n    \"provider\": \"amazonpay\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "This endpoint is labeled \"Product - AmazonPay - Update\". It's a PUT request, which means it is generally used for updating an existing resource in your system. The URL refers to the specific route (http://localhost:3000/api/payment/product/update) from which this data will be sent and updated. The headers field is currently blank, but can be utilised to add additional metadata where required.\n\nThe main data required for your API call is held in the body. It is a JSON object with the following fields:\n\n1. \"accountId\": This is a string that represents the unique ID of the account that is updating the product. \n\n2. \"sessionId\": This is a string that represents the unique ID of the session in which the update is taking place. \n\n3. \"productId\": This is a string that holds a unique identifier (UUID format) for the specific product to be updated.\n\n4. \"source\": This is an object that contains a field named \"name\". The \"name\" field contains a string with the name of the product. \n\n5. \"isSaveProduct\": This is a boolean field indicating whether the product will be saved after the update. A value of true means the product will be saved, while a false value indicates it will not be saved.\n\n6. \"isPrimary\": This is a boolean field that indicates whether or not the product is a primary product. A true value means it is a primary product, while false means it is not. \n\n7. \"provider\": This is a string field that indicates the payment provider for the product. In this case, the provider is \"amazonpay\".\n\nThe options field indicates that the format of the raw data is in JSON. It means the data being sent in this payload will conform to JSON formatting rules."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AmazonPay- Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/?productId=0b3e95db-4f12-4136-8215-8064b8ba63c9&provider=amazonpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "productId",
+              "value": "0b3e95db-4f12-4136-8215-8064b8ba63c9"
+            },
+            {
+              "key": "provider",
+              "value": "amazonpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Product - AmazonPay - Get\". Its primary function is to retrieve information about a specific product using the AmazonPay service.\n\nLet's break the different elements of this endpoint:\n\n- \"name\" : This is the title or the identifier for the endpoint. In this case, the name is \"Product - AmazonPay - Get\". It suggests the endpoint deals with fetching product related data that is associated with AmazonPay service.\n\n- \"request\" : It basically has all the information about how the user is going to make the request to the API.\n\n- \"method\" : The method type for this endpoint is \"GET\", which is used to retrieve data from the server.\n\n- \"url\" : This indicates the endpoint to which the request will be sent. Here, the endpoint is \"http://localhost:3000/api/payment/product/get\", but it also contains query parameters which further specify details about the request.\n   \n   Query parameters included in the url:\n\n   - \"productId\" : This is a unique reference ID for the product. It is required to fetch the exact details of a specific product from the server. Here, the product ID is \"0b3e95db-4f12-4136-8215-8064b8ba63c9\".\n\n   - \"provider\" : This indicates the payment service provider. In this case, it is \"amazonpay\".\n\n   - \"accountId\" : The account ID is a unique identifier for a user's account. This is used to match the appropriate user with the request.\n\n   - \"sessionId\" : The session identifier is a unique reference for a specific session, typically used for tracking a user's interaction during a particular time period.\n\n- \"headers\" : Currently, there are no headers declared in the endpoint. Headers are used to provide additional information about the request like the type of data being sent or security credentials."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AmazonPay - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/?provider=amazonpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "amazonpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Product - AmazonPay - Get All\".\n\nThe request for this endpoint is a \"GET\" request, meaning it's used to retrieve data from a server.\n\nThe URL for this request is \"http://localhost:3000/api/payment/product/getAll/\". This is the address where the request will be sent.\n\nThis URL also includes following query parameters:\n\n1. `provider`: This parameter likely specifies the payment provider. In this case, it's set to 'amazonpay'. This indicates that the payments being retrieved are ones made using Amazon Pay.\n\n2. `accountId`: This parameter is probably a unique identifier for an account. It's likely used to retrieve payments specific to a certain account. The actual account id needs to be passed in place of 'accountId' placeholder.\n\n3. `sessionId`: This parameter, similarly to `accountId`, is likely a unique identifier - but for a session. This id is probably used to retrieve payments made during a specific session. The actual session id needs to be passed in place of 'sessionId' placeholder.\n\nThe \"headers\" field in this request is empty, which means no additional data will be sent in the header of the request. Generally, headers might contain information like content type or authentication tokens, but none of that is needed for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AmazonPay - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"productId\": \"0b3e95db-4f12-4136-8215-8064b8ba63c9\",\n    \"provider\": \"amazonpay\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is labelled \"Product - AmazonPay - Delete\". It uses the POST request method, indicating that the purpose is mainly around submitting data to be processed to a specified resource. The URL for the endpoint is \"http://localhost:3000/api/payment/product/delete\". It targets the product deletion feature, particularly around AmazonPay. \n\nThere are no headers specified for this request. Headers typically contain information generally used to process the request and responses.\n\nThe body of the request contains the data that will be sent to the specified URL. Within the 'body' field, there is a 'mode' subfield which is set as 'raw'. This denotes that the data enclosed will be sent as it is, without any reformatting or encoding. The 'raw' subfield contains the data to be sent in its raw format as a JSON. \n\nThe 'options' object contains instructions on how the body should be serialized. In this case, the value of 'options.raw.language' has been specified as 'json', which instructs the application to treat the 'raw' field as a JSON object.\n\nDiving deeper into the 'raw' content body, it includes four main attributes:\n- \"accountId\": Likely refers to the unique identifier of the account which needs to delete the product in AmazonPay.\n- \"sessionId\": Likely refers to a unique session-related identifier potentially for tracking the user's session or for security purposes.\n- \"productId\": It is an identifier of the particular product that needs to be deleted. In this case, the example productId appears to be a UUID.\n- \"provider\": It seems to specify the provider for the payment service (which is 'amazonpay' in this case).\n\nEvery attribute is essential in ensuring proper processing of the product deletion request within AmazonPay. Please replace the example values with actual data when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Checkout - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"amount\": \"15\",\n        \"payment\": {\n            \"cardNumber\": \"5424000000000015\",\n            \"expirationDate\": \"2025-12\",\n            \"cardCode\": \"999\"\n        },\n        \"lineItems\": [\n            {\n                \"itemId\": \"1\",\n                \"name\": \"vase\",\n                \"description\": \"Cannes logo\",\n                \"quantity\": \"18\",\n                \"unitPrice\": \"45.00\"\n            }\n        ],\n        \"tax\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"duty\": {\n            \"amount\": \"8.55\",\n            \"name\": \"duty name\",\n            \"description\": \"duty description\"\n        },\n        \"shipping\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"poNumber\": \"456654\",\n        \"customer\": {\n            \"id\": \"99999456654\"\n        },\n        \"billTo\": {\n            \"firstName\": \"Ellen\",\n            \"lastName\": \"Johnson\",\n            \"company\": \"Souveniropolis\",\n            \"address\": \"14 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"shipTo\": {\n            \"firstName\": \"China\",\n            \"lastName\": \"Bayles\",\n            \"company\": \"Thyme for Tea\",\n            \"address\": \"12 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"userFields\": [\n            {\n                \"name\": \"MerchantDefinedFieldName1\",\n                \"value\": \"MerchantDefinedFieldValue1\"\n            },\n            {\n                \"name\": \"favorite_color\",\n                \"value\": \"blue\"\n            }\n        ]\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": false,\n    \"provider\": \"checkout\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "This API endpoint is named \"Product - Checkout - Create ++\". It is a POST method used to initiate the creation of a product checkout process. \n\nThe URL to hit this endpoint is http://localhost:3000/api/payment/product/create. \n\nThe body contains different types of information. \n\n1. `accountId` refers to the unique identification of the user account. \n\n2. `sessionId` is a unique identifier for the current session. \n\n3. `source` contains multiple sub-fields including:\n\n    a. `amount` which refers to the total amount.\n\n   b. `payment` contains crucial card details which include:\n\n       - `cardNumber` referring to the credit card number. \n\n       - `expirationDate` specifying the expiry date of the credit card.\n\n       - `cardCode` refers to the security code of the credit card.\n\n  c. `lineItems` denotes the items purchased, including their specific details such as `itemId`, `name`, `description`, `quantity`, and `unitPrice`. \n\n   d. `tax`, `duty`, and `shipping` fields include details about the amount, name, and description of tax, duty, and shipping fees respectively.\n\n   e. `poNumber` contains the purchase order number.\n\n   f. `customer` contains the unique customer id. \n\n   g. `billTo` and `shipTo` include the necessary details of the customer including their name, company, address, city, state, ZIP code, and country. \n\n   h. `userFields` contains other non-mandatory fields defined by the user.\n\n4. `isSaveCard` is a boolean which determines whether to save the card information or not.\n\n5. `isPrimary` is a boolean to determine if the current payment method is the primary one or not.\n\n6. `provider` represents the name of the payment gateway/provider. \n\nThe payload must be in a raw JSON format as indicated by the option `{ \"raw\": {\"language\": \"json\"}}`. \n\nThere's no requirement for any specific headers as seen under \"headers\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Checkout - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"productId\": \"de5e3bbe-853e-473c-a6a7-a33b1ec99435\",\n    \"source\": {\n        \"amount\": \"10\",\n        \"payment\": {\n            \"cardNumber\": \"5424000000000015\",\n            \"expirationDate\": \"2025-12\",\n            \"cardCode\": \"999\"\n        },\n        \"lineItems\": [\n            {\n                \"itemId\": \"1\",\n                \"name\": \"vase\",\n                \"description\": \"Cannes logo\",\n                \"quantity\": \"18\",\n                \"unitPrice\": \"45.00\"\n            }\n        ],\n        \"tax\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"duty\": {\n            \"amount\": \"8.55\",\n            \"name\": \"duty name\",\n            \"description\": \"duty description\"\n        },\n        \"shipping\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"poNumber\": \"456654\",\n        \"customer\": {\n            \"id\": \"99999456654\"\n        },\n        \"billTo\": {\n            \"firstName\": \"Ellen\",\n            \"lastName\": \"Johnson\",\n            \"company\": \"Souveniropolis\",\n            \"address\": \"14 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"shipTo\": {\n            \"firstName\": \"China\",\n            \"lastName\": \"Bayles\",\n            \"company\": \"Thyme for Tea\",\n            \"address\": \"12 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"userFields\": [\n            {\n                \"name\": \"MerchantDefinedFieldName1\",\n                \"value\": \"MerchantDefinedFieldValue1\"\n            },\n            {\n                \"name\": \"favorite_color\",\n                \"value\": \"blue\"\n            }\n        ]\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": false,\n    \"provider\": \"checkout\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "Endpoint Name: \"Product - Checkout - Update\". This endpoint allows you to update the checkout information of a specific product.\n\nMETHOD: PUT used to update existing data.\n\nURL: \"http://localhost:3000/api/payment/product/update\" is where the request is being sent to.\n\nHeaders: Empty array indicates no additional headers are needed for this request.\n\nBody: Contains the data to be updated.\n\n- \"accountId\": Account identifier.\n- \"sessionId\": Session identifier.\n- \"productId\": The unique identifier for the product.\n- \"isSaveCard\": A boolean to specify whether to save the card details or not.\n- \"isPrimary\": A boolean to specify whether the payment method is primary or not.\n- \"provider\": The payment provider name.\n\nWithin the \"source\" object:\n\n- \"amount\": The amount to be paid.\n- \"payment\" object: Contains details regarding the payment method.\n    - \"cardNumber\": the card number from which payment will be done.\n    - \"expirationDate\": Date of card expiry.\n    - \"cardCode\": Security code of the card.\n- \"lineItems\": Array of items in the order. Each item contains \"itemId\", \"name\", \"description\", \"quantity\" and \"unitPrice\".\n- \"tax\": Contains details about the tax such as \"amount\", \"name\" and \"description\" of tax.\n- \"duty\": Contains details about any duty to be paid with \"amount\", \"name\" and \"description\".\n- \"shipping\": Details about shipping charges include \"amount\", \"name\" and \"description\".\n- \"poNumber\": Purchase Order Number.\n- \"customer\": Contains customer \"id\".\n- \"billTo\": Billing details containing \"firstName\", \"lastName\", \"company\", \"address\", \"city\", \"state\", \"zip\" and \"country\".\n- \"shipTo\": Shipping details containing \"firstName\", \"lastName\", \"company\", \"address\", \"city\", \"state\", \"zip\" and \"country\".\n- \"userFields\": An array of user-defined fields, each object containing a \"name\" and \"value\".\n\nOptions: Specifies the format of the body content. Here, it's set to JSON language."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Checkout- Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/?productId=de5e3bbe-853e-473c-a6a7-a33b1ec99435&provider=checkout&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "productId",
+              "value": "de5e3bbe-853e-473c-a6a7-a33b1ec99435"
+            },
+            {
+              "key": "provider",
+              "value": "checkout"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "The endpoint \"Product - Checkout- Get\" retrieves information about a specific product in the context of a checkout operation of a payment system. \n\nThe endpoint is defined as a GET method, implying that it retrieves information without making modifications to the data on the server. This specific endpoint URL is \"http://localhost:3000/api/payment/product/get/?\".\n\nThe URL has four parameters:\n\n- `productId`: This is a unique identifier for the product in question. In this case, the productId is \"de5e3bbe-853e-473c-a6a7-a33b1ec99435\". Each product has its unique productId. \n\n- `provider`: This signifies the payment provider being used for the purchase. In the context of the request, the provider is \"checkout\". \n\n- `accountId`: An identifier for the account making the purchase. For the purpose of this description, a generic 'accountId' is provided, and it should be replaced with a real accountId at runtime.\n\n- `sessionId`: This typically refers to a specific session of the user (e.g. log-in session). Similar to 'accountId', a generic 'sessionId' is provided for the purpose of this description. This should be replaced with a real sessionId when making a real API call. \n\nThis endpoint does not require any request headers, as indicated by the empty 'headers' field."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Checkout - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/?provider=checkout&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "checkout"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Product - Checkout - Get All\". It's designed to retrieve all product details from the checkout process.\n\nThe request method for this endpoint is \"GET\" which means you are retrieving, or getting data.\n\nThe URL for the request is 'http://localhost:3000/api/payment/product/getAll/'. This is the address where the request is made. The URL comprises of several parameters which are described as:\n\n1. provider: This is an important parameter which defines the payment gateway provider. In this case, it is 'checkout'.\n2. accountId: This parameter identifies the specific account for which the data is to be retrieved. This is particularly useful for instances where multiple accounts may exist.\n3. sessionId: This parameter is typically used to maintain the user's session. It is unique for every session and is usually used to maintain a secure connection between the client and the server.\n\nThe \"headers\" field in the request is currently empty, this means no additional HTTP headers are added to this GET request. Headers are usually optional and are used to include additional data about the request like content type, authentication, response format etc.\n\nIn summary, this endpoint fetches all the product details involved in the checkout process of a specific account and session, from the payment provider that is specified. Please make sure to replace 'accountId' and 'sessionId' placeholders with valid values in the actual request URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Checkout - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"productId\": \"de5e3bbe-853e-473c-a6a7-a33b1ec99435\",\n    \"provider\": \"checkout\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is titled 'Product - Checkout - Delete'. It is designed to delete a specific product from the checkout.\n\nThe 'POST' method is utilized for this request, signifying the server accepts data enclosed in the request, and usually uses this data to modify its state. For instance, it will delete a product from the checkout in this case.\n\nThe URL for the request is 'http://localhost:3000/api/payment/product/delete', indicating that it is likely a local development server for deleting a product from a payment system.\n\nAlthough the 'headers' array is currently empty, it could contain additional information that the client (or 'user') wishes to pass to the server.\n\nThe request body uses raw JSON.\n\nFour pieces of data are required:\n\n- 'accountId': This is a string, typically a unique identifier, representing a specific account. This is likely the account that the user wishes to delete a product from.\n- 'sessionId': This is also a string, typically a unique identifier, representing a specific session. This could be used to identify a particular shopping session.\n- 'productId': Another string, usually a unique identifier, represents a specific product. In this case, it might be the product that the customer wishes to delete from the checkout.\n- 'provider': Finally, the string 'checkout' is passed in here. This could potentially be used to identify the payment provider or process that the checkout system uses.\n\nThe 'options' object contains information about the raw data in the body of the request, indicating that the language used in this instance is JSON. \n\nPlease replace the placeholders for 'accountId', 'sessionId', and 'productId' with actual values before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AuthorizeNet - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"amount\": \"5\",\n        \"payment\": {\n            \"cardNumber\": \"5424000000000015\",\n            \"expirationDate\": \"2025-12\",\n            \"cardCode\": \"999\"\n        },\n        \"lineItems\": [\n            {\n                \"itemId\": \"1\",\n                \"name\": \"vase\",\n                \"description\": \"Cannes logo\",\n                \"quantity\": \"18\",\n                \"unitPrice\": \"45.00\"\n            }\n        ],\n        \"tax\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"duty\": {\n            \"amount\": \"8.55\",\n            \"name\": \"duty name\",\n            \"description\": \"duty description\"\n        },\n        \"shipping\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"poNumber\": \"456654\",\n        \"customer\": {\n            \"id\": \"99999456654\"\n        },\n        \"billTo\": {\n            \"firstName\": \"Ellen\",\n            \"lastName\": \"Johnson\",\n            \"company\": \"Souveniropolis\",\n            \"address\": \"14 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"shipTo\": {\n            \"firstName\": \"China\",\n            \"lastName\": \"Bayles\",\n            \"company\": \"Thyme for Tea\",\n            \"address\": \"12 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"userFields\": [\n            {\n                \"name\": \"MerchantDefinedFieldName1\",\n                \"value\": \"MerchantDefinedFieldValue1\"\n            },\n            {\n                \"name\": \"favorite_color\",\n                \"value\": \"blue\"\n            }\n        ]\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": false,\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Product - AuthorizeNet - Create ++\". It uses the POST method to send information to the URL http://localhost:3000/api/payment/product/create to create a new payment product. It uses raw JSON as its body format. Here are the details of the data included:\n\n1. **accountId**: The unique identifier of the account requesting the transaction.\n\n2. **sessionId**: The unique identifier for the session in which the request is made.\n\n3. **source**: The source for the payment details. It includes:\n\n    - **amount**: The total amount for the transaction.\n    - **payment**: Payment card details, including:\n      - **cardNumber**: The number on the payment card.\n      - **expirationDate**: The date when the card will expire.\n      - **cardCode**: The card's security code.\n    - **lineItems**: An array of items included in the transaction, with fields for item's id, name, description, quantity, and unit price.\n    - **tax**:  The tax details, including the tax amount, tax name, and tax description.\n    - **duty**: The duty details, including the duty amount, duty name, and duty description.\n    - **shipping**: The details of the shipping charges, if any.\n    - **poNumber**: The Purchase Order Number of the transaction.\n    - **customer**: Customer's details, including the customer's id.\n    - **billTo**: Billing address details.\n    - **shipTo**: Shipping address details.\n    - **userFields**: An array of additional user-defined fields.\n\n4. **isSaveCard**: A Boolean field indicating whether the card should be saved for future transactions.\n\n5. **isPrimary**: A Boolean field indicating whether the current source is the primary source.\n\n6. **provider**: The name of the payment provider, in this case, it's AuthorizeNet.\n\nRemember to replace all string values with actual data when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AuthorizeNet - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"source\": {\n        \"amount\": \"5\",\n        \"payment\": {\n            \"cardNumber\": \"5424000000000015\",\n            \"expirationDate\": \"2025-12\",\n            \"cardCode\": \"999\"\n        },\n        \"lineItems\": [\n            {\n                \"itemId\": \"1\",\n                \"name\": \"vase\",\n                \"description\": \"Cannes logo\",\n                \"quantity\": \"18\",\n                \"unitPrice\": \"45.00\"\n            }\n        ],\n        \"tax\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"duty\": {\n            \"amount\": \"8.55\",\n            \"name\": \"duty name\",\n            \"description\": \"duty description\"\n        },\n        \"shipping\": {\n            \"amount\": \"4.26\",\n            \"name\": \"level2 tax name\",\n            \"description\": \"level2 tax\"\n        },\n        \"poNumber\": \"456654\",\n        \"customer\": {\n            \"id\": \"99999456654\"\n        },\n        \"billTo\": {\n            \"firstName\": \"Ellen\",\n            \"lastName\": \"Johnson\",\n            \"company\": \"Souveniropolis\",\n            \"address\": \"14 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"shipTo\": {\n            \"firstName\": \"China\",\n            \"lastName\": \"Bayles\",\n            \"company\": \"Thyme for Tea\",\n            \"address\": \"12 Main Street\",\n            \"city\": \"Pecan Springs\",\n            \"state\": \"TX\",\n            \"zip\": \"44628\",\n            \"country\": \"US\"\n        },\n        \"userFields\": [\n            {\n                \"name\": \"MerchantDefinedFieldName1\",\n                \"value\": \"MerchantDefinedFieldValue1\"\n            },\n            {\n                \"name\": \"favorite_color\",\n                \"value\": \"blue\"\n            }\n        ]\n    },\n    \"isSaveCard\": true,\n    \"isPrimary\": false,\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "This endpoint titled \"Product - AuthorizeNet - Update\" accepts a PUT request to update a product's payment information in the AuthorizeNet system.\n\nThe URL for this endpoint is `http://localhost:3000/api/payment/product/update`. It does not require any headers. \n\nThe body of the request must be in raw format, written in JSON language. The data fields in the body are as follows:\n\n- `accountId`: This is the unique identifier for the account.\n- `sessionId`: It represents the current session's unique identifier.\n- `isSaveCard`: This boolean field indicates if the card is to be saved. It’s set to true if a customer wants to save their card for future transactions.\n- `isPrimary`: This boolean field checks if the provided card is the primary card or not.\n- `provider`: Provider name, in this case, it's ‘authorizenet’.\n\nWithin the source object, there are further fields:\n\n- `amount`: The total payment amount.\n- `payment`: Contains card details, such as:\n   - `cardNumber`: This is the card number.\n   - `expirationDate`: The expiry date of the card.\n   - `cardCode`: The card's security code.\n- `lineItems`: Lists the products purchased in the transaction. Each product has fields including `itemId`, `name`, `description`, `quantity`, and `unitPrice`.\n- `tax`: Provides information about tax applied - `amount`, `name`, and `description`.\n- `duty`: Contains information about any applied duties - `amount`, `name`, and `description`.\n- `shipping`: Contains the shipping information - `amount`, `name`, and `description`.\n- `poNumber`: Purchase order number.\n- `customer`: Contains the unique `id` of the customer.\n- `billTo`: Contains billing address information with fields like `firstName`, `lastName`, `company`, `address`, `city`, `state`, `zip`, `country`.\n- `shipTo`: Contains shipping address information similar to the `billTo` section.\n- `userFields`: This is an array of custom fields where each object has a `name` and `value`."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AuthorizeNet - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/?productId=02991e85-ff29-4d1f-b5c4-3d6568967bad&provider=authorizenet&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "productId",
+              "value": "02991e85-ff29-4d1f-b5c4-3d6568967bad"
+            },
+            {
+              "key": "provider",
+              "value": "authorizenet"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Product - AuthorizeNet - Get\". It is a GET request intended for fetching product data using the AuthorizeNet payment gateway from your local server. Each parameter in the URL is detailed as follows:\n\n1. `productId`: This is a unique identifier for the product you are requesting information for. It takes the form of a universally unique identifier (UUID), for example, `02991e85-ff29-4d1f-b5c4-3d6568967bad`. You must replace this with the ID of the product you wish to fetch the data for.\n\n2. `provider`: This parameter is hardcoded to `authorizenet` indicating that the payment provider being used is AuthorizeNet. It does not need to be altered.\n\n3. `accountId`: This parameter represents a specific account associated with the API and should be replaced with the actual account ID you're making requests for.\n\n4. `sessionId`: This is a placeholder for the session ID. It helps in maintaining the session state throughout the interaction with the API. Replace this with the actual session ID for each unique session.\n\nFinally, the request is sent with no specific headers, as indicated by the `\"headers\": []` line."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AuthorizeNet - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/?provider=authorizenet&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "authorizenet"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is titled \"Product - AuthorizeNet - Get All\". It retrieves all the product data related to the AuthorizeNet payment gateway. Here is the detailed description of each data point in the endpoint:\n\n1. **name**: This is the title or name of the API endpoint. It is utilized to identify the purpose of the endpoint. In this case, the name \"Product - AuthorizeNet - Get All\" signifies that this endpoint is used to fetch all product data from the AuthorizeNet payment gateway.\n\n2. **request**: This object provides details about the request that will be sent when this endpoint is called, including the method, URL, and optional headers.\n\n    - **method**: This is the HTTP method that the request uses. Here, it is \"GET\", which is used to retrieve data from a specific resource.\n    \n    - **url**: This is the specific web location where the request will be sent. The URL is \"http://localhost:3000/api/payment/product/getAll/\". There are also a few query parameters attached:\n    \n        - **provider**: This parameter specifies the payment gateway provider, which is 'authorizenet' in this case.\n        \n        - **accountId**: This parameter needs to be replaced with the actual id of the account to tie the request to the correct account.\n        \n        - **sessionId**: Similar to \"accountId\", this parameter should be replaced with an actual session id which can be used for linking the request with a particular session.\n        \n3. **headers**: This is an array used to pass additional information with the request. In this case, it's empty, so no additional headers are sent with the request. If required, headers like Content-Type, Authentication, etc. can be included for specific needs."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - AuthorizeNet - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"productId\": \"02991e85-ff29-4d1f-b5c4-3d6568967bad\",\n    \"provider\": \"authorizenet\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "This API endpoint, named \"Product - AuthorizeNet - Delete\", is used to remove a product in the payment processing system, Authorize.Net.\n\nThe method used for this request is POST and it is targeted at the URL: `http://localhost:3000/api/payment/product/delete`.\n\nThis endpoint does not require any specific HTTP headers.\n\nThe body of the request contains several pieces of data, which are sent in JSON format. Here's a breakdown of each individual piece of data in this request body:\n\n- `accountId`: A string that represents the account id which we want to refer to for payment handling. It would typically be a unique identifier related to the account in concern - replace it with the actual account id.\n\n- `sessionId`: A string that designates the session id in which this specific request is being made. Like the account id, it should be replaced by a valid session id.\n\n- `productId`: This is a unique identifier for the product you wish to delete. In this case, the product is identified by a UUID `02991e85-ff29-4d1f-b5c4-3d6568967bad`. Replace this UUID with the id of the product you wish to delete from the system.\n\n- `provider`: This is the name of the payment provider. Here, it is `authorizenet`; this suggests that payment processing is through Authorize.Net.\n\nThe `options` field indicates that the language used for conveying the raw data is JSON.\n\nIn general, this endpoint is leveraged to remove a specific product from the payment system. Please ensure to replace all placeholder values with actual data before executing the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - NowPayments - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"name\": \"Gold Plan\",\r\n        \"type\": \"service\",\r\n        \"price\": 1.00,\r\n        \"currency\": \"usd\",\r\n        \"cryptocurrency\": \"BTC\",\r\n        \"active\": true,\r\n        \"description\": \"Gold Plan\",\r\n        \"images\": [],\r\n        \"marketing_features\": [],\r\n        \"metadata\": {},\r\n        \"shippable\": true\r\n    },\r\n    \"isSaveProduct\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"nowpayments\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "This endpoint allows you to create a new product in the NowPayments system. A detailed description of the data it uses is as follows:\n\n- `method`: Request method for the API endpoint, in this case, it is POST i.e., we are adding new data to the database.\n- `url`: The URL of the API endpoint, where HTTP requests are sent. Here, our server is localhost and running on port 3000.\n- `headers`: It contains additional information that client sends to the server.\n- `body`: This is where detailed information of the product to be created is specified in raw JSON format.\n  - `accountId`: This field should contain the specific account ID, which is a unique identifier for the user's account.\n  - `sessionId`: Here you need to input a unique identifier for the current user session.\n  - `source`: This field should carry an object containing various details about the new product:\n     - `name`: Name of the product.\n     - `type`: Type of the product, in the example given, the type is a service.\n     - `price`: Price of the product.\n     - `currency`: The currency for the provided price, here it is given in USD (United States Dollar).\n     - `cryptocurrency`: The cryptocurrency used for payment.\n     - `active`: This field indicates whether the product is active or not. \"True\" value indicates that it is active.\n     - `description`: This field is for providing a description of the product.\n     - `images`: Here we can add an Array of URLs of the product's images. In this case, it's an empty array.\n     - `marketing_features`: Array of marketing features of the product, if any.\n     - `metadata`: This is for adding extra optional information about the product.\n     - `shippable`: This indicates whether the product is shippable or not. \"True\" means it is shippable.\n  - `isSaveProduct`: A boolean field to define if the product should be saved. If \"true\", it will be saved.\n  - `isPrimary`: This field indicates if the product is the primary one by placing \"true\" for yes and \"false\" for no.\n  - `provider`: Specifies the payment provider for the product. In this case, it is \"nowpayments\".\n- `options`: This field specifies the raw option of request body interpretation, it uses JSON language here."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - NowPayments - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"productId\": \"productId\",\r\n    \"source\": {\r\n        \"name\": \"Gold Plan\",\r\n        \"type\": \"service\",\r\n        \"price\": 1.00,\r\n        \"currency\": \"usd\",\r\n        \"cryptocurrency\": \"BTC\",\r\n        \"active\": false,\r\n        \"description\": \"Gold Plan\",\r\n        \"images\": [],\r\n        \"marketing_features\": [],\r\n        \"metadata\": {},\r\n        \"shippable\": true\r\n    },\r\n    \"isSaveProduct\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"nowpayments\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Product - NowPayments - Update\". It uses the PUT HTTP method to update an existing record. The endpoint URL is `http://localhost:3000/api/payment/product/update`.\n\nHere is a detailed description of each parameter in the request body:\n\n- `\"accountId\"`: This is the unique ID of the account related to the product.\n\n- `\"sessionId\"`: Represents the unique session ID of the current user session.\n\n- `\"productId\"`: The unique identifier for the product that needs to be updated.\n\n- `\"source\"`: This is an object encompassing details about the product.\n\n  - `\"source.name\"`: The name of the product.\n  \n  - `\"source.type\"`: The category type the product belongs to, in this example, 'service'.\n  \n  - `\"source.price\"`: The price of the product.\n  \n  - `\"source.currency\"`: The currency in which the product price is denoted, represented in ISO currency codes, for instance 'usd'.\n  \n  - `\"source.cryptocurrency\"`: The type of cryptocurrency accepted for the product, e.g., 'BTC'.\n  \n  - `\"source.active\"`: This boolean value indicates if the product is active or not.\n  \n  - `\"source.description\"`: A brief description of the product.\n  \n  - `\"source.images\"`: An array to store URLs of product images.\n  \n  - `\"source.marketing_features\"`: An array to include any additional marketing features about the product.\n  \n  - `\"source.metadata\"`: An object to store extra key-value pairs related to the product.\n  \n  - `\"source.shippable\"`: This boolean value shows whether the product is shippable or not.\n\n- `\"isSaveProduct\"`: A boolean value to signify whether the product is saved or not.\n\n- `\"isPrimary\"`: This boolean value indicates if the product is a primary product or not.\n\n- `\"provider\"`: It identifies the payment gateway provider, in this instance, 'nowpayments'. \n\nThe body content is formatted as raw JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - NowPayments - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/?productId=nowProductId&provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "productId",
+              "value": "nowProductId"
+            },
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint represents a GET request named \"Product - NowPayments - Get\". It is designed to retrieve product information based on certain identifiers provided in the URL. \n\nHere's the detail of each parameter:\n\n- `name`: This field represents the name of the API request. In this context, the name of the request is 'Product - NowPayments - Get', which suggests that this API request aims to get product-related information from the 'NowPayments' provider.\n\n- `request`: This object contains all the details of the API request. \n\n- `method`: This field within the request object indicates the HTTP method used for the API request. In this case, it is 'GET', which is used to fetch or retrieve data.\n\n- `url`: This parameter within the request object indicates the URL where the API request will be sent. It includes several query parameters that need to be replaced with real values when performing the API call:\n   - `productId`: The identifier of the product you want to fetch information for. Replace 'nowProductId' with the actual product ID.\n   - `provider`: The provider of the service, which is 'nowpayments' in this case.\n   - `accountId`: The account identifier linked with the service provider. Replace 'accountId' with your own account ID.\n   - `sessionId`: The session identifier for the API call. You should replace 'sessionId' with your current session ID.\n\n- `headers`: An array that should contain any additional HTTP headers that you want to include with your request. In this API, there aren't any additional headers provided, so it is currently empty. You might need to add headers like 'Content-Type' or 'Authorization' depending on the API requirements.\n\nPlease replace the placeholders in the URL with actual values before executing the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - NowPayments - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/?provider=nowpayments&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "nowpayments"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is for retrieving all products linked to a specific \"nowpayments\" provider. \n\nHere's a detailed description of the data:\n\n- **name**: This is the name of the endpoint, \"Product - NowPayments - Get All\", giving a clear idea that it is used to get all the products related to 'NowPayments'.\n\n- **request**: This object contains information about the HTTP request to this endpoint.\n\n  - **method**: Here, the method used is \"GET\". GET is a request method supported by HTTP used to request data from a specified resource.\n  \n  - **url**: This is the URL where the requested data is sent. It's set to be \"http://localhost:3000/api/payment/product/getAll/\". The URL includes query parameters:\n  \n     - **provider**: It represents the provider of the product and in this case, the provider is 'nowpayments'.\n  \n     - **accountId**: This query parameter represents the account ID of the user. The actual account ID should replace 'accountId' in the URL when making the request.\n     \n     - **sessionId**: This is the session ID linked to the user. The actual session ID should replace 'sessionId' in the URL when making the request.\n\n- **headers**: Headers let the client and the server pass additional information with an HTTP request. In this case, no additional information is needed, so it's an empty array."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - NowPayments - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"productId\": \"nowProductId\",\r\n    \"provider\": \"nowpayments\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "1. \"name\": This is the title identifier for the API call, so it identifies the general action and target area of this request. The value \"Product - NowPayments - Delete\" implies that this API request is used to delete a product from the 'NowPayments' service.\n\n2. \"request\": This object contains all the required parts of the API request. This includes the method, URL, headers, and body of the request.\n\n3. \"method\": This defines the HTTP method used for this request. The method \"POST\" is utilized here, indicating that the API will create or update the resources identified in the URL.\n\n4. \"url\": This is the HTTP URL where the API request will be sent. In this case, the API request will be sent to \"http://localhost:3000/api/payment/product/delete\".\n\n5. \"headers\": It is an array that should include any additional HTTP headers that are needed for the API request. Currently, it is empty meaning no additional headers are needed for this request.\n\n6. \"body\": It contains the information being sent with the API request. The property \"mode\" indicates the format of the body content, which here is set to 'raw', indicating that the content will be in a raw format as a string.\n\n7. \"raw\": The actual data sent in the request, which will need to match the structure and data types expected by the API. This particular raw data includes:\n     - \"accountId\": The account identifier for which the product should be deleted.\n     - \"sessionId\": The session identifier for the current session.\n     - \"productId\": The product identifier ( in this case, \"nowProductId\") that needs to be deleted.\n     - \"provider\": The provider of the product, here specified as 'nowpayments'.\n\n8. \"options\": This section defines optional settings that modify the way the request is made. In this case, it is specifying that the \"raw\" data is in \"json\" format. It's useful for determining how the system will treat the \"raw\" data in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - PayPal - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"name\": \"Video Streaming Service\",\r\n        \"type\": \"SERVICE\",\r\n        \"description\": \"Video streaming service\",\r\n        \"category\": \"SOFTWARE\",\r\n        \"image_url\": \"https://example.com/streaming.jpg\",\r\n        \"home_url\": \"https://example.com/home\",\r\n        \"price\": \"19.0\",\r\n        \"currency\": \"USD\",\r\n        \"subcategory\": \"\",\r\n        \"tags\": \"\",\r\n        \"metadata\": \"\",\r\n        \"active\": \"\",\r\n        \"availability\": \"\",\r\n        \"status\": \"\",\r\n        \"options\": \"\",\r\n        \"attributes\": \"\",\r\n        \"date\": \"\",\r\n        \"updated\": \"\",\r\n        \"deleted\": \"\"\r\n    },\r\n    \"isSaveCustomer\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"paypal\",\r\n    \"providerData\": \"\",\r\n    \"providerMetadata\": \"\",\r\n    \"providerOptions\": \"\",\r\n    \"providerAttributes\": \"\",\r\n    \"providerStatus\": \"\",\r\n    \"providerAvailability\": \"\",\r\n    \"providerDate\": \"\",\r\n    \"providerUpdated\": \"\",\r\n    \"providerDeleted\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "This endpoint is titled 'Product - PayPal - Create ++'. It uses the POST method and the url for the request is 'http://localhost:3000/api/payment/product/create'. The body of this POST request contains the following data:\n\n1. `accountId`: This is expected to contain the Account ID associated with the product. It is mandatory for each product. \n2. `sessionId`: This is expected to hold the unique Session ID for the current action.\n3. `source`: This encapsulates all the source product details and constitutes of the following sub-fields: \n    - `name`: The name of the product or service being sold.\n    - `type`: The type or kind of the source product. For instance, 'SERVICE'.\n    - `description`: A brief description for the source product.\n    - `category`: Product's category. For instance, 'SOFTWARE'.\n    - `image_url`: A URL pointing to the product's image.\n    - `home_url`: The home page URL for the product or service provider.\n    - `price`: The cost of the product or service.\n    - `currency`: The currency in which the payment will be made.\n    - `subcategory`, `tags`, `metadata`, `active`, `availability`, `status`, `options`, `attributes`, `date`, `updated`, `deleted` : These fields stand for the product's subcategory, tags for search, additional data, activity status, availability, product status, options, attributes,  creation date, date of last update, and deletion status respectively. They have been left blank in this example.\n4. `isSaveCustomer`: It's a boolean, specifying whether to save customer details.\n5. `isPrimary`: A boolean value to indicate whether the provider is the primary provider.\n6. `provider`: Specifies the payment provider. In this case, it is 'paypal'.\n7. `providerData`, `providerMetadata`, `providerOptions`, `providerAttributes`, `providerStatus`, `providerAvailability`, `providerDate`, `providerUpdated`, `providerDeleted`: These fields holds provider specific data, metadata, options, attributes, status, availability, creation date, date of last update, and deletion status. They have been left blank in this example.\n\nPlease note each of these fields should conform to the type and purpose in the final data. As all are included in a 'raw' JSON object, they are expected to follow JSON data types and formatting."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - PayPal - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"productId\": \"PROD-5SY818185N559290P\",\r\n    \"source\": [\r\n        {\r\n            \"op\": \"add\",\r\n            \"path\": \"/description\",\r\n            \"value\": \"Premium video streaming service\"\r\n        }\r\n    ],\r\n    \"isSaveProduct\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "{\n \"name\": This represents the name of the API endpoint. It is called \"Product - PayPal - Update\". It signifies that this API endpoint is used to update a product in PayPal.\n\n \"request\": This object contains details about the HTTP request made to the API endpoint.\n\n   \"method\": Indicates that the method used for the request to this API endpoint is \"PUT\". It is used to update an existing resource.\n\n   \"url\": This is the URL where the API will hit to get a response. In this case, \"http://localhost:3000/api/payment/product/update\" is the location of the API.\n\n   \"headers\": It’s an empty array, which means no extra information is being sent to the server.\n\n   \"body\": Contains the actual data that is being sent over to the API endpoint.\n\n     \"mode\": Indicates that the data is sent in \"raw\" format. \n\n     \"raw\": Contains the JSON formatted data to update the product.\n\n       \"accountId\": The account identity, possibly the user or the business account that owns the product.\n\n       \"sessionId\": The session identity, which likely refers to the specific session of the user making the request.\n\n       \"productId\": This is the identity of the product. \n\n       \"source\": It is an array of patches that describe the changes to be made.\n\n         \"op\": Operation type. In this case, it is \"add,\" meaning you're applying an addition operation. \n\n         \"path\": This is the location where the operation will be performed. Here, it changes/adds to the \"description\".\n\n         \"value\": It's the new value that needs to be added, \"Premium video streaming service\" in this case.\n\n       \"isSaveProduct\": A boolean that determines whether or not to save the product after updates have been made.\n\n       \"isPrimary\": A boolean indicating whether the product is primary or not.\n\n       \"provider\": In this case, the payment provider is \"paypal\".\n\n     \"options\": These are additional settings which the request can use.\n\n       \"raw\": Specifies that the format of data is in plain text (unprocessed data).\n\n          \"language\": Defines that the raw data will be in JSON format.\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Product - PayPal - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/?productId=productIdPayPal&provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "productId",
+              "value": "productIdPayPal"
+            },
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "Endpoint Detailed Description:\n\n**Endpoint name:** Product - PayPal - Get\n\nThis endpoint is used to retrieve information about a specific product from the PayPal payment gateway. \n\n1. **Method:** GET\n\n   This endpoint uses the HTTP 'GET' method, implying that it is designed for fetching data.\n\n2. **URL:** http://localhost:3000/api/payment/product/get/?productId=productIdPayPal&provider=paypal&accountId=accountId&sessionId=sessionId\n\n   This URL specifies the location at which the said operation is to be performed. \n\nHere's what each parameter in the query string means:\n\n- `productIdPayPal`: This parameter is used to specify the unique identifier of the product that you want details for in PayPal's system.\n\n- `provider`: This parameter specifies the payment gateway provider. For this endpoint, it is always set to 'paypal', indicating that the request will be sent to the PayPal system.\n\n- `accountId`: This field holds the value of the account ID. It is used to denote the specific account on PayPal to which the product is associated.\n\n- `sessionId`: This field denotes a unique session established for a user and is used for maintaining context over the server-client interaction period.\n\n3. **Headers:** []\n\n   This endpoint does not require any headers to be included.\n\nRemember to replace the placeholders with actual values when sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - PayPal - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/?provider=paypal&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "paypal"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "Endpoint: Product - PayPal - Get All\n\nThis endpoint, named \"Product - PayPal - Get All\", is a GET method that is used for retrieving all products related to a PayPal account. \n\nThe details of each data point are as below:\n\n1. **name**: This is the name or title of the endpoint. It identifies what the endpoint is about. For this case, the name \"Product - PayPal - Get All\" implies that this API is used to get all the products related to PayPal.\n\n2. **request**: This indicates about the type of action to be performed. In this endpoint, a GET action is performed which is used to read or retrieve data.\n\n3. **method**: This is a part of request. The term \"GET\" indicates that information will be retrieved from a specific source, but no changes will be made to the data source.\n\n4. **url**: This is where the request will be sent to retrieve data. In this case, the URL is \"http://localhost:3000/api/payment/product/getAll/?provider=paypal&accountId=accountId&sessionId=sessionId\". The following components are present in the URL:\n   \n   - Base URL: \"http://localhost:3000/\" is the base part of the API URL.\n   \n   - Endpoint: \"api/payment/product/getAll/\" is the specific location in the API where the resource lies.\n   \n   - Query Parameters: \"provider=paypal&accountId=accountId&sessionId=sessionId\", these are additional parameters sent with the URL for further identification and separation of data. In this context, \n     \n     - \"provider=paypal\" is used to specify that the provider in use is PayPal.\n     \n     - \"accountId\" is used to differentiate between different user accounts.\n     \n     - \"sessionId\" is used to manage the session of the current user.\n\n5. **headers**: These are used to provide information about the body content or about the request itself. In this endpoint, the headers object is empty, which means no additional metadata is sent with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - PayPal - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"productId\": \"productIdPayPal\",\r\n    \"provider\": \"paypal\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Product - PayPal - Delete\". It uses the POST method, which is typically used to send data to a server to create a new resource. The URL for this endpoint is \"http://localhost:3000/api/payment/product/delete\", which suggests this endpoint is used to delete a product from the payment section of an application, specifically a PayPal product.\n\nLet's go through each data field:\n\n1. \"name\": This is the name of the endpoint, which in this case is \"Product - PayPal - Delete\". This field is used to easily identify what the endpoint does.\n\n2. \"request\": This contains all the information required to make a request to this endpoint.\n\n3. \"method\": This refers to the HTTP method used by the request. This endpoint uses the POST method.\n\n4. \"url\": This is the API endpoint which your application needs to call in order to perform the operation of deleting a PayPal product.\n\n5. \"headers\": An array that would usually contain any necessary headers that must be included in the request. As it's empty here, no special headers are required for this endpoint.\n\n6. \"body\": This contains the information that will be sent to the server. This endpoint requires the data in \"raw\" format.\n\n7. \"raw\": This string signifies the body content of the request in its raw state. It appears to be a JSON string containing four parameters - \"accountId\", \"sessionId\", \"productId\", and \"provider\".\n\n   - \"accountId\": A unique identifier for the user's account.\n   \n   - \"sessionId\": A unique identifier for the session in which this request is being made.\n   \n   - \"productId\": A unique identifier for the specific PayPal product that is to be deleted. The keyword 'productIdPayPal' suggests that this is an ID specific to PayPal products.\n   \n   - \"provider\": The payment provider for the product. In this case, the provider is PayPal.\n\n8. \"options\": This field contains settings for how the 'raw' data should be interpreted.\n\n9. \"raw.language\": This instructs the code that the 'raw' data is in 'json' format, which will allow it to be correctly understood."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Stripe - Create ++",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"source\": {\r\n        \"name\": \"Gold Plan\",\r\n        \"active\": true,\r\n        \"description\": \"Gold Plan\",\r\n        \"images\": [],\r\n        \"marketing_features\": [],\r\n        \"metadata\": {},\r\n        \"shippable\": true\r\n    },\r\n    \"isSaveProduct\": true,\r\n    \"isPrimary\": false,\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "This API endpoint is labeled as \"Product - Stripe - Create ++\". It allows you to create a product in Stripe.\n\nThe API uses the POST method to send information to the server endpoint: \"http://localhost:3000/api/payment/product/create\". \n\nThe request body contains the following data fields:\n\n1. `accountId`: A string representing the ID of the account that is creating the product.\n\n2. `sessionId`: A string representing the ID of the session in which the product creation is taking place.\n\n3. `source`: An object representing the details of the product that is being created. It includes the following fields:\n\n    - `name`: A string representing the name of the product. In this case, it's \"Gold Plan\".\n    \n    - `active`: A boolean indicating whether the product is active or not.\n\n    - `description`: A string providing a description of the product. In this case, it's \"Gold Plan\".\n\n    - `images` : An array containing links to images of the product. In this case, the images array is empty.\n\n    - `marketing_features`: An array containing marketing features of the product. This array is empty in this case.\n\n    - `metadata`: An object of metadata related to the product. The metadata object is empty in this case.\n\n    - `shippable`: A boolean indicating whether the product is shippable or not. In this case, it is set to true.\n\n4. `isSaveProduct`: A boolean indicating whether to save the product creation session or not.\n\n5. `isPrimary`: A boolean indicating whether the product is a primary product or not. Here, it is set to false.\n\n6. `provider`: A string representing the provider for product creation. In this case, the provider is Stripe.\n\nThe request body is in raw format with the language set to JSON.\n\nNote: Be sure to replace placeholder values (like \"accountId\", \"sessionId\", etc.) with real values that match your application's data when you actually send this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Stripe - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"productId\": \"prod_QhC3LwzfW9CujU\",\r\n    \"source\": {\r\n        \"name\": \"Gold Plan\",\r\n        \"active\": false,\r\n        \"description\": \"Gold Plan\",\r\n        \"images\": [],\r\n        \"marketing_features\": [],\r\n        \"metadata\": {},\r\n        \"shippable\": true\r\n    },\r\n    \"isSaveProduct\": true,\r\n    \"isPrimary\": true,\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Product - Stripe - Update\" and uses the PUT method for updating an existing product in the Stripe payment system. Here's a comprehensive breakdown of the data fields contained in the request:\n\n- **URL**: The request URL is \"http://localhost:3000/api/payment/product/update\", which is the location where the request is sent to perform the operation.\n\n- **Headers**: Currently, no additional headers are specified in this endpoint.\n\n- **Body**: This is where the details of the product that you want to update are specified. It uses raw JSON data.\n\n---\n\nHere are the details for the individual data fields within the body:\n\n- **accountId**: This is the user's account identifier on your platform.\n\n- **sessionId**: This represents the user's current session ID.\n\n- **productId**: This is the product ID as assigned by Stripe, for the product you intend to update.\n\n- **source**: The source property is an object that holds the information about the product.\n\n  - **name**: The name of the product.\n\n  - **active**: This is a Boolean field indicating if the product is currently active.\n\n  - **description**: A description of the product.\n\n  - **images**: An array that holds the product image URLs.\n\n  - **marketing_features**: An array to store any marketing features of the product.\n\n  - **metadata**: An object to store any additional data you have for the product.\n\n  - **shippable**: A boolean field indicating whether the product can be shipped or not.\n\n- **isSaveProduct**: A boolean field indicating whether the product data should be saved at your end after the update.\n\n- **isPrimary**: A boolean field indicating whether this product is the primary product for the user.\n\n- **provider**: Here, it is set to 'stripe' as the provider of the payment processing service.\n\n---\n\nOn the technical side, the options field has a nested raw object with a language property. Its value is set to \"json\", indicating the type of data used in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Stripe - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/?productId=productId&provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "productId",
+              "value": "productId"
+            },
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Product - Stripe - Get\". It is designed to retrieve the details of a specific product using the Stripe payment API.\n\nThe endpoint follows the 'GET' HTTP request method, which is used to retrieve data from a specified resource.\n\nThe 'url' points to where the API is hosted. In this case, it's hosted on the local machine at the port 3000. It consists of various query parameters - productId, provider, accountId, and sessionId. \n\nThe 'productId' is specific to each product and is used to identify which product's details need to be fetched from the server. The 'provider' query parameter should be set as 'Stripe' to specify that Stripe is the payment provider. The 'accountId' is the unique identifier provided by Stripe to identify an account. Finally, the 'sessionId,' which represents the session in which the user is currently in.\n\nThough there is an empty 'headers' array, this can be used to include additional HTTP headers if required in the future. These can be used to provide additional information about the request or about the client itself. \n\nThis API doesn't require a request body since it's using the 'GET' method. All data are placed in the URL as query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Stripe - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/?provider=stripe&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            ""
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "stripe"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is labeled \"Product - Stripe - Get All\". It represents an API service for accessing a list of all products in Stripe, a popular online payment processing platform.\n\n- Name: The 'name' field indicates the name of the endpoint. In this case, \"Product - Stripe - Get All\" suggests that this endpoint is used for retrieving all product data from Stripe.\n\n- Request: This object contains data about the HTTP request that this endpoint makes.\n\n  - Method: This is a 'GET' request, which means that it's used to retrieve data from a specific resource. The 'GET' request is one of the most common HTTP methods and is typically used for querying data from a server.\n\n  - URL: This is the URL that the request is being sent to. The 'http://localhost:3000/api/payment/product/getAll/' suggests that this request is sent to a local server to retrieve all stripe product data. It's important to note that this URL contains query parameters (`?provider=stripe&accountId=accountId&sessionId=sessionId`). These parameters form a part of the URL which is sent to the server to specify certain data.\n    - 'provider=stripe': This parameter indicates that the selected payment provider is Stripe.\n    - 'accountId=accountId': This parameter should be replaced with the unique identifier for the Stripe account from which you want to retrieve product data.\n    - 'sessionId=sessionId': This parameter signifies an active session. Replace this with your active session ID.\n\n- Headers: The 'headers' field is currently empty, indicating that there are no additional headers included in this HTTP request. Headers are typically used to provide additional metadata about the request. Depending on the API that is being interacted with, this might include authorizations or specific content types.\n  \nPlease ensure to replace 'accountId' and 'sessionId' query parameters with your unique account and session details before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Stripe - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"accountId\": \"accountId\",\r\n    \"sessionId\": \"sessionId\",\r\n    \"productId\": \"prod_QhBzq2l7qN2jUM\",\r\n    \"provider\": \"stripe\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is labeled as \"Product - Stripe - Delete\". It serves the purpose of deleting a product on Stripe.\n\nThe request method for this endpoint is POST, indicating that it will send data to the server to create a new resource. The URL where the request is sent is \"http://localhost:3000/api/payment/product/delete\", which suggests that it's used for deleting a product tied with payment on your local server.\n\nWithin the request, you'll see several pieces of data:\n\n1. \"accountId\": This is a string that represents the unique identification of the user's account. Replace 'accountId' with the actual account ID.\n\n2. \"sessionId\": This is a string that provides a unique session identifier reflecting the user's current session. Replace 'sessionId' with the actual session ID.\n\n3. \"productId\": This is a string that uniquely defines the product on Stripe that is to be deleted. Here, you need to replace 'prod_QhBzq2l7qN2jUM' with the actual Stripe product ID you want to delete.\n\n4. \"provider\": This data field represents the payment provider, in this case, it's 'Stripe'. \n\nAlso note that the request doesn't include any additional headers, and the request body is being sent in raw mode. The language for the raw data is JSON. Always format your data according to the JSON structure when using this endpoint. \n\nThe options field indicates that raw mode is being used and the language of choice is json. Therefore, when using this endpoint, the data should be in a JSON format. \n\nWhen correctly formatted and provided with correct actual data, this endpoint is used to delete the respective product from a Stripe account."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - BitPay - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveProduct\": true,\"isPrimary\": false, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "This endpoint is referenced as \"Product - BitPay - Create\". It executes a POST request to the \"http://localhost:3000/api/payment/product/create\" URL for creating a new product instance in the BitPay platform.\n\nHere is the detailed description of each data part within this endpoint:\n\n- \"name\": It represents the name of the endpoint. In this case, it's set to \"Product - BitPay - Create\".\n\n- \"request\": This is an object containing all the details needed to make the HTTP request.\n\n  - \"method\": The HTTP method used for the request. Here, it's set to \"POST\", meaning data will be sent to the server to create a new resource (a product).\n  \n  - \"url\": The URL where the request will be sent. In this case, it's \"http://localhost:3000/api/payment/product/create\", which indicates a local server is used and it's receiving requests at the specified path for product creation.\n  \n  - \"headers\": HTTP headers to be sent with the request. Currently, it's an empty array, meaning no additional headers are sent with the request.\n  \n  - \"body\": It contains the actual content of the request. The body can take various forms, and here it's in raw JSON format.\n    \n    - \"mode\": It specifies the formatting of the body content. It's set to \"raw\", which means you can input the body content directly as plain text.\n    \n    - \"raw\": The actual content of the body. It consists of several JSON key-value pairs:\n      - \"accountId\": Identifier for the account initiating the creation process.\n      - \"sessionId\": Identifier for the current session of the account.\n      - \"source\": Source of payment. Currently it's null, which means no value is provided.\n      - \"isSaveProduct\": A boolean flag to decide whether to save this product instance. If true, the product will be saved.\n      - \"isPrimary\": A boolean flag indicating whether this product should be set as the primary product. It's set to false by default.\n      - \"provider\": Specifies the provider of the product. Here it's set to \"bitpay\".\n\n    - \"options\": Contains some options related to the body content.\n      \n      - \"raw\": A nested property indicating the language to be used in the body content. Here, it's set to \"json\", meaning the raw body content should be formatted as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - BitPay - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"productId\":\"productId\",\"source\": null,\"isSaveProduct\": true,\"isPrimary\": true, \"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "This endpoint is titled \"Product - BitPay - Update\". It makes a PUT request to the URL \"http://localhost:3000/api/payment/product/update\". The request doesn't require any specific headers.\n\nThe body of the request is in raw JSON format. Descriptions of each field in the request body are as follows:\n\n1. `accountId`: This field is meant to contain the account ID associated with the product. It's a unique identifier for each user account. \n\n2. `sessionId`: The session ID is meant to represent a session instance generated when a user logs into the system. \n\n3. `productId`: This holds the ID of the specific product you want to update. It is a unique identifier for each product in the system.\n\n4. `source`: This field refers to the source from where the request is made. If not needed, it can be set to `null`.\n\n5. `isSaveProduct`: A boolean flag used to determine if the product should be saved or not after the update. If it's `true`, the product is meant to be saved after the update.\n\n6. `isPrimary`: This is another boolean flag that defines whether the product is primary within the user account or not. If `true`, it indicates that the product is set as the primary product.\n\n7. `provider`: The provider field denotes the payment provider. In this instance, the provider is \"bitpay\".\n\nThe `options` section reveals that the language used for this raw data is JSON. Other programming languages could potentially be specified, but the example given uses JSON.\n\nThis endpoint is used for updating product details in the payment system. It uses the BitPay provider for its operations."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - BitPay - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/productId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            "{{productId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Product - BitPay - Get\". It retrieves information about a specific product on BitPay, given the product ID and the account details.\n\n1. **name**: This field records the name of the endpoint. For the current endpoint, it is named \"Product - BitPay - Get\". It signifies that this endpoint is used to retrieve information about a product on BitPay.\n\n2. **request**: This object contains the details of the request that needs to be made to this endpoint. \n\n3. **method**: This field inside the request object indicates the HTTP method to be used when making the request. In this case, the method is \"GET\". This method is used to retrieve or get data from the server.\n\n4. **url**: This field contains the URL where the request will be sent. It is \"http://localhost:3000/api/payment/product/get/productId\". The 'productId' at the end of the URL is a placeholder and it needs to be replaced with the actual product ID for which the details are to be fetched.\n\n5. **provider**: This field is a query parameter in the URL. It indicates the payment provider for the transaction. For this endpoint, the value is predefined as 'bitpay'.\n\n6. **accountId**: This is another query parameter in the URL. It is designed to hold the account ID related to the transaction using the BitPay provider. This field needs to be replaced with the actual account ID during the API call.\n\n7. **sessionId**: Yet another query parameter in the URL, representing the session ID for the specific user or transaction session that is handling the operation. Replace this with the actual session ID during the API call.\n\n8. **headers**: This is an array that should include any headers that need to be sent along with the request. Currently, no headers are being sent with the request as the array is empty.\n\nNote: Before making a call to this endpoint, make sure to replace 'productId', 'accountId', and 'sessionId' in the URL with actual values."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - BitPay - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/productId?provider=bitpay&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            "{{productId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "bitpay"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint pertains to a product managed by BitPay. It provides functionality to retrieve all the information related to a specific product. \n\nComponent Descriptions:\n\n1. **Name**: \"Product - BitPay - Get All\". The name specifies that this API endpoint is used to fetch all data pertaining to a BitPay product.\n\n2. **Request**: This outlines the parameters needed to retrieve the data.\n    \n    - **Method**: \"GET\". This is the HTTP method used for this request, which is \"GET\". This means that information is being retrieved, not altered or deleted.\n    \n    - **URL**: \"http://localhost:3000/api/payment/product/getAll/productId?provider=bitpay&accountId=accountId&sessionId=sessionId\". This is the path to access the service endpoint, along with the necessary query parameters. Here is a breakdown of each parameter:\n\n       - **productId**: Indicates the particular product whose details are to be fetched. It is appended at the end of the initial part of the URL (after /getAll/).\n        \n       - **provider**: Specifies the payment provider. In this case, it's 'bitpay'.\n        \n       - **accountId**: Denotes the unique ID pertaining to a specific account associated with the request. You should consider replacing 'accountId' with your actual account ID.\n\n       - **sessionId**: Represents the session ID for the current user session. Replace 'sessionId' with your actual active session ID.\n\n3. **Headers**: It is an empty array, which means no additional metadata is being sent in this request. If required in the future, headers like authorization token, content-type etc., can be added here."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - BitPay - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"productId\":\"productId\",\"provider\": \"bitpay\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Product - BitPay - Delete\". It's a POST method, which typically means you're submitting information to be processed to a specified resource.\n\nThe endpoint URL given is `http://localhost:3000/api/payment/product/delete`. This URL suggests that this endpoint is used for deleting a product from the BitPay payment system.\n\nThere aren't any headers specified for this endpoint; headers often provide meta-information about the request body or response.\n\nIn the request body, some parameters are sent in JSON format. All of these parameters are required for the operation of this endpoint:\n\n1. `accountId`: This field is used to specify the account from which the product is to be deleted. Typically this would be an identifier unique to each account.\n\n2. `sessionId`: This field is used for session identification. The sessions are usually used to manage user interactions on a site. This sounds like it could be a unique identifier for a specific session in which a user is active.\n\n3. `productId`: This field is the unique identifier of the specific product that is intended to be deleted from the account.\n\n4. `provider`: This field specifies the payment provider. In this case, the provider is set as \"bitpay\". This lets the system know to use the BitPay integration for the operation.\n\nThe body options settings specify that the raw body content language is JSON. This means that the sent body data should be formatted as JSON. JSON is a popular data format with diverse uses in data interchange, including that of web applications."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - CashApp - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveProduct\": true,\"isPrimary\": false, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "The endpoint \"Product - CashApp - Create\" is a POST HTTP method used for creating a new product record in the CashApp system. It sends a request to the URL \"http://localhost:3000/api/payment/product/create\". \n\nIn this endpoint, several pieces of data are provided:\n\n- \"accountId\": This field is a unique identifier for an account in the API's system. The requesting system must provide it in a string format.\n\n- \"sessionId\": The sessionId is a unique ID created for the session by which the current user communicated with the API. This also should be provided in a string format.\n\n- \"source\": This field is used to specify the source of the payment. In this particular case, the source is set to null which indicates that this information is not provided in the create product request.\n\n- \"isSaveProduct\": A boolean value that indicates whether the new product will be saved in our database. If its value is true, the product will be saved. Otherwise, it won't be saved.\n\n- \"isPrimary\": This boolean field is used to denote whether this product is the primary one associated with the account. A value of true represents that this product will be treated as the primary one, while false means otherwise.\n\n- \"provider\": This is a string that specifies the provider of the payment service. In this case, it is set as \"cashapp\".\n\nThe headers are presently empty which means no additional header data is required for this request. The body method mode is set to 'raw', implying that the request data will be sent in the raw form. And, the language specified for this Json-formatted raw request body is JSON.\n\nRemember to appropriately format the strings and handle booleans during implementation. If not formatted correctly, it could potentially lead to unsuccessful API calls."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - CashApp - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"productId\":\"productId\",\"source\": null,\"isSaveProduct\": true,\"isPrimary\": true, \"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "This endpoint is labeled \"Product - CashApp - Update.\" This is a PUT request, which is typically used to update the existing data of a certain resource.\n\nURL: The call is made to \"http://localhost:3000/api/payment/product/update\". This is a local URL and might change depending on your specific server configuration and the environment you are executing the request in.\n\nHeaders: This is an array field and currently empty. Any additional request headers that the API requires should be included here.\n\nBody: This is where the payload data to be sent to the API endpoint resides. The body content type is in JSON format, as specified under options.\n\nHere are the detailed descriptions for each data key in the request body:\n\n1. \"accountId\": This refers to the unique identifier tied to each account. Each user will have their specific accountId.\n\n2. \"sessionId\": This is a unique identifier for that particular session. You can obtain this by creating a new session or using an existing one.\n\n3. \"productId\": This is the unique identifier for each product in the cashapp.\n\n4. \"source\": This field should usually contain the source information related to the request. In the provided data, the source is set to `null`. It's use can be contextual, and it can be ignored unless required by the endpoint.\n\n5. \"isSaveProduct\": This is a boolean field. If set to `true`, it means the user wants the product to be saved. If `false`, the user does not want the product to be saved. \n\n6. \"isPrimary\": Another boolean field. If set to `true`, it indicates that the identified product should be set as the primary product of the user. \n\n7. \"provider\": This represents the service provider. In this case, it is \"cashapp.\" This suggests that the request is being made with respect to the 'cashapp' provider. \n\nRemember to replace the placeholders i.e \"accountId\", \"sessionId\", \"productId\" with actual values before executing the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - CashApp - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/productId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            "{{productId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This API endpoint is named \"Product - CashApp - Get\". It's a GET method which means it retrieves information from the specified resource.\n\nThe URL for the request is http://localhost:3000/api/payment/product/get/productId. \n\nThere are several components in this URL:\n\n1. http://localhost:3000 - This is the base URL that points to the local server running on port 3000.\n   \n2. /api/payment/product/get/productId - This is the specific path to the endpoint that retrieves the product details based on the product ID.\n   \nThe URL also contains query parameters which are:\n   \n1. provider - The payment provider in use; for this endpoint, it's listed as 'cashapp'. This indicates that the CashApp platform is being used for the payment processing service.\n   \n2. accountId - An identifier for the account making the request for product information. This value needs to be entered by the user or is set by the system generating the request.\n   \n3. sessionId - The unique session identifier. It is mainly used for tracking the session of the user interacting with the API. It ensures that the user's activities can be tracked within the application.\n\nThe request doesn't require any specific headers thus the \"headers\" array is empty.\n\nInformation provided by this method is dependent on the database or resource it's accessing. It could be general product details such as product name, price, description or specific to the payment provider - CashApp in this case."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - CashApp - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/productId?provider=cashapp&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            "{{productId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "cashapp"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is called \"Product - CashApp - Get All\". It is designed to retrieve all the information about all products that are related to the CashApp payment provider.\n\nThe request method for this endpoint is 'GET', which is used to retrieve information from the given server using a given URI. \n\nThe URL of the endpoint is 'http://localhost:3000/api/payment/product/getAll/productId' which is intended to be used in a local environment. In the URL, we can see several parameters that would be needed for the server to process the request, they are as follows:\n\n1. 'productId': This is a parameter in the URL that needs to be replaced with the specific ID of the product for which information is being requested.\n\n2. 'provider': This is a query parameter defined in the URL as '?provider=cashapp'. This specifies the payment provider related to the product. In this case, it's set to 'cashapp', denoting the CashApp payment provider's product.\n\n3. 'accountId': This is another query parameter defined after '&' as 'accountId=accountId'. This needs to be replaced with the specific account Id from which the product-related data is to be fetched.\n\n4. 'sessionId': This is another query parameter defined after '&' as 'sessionId=sessionId'. This is typically used for maintaining a server-side session of the user. This should be replaced with valid session ID obtained from the server.\n\nThe 'headers' field in the request is currently empty, suggesting that there are no additional headers to be submitted with the request at this time. However, headers are usually used to provide additional information about the request or the client to the server.\n\nPlease replace these parameters with actual values while making the request. Note that incorrect or missing values could lead to errors or failure in retrieving the corresponding data."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - CashApp - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"productId\":\"productId\",\"provider\": \"cashapp\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Product - CashApp - Delete\". It is designed to delete a specific product from a CashApp account. Here is a detailed explanation of the data:\n\n1. \"name\" - It is the name of the endpoint. In this case, it's named \"Product - CashApp - Delete\". This informs the user about the operation it performs, i.e., deleting a product on CashApp.\n\n2. \"request\" - This is the main section embodying all the details about the request being sent. \n\nUnder \"request\", we have: \n   - \"method\" - It determines the HTTP method used for the request. Here, it's a \"POST\".\n   \n   - \"url\" - It is the specific URL or endpoint where the request is being sent. Here, it's \"http://localhost:3000/api/payment/product/delete\".\n   \n   - \"headers\" - These are extra informations that are being sent with the request. In this case, it's empty.\n   \n   - \"body\" - Contains the actual data that is being sent to the endpoint. \n\nUnder \"body\", we have:\n   - \"mode\" - This informs how the request body is structured. Here, it's \"raw\", meaning the data in the body is processed in its raw form.\n\n   - \"raw\" - This holds the actual JSON data being sent to the endpoint. It includes:\n       - \"accountId\": your account ID.\n       - \"sessionId\": your active CashApp session ID.\n       - \"productId\": ID of the product to delete.\n       - \"provider\": specifies the payment provider, in this case, \"cashapp\".\n\n   - \"options\" - These are additional configurations or settings for the request body. \n\nUnder \"options\", we have:\n   - \"raw\" - This helps set the language of the body content. Here, it's set to be \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Venmo - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveProduct\": true,\"isPrimary\": false, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "Name: \nThe \"name\" is called 'Product - Venmo - Create', which is used for identification purposes. This value is used as the name tag of this specific endpoint in your API(s).\n\nRequest: \nThe request object encapsulates all the information the server needs to understand and process the request. \n\nMethod: \nThe \"method\" parameter in the request object is set to 'POST', specifying the HTTP method to be used when sending the request.\n\nURL: \nThe \"url\" is 'http://localhost:3000/api/payment/product/create'. It's the endpoint you are hitting when making a request to create a product.\n\nHeaders: \nThe \"headers\" field doesn't contain any values. Headers typically contain metadata and properties of the request.\n\nBody: \nThe main content part of your request. A \"body\" contains data you need to send to the server.\n\nMode: \nThe \"mode\" is set to 'raw', representing that the data in 'body' is sent as is, without any specific encoding or formatting.\n\nRaw: \nThe \"raw\" parameter contains a JSON formatted string. The string has following fields:\n\n- \"accountId\": The ID associated with an account.\n- \"sessionId\": ID associated with the current session.\n- \"source\": It's set to null. This field might contain the originating source of the request or payment.\n- \"isSaveProduct\": A flag, indicating if the product should be saved or not. The value is set to 'true'.\n- \"isPrimary\": A flag, indicating whether the product is primary or not. The value is set to 'false’.\n- \"provider\": Provider is specified as 'venmo'.\n\nOptions:\nThe \"options\" represent the available options for the request.\n\nRaw:\nThe 'raw' inside 'options' has 'language' set to 'json', meaning the 'raw' parameter in the request body should be interpreted as JSON format data.\n\nPlease note that, all of these fields might not be necessary in every request and their requirement and usage can change based on various factors like specific endpoint, server configurations, and more."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Venmo - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"productId\":\"productId\",\"source\": null,\"isSaveProduct\": true,\"isPrimary\": true, \"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "The endpoint given is a part of the payment API, specifically for updating Venmo product data. Here's a rundown of the data within the endpoint:\n\n- `name`: The name of the endpoint. Here, it is \"Product - Venmo - Update\" indicating this endpoint is used for updating product details related to Venmo.\n\n- `request`: The detailed request data that contains multiple fields:\n\n    - `method`: The HTTP method used for this request. \"PUT\" implies this request is for updating an existing resource.\n\n    - `url`: The URL where the API submits the request. This particular request is sent to \"http://localhost:3000/api/payment/product/update\".\n\n    - `headers`: Any headers that should be passed along with the request. It is empty in this case.\n\n    - `body`: The information to pass to the API in the request body. It contains a \"mode\" field, a \"raw\" field, and \"options\" field:\n\n        - `mode`: Indicates the type of data sent to the server. In this case, it's \"raw\", which signifies that the data has not been serialized.\n\n        - `raw`: Contains the raw, unformatted request body content. This is usually a string that is sent exactly as is. Here, it sends a JSON string containing the following fields:\n            \n            - `accountId`: Identifier for the user's account.\n            \n            - `sessionId`: A unique identifier for the current user session.\n            \n            - `productId`: Identifier of the product that needs to be updated.\n            \n            - `source`: Field to specify the source of the payment. However, it's set as null in this case.\n            \n            - `isSaveProduct`: A Boolean field indicating whether the product is saved after changes. Set as true, it implies that the updated product info will be saved.\n            \n            - `isPrimary`: A Boolean flag representing if the updated product is the primary one. Set to true, it means the product is set as primary.\n            \n            - `provider`: Name of the payment provider. In this case, it's \"venmo\".\n\n        - `options`: Any options that should be used while sending request body. In this case, it includes language directive \"json\" for \"raw\" which suggests that the text in the \"raw\" field is a JSON string.\n        \nEach of these data fields is important for the invoking API's behavior and the server's process of handling the request. They indicate what action to perform, where to complete it, and what information to use."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Venmo - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/productId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            "{{productId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is defined with the purpose of fetching a particular product details via a GET request.\n\nData Elements:\n\n1. \"name\": This is the title of the API endpoint. In this case, it refers to 'Product - Venmo - Get', which alludes that this endpoint is designed for getting product details using Venmo as a provider.\n\n2. \"request\": This section outlines the main request that the API performs.\n   \n3. \"method\": In this context, \"GET\" is used. This implies that this API endpoint is used to retrieve data from the server at the specified URL.\n\n4. \"url\": This comprises the specific address where the API request is sent. The given URL is \"http://localhost:3000/api/payment/product/get/productId?provider=venmo&accountId=accountId&sessionId=sessionId\", from which;\n\n   - \"http://localhost:3000\" calls an API on your local machine.\n   \n   - \"/api/payment/product/get/productId\" is the route specified for the requested function. In this case, it is looking to get the details of a specific product.\n   \n   - \"?provider=venmo\" specifies Venmo as the provider.\n   \n   - \"&accountId=accountId\" tells the system to use the given accountId to fetch the relevant details.\n   \n   - \"&sessionId=sessionId\" signifies the use of the given session ID to fetch the corresponding details.\n\n5. \"headers\": It's an array that contains the HTTP headers to be sent with the API request. For this endpoint, no headers are required, thus the array is empty. \n\nIn a nutshell, this is an API endpoint to retrieve product details associated with a specific product ID, provider (like venmo), account ID and the session ID.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Venmo - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/productId?provider=venmo&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            "{{productId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "venmo"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Product - Venmo - Get All\". It is a part of the product related operations specifically designed for Venmo service. \n\nThe method for this endpoint is GET which signifies that it is used to read or retrieve data. \n\nThe URL for this endpoint is \"http://localhost:3000/api/payment/product/getAll/productId\". This endpoint is targeted at a local host, designated by 'localhost,' and the port being used for this operation is 3000. The URL follows the path structure /api/payment/product/getAll/productId which indicates that this endpoint is part of the API service relating to payments and specifically deals with Venmo products. The string 'getAll' implies that it fetches all data related to a specific product based on the 'productId' provided in the URL.\n\nFurther, a few queries need to be appended in the URL:\n1. 'provider' which is set to 'venmo' - This attribute indicates that the API service specifically targets operations related to Venmo.\n2. 'accountId' - It needs to be replaced with an actual account ID. This is used to specify the account for which the product details are to be fetched.\n3. 'sessionId' - It needs to be replaced with a valid session ID and indicates that the request is made in the context of a specific user session.\n\nThis endpoint does not require any additional headers to be set in the request. \n\nTo summarise, this endpoint retrieves all product information related to a specified product ID for a particular account, within the scope of Venmo, during a specific user session."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Venmo - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"productId\":\"productId\",\"provider\": \"venmo\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is titled \"Product - Venmo - Delete\". It executes a POST request to `http://localhost:3000/api/payment/product/delete`. The general purpose of this endpoint appears to revolve around facilitating the deletion of a product from a Venmo account.\n\nThe request doesn't include any headers but does contain a body which is made up of various data fields. These fields are all required to process the request accurately.\n\n### Request Body\n\nThe body of the request has several fields:\n\n1. `accountId`: This holds the unique identifier for the account from which you desire to delete the product. Please supply the valid ID of the account.\n\n2. `sessionId`: This represents the unique identifier for the current session. It's necessary to keep track of who is interacting with certain data and ensure secure transactions.\n\n3. `productId`: This contains the unique identifier for the product you want to delete from the account. Please enter the valid ID of the product.\n\n4. `provider`: This field specifies the payment provider, which in this case is pre-populated with 'venmo'. This specifies that the product to be deleted is associated with a Venmo account.\n\nThe `options` field within the body specifies that the data format or `language` is JSON. This indicates that the request body should be in valid JSON format.\n\nPlease ensure the supplied information is accurate and in the right format for the request to be successfully processed."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Zelle - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"source\": null,\"isSaveProduct\": true,\"isPrimary\": false, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "create"
+          ]
+        },
+        "description": "This endpoint is labeled \"Product - Zelle - Create\", signifying that its main function is to create a new product under the payment service, Zelle. It uses the POST method to send data to the specified URL \"http://localhost:3000/api/payment/product/create\".\n\nThe endpoint accepts a JSON object as its body. The details of the body content are as follows:\n\n- `accountId`: This is a unique identifier for the account that you wish to associate with the new product. It should be passed as a string.\n\n- `sessionId`: This also needs to be a unique identifier that represents the user's current session. It's again a string.\n\n- `source`: The original source where this product data is coming from. It can be supplied as a string or null if not available.\n\n- `isSaveProduct`: A boolean indicating whether or not you want to save this product after creation. If this value is true, the created product will be saved to the account. If false, the product will not be saved.\n\n- `isPrimary`: Another boolean flag that tells us whether this product should be set as the primary product for the given account. True would mean it is considered a primary product and false would mean it is not.\n\n- `provider`: This signifies the provider of the product. In this case, it is to be set as \"zelle\".\n\nRemember, there's no specific headers required for this endpoint, however it is case sensitive, so be sure to use the exact same cases as detailed above.\n\nThe endpoint also contains an options object that includes a language field which is set to \"json\". This ensures that the raw body is treated and processed as a JSON object when received.\n\nOverall, use this endpoint when you need to create a new product tied with a Zelle payment system, that you can specify as primary or non-primary and can choose to be saved for future use or discarded after creation."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Zelle - Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"productId\":\"productId\",\"source\": null,\"isSaveProduct\": true,\"isPrimary\": true, \"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "update"
+          ]
+        },
+        "description": "This endpoint is designed for the specific purpose of updating a product. The product in question is related to Zelle, a digital payment service. The key details about the data in this endpoint are as follows:\n\n1. `name`: This refers to the title of this particular endpoint action, which is 'Product - Zelle - Update'. The endpoint is used to update information about a product connected to the Zelle service.\n\n2. `request`: Under this field, information regarding the specific API request is given \n   - `method`: The request type indicated here is 'PUT'. This means the request will be used to update an existing resource on the server.\n   - `url`: This is the URL to which the API request is sent. In this case, 'http://localhost:3000/api/payment/product/update'.\n\n3. `headers`: The empty array indicates there are no additional headers provided for the API request.\n\n4. `body`: This contains information that will be sent to the server. \n   - `mode`: The data transmission format is 'raw'.\n   - `raw`: This field contains the payload or the actual data that is being sent in the request.\n     - `accountId`: This uniquely identifies the account associated with the product.\n     - `sessionId`: This identifies the specific session.\n     - `productId`: This would be the unique identifier for the product that will be updated.\n     - `source`: This is currently set to null, indicating no source information is provided.\n     - `isSaveProduct`: This is a boolean indicator for whether the product should be saved. A value of 'true' indicates the product will be saved.\n     - `isPrimary`: Another boolean field indicating if the product is the primary one. 'true' value means it is a primary product.\n     - `provider`: This is set as 'zelle', indicating that the provider of the service is Zelle.\n   - `options`: It indicates any specific preferences for the request. In this case, it specifies that the payload mentioned in the raw field will be in the JSON language. \n\nOverall, this endpoint facilitates an update action on a product related to the Zelle service. If more details can be provided about the original nature of the product, better documentation can be provided regarding how this endpoint will specifically affect it."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Zelle - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/get/productId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "get",
+            "{{productId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Product - Zelle - Get\". It is designed to retrieve information about a specific product from the Zelle payment interface. The information retrieved is based on the unique identifier of the product.\n\nThe request involves three properties:\n\n- Method: This is a GET request. This is a type of HTTP method used to retrieve data from a server.\n\n- URL: This is the specific location where the request is sent. It is \"http://localhost:3000/api/payment/product/get/productId\"\n\nThere are three important parameters within the URL which need to be substituted with actual values:\n\n1. \"productId\": This refers to a unique identifier of a product in the Zelle interface. Replace 'productId' with the actual identifier of the product you intend to access.\n\n2. \"provider\": This refers to the provider of the payment service, in this case, it is 'zelle'. It is already filled hence doesn't need to be substituted.\n\n3. \"accountId\": This is the specific account related to the payment product. Replace 'accountId' with the actual account ID.\n\n4. \"sessionId\": This is the session during which the request is made. Replace 'sessionId' with the actual session ID.\n\n- Headers: This refers to the metadata sent with the API request. As depicted, no specific headers are attached with the request. Therefore, no specific data is required here. However, different API requests may require different headers.\n\nPlease remember to replace these placeholders (i.e. productId, accountId, sessionId) with your actual values when using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Zelle - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/getAll/productId?provider=zelle&accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "getAll",
+            "{{productId}}"
+          ],
+          "query": [
+            {
+              "key": "provider",
+              "value": "zelle"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "- \"name\": This field represents the name of the endpoint. The given endpoint is named \"Product - Zelle - Get All\". This is helpful in distinguishing among various endpoints in your API collection. In this case, it refers to an endpoint to retrieve all products related to Zelle.\n\n- \"request\": This field is a container that holds the details of the request that is to be made. It includes the method type, URL, and headers.\n  - \"method\": This field specifies the HTTP method used when making the request to the API. In this case, the method is \"GET\", which means this request will retrieve (or 'get') data from a specified resource.\n \n  - \"url\": This field includes the URL to which the request needs to be sent. In this context, 'http://localhost:3000/api/payment/product/getAll/productId' is the API's URL. It also contains some query parameters:\n    - \"provider\": A query parameter used to filter the products by providers. In this case, it is equal to 'zelle' which means that we are filtering all products provided by Zelle.\n    - \"accountId\": It stands for the unique identifier of the account. The value of this field while making the request will correspond to the specific account whose related product data is being requested.\n    - \"sessionId\": It represents unique session identifier which is generally used fortracking a user's session.\n\n- \"headers\": This field is a list where you can specify additional HTTP headers that should be sent in the request. Currently, it's empty, meaning that no additional headers are included with the request. Different kinds of data like authorization tokens, content type, and others can be passed through headers depending on the requirements."
+      },
+      "response": []
+    },
+    {
+      "name": "Product - Zelle - Delete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\": \"accountId\",\"sessionId\": \"sessionId\",\"productId\":\"productId\",\"provider\": \"zelle\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/payment/product/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "payment",
+            "product",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Product - Zelle - Delete\". It is set up for a `POST` request, which typically implies data submission or an action involving manipulation or deletion of data.\n\nThe URL for this request is `http://localhost:3000/api/payment/product/delete`. It suggests that this endpoint could be used to delete a product from a payment collection stored locally (localhost:3000) via the API route `/api/payment/product/delete`.\n\nThere are no specific headers set for this request, which might suggest there's are no restrictions related to language, origin, authorization etc, unless, they're already handled in some different way.\n\nThe request body is configured in `raw` mode. It consists of a JSON object that is expected to contain four properties:\n\n1. `accountId` : This is likely to be a unique identifier for a user account within your system. You should replace \"accountId\" with the actual ID of the account.\n\n2. `sessionId`: It seems like an identifier for the current session. It could be used for verifying that the user session is valid. Replace \"sessionId\" with the actual session ID.\n\n3. `productId`: This appears to be a unique identifier for the product that is intended to be deleted. Replace \"productId\" with the actual product ID.\n\n4. `provider`: This is set as \"zelle\". It indicates that the payment provider for the product is Zelle.\n\nLastly, under options, you have `raw` which is set to a `language` of `json`. It signifies that the API expects the request payload raw data to be in JSON format. Make sure to send request body content as JSON. \n\nIn summary, this \"Product - Zelle - Delete\" endpoint takes a JSON object with four properties (accountId, sessionId, productId, provider) as a body payload and is likley to delete a specific product under an account."
+      },
+      "response": []
+    }
+  ]
+}

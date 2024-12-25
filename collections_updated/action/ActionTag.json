@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "d5e7de17-ee6f-43a4-8722-47909a321fb3",
+    "name": "ActionTag",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Tag - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didTag\": true,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tag/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tag",
+            "create"
+          ]
+        },
+        "description": "**Action - Tag - Create**\n\nThis endpoint is used to create a tag for a specific target in the system. Below is a detailed description of each data field involved in this request.\n\n**Request Details:**\n\n- **Auth Object:**\n  - **Type:** Specifies the method of authentication being used, in this case, it's a bearer token authorization.\n  - **Bearer:** Contains the authorization token needed to access the API.\n    - **Key:** Represents the token identifier, which is \"token\".\n    - **Value:** The actual bearer token. This should be replaced with a valid token when making the request.\n    - **Type:** Indicates the data type of the key, which is set to \"string\".\n\n- **Method:** \n  - Defines the HTTP method used for this request. The method is set to \"POST\", indicating that this request will create a new resource.\n\n- **URL:**\n  - The endpoint URL where the request is being sent. For this request, it is \"http://localhost:3000/api/action/tag/create\".\n\n- **Headers:**\n  - This section can be used to include any additional HTTP headers, but it is blank and disabled at the moment, indicating no extra headers are required for this request.\n\n- **Body:**\n  - This is where the data for the tag creation is specified. The body is sent in a raw JSON format.\n  - **Mode:** Indicates the type of body being used. Here, it is set to \"raw\".\n  - **Raw:** The actual content of the request body. This JSON object includes the following fields:\n    - **sessionId:** A unique identifier for the user session. This needs to be specified to link the tag to a session.\n    - **accountId:** The identifier for the account the tag is associated with.\n    - **path:** The path of the resource being tagged. This typically specifies the location or context in which the tag is applied, like a video in a live channel.\n    - **targetType:** Defines the type of target being tagged. In this example, it's set to \"videoId\".\n    - **targetId:** The specific identifier of the target resource (e.g., the video) you want to tag.\n    - **sourceType:** Indicates the type of source that is being tagged. Here it is set to \"accountId\".\n    - **sourceId:** The identifier of the source being tagged, which corresponds to the account ID.\n    - **didTag:** A boolean value that indicates whether the tagging action has been performed. It is set to true to confirm the action.\n    - **name:** A field for the name of the tag. Currently, it's empty and should be filled with the appropriate tag name.\n    - **description:** A field for a description of the tag. It is also currently empty and can be populated with additional information if needed.\n    - **tags:** This is a field where multiple tags can be specified. It is currently an empty string and should be filled with appropriate tags when creating the tag.\n\nThis endpoint is essential for managing tags associated with various resources in the application, and proper usage of the fields will ensure successful tag creation."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Tag - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didTag\": false,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"tagId\":\"tagId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tag/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tag",
+            "update"
+          ]
+        },
+        "description": "### Action - Tag - Update\n\nThis endpoint allows users to update a tag associated with an action in the system. Below is a detailed description of each data element in the request.\n\n#### Request Components\n\n- **Auth**\n  - **Type**: \"bearer\"\n    - This indicates that the request requires authorization using a bearer token.\n  - **Bearer**\n    - This is an array containing:\n      - **Key**: \"token\"\n        - The key for the bearer token in the header.\n      - **Value**: \"BearerToken\"\n        - The actual token used for authorization, which should be replaced with a valid token.\n      - **Type**: \"string\"\n        - Indicates the data type of the token.\n\n- **Method**: \"PUT\"\n  - This specifies that the request method is PUT, which is typically used to update existing resources.\n\n- **URL**: \"http://localhost:3000/api/action/tag/update\"\n  - This is the endpoint's URL where the request will be sent. It points to the action tag update functionality on the local server.\n\n- **Headers**\n  - An array of header objects:\n    - **Key**: \"Client-UUID\"\n      - A unique identifier for the client making the request.\n    - **Value**: \"ClientUUID\"\n      - Placeholder for the actual UUID value that uniquely identifies the client.\n    - **Type**: \"default\"\n      - Indicates the header's type.\n\n- **Body**\n  - **Mode**: \"raw\"\n    - This indicates that the body of the request is sent as raw data.\n  - **Raw**\n    - The content of the request body formatted in JSON. It includes the following key-value pairs:\n      - **sessionId**: \"sessionId\"\n        - Identifies the current session for tracking purposes. Replace with the actual session ID.\n      - **accountId**: \"accountId\"\n        - Identifies the account associated with the action. Replace with the actual account ID.\n      - **path**: \"/live/channel/video123\"\n        - The path or endpoint related to the resource being updated. Replace with the actual path.\n      - **targetType**: \"videoId\"\n        - Specifies the type of the target being updated; here, it designates a video ID.\n      - **targetId**: \"videoId\"\n        - The identifier for the target that is being modified. This should be replaced with the actual video ID.\n      - **sourceType**: \"accountId\"\n        - Indicates the type of source related to the tag; here, it is an account ID.\n      - **sourceId**: \"accountId\"\n        - The identifier for the source associated with the action. This should be replaced with the actual account ID.\n      - **didTag**: false\n        - A boolean indicating whether the tagging action was performed or not.\n      - **name**: \"\"\n        - A placeholder for the name of the tag. Provide the relevant name as needed.\n      - **description**: \"\"\n        - A placeholder for a description of the tag. Provide the relevant description as needed.\n      - **tags**: \"\"\n        - A placeholder for any tags associated with the action. Provide the relevant tags.\n      - **tagId**: \"tagId\"\n        - The identifier for the tag that is being updated. Replace with the actual tag ID.\n\n### Summary\nThis request is structured to facilitate the update of an action tag, requiring proper authorization and the inclusion of various contextual identifiers and metadata."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Tag - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tag/get/?tagId=tagId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tag",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tagId",
+              "value": "tagId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Tag - Get Endpoint Description\n\n**Name**: Action - Tag - Get  \nThis is an API endpoint designed to retrieve information related to a specific tag associated with an action.\n\n**Request Details**:\n- **Auth**: The request requires bearer token authentication. The token must be included in the request header to authorize access.\n  - **Type**: This specifies the authentication type used. In this case, it’s set to \"bearer\".\n  - **Bearer**: This is a list of tokens that will be used for authorization.\n    - **Key**: This indicates the name of the token, which is \"token\" in this instance.\n    - **Value**: The value provided here should be a valid bearer token, formatted as \"BearerToken\".\n    - **Type**: Indicates the data type of the key value, which is a string.\n\n- **Method**: The HTTP method used for the request is \"GET\". This means the endpoint is intended to retrieve data rather than create or modify it.\n\n- **URL**: This is the endpoint URL where the request will be sent. It consists of a base URL followed by query parameters.\n  - **Base URL**: `http://localhost:3000/api/action/tag/get/`\n  - **Query Parameters**:\n    - **tagId**: This parameter is used to specify the ID of the tag that you wish to retrieve information for. It must be replaced with an actual tag ID value.\n    - **sessionId**: This parameter indicates the session ID for the request. Similar to tagId, it should be replaced with an actual session ID value.\n    - **accountId**: This parameter identifies the account associated with the request. It also needs a real account ID value.\n\n- **Headers**: This section contains headers to be sent with the request. In this instance:\n  - **Key**: No header key is specified.\n  - **Value**: No header value is specified.\n  - **Type**: Set to \"default\", indicating it is a standard header.\n  - **Disabled**: This is marked as true, suggesting that this header will not be included in the request.\n\n- **Body**: The request does not include a body in this case.\n  - **Mode**: Set to \"raw\", indicating that if there were a body, it would be sent as raw data.\n  - **Raw**: An empty string is specified, indicating no body content is submitted with the request.\n\nThis endpoint is useful for fetching tag-related information by providing specific identifiers, ensuring that the request is authenticated properly."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Tag - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tag/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tag",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Tag - Get All\n\n- **Name**: Action - Tag - Get All  \n  This endpoint is used to retrieve all tags associated with a specified action.\n\n- **Request Details**:\n  - **Authentication**: \n    - **Type**: Bearer  \n      This indicates that the request requires a bearer token for authentication. The token should be supplied in the request header.\n    - **Bearer Token**: \n      - **Key**: token  \n        The name of the authentication key is \"token\".\n      - **Value**: BearerToken  \n        This represents the actual bearer token that is used for authentication. It should be replaced with a valid token.\n      - **Type**: string  \n        Indicates that the value of the bearer token is a string.\n\n  - **Method**: GET  \n    This specifies that the HTTP method used for the request is GET, which is used to retrieve data from the server.\n\n  - **URL**: \n    - **Format**: `http://localhost:3000/api/action/tag/all/?sessionId=sessionId&accountId=accountId`  \n    The endpoint to access the action tags. It requires two query parameters:\n      - **sessionId**: A unique identifier for the user session, to track the user's activity and maintain state.\n      - **accountId**: An identifier for the account associated with the request, which specifies which account's tags are being retrieved.\n\n  - **Headers**: \n    - This section includes HTTP headers for the request. Currently, it is empty and disabled, implying that no additional headers are required for this request. Headers can be enabled or modified if necessary.\n\n  - **Body**: \n    - **Mode**: raw  \n      This indicates that the request body is being sent as raw data.\n    - **Raw**: (empty)  \n      Since this is a GET request, the body is not expected to contain data, thus it is empty.\n\nThis endpoint is designed for obtaining information about all action tags related to a specific session and account, utilizing proper authentication via the bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Tag - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tagId\":\"tagId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/tag/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "tag",
+            "delete"
+          ]
+        },
+        "description": "**Action - Tag - Delete Endpoint Description**\n\n- **Endpoint Name**: Action - Tag - Delete\n  - This endpoint is used to delete a tag associated with a specified account.\n\n- **Request Type**: POST\n  - The HTTP method used to send the request is POST, indicating that data will be sent to the server to perform the deletion operation.\n\n- **URL**: `http://localhost:3000/api/action/tag/delete`\n  - This is the endpoint's address where the request will be sent. It is hosted locally on port 3000.\n\n- **Authentication**: Bearer Token\n  - The request requires authentication using a bearer token. This token must be included in the request to authorize the operation.\n\n- **Authorization Details**:\n  - **Token Key**: `token`\n    - The key used to represent the bearer token in the request.\n  - **Token Value**: `sessionId`\n    - This is the placeholder for the actual session ID token that authenticates the user.\n  - **Token Type**: `string`\n    - Indicates that the token is expected to be a string value.\n\n- **Headers**: \n  - There is an empty header in the request that is currently disabled. This may be utilized for future header values but is not active at this time.\n\n- **Body**:\n  - The request body is sent in raw JSON format.\n  - **Body Mode**: Raw\n    - The body is not formatted as form data or x-www-form-urlencoded, but rather as a plain JSON string.\n  - **Raw Content**: \n    ```json\n    {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"tagId\": \"tagId\"\n    }\n    ```\n    - **sessionId**: This field should contain the actual session ID for authentication.\n    - **accountId**: Represents the ID of the account from which the tag should be deleted.\n    - **tagId**: Represents the ID of the tag that is to be deleted.\n\nThis endpoint is primarily used to facilitate the removal of specific tags associated with user accounts, ensuring that appropriate authorization is maintained through the use of a session token."
+      },
+      "response": []
+    }
+  ]
+}

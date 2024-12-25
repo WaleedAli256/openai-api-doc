@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "311dc1b3-2ec2-4b75-9741-5fd6cbe623fe",
+    "name": "ActionIgnore",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Ignore - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didIgnore\": false,\n    \"name\": \"sss\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/ignore/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "ignore",
+            "create"
+          ]
+        },
+        "description": "### Description of Data for the Endpoint: Action - Ignore - Create\n\n- **name**: \"Action - Ignore - Create\"\n  - This is the name of the API request. It indicates that this particular request is used for creating an action that involves ignoring something.\n\n- **request**: \n  - This section describes the details of the API request being made.\n\n  - **auth**: \n    - This specifies the authentication method used for the request.\n    \n    - **type**: \"bearer\"\n      - Indicates that the bearer token authentication method is used to authorize requests.\n\n    - **bearer**: \n      - This array holds objects with token details.\n\n      - **key**: \"token\"\n        - This is the label for the bearer token.\n\n      - **value**: \"BearerToken\"\n        - This is where the actual bearer token string should be placed to authorize the API request.\n\n      - **type**: \"string\"\n        - Specifies the data type for the bearer token value.\n\n  - **method**: \"POST\"\n    - This indicates that the request uses the POST HTTP method to send data to the server.\n\n  - **url**: \"http://localhost:3000/api/action/ignore/create\"\n    - This is the URL endpoint to which the request is sent. It points to the local server at port 3000 and specifies the action to create an ignore action.\n\n  - **headers**: \n    - This section is for any headers to be included in the request.\n\n    - **key**: \"\"\n      - Currently, this header does not have a specified key, meaning it is not being utilized.\n\n    - **value**: \"\"\n      - Corresponding value for the header is also not set.\n\n    - **type**: \"default\"\n      - This indicates that the header type is standard.\n\n    - **disabled**: true\n      - This indicates that the header is disabled and will not be sent with the request.\n\n  - **body**: \n    - This section contains the data that will be sent with the POST request.\n\n    - **mode**: \"raw\"\n      - The body mode indicates that the raw data will be sent in the request.\n\n    - **raw**: \n      - This is the actual raw data being sent, formatted as JSON:\n\n        ```json\n        {\n          \"sessionId\": \"sessionId\",\n          \"accountId\": \"accountId\",\n          \"path\": \"/live/channel/video123\",\n          \"targetType\": \"videoId\",\n          \"targetId\": \"videoId\",\n          \"sourceType\": \"accountId\",\n          \"sourceId\": \"accountId\",\n          \"didIgnore\": false,\n          \"name\": \"sss\",\n          \"description\": \"\",\n          \"tags\": \"\"\n        }\n        ```\n\n      - **sessionId**: \"sessionId\"\n        - This represents the unique identifier for the current session.\n\n      - **accountId**: \"accountId\"\n        - This specifies the account's unique identifier that is associated with the action.\n\n      - **path**: \"/live/channel/video123\"\n        - This indicates the specific path for the resource related to the action.\n\n      - **targetType**: \"videoId\"\n        - This defines the type of target that the action will focus on. In this case, it's a video identified by `videoId`.\n\n      - **targetId**: \"videoId\"\n        - This is the unique identifier for the target resource (video) that is being ignored.\n\n      - **sourceType**: \"accountId\"\n        - This specifies that the source type is based on the account's identifier.\n\n      - **sourceId**: \"accountId\"\n        - This indicates the identifier of the source, which is the account related to this action.\n\n      - **didIgnore**: false\n        - This boolean value indicates whether the action of ignoring has been performed. Here, it is set to false, meaning it has not been ignored yet.\n\n      - **name**: \"sss\"\n        - This field holds a name associated with the ignore action. \n\n      - **description**: \"\"\n        - This field is a placeholder for a description of the ignore action. It is currently empty.\n\n      - **tags**: \"\"\n        - This is a placeholder for any tags related to the ignore action. It is currently empty.\n\n    - **options**: \n      - This section specifies additional options for the body.\n\n      - **raw**: \n        - This specifies the format of the raw data.\n\n        - **language**: \"json\"\n          - Indicates that the raw body is formatted in JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Ignore - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didIgnore\": false,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"ignoreId\":\"ignoreId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/ignore/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "ignore",
+            "update"
+          ]
+        },
+        "description": "### POSTMAN API Collection Description\n\n#### Endpoint Name: Action - Ignore - Update\n\nThis endpoint is designed to update the ignored status of specific actions in the system. Below is a detailed breakdown of each data field within the request.\n\n##### Request Method\n- **Method**: `PUT`\n    - This method is used to update existing resources in the server.\n\n##### Request URL\n- **URL**: `http://localhost:3000/api/action/ignore/update`\n    - This is the endpoint where the request will be sent to update the ignore action.\n\n##### Authorization\n- **Auth**:\n    - **Type**: `Bearer`\n        - This specification indicates that the request requires a Bearer Token for authorization.\n    - **Bearer Token**:\n        - **Key**: `token`\n            - The key for passing the token in the authorization header.\n        - **Value**: `BearerToken`\n            - The actual token used for authorization. Replace `BearerToken` with your real token before making a request.\n        - **Type**: `string`\n            - Indicates that the value should be treated as a string.\n\n##### Headers\n- **Headers**:\n    - **Key**: `Client-UUID`\n        - This is a custom header required to uniquely identify the client making the request.\n    - **Value**: `ClientUUID`\n        - Replace `ClientUUID` with the actual UUID of your client for proper identification.\n\n##### Body\n- **Body**:\n    - **Mode**: `raw`\n        - Indicates that the body content is to be sent as raw data.\n    - **Raw Content**: \n        - The content of the body should be in JSON format. Below is a breakdown of each attribute within the JSON body:\n        ```json\n        {\n            \"sessionId\": \"sessionId\",       // Unique identifier for the session related to the action.\n            \"accountId\": \"accountId\",       // The ID of the account that the action is associated with.\n            \"path\": \"/live/channel/video123\", // The specific path to the resource that is being updated.\n            \"targetType\": \"videoId\",        // The type of target being referenced, here it is a video ID.\n            \"targetId\": \"videoId\",          // The unique identifier of the target resource (e.g., video).\n            \"sourceType\": \"accountId\",      // The type of source being referenced, typically an account ID.\n            \"sourceId\": \"accountId\",        // The unique identifier of the source resource (e.g., account).\n            \"didIgnore\": false,             // A boolean indicating whether the action has been ignored or not.\n            \"name\": \"\",                     // An optional name for the action, if applicable.\n            \"description\": \"\",              // An optional description providing more details about the action.\n            \"tags\": \"\",                     // Tags associated with the action for categorization; can be empty.\n            \"ignoreId\": \"ignoreId\"         // Unique identifier for the ignoring action; needed for updates.\n        }\n        ```\n    - **Options**: \n        - **Raw**: \n            - **Language**: `json`\n                - Specifies that the format of the raw data is JSON.\n\nThis endpoint is essential for managing ignore actions within the system, allowing users to update the ignore status as necessary. Make sure to fill in the placeholders with real data before making the API call."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Ignore - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/ignore/get/?ignoreId=ignoreId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "ignore",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "ignoreId",
+              "value": "ignoreId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Ignore - Get\n\n- **Name**: Action - Ignore - Get\n  - This is the title of the request, indicating that this endpoint is for retrieving information related to the action of ignoring something.\n\n- **Request**: This section contains the details of how to make the API request.\n  \n  - **Auth**: \n    - **Type**: bearer\n      - This specifies that the authentication method used for this request is Bearer Token authentication.\n    - **Bearer**: \n      - A list containing an object that stores the bearer token for authentication. \n        - **Key**: token \n          - This is the identifier for the token.\n        - **Value**: BearerToken\n          - This is a placeholder value for the actual bearer token that the user needs to provide to access the endpoint.\n        - **Type**: string\n          - Indicates that the value for the token is of type string.\n\n  - **Method**: GET\n    - This indicates that the HTTP method being used for this request is GET, which is typically used to retrieve data from the server.\n\n  - **URL**: \n    - `http://localhost:3000/api/action/ignore/get/?ignoreId=ignoreId&sessionId=sessionId&accountId=accountId`\n      - This is the endpoint URL for the GET request. It includes query parameters for `ignoreId`, `sessionId`, and `accountId` which need to be provided to filter or specify the data being retrieved.\n        - **ignoreId**: a parameter representing the unique identifier for the item to be ignored.\n        - **sessionId**: a parameter that indicates the session context in which the ignore action is being performed.\n        - **accountId**: a parameter that identifies the account related to the request.\n\n  - **Headers**: \n    - This is an array that can hold any additional headers required for the request. In this case:\n      - **Key**: \"\" \n        - The key is currently empty, indicating that no extra headers are being used in this request.\n      - **Value**: \"\" \n        - The value is also empty for the same reason.\n      - **Type**: default\n        - This refers to the default type for the header.\n      - **Disabled**: true\n        - This indicates that the header is currently disabled and will not be included in the request.\n\n  - **Body**: \n    - **Mode**: raw\n      - Indicates that the body of the request will contain raw data, but in this case, it is not being used.\n    - **Raw**: \"\"\n      - The raw data field is currently empty, suggesting that no data needs to be sent in the body of this GET request.\n\nThis endpoint is designed to retrieve information based on the provided identifiers without needing to send any additional data in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Ignore - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/ignore/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "ignore",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Detailed Description of the Endpoint Data\n\n- **name**: Represents the label for the API call. In this case, it is \"Action - Ignore - Get All\", indicating the purpose of the request.\n\n- **request**: This object contains all the components needed to make the API request.\n\n  - **auth**: Defines the authentication method used for the API call.\n    - **type**: Specifies the type of authentication. Here, it is set to \"bearer\", indicating that the request uses a Bearer Token for authorization.\n    - **bearer**: An array that holds the details of the bearer token used for authentication.\n      - **key**: This specifies the name of the token parameter. It is named \"token\".\n      - **value**: The actual bearer token or the placeholder in this case, \"BearerToken\", which should be replaced with a valid token during the request.\n      - **type**: Indicates the data type for the token, which is \"string\".\n\n  - **method**: Indicates the HTTP method used for the request. Here, \"GET\" implies that the request is meant to retrieve data from the server.\n\n  - **url**: The endpoint URL where the request will be sent. It consists of:\n    - The base URL: `http://localhost:3000`\n    - The path: `/api/action/ignore/all/`\n    - Query parameters, which include:\n      - **sessionId**: A placeholder named \"sessionId\" that should be replaced with an actual session ID when making the request.\n      - **accountId**: A placeholder named \"accountId\" that should be replaced with a valid account ID.\n\n  - **headers**: This defines any headers that should be included in the request.\n    - The current header indicates an empty key and value, and it is marked as disabled, meaning it will not be included in the request.\n\n  - **body**: Specifies the body of the request.\n    - **mode**: Indicates the format of the body; it is set to \"raw\" in this instance.\n    - **raw**: This is where the body content would be specified. In this case, it is empty, indicating that there is no additional data sent with the request.\n\nThis endpoint is designed to retrieve information related to ignored actions for a specified session and account. Users need to provide valid session and account IDs and a valid bearer token to authenticate the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Ignore - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"ignoreId\":\"ignoreId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/ignore/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "ignore",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint: Action - Ignore - Delete\n\n#### Request Details\n\n- **Authentication**: \n  - **Type**: Bearer\n    - This indicates that the request requires a bearer token for authentication.\n    - **Token**: A placeholder value `sessionId` is specified here. In practice, this should be replaced with an actual session token that is required to authenticate the user making the request.\n\n- **Method**: \n  - **POST**: This request uses the POST method to send data to the server. It is typically used for submitting data or making changes to the server.\n\n- **URL**: \n  - `http://localhost:3000/api/action/ignore/delete`: This is the endpoint where the request is sent. It is hosted locally on port 3000 and pertains to the action of ignoring or deleting an entry.\n\n- **Headers**: \n  - The headers section is currently empty with a disabled entry. You can add any necessary HTTP headers (like Content-Type) here if needed, but as it stands, there are no headers in use.\n\n#### Request Body\n\n- **Mode**: \n  - **Raw**: The body format being used is raw data. This means the data is sent as plain text.\n\n- **Raw Data**: \n  - The body of the request contains JSON formatted data that includes:\n    - **sessionId**: A placeholder string `sessionId`. This should contain the actual session identifier for the user.\n    - **accountId**: A placeholder string `accountId`. This should represent the unique identifier for the user’s account that is being referenced in the operation.\n    - **ignoreId**: A placeholder string `ignoreId`. This should be replaced with the identifier of the specific ignore action that the user wishes to delete.\n\nThis endpoint is designed to delete an ignore action based on the provided IDs, requiring proper authentication and the specific identifiers."
+      },
+      "response": []
+    }
+  ]
+}

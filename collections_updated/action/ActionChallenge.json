@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "a811436a-5589-4772-8098-7c06e8495974",
+    "name": "ActionChallenge",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Challenge - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\":\"Tournament 1\",\n    \"targetText\":\"lets play a cricket match\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/challenge/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "challenge",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Challenge - Create\n\n**Endpoint**: `POST http://localhost:3000/api/action/challenge/create`\n\nThis endpoint is used to create a challenge action in the system. Below is a detailed description of each data point used in the request.\n\n#### Request Authentication\n- **Auth Type**: Bearer\n  - This endpoint requires authentication using a bearer token.\n  - **Key**: `\"token\"`\n    - Represents the authorization token needed to access the endpoint.\n  - **Value**: `\"BearerToken\"`\n    - The actual token that grants access to secure the API.\n\n#### Request Method\n- **Method**: `POST`\n  - This indicates that data is being sent to the server to create a new resource.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/action/challenge/create`\n  - The endpoint URL where the request is sent to create a new challenge.\n\n#### Request Headers\n- **Headers**: \n  - Currently includes an empty header that is disabled. \n  - This may be left for future use or customization.\n\n#### Request Body\n- **Body Mode**: `raw`\n  - The body of the request is sent in raw format.\n  \n- **Raw Data**:\n  ```json\n  {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"path\": \"/live/channel/video123\",\n      \"targetType\": \"videoId\",\n      \"targetId\": \"videoId\",\n      \"sourceType\": \"accountId\",\n      \"sourceId\": \"accountId\",\n      \"name\": \"Tournament 1\",\n      \"targetText\": \"lets play a cricket match\",\n      \"description\": \"\",\n      \"tags\": \"\"\n  }\n  ```\n  \n  - **sessionId**: \n    - A unique identifier for the session related to the challenge.\n    \n  - **accountId**: \n    - The identifier for the account that is creating the challenge.\n    \n  - **path**: \n    - The path where the challenge is located, such as a link to a live channel or video.\n    \n  - **targetType**: \n    - Specifies the type of target for the challenge. In this case, it is set to `\"videoId\"`.\n    \n  - **targetId**: \n    - The specific ID of the target (video) for the challenge.\n    \n  - **sourceType**: \n    - Defines the source type, which is `\"accountId\"` here, indicating the source is an account.\n    \n  - **sourceId**: \n    - The ID of the source account creating the challenge.\n    \n  - **name**: \n    - The name of the challenge; for example, \"Tournament 1\".\n    \n  - **targetText**: \n    - Text associated with the challenge, like \"lets play a cricket match\", which provides context or description of the challenge.\n    \n  - **description**: \n    - An optional field that can be used to provide a more detailed description of the challenge. It is currently empty.\n    \n  - **tags**: \n    - An optional field for categorizing the challenge with tags. It is currently empty.\n\nThis endpoint allows users to create challenges with specific parameters and authentication requirements, making it easier to manage and track challenges within the platform."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Challenge - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"challengeId\": \"challengeId\",\n    \"isConfirm\": false,\n    \"isReject\": false,\n    \"isDismiss\": false,\n    \"isIgnore\": false,\n    \"name\": \"this is updated name\",\n    \"targetText\": \"this is target text\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/challenge/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "challenge",
+            "update"
+          ]
+        },
+        "description": "### Action - Challenge - Update\n\nThis endpoint is used to update an action challenge with the specified details.\n\n#### Request Details\n\n- **Auth**: \n  - **Type**: Bearer authentication.\n  - **Bearer**: \n    - **Key**: `token`\n      - **Value**: `BearerToken` - This should be replaced with a valid token to authorize the request.\n\n- **Method**: \n  - **PUT** - This indicates that the request is intended to update existing data.\n\n- **URL**: \n  - `http://localhost:3000/api/action/challenge/update` - This is the endpoint where the request is sent for updating the challenge.\n\n- **Headers**: \n  - **Client-UUID**: `ClientUUID` - This should be replaced with the unique identifier for the client making the request.\n\n#### Body Parameters\n\nThe body of the request is expected to be in JSON format and contains the following fields:\n\n- **sessionId**: \n  - Type: string\n  - Description: The identifier for the session associated with the challenge.\n\n- **accountId**: \n  - Type: string\n  - Description: The unique identifier for the account involved in the challenge.\n\n- **path**: \n  - Type: string\n  - Description: The path to the resource related to the challenge, for example, a URL to a live channel or video.\n\n- **targetType**: \n  - Type: string\n  - Description: Specifies the type of target entity being updated, e.g., `videoId`.\n\n- **targetId**: \n  - Type: string\n  - Description: The unique identifier for the target entity to be updated.\n\n- **sourceType**: \n  - Type: string\n  - Description: Specifies how the source entity is identified, for example, by `accountId`.\n\n- **sourceId**: \n  - Type: string\n  - Description: The unique identifier for the source entity.\n\n- **challengeId**: \n  - Type: string\n  - Description: The identifier for the specific challenge that is being updated.\n\n- **isConfirm**: \n  - Type: boolean\n  - Description: Indicates whether the challenge is confirmed. Set to `true` or `false`.\n\n- **isReject**: \n  - Type: boolean\n  - Description: Indicates whether the challenge is rejected. Set to `true` or `false`.\n\n- **isDismiss**: \n  - Type: boolean\n  - Description: Indicates whether the challenge is dismissed. Set to `true` or `false`.\n\n- **isIgnore**: \n  - Type: boolean\n  - Description: Indicates whether the challenge is ignored. Set to `true` or `false`.\n\n- **name**: \n  - Type: string\n  - Description: The updated name for the challenge.\n\n- **targetText**: \n  - Type: string\n  - Description: The text associated with the target, used for identifying the context of the challenge.\n\n- **description**: \n  - Type: string\n  - Description: A brief description of the challenge. Can be left empty.\n\n- **tags**: \n  - Type: string\n  - Description: Tags associated with the challenge for categorization. Can be left empty. \n\nThis data structure provides a comprehensive way to specify the details needed to update an action challenge, ensuring all relevant information is captured in the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Challenge - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/challenge/get/?challengeId=challengeId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "challenge",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "challengeId",
+              "value": "challengeId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Challenge - Get\n\n- **Name**: The name of the API request is \"Action - Challenge - Get\". This signifies that the request is related to getting a specific challenge action.\n\n- **Request**: This section outlines the details of the HTTP request being made.\n\n  - **Auth**: \n    - **Type**: The type of authentication used for the API request is \"bearer\". This typically means that access to the endpoint is secured and requires a token.\n    - **Bearer**: \n      - **Key**: Indicates the key for the bearer token, which is labeled \"token\".\n      - **Value**: Here, it is represented as \"BearerToken\". This should be replaced with the actual token that grants access to the API.\n      - **Type**: The format of the token is categorized as \"string\", denoting that it should be a text value.\n\n  - **Method**: The HTTP method being used for this request is \"GET\". This method is used to retrieve data from the specified resource.\n\n  - **URL**: The endpoint URL to which the GET request is sent is \"http://localhost:3000/api/action/challenge/get/\". Additional query parameters are included:\n    - **challengeId**: This parameter is intended to specify the ID of the challenge you wish to retrieve.\n    - **sessionId**: This parameter represents the ID of the session associated with the challenge.\n    - **accountId**: This parameter identifies the account related to the request.\n\n  - **Headers**: This section defines the HTTP headers to be sent with the request. Currently, no additional headers are specified, and it is indicated as \"disabled\", meaning it will not be sent with the request.\n\n  - **Body**: \n    - **Mode**: The body mode for this request is set to \"raw\". This implies that the body, if present, would not have any specific formatting like JSON or form-data.\n    - **Raw**: The raw body content is currently empty, which means that there is no data being sent in the body of the request, as it is not needed for a GET request.\n\nThis endpoint is designed for retrieving information about a specific challenge action based on provided identifiers in the query string. Be sure to replace the placeholders for `challengeId`, `sessionId`, and `accountId` with actual values when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Challenge - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/challenge/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "challenge",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description for \"Action - Challenge - Get All\"\n\n- **name**: This is the title of the API request. It identifies the action as fetching all challenges related to actions.\n\n- **request**: This section contains all the details pertaining to the API request.\n\n  - **auth**: This indicates the authentication type required to access the endpoint.\n  \n    - **type**: Specifies the type of authentication being used. In this case, it is set to \"bearer.\"\n  \n    - **bearer**: This is an array that holds the credentials needed for bearer token authentication.\n    \n      - **key**: This identifies the type of credential, which is \"token\" in this case.\n      \n      - **value**: The actual token used for authentication. It is represented as \"BearerToken\" which serves as a placeholder for the actual token value.\n      \n      - **type**: Indicates the data type of the token, which is \"string.\"\n\n  - **method**: This specifies the HTTP method used for the request. Here, it is a \"GET\" request, which means the endpoint is intended to retrieve data.\n\n  - **url**: This is the endpoint URL where the request is sent. It includes:\n  \n    - **Base URL**: `http://localhost:3000` indicates a local server is being used.\n    \n    - **Path**: `/api/action/challenge/all/` identifies the specific API route for retrieving all challenges.\n    \n    - **Query Parameters**:\n    \n      - **sessionId**: A parameter that is passed in the URL to specify the session for which challenges are being retrieved. It acts as a placeholder and is meant to be replaced with an actual session ID.\n      \n      - **accountId**: Another query parameter used to specify the account associated with the challenges. This is also a placeholder intended for substitution with an actual account ID.\n\n  - **headers**: This section is meant for any HTTP headers that may need to be included in the request.\n\n    - **key**: A placeholder for header keys, which is currently empty.\n    \n    - **value**: A placeholder for header values, which is also currently empty.\n    \n    - **type**: Indicates the type of header, marked as \"default.\"\n    \n    - **disabled**: This flag indicates whether this header is active or not. It is set to true, meaning this header will not be sent in the request.\n\n  - **body**: This section contains the body of the request.\n\n    - **mode**: This defines the format of the request body. Here it is set to \"raw,\" indicating raw data input expected.\n    \n    - **raw**: This field contains the actual body content that will be sent with the request. In this case, it is empty, meaning no additional payload is being sent with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Challenge - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"challengeId\":\"challengeId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/challenge/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "challenge",
+            "delete"
+          ]
+        },
+        "description": "### Action - Challenge - Delete\n\nThis endpoint is used to delete a challenge associated with a user's account. Below is the detailed description of each component involved in the request.\n\n#### Request Authentication\n- **Auth Type**: Bearer\n  - This indicates that the request requires bearer token authentication.\n- **Bearer Token**:\n  - This consists of:\n    - **Key**: \"token\"\n      - The parameter that identifies the bearer token type for authorization.\n    - **Value**: \"sessionId\"\n      - The session identifier used to authenticate the request. This value must be replaced with a valid session token.\n    - **Type**: String\n      - Denotes that the value of the token must be in string format.\n\n#### Request Method\n- **Method**: POST\n  - This specifies that the request should be made using the HTTP POST method.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/action/challenge/delete`\n  - The endpoint where the request is sent. This URL is hosted on the local server at port 3000 and is designed to handle the challenge deletion process.\n\n#### Request Headers\n- **Headers**:\n  - Currently, there are no custom headers specified for this request.\n  - The placeholder is kept disabled, indicating that no headers are necessary unless specifically required for additional functionality or routing.\n\n#### Request Body\n- **Body Mode**: Raw\n  - The body of the request is sent in a raw format, which allows for custom JSON data.\n- **Raw Data**: \n```json\n{\n  \"sessionId\": \"sessionId\",\n  \"accountId\": \"accountId\",\n  \"challengeId\": \"challengeId\"\n}\n```\n  - This is the JSON structure that must be included in the body of the request:\n    - **sessionId**: This field must be populated with the user's session identifier.\n    - **accountId**: This field should contain the ID of the user’s account which owns the challenge.\n    - **challengeId**: This is the unique identifier of the challenge that is to be deleted.\n\n### Summary\nThis API endpoint allows the deletion of a specified challenge for a user by sending a POST request with the necessary authentication and identifying details in the body. Make sure to replace the placeholders with actual values before making a request."
+      },
+      "response": []
+    }
+  ]
+}

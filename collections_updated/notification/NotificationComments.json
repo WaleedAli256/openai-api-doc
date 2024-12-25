@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationComments",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Comments - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Comments\",\"description\":\"This comments is my second comments\",\"tags\":\"second,comments\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isCommentsPrivate\":true,\"isTournamentOnly\":false,\"isCommentsDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/comments/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "comments",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Notification - Comments - Create\". It is used to create comments on notifications.\n\n- The `\"auth\"` field requires bearer token authentication. The bearer token should be provided in the `\"token\"` field with the key as `\"BearerToken\"` and the value would be the token itself.\n- The `\"request\"` field specifies that this is a POST method.\n- The `\"url\"` field defines the endpoint URL which is \"http://localhost:3000/api/notification/comments/create\".\n- The `\"headers\"` field is left blank and has been disabled in this case.\n\nThe data for the comments to be created should be included in the `\"body\"` of the request. The `\"body\"` field should include:\n\n- `\"mode\"`: The type of body content, which is raw in this case.\n- `\"raw\"`: This is where the actual details of the comments would go, formatted in JSON. The data should include the following:\n\n  - `\"sessionId\"`: The session ID\n  - `\"accountId\"`: The account ID\n  - `\"name\"`: The name of the comments\n  - `\"description\"`: The description of the comments\n  - `\"tags\"`: The tags for the comments, separated by commas\n  - `\"profilePhotoUrl\"`: The URL of the profile photo\n  - `\"coverPhotoUrl\"`: The URL of the cover photo\n  - `\"minimumTipAmount\"`: The minimum tip amount\n  - `\"categoryId\"`: The category ID\n  - `\"category\"`: The category name\n  - `\"subCategoryId\"`: The subcategory ID\n  - `\"subCategory\"`: The subcategory name\n  - `\"isCommentsPrivate\"`: A boolean indicating if the comments is private\n  - `\"isTournamentOnly\"`: A boolean indicating if the comments is tournament only\n  - `\"isCommentsDefault\"`: A boolean indicating if the comments is default\n  - `\"isPreLiveNotificationAds\"`: A boolean indicating if pre live notification ads are enabled\n  - `\"isPostLiveNotificationAds\"`: A boolean indicating if post live notification ads are enabled\n  - `\"breakPreLiveNotificationUrl\"`: The URL for the pre-live break notification\n  - `\"breakPostLiveNotificationUrl\"`: The URL for the post-live break notification\n\n- `\"options\"`: Specifies that the `\"raw\"` body content should be in JSON language."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Comments - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"commentsId\":\"commentsId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Comments 2.0\",\"description\":\"This comments is my second comments\",\"tags\":\"second,comments\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isCommentsPrivate\":true,\"isTournamentOnly\":false,\"isCommentsDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/comments/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "comments",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Notification - Comments - Update\". It uses the PUT method to update comments in a notification system. \n\n1. `Auth`: \nThis endpoint uses bearer token authentication. The token key should be added in the headers under the key \"token\". \n\n2. `Method`: \n\"PUT\" is the HTTP method that is used in this endpoint. PUT is typically used to update an existing resource.\n\n3. `URL`: \nThe URL to call the endpoint is http://localhost:3000/api/notification/comments/update. It should be replaced with the relevant URL if necessary.\n\n4. `Headers`: \nThe \"Client-UUID\" key is required which will be used to uniquely identify the client request. It appears in the headers and its type is \"default\". \n\n5. `Body`: \nThe body of the request is sent in raw JSON format. Specific keys include\n- `commentsId`, `sessionId`, `accountId`: These are identifiers for the comment, session and account respectively.\n- `name`: Name of the comment being updated.\n- `description`: Description of the comment.\n- `tags`: Tags related to the comment. \n- `profilePhotoUrl`, `coverPhotoUrl`: URLs of profile and cover photos. \n- `minimumTipAmount`: Minimum amount for tipping. \n- `categoryId`, `category`, `subCategoryId`, `subCategory`: Category and subcategory details of the comment. \n- `isCommentsPrivate`: Boolean entity indicating whether the comment is private. \n- `isTournamentOnly`, `isCommentsDefault`: Boolean entities related to whether the comment is intended for tournament only, or it is a default comment. \n- `isPreLiveNotificationAds`, `isPostLiveNotificationAds`: Boolean entities indicating whether ads should be shown before or after live notification respectively.\n- `breakPreLiveNotificationUrl`, `breakPostLiveNotificationUrl`: URLs for the break notifications before or after the live session. \n\nAfter sending the request,  the endpoint updates the comment in the system identified by the `commentsId`."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Comments - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/comments/get/?commentsId=commentsId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "comments",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "commentsId",
+              "value": "commentsId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "Endpoint Name: This is called \"Notification - Comments - Get\". It defines the purpose of this endpoint. It is used to retrieve notifications related to comments.\n\nRequest Method: The 'GET' method is used. This method means you are retrieving some kind of data.\n\nAuthentication: The authentication required for this endpoint is 'Bearer token'. This means that the server requires a bearer token to authenticate the user making the request.\n\n  - Token: A bearer token for authentication. It needs to be sent in the 'Bearer token' field. The type of the token is a string.\n\nURL: The URL field contains the API endpoint path. This particular endpoint is for 'http://localhost:3000/api/notification/comments/get/'. The endpoint requires three parameters that need to be specified - 'commentsId', 'sessionId', and 'accountId'. \n\n  - 'commentsId': The identification number for the comments you are looking for notifications for.\n  - 'sessionId': The session ID from which the API request is made.\n  - 'accountId': The account ID which is linked to the session.\n\nHeaders: Headers in HTTP requests hold additional information sent with the request. Currently, there aren't any specified headers for this API endpoint.\n\nRequest Body: The request body contains data to be sent to the server. For this endpoint, the body mode is set to 'raw', which means you can send unstructured data. However, currently, no data is meant to be sent in the body for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Comments - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/comments/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "comments",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint named \"Notification - Comments - Get All\" retrieves all notifications related to comments. Following are the data provided in the endpoint:\n\n1. `name`: The name of the endpoint. In this case, it's set as \"Notification - Comments - Get All\", indicating that it's used to fetch all comment related notifications.\n\n2. `request`: This represents the actual request for the API endpoint:\n   \n  - `auth`: Defines the type of authorization needed for this request. This request requires \"bearer\" authorization, meaning you will need to include a bearer token in the request.\n\n    - `bearer`: This is an array containing information about authorization: \n      - `key`: The key used for authorization, which is \"token\" in this case. \n      - `value`: Here, it represents the value of the token which is \"BearerToken\". \n      - `type`: Specifies the data type of the value, which is a \"string\".\n\n  - `method`: This is the HTTP method to use for the request. Here it is \"GET\", meaning the request will retrieve data from the given URL.\n\n  - `url`: Specifies the URL where the request will be made. The endpoint is hosted on localhost running on port 3000. URL parameters include \"sessionId\" and \"accountId\".\n\n  - `headers`: An array that specifies HTTP headers to include in the request. In this case, there is a single, disabled default header with empty key and value.\n\n  - `body`: This refers to the content sent with the request. For this request, the mode is set to \"raw\" with no data in the body, indicating there is no additional data to be sent with this API request. It is common for GET requests to not send any additional data in the body as they are used to retrieve data only."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Comments - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"commentsId\":\"commentsId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/comments/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "comments",
+            "delete"
+          ]
+        },
+        "description": "- `name`: This field states the name of the endpoint we are discussing, which in this case is \"Notification - Comments - Delete\". This means this endpoint is used to delete comments from notifications.\n\n- `request`: This field contains details about the HTTP request that needs to be made to execute the endpoint. \n\n    - `auth`: This field refers to the authorization required to access this endpoint. The type of authentication used here is \"bearer\". It contains a single object under the bearer property that takes in a token in form of a session ID as a value. This session ID serves as the token needed for bearer authentication.\n       \n    - `method`: This denotes the HTTP method to be used for the request, which in this case is \"POST\". Post method usually means that data is being sent to be processed to a specified resource. \n\n    - `url`: This represents the URL where the request will be sent. The given url is \"http://localhost:3000/api/notification/comments/delete\".\n         \n    - `headers`: This is an array meant to contain any headers that are to be sent along with the request. It's currently just a placeholder with no key or value.\n        \n    - `body`: This field contains the data to be sent along with the POST request. The data is sent in raw JSON format. The raw data includes a \"sessionId\", \"accountId\", and \"commentsId\". These refer to the session ID, account ID, and comments ID respectively that should be included in the body of the request.\n\nIn summary, this endpoint requires a POST request to be made to \"http://localhost:3000/api/notification/comments/delete\". The required authorization is bearer token authentication, with the session ID acting as the token. Headers are currently left empty. The body of the POST request should contain a session ID, an account ID, and a comments ID in raw JSON format. These three pieces of information are likely used to identify the user, their account, and specifically which comments they are looking to delete.\n"
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "a354a054-54a9-4c54-954a-54a954954a95",
+    "name": "VideoConnect-AfreecaTV",
+    "description": "Collection for testing AfreecaTV-related endpoints of VideoConnect.js",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST Video Connect (AfreecaTV)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"provider\": \"afreecatv\",\n  \"options\": { /* AfreecaTV-specific options */ },\n  \"videoDetails\": { /* Video details */ },\n  \"routeSettings\": { /* File data or path */ }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/VideoConnect",
+          "host": [
+            "VideoConnect"
+          ],
+          "path": [
+            "api",
+            "VideoConnect"
+          ]
+        },
+        "description": "### POST Video Connect (AfreecaTV)\n\n#### Request Details\n\n- **Method**: This endpoint uses the POST method which is typically used for sending data to the server.\n\n- **URL**: The endpoint is available at `http://localhost:3000/api/VideoConnect`. This is the address where the request would be sent.\n\n#### Headers\n\n- **Content-Type**: The request must include a header with the key `Content-Type` set to `application/json`. This indicates that the data being sent to the server is in JSON format.\n\n#### Body\n\nThe body of the request is sent in a raw format, which contains JSON data structured as follows:\n\n1. **provider**: This key specifies the streaming service being used. In this case, it is set to `\"afreecatv\"`, indicating that the request is intended for AfreecaTV integration.\n\n2. **options**: This section is intended for options specific to AfreecaTV. Here, you can include any configurations or parameters that are relevant to your requirements when connecting to AfreecaTV. This is a flexible field where you can customize the connection settings.\n\n3. **videoDetails**: This portion contains information about the video that is being connected. Specific details regarding the video, such as title, description, or any other relevant metadata, should be defined here. The structure should be customized based on the needs of the AfreecaTV integration.\n\n4. **routeSettings**: This segment allows you to specify additional file data or the path related to the video. This could pertain to file location details, access permissions, etc. The specifics of this structure would depend on what the server expects for route settings. \n\n### Summary\n\nThis endpoint is designed to facilitate a connection specifically to the AfreecaTV platform by sending video metadata and associated settings in a structured JSON format. Ensure that all sections of the body are properly populated to meet the requirements of the connection."
+      },
+      "response": []
+    },
+    {
+      "name": "POST Update Video (AfreecaTV)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"provider\": \"afreecatv\",\n  \"options\": { /* AfreecaTV-specific options */ },\n  \"videoDetails\": { /* Video details */ },\n  \"routeSettings\": { \"action\": \"update\" }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/VideoConnect",
+          "host": [
+            "VideoConnect"
+          ],
+          "path": [
+            "api",
+            "VideoConnect"
+          ]
+        },
+        "description": "### POST Update Video (AfreecaTV)\n\n**Request Method:**  \nThis endpoint uses the POST HTTP method to send data to the server.\n\n**Request URL:**  \nThe API endpoint is located at `http://localhost:3000/api/VideoConnect`.\n\n**Request Headers:**  \n- **Content-Type:** This header is set to `application/json`, indicating that the request body will contain JSON formatted data.\n\n**Request Body:**  \nThe body of the request is in raw JSON format and includes the following fields:\n\n1. **provider:**  \n   This field specifies the video provider being used. In this case, it is set to \"afreecatv\". It indicates that the video details and options are specific to the AfreecaTV platform.\n\n2. **options:**  \n   This object is intended for provider-specific options that may be necessary for the video update. The exact details of these options are not specified here and should be filled in based on AfreecaTV requirements.\n\n3. **videoDetails:**  \n   This object should contain specific details about the video being updated. The structure of this object is not provided, so it needs to be defined based on the requirements of the AfreecaTV API.\n\n4. **routeSettings:**  \n   This object includes the settings related to the request routing. It contains a field called \"action\" which is set to \"update\", indicating that the intent of this request is to update an existing video.\n\nEnsure that the required fields for `options` and `videoDetails` are filled out correctly according to the specific needs of the AfreecaTV API when making this request."
+      },
+      "response": []
+    },
+    {
+      "name": "POST Delete Video (AfreecaTV)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"provider\": \"afreecatv\",\n  \"videoDetails\": { /* Video details */ },\n  \"routeSettings\": { \"action\": \"delete\" }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/VideoConnect",
+          "host": [
+            "VideoConnect"
+          ],
+          "path": [
+            "api",
+            "VideoConnect"
+          ]
+        },
+        "description": "### POST Delete Video (AfreecaTV)\n\n**Request Method:**  \nThis request uses the POST method to initiate the video deletion process on AfreecaTV.\n\n**Request URL:**  \nThe endpoint is located at `http://localhost:3000/api/VideoConnect`. This is the address where the request is sent to handle video deletion.\n\n**Headers:**  \n- **Content-Type:** This header is set to `application/json`, indicating that the request body will be formatted as JSON.\n\n**Request Body:**  \nThe body of the request is formatted in raw JSON and contains the following fields:\n\n- **provider:** This field specifies the video service provider for the video that is to be deleted. In this case, it is set to \"afreecatv\".\n\n- **videoDetails:** This object should contain specific information about the video that is intended for deletion. Currently, it is a placeholder labeled `/* Video details */`, which should be replaced with actual video attributes, such as video ID or title.\n\n- **routeSettings:** This object defines how the request should be processed. It contains the following property:\n  - **action:** This is set to \"delete\", indicating that the intended action for the request is to remove a video from the service. \n\nMake sure to fill out the `videoDetails` with the relevant information before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "GET Video Information (AfreecaTV)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/VideoConnect/afreecatv/videoId",
+          "host": [
+            "VideoConnect"
+          ],
+          "path": [
+            "api",
+            "VideoConnect",
+            "afreecatv",
+            "{{videoId}}"
+          ]
+        },
+        "description": "### GET Video Information (AfreecaTV)\n\n**Request Method**: GET  \nThis indicates that the request is used to retrieve data from the server.\n\n**URL**: `http://localhost:3000/api/VideoConnect/afreecatv/videoId`  \nThis is the endpoint where the request is sent. It is expected to be run on a local server at port 3000. The `videoId` in the URL should be replaced with the actual identifier of the video you want to get information about.\n\n**Headers**:  \n- **Content-Type**: `application/json`  \n  This header specifies the format of the data being sent to the server. In this case, it indicates that the request will send and expect data in JSON format. \n\nMake sure to replace `videoId` with the specific video ID you want to retrieve from AfreecaTV."
+      },
+      "response": []
+    }
+  ]
+}

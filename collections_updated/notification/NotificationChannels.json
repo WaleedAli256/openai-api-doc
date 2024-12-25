@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationChannels",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Channels - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Channels\",\"description\":\"This channels is my second channels\",\"tags\":\"second,channels\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isChannelsPrivate\":true,\"isTournamentOnly\":false,\"isChannelsDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/channels/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "channels",
+            "create"
+          ]
+        },
+        "description": "Endpoint Name: The provided `name` attribute represents the specific title or identifier for the API endpoint. Here, \"Notification - Channels - Create\" signifies that this API is designed to create new channels for notifications.\n\nAuthentication: The `auth` attribute encapsulates the method and details of authentication. In this case, the `bearer` method type is applied and the `token` key needs to be set as \"BearerToken\".\n\nHTTP Method: The `method` attribute presents the HTTP request type. In this case, a 'POST' method is being used to create new data in your database.\n\nEndpoint URL: The `url` attribute provides the address where the API request is sent. Here, \"http://localhost:3000/api/notification/channels/create\" is the endpoint to which you'd be navigating to undertake the procedure.\n\nHeaders: The `headers` represent any additional parameters that might be required in the request. For this instance, no specific headers are required.\n\nRequest Body: The `body` contains all the data sent with the HTTP request during the API call. The given `raw` mode indicates the request data is sent as a raw string. This Request body contains the data for the new channel to be created, in JSON format.\n\n- `sessionId`: Identifier for the session.\n- `accountId`: Identifier for the account.\n- `name`: Name of the channel.\n- `description`: Description for the newly created channel.\n- `tags`: Related tags to the channel.\n- `profilePhotoUrl`: URL of the profile photo for the channel.\n- `coverPhotoUrl`: URL for the cover photo of the channel.\n- `minimumTipAmount`: Minimum tip amount that would be allowed in the channel.\n- `categoryId` and `category`: Identifier and name for the category of the channel.\n- `subCategoryId` and `subCategory`: Identifier and the name of the subcategory of the channel.\n- `isChannelsPrivate`: A boolean which states whether the channel is private.\n- `isTournamentOnly`: A boolean value stating whether the channel is designated only for tournaments.\n- `isChannelsDefault`: A boolean denoting if the channel is default.\n- `isPreLiveNotificationAds` and `isPostLiveNotificationAds`: Booleans representing whether to show ads before or after live notifications.\n- `breakPreLiveNotificationUrl` and `breakPostLiveNotificationUrl`: URLs for the break notifications before and after live streams.\n\nFinally, `options` in the `body` suggests that the enclosed data is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Channels - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"channelsId\":\"channelsId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Channels 2.0\",\"description\":\"This channels is my second channels\",\"tags\":\"second,channels\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isChannelsPrivate\":true,\"isTournamentOnly\":false,\"isChannelsDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/channels/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "channels",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Notification - Channels - Update\", is designed to manage the process of updating information related to channels within the notification system. \n\n- **Auth**: This is the authorization method for the endpoint. It uses type \"bearer\" which means you need to supply a bearer token to authenticate. The `token` value under the bearer section should hold this bearer token.\n\n- **Request method**: The method of this endpoint is \"PUT\" which is typically used to update an existing resource.\n\n- **URL**: It shows the location of the endpoint which is \"http://localhost:3000/api/notification/channels/update\" in this case.\n\n- **Headers**: It uses a custom header named `Client-UUID`, the value for it should be the 'UUID' that uniquely identifies the client.\n\n- **Body**: This contains the data to be updated.\n  \n  - `channelsId`: The unique identifier of the channels. \n                                       \n  - `sessionId`: Different sessions are assigned unique identifiers.\n\n  - `accountId`: This represents the unique identifier of the account making the request.\n  \n  - `name`: Name of the channel.\n\n  - `description`: Description about the channel.\n  \n  - `tags`: Tags associated with the channel. They need to be comma-separated values.\n  \n  - `profilePhotoUrl`: Url of the profile photo for the channel.\n\n  - `coverPhotoUrl`: Url of the cover photo for the channel.\n  \n  - `minimumTipAmount`: The minimum tip amount that the channel accepts.\n\n  - `categoryId` and `category`: Category ID and descriptive string to classify where in the server's system the channel belongs to.\n  \n  - `subCategoryId` and `subCategory`: Sub category ID and a descriptive string for further classifying the channel within its category.\n  \n  - `isChannelsPrivate`: A boolean flag which signifies whether the channels are private or not.\n  \n  - `isTournamentOnly`: A boolean flag indicating whether the channel is only for tournaments.\n  \n  - `isChannelsDefault`: A boolean flag indicating if the channel is a default one.\n  \n  - `isPreLiveNotificationAds`, `isPostLiveNotificationAds`: Boolean flags indicating whether pre-live and post-live notification ads are allowed on this channel.\n  \n  - `breakPreLiveNotificationUrl`, `breakPostLiveNotificationUrl`: URLs where the pre-live and post-live break notification adverts will play.\n  "
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Channels - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/channels/get/?channelsId=channelsId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "channels",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channelsId",
+              "value": "channelsId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "\"name\": This parameter refers to the name of the endpoint. In this case, the name of the endpoint is \"Notification - Channels - Get.\"\n\n\"request\": This describes the details of the HTTP request call. \n\n\"auth\": It indicates the authentication type and info required for the endpoint. \n\"type\": This parameter within \"auth\" refers to the type of authentication mechanism that is used. In this case, \"bearer\" authentication is used. \n\"bearer\": This contains information about \"bearer token\" authentication. \n\"key\": The key field under bearer authentication specifies the name of the key that is used. In this case, it is \"token.\" \n\"value\": The value field refers to the static token value which in this case set as \"BearerToken\".\n\"type\": The type field indicates the data type of token which here is \"string\".\n\n\"method\": This parameter indicates the HTTP method to be used when sending a request to the server. In this case, \"GET\" method is used.\n\n\"url\": This parameter provides the URL or the endpoint to which the request needs to be made. Parameters within the URL are specified - channelsId, sessionId, and accountId which need to be replaced by appropriate values.\n\n\"headers\": This portion of the request contains the information to be passed in the headers. In this case, it is empty set to default type and it's not necessary as it is disabled.\n\n\"body\": The body portion within the request contains information that needs to be sent as the body of the request. In this case, there is no body content - it is set to \"raw\" mode and it's empty."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Channels - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/channels/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "channels",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. `name`: This is the identifier for the endpoint. In this case, the name of the endpoint is \"Notification - Channels - Get All\". It's used to locate the specific endpoint within the API.\n\n2. `request`: This object contains the details of the API request. Inside the request object, there are several properties such as `auth`, `method`, `url`, `headers`, and `body`. \n\n3. `auth`: This is the authentication method required to access the endpoint. It uses the \"bearer\" type, indicating the request requires a bearer token for authorization. \n\n4. `bearer`: This contains the specific details of the bearer token required for the request. It has a `key` \"token\", `value` \"BearerToken\", and `type` which is \"string\". This means that you need to replace \"BearerToken\" with the actual token value in your requests.\n\n5. `method`: This is the HTTP method used for the request. Here, it's \"GET\", which is typically used to retrieve data from an API.\n\n6. `url`: This is the address of the API endpoint. In this case, it's \"http://localhost:3000/api/notification/channels/all\". The URL also contains two query parameters `sessionId` and `accountId`, which you would replace with your specific session and account identifiers when making requests.\n\n7. `headers`: This is a list which contains information that the client (i.e., the sender of the request) passes to the server to provide additional details about the request. In this case, it's an empty default header that's disabled.\n\n8. `body`: This is where you would put the data you want to send to the API. Since the `method` is \"GET\", which doesn't usually send any data to the API, the `mode` is set as \"raw\" and `raw` field is empty, meaning no actual data is included in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Channels - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelsId\":\"channelsId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/channels/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "channels",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is titled \"Notification - Channels - Delete\". As the name suggests, it is made for deleting a notification channel.\n\nThe endpoint requires \"bearer\" type authorization. Here, the bearer token must be provided to handle authentication and authorization to use this endpoint. The key for the bearer token is \"token\" and the value should be the \"sessionId\". The \"sessionId\" should be a string type value, representing the ID of the active session.\n\nThis endpoint is accessed via the \"POST\" method indicating that you're supplying information to be processed by the server.\n\nThe URL to send this POST method is \"http://localhost:3000/api/notification/channels/delete\". Upon successful operation, this endpoint will remove the respective notification channel.\n\nThere are headers in the request but they are disabled and empty by default. Though they are present, they aren't required or being used currently.\n\nInside the \"body\" of the request, you'll notice it's in \"raw\" mode meaning you can enter any text. However, it expects a JSON object that contains three fields:\n\n1. The \"sessionId\" field, which should be a string type value, stands for the session identifier.\n2. The \"accountId\" field is also a string type value. This represents the account identifier from which you want to delete the notification channel.\n3. The \"channelsId\" field denotes the identifier of channels that is to be deleted from the account.\n\nPlease remember, while filling out the data in the body, ensure that you're following the provided JSON format."
+      },
+      "response": []
+    }
+  ]
+}

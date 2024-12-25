@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "a560a371-0ec3-407a-9afb-6fbd5b012d8c",
+    "name": "ActionBoost",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Boost - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 10,\n    \"name\":\"\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/boost/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "boost",
+            "create"
+          ]
+        },
+        "description": "### Action - Boost - Create\n\n#### Request Details\n\n- **Auth**: \n  - **Type**: Bearer\n    - This indicates that the request uses Bearer Token authentication.\n  - **Bearer Token**: \n    - **Key**: token\n    - **Value**: BearerToken\n    - **Type**: string\n    - This is the actual authentication token used to authorize the request, which should be replaced with a valid Bearer token.\n\n- **Method**: \n  - **POST**\n    - This defines the HTTP method to be used for the request. POST is typically used to create new resources.\n\n- **URL**: \n  - **http://localhost:3000/api/action/boost/create**\n    - This is the endpoint where the request is sent. Ensure the server is running locally at the specified port.\n\n- **Headers**: \n  - There are no headers defined in this request. The existing header entry is disabled and does not need to be used.\n\n#### Body Details\n\n- **Mode**: \n  - **raw**\n    - This indicates that the payload content is sent as raw data, specifically formatted in JSON.\n\n- **Raw**: \n  - This is the actual data being sent in the body of the request, formatted as JSON:\n  \n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 10,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}\n```\n  \n  - **Fields**:\n    - **sessionId**: \n      - Represents the unique identifier for the session. This should be replaced with a valid session ID.\n      \n    - **accountId**: \n      - Identifier for the user's account. Must be replaced with the actual account ID.\n\n    - **path**: \n      - The API path or URL for the specific channel or resource the action is targeting. Example given is a path to a live channel.\n\n    - **targetType**: \n      - Specifies the type of target for the action, in this case, it's indicating that the target is a video ID.\n\n    - **targetId**: \n      - The unique identifier for the target resource, which in this scenario is a specific video.\n\n    - **sourceType**: \n      - Indicates the type of source for the action, which here is an account ID.\n\n    - **sourceId**: \n      - The unique identifier for the source resource, similar to the account ID.\n\n    - **tokenAmount**: \n      - Specifies the amount of tokens to be used in the action, set to 10 in this example.\n\n    - **name**: \n      - A placeholder for naming the action. This can be customized according to user preference.\n\n    - **description**: \n      - A placeholder for describing the action. Users can provide additional context here.\n\n    - **tags**: \n      - A placeholder for any tags associated with the action, which can help in categorizing or identifying the request.\n\nThis endpoint is designed to create a boost action that targets a specific video, allowing users to interact with their account resources effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Boost - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 10,\n    \"boostId\": \"boostId\",\n    \"name\":\"update\",\n    \"desription\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/boost/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "boost",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Boost - Update\n\n**Request**\n\n- **Auth**: \n  - **Type**: Indicates that authentication is done using a bearer token.\n  - **Bearer**:\n    - **Key**: Specifies that the authentication token will be provided under the key \"token\".\n    - **Value**: This is the placeholder for the actual bearer token, which should be replaced with a valid token string to access the endpoint.\n    - **Type**: Denotes that the value is of string type.\n\n- **Method**: \n  - The HTTP method used for the request is PUT. This indicates that the request is meant to update existing data.\n\n- **URL**: \n  - This is the endpoint where the update action will be sent. The specified URL is `http://localhost:3000/api/action/boost/update`, which indicates that this might be intended for a local environment.\n\n- **Headers**: \n  - **Key**: `Client-UUID`\n    - **Value**: This is a placeholder for the unique identifier for the client. It should be replaced with the actual Client UUID to associate the request with the correct client session.\n    - **Type**: This indicates that the header value is of default type.\n\n- **Body**: \n  - **Mode**: The body is sent in \"raw\" format, meaning the user will manually provide the content.\n  - **Raw**: Contains a JSON object with the following fields:\n    - **sessionId**: This field should contain the unique identifier for the session. It is required to identify which session the boost action is associated with.\n    - **accountId**: This is the unique identifier for the account that is performing the action. It is essential for tracking the source of the action.\n    - **path**: Represents the specific path to the target resource, in this case, a media channel with a video identifier (e.g., `/live/channel/video123`).\n    - **targetType**: Specifies the type of target being boosted; here it is indicated as `videoId`, meaning the operation pertains to a specific video.\n    - **targetId**: The unique identifier of the target (the video) that is subject to the boost operation.\n    - **sourceType**: Indicates the origin of the action; it is set to `accountId`, meaning the source is the user's account.\n    - **sourceId**: The identifier of the source, which, like the accountId, ties back to the user’s account.\n    - **tokenAmount**: The number of boost tokens being used for the operation. For this request, it is set to `10`, meaning ten tokens are dedicated to the action.\n    - **boostId**: This is the unique identifier for the specific boost action being issued.\n    - **name**: Descriptive identifier for this update operation, set as `update`.\n    - **description**: Placeholder for any additional information or description about the update; it’s currently left empty.\n    - **tags**: Placeholder for tags related to the operation; like description, it is currently blank.\n\nThe described structure allows users to effectively understand how to fill in the request parameters to perform an update on a boost action via the provided API."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Boost - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/boost/get/?boostId=boostId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "boost",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "boostId",
+              "value": "boostId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n- **name**: Defines the name of the API request, which is \"Action - Boost - Get.\"\n\n- **request**: This object contains all details related to the API request.\n\n  - **auth**: Specifies the authentication type required for the request.\n  \n    - **type**: Indicates the authentication method is using a bearer token.\n    \n    - **bearer**: This array holds the details of the bearer token.\n    \n      - **key**: Represents the name of the attribute for the token, which is \"token.\"\n      \n      - **value**: Contains the actual bearer token value placeholder as \"BearerToken.\" This should be replaced with the actual token when making the request.\n      \n      - **type**: Defines the data type of the token, which is \"string.\"\n  \n  - **method**: Specifies the HTTP method used for the request, which is \"GET.\"\n\n  - **url**: The endpoint URL that will be accessed. It includes the following query parameters:\n  \n    - **boostId**: Placeholder for the unique identifier of the boost action.\n    \n    - **sessionId**: Placeholder for the identifier of the user session.\n    \n    - **accountId**: Placeholder for the identifier of the user account.\n\n    The URL structure is: `http://localhost:3000/api/action/boost/get/?boostId=boostId&sessionId=sessionId&accountId=accountId`.\n\n  - **headers**: This array can hold any additional headers needed for the request.\n  \n    - **key**: Currently, this is an empty string, indicating no additional custom headers are set.\n    \n    - **value**: Also empty, since no values for custom headers are provided.\n    \n    - **type**: Indicates the header type as \"default.\"\n    \n    - **disabled**: Set to true, which means this header is currently not being used or is inactive.\n  \n  - **body**: Contains details about the body of the request.\n  \n    - **mode**: Indicates the body content type, which is set to \"raw.\"\n    \n    - **raw**: This field is currently empty, meaning there is no body content to send with the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Boost - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/boost/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "boost",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Boost - Get All\n\n- **Name**: This is the identifier for the API request. It indicates that the endpoint is related to retrieving all boost actions.\n\n- **Request**: This section contains details about how the API request should be executed.\n\n  - **Auth**: This specifies the authentication method used to access the endpoint.\n  \n    - **Type**: Indicates the type of authentication. In this case, it is set to \"bearer\", which is commonly used for token-based authentication.\n    \n    - **Bearer**: This is a list containing the authentication token required for the request.\n    \n      - **Key**: This represents the parameter name for the bearer token, which is labeled as \"token\".\n      \n      - **Value**: This is where the actual bearer token should be placed, indicated in the placeholder as \"BearerToken\". Users need to replace this with their actual token.\n      \n      - **Type**: This specifies the data type of the token, which is set as \"string\".\n\n  - **Method**: This indicates the HTTP method used for the request. In this case, it is \"GET\", which means the action is fetching data from the server.\n\n  - **URL**: This is the endpoint where the request will be sent. It's a combination of the base URL and the specific path to the resource being accessed. The URL contains query parameters:\n  \n    - **sessionId**: This is the ID of the session for which the boost actions are being retrieved. It needs to be replaced with an actual session identifier.\n    \n    - **accountId**: This is the ID of the account associated with the boost actions. It also requires a real account identifier to be functional.\n\n  - **Headers**: This specifies any additional headers that may be needed for the request. In this case, there is an empty header entry that is marked as disabled, indicating that no extra headers are currently required.\n\n  - **Body**: This is the content of the request body.\n  \n    - **Mode**: This indicates the type of content in the body. Here, it is set to \"raw\", implying that the body will contain raw data.\n    \n    - **Raw**: This is where the actual body content would go. It is currently empty, indicating that no body data needs to be sent with the GET request.\n\nThis endpoint can be utilized to fetch all boost actions associated with a specific session and account by providing the required authentication and query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Boost - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"boostId\":\"boostId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/boost/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "boost",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Boost - Delete\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"sessionId\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"POST\",\n      \"url\": \"http://localhost:3000/api/action/boost/delete\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"boostId\\\":\\\"boostId\\\"}\"\n      }\n    },\n    \"details\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"The authentication method used for this API request, requiring a bearer token for authorization.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"The specific key indicating that a token is being used for authentication.\",\n            \"value\": \"sessionId\": \"This is a placeholder for the actual token value that will be used in the API request, which should represent the current user's session ID.\",\n            \"type\": \"string\": \"Indicates that the value is a string data type.\"\n          }\n        ]\n      },\n      \"method\": \"POST\": \"The HTTP method used for the request, indicating that data is being sent to the server to perform an action.\",\n      \"url\": \"http://localhost:3000/api/action/boost/delete\": \"The endpoint URL that the request is targeting, in this case for deleting a boost action.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"The header key, which is empty in this case and therefore not used.\",\n          \"value\": \"\": \"The value for the header key, which is also empty here.\",\n          \"type\": \"default\": \"Indicates the type of header; however, it's not applicable since no headers are provided.\",\n          \"disabled\": true: \"This indicates that the header is currently disabled and will not be included in the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"The mode of the request body, indicating that the body will contain raw JSON data.\",\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"boostId\\\":\\\"boostId\\\"}\": \"This is the actual content of the request body, containing placeholders for the session ID, account ID, and boost ID. These need to be replaced with actual values when making the request.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "026637dd-0b22-462b-b005-e0c0c907688c",
+    "name": "ActionVote",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Vote - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didVote\": true,\n    \"buttonText\": \"upvote\",\n    \"tokenAmount\":10,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/vote/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "vote",
+            "create"
+          ]
+        },
+        "description": "**Endpoint Name: Action - Vote - Create**\n\n**Request Details:**\n\n- **Auth**: \n  - Type: Bearer\n  - This endpoint uses Bearer token authentication. Users must provide a valid token to access the endpoint.\n\n- **Method**: \n  - POST\n  - This indicates that the endpoint is used to submit data to create a vote.\n\n- **URL**: \n  - `http://localhost:3000/api/action/vote/create`\n  - This is the endpoint for creating a vote action. The server should be running locally on port 3000.\n\n- **Headers**: \n  - There are no specific headers required for this request as the provided header is disabled.\n\n**Body Parameters** (in JSON format):\n\n- **sessionId**: \n  - Type: string\n  - A unique identifier for the session in which the vote is being cast.\n\n- **accountId**: \n  - Type: string\n  - The identifier for the user account that is casting the vote.\n\n- **path**: \n  - Type: string\n  - The path to the content related to the vote, specified as `/live/channel/video123`. This might represent the URL structure for the resource.\n\n- **targetType**: \n  - Type: string\n  - Specifies the type of target being voted on, which in this case is identified as a `videoId`.\n\n- **targetId**: \n  - Type: string\n  - The unique identifier for the target, which is the video being voted on.\n\n- **sourceType**: \n  - Type: string\n  - Specifies the type of source for the vote. Here, it's identified as `accountId`.\n\n- **sourceId**: \n  - Type: string\n  - The unique identifier for the source, which refers to the account casting the vote.\n\n- **didVote**: \n  - Type: boolean\n  - Indicates if the user has voted (true) or not (false). \n\n- **buttonText**: \n  - Type: string\n  - Text displayed on the voting button, indicating the action (in this case, \"upvote\").\n\n- **tokenAmount**: \n  - Type: integer\n  - Indicates the amount of tokens being used for the vote, set to 10 in this instance.\n\n- **name**: \n  - Type: string\n  - A space for any additional name related to the vote. Currently left blank.\n\n- **description**: \n  - Type: string\n  - A space for any description regarding the vote. Currently left blank.\n\n- **tags**: \n  - Type: string\n  - A space for any tags related to the vote. Currently left blank. \n\nThis endpoint is used for submitting a vote for a specified target, providing necessary details like session and account identifiers, as well as additional options regarding the vote action."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Vote - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didVote\": true,\n    \"buttonText\": \"upvote\",\n    \"tokenAmount\":10,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"voteId\":\"voteId\"\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/vote/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "vote",
+            "update"
+          ]
+        },
+        "description": "### Action - Vote - Update Endpoint Description\n\n#### Request Method\n- **Method**: PUT  \n  Indicates that this request is used to update existing information related to a vote.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/action/vote/update`  \n  The endpoint for updating a vote action on the server.\n\n#### Authentication\n- **Auth Type**: Bearer  \n  This endpoint requires bearer token authentication to authorize the request.\n\n- **Bearer Token**:  \n  - **Key**: `token`  \n    This is the key used to pass the authentication token.\n  - **Value**: `BearerToken`  \n    The placeholder for the actual bearer token that needs to be supplied. This token is required to authenticate the request.\n  - **Type**: string  \n    Indicates that the value of the token is a string type.\n\n#### Headers\n- **Header**: `Client-UUID`  \n  - **Key**: `Client-UUID`  \n    A unique identifier for the client making the request.\n  - **Value**: `ClientUUID`  \n    This is a placeholder for the actual client UUID that should be provided.\n  - **Type**: default  \n    Specifies that this is a standard header without special formatting.\n\n#### Body Parameters\n- **Body Mode**: raw  \n  The body of the request is sent in raw format.\n\n- **Raw JSON**:  \n  The body content must be formatted as JSON. Each field is described below:\n  \n  - **sessionId**: \"sessionId\"  \n    A unique identifier for the session in which the vote is being cast. This helps track user interactions across multiple actions.\n\n  - **accountId**: \"accountId\"  \n    The unique ID associated with the account that is casting the vote.\n\n  - **path**: \"/live/channel/video123\"  \n    The path to the resource that is being voted on. This typically represents the location of the content within the application.\n\n  - **targetType**: \"videoId\"  \n    Specifies the type of target being voted on. In this case, it indicates that the target is a video.\n\n  - **targetId**: \"videoId\"  \n    The unique identifier for the specific video that is being voted on.\n\n  - **sourceType**: \"accountId\"  \n    Indicates the type of source account that is casting the vote, which in this case is also an account ID.\n\n  - **sourceId**: \"accountId\"  \n    The unique ID of the source account that is submitting the vote.\n\n  - **didVote**: true  \n    A boolean value indicating whether the user has cast their vote or not. If true, it confirms that a vote has already been made.\n\n  - **buttonText**: \"upvote\"  \n    The text that appears on the button used to cast the vote, indicating the action that will be taken (in this case, an upvote).\n\n  - **tokenAmount**: 10  \n    The amount of tokens that the user will spend or earn by casting this vote.\n\n  - **name**: \"\"  \n    An optional field for the name related to the vote or the voting action. It can be left blank if not applicable.\n\n  - **description**: \"\"  \n    An optional field for additional context or information about the vote. It can also be left blank.\n\n  - **tags**: \"\"  \n    A field for any relevant tags associated with the vote. This can help categorize or add context to the voting action. It is optional and can be left blank.\n\n  - **voteId**: \"voteId\"  \n    A unique identifier for the vote itself, which helps track the specific vote that is being updated.\n\n#### Conclusion\nThis endpoint is designed to facilitate the updating of a vote for a specific resource, including necessary authentication and detailed data about the vote being made or modified."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Vote - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/vote/get/?voteId=voteId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "vote",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "voteId",
+              "value": "voteId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Vote - Get Endpoint Description\n\n**Request Type**: GET  \nThis endpoint retrieves voting information based on the specified parameters.\n\n**Authentication**:\n- **Type**: Bearer Token\n  - A security token is required to access this endpoint. The token must be included in the request headers.\n  - **Key**: `token` \n  - **Value**: `BearerToken` (Replace with the actual token before making a request)\n  - **Type**: string (Indicates the format of the token)\n\n**URL Format**:  \n`http://localhost:3000/api/action/vote/get/?voteId=voteId&sessionId=sessionId&accountId=accountId`\n\n- **Base URL**: `http://localhost:3000/api/action/vote/get/`\n- **Query Parameters**:\n  - `voteId`: Identifier for the specific vote you want to retrieve.\n  - `sessionId`: Identifier for the session during which the vote was cast.\n  - `accountId`: Identifier for the user account associated with the vote.\n\n**Headers**:  \n- The request currently has an empty header configuration, which means no additional headers are set. The header is disabled and will not be included in the request unless modifications are made.\n\n**Body**:  \n- The body of the request is in `raw` mode but contains no content. No payload is needed for this GET request, so the body remains empty. \n\nThis endpoint is useful for retrieving details about specific votes based on the provided identifiers, ensuring that the request is authenticated with the necessary bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Vote - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/vote/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "vote",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: This is the name of the API endpoint, which is \"Action - Vote - Get All\". It indicates that this endpoint is related to retrieving all vote actions.\n\n- **request**: This section contains all the details regarding the API request.\n\n  - **auth**: This specifies the authentication method used for the endpoint.\n  \n    - **type**: The type of authentication used is \"bearer\", indicating that a bearer token is required to authorize the request.\n    \n    - **bearer**: This array contains information about the bearer token.\n    \n      - **key**: A named field for the bearer token, which is \"token\".\n      \n      - **value**: The actual bearer token, represented here as \"BearerToken\". This token provides access to the API and should be replaced with a valid token when making a request.\n      \n      - **type**: Indicates that the value is of type \"string\".\n\n  - **method**: This indicates the type of HTTP method being used. In this case, it is \"GET\", meaning that this endpoint is used to retrieve data.\n\n  - **url**: This is the endpoint URL where the API request is sent. In this case, the URL is \"http://localhost:3000/api/action/vote/all/?sessionId=sessionId&accountId=accountId\". It contains two query parameters:\n  \n    - **sessionId**: This parameter is used to specify the session identifier, represented as \"sessionId\". It needs to be replaced with an actual session ID.\n    \n    - **accountId**: This parameter is used to specify the account identifier, represented as \"accountId\". It should be replaced with a valid account ID.\n\n  - **headers**: This section lists the headers to be sent along with the request.\n  \n    - **key**: This field is currently empty, meaning no custom headers are defined here.\n    \n    - **value**: This field is also empty, corresponding to the empty key.\n    \n    - **type**: The type of this header is \"default\".\n    \n    - **disabled**: This parameter is set to true, indicating that this header is currently disabled and will not be sent with the request.\n\n  - **body**: This section defines the body of the request.\n  \n    - **mode**: The mode for the body is set to \"raw\", indicating that the body data is sent as raw text.\n    \n    - **raw**: This field is empty, meaning no data is being sent in the body of the request. \n\nThis endpoint is used to fetch all voting actions associated with a particular session and account, requiring proper authentication and the necessary parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Vote - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"voteId\":\"voteId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/vote/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "vote",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Vote - Delete\",\n  \"description\": \"This endpoint is used to delete a vote from a user's account. Users must provide a valid session ID, their account ID, and the ID of the vote they wish to delete. Here’s a breakdown of the data involved in this request:\",\n  \n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"sessionId\",\n          \"type\": \"string\"\n        }\n      ],\n      \"description\": \"Authentication is done via a bearer token. Users must provide their session ID as a token to authenticate the request.\"\n    },\n    \n    \"method\": \"POST\",\n    \"description\": \"This specifies that the request should use the POST method, which is typically used for sending data to the server.\"\n\n    \"url\": \"http://localhost:3000/api/action/vote/delete\",\n    \"description\": \"This is the URL endpoint where the delete vote request will be sent. It is expected to be accessed via localhost during development.\"\n\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"description\": \"No custom headers are required for this request as they are currently disabled. By default, the server will handle headers automatically.\"\n\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"The body of the request contains the data that needs to be sent to the server to process the vote deletion.\",\n      \n      \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"voteId\\\":\\\"voteId\\\"}\",\n      \"description\": \"This is a raw JSON format containing the necessary parameters for the request. It contains the following fields:\",\n      \n      \"fields\": {\n        \"sessionId\": \"This is the unique identifier for the user's session, required for authentication.\",\n        \n        \"accountId\": \"This is the unique identifier associated with the user's account, which will be used to locate the vote.\",\n        \n        \"voteId\": \"This is the unique identifier for the vote that the user wishes to delete.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

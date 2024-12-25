@@ -1,0 +1,1110 @@
+{
+  "info": {
+    "_postman_id": "a70f4a66-5c25-4750-a866-d2692af6e37c",
+    "name": "UtilityFiat",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Utility - Fiat - Create for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"USD\",\n    \"description\": \"United States Dollar\",\n    \"type\": \"usd\",\n    \"action\": \"buy\",\n    \"rate\": 1,\n    \"amount\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Fiat - Create for User\n\n- **Request Type**: POST  \n  This endpoint is utilized to create a new fiat utility for a user. \n\n- **URL**: `http://localhost:3000/api/utility/fiat/create`  \n  The endpoint is accessed through this URL, indicating that it will trigger the creation of a fiat utility in the local environment.\n\n- **Authorization**:  \n  - **Type**: Bearer  \n    This endpoint requires bearer token authentication, which is a way to securely transmit access tokens in API requests.  \n  - **Token**:  \n    - **Key**: token  \n      The parameter name used for the bearer token.  \n    - **Value**: BearerToken  \n      This is the placeholder for the actual bearer token that will authenticate the request.  \n    - **Type**: string  \n      The token is expected to be a string value.\n\n- **Headers**:  \n  There are no default headers set for this request, as indicated by the key and value being empty and the header being disabled.\n\n- **Body**:  \n  The body of the request is sent in JSON format with a raw mode, which must adhere to the structure defined below:\n  \n  - **sessionId**: `\"sessionId\"`  \n    This is the unique identifier for the current user session, which helps in tracking the operations related to that session.\n  \n  - **accountId**: `\"accountId\"`  \n    This represents the identifier of the user's account where the fiat utility will be created.\n  \n  - **targetType**: `\"accountId\"`  \n    Specifies the type of target for the operation, which in this case is an account.\n  \n  - **name**: `\"USD\"`  \n    The name of the fiat currency being created, indicating that this operation pertains to the United States Dollar.\n  \n  - **description**: `\"United States Dollar\"`  \n    A brief description of the fiat currency, providing more context about what USD represents.\n  \n  - **type**: `\"usd\"`  \n    Indicates the currency type being used. It's a shorthand representation for the United States Dollar.\n  \n  - **action**: `\"buy\"`  \n    This defines the action to be performed, which in this instance is a purchase operation related to the fiat currency.\n  \n  - **rate**: `1`  \n    The exchange rate at which the fiat currency is being bought. A rate of 1 indicates that the purchase is at par value.\n  \n  - **amount**: `1`  \n    This refers to the quantity of fiat currency being created or bought, which is set to 1 in this example.\n\nThis structure provides a comprehensive overview of the data parameters expected in the request for creating a fiat utility for a user."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Create Bulk for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"USD\",\n            \"description\": \"United States Dollar\",\n            \"type\": \"usd\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1\n        },\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"USD\",\n            \"description\": \"United States Dollar\",\n            \"type\": \"usd\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "createBulk"
+          ]
+        },
+        "description": "### Endpoint: Utility - Fiat - Create Bulk for User\n\n#### Request Details:\n- **Auth**:\n  - **Type**: Bearer Token authentication method.\n  - **Bearer**: Contains a single token required for authorization.\n    - **Key**: `token` - Identifies the token parameter.\n    - **Value**: `BearerToken` - This is a placeholder for the actual token needed for authentication.\n    - **Type**: String - Indicates that the value must be a string.\n\n- **Method**: \n  - **Type**: POST - This endpoint is used to send data to the server to create a resource.\n\n- **URL**: \n  - **Endpoint**: `http://localhost:3000/api/utility/fiat/createBulk` - The URL where the request is sent, specifying the API path for creating bulk fiat transactions.\n\n- **Headers**:\n  - This section is currently empty. Additional headers can be included here if necessary but are currently disabled.\n\n#### Request Body:\n- **Mode**: \n  - **Type**: Raw - Indicates that the body is sent in raw format.\n\n- **Raw**: \n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"USD\",\n            \"description\": \"United States Dollar\",\n            \"type\": \"usd\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1\n        },\n        {\n            \"targetType\": \"accountId\",\n            \"name\": \"USD\",\n            \"description\": \"United States Dollar\",\n            \"type\": \"usd\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1\n        }\n    ]\n}\n```\n\n##### Body Parameters:\n- **sessionId**: \n  - A unique identifier for the user session. This is used to keep track of the user's current activity and authenticate the requests.\n\n- **accountId**: \n  - The ID associated with the user's account that the transaction will be applied to.\n\n- **list**: \n  - A list of transactions to be processed in bulk. Each item in this array includes the following details:\n\n  - **targetType**: \n    - Denotes the specific type of target for this transaction, which in this case is an `accountId`.\n\n  - **name**: \n    - The name of the currency being used in the transaction. Here, it is set to `USD`.\n\n  - **description**: \n    - A brief description of the currency, providing additional context; for this instance, it describes `USD` as \"United States Dollar\".\n\n  - **type**: \n    - Indicates the currency type, which is set to `usd` referring to the US Dollar.\n\n  - **action**: \n    - Specifies the action to be performed. In this scenario, it states `buy`, meaning the transactions are for purchasing currency.\n\n  - **rate**: \n    - The exchange rate applicable for this transaction. In this example, it is set to `1`, suggesting a direct exchange without any conversion.\n\n  - **amount**: \n    - The amount of currency involved in each transaction, which is set to `1` in this case. This indicates that the user is purchasing 1 unit of USD.\n\nThis endpoint is designed to facilitate bulk creation of fiat transactions for users, enabling efficient processing of simultaneous requests."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Create for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"USD\",\n    \"description\": \"United States Dollar\",\n    \"type\": \"usd\",\n    \"action\": \"buy\",\n    \"rate\": 1,\n    \"amount\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "create"
+          ]
+        },
+        "description": "### Utility - Fiat - Create for Team Endpoint Description\n\n#### Request Details\n- **Auth**: This endpoint requires bearer token authentication. The token should be provided in the authorization header as a string.\n  - **Type**: Indicates that the authentication method used is a bearer token.\n  - **Bearer**: An array containing the token details for authentication.\n    - **Key**: \"token\" indicates the type of key used for authorization.\n    - **Value**: Placeholder \"BearerToken\" should be replaced with the actual token value when making requests.\n    - **Type**: Indicates the data type of the token, which is a string.\n\n- **Method**: The HTTP method used for this request is POST, indicating that data is being sent to the server to create a new resource.\n\n- **URL**: This is the endpoint's address where the request will be sent.\n  - **Endpoint**: `http://localhost:3000/api/utility/fiat/create` is the specified URL for creating a new fiat utility entry for a team.\n\n- **Headers**: \n  - There are currently no custom headers configured (the key and value are left empty), and this section is disabled.\n\n#### Body Details\n- **Mode**: The body of the request is in raw format, specifically using JSON.\n  \n- **Raw JSON Content**: The content of the request body contains the following fields:\n  - **sessionId**: A unique identifier for the session associated with the request. Should be replaced with the actual session ID.\n  - **accountId**: The identifier for the account related to the action being taken. This needs to be the actual account ID.\n  - **targetType**: Specifies the type of target for the action, in this case, it should be a string identifying the target type as \"teamId\".\n  - **targetId**: The unique identifier for the team that the action relates to. Replace \"teamId\" with the actual team's ID.\n  - **name**: The name of the fiat currency being created. Here, \"USD\" is provided as an example for the United States Dollar.\n  - **description**: A brief descriptor of the currency. \"United States Dollar\" provides a clear identification of the currency involved.\n  - **type**: This field indicates the type of currency, with \"usd\" being a designation for the United States Dollar.\n  - **action**: This indicates the action to be taken with the currency; in this case, \"buy\" indicates that the currency is being purchased.\n  - **rate**: The exchange rate for the currency, which is set to `1` as an example in this case.\n  - **amount**: The quantity of the currency to be created, here set to `1`. \n\nThis endpoint serves to create an entry for fiat currency transactions within a specified team context and requires appropriate authentication alongside defined body parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Create Bulk for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"list\": [\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"USD\",\n            \"description\": \"United States Dollar\",\n            \"type\": \"usd\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1\n        },\n        {\n            \"targetType\": \"teamId\",\n            \"targetId\": \"teamId\",\n            \"name\": \"USD\",\n            \"description\": \"United States Dollar\",\n            \"type\": \"usd\",\n            \"action\": \"buy\",\n            \"rate\": 1,\n            \"amount\": 1\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/createBulk",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "createBulk"
+          ]
+        },
+        "description": "### Endpoint: Utility - Fiat - Create Bulk for Team\n\n#### Request Description\n\n- **Authentication**\n  - **Type**: Bearer Token\n    - **Key**: `token`\n    - **Value**: `BearerToken`\n    - **Type**: String\n  - This section requires a bearer token for authorization to access the endpoint.\n\n- **Method**: `POST`\n  - This specifies that the request method is POST, indicating that data will be sent to the server for processing.\n\n- **URL**: `http://localhost:3000/api/utility/fiat/createBulk`\n  - This is the endpoint where the POST request will be sent. It is hosted locally on port 3000.\n\n- **Headers**\n  - There are currently no custom headers specified for this request as the header key and value are empty and marked as disabled.\n\n- **Body**\n  - **Mode**: Raw\n    - This indicates that the body of the request contains raw data. The data format is JSON.\n  \n  - **Content**: \n    - The body contains a JSON object with the following fields:\n      - **sessionId**: \n        - Type: String\n        - Description: An identifier for the session during which the request is being made.\n      \n      - **accountId**: \n        - Type: String\n        - Description: An identifier for the account involved in the transaction.\n\n      - **list**: \n        - Type: Array\n        - Description: A collection of transaction objects to be processed in bulk. Each object within the list contains:\n          - **targetType**: \n            - Type: String\n            - Description: Indicates the type of target for the transaction, here it is consistently `teamId`.\n          \n          - **targetId**: \n            - Type: String\n            - Description: An identifier for the specific team that the transaction will be directed towards.\n          \n          - **name**: \n            - Type: String\n            - Description: This denotes the currency name, e.g., \"USD\" for United States Dollar.\n          \n          - **description**: \n            - Type: String\n            - Description: A description of the currency being used, providing more context about the currency type.\n          \n          - **type**: \n            - Type: String\n            - Description: Specifies the currency type, such as `usd`.\n          \n          - **action**: \n            - Type: String\n            - Description: Indicates the type of action to be performed with the currency, such as `buy`.\n          \n          - **rate**: \n            - Type: Number\n            - Description: The exchange rate for the transaction; in this example, it is set to 1.\n          \n          - **amount**: \n            - Type: Number\n            - Description: The total amount of currency for the transaction, here it is set to 1.\n\nThis structure allows the user to create multiple transactions involving buying a specified amount of a currency for a team in a single bulk request. Each transaction is represented as an object within the list array."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Convert Fiat",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"fiatId\": \"fiatId\",\n    \"type\": \"usd\",\n    \"rate\": 1,\n    \"amount\": 1,\n    \"convertTo\": \"token\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/convert",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "convert"
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Fiat - Convert Fiat\n\n#### Request Method\n- **Method**: POST\n  - This indicates that the request will send data to the server to convert Fiat currency.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/utility/fiat/convert`\n  - This is the endpoint that handles the Fiat currency conversion request. It's hosted locally.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - This endpoint uses Bearer token authentication for secure access to the API.\n  \n- **Bearer Token**\n  - **Key**: `token`\n    - The key under which the authentication token is sent.\n  - **Value**: `BearerToken`\n    - The actual authentication token string that grants access to this API.\n  - **Type**: String\n    - Specifies that the token is a string format.\n\n#### Headers\n- **Header**: Client-UUID\n  - **Key**: `Client-UUID`\n    - This header includes a unique identifier for the client making the API request. It is used for tracking and managing client-specific activities.\n  - **Value**: `ClientUUID`\n    - This should be replaced with a specific UUID value that identifies the client.\n  - **Type**: Default\n    - Indicates a standard header format.\n\n#### Request Body\n- **Body Mode**: Raw\n  - The body of the request will be sent as raw data, formatted as JSON.\n\n- **Raw Body Content**:\n  ```json\n  {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"fiatId\": \"fiatId\",\n      \"type\": \"usd\",\n      \"rate\": 1,\n      \"amount\": 1,\n      \"convertTo\": \"token\"\n  }\n  ```\n  - **Field Descriptions**:\n    - **sessionId**: Represents a unique identifier for the current session. This helps in managing user interactions without them logging in repeatedly.\n    - **accountId**: Identifies the user's account that the Fiat conversion will be processed against. This is crucial for linking the transaction to the right user.\n    - **fiatId**: Refers to the specific Fiat currency identification that indicates which currency is to be converted.\n    - **type**: Specifies the type of Fiat currency being processed. For example, it may indicate \"usd\" for US dollars.\n    - **rate**: The conversion rate applied to the Fiat amount. This is the rate at which the Fiat is converted to the target currency.\n    - **amount**: The quantity of currency to convert. This is the actual amount of Fiat that the user wants to convert.\n    - **convertTo**: Indicates the currency or token to which the Fiat amount will be converted. For instance, it could specify that the amount should be converted to a cryptocurrency token.\n\n#### Body Options\n- **Options**: \n  - **Raw**:\n    - **Language**: JSON\n      - This setting specifies that the raw body content is formatted as JSON, ensuring that the API can interpret the data correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Update Fiat for User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"fiatId\": \"fiatId\",\n    \"targetType\": \"accountId\",\n    \"name\": \"USD\",\n    \"description\": \"United States Dollar\",\n    \"type\": \"usd\",\n    \"action\": \"gift\",\n    \"rate\": 1,\n    \"amount\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "update"
+          ]
+        },
+        "description": "## Utility - Fiat - Update Fiat for User\n\n### Request\n\n- **Authorization**: This request uses Bearer Token authentication. A valid token must be included in the request header for authorization.\n\n  - **Token**: A placeholder for the Bearer token required for authentication. Replace `\"BearerToken\"` with the actual token required for access.\n\n- **Method**: The HTTP method used for this request is `PUT`, which is typically used for updating existing resources.\n\n- **URL**: The endpoint for the request is `http://localhost:3000/api/utility/fiat/update`. This is the specific URL where the update operation is performed.\n\n- **Headers**: \n\n  - **Client-UUID**: This header is used to identify the client making the request. Replace `\"ClientUUID\"` with the actual UUID associated with the client.\n\n### Body\n\nThe body of the request should be formatted in JSON. Below are the fields required in the JSON body:\n\n- **sessionId**: A unique identifier for the session during which the update request is made. This helps track user sessions.\n\n- **accountId**: The identifier for the user’s account that this update pertains to. This should be the specific account being updated.\n\n- **fiatId**: The identifier for the fiat currency that is being updated. This helps specify which currency record to modify.\n\n- **targetType**: Indicates the type of target for the update. In this example, the value is `\"accountId\"`, implying that the update relates to a specific account.\n\n- **name**: The name of the fiat currency. For example, this could be `\"USD\"` for the United States Dollar.\n\n- **description**: A description of the fiat currency being updated. For example, `\"United States Dollar\"` describes the currency.\n\n- **type**: The type of fiat currency. In this example, it is set to `\"usd\"`, denoting US Dollars.\n\n- **action**: Specifies the action being taken with this update. Here, the action is set to `\"gift\"`, indicating that the update involves gifting fiat currency.\n\n- **rate**: The exchange rate associated with the currency. The value `1` indicates a 1:1 conversion rate for this example.\n\n- **amount**: The amount of fiat currency being updated. In this case, it is set to `2`, indicating that two units of the currency are involved in this operation.\n\n### Summary\n\nThis request is designed to update specific fiat currency details for a user in a given account. The necessary information includes identifiers for the session, account, and the fiat currency itself, as well as the associated currency details and the action to be performed. Make sure to provide the correct token and UUID to successfully authenticate and execute this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Update Fiat for Team",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"fiatId\": \"fiatId\",\n    \"targetType\": \"teamId\",\n    \"targetId\": \"teamId\",\n    \"name\": \"USD\",\n    \"description\": \"United States Dollar\",\n    \"type\": \"usd\",\n    \"action\": \"gift\",\n    \"rate\": 1,\n    \"amount\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "update"
+          ]
+        },
+        "description": "### Utility - Fiat - Update Fiat for Team\n\n**Request Type:** PUT  \n**Endpoint URL:** http://localhost:3000/api/utility/fiat/update\n\n### Authentication\n- **Auth Type:** Bearer Token\n  - **Token Key:** \"token\"  \n  - **Token Value:** \"BearerToken\" (Replace with actual bearer token)\n\n### Headers\n- **Client-UUID:**\n  - **Key:** \"Client-UUID\"\n  - **Value:** \"ClientUUID\" (Replace with actual Client UUID)\n\n### Request Body\nThe body of the request is in JSON format and includes the following fields:\n\n- **sessionId:** A unique identifier for the user's session. This is used to associate the request with the user's current session.\n\n- **accountId:** The ID of the account that is being updated. This identifies the specific account within the system.\n\n- **fiatId:** The unique identifier for the fiat currency entry that is to be updated. This allows the system to find the specific fiat currency record.\n\n- **targetType:** Specifies the type of target that the update applies to. In this case, it should be set to \"teamId\" indicating that the update applies to a team.\n\n- **targetId:** The ID of the target, which is the specific team being updated. This links the fiat update to a particular team.\n\n- **name:** The name of the fiat currency. For example, \"USD\" represents the United States Dollar.\n\n- **description:** A brief description of the fiat currency. For example, \"United States Dollar\" provides additional context about the currency.\n\n- **type:** Specifies the type of fiat currency. For this case, it is set to \"usd\" indicating that this is the US Dollar.\n\n- **action:** Indicates the action to perform with this fiat currency update. In this case, it is set to \"gift\", which may imply that this currency is being given or allocated as a gift within the context of the app.\n\n- **rate:** The exchange rate for the fiat currency. In this example, it is set to 1, indicating a 1:1 rate for this currency.\n\n- **amount:** The amount of fiat currency being referenced in the update. Here, it is set to 2, which would mean two units of the specified fiat currency are being managed or allocated.\n\n### Notes\nMake sure to replace placeholder values with actual data before making a request. The endpoint is designed to update a specific fiat currency record associated with a team in the utility application."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get By ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?fiatId=fiatId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "fiatId",
+              "value": "fiatId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Fiat - Get By ID\n\n#### Request\n- **Auth**: This section defines the authentication method to access the API.\n  - **Type**: The authentication type is \"bearer\", which means it requires a token to be sent with the request for validation.\n  - **Bearer**: Contains authentication details.\n    - **Key**: Indicates the type of authentication token being sent. Here, it is labeled as \"token\".\n    - **Value**: This field is to hold the actual token that is required to authenticate the request. It is labeled \"BearerToken\" for reference, but this should be replaced with a valid token when making the request.\n    - **Type**: Specifies that the value is a string.\n\n- **Method**: This specifies the HTTP method used for the request. In this case, it is \"GET\", indicating that data will be retrieved from the server.\n\n- **URL**: This is the endpoint that will be called to retrieve data.\n  - Structure: `http://localhost:3000/api/utility/fiat/get/?fiatId=fiatId&sessionId=sessionId&accountId=accountId`\n    - **fiatId**: This parameter should be replaced with the actual ID of the fiat currency you wish to retrieve.\n    - **sessionId**: This parameter should be replaced with the session identifier that corresponds to the specific user session.\n    - **accountId**: This parameter should be replaced with the account identifier associated with the user's account.\n\n- **Headers**: This section would contain any additional headers needed for the request.\n  - Currently, there is a placeholder with key and value fields empty and marked as disabled, indicating that no extra headers are being sent in this request.\n\n- **Body**: This identifies any data that needs to be sent along with the request.\n  - **Mode**: Set to \"raw\", meaning that any body content expected by the API is to be sent in a raw format.\n  - **Raw**: This field is currently empty, indicating that there is no body content required for this GET request. \n\nThis endpoint is used to retrieve specific information about a fiat currency based on the provided fiat ID, session ID, and account ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get Balance",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?balance=1&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "balance",
+              "value": "1"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Utility - Fiat - Get Balance\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"description\": \"This specifies that bearer token authentication is required to access the endpoint. A bearer token is a type of access token that is sent with the request to authenticate the user.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"description\": \"This is the key that specifies the type of authentication being used. In this case, it's a bearer token.\",\n            \"value\": \"BearerToken\",\n            \"description\": \"This value should be replaced with the actual bearer token that grants access to the API. It must be kept secure and should not be shared publicly.\",\n            \"type\": \"string\",\n            \"description\": \"Indicates that the value is of string type.\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"description\": \"This indicates that the request is using the GET HTTP method, which is commonly used to retrieve data from the server.\",\n      \"url\": \"http://localhost:3000/api/utility/fiat/get/?balance=1&sessionId=sessionId&accountId=accountId\",\n      \"description\": \"This is the endpoint URL that will be called to get the fiat balance. It includes query parameters for balance, session ID, and account ID.\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"description\": \"Currently, there are no custom headers being sent with the request as its key is empty.\",\n          \"value\": \"\",\n          \"description\": \"This value is empty as there are no custom header values associated with this request.\",\n          \"type\": \"default\",\n          \"description\": \"Specifies that this header is a default type and is currently disabled, so it won't be sent.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"description\": \"Indicates that the body of the request is formatted as raw data. However, in this request, there is no body content being sent.\",\n        \"raw\": \"\",\n        \"description\": \"This indicates that the body is empty, as no data is being sent in the request body.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get Stats",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?log=stats&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "stats"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Fiat - Get Stats\n\n- **Name**: Utility - Fiat - Get Stats\n  - This represents the name of the API endpoint for retrieving statistical data related to fiat transactions in the utility module.\n\n- **Request**:\n  - This section outlines the details required to perform the API request.\n  \n  - **Auth**:\n    - **Type**: Bearer\n      - This indicates that the authentication method used for this endpoint is a bearer token.\n    - **Bearer**: \n      - This section contains the information needed to authorize the API request.\n      - **Key**: token\n        - This is the identifier for the authentication method.\n      - **Value**: BearerToken\n        - This is where the actual bearer token should be placed for authorization. Replace \"BearerToken\" with your actual token.\n      - **Type**: string\n        - Specifies that the value being provided for the token is in string format.\n\n  - **Method**: GET\n    - This indicates that the HTTP method used for this request is GET, which is typically used to retrieve data from a specified resource.\n\n  - **URL**: \n    - `http://localhost:3000/api/utility/fiat/get/?log=stats&sessionId=sessionId&accountId=accountId`\n      - This is the endpoint where the request is sent. It includes several query parameters:\n        - `log=stats`: This query parameter indicates that the request is for retrieving statistics.\n        - `sessionId=sessionId`: This is a placeholder for the session ID that may be required to track the user's session.\n        - `accountId=accountId`: This placeholder should be replaced with the actual account ID for which the stats are being requested.\n\n  - **Headers**:\n    - This section is where you would specify any additional metadata required for the request.\n    - **Key**: (Empty)\n      - Currently, the key for the header is empty.\n    - **Value**: (Empty)\n      - Currently, the value for the header is empty.\n    - **Type**: default\n      - Indicates the default type for the header.\n    - **Disabled**: true\n      - This means that the header is currently disabled and will not be sent with the request.\n\n  - **Body**:\n    - **Mode**: raw\n      - Indicates that the body of the request is in raw format.\n    - **Raw**: \"\"\n      - Currently, there is no data being sent in the request body, as it is empty.\n\nThis endpoint primarily focuses on allowing users to gather statistical data for fiat currency transactions through proper authentication and query parameters. Be sure to replace the placeholders in the URL with actual session and account IDs before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get Ledger",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?log=ledger&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "ledger"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of the Endpoint: Utility - Fiat - Get Ledger\n\n- **Endpoint Name**: Utility - Fiat - Get Ledger\n  - This is the name of the API request that retrieves the ledger information related to fiat currency.\n\n- **Request**: \n  - **Auth**: \n    - **Type**: bearer\n      - Specifies that the request uses Bearer Token authentication which is a common method for securing APIs.\n    - **Bearer**: \n      - This field contains the credentials for authentication.\n      - **Key**: token\n        - This specifies the name of the token parameter.\n      - **Value**: BearerToken\n        - This is a placeholder for the actual Bearer token that will be used for authentication.\n      - **Type**: string\n        - Indicates that the value of the token is of string type.\n\n- **Method**: GET\n  - This signifies that the request is a GET request, which is typically used to retrieve data from the server.\n\n- **URL**: \n  - `http://localhost:3000/api/utility/fiat/get/?log=ledger&sessionId=sessionId&accountId=accountId`\n  - This is the endpoint URL where the GET request is sent.\n  - **Parameters**:\n    - `log=ledger`\n      - This parameter indicates that the request is specifically asking for ledger data.\n    - `sessionId=sessionId`\n      - This parameter is a placeholder for the session identifier which may be required to maintain the user session.\n    - `accountId=accountId`\n      - This parameter is a placeholder for the account identifier which specifies the account for which the ledger is being retrieved.\n\n- **Headers**:\n  - This section defines any HTTP headers that need to be included in the request.\n  - Currently, there is a defined header:\n    - **Key**: (empty)\n      - There is an empty placeholder for the header key.\n    - **Value**: (empty)\n      - There is an empty placeholder for the header value.\n    - **Type**: default\n      - Indicates that this is a standard type of header.\n    - **Disabled**: true\n      - The header is currently disabled and will not be included in the request.\n\n- **Body**:\n  - This section describes the body of the request.\n  - **Mode**: raw\n    - This indicates that the body of the request is intended to be raw data.\n  - **Raw**: \"\"\n    - There is no raw data provided in the body for this GET request, which is typical as GET requests generally do not send data in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get USD Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?log=type&type=usd&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "usd"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Utility - Fiat - Get USD Logs\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ],\n        \"description\": \"Authorization method using a Bearer token. The token is used to authenticate the request. The placeholder 'BearerToken' should be replaced with the actual token.\"\n      },\n      \"method\": \"GET\",\n      \"description\": \"Indicates that this request will retrieve data from the server. No data will be modified.\"\n      \"url\": \"http://localhost:3000/api/utility/fiat/get/?log=type&type=usd&sessionId=sessionId&accountId=accountId\",\n      \"description\": {\n        \"url\": \"The endpoint URL where the request is sent. This URL is structured to access USD logs under the 'utility' and 'fiat' categories. It includes query parameters for filtering logs:\",\n        \"query_parameters\": {\n          \"log\": \"Indicates the type of log to retrieve. The value is set to 'type'.\",\n          \"type\": \"Specifies the currency type. In this case, it is set to 'usd'.\",\n          \"sessionId\": \"Represents the session ID. This is used to track user sessions. Replace 'sessionId' with the actual ID.\",\n          \"accountId\": \"Represents the account ID for which the logs are being requested. Replace 'accountId' with the actual account ID.\"\n        }\n      },\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"description\": \"Currently, no custom headers are being sent with this request. The header is disabled and does not add any information.\",\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      },\n      \"description\": \"The body of the request is empty since this is a GET request. Typically, GET requests do not include a body.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get EUR Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?log=type&type=eur&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "eur"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"The name of the API request is 'Utility - Fiat - Get EUR Logs'. This indicates that the API is designed to fetch logs related to Fiat transactions specifically for the Euro (EUR) currency.\",\n  \n    \"request\": {\n      \"auth\": {\n        \"type\": \"The type of authentication used for this request is 'bearer' authentication. This method requires a token to be sent with the request to validate access.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This is the key parameter used in the bearer token authentication.\",\n            \"value\": \"BearerToken\": \"This placeholder represents the actual token value that will be used for authentication. The user needs to replace 'BearerToken' with their actual token.\",\n            \"type\": \"string\": \"Indicates that the value of the token is expected to be a string.\"\n          }\n        ]\n      },\n      \"method\": \"GET\": \"This specifies the HTTP method used for the request, in this case, 'GET', which is typically used to retrieve data from a specified resource.\",\n      \n      \"url\": \"The endpoint URL for the API request is 'http://localhost:3000/api/utility/fiat/get/?log=type&type=eur&sessionId=sessionId&accountId=accountId'. This URL includes various query parameters to filter the logs being requested.\",\n      \n      \"headers\": [\n        {\n          \"key\": \"\": \"This field is currently empty and indicates that there are no custom headers specified for this request.\",\n          \"value\": \"\": \"Similarly, this field is empty, meaning there are no values assigned to any headers.\",\n          \"type\": \"default\": \"Specifies the default type for the header entry, though no specific headers are provided.\",\n          \"disabled\": true: \"This indicates that the header is currently disabled and will not be sent with the request.\"\n        }\n      ],\n      \n      \"body\": {\n        \"mode\": \"raw\": \"This indicates that the body of the request is in 'raw' mode, which typically means that it does not require JSON formatting or any specific structure.\",\n        \"raw\": \"\": \"This field is empty, suggesting that no body content is necessary or included for this GET request.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get GHB Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?log=type&type=gbp&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "type"
+            },
+            {
+              "key": "type",
+              "value": "gbp"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Fiat - Get GHB Logs\n\n**Name:** Utility - Fiat - Get GHB Logs\n\n**Request Details:**\n\n- **Authentication:**\n  - **Type:** Bearer token authentication is used for securing the endpoint.\n  - **Bearer Token Details:**\n    - **Key:** Reflects the name of the token, designated as \"token.\"\n    - **Value:** This should contain the actual bearer token prefixed with \"Bearer\" for authentication purposes. It is presented as \"BearerToken\" in this example.\n    - **Type:** Specifies that the token is a string type.\n\n- **HTTP Method:** The request method used to interact with the endpoint is `GET`, which retrieves data from the server.\n\n- **URL:** This is the endpoint's URL where the request will be sent. It includes several query parameters that provide additional information.\n  - **Base URL:** `http://localhost:3000/api/utility/fiat/get/`\n  - **Query Parameters:**\n    - `?log=type`: The log type that specifies the category of logs to fetch. The example uses \"type\" as a placeholder.\n    - `&type=gbp`: Indicates the type of currency for the log. In this case, \"gbp\" stands for British Pounds.\n    - `&sessionId=sessionId`: This is a placeholder for the unique session identifier. It helps associate the logs with a specific user session.\n    - `&accountId=accountId`: This is a placeholder for the account identifier, which specifies which account's logs are being requested.\n\n- **Headers:**\n  - This section currently contains an empty header, which means no additional headers are specified in the example.\n  - **Disabled:** The empty header is marked as disabled, implying it will not be sent with the request.\n\n- **Body:**\n  - **Mode:** The body mode is set to `raw`, indicating that raw data can be sent with the request.\n  - **Raw Content:** The body is empty in this case, indicating no additional content is sent in the request body.\n\nThis endpoint is designed for retrieving logs specific to fiat currency transactions associated with a particular account and session while requiring proper authentication through a bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get Accumulation Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?log=accumulation&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "accumulation"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Fiat - Get Accumulation Logs\n\n#### Request Details:\n- **Authentication:**\n  - **Type:** Bearer\n    - **Token Key:** Represents the key for authentication.\n    - **Token Value:** Placeholder for the actual Bearer token required for authentication. This token must be provided to access the endpoint successfully.\n\n- **Method:**\n  - **GET:** This is the HTTP method used to retrieve data from the server.\n\n- **URL:**\n  - **Endpoint URL:** `http://localhost:3000/api/utility/fiat/get/?log=accumulation&sessionId=sessionId&accountId=accountId`\n    - **Base URL:** `http://localhost:3000/api/utility/fiat/get/`\n    - **Query Parameters:**\n      - **log:** This parameter should be set to \"accumulation\" to specify the type of logs being requested.\n      - **sessionId:** This parameter should contain the specific session ID for which the accumulation logs are being retrieved.\n      - **accountId:** This parameter should contain the account ID of the user or entity whose logs are being requested.\n\n- **Headers:**\n  - **Key:** Currently empty, indicating that no additional custom headers are required for this request.\n  - **Value:** Currently empty.\n  - **Type:** Default, meaning it is a standard header type.\n  - **Disabled:** This header is disabled and will not be sent with the request.\n\n- **Body:**\n  - **Mode:** Raw, indicating that the request body will contain raw data.\n  - **Raw:** Currently empty, meaning that no raw data is being sent with the request. This is typical for a GET request, as they usually do not require a body.\n\nThis endpoint is used to retrieve accumulation logs for a specific user or account based on the provided parameters. Ensure that valid session and account IDs are supplied, as well as the necessary bearer token for authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get Deduction Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?log=deduction&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "deduction"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Utility - Fiat - Get Deduction Logs\n\n**Endpoint Overview:**\nThis API endpoint retrieves deduction logs related to Fiat transactions. The response will include records that match the provided filters (sessionId and accountId).\n\n**Request Details:**\n\n- **Authentication:**\n  - The endpoint requires bearer token authentication. A valid token should be provided to gain access to the logs.\n    - **Key:** token\n    - **Value:** BearerToken (replace with your actual bearer token)\n    - **Type:** string\n\n- **HTTP Method:**\n  - **GET**: This endpoint uses the GET method to retrieve data from the server without modifying any resources.\n\n- **URL:**\n  - The endpoint URL is:\n    ```\n    http://localhost:3000/api/utility/fiat/get/?log=deduction&sessionId=sessionId&accountId=accountId\n    ```\n  - **Parameters:**\n    - `log=deduction`: Indicates that the logs being requested are specifically related to deductions.\n    - `sessionId=sessionId`: Replace `sessionId` with the actual session ID you want to filter the logs by.\n    - `accountId=accountId`: Replace `accountId` with the actual account ID you want to filter the logs by.\n\n- **Headers:**\n  - The request headers are currently empty. There is a placeholder for any additional headers, but it is disabled by default. If required, users can enable and fill in appropriate headers.\n\n- **Body:**\n  - The request body is set to a raw mode, but it is empty as this is a GET request and does not require a body.\n\nMake sure to replace the placeholder values (`BearerToken`, `sessionId`, and `accountId`) with the actual values required for your requests."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get Conversion Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?log=conversion&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "conversion"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Utility - Fiat - Get Conversion Logs\n\n#### Overview\nThis endpoint retrieves conversion logs for fiat currency transactions. It is designed for applications that need to access historical data regarding currency conversions.\n\n#### Request Details:\n\n- **Auth**:\n  - **Type**: Bearer  \n    This specifies that the request will use Bearer token authentication.\n  - **Bearer**:\n    - **Key**: token  \n      This is the identifier for the authentication token.\n    - **Value**: BearerToken  \n      Replace \"BearerToken\" with your actual Bearer token to authenticate the request.\n    - **Type**: string  \n      Indicates that the token should be provided as a string.\n\n- **Method**: GET  \n  The HTTP method used for the request is GET, which is standard for retrieving data.\n\n- **URL**: \n  ``` \n  http://localhost:3000/api/utility/fiat/get/?log=conversion&sessionId=sessionId&accountId=accountId\n  ```  \n  This is the endpoint where the request will be sent. Modify the parameters as follows:\n  - **log**: Set to “conversion” to specify that we’re interested in conversion logs.\n  - **sessionId**: Replace \"sessionId\" with the actual session identifier for the transaction.\n  - **accountId**: Replace \"accountId\" with the actual account identifier for the user making the request.\n\n- **Headers**:\n  - There are no specific headers added to this request; one header is present but disabled. You may add any additional headers if necessary for your use case.\n\n- **Body**:\n  - **Mode**: raw  \n    Indicates the format in which the body content would be submitted if required. \n  - **Raw**:  \n    There is no body content being sent with this request since it is a GET request, which typically does not require a body.\n\n#### Summary\nThis endpoint is primarily aimed at developers looking to access conversion logs for fiat transactions. To use it effectively, make sure to include a valid Bearer token and provide the correct session and account identifiers in the query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get Neutral Logs",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/get/?log=category&category=neutrals&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "log",
+              "value": "category"
+            },
+            {
+              "key": "category",
+              "value": "neutrals"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Utility - Fiat - Get Neutral Logs\n\n- **Name**: Utility - Fiat - Get Neutral Logs  \n  This is a descriptive name for the API endpoint, indicating its purpose which is to retrieve neutral logs related to fiat transactions.\n\n- **Request**:  \n  The request section contains all the details needed to make a call to the API.\n\n  - **Auth**:  \n    Specifies the authentication method used to access the endpoint.\n    \n    - **Type**: Bearer  \n      Indicates that bearer token authentication is required to access this endpoint.\n\n    - **Bearer**:  \n      A list containing the details of the bearer token.\n\n      - **Key**: token  \n        Refers to the key under which the bearer token is passed.\n\n      - **Value**: BearerToken  \n        This placeholder represents the actual bearer token that must be provided for authentication.\n\n      - **Type**: string  \n        Indicates that the value for the bearer token should be in string format.\n\n  - **Method**: GET  \n    This specifies that the request method for this endpoint is GET, which is used for retrieving data.\n\n  - **URL**:  \n    The endpoint URL which is used to make the request.\n    \n    - `http://localhost:3000/api/utility/fiat/get/?log=category&category=neutrals&sessionId=sessionId&accountId=accountId`  \n      This is the complete URL to access the API, which includes query parameters:\n      \n      - `log=category`: Indicates the type of logs to filter by, in this case, by category.\n      - `category=neutrals`: Specifies that the category of logs to retrieve is 'neutrals'.\n      - `sessionId=sessionId`: A placeholder for the session identifier, which is required to filter logs for a specific session.\n      - `accountId=accountId`: A placeholder for the user's account identifier, necessary for scoping the logs to a specific account.\n\n  - **Headers**:  \n    Contains any additional headers that might be required in the request.\n    \n    - **Key**: (empty)  \n      This indicates there are no custom headers included in this request; the default headers are used.\n\n    - **Value**: (empty)  \n      As there are no specific values for headers, this remains empty.\n\n    - **Type**: default  \n      Indicates the type of header, which in this case is set to default.\n\n    - **Disabled**: true  \n      This indicates that the headers specified are currently disabled and won’t be included in the request.\n\n  - **Body**:  \n    Details about the body of the request.\n\n    - **Mode**: raw  \n      The body of the request is in raw format, meaning it does not conform to any specific type like form data or URL-encoded data.\n\n    - **Raw**: (empty)  \n      The raw body content is empty, indicating that no body data needs to be sent with this GET request.\n\nThis endpoint is designed to access and retrieve neutral logs associated with fiat transactions, requiring authentication and specific parameters to filter the results accurately."
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Utility - Fiat - Get All\",\n  \"description\": \"This request fetches all available fiat utilities. It is useful for retrieving a comprehensive list of fiat-related utilities that the API provides.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"description\": \"Authentication type used for this request. A bearer token must be provided for authorization to access the endpoint.\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"description\": \"The key for the bearer token. It is required to authorize the request.\",\n          \"value\": \"BearerToken\",\n          \"description\": \"The actual value of the bearer token, which needs to be replaced with a valid token for the request to succeed.\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"method\": {\n      \"description\": \"This indicates the HTTP method used for the request. 'GET' is used here to retrieve information from the server.\"\n    },\n    \"url\": {\n      \"description\": \"The endpoint URL for the request. It consists of the base URL followed by the specific path for retrieving all fiat utilities. It also includes query parameters for session ID and account ID.\",\n      \"value\": \"http://localhost:3000/api/utility/fiat/all/?sessionId=sessionId&accountId=accountId\"\n    },\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true,\n        \"description\": \"This header entry is currently disabled and does not have any key or value defined. Normally, headers can be used to pass additional information with the request.\"\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"This indicates the format of the request body. In this case, it is set to 'raw', meaning that no body content is being sent with the request for the 'GET' method.\",\n      \"raw\": \"\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Utility - Fiat - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"fiatId\":\"fiatId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/utility/fiat/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "utility",
+            "fiat",
+            "delete"
+          ]
+        },
+        "description": "### Utility - Fiat - Delete Endpoint Description\n\n**Name:**  \nUtility - Fiat - Delete\n\n**Request Type:**  \nA POST request to delete a specific fiat record from the utility service.\n\n**Authentication Method:**  \nThis endpoint requires bearer token authentication. The token must be included in the authorization header of the request.\n\n- **Auth Type:** Bearer token\n  - **Key:** token - This is the identifier for the token.\n  - **Value:** sessionId - The actual session token that verifies the user's identity and permissions.\n  - **Type:** string - The format of the token.\n\n**HTTP Method:**  \nPOST - Used to submit data to be processed to the specified resource.\n\n**URL:**  \n`http://localhost:3000/api/utility/fiat/delete`  \nThe endpoint's URL where the delete request is sent.\n\n**Headers:**  \nThere are currently no custom headers being sent with this request. A default header entry exists but is disabled.\n\n**Body:**  \nThe body of the request is sent in raw JSON format, which contains the following fields:\n- **sessionId:** This field should be populated with the session ID of the user making the request, allowing the server to authenticate and authorize the user.\n- **accountId:** This field represents the ID of the account from which the fiat record should be deleted. It specifies which user's fiat data is affected by the operation.\n- **fiatId:** This field contains the ID of the specific fiat record that is to be deleted. This ID is used to identify which record in the database should be removed.\n\nIn summary, this endpoint allows a user to delete a specific fiat record associated with their account by providing the necessary IDs and a valid session token."
+      },
+      "response": []
+    }
+  ]
+}

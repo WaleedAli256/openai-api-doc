@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "6e3fb07a-8f6f-44fb-be82-e5dbe74a782d",
+    "name": "ActionSell",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Sell - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 10,\n    \"didSell\": true,\n    \"itemType\": \"token\",\n    \"utilityType\": \"coin\",\n    \"name\": \"this is name\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sell/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sell",
+            "create"
+          ]
+        },
+        "description": "# Action - Sell - Create Endpoint Description\n\nThis section outlines the details for the \"Action - Sell - Create\" endpoint in the API. Users may utilize this information to understand how to structure their requests effectively and make successful API calls.\n\n## Endpoint Details\n\n### Request Method\n- **Method**: POST  \n  Indicates that this endpoint will be used to send data to the server to create a new resource.\n\n### Request URL\n- **URL**: `http://localhost:3000/api/action/sell/create`  \n  The endpoint where the POST request will be sent.\n\n### Authentication\n- **Auth Type**: Bearer  \n  This API requires bearer token authentication to be added in the request header.\n  \n- **Bearer Token**: \n  - **Key**: token  \n    The key used for authentication is \"token\".\n  - **Value**: BearerToken  \n    Replace this with a valid bearer token to access the API.\n\n### Headers\n- **Headers**: \n  - The current configuration includes an empty header, which is disabled by default. You can add any required headers relevant to your implementation. \n\n### Request Body\n- **Body**: Raw JSON  \n  The body of the request must be sent in JSON format. Below are the required and optional fields:\n\n#### Fields in the Request Body\n1. **sessionId**:  \n   - Type: String  \n   - Description: Identifier for the session during which the sell action is being executed.\n\n2. **accountId**:  \n   - Type: String  \n   - Description: Unique identifier for the account associated with the sell action.\n\n3. **path**:  \n   - Type: String  \n   - Description: The path indicating the location of the resource. E.g., `/live/channel/video123`.\n\n4. **targetType**:  \n   - Type: String  \n   - Description: Type of the target resource. For example, it could signify that the target is identified by a \"videoId\".\n\n5. **targetId**:  \n   - Type: String  \n   - Description: Identifier for the specific target resource (e.g., the video being sold).\n\n6. **sourceType**:  \n   - Type: String  \n   - Description: Type of the source resource, which could be an \"accountId\" in this context.\n\n7. **sourceId**:  \n   - Type: String  \n   - Description: Identifier of the source resource corresponding to the selling action.\n\n8. **tokenAmount**:  \n   - Type: Integer  \n   - Description: The quantity of tokens being sold in this action. \n\n9. **didSell**:  \n   - Type: Boolean  \n   - Description: A flag indicating whether the selling action was successfully completed (true) or not (false).\n\n10. **itemType**:  \n    - Type: String  \n    - Description: Specifies the type of item being sold, e.g., \"token\".\n\n11. **utilityType**:  \n    - Type: String  \n    - Description: Indicates the utility type of the item, such as \"coin\".\n\n12. **name**:  \n    - Type: String  \n    - Description: A descriptive name associated with the sell action.\n\n13. **description**:  \n    - Type: String  \n    - Description: A detailed description of the sell action. This can be kept empty if not needed.\n\n14. **tags**:  \n    - Type: String  \n    - Description: Any tags relevant to the sell action to enhance categorization. This can also be left blank.\n\n### Conclusion\nThis endpoint allows for the creation of a new sell action in the API. Ensure that all necessary fields are filled out and that valid authentication is provided to successfully execute the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Sell - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 10,\n    \"didSell\": true,\n    \"itemType\": \"token\",\n    \"utilityType\": \"coin\",\n    \"name\": \"this is updated name\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"sellId\":\"sellId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sell/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sell",
+            "update"
+          ]
+        },
+        "description": "### Action - Sell - Update\n\nThis endpoint facilitates the update of a sell action in the system. Below is a detailed description of each data field involved in this API request:\n\n**Request Overview:**\n- **Auth**: This section outlines the authentication method for the request.\n  - **Type**: Specifies that a bearer token is used for authenticating the request.\n  - **Bearer**: Contains the authentication token to verify the identity of the API caller.\n    - **Key**: \"token\" - Denotes the name of the token being passed.\n    - **Value**: \"BearerToken\" - Placeholder for the actual bearer token that should be provided.\n    - **Type**: \"string\" - Indicates the data type of the token.\n\n- **Method**: \n  - **PUT**: This HTTP method is used to update an existing resource.\n\n- **URL**: \n  - **http://localhost:3000/api/action/sell/update**: The endpoint URL where the PUT request will be sent to update a sell action.\n\n- **Headers**: \n  - Contains any additional metadata to be passed along with the request.\n    - **Key**: \"Client-UUID\" - A unique identifier for the client making the request.\n    - **Value**: \"ClientUUID\" - Placeholder for the actual UUID that should be provided.\n    - **Type**: \"default\" - Indicates the default header type.\n\n- **Body**: This section details the data sent with the request when using the raw mode in JSON format.\n  - **Mode**: \n    - **raw**: Specifies that the request body is in raw format.\n  - **Raw Data**: JSON object containing the following fields:\n    - **sessionId**: Represents the identifier for the session associated with this action.\n    - **accountId**: Unique identifier for the account that is making the sell action.\n    - **path**: The specific path related to the content, e.g., \"/live/channel/video123\".\n    - **targetType**: Type of target that is being acted upon (e.g., \"videoId\").\n    - **targetId**: Unique identifier for the target item (e.g., videoId).\n    - **sourceType**: Denotes the type of source from where the sell action originates (same as accountId).\n    - **sourceId**: Unique identifier for the source entity (same as accountId).\n    - **tokenAmount**: The quantity of tokens involved in the sell action (e.g., 10).\n    - **didSell**: Boolean value (true/false) indicating if the sell action was successful.\n    - **itemType**: Describes the type of item being sold (e.g., \"token\").\n    - **utilityType**: Indicates the category of utility for the item, such as \"coin\".\n    - **name**: New name assigned to the sell action or item, which is being updated (e.g., \"this is updated name\").\n    - **description**: This field can hold additional information or description about the selling action (currently empty).\n    - **tags**: A field for any associated tags relevant to the sell action (currently empty).\n    - **sellId**: Unique identifier for the specific sell action being updated (e.g., \"sellId\"). \n\nThis detailed description should help users understand the purpose and structure of the data when using the \"Action - Sell - Update\" API endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Sell - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sell/get/?sellId=sellId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sell",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sellId",
+              "value": "sellId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of the API Endpoint:\n\n#### Name: \n- **Action - Sell - Get**\n  - This is the identifier for the API request, indicating that it is used to retrieve information related to a sell action.\n\n#### Request Details:\n- **Auth**: \n  - This specifies the authentication method for the request.\n  - **Type**: `bearer`\n    - The API uses bearer token authentication, which requires a token to be sent in the request header for authorization.\n  - **Bearer**:\n    - The following data is contained within the bearer authentication.\n      - **Key**: `token`\n        - This is the name of the key used for the token.\n      - **Value**: `BearerToken`\n        - This is a placeholder where the actual bearer token should be placed to authorize the request.\n      - **Type**: `string`\n        - This indicates the type of the value expected (a string representing the token).\n\n- **Method**: \n  - **GET**\n    - This indicates that the API request is a GET request, which is used to retrieve data from the server.\n\n- **URL**: \n  - `http://localhost:3000/api/action/sell/get/?sellId=sellId&sessionId=sessionId&accountId=accountId`\n    - This is the endpoint URL where the GET request will be sent. \n    - It contains query parameters:\n      - **sellId**: Represents the unique identifier for the sell action.\n      - **sessionId**: Represents the unique identifier for the session associated with the request.\n      - **accountId**: Represents the unique identifier for the account involved in the sell action.\n\n- **Headers**: \n  - This section is used to specify any additional HTTP headers required for the request.\n  - **Key**: `\"\"` \n    - There are no custom headers set, as denoted by the empty key.\n  - **Value**: `\"\"`\n    - No values are assigned, indicating that this header is currently not being used.\n  - **Type**: `default`\n    - This indicates the default type for the header.\n  - **Disabled**: `true`\n    - This means that the header configuration is disabled and will not be sent with the request.\n\n- **Body**: \n  - The body of the request is specified here.\n  - **Mode**: `raw`\n    - Indicates that the body content will be sent as raw data.\n  - **Raw**: `\"\"`\n    - The body is currently empty, meaning no additional data is sent with the request.\n\nThis endpoint is designed to retrieve sell action details based on the provided identifiers for sell, session, and account. Ensure that the bearer token is replaced with a valid token for successful authentication while using this API."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Sell - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sell/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sell",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Sell - Get All\n\n- **Name**: Action - Sell - Get All\n  - This is the name of the API endpoint which indicates that it retrieves all sell actions.\n\n- **Request**: \n  - This section describes the details of the API request.\n\n  - **Auth**: \n    - **Type**: Bearer\n      - Specifies that the authentication method used for this API request is bearer token authentication.\n      \n    - **Bearer**:\n      - This section includes the bearer token information needed for authentication.\n      \n      - **Key**: \"token\"\n        - This is the key that identifies the bearer token used for accessing the API.\n\n      - **Value**: \"BearerToken\"\n        - Replace \"BearerToken\" with the actual token value that provides authorization to access the endpoint.\n\n      - **Type**: String\n        - Indicates that the value of the token is a string data type.\n\n  - **Method**: GET\n    - The HTTP method used for this request is GET, indicating that the requester wants to retrieve data from the API.\n\n  - **URL**: \n    - This is the endpoint to which the GET request is made.\n    - **Format**: `http://localhost:3000/api/action/sell/all/?sessionId=sessionId&accountId=accountId`\n      - Replace `sessionId` and `accountId` with actual session and account identifiers to retrieve specific sell actions.\n      \n  - **Headers**: \n    - This section typically includes any additional headers to be sent with the request. Here, the header is currently not defined and is disabled.\n    \n      - **Key**: (Empty)\n        - No specific key is provided for headers in this request.\n        \n      - **Value**: (Empty)\n        - No value is provided for headers in this request.\n        \n      - **Type**: Default\n        - Indicates that this is a default type header.\n        \n      - **Disabled**: true\n        - The header is currently disabled, meaning it will not be sent with the request.\n\n  - **Body**: \n    - This section defines the body of the request.\n    \n    - **Mode**: Raw\n      - Indicates that the body format is raw text.\n      \n    - **Raw**: (Empty)\n      - No content is provided in the body of the request, meaning the GET request does not send additional data."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Sell - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"sellId\":\"sellId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/sell/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "sell",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Sell - Delete\n\n- **Endpoint Name**: Action - Sell - Delete\n  - This endpoint is designated for the operation of deleting an action related to selling.\n\n- **Request Method**: POST\n  - This endpoint accepts a POST request, which is typically used to send data to the server to create or delete resources.\n\n- **Request URL**: \n  - `http://localhost:3000/api/action/sell/delete`\n    - The base URL indicates that the endpoint is hosted on a local server and is dedicated to handling delete actions for sells.\n\n- **Authorization**:\n  - **Auth Type**: Bearer\n    - The endpoint requires Bearer Token authentication for access.\n  - **Bearer Token Details**:\n    - **Key**: token\n      - This is the identifier for the token being used in the authentication process.\n    - **Value**: sessionId\n      - This represents the actual session token that needs to be sent with the request to authenticate the user.\n    - **Type**: string\n      - Indicates that the token is provided as a string data type.\n\n- **Headers**:\n  - The request includes a header section, but it currently has no defined headers, as the key and value fields are empty.\n  - The header is marked as disabled, indicating that it will not be sent with the request.\n\n- **Body**:\n  - **Body Mode**: raw\n    - The body of the request is sent in raw format, which allows for custom JSON strings to be sent.\n  - **Raw Data**:\n    - The body contains the following JSON structure:\n      ```json\n      {\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"sellId\": \"sellId\"\n      }\n      ```\n    - **sessionId**: \n      - This field represents the user's session ID, which is necessary for authentication purposes.\n    - **accountId**:\n      - This field identifies which user's account is being accessed in relation to the sell action.\n    - **sellId**:\n      - This field specifies the unique identifier for the sell action that needs to be deleted.\n\nThis endpoint is crucial for functions that require removing sell actions from an account, and it relies on providing valid IDs and a session token for secure operations."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationTeams",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Teams - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Teams\",\"description\":\"This teams is my second teams\",\"tags\":\"second,teams\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTeamsPrivate\":true,\"isTournamentOnly\":false,\"isTeamsDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/teams/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "teams",
+            "create"
+          ]
+        },
+        "description": "This is the endpoint for creating a new team in Notifications. The API expects a bearer token for authentication that should be sent in the header of the request.\n\nHere is the description of each data field:\n\n- `name`: The name of the API endpoint operation.\n\n- `request`: The main object that includes all the information required for the request.\n\n- `auth`: The type of authentication used, which here is of type bearer token. \n\n- `key`: The keyword for the authentication type used, which should be \"token\".\n\n- `value`: The actual value for the auth, in this case, it refers to \"BearerToken\".\n\n- `method`: The HTTP method used for the request, in this case, it's a POST request.\n\n- `url`: The URL for the API endpoint where the request is to be made.\n\n- `headers`: The headers that are to be sent with the request. In the provided data, no specific header details are given.\n\n- `body`: Contains the actual data for the request. It's sent in raw format.\n\n   - `mode`: The mode of body data, which here is \"raw\".\n   \n   - `raw`: The actual data string that's sent in the body of the request. It includes parameters like sessionId, accountId, name, description, tags, profilePhotoUrl, coverPhotoUrl, minimumTipAmount, categoryId, category, subCategoryId, subCategory, isTeamsPrivate, isTournamentOnly, isTeamsDefault, isPreLiveNotificationAds, isPostLiveNotificationAds, breakPreLiveNotificationUrl, and breakPostLiveNotificationUrl. All these fields are self-explanatory by their names.\n\n- `options`: Contains the options for the body data. It specifies the language of the data provided in the body, which here is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Teams - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"teamsId\":\"teamsId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Teams 2.0\",\"description\":\"This teams is my second teams\",\"tags\":\"second,teams\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTeamsPrivate\":true,\"isTournamentOnly\":false,\"isTeamsDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/teams/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "teams",
+            "update"
+          ]
+        },
+        "description": "Here is the detailed description of the data fields in this endpoint.\n\n1. `name` : It specifies the name of the endpoint. In this case, \"Notification - Teams - Update\".\n\n2. `request` : It's an object that contains all the required request details for the endpoint.\n\n3. `auth`: An object containing details of the authentication required for the endpoint. The \"type\" is \"bearer\", and a key-value pair for the \"token\" is provided with a placeholder bearer token value.\n\n4. `method`: Specifies the HTTP method to be used when making the request. Here, it's \"PUT\".\n\n5. `url`: URL of the endpoint, which specifies where the request needs to be sent.\n\n6. `headers`: An array containing objects representing headers that should be included in the request. This includes a \"Client-UUID\" key with a default type.\n\n7. `body`: This contains the data to be sent along with the request. In this case, the data is raw JSON. It has a variety of parameters such as:\n   - `teamsId`: A unique identifier for the team.\n   - `sessionId`: A unique identifier for the session.\n   - `accountId`: A unique identifier for the account.\n   - `name`: Name of the team.\n   - `description`: Description of the team.\n   - `tags`: Tags related to the team.\n   - `profilePhotoUrl`: URL for profile photo of the team.\n   - `coverPhotoUrl`: URL for cover photo of the team.\n   - `minimumTipAmount`: Minimum tip amount that should be given.\n   - `categoryId`: Unique identifier for the category in which team falls.\n   - `category`: Category name in which team falls.\n   - `subCategoryId`: Unique identifier for the sub-category of the team.\n   - `subCategory`: Sub-category name of the team.\n   - `isTeamsPrivate`: A boolean indicating if team is private.\n   - `isTournamentOnly`: A boolean indicating if team is only for tournaments.\n   - `isTeamsDefault`: A boolean indicating if this team is set as default.\n   - `isPreLiveNotificationAds`: A boolean indicating whether pre-live notification ads are enabled.\n   - `isPostLiveNotificationAds`: A boolean indicating whether post-live notification ads are enabled.\n   - `breakPreLiveNotificationUrl`: URL for pre-live notification break ad.\n   - `breakPostLiveNotificationUrl`: URL for post-live notification break ad."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Teams - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/teams/get/?teamsId=teamsId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "teams",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "teamsId",
+              "value": "teamsId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "Here below is the detailed description of each data.\n\n1. \"name\": \"Notification - Teams - Get\"\n\nThis is the name of the API endpoint. It's a descriptive label indicating that this API endpoint is used for retrieving notifications related to specific teams.\n\n2. \"request\":\n\nThis gathers all the information needed to make a request to the API. It contains the following sub-fields:\n\n   - \"auth\": This section describes the type of authentication required to access the API. It shows that the API uses bearer authentication, which is a method designed to assign access tokens to authenticate the requests. \n\n      - \"type\": \"bearer\"\n        The authentication required for this API request is a bearer token. \n\n      - \"bearer\": \n        Contains the actual information required for bearer token authorization.\n       \n        - \"key\": \"token\"\n          This indicates that the key used by the API for authentication is \"token\". \n\n        - \"value\": \"BearerToken\"\n          \"BearerToken\" would be the actual token, which should be provided to gain authorization.\n\n        - \"type\": \"string\"\n           The bearer token is of string type, which means it will include alphanumeric values.\n\n- \"method\": \"GET\"\n  This is the HTTP method used for this API call. GET is used when retrieving or reading information from the server.\n\n- \"url\": \n  This is the location where the API service can be accessed. It includes query parameters for teamsId, sessionId and accountId which further specify the information requested from the server.\n\n- \"headers\": \n  This is an array that contains the definition section for request headers. In this case, no key value has been specified and it is also disabled.\n\n- \"body\": \n  The body contains the details of the data sent in the HTTP request. Here, the mode is specified as 'raw', meaning raw data will be sent in the body of the request. However, as indicated by the 'raw' field being empty, no actual body data is sent in this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Teams - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/teams/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "teams",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This API endpoint named \"Notification - Teams - Get All\" is a GET request. It is used to retrieve all notification records pertaining to teams from the backend server.\n\n1. `name`: This value, \"Notification - Teams - Get All\", is the specific name of the endpoint and describes the main action of the API.\n\n2. `request`: This object holds all the configurations regarding the HTTP request.\n\n3. `auth`: The auth object indicates the type of authentication required to interact with this API endpoint. It requires a bearer token authentication.\n   - `type`: \"bearer\" denotes the authorization method for this request.\n   - `bearer`: It is an array that holds the bearer token configurations.\n     - `key`: \"token\" implies that you will need a token to access this endpoint.\n     - `value`: \"BearerToken\" represents the placeholder for authentication token.\n     - `type`: \"string\" indicates that the provided token should be a valid string.\n   \n4. `method`: \"GET\". It specifies the HTTP method being used to make the request to the API.\n\n5. `url`: \"http://localhost:3000/api/notification/teams/all/?sessionId=sessionId&accountId=accountId\". This is the URL where the request will be sent.\nYou have to replace \"sessionId\" and \"accountId\" with actual values.\n\n6. `headers`: It's an array that contains the header configurations for your HTTP request. The default key-value pair here comes disabled; you can add necessary keys if required.\n\n7. `body`: Defines the data you want to send in the HTTP request. For this GET request, the body mode is set to 'raw', meaning you'll directly write data into the body. However, given this is a GET request, the body does not need to contain any data, hence it's 'raw' and empty in this case. If it were a `POST` or `PUT` request, the `raw` value might contain a JSON, XML or plain text."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Teams - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamsId\":\"teamsId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/teams/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "teams",
+            "delete"
+          ]
+        },
+        "description": "Here is a detailed description of each data in the endpoint for your Postman API collection:\n\n1. \"name\": This field contains the name of the endpoint. In this case, the name is \"Notification - Teams - Delete\", which suggests that this endpoint is used to delete notifications related to teams.\n\n2. \"request\": This field contains all the required information to make a request to the server. It includes authentication information, the HTTP method, the request URL, any necessary headers, and the request body.\n\n3. \"auth\": This subfield within the \"request\" data is responsible for the authentication methods needed to make a request. It's a Bearer type, meaning you have to provide a specific token to authenticate.\n\n4. \"type\": This indicates the type of Authentication used. Here the value is \"bearer\", meaning that the client must send a bearer token for authorization.\n\n5. \"bearer\": Contains an array of one object, which has three properties (key, value, and type). The \"key\" is set as \"token\", the \"value\" is set as \"sessionId\", and the \"type\" is set as \"string\".\n\n6. \"method\": This determines the kind of request made to the server. Here it's set as \"POST\", indicating that data is being sent to the server to create/update a resource.\n\n7. \"url\": This shows the URL where the request is sent. In this case, the request is being sent to \"http://localhost:3000/api/notification/teams/delete\", which is likely an endpoint that supports deletion of team notifications.\n\n8. \"headers\": This array is used to send additional information with the HTTP request. Here, the object within the array doesn't have any values provided which means no extra headers are sent in the request.\n\n9. \"body\": This contains the actual data that you want to send with your POST request. Here, it is being sent as raw JSON data that contains \"sessionId\", \"accountId\" and \"teamsId\".\n\n10. \"mode\": Describes how the data in the body is being sent. Here, it's \"raw\", which means you're sending the data as a string in the exact format you specified.\n\n11. \"raw\": This is the actual raw data being sent in the HTTP body. It appears to be a JSON string that includes \"sessionId\", \"accountId\", and \"teamsId\". Each of these properties is very likely used to identify the session, the account and the special team that the notification belongs to."
+      },
+      "response": []
+    }
+  ]
+}

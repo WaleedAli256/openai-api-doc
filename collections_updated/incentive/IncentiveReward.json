@@ -1,0 +1,496 @@
+{
+  "info": {
+    "_postman_id": "b3304172-7e95-4f19-85dd-a537abdc7d68",
+    "name": "IncentiveReward",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Incentive - Reward - Create Token Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"name\": \"Free Token Reward\",\n    \"description\": \"Reward you with free tokens.\",\n    \"tags\": \"token,exclusive,offer\",\n    \"rewardType\": \"token\", \n    \"rewardTypeId\": \"\",\n    \"tokenAmount\": 500\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "create"
+          ]
+        },
+        "description": "This endpoint is named \"Incentive - Reward - Create Token Reward\", and its purpose is to create a new token reward in the incentive system.\n\nThe endpoint utilizes bearer token authentication, where the 'token' key should carry the value of the bearer token as a string.\n\nIt uses a POST method to send data to the url \"http://localhost:3000/api/incentive/reward/create\". This means the data is included in the body of the request and it sends the information to be stored on the server.\n\nThere are headers available for addition but currently, they are empty, set to \"default\" type and are disabled.\n\nIn the body of the request, the mode is set to 'raw', and the language is set to JSON. The JSON object contains several properties:\n\n- 'sessionId' : Represents the ID of the user's session.\n- 'accountId' : Represents the ID of the user's account.\n- 'name' : The name of the reward that's being created ('Free Token Reward' in this case).\n- 'description' : A brief description of the reward (in this case, \"Reward you with free tokens\").\n- 'tags': Tags associated with this reward; they are related keywords and are separated by commas.\n- 'rewardType': Represents the type of the reward which is 'token'.\n- 'rewardTypeId': The specific ID of the reward's type. It's not filled right now, fill it according to your requirements.\n- 'tokenAmount': Indicates the amount of token to be rewarded. In this case, it is set to 500. \n\nRemember to replace dummy data with actual values when configuring your request."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Reward - Create Loyalty Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"name\": \"Exclusive Loyalty Reward 2\",\n    \"description\": \"Reward your loyal customers with exclusive perks.\",\n    \"tags\": \"loyalty,exclusive,offer\",\n    \"rewardType\": \"loyalty\", \n    \"rewardTypeId\": \"loyaltyId\",\n    \"tokenAmount\": 200,\n    \"profilePhotoUrl\": \"https://example.com/images/reward-profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/images/reward-cover.jpg\",\n    \"videoPlaybackUrl\": \"https://example.com/videos/reward-intro.mp4\",\n    \"audioPlaybackUrl\": \"https://example.com/audio/reward-theme.mp3\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "create"
+          ]
+        },
+        "description": "This endpoint is titled \"Incentive - Reward - Create Loyalty Reward\". The purpose of this endpoint is to create a new loyalty reward for an incentive program.\n\nThe request is a POST method, meaning it's employed to submit data to be processed to the identified resource.\n\nFor authorization, there is an \"auth\" object that uses the bearer token. The token key is represented as \"token\", and the value is \"BearerToken\".\n\nThe request URL is \"http://localhost:3000/api/incentive/reward/create\". It's used to reach the loyalty reward creation API in the incentive program.\n\nIn the headers, there is a default, disabled key-value pair. The key and value are not specified in the provided data.\n\nThe body of the request includes the following parameters:\n\n- \"sessionId\": A unique ID representing the session within which the loyalty reward is being created.\n- \"accountId\": A specific ID representing the account creating the loyalty reward.\n- \"name\": A string representing the name of the reward (\"Exclusive Loyalty Reward 2\").\n- \"description\": A brief explanation of the reward, in this case incentivizing customer loyalty (\"Reward your loyal customers with exclusive perks.\").\n- \"tags\": Keywords associated with the reward, which are \"loyalty\", \"exclusive\", and \"offer\".\n- \"rewardType\": The type of the reward being created, in this case, it's a \"loyalty\" reward.\n- \"rewardTypeId\": A unique ID representing the reward type, identified as \"loyaltyId\".\n- \"tokenAmount\": The numerical value linked to the reward, indicated as 200.\n- \"profilePhotoUrl\": The URL for the profile photo associated with the reward.\n- \"coverPhotoUrl\": The URL for the cover photo associated with the reward.\n- \"videoPlaybackUrl\": The URL for a video providing additional information or visualization for the reward.\n- \"audioPlaybackUrl\": The URL for an audio clip linked to the reward.\n\nThe body includes a \"mode\" field set to \"raw\", indicating the raw text of the request being sent. The \"raw\" option within \"options\" is set to use \"json\", specifying that the raw text should be interpreted as JSON-encoded data."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Reward - Create Coin Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"name\": \"Profile Coin Reward\",\n    \"description\": \"Reward your contirbution with a profile coin reward\",\n    \"tags\": \"profile,coin\",\n    \"rewardType\": \"coin\", \n    \"tokenAmount\": 200\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "create"
+          ]
+        },
+        "description": "1. **name**: The field 'name' is a string label defining the request name as \"Incentive - Reward - Create Coin Reward\". It describes the type of request involved in the endpoint.\n\n2. **request**: This object describes various aspects of the HTTP request.\n\n3. **auth**: This nested object indicates the type of authentication method being used. In this case, it's \"bearer\".\n\n4. **bearer**: This array contains an object with three fields — 'key', 'value', and 'type'. Here, 'key' represents the parameter name, having the string value 'token'. 'value' shows the explicit bearer token to be used for authentication, labeled as 'BearerToken'. 'type' signifies the data type of the bearer token, which is a string in this case.\n\n5. **method**: This string indicates the HTTP method used for the request. Here, the POST method is used.\n\n6. **url**: This field represents the URL endpoint where the request is being sent. For the present case, the URL is \"http://localhost:3000/api/incentive/reward/create\".\n\n7. **headers**: Represents an array of HTTP headers to be sent in the request. The array in this case is set to 'default', and it disabled (not being used).\n\n8. **body**: Describes the request payload.\n\n    1. **mode**: The way the request body is structured. In this case, it's structured in 'raw' format.\n    2. **raw**: This field contains the raw data payload as a string. The payload includes fields like 'sessionId', 'accountId', 'name', 'description', 'tags', 'rewardType', and 'tokenAmount'. The attributes correspond to user's session ID, account ID, reward name, reward description, tags related to reward, the type of reward, and the amount of token to be rewarded respectively.\n    3. **options**: This nested object contains 'raw' that describes the language used for our raw data payload. In this case, the language used is JSON. \n\nEach attribute plays a significant role in API request execution accordingly."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Reward - Create Crypto Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"name\": \"DOGE Coin Reward\",\n    \"description\": \"You've been rewarded with a DOGE coin\",\n    \"tags\": \"crypto\",\n    \"rewardType\": \"crypto\", \n    \"tokenAmount\": 1\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "create"
+          ]
+        },
+        "description": "\"name\": This data field holds the name of the API endpoint. In this case, it's labeled as \"Incentive - Reward - Create Crypto Reward\".\n\n\"request\": This data field covers the information required to make the API request.\n\n\"auth\": Within the request field, this section deals with the type of authorization needed to access the endpoint. It indicates that a \"bearer\" token authorization is needed.\n\n\"bearer\": An array storing the necessary key, value, and type for authorization. \n\n\"key\": This represents the attribute of the authorization required. In this example, the key is \"token\".\n\n\"value\": This holds the actual value matched to the key. For this bearer token authorization, the value \"BearerToken\" is supplied.\n\n\"type\": Specifies the data type of the value. Here, \"string\" indicates that the value should be input as a text string.\n\n\"method\": Specifies what type of HTTP method to use for the request. In this case, a \"POST\" method is used.\n\n\"url\": This represents the URL where the request is to be sent.\n\n\"headers\": Here, the headers that may accompany the HTTP request are outlined. In this instance, the headers are disabled, hence no key-value pair.\n\n\"body\": This section describes the body of the HTTP request.\n\n\"mode\": Highlights the type of body content - this call has a \"raw\" body type.\n\n\"raw\": Holds the raw body content of type JSON that includes several fields: \n- \"sessionId\": A unique identifier for a user session.\n- \"accountId\": A unique identifier for the user's account.\n- \"name\": The name of the reward, in this case, \"DOGE Coin Reward\".\n- \"description\": A brief description of the reward.\n- \"tags\": Any tags associated with this reward. Here, it is \"crypto\".\n- \"rewardType\": The kind of reward, which here is \"crypto\".\n- \"tokenAmount\": The quantity of the reward.\n\n\"options\": This field has extra options for the request body. The \"raw\" option indicates the \"language\" of the body content, which is \"json\" in this case."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Reward - Create Fiat Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"name\": \"Cash Reward\",\n    \"description\": \"You've been rewarded $5 in cash\",\n    \"tags\": \"profile,fiat\",\n    \"rewardType\": \"fiat\", \n    \"tokenAmount\": 20000\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "create"
+          ]
+        },
+        "description": "The endpoint described is named \"Incentive - Reward - Create Fiat Reward\". This endpoint is used to create a theoretical financial reward (fiat reward) within the system or application it is a part of.\n\nIn terms of authorization, it employs Bearer token authentication. The \"token\" key must contain a valid Bearer token as a string.\n\nThe method used for this request is \"POST\", suggesting that it adds or submits data to the specified resource.\n\nThe URL for this endpoint is: http://localhost:3000/api/incentive/reward/create. It is designed to create an incentive or reward on the local server.\n\nThe headers for this endpoint are currently left blank and disabled. They are of default type and they don't hold any value right now.\n\nNow, let's take a look at the body of the request. It is formatted as raw JSON data. Here are the properties included in the body:\n\n- \"sessionId\" should be the session identifier for the current user session.\n- \"accountId\" is intended to store the identifier for the user's account.\n- \"name\" is the name of the reward, in this case, it's set to \"Cash Reward\".\n- \"description\" provides a description of the reward, for the current example, it reads \"You've been rewarded $5 in cash\".\n- \"tags\" are labels attached to the reward for easier searching or categorizing. For this example the tag is \"profile,fiat\".\n- \"rewardType\" is the type of reward being issued. In the given example, it's \"fiat\", indicating a cash or monetary reward.\n- \"tokenAmount\" is the amount of token reward, in this case it's 20000.\n\nThere's also an \"options\" object. Here, there's a \"raw\" object with a \"language\" key that's set to \"json\", indicating the language of the body content is JSON.\n\nIn conclusion, this endpoint creates a new fiat reward for a given user account, as specified by the data in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Reward - Create Points Reward",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"name\": \"Tournament Points\",\n    \"description\": \"You've been rewarded points for this tournament\",\n    \"tags\": \"tournament,point\",\n    \"rewardType\": \"point\", \n    \"tokenAmount\": 500\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "create"
+          ]
+        },
+        "description": "The endpoint \"Incentive - Reward - Create Points Reward\" contains several data points that aid in creating a reward system using points for users of a certain platform. Here is a detailed description of each:\n\n1. `name`: The name of the endpoint. This particular endpoint creates a point reward for an incentive program.\n\n2. `request`: This represents the specific API request being made.\n\n3. Within `request`, the `auth` field specifies the type of authentication needed for this endpoint. It uses a Bearer Token method for authentication. The `token` should be provided and will be sent as a string value.\n\n4. The `method` within `request` is POST, indicating that this request is made to add or create new information.\n\n5. `url`: The endpoint URL to which the request is made. Here, it is: \"http://localhost:3000/api/incentive/reward/create\".\n\n6. The `headers` field contains metadata about the API request. In this case, it is set to default, and is currently disabled.\n\n7. The `body` section contains the actual content of the request. It includes several properties:\n\n  - `sessionId`: Unique identifier for the current user session.\n  \n  - `accountId`: Unique identifier of the account.\n  \n  - `name`: The name of the reward - it's \"Tournament Points\" in this case.\n  \n  - `description`: Further details about the reward. Here, it mentions that the points are rewarded for participating in a tournament.\n  \n  - `tags`: Keywords related to the reward for better categorization or searching.\n  \n  - `rewardType`: The type of reward being created. This field denotes that the reward will be given in the form of points.\n  \n  - `tokenAmount`: The number of points the user is rewarded. Here, it's 500.\n\n8. The `mode` within `body` is `raw`, meaning the data are sent in a sequence of bits when making a POST request.\n\n9. The `options` field allows you to manipulate certain facets of the request. It is set to json language in raw mode."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Reward - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"rewardId\": \"rewardId\",\n    \"name\": \"Exclusive Loyalty Reward 2\",\n    \"description\": \"Reward your loyal customers with exclusive perks.\",\n    \"tags\": \"loyalty,exclusive,offer\",\n    \"rewardType\": \"token\", \n    \"rewardTypeId\": \"\",\n    \"tokenAmount\": 500,\n    \"profilePhotoUrl\": \"https://example.com/images/reward-profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/images/reward-cover.jpg\",\n    \"videoPlaybackUrl\": \"https://example.com/videos/reward-intro.mp4\",\n    \"audioPlaybackUrl\": \"https://example.com/audio/reward-theme.mp3\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "update"
+          ]
+        },
+        "description": "This API endpoint is named \"Incentive - Reward - Update\". It is designed to update an existing reward in the incentive program. Here are the main components:\n\nAuthentication (\"auth\"): This endpoint uses bearer token authentication. You need to provide a token in the 'BearerToken' field to authenticate your request.\n\nRequest Type (\"method\"): The type of the request is PUT which means it is used to update or replace an existing resource.\n\nURL (\"url\"): The URL to send the request to is \"http://localhost:3000/api/incentive/reward/update\".\n\nHeaders: This request contains one header, \"Client-UUID\". This is presumably uniquely identifying your client to the server.\n\nRequest Body (\"body\"): This contains all the information needed to update a reward. It is in raw JSON format. The fields are:\n\n- \"sessionId\": The unique identifier of the current session.\n- \"accountId\": The unique identifier of the account.\n- \"rewardId\": The unique identifier of the reward.\n- \"name\": The name of the reward.\n- \"description\": A short explanation about the reward.\n- \"tags\": A list of tags describing the reward, which can be used for search or categorisation.\n- \"rewardType\": The type of reward (in this case, \"token\").\n- \"rewardTypeId\": A unique identifier for the reward type.\n- \"tokenAmount\": The amount of tokens provided by the reward.\n- \"profilePhotoUrl\": A URL referencing an image which represents the reward.\n- \"coverPhotoUrl\": A URL pointing to the reward's cover photo.\n- \"videoPlaybackUrl\": If there is any video associated with the reward, its URL will be placed here.\n- \"audioPlaybackUrl\": URL for any audio file related to the reward.\n\nOptions (\"options\"): These specify that the body is to be interpreted as raw JSON input.\n\nRemember, the values provided here - such as \"BearerToken\", \"ClientUUID\", and the placeholder values in the body - are just placeholders. You need to replace them with your actual data before making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Reward - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/get/?rewardId=rewardId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "rewardId",
+              "value": "rewardId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. **name**: \"Incentive - Reward - Get\". This is the name for this specific endpoint that fetches the reward data related to an incentive program. Use it to conveniently identify this request among others in your collection.\n\n2. **request.auth.type**: \"bearer\". This denotes the type of authorization used for this request which is 'bearer' token in this case. Bearer token authorization leverages a security token for authorization management.\n\n3. **request.auth.bearer**: It is an array of object. The object contains three properties:\n    - **key**: \"token\". It is the type of authorization value you are going to use.\n    - **value**: \"BearerToken\". This would be the actual token value. Replace 'BearerToken' with the actual token when making a real API call.\n    - **type**: \"string\". It represents the data type of token and it is a string.\n\n4. **request.method**: \"GET\". This is the HTTP method used for this request. 'GET' method is used to retrieve information from the server.\n\n5. **request.url**: \"http://localhost:3000/api/incentive/reward/get/?rewardId=rewardId&sessionId=sessionId&accountId=accountId\". This is the URL where the request will be sent. The URL contains three query parameters - rewardId, sessionId and accountId. Replace these parameters with actual values when making a real API call.\n\n6. **request.headers**: An array used to define any headers to be sent along with the request. In this case, no headers are required as the object inside the array is empty and disabled.\n\n7. **request.body.mode**: \"raw\". Indicates that the request body will be sent as a raw string. However, in this GET request, there is no need to send a body, hence the raw value is an empty string.\n\n8. **request.body.raw**: \"\"(empty string). As it's a GET request, it does not contain a body. It means no additional data is sent to the server."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Reward - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Incentive - Reward - Get All\", is designed to retrieve all types of promotional incentives offered to users, such as loyalty bonuses, referrals, discount codes, gift vouchers, etc.\n\nIt works with the GET method, meaning it's a read-only view which retrieves and displays data from server. This operation is authenticated using the \"Bearer\" type of token authorization. The place of the token is marked as \"BearerToken\", which is meant to hold the actual API client's bearer token as a string to grant access level.\n\nThe request is delivered to the URL: \"http://localhost:3000/api/incentive/reward/all/\", and requires two query parameters: 'sessionId' and 'accountId'. 'sessionId' refers to the unique ID of the user's current session, and 'accountId' is a unique identifier for the user's account. Both are mandatory and should be passed in the URL to ensure the proper functioning of the endpoint by tailoring the response to the specific user and session.\n\nThe endpoint does not require any specific headers, as indicated by the empty key-value pair, and it is also disabled, meaning it can be disregarded entirely in the request.\n\nIn terms of the request body, since this endpoint is using the GET method, no data needs to be sent through the body. It's set to the 'raw' mode, yet the 'raw' body field is left blank. This is to be expected, as GET methods typically do not have a request body. If there's any change in the type of request made to this endpoint, then the body parameters would need to be added under the 'raw' field."
+      },
+      "response": []
+    },
+    {
+      "name": "Incentive - Reward - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"rewardId\":\"rewardId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/incentive/reward/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "incentive",
+            "reward",
+            "delete"
+          ]
+        },
+        "description": "This endpoint named \"Incentive - Reward - Delete\" is designed to remove an incentive reward from a certain account. Below are the detailed descriptions of each data field:\n\n- `name`: The name of the endpoint. It's called \"Incentive - Reward - Delete\", indicating its function is to delete an incentive reward.\n\n- `request`: Contains the details of the HTTP request. \n\n  - `auth`: Specifies the authentication type and details for accessing this endpoint. This endpoint uses Bearer Token authentication.\n  \n     - `type`: The authentication type. In this case, it's \"bearer\".\n \n     - `bearer`: The array which has details of the bearer token being used.\n\n        - `key`: The name of the authorization token. It's referred to as \"token\".\n\n        - `value`: The value of the authorization token. It is expected to be the \"sessionId\".\n\n        - `type`: The data type of the token value. It's a \"string\".\n\n  - `method`: Specifies the HTTP method to be used, which is \"POST\".\n  \n  - `url`: The URL to which the request is being sent. Here, it's the local host address running on port 3000 with the route \"api/incentive/reward/delete\".\n  \n  - `headers`: This is currently disabled and not set to any specific value.\n  \n  - `body`: Contains the payload of the request. \n\n    - `mode`: Defines the formatting of the body data. Here it's set as \"raw\".\n    \n    - `raw`: The raw body data to be sent with the request. It includes:\n        - `sessionId`: Identifies the session.\n        - `accountId`: Identifies the account from which the reward is to be deleted.\n        - `rewardId`: Identifies the specific reward to be deleted."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "info": {
+    "_postman_id": "0af8f20c-d8b4-43c7-808e-8b383a5eaf1e",
+    "name": "SearchQuery",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Search - Query - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"Fortune\",\"accountId\":\"accountId\",\"sessionId\":\"sessionId\",\"metrics\":{\"device\":{\"desktop\":1},\"browser\":{\"chrome\":1},\"region\":{\"us\":1},\"year\":{\"2024\":1},\"month\":{\"05\":1},\"week\":{\"02\":1},\"day\":{\"14\":1},\"hour\":{\"17\":1}}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/query/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "query",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Search - Query - Create\". It is designed to take in user-provided information and use it to create a new query that will then be sent to a search database. \n\n- \"name\": Provides the name of the endpoint. In this case, it is \"Search - Query - Create\".\n\nThe \"request\" object contains all the information required to make the API request.\n\n- \"auth\": This field refers to the authorization mechanism for the API request. In this scenario, the type of the authorization mechanism is \"bearer\". A bearer token is required to authorize the API request.\n  \n- \"bearer\": This contains the bearer token. It is a simple security token that the client can send to the server to authenticate requests.\n\n- \"method\": This field signifies the type of HTTP method to be used when making a request to the URL. It's set to \"POST\" which indicates that data should be sent to the server to create a new resource.\n\n- \"url\": This is the URL where the API request is to be made. In this case, the URL points to a search API at \"http://localhost:3000/api/search/query/create\".\n\nThe \"headers\" object contains the headers information to be sent along with the API request.\n\n- \"key\" and \"value\": These fields are empty in this case and they are disabled. For actual application, we should provide header key-value pairs depending on server requirements.\n\nThe \"body\" element stores the actual data to be sent with the HTTP request:\n\n- \"mode\": It refers to the mode of the body data and it is set to \"raw\", implying that the body content will be sent as a string of text.\n\n- \"raw\": Contains a JSON string with various details for the search query such as the query term, account ID, session ID, and usage metrics (device, browser, region, year, month, week, day, hour).\n\n- \"options\": This field defines the language to use for the raw data. In this example, the raw data is written in JSON.\n\nEach attribute in the \"raw\" field has a specific meaning:\n\n- \"query\": The actual search query itself, i.e., the term being searched.\n- \"accountId\": The ID of the account making the search.\n- \"sessionId\": The ID of the session during which the search was made.\n- \"metrics\": Provides detailed information about how the search was conducted. It includes specifications of the device used, browser used, region from where the search was made, and precise time the search was initiated(year, month, week, day, hour).\n\nThis endpoint can be utilized to create a detailed search query by providing the necessary details in the body of the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Query - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"queryId\":\"queryId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"metrics\":{\"device\":{\"tablet\":1},\"browser\":{\"chrome\":1},\"region\":{\"us\":1},\"year\":{\"2024\":1},\"month\":{\"05\":1},\"week\":{\"02\":1},\"day\":{\"14\":1},\"hour\":{\"17\":1}}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/query/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "query",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Search - Query - Update\", is a PUT method used to update the search queries. \n\n1. **Auth**: \n- This endpoint is secured with a bearer authentication, which uses a token to validate the request. \n- The `token` key should hold the token value. This value should be a string.\n\n2. **Method**: \n- PUT method, which is used to update the existing data on the server. \n\n3. **URL**: \n- The server's domain is \"http://localhost:3000/api/search/query/update\".\n  \n4. **Headers**: \n- There's a mandatory header \"Client-UUID\". It should contain a unique id to identify the client making requests.\n\n5. **Body**: \n- The body of the request should be in `raw` mode and formatted as a JSON string. \n- This JSON should include the following keys: \n\n  - `queryId` : The unique id for the query.\n  - `sessionId` : The unique id corresponding to the search session.\n  - `accountId` : The unique id corresponding to the user account. \n  - `metrics` : A JSON object that captures different metric data such as:\n    - `device` : An object having keys representing different devices. Here, `tablet` is used as a key and its value represents the number of times it's been used.\n    - `browser` : Similar to the device, here `chrome` is an example. \n    - `region` : It captures the geographical location of the user. Here, `us` is an example.\n    - `year`, `month`, `week`, `day`, `hour`: These define the time of the search query. It can be used to sort or filter queries based on time.\n- The `options` after the body defines the raw data language. In this case, it's JSON.\n   \nRemember, all these keys in the body are mandatory and should be appropriately filled to successfully update the search query."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Query - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"queryId\":\"queryId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/query/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "query",
+            "delete"
+          ]
+        },
+        "description": "This endpoint description carries the name \"Search - Query - Delete\", which points to its basic purpose, that is to perform deletion operations on search queries.\n\n- `auth`: This field holds the authentication details needed for the endpoint. This endpoint uses `bearer token` authentication. There is a key-value pair within an array. The `key` is designated as `token` while the `value` is the `sessionId`. Every session must provide this `sessionId` as a string value in order to initiate authenticated requests.\n\n- `method`: The HTTP method utilized by this endpoint is `POST`. This means the endpoint is designed to send or append data to be processed on the server side.\n\n- `url`: This field contains the URL where the request is being sent. The endpoint communicates with `http://localhost:3000/api/search/query/delete`, indicating that it is used for deleting search queries on your local development environment.\n\n- `headers`: In this case, an array with an empty `key`-`value` pair and `type` set to the `default` is specified, but its use is currently disabled as indicated by the `disabled` Boolean value.\n\n- `body`: This contains the data that's being sent with the request. The `mode` used for the body of this POST request is `raw`, which means the data in the body isn't in key/value format. Rather, it's in a JSON string format. In the `raw` field, an object is being passed with key-value pairs of `sessionId`, `accountId`, and `queryId`. These are necessary parameters for deleting a search query, suggesting that you can't delete a query without having the `sessionId`, `accountId`, and `queryId`."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Query - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/query/get/?queryId=queryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "query",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "queryId",
+              "value": "queryId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Search - Query - Get\". It is designed to execute a GET request to a specified URL to retrieve a specific search query. \n\nHere’s a closer look at the different components of this endpoint:\n\n1. `name`: This field refers to the name of the endpoint, which is \"Search - Query - Get\" in this case. This name is typically used to identify the endpoint in Postman or similar API testing platforms.\n\n2. `request`: This is the primary part of the endpoint where request details are described.\n\n3. `auth`: The authentication method used by this endpoint. This endpoint uses \"bearer\" authentication type, which sends a token in the 'Authorization' header field to authenticate the client.\n\n    - `bearer`: This is an array whose object(s) describe the key, value, and type of bearer token. For this endpoint, the key is \"token\", the value is \"BearerToken\", and the type is \"string\".\n\n4. `method`: This field defines the HTTP method to be used when the request is sent. For this endpoint, the GET method is used, which primarily retrieves data from a specific resource.\n\n5. `url`: This is the URL where the request is sent. In this endpoint, the request is sent to \"http://localhost:3000/api/search/query/get/?queryId=queryId\". The queryId in the URL is a placeholder and should be replaced with the actual queryId to fetch the required data.\n\n6. `headers`: This is an array of headers included in the request. This endpoint has a single empty header, which is disabled by default.\n\n7. `body`: The body of the request, which contains the payload sent to the server. In this case, there's no payload to send with the GET request, so the mode of the body is set to \"raw\" and the actual raw body content is left empty. \n\nRemember that, in the context of HTTP, bearer tokens are sent to user agents by servers in response to a successful authentication. The tokens can then be used to authenticate future requests. Also, GET requests should generally not include a payload as they're meant to be idempotent and safe."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Query - Get By User",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/query/get/?queryId=queryId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "query",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "queryId",
+              "value": "queryId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "\"name\": This is a human-readable identifier that is used to label the particular API endpoint. In this case, the \"Search - Query - Get By User\" denotes this endpoint is for fetching search queries by a user.\n\n\"auth\": This field defines the method of authentication that has to be included in the API request. \n\n  - \"type\": The authentication type here is 'bearer' which refers to bearer token authentication, a way of authorizing a user based on a token value. \n  - \"bearer\": The bearer array further holds the key-value pair for the token used in authentication. A \"value\" of \"BearerToken\" instructs users to replace this placeholder with an actual bearer token.\n\n\"request\": This field describes the information needed for the API request.\n\n  - \"method\": The method \"GET\" means that this API request is for retrieving information, not for posting, updating, or deleting data.\n  - \"url\": This is the endpoint to which the request will be sent. It includes placeholders for queryId, sessionId, and accountId, indicating these values need to be provided in the actual API request. \n\n\"headers\": This section describes the http headers to be included in the request. The key-value pair for this section is empty meaning no additional headers are required for this endpoint.\n\n\"body\": This section describes the body of the request.\n\n  - \"mode\": The mode is set to \"raw\", indicating the body content type is plain text.\n  - \"raw\": This field is where the raw input of the request body would go but in this case, it's an empty string, indicating that no request body is needed for this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Query - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/query/all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "query",
+            "all"
+          ]
+        },
+        "description": "1. `name`: The name of the endpoint. In this case, it's \"Search - Query - Get All\". This indicates that this endpoint is used to perform a search query that retrieves all the relevant data.\n\n2. `request`: This section contains all the necessary information that is required to carry out network requests. \n\n    1. `auth`: This component is responsible for the authentication process. It validates the identity of the user by requiring them to provide some form of credentials.\n        - `type`: This signifies the type of authorization required. Here, \"bearer\" refers to bearer authentication using bearer tokens.\n        - `bearer`: This is an array that holds the credential required for bearer authorization. In this case, just one credential in required in the form of a token.\n            - `key`: This field should contain the variable name of \"token\".\n            - `value`: This field should contain the actual authentication token. It's currently \"BearerToken\".\n            - `type`: This defines the data type of the token. Here, it is stated as \"string\".\n\n    2. `method`: This specifies the type of HTTP request method being used. The \"GET\" method is chosen in this case. It fetches the data from a specified resource.\n\n    3. `url`: It's the location of the network resource. In this case, it is a localhost server running on port number 3000 with the API endpoint at \"/api/search/query/all\".\n\n    4. `headers`: This is an array where you can specify additional details about the HTTP request in the form of key-value pairs. Presently, this array consists of a single, disabled default header with no key or value.\n\n    5. `body`: This section is used when you want to send additional data to the server. Here, it's set to \"raw\" mode, which allows you to send unrestricted text. The \"body\" is currently empty.\n  \nPlease replace placeholder values with your actual data when making requests."
+      },
+      "response": []
+    },
+    {
+      "name": "Search - Query - Get All By User",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/search/query/all/?accountId=accountId&sessionId=sessionId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "search",
+            "query",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This data field signifies the name of the endpoint. It is called \"Search - Query - Get All By User\". This is essentially an identifier that tells you the purpose of the endpoint. \n\n2. \"request\": Contains all the information required to make an HTTP request. This includes authentication, method, URL, headers, and body.\n\n3. \"auth\": Represents the authentication method to access the endpoint. This is of type \"bearer\", which means that the authorization requires a bearer token to be sent in the request.\n\n4. \"bearer\": This is an array containing the bearer token that will be used for authentication in the request. The \"key\" field is named \"token\", indicating the kind of token used for authentication. The \"value\" field is the token itself, usually generated from the server. The \"type\" field indicates the data type of the \"value\", which is \"string\".\n\n5. \"method\": Represents the HTTP method used for the request. In this case, it is a \"GET\" request, which is used to retrieve information from the server.\n\n6. \"url\": This is the URL or the path of the server where the request is being made. In this case, it's a local server http://localhost:3000/api/search/query/all?. Followed by the URL, there are two query parameters \"accountId\" and \"sessionId\" which are used to filter the results.\n\n7. \"headers\": This is an array that contains the information that the client (or your browser) sends in an HTTP request to the server. It may include any extra information you want to send to the server. In this case, no key-value pairs are provided and it is disabled.\n\n8. \"body\": Contains the body of the request. For a GET method, this will typically be empty as shown here. The \"mode\" indicates how the body data will be sent to the server. In this case, \"raw\" means the data is sent as it is without any encoding or extra processing. There is no raw data provided in this case."
+      },
+      "response": []
+    }
+  ]
+}

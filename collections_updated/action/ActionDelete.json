@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionDelete",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Delete - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"delete1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/delete/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "delete",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Delete - Create\n\nThis endpoint is used to initiate a delete action for a particular target based on specific parameters. Below is a detailed description of each piece of data included in the request.\n\n#### Authentication\n- **auth**: This section specifies the authentication type required to access the endpoint.\n  - **type**: The type of authentication being used, which is a bearer token in this case.\n  - **bearer**: An array containing authentication details.\n    - **key**: The name of the authentication field, which is \"token\".\n    - **value**: The actual bearer token. Replace \"BearerToken\" with an actual token for authentication.\n    - **type**: Specifies that the value type is a string.\n\n#### HTTP Method\n- **method**: The HTTP method used for the request. This is set to \"POST\", indicating that the request is meant to create or execute an action.\n\n#### Request URL\n- **url**: The endpoint URL where the request is sent. In this case, it is \"http://localhost:3000/api/action/delete/create\".\n\n#### Request Headers\n- **headers**: This includes any additional headers that may be required, though in this instance, no specific headers are provided as indicated by the empty key and value.\n  - **disabled**: This property indicates that the header is currently not active (true).\n\n#### Request Body\n- **body**: This section contains the details of the request body, which is formatted as raw JSON data.\n  - **mode**: Set to \"raw\" indicating that the body content is in raw format.\n  - **raw**: The actual JSON data being sent in the request. The following parameters are included:\n    - **sessionId**: A unique identifier for the session. Use the appropriate session ID.\n    - **accountId**: The ID of the account associated with the action. Replace \"accountId\" with the relevant account ID.\n    - **path**: The path of the target resource that is being deleted. For example, this could be a path to a video or stream.\n    - **targetType**: Specifies the type of target that is being deleted. In this case, the target type is \"streamer\".\n    - **targetId**: The unique identifier of the target being deleted, typically the ID of the video or stream.\n    - **sourceType**: Indicates the type of source account, which again is set to \"accountId\" in this request.\n    - **sourceId**: The ID of the source account. Often this will match the \"accountId\" provided above.\n    - **tokenAmount**: The number of tokens involved in this action. For this request, it is set to 20.\n    - **name**: A label for this delete action. This request has it set to \"delete1\".\n    - **description**: A field to provide extra details about the action being taken. Currently, it is empty.\n    - **tags**: Indicates any tags associated with the action. This is also currently left blank.\n\n#### Options\n- **options**: This specifies additional options for the request body format.\n  - **raw**: This nested section indicates that the content type is set to JSON. The language is specified as \"json\".\n\nThis detailed breakdown should help users understand each parameter required for this API call, enabling them to make requests to delete specified resources effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Delete - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"deleteId\":\"deleteId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/delete/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "delete",
+            "update"
+          ]
+        },
+        "description": "## Description of API Endpoint Data\n\n### Name\n- **Action - Delete - Update**: This is the name of the API action that indicates its purpose, which is to delete or update an entry in the system.\n\n### Request\n- **Auth**: The authentication method used for this request.\n  - **Type**: `bearer`: This specifies that bearer token authentication is used.\n  - **Bearer**: Contains the details for the bearer token.\n    - **Key**: `token`: Specifies that the key for the bearer is labeled as 'token'.\n    - **Value**: `BearerToken`: This is a placeholder for the actual bearer token that should be included for authentication.\n    - **Type**: `string`: Indicates that the value of the token is a string.\n\n### Method\n- **PUT**: This specifies the HTTP method used for the request, indicating that it will modify or update existing data.\n\n### URL\n- **http://localhost:3000/api/action/delete/update**: This is the endpoint where the request is being sent. It includes the base URL and the specific path for the delete/update action.\n\n### Headers\n- **Headers**: Additional information sent with the request to define the context of the request.\n  - **Key**: `Client-UUID`: A unique identifier for the client making the request, allowing the server to identify and track different clients.\n  - **Value**: `ClientUUID`: This is a placeholder for the actual UUID that should be provided.\n  - **Type**: `default`: Indicates that this header is of a standard type.\n\n### Body\n- **Mode**: `raw`: This indicates that the body of the request is being sent as raw data.\n- **Raw**: The actual content of the request body, formatted as JSON.\n  ```json\n  {\n      \"sessionId\": \"sessionId\",    // Unique identifier for the user session.\n      \"accountId\": \"accountId\",    // Unique identifier for the account related to the action.\n      \"deleteId\": \"deleteId\",      // Identifier for the item that is to be deleted.\n      \"path\": \"/live/channel/video123\", // Path to the resource, in this case, a specific video.\n      \"targetType\": \"streamer\",     // Type of target entity (e.g., streamer, channel).\n      \"targetId\": \"videoId\",        // Identifier for the target entity, which can be a video ID.\n      \"sourceType\": \"accountId\",    // The type of source, typically referring to account IDs.\n      \"sourceId\": \"accountId\",      // Identifier of the source related to the action.\n      \"tokenAmount\": 20,            // Amount of tokens to be adjusted or modified.\n      \"name\": \"Farooq\",             // Name associated with this action or entity.\n      \"description\": \"this is description\", // A brief description of the action or resource.\n      \"tags\": \"xyz\"                 // Tags associated with the action for categorization.\n  }\n  ```\n\n### Options\n- **Raw**: Specifies how the body content is structured.\n  - **Language**: `json`: Indicates that the raw data is formatted in JSON language."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Delete - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/delete/get/?deleteId=deleteId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "delete",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "deleteId",
+              "value": "deleteId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description\n\n#### Name: \nAction - Delete - Get\n\n#### Request:\n\n**Authorization:**\n- **Type:** Specifies that the request will be authenticated using a bearer token.\n- **Bearer:**\n  - **Key:** \"token\" - Indicates the parameter name for the token.\n  - **Value:** \"BearerToken\" - Placeholder for the actual bearer token that needs to be provided for authorization.\n  - **Type:** \"string\" - Indicates that the token value should be a string.\n\n**Method:**\n- **Type:** GET - This indicates that the request is of type GET, which is typically used to retrieve data from the server.\n\n**URL:**\n- The endpoint URL is: `http://localhost:3000/api/action/delete/get/`\n  - **Query Parameters:**\n    - **deleteId:** Represents the ID of the item you want to delete. Replace `deleteId` with the actual ID of the item.\n    - **sessionId:** Represents the session ID associated with the request. Replace `sessionId` with the actual session ID.\n    - **accountId:** Represents the ID of the account involved in the operation. Replace `accountId` with the actual account ID.\n\n**Headers:**\n- **Key:** (Not specified) - No additional headers are included in the request.\n- **Value:** (Not specified) - No additional values are provided.\n- **Type:** default - Indicates standard headers.\n- **Disabled:** true - This header is disabled and will not be sent with the request.\n\n**Body:**\n- **Mode:** raw - Specifies the body type for the request.\n- **Raw:** (Empty) - No body content is included in the request, as GET requests typically do not require a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Delete - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/delete/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "delete",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Delete - Get All Endpoint Details\n\n**Endpoint Name:**  \nAction - Delete - Get All\n\n**Request Method:**  \nGET  \nThis indicates that the endpoint is designed to retrieve data without making any modifications to the server's resources.\n\n**URL:**  \n`http://localhost:3000/api/action/delete/all/?sessionId=sessionId&accountId=accountId`  \nThis is the endpoint's address, where `sessionId` and `accountId` are query parameters. These parameters are required to identify the specific session and account for which the action deletion is being requested.\n\n**Authentication:**  \n- **Type:** Bearer Token  \n  This method of authentication requires a token to verify the identity of the user making the request.\n- **Token:**  \n  - **Key:** token  \n  This represents the name of the bearer token required for the request.  \n  - **Value:** BearerToken  \n  This placeholder indicates that a valid bearer token should replace \"BearerToken\" when making a request. The token grants access to the API based on the user's permissions.\n  - **Type:** string  \n  This specifies that the token should be provided as a string format.\n\n**Headers:**  \n- **Key:** (empty)  \n  Indicates that there are no additional headers required for this request at the moment.  \n- **Value:** (empty)  \n  Since no value is provided, it further confirms that no extra header information is necessary.  \n- **Disabled:** true  \n  This shows that the header is not active and will not be included in the request.\n\n**Body:**  \n- **Mode:** raw  \n  Identifies the format of the request body being sent, which in this case is raw text.  \n- **Raw:** \"\"  \n  This indicates that there is no content being sent in the body of the request. There are no parameters or data to provide in the body for this GET request, as all necessary information is passed through the URL."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Delete - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"deleteId\":\"deleteId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/delete/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "delete",
+            "delete"
+          ]
+        },
+        "description": "Here’s a detailed description of each data point in the provided endpoint for the Postman API collection:\n\n- **name**: This is the title of the API request. It describes the action that is being taken, in this case, it indicates that it is an action to delete an item, specifically labeled as \"Delete\".\n\n- **request**: This is the container for the details of the API request, including authentication, method, URL, headers, and body content.\n\n  - **auth**: This section specifies the authentication method used for the request.\n    \n    - **type**: Indicates the type of authentication. In this case, it is a \"bearer\" type.\n    \n    - **bearer**: This is an array that contains the authentication details for the bearer token.\n\n      - **key**: This represents the name of the token. Here, it is labeled as \"token\".\n      \n      - **value**: This is the placeholder for the actual session ID that will be used for authentication, denoted as \"sessionId\".\n      \n      - **type**: Specifies the data type of the value, which is \"string\".\n\n  - **method**: This indicates the HTTP method used for the request. It is set to \"POST\", meaning that data will be sent to the server to perform the delete action.\n\n  - **url**: This is the endpoint where the request is directed. It is set to \"http://localhost:3000/api/action/delete/delete\", which suggests that it is a local server API for performing delete actions.\n\n  - **headers**: This section includes any HTTP headers that should be sent with the request.\n\n    - **key**: The name of the header. It is currently empty, meaning no specific headers are being set.\n    \n    - **value**: The value corresponding to the header. This is also empty.\n    \n    - **type**: Indicates the header type, which is set to \"default\".\n    \n    - **disabled**: This flag shows whether the header is currently active. It is set to true, indicating that this header is not being used.\n\n  - **body**: This part includes the data that will be sent in the POST request.\n\n    - **mode**: This specifies the format of the body data. It is set to \"raw\", indicating that the data will be sent as raw text rather than form-encoded.\n    \n    - **raw**: This contains the actual data payload sent with the request. It is formatted as a JSON string, which includes three properties:\n      \n      - **sessionId**: A placeholder for the session identifier, which is necessary for tracking the session of the user making the request.\n      \n      - **accountId**: A placeholder for the account identifier, which indicates which account is being affected by the delete action.\n      \n      - **deleteId**: A placeholder for the identifier of the item that is to be deleted from the system.\n\nThis structured overview provides clarity on each component of the API endpoint, ensuring that users understand the purpose and requirements when working with this request in the Postman collection."
+      },
+      "response": []
+    }
+  ]
+}

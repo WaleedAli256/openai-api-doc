@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "d8989c13-ecc2-4712-b21a-008740a94e58",
+    "name": "ActionDraft",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Draft - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"isDrafted\": true,\n    \"draftType\": \"streamer\",\n    \"isAccepted\": false,\n    \"isRejected\": true,\n    \"isIgnored\": false,\n    \"name\": \"this is name of draft\",\n    \"description\": \"this is description of draft\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/draft/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "draft",
+            "create"
+          ]
+        },
+        "description": "### Action - Draft - Create API Endpoint Description\n\n- **Auth**: \n  - **Type**: This specifies the authentication method used for the request.\n    - **Bearer**: Indicates that a bearer token is used for authorization.\n      - **Token**: A string that represents the bearer token used to authenticate the request. Replace \"BearerToken\" with your actual token.\n\n- **Method**: \n  - **POST**: This specifies that the HTTP method used for this request is POST, typically used to send data to the server.\n\n- **URL**: \n  - **Endpoint**: The URL where the API request is made. In this case, it's `http://localhost:3000/api/action/draft/create`. This indicates that the action for creating a draft is available at this location.\n\n- **Headers**: \n  - **Key**: The header key is currently empty and not set to be used (`disabled: true`). Generally, headers can contain information such as content type or custom parameters for the request but are not required in this case.\n\n- **Body**:\n  - **Mode**: \n    - **Raw**: Indicates that the data is sent in raw format.\n  - **Raw**: This is the payload sent with the request.\n    - **sessionId**: A string representing the unique identifier for the session.\n    - **accountId**: A string representing the unique identifier for the user account.\n    - **path**: A string indicating the path or location of the video resource, for example, `/live/channel/video123`.\n    - **targetType**: Specifies the type of target. Here, it uses \"videoId\" to indicate that the target is a video.\n    - **targetId**: The unique identifier for the target item, in this case, the video ID.\n    - **sourceType**: Indicates the type of source; it uses \"accountId\" to signify that the source is the user account.\n    - **sourceId**: The unique identifier for the source, matching the account ID.\n    - **isDrafted**: A boolean indicating whether the item is in draft status. Set to true for a draft.\n    - **draftType**: Specifies the category of the draft. Here, it's labeled as \"streamer\".\n    - **isAccepted**: A boolean indicating whether the draft has been accepted. Set to false.\n    - **isRejected**: A boolean indicating whether the draft has been rejected. Set to true.\n    - **isIgnored**: A boolean indicating whether the draft has been ignored. Set to false.\n    - **name**: A string providing the name or title of the draft.\n    - **description**: A string detailing the contents or purpose of the draft.\n    - **tags**: A string for any tags associated with the draft. It is currently empty and can be filled as needed. \n\nThis endpoint is designed to create a draft of a video resource in the system, allowing various attributes to be specified for further management."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Draft - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"isDrafted\": true,\n    \"draftType\": \"streamer\",\n    \"isAccepted\": false,\n    \"isRejected\": true,\n    \"isIgnored\": false,\n    \"name\": \"this is name of draft\",\n    \"description\": \"this is description of draft\",\n    \"tags\": \"tag1,tag2,tag3\",\n    \"draftId\": \"draftId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/draft/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "draft",
+            "update"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**:\n  - Describes the purpose of the request, specifically updating a draft action.\n\n- **request**:\n  - Contains all necessary information to perform the API request.\n\n- **auth**:\n  - Specifies the authentication method used for this request.\n  - **type**: Indicates that bearer token authentication is required.\n  - **bearer**: Provides the bearer token needed for authorization.\n    - **key**: The identifier for the token type.\n    - **value**: The string value of the bearer token, which should be replaced with the actual token.\n    - **type**: Specifies that the token is a string.\n\n- **method**:\n  - The HTTP method used for the request, which in this case is PUT, indicating that this request is used to update an existing resource.\n\n- **url**:\n  - The endpoint URL to which the request is sent. Here it is directed to update a draft at the specified localhost server.\n\n- **headers**:\n  - Contains key information that is sent along with the request.\n  - **key**: The name of the header which is \"Client-UUID\".\n  - **value**: The actual UUID of the client, which should be replaced with the client's unique identifier.\n  - **type**: Indicates that the header is of a standard type.\n\n- **body**:\n  - This section contains the data being sent with the request.\n  - **mode**: Indicates that the body is in raw format.\n  - **raw**: Contains the JSON data that represents the draft details to be updated. The fields within the JSON are as follows:\n    - **sessionId**: The unique identifier for the session related to this action.\n    - **accountId**: The unique identifier for the user account associated with the draft.\n    - **path**: The path to the resource that the draft relates to, in this case, a video.\n    - **targetType**: Specifies the type of target for the action; here it is designated as \"videoId\".\n    - **targetId**: The unique identifier of the target resource, which would be a video ID.\n    - **sourceType**: Indicates the type of the source, which is \"accountId\" in this case.\n    - **sourceId**: The unique identifier for the source, corresponding to the account ID.\n    - **isDrafted**: A boolean value indicating whether the draft has been created or marked.\n    - **draftType**: Specifies the type of draft; here it is labeled as \"streamer\".\n    - **isAccepted**: A boolean value indicating if the draft has been accepted.\n    - **isRejected**: A boolean value indicating if the draft has been rejected.\n    - **isIgnored**: A boolean value stating if the draft action should be ignored.\n    - **name**: A string that indicates the title or name of the draft.\n    - **description**: A string that provides additional details about the draft.\n    - **tags**: A comma-separated list of tags that can be associated with the draft for categorization.\n    - **draftId**: The unique identifier for the draft being updated. \n\n- **options**:\n  - Provides formatting details for the raw body.\n  - **raw**: Specifies the language format of the body content, which is JSON in this case."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Draft - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/draft/get/?draftId=draftId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "draft",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "draftId",
+              "value": "draftId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n- **name**: This field specifies the name of the API endpoint. In this case, it is labeled \"Action - Draft - Get,\" which signifies that this endpoint retrieves draft actions.\n\n- **request**: This section contains all the details for making a request to the API.\n\n  - **auth**: This specifies the authentication method used for the request.\n    - **type**: Indicates the type of authentication. Here, it is set to \"bearer,\" which means the request requires a bearer token for authorization.\n    - **bearer**: This is an array containing the details of the bearer token.\n      - **key**: This indicates the name of the parameter being sent, which is \"token.\" \n      - **value**: This is where the actual bearer token would be placed. Currently, it is represented as \"BearerToken,\" indicating that a real token should be inserted here.\n      - **type**: This indicates the data type, which is \"string\" in this case.\n\n  - **method**: This indicates the HTTP method to be used when making the request. Here, it is set to \"GET,\" which is typically used for retrieving data from a server.\n\n  - **url**: This is the endpoint URL where the request is sent. It includes query parameters for `draftId`, `sessionId`, and `accountId`, which should be replaced with actual values when making the request.\n    - **Base URL**: `http://localhost:3000/api/action/draft/get/`\n    - **Query Parameters**: \n      - `draftId`: This represents the unique identifier for the draft.\n      - `sessionId`: This represents the unique identifier for the session.\n      - `accountId`: This signifies the unique identifier for the account.\n\n  - **headers**: This section can include additional headers sent with the request. \n    - In this example, the header object is present but is not populated with any key or value. It is currently disabled, meaning it is not actively being used in the request.\n\n  - **body**: This defines the body of the request. \n    - **mode**: This specifies the format of the body content. Here, it is set to \"raw,\" which allows for custom content to be sent in the request.\n    - **raw**: This is where the actual content of the request body would be placed. It is currently empty, indicating that no body content is required for this GET request.\n\nUsers should replace the placeholders for the token and the query parameters with actual values when using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Draft - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/draft/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "draft",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Draft - Get All Endpoint Description\n\n#### Name\n- **Action - Draft - Get All**\n  - This is the name of the API endpoint designed to retrieve all draft actions.\n\n#### Request\n- **Auth**\n  - This section outlines the authentication method required to access the endpoint.\n  - **Type**: Bearer\n    - Indicates that bearer token authentication is used.\n  - **Bearer**: \n    - Contains the following details:\n      - **Key**: token\n        - This specifies the type of authentication parameter being used.\n      - **Value**: BearerToken\n        - Placeholder for the actual bearer token, which is required for authorization.\n      - **Type**: string\n        - Indicates that the value for the token is in string format.\n\n- **Method**\n  - **GET**\n    - This HTTP method is used to request data from the specified resource.\n\n- **URL**\n  - **http://localhost:3000/api/action/draft/all/?sessionId=sessionId&accountId=accountId**\n    - The endpoint URL for making the GET request to obtain all draft actions.\n    - **Parameters**:\n      - **sessionId**: sessionId\n        - This query parameter is used to identify the user's session.\n      - **accountId**: accountId\n        - This query parameter is used to specify the user’s account from which drafts are being retrieved.\n\n- **Headers**\n  - This section contains any additional metadata that may be required when making the request.\n  - **Key**: (empty)\n    - There are currently no custom headers being specified.\n  - **Value**: (empty)\n    - Corresponding value for the key, not specified.\n  - **Type**: default\n    - Indicates the default type for headers.\n  - **Disabled**: true\n    - This means that the header is currently not in use (disabled).\n\n- **Body**\n  - **Mode**: raw\n    - Indicates the content type of the body being sent.\n  - **Raw**: (empty)\n    - The request body is empty because no additional data is being sent with the GET request. \n\nThis endpoint allows users to fetch all draft actions associated with a specific session and account, requiring a valid bearer token for authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Draft - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"draftId\":\"draftId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/draft/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "draft",
+            "delete"
+          ]
+        },
+        "description": "**Endpoint Description:**\n\n- **Name**: Action - Draft - Delete\n  - This is the name of the API endpoint used for deleting a draft action.\n\n- **Request**: This section contains the details about how to send the request to the server.\n\n  - **Auth**: This specifies the authentication method required to access the endpoint.\n    - **Type**: Bearer\n      - Indicates that a bearer token is used for authorization.\n    - **Bearer**: Contains the details of the token.\n      - **Key**: token\n        - The key for the authentication token.\n      - **Value**: sessionId\n        - The placeholder for the session ID that provides access and verification for the user session.\n      - **Type**: string\n        - Specifies that the value should be a string.\n\n  - **Method**: POST\n    - The HTTP method used to send data to the server. In this case, it is a POST request, indicating that data is being sent to the server to delete a draft.\n\n  - **URL**: http://localhost:3000/api/action/draft/delete\n    - The URL endpoint where the request is directed. This is the local address indicating that the server is running on the local machine.\n\n  - **Headers**: This section outlines the request headers.\n    - An empty header is included, marked as disabled, indicating that it is currently not being used in the request.\n\n  - **Body**: This part contains the data being sent in the request.\n    - **Mode**: raw\n      - Indicates that the body content is sent in its raw format, typically as JSON.\n    - **Raw**: \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"draftId\\\":\\\"draftId\\\"}\"\n      - This is the actual content of the request body in JSON format.\n      - **sessionId**: A placeholder for the session ID, used to verify the user's session.\n      - **accountId**: A placeholder for the account ID, which identifies the user’s account.\n      - **draftId**: A placeholder for the draft ID, which specifies the draft that needs to be deleted.\n\nOverall, this endpoint is set up to accept a request that includes authentication and a body containing session, account, and draft identifiers to delete an existing draft."
+      },
+      "response": []
+    }
+  ]
+}

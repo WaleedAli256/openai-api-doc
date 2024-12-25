@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "ReportsTeam",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Reports - Team - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Team\",\"description\":\"This team is my second team\",\"tags\":\"second,team\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTeamPrivate\":true,\"isTournamentOnly\":false,\"isTeamDefault\":true,\"isPreLiveReportsAds\":true,\"isPostLiveReportsAds\":true,\"breakPreLiveReportsUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveReportsUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/team/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "team",
+            "create"
+          ]
+        },
+        "description": "This is the \"Reports - Team - Create\" endpoint used to create a new team report. The endpoint uses the POST method to send data to the server to create a new resource.\n\n- \"auth\": This object is used for authentication. It uses the \"bearer\" type which requires a \"BearerToken\" to verify the user's identity.\n\n- \"request.method\": This field represents the HTTP method to be used. In this case, a 'POST' request is being made, which is used to send data to the server.\n\n- \"url\": This is the endpoint URL where the request will be sent. Here, the URL is http://localhost:3000/api/reports/team/create. \n\n- \"headers\": This field contains an array of objects representing the HTTP headers to be included in the request. While the provided headers in this example are empty and disabled, they could typically include content type, date, server, and more.\n\n- \"body.mode\": This field identifies how the request body should be formatted. Here, it is specified as 'raw', which means it will send unprocessed data to the server.\n\n- \"body.raw\": This contains the raw JSON data to be sent to the server. It includes fields such as sessionId, accountId, team details, category and subcategory details, privacy settings, report ads settings, and URL for pre and post live report breaks.\n\n- \"body.options.raw.language\": This specifies the language in which the raw data is written. In this case, the information is written in JSON format.\n \nPlease ensure to fill in all the required data in their specified formats for the successful execution of this api request."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Team - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"teamId\":\"teamId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Team 2.0\",\"description\":\"This team is my second team\",\"tags\":\"second,team\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isTeamPrivate\":true,\"isTournamentOnly\":false,\"isTeamDefault\":true,\"isPreLiveReportsAds\":true,\"isPostLiveReportsAds\":true,\"breakPreLiveReportsUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveReportsUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/team/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "team",
+            "update"
+          ]
+        },
+        "description": "This endpoint is named \"Reports - Team - Update\". It uses the PUT method for updating details related to teams in reports. The URL you should send this PUT request to is \"http://localhost:3000/api/reports/team/update\".\n\nFor authentication, it uses Bearer Token Authentication. The bearer token must be provided under the key 'token'. \n\nThe request must also include a header 'Client-UUID' key to ensure further security and client identification. \n\nThe main chunk of information required by this endpoint resides in the request body. In the body, the details of the team updated report must be expressed in raw format (JSON format). Below are the details required:\n\n- \"teamId\": The unique identification for the team.\n- \"sessionId\": The unique identifier of the session in which the report is updated.\n- \"accountId\": The unique account identifier for tracking purpose.\n- \"name\": The updated name of the team.\n- \"description\": A brief on what the team is about.\n- \"tags\": Any tags that are attributed to the team.\n- \"profilePhotoUrl\": The updated URL of the team's profile picture.\n- \"coverPhotoUrl\": The updated URL of the team's cover picture.\n- \"minimumTipAmount\": The minimum amount anyone can tip the team.\n- \"categoryId\": The ID that refers to the categorization of the team.\n- \"category\": The category where the team falls under.\n- \"subCategoryId\": The ID of the subcategory of the team.\n- \"subCategory\": The subcategory where the team falls under.\n- \"isTeamPrivate\": A boolean indicating if the team is private or not.\n- \"isTournamentOnly\": A boolean indicating if the team is only for tournaments.\n- \"isTeamDefault\": A boolean indicating if the team is the default team.\n- \"isPreLiveReportsAds\": A boolean indicating if ads are allowed in pre-live reports.\n- \"isPostLiveReportsAds\": A boolean indicating if ads are allowed in post-live reports.\n- \"breakPreLiveReportsUrl\": The URL of the media for break in pre-live reports.\n- \"breakPostLiveReportsUrl\": The URL for the media for break in post-live reports."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Team - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/team/get/?teamId=teamId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "team",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "teamId",
+              "value": "teamId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "Endpoint Name: \"Reports - Team - Get\"\nThis endpoint is utilized for getting reports of a specific team.\n\nRequest Details:\n\n1. Authentication Type - Bearer: This endpoint utilizes Bearer token authentication, where a specific token has to be provided to gain access to the data. The token should be a string.\n\n2. Request Method - GET: This endpoint operates using the GET method, which is used to retrieve data from a specific resource.\n\n3. Request URL: The URL to call this endpoint is http://localhost:3000/api/reports/team/get/. It contains query parameters which are teamId, sessionId, and accountId. These parameters should be replaced with actual values.\n\n    - teamId: It is the unique identifier of the team whose reports are to be fetched.\n    - sessionId: It is the unique identifier of the session during which team operates.\n    - accountId: It is the unique identifier of the account related to that specific team.\n\n4. Headers: \nIn this endpoint, no custom headers are defined. A key-value pair appears but they are disabled and set to default. Hence there is no additional header required to access this endpoint.\n\n5. Request Body - Raw: The request body is set to raw mode but does not require any data as no body content is required in this GET request.\n\nRemember to replace \"BearerToken\", \"teamId\", \"sessionId\", and \"accountId\" with actual values before sending a request to this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Team - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/team/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "team",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. `\"name\": \"Reports - Team - Get All\"` - This is the name of the API endpoint, describing its main function. It suggests that this endpoint is used to fetch all team reports.\n\n2. `\"request\"` - This object represents the details of the HTTP request that needs to be made to access the data from the endpoint.\n\n3. `\"auth\"` - The auth object provides information about the type of authorization required to access the endpoint.\n\n\t- `\"type\": \"bearer\"` - This indicates that the API uses Bearer Authentication, a method that involves sending a token in the Authorization header of the HTTP request.\n\t\n\t- `\"bearer\": [ {...} ]` - This list contains bearer tokens required for authorization. In this case, it contains one token:\n\t\n\t\t- `\"key\": \"token\"` - This is the name of the token required for authorization.\n\t\t\n\t\t- `\"value\": \"BearerToken\"` - This is where the actual token string would be placed.\n\t\t\n\t\t- `\"type\": \"string\"` - Data type of the token which indicates that it should be a string.\n\n4. `\"method\": \"GET\"` - GET is the HTTP method used for this request. It signifies that the endpoint retrieves data.\n\n5. `\"url\": \"http://localhost:3000/api/reports/team/all/?sessionId=sessionId&accountId=accountId\"` - This is the URL endpoint for the request. It seems to have two parameters, 'sessionId' and 'accountId', passed in the query string.\n\n6. `\"headers\"` - This is a list of headers which are to be sent along with the HTTP request. It contains additional parameters that define the HTTP request.\n\t- This particular header object is disabled, implying that there are no additional headers to be sent with the request.\n\n7. `\"body\"` - The body object contains data that is sent to the API. In this case, there is no data to be sent, so the `\"mode\"` is `\"raw\"` and `\"raw\"` contains an empty string. 'Raw' indicates that the data is sent without any specific formatting."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Team - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/team/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "team",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Reports - Team - Delete\". As the name suggests, it is used to delete reports associated with a particular team. \n\nThe authentication type for this endpoint requires a \"Bearer Token\".  It uses the bearer authentication scheme whereby the bearer of the token sends it in the Authorization header.\n\nAn example of the token usage:\n\"type\": \"Bearer token sessionid\"\nHere, \"sessionid\" is representing the value that needs to be provided for the \"Bearer Token\".\n\nThe HTTP method for this endpoint is \"POST\", meaning it's designed to send data to the server for a specific resource.\n\nThe URL indicates the location where this request is sent. In this case, we are performing an action on \"http://localhost:3000/api/reports/team/delete\". This is the address to which the 'POST' request is made.\n\nThe headers field is empty in this example and has been disabled as well. Headers hold additional information (key-value pairs) to be sent with the request, but it's not being used in this case.\n\nThe request body is sent in 'raw' format and contains the data to be sent to the server. This raw information is a JSON object containing three parameters:\n\n1. \"sessionId\": This is likely an identifier used by the server to validate your session. In a fully-fledged application, this would be dynamically replaced with an active session ID.\n2. \"accountId\": This is likely the identifier for your account, used to determine which account to perform the action on.\n3. \"teamId\": This is probably the identifier for a specific team. It's what helps the server know which team's reports you're intending to delete.\n\nTo successfully make a request to this endpoint, these input parameters must be replaced with real values according to your system's specifications."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "info": {
+    "_postman_id": "9fb6c39b-2434-4a5a-8bb0-6a5aafcda75f",
+    "name": "TeamSubCategory",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Team - SubCategory - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\":\"sessionId\",\n    \"accountId\":\"accountId\",\n    \"name\": \"Historic Hampton House 3\",\n    \"displayName\": \"Miami Art Week 2024\",\n    \"description\": \"An immersive celebration of art and culture during Miami Art Week.\",\n    \"tags\": \"Art,Exhibition,Miami,Culture\",\n    \"categoryId\": \"teamCategoryId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/subcategory/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "subcategory",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Team - SubCategory - Create\n\n#### Request Details:\n\n- **Auth**:\n  - **Type**: Bearer\n    - **Token**: This is a string value that represents the bearer token required for authentication. Replace `BearerToken` with your actual token.\n\n- **Method**: \n  - The HTTP method used for the request is POST, which indicates that this request is used to create a new sub-category in the team.\n\n- **URL**: \n  - The endpoint URL to which the request is made. It points to `http://localhost:3000/api/team/subcategory/create`, indicating that the operation is performed locally on port 3000.\n\n- **Headers**: \n  - This section contains headers that will be sent with the request. Currently, there are no custom headers defined (as indicated by the empty key and value) and the header is disabled.\n\n- **Body**: \n  - The body of the request is sent in raw JSON format and includes the following fields:\n    - **sessionId**: A unique identifier for the current session. This should be replaced with the actual session ID.\n    - **accountId**: The ID of the account that is associated with this sub-category. Include the appropriate account ID value here.\n    - **name**: A string representing the name of the sub-category you wish to create. In the example, it is set to \"Historic Hampton House 3\".\n    - **displayName**: The public-facing display name for the sub-category. This is what users will see, e.g., \"Miami Art Week 2024\".\n    - **description**: A brief overview of the sub-category, providing details about what it encompasses. The example describes an event related to art and culture.\n    - **tags**: A string containing comma-separated keywords relevant to the sub-category. In this case, tags include \"Art, Exhibition, Miami, Culture\".\n    - **categoryId**: The ID of the primary category under which this sub-category falls. Replace `teamCategoryId` with the actual category ID relevant to this sub-category.\n\n#### Note:\nEnsure all placeholders are replaced with actual values prior to making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - SubCategory - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"subCategoryId\":\"subCategoryId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second SubCategory 2.0\",\"description\":\"This subcategory is my second subcategory\",\"tags\":\"second,subcategory\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isSubCategoryPrivate\":true,\"isTournamentOnly\":false,\"isSubCategoryDefault\":true,\"isPreLiveTeamAds\":true,\"isPostLiveTeamAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/subcategory/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "subcategory",
+            "update"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n**Name**: \n- This represents the name of the API request. In this case, it is designated for updating a subcategory within a team.\n\n**Request**: \n- This section contains all the details related to the HTTP request required to interact with the API.\n\n**Auth**: \n- This specifies the type of authentication needed for the API request.\n  - **Type**: Indicates that bearer token authentication is being used.\n  - **Bearer**: Contains an array of bearer token objects.\n    - **Key**: This indicates the name of the token.\n    - **Value**: This represents the actual bearer token, which should be replaced with a valid token in requests.\n    - **Type**: Specifies that the token is of type string.\n\n**Method**: \n- This indicates the HTTP method used for the request. In this case, it is a PUT request, which is used to update existing resources.\n\n**URL**: \n- This specifies the endpoint of the API where the request should be sent. In this case, it is a local server URL targeting the subcategory update endpoint.\n\n**Headers**: \n- This section outlines any additional information sent alongside the request.\n  - **Key**: \"Client-UUID\" indicates the identifier for the client making the request.\n  - **Value**: This should be replaced with the actual client UUID used to authenticate the request.\n  - **Type**: Indicates that this is a default header.\n\n**Body**: \n- This contains the actual data to be sent with the PUT request in a raw format.\n\n**Mode**: \n- Indicates the format of the body content. Here it is set to \"raw\", meaning the content is a plain JSON string.\n\n**Raw**: \n- This field contains the JSON object that includes the data necessary for updating the subcategory. \n  - **subCategoryId**: Unique identifier for the subcategory being updated.\n  - **sessionId**: Identifier for the session related to this update.\n  - **accountId**: Unique identifier for the account associated with the subcategory.\n  - **name**: The name of the subcategory to be updated.\n  - **description**: A brief overview or explanation of the subcategory.\n  - **tags**: Comma-separated keywords related to the subcategory for categorization purposes.\n  - **profilePhotoUrl**: URL link to the profile photo for the subcategory.\n  - **coverPhotoUrl**: URL link to the cover photo associated with the subcategory.\n  - **minimumTipAmount**: Specifies the minimum amount that can be tipped for this subcategory.\n  - **categoryId**: Identifier for the category to which the subcategory belongs.\n  - **category**: Name of the main category associated with this subcategory.\n  - **subCategory**: Name of the subcategory being processed.\n  - **isSubCategoryPrivate**: A boolean value indicating whether the subcategory is private.\n  - **isTournamentOnly**: A boolean that specifies if the subcategory is limited to tournament-related content only.\n  - **isSubCategoryDefault**: A boolean indicating if this subcategory is considered the default option for users.\n  - **isPreLiveTeamAds**: A boolean determining if pre-live advertisements can be displayed for this subcategory.\n  - **isPostLiveTeamAds**: A boolean indicating if post-live advertisements can be displayed for this subcategory.\n  - **breakPreLiveVideoUrl**: URL link to a video used during breaks in pre-live sessions.\n  - **breakPostLiveVideoUrl**: URL link to a video used during breaks in post-live sessions. \n\nThis detailed description provides clarity on the purpose and structure of each component within the API request for easier understanding by users."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - SubCategory - Get By ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/subcategory/get/?subCategoryId=teamSubCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "subcategory",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "subCategoryId",
+              "value": "teamSubCategoryId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"endpoint_name\": \"Team - SubCategory - Get By ID\",\n    \"endpoint_description\": \"This endpoint retrieves a specific team subcategory based on its unique identifier.\",\n    \n    \"request\": {\n      \"authentication\": {\n        \"type\": \"Bearer\",\n        \"description\": \"This authentication method requires a Bearer token for access to the endpoint. The token needs to be included in the request header to authorize the user.\"\n      },\n      \n      \"method\": {\n        \"type\": \"GET\",\n        \"description\": \"This method is used for retrieving data from the server without making any changes to the resource.\"\n      },\n      \n      \"url\": {\n        \"description\": \"The URL used to access the endpoint. The endpoint requires a parameter 'subCategoryId' which specifies the unique identifier of the team subcategory to be fetched. Replace 'teamSubCategoryId' in the URL with the actual ID of the subcategory you want to retrieve.\",\n        \"example\": \"http://localhost:3000/api/team/subcategory/get/?subCategoryId=12345\"\n      },\n\n      \"headers\": {\n        \"description\": \"Optional headers can be included in the request. Currently, there are no additional headers implemented in this request.\"\n      },\n      \n      \"body\": {\n        \"description\": \"This request does not require a body since it is a GET request. The body is empty.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Team - SubCategory - Get By Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/subcategory/get/?name=teamSubCategoryName",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "subcategory",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "teamSubCategoryName"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Team - SubCategory - Get By Name\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/team/subcategory/get/?name=teamSubCategoryName\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    },\n    \"details\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"Indicates that the request must include a bearer token for authorization. This is used to authenticate the user making the request.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"The key for the bearer token needed for authorization.\",\n            \"value\": \"BearerToken\": \"Placeholder for the actual bearer token that should be provided in the request.\",\n            \"type\": \"string\": \"Specifies the type of value being passed, which is a string.\"\n          }\n        ]\n      },\n      \"method\": \"GET\": \"Indicates the HTTP method being used for the request. The GET method retrieves data from the specified resource.\",\n      \"url\": \"http://localhost:3000/api/team/subcategory/get/?name=teamSubCategoryName\": \"The endpoint where the request is sent. The URL includes a query parameter 'name' which specifies the name of the subcategory to retrieve.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"The header key for the request, left empty as there are no additional headers required.\",\n          \"value\": \"\": \"The value associated with the header key, which is also left empty.\",\n          \"type\": \"default\": \"Indicates the default type of this header.\",\n          \"disabled\": true: \"Indicates that this header is disabled and will not be included in the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"Indicates the format of the request body. Since this is a GET request, the body is not typically used.\",\n        \"raw\": \"\": \"Represents the raw body content. It is empty for the GET request as no body data is sent.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Team - SubCategory - Get By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/subcategory/get/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "subcategory",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Team - SubCategory - Get By Account ID\n\n#### Overview\nThis API endpoint retrieves subcategory information associated with a specific account ID. It uses the HTTP GET method and requires an authorization token.\n\n#### Detailed Description of Each Data Field:\n\n- **name**: \n  - This is the name of the API endpoint. It identifies the specific action being performed, which is to get subcategory details for a team based on an account ID.\n\n- **request**: \n  - This object contains all the necessary details for making the API request.\n\n  - **auth**: \n    - This section specifies the authorization method used for the request.\n    \n    - **type**: \n      - Indicates the type of authentication. In this case, it is a 'bearer' token.\n      \n    - **bearer**: \n      - An array which holds the authorization token needed to authenticate the request.\n      \n      - **key**: \n        - This is a placeholder for the token key. It is labeled 'token' which indicates that this is where your access token will be placed.\n        \n      - **value**: \n        - This is the actual token value, prefixed with 'Bearer'. Replace 'BearerToken' with the actual bearer token for successful authentication.\n        \n      - **type**: \n        - This specifies the data type of the token, which is 'string'.\n\n  - **method**: \n    - This indicates the HTTP method used for the API request. The method here is 'GET', which is intended to retrieve data.\n\n  - **url**: \n    - This is the endpoint URL that should be called. It includes a parameter for the account ID, which should be replaced with the actual account ID value when making a request.\n\n  - **headers**: \n    - This is a collection of headers to be sent with the API request. \n\n    - **key**: \n      - Represents the name of the header. Currently, it is empty and disabled, which means no additional headers are being sent.\n      \n    - **value**: \n      - Represents the value of the header. Since the key is empty, this is also not set.\n      \n    - **type**: \n      - Denotes the type of the header. It is set to 'default'.\n\n    - **disabled**: \n      - This boolean flag indicates whether the header is active. It is currently set to true, which means this header will not be sent.\n\n  - **body**: \n    - This section defines the body of the request. \n\n    - **mode**: \n      - Indicates the type of body content. It is set to 'raw', suggesting that the body content will be sent as a raw string.\n    \n    - **raw**: \n      - This is where the actual body content would go if required. Currently, it is empty, meaning no data will be sent in the request body since this is a GET request.\n\n#### Usage\nTo use this endpoint, ensure that you replace the `accountId` in the URL with the actual account ID you wish to query, and enter a valid bearer token in place of `BearerToken` in the authorization section."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - SubCategory - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/subcategory/all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "subcategory",
+            "all",
+            ""
+          ]
+        },
+        "description": "{\n  \"name\": \"Team - SubCategory - Get All\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/team/subcategory/all\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    },\n    \"details\": {\n      \"auth\": {\n        \"description\": \"Uses Bearer token authentication. A 'BearerToken' must be provided in the request for authorization.\"\n      },\n      \"method\": {\n        \"description\": \"This request uses the GET method to fetch data.\"\n      },\n      \"url\": {\n        \"description\": \"The endpoint URL is 'http://localhost:3000/api/team/subcategory/all'. This is where the request will be sent to retrieve all subcategories of the team.\"\n      },\n      \"headers\": {\n        \"description\": \"No additional headers are required for this request, as shown. The header entry is disabled and contains no specific key or value.\"\n      },\n      \"body\": {\n        \"description\": \"The body of the request is empty. This is expected for a GET request, which typically does not send a body.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Team - SubCategory - Get All By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/subcategory/all/?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "subcategory",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Team - SubCategory - Get All By Account ID\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/team/subcategory/all/?accountId=accountId\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    },\n    \"details\": {\n      \"name\": \"The name of the API request, describing its purpose and function.\",\n      \"request\": {\n        \"auth\": {\n          \"type\": \"Describes the type of authentication required for this request, which is a bearer token.\",\n          \"bearer\": [\n            {\n              \"key\": \"This is the key identifier for the bearer token in the request.\",\n              \"value\": \"Contains the actual bearer token value required for authorization. Replace 'BearerToken' with a valid token.\",\n              \"type\": \"Indicates the data type of the bearer token, which is string.\"\n            }\n          ]\n        },\n        \"method\": \"Specifies the HTTP method used for the request, in this case, GET. This method is used to retrieve data from the server.\",\n        \"url\": \"The endpoint URL where the request is sent. It includes the API route and a query parameter 'accountId' that should be replaced with a specific account ID.\",\n        \"headers\": [\n          {\n            \"key\": \"This is a placeholder for any additional headers that may be required. Currently, it is empty and disabled.\",\n            \"value\": \"This is a placeholder for the value of the header. It is currently empty.\",\n            \"type\": \"Indicates the type of the header, which is set as default.\",\n            \"disabled\": \"This attribute indicates that the header is currently not active.\"\n          }\n        ],\n        \"body\": {\n          \"mode\": \"Specifies the format in which the request body is sent. In this case, it is set to 'raw'.\",\n          \"raw\": \"This field is empty as GET requests do not typically send a body.\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Team - SubCategory - Get All By Category ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/subcategory/all/?categoryId=teamCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "subcategory",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "teamCategoryId"
+            }
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Team - SubCategory - Get All By Category ID\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"GET\",\n      \"url\": \"http://localhost:3000/api/team/subcategory/all/?categoryId=teamCategoryId\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\"\n      }\n    }\n  }\n}  \n\n- **name**: This is the title of the endpoint, indicating it retrieves all subcategories related to a specific team category ID.\n\n- **request**: This section defines the attributes needed to make the API call.\n\n  - **auth**: This indicates the type of authentication required for accessing the API.\n  \n    - **type**: Specifies that bearer token authentication is used.\n    \n    - **bearer**: Contains the authentication details in a list format.\n    \n      - **key**: This is a label for the token which is \"token.\"\n      \n      - **value**: It holds the actual token value needed for authentication, represented here as \"BearerToken.\" Users should replace this with their actual bearer token.\n      \n      - **type**: Specifies that the value is of type \"string.\"\n\n  - **method**: Indicates the HTTP method to be used for the API call, which is \"GET\" in this case. This means the request is for retrieving data.\n\n  - **url**: This is the endpoint URL that will be called. It includes a query parameter (`categoryId`) that needs to be filled with the actual team category ID intended to fetch subcategories.\n\n  - **headers**: This section can include any additional HTTP headers you may need to send with the request. Here, it's currently empty and is marked as disabled, indicating no custom headers are set.\n\n  - **body**: Usually contains the payload sent with the request.\n    \n    - **mode**: This indicates how the body content is structured. In this case, it's set to \"raw.\"\n    \n    - **raw**: This is where the request body content would go. It’s currently empty, as a GET request typically doesn’t contain a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - SubCategory - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"subCategoryId\":\"subCategoryId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/subcategory/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "subcategory",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"Team - SubCategory - Delete\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"sessionId\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"method\": \"POST\",\n      \"url\": \"http://localhost:3000/api/team/subcategory/delete\",\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"subCategoryId\\\":\\\"subCategoryId\\\"}\"\n      }\n    }\n  }\n}\n\n1. **name**: This is the name of the endpoint indicating that it is used to delete a subcategory within a team.\n\n2. **request**: This section outlines the details necessary to make a request to the API.\n\n   - **auth**: This indicates the type of authentication used to access the API. In this case, it is a bearer token.\n   \n     - **type**: Specifies that the authentication method is \"bearer\".\n     \n     - **bearer**: This is an array containing the authentication details.\n     \n       - **key**: The key is \"token\", which signifies the type of information being sent for authentication.\n       \n       - **value**: The value \"sessionId\" indicates that the actual session ID will be provided here during the request.\n       \n       - **type**: This indicates that the value type is a string.\n\n   - **method**: The HTTP method used for the request, which is \"POST\" in this case. This suggests that data will be sent to the server to perform an action.\n\n   - **url**: This is the endpoint URL where the request will be sent. It is set to \"http://localhost:3000/api/team/subcategory/delete\", indicating a local server instance.\n\n   - **headers**: This section would typically include any required HTTP headers for the request.\n   \n     - In this case, the headers array is defined but left empty and marked as disabled, meaning no additional headers are being sent with the request.\n\n   - **body**: This details the content of the request.\n   \n     - **mode**: The body mode is set to \"raw\", which indicates that the body will contain raw data in its original form.\n     \n     - **raw**: This contains the actual JSON string that will be sent in the request body. It includes the following fields:\n       \n       - **sessionId**: This field represents the session identifier for the user making the request.\n       \n       - **accountId**: This field indicates the account ID associated with the request.\n       \n       - **subCategoryId**: This field contains the identifier for the subcategory that is to be deleted.\n}"
+      },
+      "response": []
+    }
+  ]
+}

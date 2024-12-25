@@ -1,0 +1,2014 @@
+{
+  "info": {
+    "_postman_id": "2192add9-34dc-46ef-8b33-6677f1af88c2",
+    "name": "WebSocketSetupJoin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Web - Socket - Setup Account Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"account\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Setup Account Comments\n\n#### Request Information\n- **Method:** \n  - This request uses the POST HTTP method to submit data to the specified endpoint.\n\n- **URL:** \n  - The endpoint to which the request is made is `http://localhost:3000/api/socket/web/setup`.\n\n#### Request Body\n- **Body Format:**\n  - The body of the request is sent in raw JSON format.\n\n- **Body Content:**\n  - Below is a breakdown of each field in the JSON object being sent:\n\n  1. **accountId:** \n     - This field represents the unique identifier for the account that is being set up. It is a string value.\n\n  2. **sessionId:** \n     - This field contains the identifier for the current session. It is also a string value. This is used to associate the setup process with a particular user session.\n\n  3. **serviceName:** \n     - This field defines the name of the service you are setting up. In this case, the service is set to \"account\".\n\n  4. **serviceType:** \n     - This field indicates the type of service. In this setup, it is specified as \"comments\", suggesting that the service will handle comments associated with the account.\n\n  5. **maxsize:** \n     - This field sets a limit on the maximum size allowable for data related to the comments service. It is defined as an integer value, with `1000` being the value in this request, which may correspond to byte size or maximum number of comments. \n\n#### Additional Notes\n- The request does not include any headers, which may need to be added depending on the requirements (e.g., authorization headers).\n- Ensure that the appropriate values for `accountId` and `sessionId` are supplied when making the request in order to properly set up the account comments feature."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Account Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"account\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Join Account Comments\n\n**Request Method:** \n- `POST`: This indicates that the client is sending data to the server. In this case, the client is requesting to set up a WebSocket connection for receiving account comments.\n\n**Request URL:** \n- `http://localhost:3000/api/socket/web/setup`: This is the endpoint where the request will be sent. The `localhost:3000` implies that the server is running locally on port 3000.\n\n**Headers:** \n- Currently, there are no headers specified for this request. Headers can be used for various purposes, such as authentication or content type specification, but none are needed for this particular request.\n\n**Request Body:** \n- The body of the request is formatted as raw JSON data. This contains the necessary information to establish the WebSocket connection.\n\n**Body Details:**\n- **socketId**: This field represents the unique identifier for the WebSocket connection. It is used by the server to recognize the specific socket connection.\n  \n- **accountId**: This is the unique identifier for the account for which the comments are being requested. This allows the server to fetch comments specifically related to the stated account.\n  \n- **sessionId**: This represents the session identifier for the user's session. It helps in tracking the user's session on the server and associates the WebSocket connection with the ongoing user session.\n  \n- **serviceName**: This field specifies the name of the service being accessed, which in this case is \"account\". It identifies the type of service in use within the application context.\n\n- **serviceType**: This indicates the category of service requested, which is \"comments\". It tells the server that the client is interested in comments related to the account specified.\n\n**Options:** \n- **raw**: This indicates the format of the request body, which is set to `json`. This is important for parsing the data correctly when the server processes the incoming request.\n\n### Summary \nThis API endpoint allows clients to establish a WebSocket connection to receive account-related comments by providing necessary identifiers such as socketId, accountId, sessionId, along with the specified service names."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Account Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"account\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Description of Endpoint: Web - Socket - Setup Account Chats\n\nThis endpoint is responsible for setting up chat services for a specific account via a WebSocket connection. Below is a detailed description of each part of the data involved in this request:\n\n- **Name**: Web - Socket - Setup Account Chats\n  - The name of the API request which indicates its purpose, specifically for setting up chat-related functionalities over a WebSocket connection.\n\n- **Request**: \n  - This section outlines the characteristics of the API request to be sent.\n\n  - **Method**: POST\n    - The HTTP method used for the request. In this case, it is a POST method, which is typically used for sending data to the server to create or update resources.\n\n  - **URL**: `http://localhost:3000/api/socket/web/setup`\n    - This is the endpoint URL where the request will be sent. The URL indicates that it is directed at a local server instance running on port 3000 and is specifically for the WebSocket setup.\n\n  - **Headers**: []\n    - This field is currently empty, indicating that there are no specific headers being sent with this request. Headers can sometimes be used for authentication or to specify content types.\n\n  - **Body**: \n    - This section contains the main data payload being sent with the request.\n\n    - **Mode**: raw\n      - Indicates that the request body is being sent in raw format rather than as form data or URL-encoded, allowing for more complex data structures.\n\n    - **Raw**: \n      - The actual data being sent in the request body, formatted as a JSON string. The contents are as follows:\n        - **accountId**: \"accountId\"\n          - A placeholder for the unique identifier of the account that is being set up for chat services. This should be replaced with the actual account ID when making the request.\n        \n        - **sessionId**: \"sessionId\"\n          - A placeholder for the unique identifier for the session relating to this chat setup. Like accountId, this should be replaced with the actual session ID.\n        \n        - **serviceName**: \"account\"\n          - This field indicates the name of the service that is being set up. In this case, it refers to \"account\" which likely designates the type of service tied to the user's account.\n        \n        - **serviceType**: \"chats\"\n          - This specifies the type of service being set up. Here, it is \"chats\", indicating that the service is directly related to chat functionalities.\n        \n        - **maxsize**: 1000\n          - This value defines the maximum size limit for the chat data that can be handled or stored during chat sessions. In this case, it is set to 1000, which could refer to the maximum number of messages or size of data in kilobytes.\n\n    - **Options**: \n      - This section provides additional options for the raw body format.\n\n      - **Raw**: \n        - **Language**: json\n          - Indicates that the raw body data is formatted in JSON, which is a common format for data interchange in web APIs, allowing for easy parsing and readability.\n\nThis description provides insight into the structure and purpose of each component of the request for setting up chat services for a specific account."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Account Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"account\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Join Account Chats\n\n- **Name**: Web - Socket - Join Account Chats\n  - This is the designation of the API endpoint responsible for allowing a user to join account-specific chat sessions via a WebSocket connection.\n\n- **Request**:\n  - **Method**: POST\n    - The HTTP method used for this request. It is a POST request, which typically indicates that data is being sent to the server for processing or storage.\n\n  - **URL**: `http://localhost:3000/api/socket/web/setup`\n    - This is the endpoint URL for making the request. It points to the WebSocket setup path on a server running locally on port 3000.\n\n  - **Headers**: []\n    - There are no headers specified for this request. Headers can be utilized for adding metadata to the request, such as content type or authorization tokens, but in this case, they are not needed.\n\n  - **Body**:\n    - **Mode**: raw\n      - Indicates that the request body is being sent as raw data rather than in a predefined format like form-url-encoded or multipart.\n\n    - **Raw**: \n      - `\"{\\\"socketId\\\": \\\"socketId\\\", \\\"accountId\\\":\\\"accountId\\\", \\\"sessionId\\\":\\\"sessionId\\\", \\\"serviceName\\\":\\\"account\\\", \\\"serviceType\\\":\\\"chats\\\"}\"`\n        - This is the JSON string that will be sent in the body of the request. It contains the following fields:\n          - **socketId**: This represents the unique identifier for a user's WebSocket connection. It is essential for managing the connection and handling messages.\n          - **accountId**: This field holds the unique identifier for the account that the user wants to join for chat purposes. It helps in identifying the chat context.\n          - **sessionId**: This is the identifier for the chat session the user is trying to join. It helps to differentiate between multiple chat sessions related to the same account.\n          - **serviceName**: This indicates the type of service being accessed, in this case, it is set to \"account\" to specify that the service relates to user accounts.\n          - **serviceType**: This denotes the type of service being engaged, which is \"chats\" here, indicating that the user is joining a chat service.\n\n    - **Options**:\n      - **Raw**: \n        - **Language**: json\n          - This specifies that the raw body content is formatted as JSON, ensuring proper interpretation and parsing by the server.\n\nThis endpoint allows users to establish a WebSocket connection for chatting by providing relevant identifiers and service details in a structured JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Account Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"account\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "{\n  \"name\": \"Web - Socket - Setup Account Votes\",\n  \"description\": {\n    \"method\": \"POST\",\n    \"description\": \"This specifies that the request will be using the POST method, which is used to send data to the server.\",\n    \"url\": \"http://localhost:3000/api/socket/web/setup\",\n    \"description\": \"This is the endpoint URL where the request will be sent. It indicates that the request is targeting a local server running on port 3000 at the specified path.\",\n    \"headers\": {\n      \"description\": \"This section is empty, meaning no additional headers are required for this request.\"\n    },\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"Indicates that the body of the request will be sent as raw data instead of form data or other formats.\",\n      \"raw\": \"{\\\"accountId\\\":\\\"accountId\\\", \\\"sessionId\\\":\\\"sessionId\\\", \\\"serviceName\\\":\\\"account\\\", \\\"serviceType\\\":\\\"votes\\\", \\\"maxsize\\\": 1000}\",\n      \"description\": \"This is the actual data being sent in the request body. It is a JSON string containing the following fields:\",\n      \"details\": {\n        \"accountId\": {\n          \"description\": \"This represents the unique identifier for the account that the votes are associated with.\"\n        },\n        \"sessionId\": {\n          \"description\": \"This refers to the unique identifier for the session during which the votes are being set up.\"\n        },\n        \"serviceName\": {\n          \"description\": \"This indicates the name of the service. In this case, it is set to 'account', which suggests that this service is related to account management.\"\n        },\n        \"serviceType\": {\n          \"description\": \"This denotes the type of service being utilized, which is set to 'votes'. It suggests that the functionality involves managing votes.\"\n        },\n        \"maxsize\": {\n          \"description\": \"This specifies the maximum size that can be handled in this operation. It is set to 1000, which indicates the upper limit for some parameter related to votes, possibly the number of votes or the size of data that can be processed.\"\n        }\n      },\n      \"options\": {\n        \"raw\": {\n          \"language\": \"json\",\n          \"description\": \"This indicates that the raw data being sent in the body is formatted as JSON, which is a common format for data exchange.\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Account Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"account\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Join Account Votes\n\n**Method:**  \n- **POST**: This specifies that the request will be sending data to the server to create or update a resource.\n\n**URL:**  \n- **http://localhost:3000/api/socket/web/setup**: This is the endpoint where the request will be sent. It is a local server running on port 3000, targeting the API route `/api/socket/web/setup`.\n\n**Headers:**  \n- **(Empty)**: No custom headers are included in this request. This means that the request will use default headers set by the client or browser.\n\n**Body:**  \n- **Mode:**  \n  - **raw**: The server expects the body of the request to be in its raw, unformatted form.\n\n- **Raw Data:**  \n  ```json\n  {\n    \"socketId\": \"socketId\",\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"serviceName\": \"account\",\n    \"serviceType\": \"votes\"\n  }\n  ```\n  - **socketId**: This field holds the identifier for the WebSocket connection. It helps the server recognize the specific WebSocket connection from which the request is coming.\n  \n  - **accountId**: This field represents the unique identifier for the account associated with the WebSocket connection. It links the request to a specific user’s account.\n\n  - **sessionId**: This is an identifier for the current session. It is often used to track the user session throughout the application, ensuring that the actions taken in the session are tied to a specific user interaction.\n\n  - **serviceName**: This indicates the name of the service being accessed or modified. In this case, \"account\" suggests that the operation pertains to the account services of the application.\n\n  - **serviceType**: This denotes the type of action or data being dealt with. The value \"votes\" indicates that the service will be dealing with voting functionalities associated with the account.\n\n**Options:**  \n- **Raw Options:**  \n  - **Language:**  \n    - **json**: This specifies that the format of the raw body is in JSON. The server expects the data being submitted to be formatted as JSON for proper parsing and handling."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Video Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"video\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "```plaintext\nThis endpoint is used to set up WebSocket connections for video comments within the application.\n\n- **Endpoint Name**: Web - Socket - Setup Video Comments\n  - This indicates the purpose of the endpoint, focusing on configuring WebSocket connections for handling comments related to videos.\n\n- **Request Method**: POST\n  - The POST method indicates that this request is used to send data to the server to create or configure resources—in this case, setting up WebSocket for video comments.\n\n- **Request URL**: http://localhost:3000/api/socket/web/setup\n  - This is the address of the server where the request is sent. It is a local server running on port 3000 and is meant for setting up the WebSocket connection.\n\n- **Headers**: \n  - There are no specific headers included in this request. Default headers may be used.\n\n- **Request Body**: \n  - The body of the request is sent in raw format. This includes a JSON object containing key-value pairs for the parameters necessary to set up the WebSocket.\n\n  - **Account ID**: \n    - This is a string representing the identifier for the user's account. It is essential for associating the WebSocket connection with the correct user.\n\n  - **Session ID**: \n    - This is a string that uniquely identifies the current session. It helps in managing and tracking ongoing interactions within the WebSocket.\n\n  - **Service Name**: \n    - The value \"video\" indicates that the WebSocket service being set up is related to video functionality.\n\n  - **Service Type**: \n    - The value \"comments\" specifies that the WebSocket will handle comments related to videos.\n\n  - **Max Size**: \n    - This numeric value (1000) defines the maximum size limit for the data being handled over the WebSocket. It is important for controlling the load and performance of the WebSocket connection.\n\n- **Options**:\n  - The body type is set to be interpreted as raw JSON, specifically indicated by the 'language' set to 'json'. This ensures the server processes the incoming data correctly.\n```"
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Video Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"video\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Join Video Comments\n\n**Method**: POST  \n**URL**: `http://localhost:3000/api/socket/web/setup`  \n\n#### Request Body\n\n- **socketId**: A unique identifier for the socket connection. It is used to establish communication between the client and the server within a specific session.\n\n- **accountId**: A unique identifier for the user account. This helps in associating the socket connection with a particular user, allowing for personalized interactions and comments in the video session.\n\n- **sessionId**: A unique identifier for the session. It represents a distinct instance of a video or event where comments are being made or interacted with. This is essential for tracking the context of the comments.\n\n- **serviceName**: A string indicating the type of service being used. In this case, it is set to \"video\", which means the socket connection is intended for video-related functionalities.\n\n- **serviceType**: A string that specifies the category of interactions within the service. Here, it is set to \"comments\", which indicates that the socket will be used to handle live comments or interactions associated with the video content.\n\nThis endpoint allows a client to join a comments section for a video, enabling real-time user engagement through comments."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Video Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"video\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Setup Video Chats\n\n- **Name**: Web - Socket - Setup Video Chats\n  - This is the title of the API endpoint, indicating its purpose for setting up video chats using WebSocket technology.\n\n- **Request**:  \n  This section describes how to make a request to the API.\n\n  - **Method**: \n    - **POST**  \n      This indicates that the request will be made using the POST HTTP method, which is generally used to send data to the server.\n\n  - **URL**: \n    - **http://localhost:3000/api/socket/web/setup**  \n      This is the endpoint URL where the request will be sent. In this case, it targets a local server running on port 3000 to set up WebSocket connections for video chats.\n\n  - **Headers**: \n    - **[]**  \n      This field is empty, indicating that no additional headers are required for the request. Users may need to add headers if their API requires authentication or other custom headers.\n\n  - **Body**:\n    - **Mode**: \n      - **raw**  \n        This indicates that the body of the request will be sent as raw data.\n\n    - **Raw**: \n      - **{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"video\", \"serviceType\":\"chats\", \"maxsize\": 1000}**  \n        This is the payload being sent with the request, formatted as a JSON object. The fields included are:\n        - **accountId**: A placeholder for the identifier of the user’s account. This should be replaced with the actual account ID when making a request.\n        - **sessionId**: A placeholder for the unique identifier of the video chat session. This should be replaced with the actual session ID for the video chat.\n        - **serviceName**: This identifies the service being used, here it is set to \"video\" to indicate that the service is related to video functionality.\n        - **serviceType**: This specifies the nature of the service, set to \"chats\", indicating that it pertains to chat functionalities.\n        - **maxsize**: This denotes the maximum size of the data that can be handled, defined as 1000 units (the precise measurement depends on the implementation context).\n\n    - **Options**: \n      - This section provides additional configurations for the body.\n      - **Raw**:\n        - **Language**: \n          - **json**  \n            This specifies that the raw data being sent is formatted as JSON, which is a common data interchange format.\n\nThis detailed description will help users understand how to properly set up video chats via the given WebSocket API endpoint, including what data needs to be supplied in the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Video Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"video\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Join Video Chats\n\n- **Name**: This is the label for the API endpoint, indicating that it is related to WebSocket connections for joining video chat sessions.\n\n- **Request Method**: The request method used for this API call is POST, which indicates that the client is sending data to the server.\n\n- **Request URL**: The endpoint URL is `http://localhost:3000/api/socket/web/setup`. This is where the request is sent. The path suggests this interacts with a WebSocket service set up specifically for video chats.\n\n- **Headers**: Currently, there are no headers defined for this request. Headers can be added if authentication or content type specifications are needed in the future.\n\n- **Body**: The body of the request contains the data that is being sent to the server:\n  - **Mode**: The mode is set to \"raw,\" indicating that the payload is sent as raw JSON.\n  - **Raw**: The JSON data being sent includes the following fields:\n    - **socketId**: This represents the unique identifier for the WebSocket connection. It is essential for managing the session.\n    - **accountId**: This identifies the user account participating in the video chat. It is required for tracking user activity and permissions.\n    - **sessionId**: This is the unique identifier for the specific video chat session. It helps in differentiating between various active sessions.\n    - **serviceName**: A string that specifies the type of service being used, which in this case is 'video,' indicating that the functionality relates to video services.\n    - **serviceType**: This indicates the specific function of the service being utilized, which in this instance is 'chats,' showing that this endpoint is meant for chat functionalities within video services.\n\n- **Options**: This includes configuration for the body format:\n  - **Raw**: Under this section, the language of the raw payload is specified as \"json,\" indicating that the data is formatted in JSON.\n\nThis endpoint facilitates the establishment of a WebSocket connection for users to join video chats by providing essential identifiers and service specifications."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Video Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"video\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Setup Video Votes\n\n**Request Method:** POST  \nThis endpoint utilizes the POST method to send data to the server.\n\n**Request URL:** `http://localhost:3000/api/socket/web/setup`  \nThe URL for the request, indicating the endpoint on the local server where the socket setup will be initiated.\n\n**Headers:**  \nNo specific headers are included in the request.\n\n**Body:**  \nThe body of the request is sent in raw JSON format. It consists of the following fields:\n\n- **accountId:**  \n  A placeholder for the unique identifier of the user account. This value should be replaced with the actual account ID when making the request.\n\n- **sessionId:**  \n  A placeholder for the unique identifier of the session. Similar to accountId, this should be replaced with the actual session ID corresponding to the user's interaction.\n\n- **serviceName:**  \n  This field specifies the type of service being set up. In this case, the value is set to \"video,\" indicating that the service pertains to video-related operations.\n\n- **serviceType:**  \n  This field specifies the type of service under the service name. Here, it is set to \"votes,\" indicating that the setup is related to voting functionality within the video service.\n\n- **maxsize:**  \n  This value sets the maximum size limit for the votes. It is specified as 1000, which means that the system can handle a maximum of 1000 votes during the setup.\n\n**Options:**  \nThe `options` field specifies additional settings for the request body:\n\n- **language:**  \n  Indicates the programming language format of the provided body data. In this case, it is specified as \"json,\" confirming that the content is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Video Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"video\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Join Video Votes\n\n**Method:** POST\n\n**URL:** http://localhost:3000/api/socket/web/setup\n\n#### Request Details:\n\n- **Headers:** \n  - The request does not require any specific headers. It is empty as defined.\n\n- **Body:**\n  The body of the request is in JSON format. The following fields are included:\n\n  1. **socketId**: \n     - This represents a unique identifier for the socket connection. It is used to identify the session between the client and the server.\n\n  2. **accountId**: \n     - This is the unique identifier for the user’s account. It helps in linking the socket connection to the specific user's account.\n\n  3. **sessionId**: \n     - This denotes the identifier for the current session. It is essential for differentiating between various active sessions.\n\n  4. **serviceName**: \n     - This indicates the name of the service being utilized. In this case, it is specified as \"video,\" meaning that this socket connection is related to video services.\n\n  5. **serviceType**: \n     - This outlines the type of service, which is noted as \"votes.\" This suggests that the actions or data being handled via this socket connection pertain to voting functionality within the video service.\n\n#### Overall Purpose:\nThis endpoint is designed to establish a socket connection for a video service that supports voting features. It requires the necessary identifiers to properly associate the socket connection with a user account and session to enable real-time interactions related to video votes."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Channel Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"channel\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Setup Channel Comments\n\n**Method**: POST\n\n**URL**: `http://localhost:3000/api/socket/web/setup`\n\n#### Request Body Description:\n\n- **accountId**:  \n  This field represents the unique identifier for the user's account. It is essential for associating the WebSocket connection with the correct user's session.\n\n- **sessionId**:  \n  This field contains the identifier for the current session. This helps to track and manage sessions for multiple users, ensuring that the connection is appropriately linked to the right session.\n\n- **serviceName**:  \n  This specifies the name of the service to be used in the WebSocket connection. In this case, it is set to \"channel,\" indicating that the service pertains to channel-based communications.\n\n- **serviceType**:  \n  This defines the type of service being requested. Here, it is set to \"comments,\" suggesting that the WebSocket is intended for handling comments within the channel.\n\n- **maxsize**:  \n  This integer value determines the maximum size limit for the data transmitted over the WebSocket connection. A value of 1000 indicates that the maximum allowed size for comment data is set to 1000 units (the specific unit may depend on further context or specification).\n\n### Summary:\nThis endpoint is designed to set up a WebSocket connection for handling comments in a specific channel linked to a user's account during a given session. The parameters provided in the request body ensure that the connection is correctly configured and associated with the appropriate user and session details."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Channel Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"channel\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Join Channel Comments\n\n#### Request Overview\nThis endpoint allows a client to join a comments channel via a WebSocket connection. It sets up a connection using specified identifiers and service parameters to enable real-time comment interaction.\n\n#### HTTP Method\n- **POST**: This request method is used to send data to the server to create a new session or resource.\n\n#### URL\n- **http://localhost:3000/api/socket/web/setup**: This is the endpoint where the request is sent. It listens for incoming connections to initialize WebSocket settings.\n\n#### Headers\n- **No specific headers are set**: The request does not include any headers. It is advisable to review if any authentication or content-type headers should be added based on the server requirements.\n\n#### Body\n- The body of the request is sent in raw JSON format. It contains the following fields:\n\n1. **socketId**: A unique identifier for the WebSocket connection. This allows the server to recognize and manage the specific client connection.\n   \n2. **accountId**: This is the identifier associated with the user’s account. It is crucial for linking the connection to the appropriate user profile and ensuring that the user has the right permissions to join the comments channel.\n   \n3. **sessionId**: A unique token that represents the user session. This helps to track the user’s active sessions and maintains continuity in interactions while ensuring secure access.\n   \n4. **serviceName**: This field indicates the type of service being accessed through the WebSocket. In this case, it is set to \"channel,\" which implies that the connection pertains to a specific communication channel.\n   \n5. **serviceType**: This specifies the category of service that the connection is associated with. Here, it is marked \"comments,\" denoting that the service involves comment-related functionalities, such as posting or receiving comments in real-time.\n\n#### Options\n- **Language**: The language of the body content is specified as JSON, indicating that the server expects the incoming data to be structured in JSON format.\n\nThis endpoint is crucial for setting up a real-time connection for users to participate in discussions via comments, enabling a more interactive experience on the platform."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Channel Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"channel\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Setup Channel Chats\n\n#### Request Details\n\n- **Method**: POST  \n  This endpoint uses the POST method to send data to the server for establishing a WebSocket connection for channel chats.\n\n- **URL**: http://localhost:3000/api/socket/web/setup  \n  The endpoint is hosted at this URL. Replace `localhost:3000` with your server's address when deploying.\n\n#### Headers\n- **Headers**: There are no specific headers required for this request. However, if your application requires authentication or content type specification, be sure to add the necessary headers.\n\n#### Body\n- **Body Mode**: Raw  \n  The body of the request is sent as raw data.\n\n- **Raw Body Content**: \n  ```json\n  {\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"serviceName\": \"channel\",\n    \"serviceType\": \"chats\",\n    \"maxsize\": 1000\n  }\n  ```\n  - **accountId**: This field represents the unique identifier for the user's account. It is used to associate the WebSocket session with a specific user account.\n  \n  - **sessionId**: This field contains the identifier for the current session. It helps in managing and maintaining the WebSocket connection for the user.\n  \n  - **serviceName**: This value is set to \"channel\", indicating that the service type being set up is a channel for communication.\n  \n  - **serviceType**: This specifies the type of service being utilized. Here, it is set to \"chats\", which signifies that the channel is intended for chat functionality.\n  \n  - **maxsize**: This numeric value defines the maximum size (in bytes) for data that can be handled through this WebSocket connection. In this case, the maximum size is set to 1000 bytes."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Channel Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"channel\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Join Channel Chats\n\n**Request Method:** POST  \n**URL:** http://localhost:3000/api/socket/web/setup\n\n#### Description of Request Body Parameters:\n\n- **socketId**: This is a unique identifier for the socket connection. It is used to reference a specific socket session for interaction with the server.\n\n- **accountId**: This identifier represents the account of the user or entity trying to join the channel chats. It links the socket connection to a specific user account.\n\n- **sessionId**: This is the identifier for the current session. It helps in tracking the session state and associating requests with the correct user context.\n\n- **serviceName**: This parameter defines the type of service being accessed through the socket connection. In this case, it should be set to \"channel\".\n\n- **serviceType**: This identifies the category of service for the socket connection. Here, the value should be \"chats\", indicating that the connection is intended for chat functionalities.\n\n#### Body Format:\nThe body of the request should be sent in JSON format. The structure is raw, meaning it is provided directly in the request without additional formatting from Postman.\n\nExample JSON body:\n```json\n{\n  \"socketId\": \"socketId\",\n  \"accountId\": \"accountId\",\n  \"sessionId\": \"sessionId\",\n  \"serviceName\": \"channel\",\n  \"serviceType\": \"chats\"\n}\n```\n\nThis endpoint allows users to join chat channels via a WebSocket connection, facilitating real-time communication in a chat system."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Channel Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"channel\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Setup Channel Votes\n\nThis endpoint is used to set up a WebSocket channel specifically for votes associated with a given account and session. Below is a detailed description of each component in the request.\n\n#### Request Details\n\n- **Method**: \n  - **POST**: This signifies that the request is sending data to the server to create or set up a resource.\n\n- **URL**: \n  - **http://localhost:3000/api/socket/web/setup**: This is the endpoint where the POST request is sent. It indicates that it is hosted locally at port 3000 under the path `/api/socket/web/setup`.\n\n#### Headers:\n- **Headers**: \n  - No specific headers are defined in this request. However, in a real scenario, you might need to include headers for content-type or authorization, depending on the server implementation.\n\n#### Body:\n- **Body Mode**: \n  - The body is sent in **raw** format, indicating that we are sending a JSON string directly.\n\n- **Raw Body Content**: \n  - The JSON string being sent in the body contains the following key-value pairs:\n    - **accountId**: This represents the unique identifier for the account that is setting up the vote channel. It should be replaced with the actual account ID relevant to the request.\n    \n    - **sessionId**: This represents the unique identifier for the session associated with the votes. Just like `accountId`, this needs to be replaced with the actual session ID.\n    \n    - **serviceName**: This specifies the type of service being set up. In this case, it is set to **\"channel\"**, which indicates that it is a channel service on which votes will occur.\n    \n    - **serviceType**: This indicates the particular type of service functionality. Here, it is set to **\"votes\"**, signifying that this channel will handle voting-related activities.\n    \n    - **maxsize**: This defines the maximum size of data that can be handled or stored on this channel, set to **1000**. You can adjust this value depending on the expected volume of vote data.\n\nOverall, this endpoint facilitates the establishment of a WebSocket channel dedicated to managing votes for a specific account and session."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Channel Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"channel\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Join Channel Votes\n\n#### Request Details:\n\n- **Method**: \n  - This endpoint uses the POST HTTP method, which is commonly used to send data to a server.\n\n- **URL**: \n  - The request is made to `http://localhost:3000/api/socket/web/setup`. This is the local server address where the API is hosted.\n\n- **Headers**: \n  - No specific headers are required for this request, indicating it may not need authentication or additional metadata.\n\n- **Body**: \n  - The body of the request contains raw JSON data, structured to send the necessary parameters for the WebSocket connection.\n\n#### Body Parameters:\n\n1. **socketId**:\n   - This is a unique identifier for the WebSocket connection. It allows the server to recognize which socket is attempting to join the channel.\n\n2. **accountId**:\n   - This identifier represents the user's account. It is used to link the socket connection to a specific account, ensuring that account-specific permissions and states are maintained.\n\n3. **sessionId**:\n   - The session ID identifies the user's session. This helps in tracking user activity and state across different interactions.\n\n4. **serviceName**:\n   - This indicates the name of the service being accessed. In this case, it is set to \"channel\", which probably signifies that the user wants to join a specific communication channel.\n\n5. **serviceType**:\n   - This specifies the type of the service being requested. Here, it is set to \"votes\", suggesting that the channel is related to voting or polling activities.\n\n#### Option for Body Format:\n- **Language**: \n  - The body data is specified to be in JSON format, which is a standard format for data exchange in web applications. \n\nThis information provides a clear understanding of the parameters required to successfully join a channel related to votes via WebSocket using the specified endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Team Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"team\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Setup Team Comments\n\n**Request Method:**  \n- **POST:** This endpoint requires a POST request method.\n\n**Request URL:**  \n- **http://localhost:3000/api/socket/web/setup:** This is the endpoint where the request should be sent. The host is assumed to be running locally on port 3000.\n\n**Request Headers:**  \n- **Headers:** There are no specific headers included in this request. If needed, headers can be added based on requirements (e.g., authentication).\n\n**Request Body:**  \n- **Body Mode:** The body is sent in \"raw\" format.\n  \n- **Raw Body Content:** The request should contain a JSON string with the following fields:\n  \n  1. **accountId:** \n     - Type: String\n     - Description: Unique identifier for the account. This value is required for associating the socket setup with a specific user account.\n  \n  2. **sessionId:** \n     - Type: String\n     - Description: Identifier for the current session. It is necessary to track the specific session in which the comments are being set up.\n  \n  3. **serviceName:** \n     - Type: String\n     - Description: Specifies the service type that is being set up. In this case, it should be set to \"team\" indicating that the setup pertains to team-related comments.\n  \n  4. **serviceType:** \n     - Type: String\n     - Description: Defines the type of service being utilized. Should be set to \"comments\", indicating that the setup is intended for comment functionalities.\n  \n  5. **maxsize:** \n     - Type: Integer\n     - Description: Indicates the maximum size limit for comments. This value determines the maximum number of comments that can be handled in this service setup, with a value set to 1000 in this example.\n\n**Body Options:**  \n- **Options:** \n  - **Language:** The body is expected to be in JSON format, which is suitable for transmitting structured data. \n\nThis description gives a detailed overview of the data involved in the request to set up the socket for team comments. Each field has specific requirements and purposes that contribute to the functionality of the endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Team Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"team\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Description of the Endpoint Data\n\n**Name**: Web - Socket - Join Team Comments  \nThis is the name of the endpoint, which indicates that it deals with web socket connections related to joining comments for a particular team.\n\n**Request**:  \nThis section contains all the details about how to make a request to the endpoint.\n\n- **Method**: POST  \nThis specifies that the request method used to interact with the endpoint is POST. This means that data will be sent to the server to create or update a resource.\n\n- **URL**: http://localhost:3000/api/socket/web/setup  \nThis is the endpoint URL where the request will be sent. It indicates that the endpoint is hosted on the local development server.\n\n- **Headers**: []  \nThis denotes that there are no specific headers that need to be included in the request. \n\n- **Body**:  \nThis part describes the structure of the data that needs to be sent along with the request.\n\n  - **mode**: raw  \n  This indicates that the body of the request will be sent in a raw format.\n\n  - **raw**: \"{\\\"socketId\\\": \\\"socketId\\\", \\\"accountId\\\":\\\"accountId\\\", \\\"sessionId\\\":\\\"sessionId\\\", \\\"serviceName\\\":\\\"team\\\", \\\"serviceType\\\":\\\"comments\\\"}\"  \n  This is the actual data that will be sent in the request body. It needs to be formatted as a JSON string. The fields included are:\n    - **socketId**: This field will contain the unique identifier for the web socket connection.\n    - **accountId**: This field represents the unique identifier for the account that is joining the team comments.\n    - **sessionId**: This field holds the unique session identifier, which is used to track the user's session.\n    - **serviceName**: This signifies the name of the service related to the request; in this case, it is set to \"team.\"\n    - **serviceType**: This specifies the type of service; here, it indicates that it relates to \"comments.\"\n\n- **Options**:  \nThis section provides additional configuration regarding the body content format.\n\n  - **raw**:  \n    - **language**: json  \n    This indicates that the raw data being sent in the request body is formatted as JSON, ensuring that it is correctly parsed by the server.\n\nThis detailed description should help users understand all components of this endpoint and how to use it effectively in their applications."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Team Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"team\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Setup Team Chats\n\n**Request Method:**  \n- This endpoint uses the POST method, which is typically used to send data to a server to create or update a resource.\n\n**Request URL:**  \n- The request is sent to `http://localhost:3000/api/socket/web/setup`. This is the endpoint where the socket setup for team chats will be initiated.\n\n**Headers:**  \n- There are no specific headers required for this request, which means it can be sent without any additional header configurations.\n\n**Request Body:**  \n- The body of the request is structured in JSON format and includes the following fields:\n\n  - **accountId:**  \n    - This field identifies the account associated with the connection. It should be replaced with an actual account ID when making the request.\n\n  - **sessionId:**  \n    - This field represents the unique identifier for the current session. It is necessary for maintaining a continuous session for chat functionalities.\n\n  - **serviceName:**  \n    - This should be set to `\"team\"`, indicating that the service being set up is for team-related functionalities.\n\n  - **serviceType:**  \n    - This should be set to `\"chats\"`, specifying that the type of service provided is chat communications.\n\n  - **maxsize:**  \n    - This field sets the maximum size for the chat messages or other relevant data. In this case, it is set to `1000`, which could represent the maximum number of messages, users, or some other limiting factor depending on the application's requirements.\n\n**Options:**  \n- The body contains options for specifying the format of the raw data, with `\"language\": \"json\"` indicating that the data being sent is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Team Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"team\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Description of API Endpoint: Web - Socket - Join Team Chats\n\nThis API endpoint is used to allow users to join team chat rooms via a WebSocket connection. Below is a detailed description of each component of the request.\n\n#### Request Method\n- **Method**: `POST`\n  - This specifies that the request is sending data to the server to be processed.\n\n#### URL\n- **URL**: `http://localhost:3000/api/socket/web/setup`\n  - This is the endpoint where the request is sent. It is located on the local server (localhost) at port 3000, specifically targeting the `/api/socket/web/setup` route.\n\n#### Headers\n- **Headers**: No headers are specified in this request.\n  - Normally, headers may include information such as content type or authorization tokens, but this request does not include any.\n\n#### Body\n- **Body**: The data to be sent in the request is in raw JSON format.\n  - **Mode**: `raw`\n    - Indicates that the body is being sent as raw data.\n  - **Raw**: \n    ```json\n    {\n      \"socketId\": \"socketId\",\n      \"accountId\": \"accountId\",\n      \"sessionId\": \"sessionId\",\n      \"serviceName\": \"team\",\n      \"serviceType\": \"chats\"\n    }\n    ```\n    - **socketId**: This is a unique identifier for the WebSocket connection.\n    - **accountId**: This represents the user account that is joining the chat.\n    - **sessionId**: This is an identifier for the session in which the user is participating.\n    - **serviceName**: This indicates the name of the service; in this case, it is set to \"team\".\n    - **serviceType**: This shows the type of service being accessed, which is \"chats\" for team discussions.\n\n#### Options\n- **Options**: Contains additional settings for the request body.\n  - **Raw**: \n    - **Language**: `json`\n      - This specifies that the body of the request is formatted as JSON.\n\nThis endpoint establishes a WebSocket connection for team chat functionalities, allowing the specified user and session to interact within the designated service."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Team Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"team\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Setup Team Votes Endpoint\n\n**Endpoint Overview:**\nThis API endpoint is used to set up a socket connection for team votes in a web application. It allows clients to establish a connection where votes can be sent and received in real-time.\n\n**Request Details:**\n\n- **Method:** POST  \n  This endpoint utilizes the POST method, indicating that it is used to send data to the server to create or set up resources.\n\n- **URL:** `http://localhost:3000/api/socket/web/setup`  \n  This is the complete URL where the request should be sent. The request is expected to be made to a local server running on port 3000.\n\n**Headers:**\n- *No headers are specified in this request.*  \n  Currently, there are no HTTP headers included in the request, which means default headers are used.\n\n**Body:**\nThe request body is specified in JSON format, which contains the following fields:\n\n- **accountId:**  \n  A unique identifier for the user's account. This is used to associate votes and activities with the specific account.\n\n- **sessionId:**  \n  A unique identifier for the session. This helps in tracking the user’s session and ensuring that the votes are registered correctly during that session.\n\n- **serviceName:**  \n  This indicates the name of the service that is being set up for the socket connection. In this case, it is set to \"team\", indicating that the service pertains to team-related functions.\n\n- **serviceType:**  \n  This specifies the type of service. It is set to \"votes\", indicating that the functionality being implemented revolves around voting processes.\n\n- **maxsize:**  \n  This field specifies the maximum size allowed for the data payload. In this case, it is set to 1000, which might indicate that a maximum of 1000 votes or related data can be processed in a single batch.\n\n**Body Format:**\n- The body is sent in 'raw' mode, which means it contains raw JSON data.  \n- The specified language for the raw body is \"json\", ensuring that the server correctly interprets the structure of the incoming data.\n\nOverall, this endpoint is designed to facilitate the setup of a socket for team voting processes, allowing real-time interaction for users participating in votes through a web application."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Team Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"team\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Join Team Votes\n\n#### Request Details:\n\n- **Method**: POST  \n  This specifies that the request will use the POST HTTP method, which is typically used to submit data to be processed to a specified resource.\n\n- **URL**: http://localhost:3000/api/socket/web/setup  \n  This is the endpoint where the request is being sent. It indicates that the request is directed to a local server running on port 3000 at the specified path.\n\n#### Headers:  \nThere are no specific headers included in this request. Headers are often used to provide additional context about the request, such as content type, authorization, and more, but in this case, none are deemed necessary.\n\n#### Body:  \n- **Mode**: raw  \n  This indicates that the body of the request will be sent as raw text rather than in a form encoding or another format.\n\n- **Raw**:  \n  This is the actual content of the body being sent with the request. The content is a JSON string that includes the following fields:\n  \n  - **socketId**: \"socketId\"  \n    This placeholder represents the unique identifier for the WebSocket connection. It helps the server identify and manage individual socket connections.\n\n  - **accountId**: \"accountId\"  \n    This placeholder represents the unique identifier for the user account. It is used to associate the WebSocket connection with a specific user.\n\n  - **sessionId**: \"sessionId\"  \n    This placeholder indicates the unique identifier for the session. It is used to track the current interaction or state of the user during their session.\n\n  - **serviceName**: \"team\"  \n    This indicates the name of the service that the socket connection is related to. In this case, it signifies that the service involves a team.\n\n  - **serviceType**: \"votes\"  \n    This specifies the type of service functionality being engaged in through the socket. Here, it indicates that the service is related to managing or handling votes within the team context.\n\n#### Additional Options:\n\n- **Options**:  \n  - **Raw**:  \n    - **Language**: json  \n      This defines the format of the raw body data as JSON, which is the expected data format for this API request. JSON is a common data interchange format that is easy for humans to read and write, and easy for machines to parse and generate."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Loyalty Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"loyalty\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Setup Loyalty Comments\n\n**Name:** Web - Socket - Setup Loyalty Comments  \nThis signifies the purpose of the API endpoint, which is to set up loyalty comments through a web socket connection.\n\n**Request Method:** POST  \nThis indicates that the request will be sending data to the server to create or configure a new resource.\n\n**Request URL:** http://localhost:3000/api/socket/web/setup  \nThis is the location where the API can be accessed. It's set to a local host for development purposes, and points specifically to the setup function for web sockets.\n\n**Request Headers:**  \nNo specific headers are required for this request. \n\n**Request Body:**  \nThis section contains the data that will be sent to the server in the request.\n\n- **Body Mode:** raw  \n  This means that the data being sent is in a raw format rather than using a form or encoded URL parameters.\n\n- **Raw Data:**  \n  The raw data being sent is in JSON format and includes the following fields:\n  \n  - **accountId:** \"accountId\"  \n    A placeholder for the unique identifier associated with the user account. It should be replaced with the actual account ID when making the request.\n\n  - **sessionId:** \"sessionId\"  \n    A placeholder for the unique identifier for the current session. This should be replaced with the actual session ID that corresponds to the user's activity.\n\n  - **serviceName:** \"loyalty\"  \n    Defines the type of service that the API is interacting with, which in this case is set to \"loyalty\", indicating that it's related to a loyalty program.\n\n  - **serviceType:** \"comments\"  \n    Specifies the category of the service under loyalty, set to \"comments\". This indicates the kind of interaction being established.\n\n  - **maxsize:** 1000  \n    This represents the maximum size limit for the comments that can be processed or handled in this setup, suggesting that the limit is set to 1000 characters or entries.\n\n**Options:**  \nProvides additional configuration for the request body formatting.\n\n- **Raw Language:** json  \n  Confirms that the data being sent is formatted as JSON, which is standard for API requests and responses."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Loyalty Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"loyalty\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Details\n\n**Name:** Web - Socket - Join Loyalty Comments  \nThis refers to a web socket connection setup for joining a loyalty program related to comments.\n\n**Request:**\n\n- **Method:** POST  \n  This indicates that the endpoint is designed to accept data from the client to perform the action of joining the loyalty comments.\n\n- **URL:** `http://localhost:3000/api/socket/web/setup`  \n  This is the endpoint URL where the request will be sent. It specifies the location of the server handling the socket connection.\n\n- **Headers:**  \n  Currently, there are no specific headers required for this request. This section can usually include authentication tokens or content-type specifications if needed in the future.\n\n- **Body:**  \n  - **Mode:** raw  \n    This specifies that the request body will contain raw data in the specified format.\n  \n  - **Raw:**  \n    The raw content of the request body is a JSON string which includes the following fields:\n    - **`socketId`:**  \n      This is a unique identifier for the web socket connection. It is used to distinguish the specific socket instance connecting to this service.\n    \n    - **`accountId`:**  \n      This represents the unique identifier for the user’s account associated with the loyalty program. It is essential for linking the socket connection to the right user.\n    \n    - **`sessionId`:**  \n      This indicates the session identifier for the current connection. It can be used to track user sessions during their interaction with the endpoint.\n    \n    - **`serviceName`:**  \n      This specifies the name of the service being accessed which, in this case, is \"loyalty\". It indicates that the connection is related to a loyalty program.\n    \n    - **`serviceType`:**  \n      This indicates the specific type of service being utilized, which is \"comments\". This suggests that the connection will handle comments related to the loyalty service.\n\n  - **Options:**  \n    - **Raw:**  \n      - **Language:** json  \n        This specifies that the raw body content is in JSON format, ensuring that the server correctly interprets the data being sent in the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Loyalty Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"loyalty\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Setup Loyalty Chats\n\n#### Request Method\n- **Method**: POST\n  - This endpoint is accessed using the POST HTTP method, which is typically used to send data to a server for processing.\n\n#### Request URL\n- **URL**: http://localhost:3000/api/socket/web/setup\n  - This is the endpoint's URL where the request is directed. It is currently pointing to a local server running on port 3000.\n\n#### Request Headers\n- **Headers**: []\n  - There are no specific headers required for this request. This means that the request can be made without additional header information, such as authentication tokens or content types.\n\n#### Request Body\n- **Body**: \n  - **Mode**: raw\n    - The body of the request is sent in a raw format, meaning it does not adhere to a specific content type structure like form data or URL-encoded data.\n  - **Raw Data**: `{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"loyalty\", \"serviceType\":\"chats\", \"maxsize\": 1000}`\n    - This is a JSON string containing the data that will be sent to the server. The structure of the data includes the following fields:\n      - **accountId**: A string representing the unique identifier for the user account.\n      - **sessionId**: A string representing the unique identifier for the session.\n      - **serviceName**: A string indicating the name of the service being set up. Here, it is set to \"loyalty.\"\n      - **serviceType**: A string indicating the type of service. In this case, it is set to \"chats,\" suggesting that the loyalty service relates to chat functionalities.\n      - **maxsize**: An integer that indicates the maximum size limit for the data being handled, set to 1000 in this example.\n\n#### Options\n- **Options**:\n  - **Raw**:\n    - **Language**: json\n      - This indicates that the raw data being sent is in JSON format, allowing for proper parsing and handling on the server side.\n\nThis setup is intended for configuring loyalty chat functionalities using a WebSocket interface, enabling real-time communication features related to loyalty programs."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Loyalty Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"loyalty\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Join Loyalty Chats\n\n#### Request Method\n- **POST**: This request uses the POST method to send data to the server.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/socket/web/setup`\n  - This is the endpoint where the request is being sent. It’s set up on a local server.\n\n#### Headers\n- **Headers**: \n  - There are currently no custom headers specified for this request. Default headers may be automatically included by the client.\n\n#### Request Body\n- **Body**: The body of the request is in raw JSON format. \n  - **Mode**: The body is set to `raw`, indicating that we are sending raw data rather than form data or other formats.\n  - **Content**: \n    - The body contains the following fields formatted as a JSON string:\n      - **socketId**: Represents the unique identifier for the socket connection. This is used to identify the specific socket instance.\n      - **accountId**: This is the unique identifier for the user account. It associates the socket connection with the correct user.\n      - **sessionId**: A unique identifier for the user session. It helps to manage and track the session of the user.\n      - **serviceName**: This specifies the name of the service being accessed, which in this case is \"loyalty\".\n      - **serviceType**: Indicates the type of service, specified here as \"chats\", which suggests that this endpoint is used for chat services related to loyalty programs.\n\n#### Options\n- **Options**: \n  - **Raw Language**: The language for the raw request body is specified as `json`, confirming the format of the request payload.\n\nThis endpoint is designed for establishing a WebSocket connection related to loyalty chat services, providing necessary identifiers for the socket, user account, and session to properly set up and manage the interaction."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Loyalty Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"loyalty\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Setup Loyalty Votes\n\n**Request Method**: POST  \nThe request is made using the POST method, which is typically used to submit data to the server.\n\n**URL**: http://localhost:3000/api/socket/web/setup  \nThis is the endpoint where the request is sent. It is a local server address, indicating that the API is hosted on the local machine.\n\n**Headers**:  \nNo specific headers are included in the request. This could imply that either the API does not require authentication or the necessary authentication details are included in the body or handled elsewhere.\n\n**Body**:  \nThe body of the request is in raw JSON format. The content of the body is as follows:\n\n- **accountId**: This field represents the unique identifier for the account. It is used to specify which account the loyalty vote setup is related to.\n\n- **sessionId**: This field is the identifier for the current session. It helps in tracking the user's session for which the loyalty votes are being set up.\n\n- **serviceName**: This field indicates the name of the service being set up. In this case, it is set to \"loyalty,\" which refers to a loyalty program or feature.\n\n- **serviceType**: This field specifies the type of service. It is set to \"votes,\" which suggests that the service is related to managing votes within the loyalty program.\n\n- **maxsize**: This field defines the maximum size allowed for the loyalty vote setup. It is set to 1000, which likely means that up to 1000 votes can be handled or stored in this setup.\n\nThe body is structured in JSON format, and the options specify that the language of the raw body content is JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Loyalty Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"loyalty\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Join Loyalty Votes\n\n**Request Method:** POST  \nThis endpoint accepts POST requests, which are used to send data to the server.\n\n**URL:**  \n`http://localhost:3000/api/socket/web/setup`  \nThis is the local URL where the request is sent. It specifies the endpoint for setting up a socket for web interactions related to loyalty votes.\n\n**Headers:**  \nNo headers are required for this request. Ensure that the request body contains all necessary information.\n\n**Request Body:**  \nThe body of the request should be formatted as raw JSON. Here is the breakdown of the data fields:\n\n- **socketId:**  \n  This field represents the unique identifier for the socket connection. It is crucial for managing the connection and ensuring that messages are sent to the correct client.\n\n- **accountId:**  \n  This field holds the identifier for the user's account. It is used to distinguish between different users in the system, allowing for personalized interactions based on the user's profile.\n\n- **sessionId:**  \n  This field contains the session identifier, which is used to track the ongoing interaction session of the user. It helps in maintaining the state during the session and ensuring that the right data is associated with the correct session.\n\n- **serviceName:**  \n  This specific field is set to \"loyalty,\" indicating the type of service related to loyalty programs that this socket connection is intended for. This helps in routing the requests appropriately within the backend system.\n\n- **serviceType:**  \n  This field is set to \"votes,\" specifying that the service is focused on handling votes in the loyalty program. This might relate to user feedback or voting on different features or products.\n\n**Options:**  \nThe options for the request body specify the language as JSON, indicating that the raw data being sent is formatted in JSON.\n\nThis endpoint is designed to establish a socket connection that will facilitate interactive features for loyalty voting, making it essential for applications that require real-time communication."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Support Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"support\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### API Endpoint: Web - Socket - Setup Support Comments\n\n- **Name**: This identifier describes the endpoint and its purpose, which is to set up support comments for a web socket connection.\n\n- **Request**: This section details the specifics of the API request.\n\n  - **Method**: \n    - **POST**: Indicates that this endpoint is designed to create a new resource or initiate an action, in this case, establishing support comments over a web socket.\n\n  - **URL**: \n    - `http://localhost:3000/api/socket/web/setup`: The endpoint URL where the request is sent. This URL suggests that the API is hosted locally on port 3000 and is related to web socket setup.\n\n  - **Headers**: \n    - An array indicating HTTP headers that are sent with the request. In this case, it is empty, meaning no specific headers are required for this request.\n\n  - **Body**: \n    - This contains the data sent along with the request. It is structured in JSON format and uses raw input.\n\n    - **Mode**: \n      - **raw**: Specifies that the body is sent as raw JSON data.\n\n    - **Raw**: \n      - This is the actual JSON string that is sent in the body of the request. The string contains key-value pairs relevant to the socket setup:\n        - **accountId**: A placeholder for the unique identifier of the account related to this setup. This is necessary for associating comments with a specific user account.\n        - **sessionId**: A placeholder for the unique identifier of the session. This helps in tracking the specific session associated with the comments.\n        - **serviceName**: A fixed value \"support\" indicating that the comments service is related to support queries or interactions.\n        - **serviceType**: A fixed value \"comments\" that specifies the type of service being utilized, which focuses on user comments.\n        - **maxsize**: An integer value set to 1000, which indicates the maximum allowable size for the comments, presumably measured in characters or bytes.\n\n    - **Options**: \n      - This section contains additional settings for the body format.\n      \n      - **Raw**: \n        - **Language**: \n          - **json**: Indicates that the expected format for the raw body is JSON.\n\nThis endpoint is designed to facilitate the setup of a web socket connection specifically for handling support-related comments, ensuring that the request contains all necessary identifiers and constraints for proper operation."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Support Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"support\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Join Support Comments\n\n**Name:** Web - Socket - Join Support Comments  \nThis endpoint is designed to facilitate the joining of a web socket for support comments.\n\n**Request Method:** POST  \nThis endpoint uses the POST method to send data to the server.\n\n**Request URL:** `http://localhost:3000/api/socket/web/setup`  \nThis is the local URL where the request is sent. It indicates that the API is running on the local server at port 3000.\n\n**Headers:**  \nThere are no specific headers included in the request. This means that the API might not require additional authentication or content type specifications beyond the default.\n\n**Body:**  \nThe body of the request is essential, as it contains the data that will be sent to the server.\n\n- **Body Mode:** Raw  \n  The data will be sent in raw format.\n\n- **Raw Data:**  \n  The raw JSON data being sent in the request body is as follows:\n  \n  ```json\n  {\n    \"socketId\": \"socketId\",\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"serviceName\": \"support\",\n    \"serviceType\": \"comments\"\n  }\n  ```\n\n  - **socketId:** A string identifier for the specific socket connection. This is used to manage and track the socket connection for the user.\n  \n  - **accountId:** A string identifier for the user's account. This helps the server identify which account is trying to join the socket.\n  \n  - **sessionId:** A string identifier for the user's session. This is typically used to manage user sessions and maintain state.\n  \n  - **serviceName:** A string that indicates the type of service being accessed, in this case, it is set to \"support.\" This allows the backend to differentiate between various services.\n  \n  - **serviceType:** A string stating the specific type of service within the support category, which is \"comments.\" This can help in routing the requests to the appropriate handling functions for comments.\n\n**Options:**  \n- **Raw Options:**  \n  - **Language:** JSON  \n    This indicates that the raw data format is in JSON, which is a common data format for APIs and is easy to read and write for both humans and machines."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Support Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"support\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint\n\n- **name**: This field specifies the name of the API endpoint. In this case, it indicates that this endpoint is designed for setting up support chats through a WebSocket connection.\n\n- **request**: This object describes the HTTP request that will be made to the endpoint.\n\n  - **method**: This field indicates the type of HTTP method used for the request. Here, it is set to \"POST\", meaning that the request is intended to send data to the server to create or update a resource.\n\n  - **url**: This specifies the endpoint's URL to which the request is sent. It is currently set to \"http://localhost:3000/api/socket/web/setup\", indicating that the API is running locally on port 3000 and is related to WebSocket setup.\n\n  - **headers**: This field is meant for any headers that need to be sent along with the request. In this instance, it is left empty, suggesting no additional headers are required.\n\n  - **body**: This object contains the data that will be sent in the body of the POST request.\n\n    - **mode**: This indicates the format of the body content. Here, it is set to \"raw\", which means the body will contain a raw JSON string.\n\n    - **raw**: This is the actual data being sent to the server in JSON format. It includes key-value pairs:\n      - **accountId**: A placeholder string that represents the unique identifier for the user’s account. This field is required for identifying the account during the setup process.\n      - **sessionId**: A placeholder string that is meant to hold the unique identifier for the session. This helps to link the support chat to a specific session.\n      - **serviceName**: This field is set to \"support\", indicating that the service being set up relates to customer support functionality.\n      - **serviceType**: Set to \"chats\", this field specifies that the type of service being established is chat-related functionalities.\n      - **maxsize**: This numeric field specifies the maximum size limit for the chat data, set to 1000 in this example, which could refer to the max number of messages or data size allowed in the chat.\n\n    - **options**: This object offers additional configuration for the body content.\n\n      - **raw**: This sub-object specifies the language or format of the raw data being sent. In this case, it is set to \"json\", confirming that the content in the raw field is formatted as JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Support Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"support\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Join Support Chats\n\n**Request Method:**  \n- **POST**: This indicates that the request is intended to create or initiate a resource on the server.\n\n**Request URL:**  \n- **http://localhost:3000/api/socket/web/setup**: This is the local server endpoint where the request will be sent to set up a WebSocket connection for joining support chats.\n\n**Request Headers:**  \n- **Headers**: Currently, there are no headers specified in the request. Headers are typically used to provide additional information to the server about the request or client.\n\n**Request Body:**  \nThe body of the request is sent in raw JSON format containing several parameters necessary for establishing a WebSocket connection.\n\n- **Parameters:**\n\n  - **socketId**: This is a unique identifier for the WebSocket connection. It allows the server to recognize which connection is making the request.\n\n  - **accountId**: This parameter represents the identifier for the account that is joining the support chat. It helps associate the connection with the correct user account.\n\n  - **sessionId**: This is used to identify the current session which may relate to a specific support interaction or troubleshooting context. It is crucial for tracking the conversation history and context.\n\n  - **serviceName**: The fixed value of \"support\" which indicates that the type of service that is being accessed is support-related.\n\n  - **serviceType**: Here, the value \"chats\" signifies that the service involves chat functionalities, allowing for real-time communication through the WebSocket connection.\n\n**Body Options:**  \n- **Mode**: The body is formatted as raw JSON, allowing the client to send structured data to the server.\n  \n- **Options**: \n  - **raw**: Specifies that the raw data is in JSON format, making it easier for the server to parse and understand the incoming data. \n\nThis endpoint is used to facilitate the joining of support chat functionalities through WebSocket by providing necessary authentication and session parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Support Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"support\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Setup Support Votes\n\n- **Name**: Web - Socket - Setup Support Votes\n  - This refers to the specific functionality provided by the API to set up support votes through a WebSocket connection.\n\n- **Request**: The details regarding the HTTP request that interacts with this endpoint.\n\n  - **Method**: POST\n    - This indicates that the client is sending data to the server for processing.\n\n  - **URL**: `http://localhost:3000/api/socket/web/setup`\n    - This is the endpoint where the request will be sent. It is hosted locally on port 3000.\n\n  - **Headers**: \n    - Currently, there are no specific headers required for this request. Headers can include additional metadata about the request, but in this case, none have been specified.\n\n  - **Body**: \n    - The body of the request is where the payload is defined.\n\n    - **Mode**: raw\n      - This indicates that the body of the request is sent as a raw data format.\n\n    - **Raw**: \n      ```json\n      {\n        \"accountId\": \"accountId\",\n        \"sessionId\": \"sessionId\",\n        \"serviceName\": \"support\",\n        \"serviceType\": \"votes\",\n        \"maxsize\": 1000\n      }\n      ```\n      - **accountId**: Represents the identifier for the user’s account. It is required to identify which account is initiating the setup.\n      \n      - **sessionId**: Unique identifier for the session. This allows the server to track the specific interaction session.\n      \n      - **serviceName**: This indicates the type of service being requested. In this case, it is set to \"support\".\n      \n      - **serviceType**: Specifies the kind of service related to the request. Here, it is designated as \"votes\", indicating that the operation is related to voting support.\n      \n      - **maxsize**: This defines the maximum size of the data that can be handled or processed in this context. It is set to 1000, suggesting an upper limit to the number of votes or related data.\n\n  - **Options**: \n    - **Raw**: \n      - **Language**: json\n        - This signifies that the format of the raw body content is in JSON, which is a common data interchange format.\n\nThis endpoint is used to initiate the setup process for support votes through a WebSocket connection, allowing real-time interaction and feedback for users."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Support Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"support\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Join Support Votes\n\n- **Name**: This identifier indicates that the endpoint is used for joining support votes through a WebSocket connection.\n\n- **Request**:\n  - **Method**: The request uses the POST HTTP method, which is commonly used to send data to a server to create or update resources.\n  \n  - **URL**: The request is directed to `http://localhost:3000/api/socket/web/setup`. This URL indicates that the server is running on localhost (your local machine) and listens for requests on port 3000.\n\n  - **Headers**: This request does not include any HTTP headers. Headers can provide additional context or information, but none are defined here.\n\n  - **Body**:\n    - **Mode**: The body of the request is set to \"raw\", which means it will send unmodified data in the specified format.\n    \n    - **Raw**: This is the raw data being sent in the request body. The data is structured as a JSON object with the following fields:\n      - **socketId**: A string representing the unique identifier for the WebSocket connection.\n      - **accountId**: A string that specifies the user's account identifier associated with the WebSocket connection.\n      - **sessionId**: A string that holds the session identifier for the user, used to manage user sessions.\n      - **serviceName**: A string set to \"support,\" indicating the type of service being connected to.\n      - **serviceType**: A string set to \"votes,\" which denotes the specific type of service being utilized in the connection.\n  \n  - **Options**:\n    - **Raw**: This section specifies that the content type of the raw body is JSON format, enabling the server to properly parse the data.\n\nThis endpoint is designed for establishing a connection to support vote functionality via WebSockets, where specific session and account details are passed to manage the user's connection appropriately."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Game Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"game\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Setup Game Comments\n\n- **Name**: This is the title of the request indicating that it is used to set up web socket interactions for game comments.\n\n- **Request**:\n  - **Method**: The HTTP method used for the request. In this case, it is a `POST` request, which indicates that data is being sent to the server to establish a socket connection.\n  \n  - **URL**: This is the endpoint where the request is sent. The provided URL is `http://localhost:3000/api/socket/web/setup`, indicating that it is a local server running on port 3000.\n\n  - **Headers**: This section is currently empty, suggesting that no additional headers are required for this request.\n\n  - **Body**: This section contains the payload that is sent with the POST request.\n    - **Mode**: The body mode is set as `raw`, which means the data is sent as a raw JSON string.\n    - **Raw**: This contains the actual data being sent to the server in JSON format. The structure is as follows:\n      - **accountId**: A string representing the unique identifier for the user's account. This is necessary to associate the socket connection with a specific user.\n      - **sessionId**: A string that represents the unique identifier for the session. This helps in tracking the user's current session in the game.\n      - **serviceName**: A string that indicates the type of service being set up. In this case, it is set to `\"game\"`, implying that the context is related to gaming.\n      - **serviceType**: A string that specifies the type of service within the game context. Here, it is set to `\"comments\"`, suggesting that this service will handle comments related to the game.\n      - **maxsize**: A numerical value indicating the maximum size limit for the comments being processed, set to `1000` in this instance.\n\n  - **Options**: This section specifies the format of the raw data sent in the body.\n    - **Raw**: Indicates that the format of the raw data is in JSON, which allows the server to interpret it correctly.\n\nThis request is essential for setting up a socket connection for real-time commenting features within a game environment."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Game Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"game\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Join Game Comments\n\n**Request Method:** POST  \n**Request URL:** `http://localhost:3000/api/socket/web/setup`  \n**Headers:** None specified  \n\n**Request Body:** This is a raw JSON payload consisting of the following fields:\n\n1. **socketId**: This is a unique identifier assigned to the WebSocket connection. It helps the server recognize and manage individual client connections.\n\n2. **accountId**: This is a unique identifier for the user account. It is used to associate the socket connection with a specific user within the system.\n\n3. **sessionId**: This is a unique identifier for the user's current session. It helps track user activity and maintain state between different interactions.\n\n4. **serviceName**: This indicates the name of the service that the WebSocket connection is being established for. In this case, it is set to \"game\", specifying that the service relates to a gaming context.\n\n5. **serviceType**: This describes the type of service being accessed through the WebSocket. Here, it is set to \"comments\", which suggests that the connection is intended to handle comments associated with the game.\n\n**Body Format:** The body of the request is sent as raw JSON data, which allows for the use of structured data in a simple text format. The specified language for the raw payload is JSON, ensuring that it adheres to the correct syntax and structure for successful processing by the server."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Game Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"game\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Setup Game Chats\n\n**Request Method:** POST  \nThis endpoint uses the POST method to send data to the server. \n\n**Request URL:** http://localhost:3000/api/socket/web/setup  \nThis is the endpoint that the request is sent to, specifically for setting up game chat functionality via web sockets.\n\n**Headers:**  \nThere are no specific headers included in this request. \n\n**Body:**  \nThe body of the request is sent in raw format and is expected to be in JSON. Below are the details of each data field included in the body:\n\n- **accountId:**  \n  This field is used to identify the account associated with the user. It should contain a unique identifier for the account that is establishing the chat session.\n\n- **sessionId:**  \n  This field represents the unique identifier for the current session. It helps in managing multiple sessions and ensures that the chat setup is linked to the correct user session.\n\n- **serviceName:**  \n  This specifies the name of the service being set up. In this context, it is set to \"game\", indicating that the chat service is related to gaming.\n\n- **serviceType:**  \n  This defines the type of service being provided. It is set to \"chats\", indicating that the service focuses on chat functionalities specifically.\n\n- **maxsize:**  \n  This field indicates the maximum size allowed for the chat. In this case, it is set to 1000, which may refer to the maximum number of messages, characters, or other relevant limits depending on the implementation. \n\nThis setup is essential for enabling real-time communication through websockets within a gaming environment, allowing users to interact with each other effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Game Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"game\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### API Endpoint: Web - Socket - Join Game Chats\n\n- **Name**: Web - Socket - Join Game Chats  \n  This specifies the name of the API request, indicating its purpose as related to setting up WebSocket connections for game chat.\n\n- **Request**:\n  - **Method**: POST  \n    This indicates that the request is using the HTTP POST method, which typically submits data to a server to create or update a resource.\n\n  - **URL**: http://localhost:3000/api/socket/web/setup  \n    This is the endpoint to which the request is being sent. It is hosted locally on port 3000 and is intended for setting up WebSocket connections.\n\n  - **Headers**:  \n    This section is empty, meaning no specific headers are being set for this request. Usually, headers are used to pass additional information such as content type or authentication tokens, but in this case, they are not needed.\n\n  - **Body**:\n    - **Mode**: raw  \n      This indicates that the body of the request contains unformatted, raw data.\n\n    - **Raw**: \n      ```json\n      {\n        \"socketId\": \"socketId\",\n        \"accountId\": \"accountId\",\n        \"sessionId\": \"sessionId\",\n        \"serviceName\": \"game\",\n        \"serviceType\": \"chats\"\n      }\n      ```\n      This JSON object contains key pieces of information needed to join the game chat via WebSocket:\n      - **socketId**: A unique identifier for the WebSocket connection. This ID is used to identify and manage the connection.\n      - **accountId**: The unique identifier for the user’s account. This helps the server associate the WebSocket connection with a specific user.\n      - **sessionId**: A unique identifier for the user’s session. This ensures that the server can track the user's state and any relevant session data.\n      - **serviceName**: A string value indicating the name of the service being accessed. In this case, it is set to \"game\", which specifies that the user is joining a gaming service.\n      - **serviceType**: A string value that describes the type of service. Here, it is \"chats\", indicating that the user is connecting to a chat service related to the game.\n\n    - **Options**:\n      - **Raw**: \n        - **Language**: json  \n          This specifies that the raw body data is in JSON format, which is a common data interchange format used to transmit data between a server and web applications."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Game Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"game\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Setup Game Votes\n\nThis API endpoint is designed to set up game votes through a WebSocket connection. Below is a detailed description of each component in the request.\n\n#### Request Details:\n- **Method**: `POST`\n  - This indicates that the client is sending data to the server to create or update a resource.\n\n- **URL**: `http://localhost:3000/api/socket/web/setup`\n  - The endpoint where the request is sent. In this case, it is directed to a local server at the specified path.\n\n#### Headers:\n- **headers**: \n  - This field is currently empty, which suggests that no additional headers are required for the request. Typically, headers may include information such as `Content-Type`, `Authorization`, etc., but none are specified here.\n\n#### Body:\n- **mode**: `raw`\n  - Indicates that the body of the request will be sent as raw text, not in form-data or other encoding types.\n\n- **raw**: \n  - The actual payload being sent to the server in JSON format. This contains the following data:\n  \n  - **accountId**: \n    - Placeholder for the unique identifier of the account initiating the vote setup. This allows the server to recognize who is making the request.\n\n  - **sessionId**: \n    - Placeholder for the unique identifier of the game session during which the voting is taking place. This helps in tracking votes specific to a session.\n\n  - **serviceName**: `\"game\"`\n    - This indicates that the service category pertains to games. It helps in routing the request to the correct service handler.\n\n  - **serviceType**: `\"votes\"`\n    - This specifies that the type of service being requested is related to voting. It distinguishes it from other types of services that might be available.\n\n  - **maxsize**: `1000`\n    - This denotes the maximum size of the voting data or the number of votes that can be processed. It sets a limit to ensure that resources are managed effectively.\n\n- **options**:\n  - **raw**:\n    - This object specifies the format of the raw body data being sent. In this case, it indicates that the language of the raw text is `json`, reinforcing that the server should expect a JSON formatted payload.\n\n### Summary:\nThis endpoint facilitates the setup of voting for a game session via WebSocket communication. The request must include identifiers for the account and session, specify the service, type, and set a maximum size for the voting data."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Game Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"game\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Join Game Votes\n\n- **Name**: This is the name of the API endpoint, indicating that it is used for joining game votes via a web socket.\n\n- **Request**: \n  - **Method**: The HTTP method used for this request is POST, which is typically used to send data to a server to create or update a resource.\n  \n  - **URL**: The endpoint for this API request is set to `http://localhost:3000/api/socket/web/setup`. This implies that the API is running on a local server at port 3000 and is handling requests at the specified path for socket setup related to games.\n\n  - **Headers**: There are no custom headers included in this request, which means default headers will be utilized.\n\n  - **Body**: \n    - **Mode**: The body of the request is in 'raw' mode, indicating that the data will be sent as a plain JSON string rather than as form data or in any other format.\n\n    - **Raw**: The raw body data sent with the request is structured as a JSON object. It includes the following key-value pairs:\n      - **socketId**: This is a placeholder for the unique identifier of the socket connection. It should be replaced with the actual socket ID when making the request.\n      - **accountId**: This parameter is a placeholder for the unique identifier of the user’s account. It should be filled with the actual account ID.\n      - **sessionId**: This key refers to a unique identifier for the session during which the game votes are being cast. The actual session ID should be provided in place of this placeholder.\n      - **serviceName**: This is a fixed value set to \"game\", specifying that the service involved in this request pertains to games.\n      - **serviceType**: This is set to \"votes\", indicating that the type of service involved is related to voting within the game.\n\n    - **Options**: \n      - **Raw**: \n        - **Language**: The language specified for the raw body is JSON, confirming that the data format being utilized is JSON.\n\nThis endpoint is designed to facilitate the joining of game votes through a web socket, utilizing specific identifiers to ensure the correct context and user interaction."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Show Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"show\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Setup Show Comments\n\n#### Request Method\n- **Method**: POST\n  - This endpoint uses the HTTP POST method, indicating that it is used to send data to the server to create or update a resource.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/socket/web/setup`\n  - This is the address where the request is sent. In this case, it is a local server running on port 3000.\n\n#### Request Headers\n- **Headers**: \n  - There are no specific headers included in this request. Headers can sometimes include data like content type or authorization tokens, but none are specified here.\n\n#### Request Body\n- **Body**: \n  - This section contains the data being sent to the server in JSON format. It is defined in \"raw\" mode.\n\n##### JSON Data Fields\n- **accountId**: \n  - This field represents the unique identifier for the user's account. It's a string that should be replaced with the actual account ID of the user making the request.\n\n- **sessionId**: \n  - This field represents the unique identifier for the user's session. It's intended to track the user's current session and should be replaced with the actual session ID.\n\n- **serviceName**: \n  - This field specifies the name of the service being requested. In this case, the value is \"show\" indicating that the operation is related to displaying data.\n\n- **serviceType**: \n  - This field indicates the type of service being utilized. Here, it is set to \"comments,\" suggesting that the comments service is being set up.\n\n- **maxsize**: \n  - This field defines the maximum size limit for the data being handled or returned. It is set to 1000 and should be an integer representing the upper limit on the number of comments or data items that can be processed.\n\n#### Body Options\n- **Options**:\n  - This indicates that the raw body is formatted as JSON.\n\n- **Language**: json\n  - This specifies that the content of the raw body is in JSON format, which is the standard for representing structured data."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Show Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"show\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Join Show Comments\n\n**Method:** POST  \n**URL:** `http://localhost:3000/api/socket/web/setup`\n\n#### Description of Each Data:\n\n- **name:** This is the identifier for the API request, named \"Web - Socket - Join Show Comments\". It indicates that this request is intended to join a socket session related to show comments.\n\n- **request:** This section contains the details of the API request to be made.\n\n  - **method:** The HTTP method used for the request. Here, it is set to \"POST\", indicating that this request is intended to send data to the server to create or update a resource.\n\n  - **url:** The endpoint URL for the API request. In this case, it is pointing to `http://localhost:3000/api/socket/web/setup`, which implies the request is being made to a local server for setup purposes.\n\n  - **headers:** This is an array to define any HTTP headers to be sent along with the request. It is currently empty, meaning no additional headers are required for this call.\n\n  - **body:** This section contains the data sent in the body of the request.\n\n    - **mode:** The request body format, specified as \"raw\" which indicates that the body content is raw data rather than form data or other formats.\n\n    - **raw:** This contains the actual data being sent in the request in JSON format. The data includes:\n    \n      - **socketId:** A unique identifier for the socket connection. It is expected to be a string with the actual socket ID value provided at runtime.\n      \n      - **accountId:** A unique identifier for the account associated with the socket connection. This should be replaced with the actual account ID value.\n      \n      - **sessionId:** This is a unique identifier for the session. Similar to the other fields, it should be replaced with the actual session ID.\n      \n      - **serviceName:** Specifies the name of the service being interacted with, which in this case is set to \"show\".\n      \n      - **serviceType:** This indicates the type of service, set to \"comments\", suggesting that the interaction is related to comments on a show.\n\n    - **options:** This section contains additional configuration for the request body.\n\n      - **raw:** This subsection indicates the format of the raw body data.\n      \n        - **language:** This specifies the type of content being sent, set to \"json\", confirming that the raw data is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Show Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"show\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Setup Show Chats\n\n#### Request Details:\n- **Method**: POST\n  - This endpoint uses the POST method to send data to the server for processing.\n\n- **URL**: `http://localhost:3000/api/socket/web/setup`\n  - This is the endpoint where the request is sent. It indicates a local server running on port 3000, and the specific path being targeted is `/api/socket/web/setup`.\n\n#### Headers:\n- **Headers**: \n  - This request does not include any custom headers.\n\n#### Body:\n- **Body Mode**: raw\n  - The body of the request is sent in raw format.\n\n- **Raw Data**: \n  - The body contains a JSON object with the following fields:\n    - **accountId**: \n      - A string representing the unique identifier for the user’s account.\n      \n    - **sessionId**: \n      - A string that identifies the specific session. It is used to track the user's session during WebSocket communication.\n      \n    - **serviceName**: \n      - A string that specifies the name of the service being requested. In this case, it is set to \"show\", indicating that the service should display chats.\n      \n    - **serviceType**: \n      - A string that defines the type of service. Here, it is set to \"chats\", indicating that the service pertains to chat functionalities.\n      \n    - **maxsize**: \n      - An integer specifying the maximum size of data to be processed or displayed by the service. Here, it is set to 1000, which indicates that up to 1000 chat messages can be handled.\n\n#### Options:\n- **Options**: \n  - The body raw content is specified to be in JSON format, ensuring that the server correctly interprets the structure of the data being sent."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Show Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"show\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "## Endpoint Description: Web - Socket - Join Show Chats\n\n### Request Method\n- **Method**: POST  \n  This endpoint uses the POST HTTP method which is typically utilized to send data to the server.\n\n### Request URL\n- **URL**: `http://localhost:3000/api/socket/web/setup`  \n  This is the local address where the request is directed. The endpoint is designed to set up a WebSocket connection for a chat service.\n\n### Request Headers\n- **Headers**:  \n  No specific headers are defined in this request. If needed, headers can be added to include authorization or content type information.\n\n### Request Body\n- **Body Mode**: raw  \n  The request body is formatted as raw data, which allows for the submission of structured data in JSON format.\n\n- **Raw Content**: \n  ```json\n  {\n    \"socketId\": \"socketId\", \n    \"accountId\": \"accountId\", \n    \"sessionId\": \"sessionId\", \n    \"serviceName\": \"show\", \n    \"serviceType\": \"chats\"\n  }\n  ```\n  - **socketId**: A unique identifier for the WebSocket connection. It helps the server distinguish between different connections.\n  \n  - **accountId**: This represents the identifier for the user’s account that is trying to join the chat service. It links the WebSocket session to a specific user.\n  \n  - **sessionId**: An identifier for the current session of the user. This is important for maintaining the context of the user's interactions during their time in the chat.\n  \n  - **serviceName**: Defines the name of the service being connected to. In this case, the service name is set to \"show\", which signifies the type of chat service being accessed.\n  \n  - **serviceType**: Indicates the classification of the service. Here, it is set to \"chats\", meaning that the service pertains to chat functionalities.\n\n### Request Options\n- **Options**:  \n  - **Raw Language**: `json`  \n    This specifies that the raw body is formatted as JSON, which is a common data interchange format.\n\nThis endpoint allows users to connect to a chat service via a WebSocket by providing the necessary identifiers and service details in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Show Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"show\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "**Endpoint Name**: Web - Socket - Setup Show Votes\n\n**Request Method**: POST\n\n**Request URL**: http://localhost:3000/api/socket/web/setup\n\n**Headers**: There are no specific headers included in this request.\n\n**Request Body**: The body of the request is in raw JSON format and contains the following fields:\n\n- **accountId**: A string representing the identifier for the account making the request. This is necessary for tracking or retrieving the specific account's associated data.\n\n- **sessionId**: A string that serves as the identifier for the current session. This is typically used to manage or associate the user actions during a particular session.\n\n- **serviceName**: A string that indicates the name of the service that is being set up. In this case, it is set to \"show,\" which likely pertains to a specific feature or functionality.\n\n- **serviceType**: A string that specifies the type of service. Here, it is designated as \"votes,\" indicating that this setup is related to voting functionalities.\n\n- **maxsize**: An integer value that defines the maximum size (in some units, possibly a count or data length) allowed for the service. The current maximum size is set to 1000. \n\nUsers of this collection should ensure that they replace placeholder values like \"accountId\" and \"sessionId\" with actual valid identifiers relevant to their implementation."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Show Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"show\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Join Show Votes\n\n#### Overview\nThis endpoint is used to set up a WebSocket connection for joining a specific show votes service. When a client wants to participate in voting sessions for shows, this request will initialize the necessary parameters to establish that connection.\n\n#### Request Details\n\n- **Method**: `POST`\n  - This indicates that the client is sending data to the server to create or update a resource.\n\n- **URL**: `http://localhost:3000/api/socket/web/setup`\n  - This is the URL to which the request will be sent. It indicates that the server is expected to be running locally on port 3000 and is set up to handle WebSocket connections for the specified resource.\n\n#### Headers\n- **Headers**: Currently, there are no custom headers defined for this request. If required, headers can be added to manage authentication, content type, or other needs.\n\n#### Body\n- **Body Mode**: `raw`\n  - This specifies that the body of the request is sent in raw format rather than as form data or URL-encoded data.\n\n- **Raw Content**: \n  ```json\n  {\n    \"socketId\": \"socketId\",\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"serviceName\": \"show\",\n    \"serviceType\": \"votes\"\n  }\n  ```\n  - **socketId**: This is a unique identifier for the WebSocket connection. It helps the server recognize and manage the client's connection.\n  \n  - **accountId**: This is the identifier associated with the user's account. It allows the server to track which user is making the request and to manage their voting activities.\n  \n  - **sessionId**: This is a unique identifier for the specific session of the voting activity. It ties the user's actions to a particular voting event or show session.\n  \n  - **serviceName**: This defines the type of service being utilized, in this case, it is set to \"show\" to indicate that the service pertains to a show-related function.\n  \n  - **serviceType**: This specifies the type of operation or interaction. Here, it is \"votes\", indicating that the service involves participation in voting processes.\n\n#### Options\n- **Options**: \n  - The body content specifies that the language used for the raw data is JSON, which is a common format for transmitting structured data over the Web. \n\nThis endpoint efficiently registers a user for participating in a show voting session via WebSocket, facilitating real-time interactions."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Education Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"education\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Setup Education Comments\n\n- **Name**: \n  - This represents the title of the API request. It indicates that the request is for setting up a web socket for education comments.\n\n- **Request**: \n  - This section contains the details of the HTTP request that will be sent to the server.\n\n  - **Method**: \n    - The HTTP method to be used for this request. Here, it is set to \"POST\", which means data will be sent to the server.\n\n  - **URL**: \n    - The endpoint address where the request will be sent. This specific URL points to a local server for setting up the web socket.\n\n  - **Headers**: \n    - This field is currently empty, which means no specific headers are required for this request. Headers are often used to provide additional context or authentication for the request.\n\n  - **Body**: \n    - This section contains the data that will be sent in the body of the request.\n\n    - **Mode**: \n      - Indicates the format of the body. In this case, it is set to \"raw\", meaning the data will be sent as a raw JSON string.\n\n    - **Raw**: \n      - This portion contains a JSON string that includes the necessary parameters for setting up the web socket. The parameters include:\n      \n      - **accountId**: \n        - This is a placeholder for the account identifier. It represents the user's account that will be associated with the web socket connection.\n\n      - **sessionId**: \n        - This is a placeholder for the session identifier. It represents the current session that the user is connected to, which is essential for maintaining the context of the connection.\n\n      - **serviceName**: \n        - This field specifies the name of the service being set up, which in this case is \"education\". It indicates that the service pertains to educational features.\n\n      - **serviceType**: \n        - This field designates the type of service, set to \"comments\". It signifies that the web socket will be used for handling comments related to the educational content.\n\n      - **maxsize**: \n        - This parameter sets the maximum size limit for the comments that can be handled. In this case, it is specified as 1000, probably indicating that the maximum size is 1000 characters.\n\n    - **Options**: \n      - This part contains additional settings for the body format.\n\n      - **Raw**: \n        - This defines the language of the raw body content. Here it is set to \"json\", which means the content is in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Education Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"education\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Join Education Comments\n\n**Method:** POST  \n**URL:** http://localhost:3000/api/socket/web/setup  \n\n#### Request Body Parameters:\n\n- **socketId**: A unique identifier for the WebSocket connection. This ID is used to manage and track the specific connection for communication purposes.\n\n- **accountId**: The unique identifier associated with the user's account. This ID helps to authenticate the user and link them to their specific data and preferences within the system.\n\n- **sessionId**: This is a unique identifier for the user session. It ensures that the activities and interactions during the session are tracked correctly and can be managed appropriately.\n\n- **serviceName**: A string representing the name of the service being accessed. In this case, it is set to \"education,\" indicating that the request pertains to educational services.\n\n- **serviceType**: This parameter specifies the type of service being requested. Here, the value is set to \"comments,\" indicating that the focus is on comment-related functionality within the education service.\n\n#### Additional Information:\nThe request body is structured as a raw JSON object, which allows for easy parsing and handling of the data by the server. The data should be submitted in a well-formed JSON format to ensure proper processing. \n\nThis endpoint is designed to establish a WebSocket connection for real-time communication within the education comments service, allowing users to join, send, and receive comments dynamically as part of an interactive educational experience."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Education Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"education\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Setup Education Chats\n\n- **Name**: This is the identifier for the API request, titled \"Web - Socket - Setup Education Chats.\" It suggests that this endpoint is used to set up web sockets for educational chat services.\n\n- **Request Method**: The HTTP method used for this request is `POST`. This indicates that the request is used to send data to the server to create or configure a resource.\n\n- **Request URL**: The request is made to the URL `http://localhost:3000/api/socket/web/setup`. This suggests that the API is hosted locally, and the request will be processed by the server running on this address.\n\n- **Headers**: The headers section is currently empty. This means that no additional information is sent in the header of the request. Usually, headers may include authorization tokens or content type specifications, but in this case, none are provided.\n\n- **Request Body**: This is where the data for the request is included. It is sent in a raw format.\n\n  - **Mode**: The body mode is set to \"raw,\" indicating that the data is sent as a raw string rather than in form data or other formats.\n\n  - **Raw Data**: The body content is a JSON string with the following fields:\n    - **accountId**: This field represents the unique identifier for the account associated with the chat setup. It should be replaced with an actual account ID when making the request.\n    - **sessionId**: This field denotes the unique identifier for the session in which the chat will take place. A specific session ID should be provided to establish context for the chat service.\n    - **serviceName**: This is a static field set to \"education,\" indicating that the service being set up is related to educational purposes.\n    - **serviceType**: This is set to \"chats,\" specifying that the type of service being configured is chat functionality.\n    - **maxsize**: This field indicates the maximum size limit for the chat messages. In this case, it is set to `1000`, which likely refers to the maximum number of characters or bytes allowed in a chat message.\n\n- **Options**: These are additional settings for the request body.\n  - **Raw**: Under this section, the language of the raw body content is specified as \"json,\" indicating that the data format being used is JSON. This helps the server understand how to parse the incoming request data.\n\nThis endpoint is primarily configured for setting up websocket connections tailored for educational chats, facilitating real-time communication for users within that context."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Education Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"education\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "{\n  \"name\": \"Web - Socket - Join Education Chats\",\n  \"description\": {\n    \"request\": {\n      \"method\": \"POST\",\n      \"url\": \"http://localhost:3000/api/socket/web/setup\",\n      \"headers\": [],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\\"socketId\\\": \\\"socketId\\\", \\\"accountId\\\":\\\"accountId\\\", \\\"sessionId\\\":\\\"sessionId\\\", \\\"serviceName\\\":\\\"education\\\", \\\"serviceType\\\":\\\"chats\\\"}\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\"\n          }\n        }\n      }\n    },\n    \"details\": {\n      \"method\": \"POST\": \"This indicates that the request is using the POST HTTP method, which is typically used to send data to the server to create or modify a resource. In this case, it is used to initiate a socket connection.\",\n      \"url\": \"http://localhost:3000/api/socket/web/setup\": \"This is the endpoint where the request is sent. It is hosted on a local server running on port 3000 and is responsible for setting up a WebSocket for the education chat service.\",\n      \"headers\": \"There are no custom headers specified for this request, meaning default headers will be used.\",\n      \"body\": {\n        \"mode\": \"raw\": \"This indicates that the body of the request is being sent as raw data instead of using a form or URL-encoded format.\",\n        \"raw\": \"{\\\"socketId\\\": \\\"socketId\\\", \\\"accountId\\\":\\\"accountId\\\", \\\"sessionId\\\":\\\"sessionId\\\", \\\"serviceName\\\":\\\"education\\\", \\\"serviceType\\\":\\\"chats\\\"}\": \"This is the main content of the POST request. It includes multiple fields in JSON format.\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json\": \"This specifies that the raw request body is in JSON format, which is a commonly used data format for sending structured data.\"\n          }\n        },\n        \"parameters\": {\n          \"socketId\": \"A unique identifier for the WebSocket connection. This is used to manage the specific connection for each user.\",\n          \"accountId\": \"This represents the unique identifier associated with the user's account. It helps identify which user is trying to join the chat.\",\n          \"sessionId\": \"This is a unique identifier for the session the user is part of. It ensures that the user is connected to the right session context.\",\n          \"serviceName\": \"This field denotes the name of the service being accessed, in this case, it is 'education', indicating the type of service that the chat belongs to.\",\n          \"serviceType\": \"This indicates the type of service being accessed, which is 'chats' for this particular endpoint, highlighting that it is oriented around chat functionality.\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Education Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"education\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Setup Education Votes\n\n#### Request Method:\n- **Method**: POST  \n  This specifies that the request is using the HTTP POST method, which is typically used to send data to the server to create or update a resource.\n\n#### Request URL:\n- **URL**: `http://localhost:3000/api/socket/web/setup`  \n  This is the endpoint where the request will be sent. It is configured to run on `localhost` at port `3000`, targeting the `/api/socket/web/setup` path.\n\n#### Headers:\n- **Headers**:  \n  There are currently no headers specified in this request. Headers are typically used to provide additional context or information about the request, such as authentication tokens or content types.\n\n#### Request Body:\n- **Body Mode**: raw  \n  This specifies that the body of the request will be sent as a raw data format.\n\n- **Raw Body Content**:  \n  ```json\n  {\n    \"accountId\": \"accountId\",\n    \"sessionId\": \"sessionId\",\n    \"serviceName\": \"education\",\n    \"serviceType\": \"votes\",\n    \"maxsize\": 1000\n  }\n  ```\n  The raw body is formatted in JSON and contains the following fields:\n\n  - **accountId**:  \n    This field represents the unique identifier for the account. This is a required piece of data used to establish which account is initiating the setup request.\n\n  - **sessionId**:  \n    This field indicates the unique identifier for the current session. It is necessary for tracking the context of the ongoing communication or operation.\n\n  - **serviceName**:  \n    This field specifies the name of the service being set up. In this case, it is set to \"education,\" denoting that the service pertains to educational operations.\n\n  - **serviceType**:  \n    This field indicates the type or category of the service. Here, it is specified as \"votes,\" which suggests that the service involves handling voting mechanisms related to the educational service.\n\n  - **maxsize**:  \n    This field sets a limit on the maximum size of data that can be processed or handled in this setup. The value is set at `1000`, indicating a numerical boundary for data size management.\n\n#### Options:\n- **Options**:  \n  - **Raw Language**: json  \n    This indicates that the raw body content is written using JSON syntax, allowing for structured data transmission in a format that's easily parsed by web servers."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Education Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"education\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "**Web - Socket - Join Education Votes**\n\n**Request Method**:  \n- `POST`: This endpoint uses the POST method, indicating that it sends data to the server to create or update a resource.\n\n**Request URL**:  \n- `http://localhost:3000/api/socket/web/setup`: This is the endpoint where the request is sent. It is hosted locally on port 3000 and pertains to setting up a web socket connection.\n\n**Request Headers**:  \n- There are no specific headers mentioned for this request. Headers may be included if required for authentication or content type specification but are excluded in this case.\n\n**Request Body**:  \n- **Body Mode**: `raw`: The body of the request is sent as raw data.\n- **Body Content**: The content of the request body is in JSON format. It includes the following fields:\n  \n  1. **socketId**: A unique identifier for the socket connection. This is used to identify the specific connection being established.\n  \n  2. **accountId**: This is a unique identifier for the user’s account associated with the socket connection. It helps to tie the socket connection to the user's profile or session.\n  \n  3. **sessionId**: A unique identifier for the session during which the web socket is active. This helps in managing the session context across different connections.\n  \n  4. **serviceName**: This specifies the name of the service that the socket is connecting to. In this case, it is set to \"education\", indicating the context or domain of the service.\n  \n  5. **serviceType**: This defines the type of service being accessed. Here, it is set to \"votes\", suggesting that the socket connection is related to voting within the education service.\n\n**Options**:  \n- **Raw Options**: The raw data is being sent with the language specified as JSON, ensuring the server correctly interprets the data format being used in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Tournament Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"tournament\", \"serviceType\":\"comments\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n- **name**: This field specifies the name of the API endpoint, indicating that it is used for setting up tournament comments via a WebSocket.\n\n- **request**: This section contains details about the API request being made.\n\n  - **method**: This field indicates the HTTP method used for the request. In this case, it is a POST request, meaning data will be sent to the server.\n\n  - **url**: This is the endpoint URL where the request is sent. Here, it points to the local server at `http://localhost:3000/api/socket/web/setup`, which is intended for developing or testing the WebSocket setup.\n\n  - **headers**: This field is currently empty, indicating that no specific headers are being sent with the request. Headers can be used for various purposes, such as authentication or content type specification.\n\n  - **body**: This section contains the data being sent in the request.\n\n    - **mode**: Indicates the format of the body. In this case, it is set to \"raw\", allowing for a custom JSON payload to be sent.\n\n    - **raw**: This is the actual payload that is sent with the POST request. It's a JSON string that carries the following key-value pairs:\n\n      - **accountId**: A placeholder for the unique identifier of the account associated with the tournament. This would typically be replaced with an actual account ID when making a request.\n\n      - **sessionId**: A placeholder for the unique identifier for the session. This is used to track user sessions during the tournament.\n\n      - **serviceName**: This denotes the name of the service being set up. In this case, it specifies that the service is related to \"tournament\".\n\n      - **serviceType**: This indicates the specific type of service being configured. Here, it is set to \"comments\", suggesting that this service will handle comment-related functionalities for the tournament.\n\n      - **maxsize**: This parameter specifies the maximum size allowed, presumably for the comments or messages sent through the WebSocket. It is set to 1000, indicating the maximum limit.\n\n    - **options**: This field contains additional configuration options for the body.\n\n      - **raw**: This subsection specifies that the content type of the raw body is JSON. It serves to ensure the server correctly interprets the data being sent.\n\n      - **language**: Specifies that the language of the raw body content is JSON, which is useful for syntax highlighting in tools like Postman.\n\nThis endpoint is utilized for initializing the comments feature of a tournament service using a WebSocket connection, allowing real-time interactions."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Tournament Comments",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"tournament\", \"serviceType\":\"comments\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "**Endpoint Name:** Web - Socket - Join Tournament Comments\n\n**Request Method:** POST  \nThis endpoint is accessed using the POST method, which is typically used to send data to the server for processing.\n\n**Request URL:** http://localhost:3000/api/socket/web/setup  \nThis is the URL where the request is sent. It indicates that the service is hosted locally on port 3000 and is related to setting up a web socket connection for a tournament's comment section.\n\n**Headers:**  \nThere are no specific headers included in this request. While headers can be important for authentication or content type specifications, none are specified here.\n\n**Body:**  \nThe body of the request is sent in raw JSON format. It includes several key data points necessary for establishing the web socket connection.\n\n- **socketId:**  \n  A unique identifier for the socket connection. This ID helps in managing different socket sessions for different users or devices.\n\n- **accountId:**  \n  A unique identifier for the user's account. This ID is used to associate the web socket connection with a specific user account within the tournament service.\n\n- **sessionId:**  \n  A unique identifier for the current session. This helps in tracking the user's current activity and maintaining state across different interactions during the tournament.\n\n- **serviceName:**  \n  A string indicating the name of the service being accessed. In this case, it is set to \"tournament,\" signifying that the web socket connection is related to tournament activities.\n\n- **serviceType:**  \n  A string indicating the type of service being interacted with. Here, it is set to \"comments,\" which implies that this socket connection is specifically for handling comments related to the tournament.\n\n**Options:**  \nThe options field specifies parameters for the raw body format, indicating that the language of the raw data is JSON. This is important to ensure that the server correctly interprets the data being sent."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Tournament Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"tournament\", \"serviceType\":\"chats\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### API Endpoint Description: Web - Socket - Setup Tournament Chats\n\n**Endpoint Name:** Web - Socket - Setup Tournament Chats\n\n**Request Method:** POST  \nThis endpoint uses the HTTP POST method to send data to the server for setting up tournament chat via WebSocket.\n\n**Request URL:** `http://localhost:3000/api/socket/web/setup`  \nThis is the local server URL where the request should be sent.\n\n**Request Headers:**  \nThis endpoint does not require any specific headers to be set in the request.\n\n**Request Body:**  \nThe body of the request contains JSON data that is sent in a raw format. Below is a breakdown of the fields in the JSON object:\n\n- **accountId:**  \n  This field represents the unique identifier for the user or account that is initiating the tournament chat session. It should be replaced with the actual account ID when making the request.\n\n- **sessionId:**  \n  This field is used to identify the current session for the tournament chat. It helps in managing multiple sessions and ensures that the chat is linked to the correct session. This should also be replaced with the actual session ID.\n\n- **serviceName:**  \n  This specifies the name of the service that is being used. In this case, it is set to \"tournament\", indicating that this setup is related to a tournament service.\n\n- **serviceType:**  \n  This indicates the type of service being set up, which is \"chats\" in this scenario. This implies that the WebSocket is being established for chat functionality related to the tournament.\n\n- **maxsize:**  \n  This parameter defines the maximum size (e.g., number of messages or participants) allowed for the chat. In this example, it is set to 1000.\n\n**Body Format Options:**  \nThe body is sent in raw JSON format, and the specified language for the raw content is JSON.\n\n### Summary\nThis endpoint sets up WebSocket connections for tournament chats by providing necessary identifiers such as account ID and session ID, along with specific parameters for service management. Ensure to replace placeholders with actual values when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Tournament Chats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"tournament\", \"serviceType\":\"chats\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n**Name:**  \nThis field specifies the name of the endpoint, which is \"Web - Socket - Join Tournament Chats\". It indicates that the functionality provided by this endpoint relates to joining chat sessions for tournament events over a WebSocket connection.\n\n**Request:**  \nThis section defines the details of the HTTP request required to interact with the endpoint.\n\n- **Method:**  \n  The HTTP method used for this request is \"POST\". This indicates that the request will submit data to the server to join tournament chats via WebSocket.\n\n- **URL:**  \n  The URL for the request is \"http://localhost:3000/api/socket/web/setup\". This is the endpoint where the request is sent. The usage of \"localhost\" indicates that this is intended for use in a local development environment, targeting port 3000.\n\n- **Headers:**  \n  This field is currently empty, indicating there are no specific headers that need to be included in this request. Headers can typically be used to provide metadata about the request but are not necessary for this particular operation.\n\n- **Body:**  \n  The body of this request contains the data that is sent to the server when joining a tournament chat. \n\n  - **Mode:**  \n    This indicates that the request body format is set to \"raw\", meaning that the data is sent as-is without any additional formatting. \n\n  - **Raw:**  \n    The content being sent in the body is a JSON string, which includes the following key-value pairs:\n    \n    - **socketId:**  \n      This is a placeholder for the unique identifier of the WebSocket connection. It represents the socket instance that will be used for communication.\n      \n    - **accountId:**  \n      This is a placeholder for the unique identifier of the user account that is attempting to join the tournament chat. It is essential for identifying the user within the system.\n\n    - **sessionId:**  \n      This is a placeholder for the unique identifier of the current session. It links the user’s actions to a specific tournament session they are participating in.\n\n    - **serviceName:**  \n      This field is set to \"tournament\", indicating that the service the user is attempting to join is related to tournament activities.\n\n    - **serviceType:**  \n      This is set to \"chats\", specifying that the type of service being interacted with is chat functionality related to the tournament.\n\n- **Options:**  \n  This section contains configuration options for the body format.\n  \n  - **Raw:**  \n    This indicates that the body content is intended to be parsed as raw text.\n\n  - **Language:**  \n    The language specified here is \"json\", indicating that the raw body content is formatted as JSON. This helps the server to correctly interpret the data being sent.\n\nThis endpoint is designed to facilitate users connecting to tournament-related chat services using WebSocket technology by providing the necessary identifiers and service details."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Setup Tournament Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"tournament\", \"serviceType\":\"votes\", \"maxsize\": 1000}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### Web - Socket - Setup Tournament Votes\n\n**Request Method:**  \n- `POST`: This indicates that the request is meant to create or set up resources on the server.\n\n**Request URL:**  \n- `http://localhost:3000/api/socket/web/setup`: This is the endpoint where the request is sent. It is set to the local host, which generally means this endpoint runs on the developer's machine.\n\n**Headers:**  \n- No headers specified: This means that the request currently does not include any custom headers. Headers, if required, can be added in the future for authentication or content type specification.\n\n**Request Body:**  \n- The body of the request is sent in `raw` format with a JSON structure. Below are the details for each key in the JSON:\n\n  - **accountId**:  \n    This is a string that uniquely identifies the account related to the tournament votes. It is used to associate the votes with a specific user account.\n\n  - **sessionId**:  \n    A string that represents the active session for the user. This is used to track the current voting session within the tournament context.\n\n  - **serviceName**:  \n    This indicates the name of the service being set up, in this case, it is set to \"tournament\". It specifies what kind of operation is being performed.\n\n  - **serviceType**:  \n    This denotes the type of service involved, which is set to \"votes\". It indicates that the service is specifically designed for handling voting operations for the tournament.\n\n  - **maxsize**:  \n    This is an integer value set to 1000, representing the maximum size of votes that can be handled. This can limit the number of votes in a single session. \n\n**Body Options:**  \n- **Mode**:  \n  It specifies that the body is sent in 'raw' mode, which means the content is not encoded in any other format.\n\n- **Language**:  \n  This is set to 'json', indicating that the body content should be interpreted as JSON formatted data.\n\nThis endpoint is used to establish a socket connection for setting up votes within a tournament, and the provided information is crucial for its proper functionality."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Join Tournament Votes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\":\"accountId\", \"sessionId\":\"sessionId\", \"serviceName\":\"tournament\", \"serviceType\":\"votes\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/setup",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "setup"
+          ]
+        },
+        "description": "### API Endpoint: Web - Socket - Join Tournament Votes\n\n#### Request Details\n- **Method**: POST\n  - This indicates that the request is sending data to the server to create or update a resource.\n\n- **URL**: `http://localhost:3000/api/socket/web/setup`\n  - This is the endpoint where the request is being sent. It is pointing to a local server on port 3000 and is designated for setting up a socket connection for a web-based application.\n\n- **Headers**: \n  - No specific headers are provided. Headers can be used to provide additional context to the server about the request being sent.\n\n#### Body\n- **Body Mode**: Raw\n  - This indicates that the body of the request is being sent in a raw format.\n\n- **Raw Content**: \n```json\n{\n  \"socketId\": \"socketId\",\n  \"accountId\": \"accountId\",\n  \"sessionId\": \"sessionId\",\n  \"serviceName\": \"tournament\",\n  \"serviceType\": \"votes\"\n}\n```\n  - **socketId**: \n    - This field represents the unique identifier for the socket connection. It is used to distinguish between different socket connections. \n\n  - **accountId**: \n    - This is the unique identifier of the user’s account participating in the tournament. It helps in tracking user-specific data and actions.\n\n  - **sessionId**: \n    - This field contains the identifier for the session in which the user is participating. It is crucial for maintaining state and tracking the context of the user's interaction.\n\n  - **serviceName**: \n    - This indicates the name of the service being accessed. In this case, it is set to \"tournament,\" which suggests that the action pertains to a tournament-related service.\n\n  - **serviceType**: \n    - This specifies the type of service being targeted, which is \"votes\" in this case. This implies that the interaction involves voting within a tournament setting.\n\n#### Options\n- **Options for Raw Body**: \n  - **Language**: JSON\n    - This specifies that the format of the raw body content is JSON, which is commonly used for data exchange in web applications. \n\nThis structured data request is intended to establish a socket connection for user interaction in a voting process within a tournament. Ensure that the appropriate values are substituted for `socketId`, `accountId`, `sessionId` before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Connect",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/connect",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "connect"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n**Name:**  \n- This represents the name of the API request, which is \"Web - Socket - Connect\". It indicates that this request is intended to establish a connection for a web socket.\n\n**Request:**  \n- This section describes the specifics of the API request made to the endpoint.\n\n**Method:**  \n- The HTTP method used for this request is POST. This indicates that the request is intended to send data to the server to create or update a resource.\n\n**URL:**  \n- The request is sent to the URL `http://localhost:3000/api/socket/web/connect`. This is the endpoint where the request is directed, which typically represents a specific resource or action at the server.\n\n**Headers:**  \n- This section is currently empty, meaning no additional HTTP headers are set for this request. Headers might typically include authentication tokens, content types, or other metadata if needed.\n\n**Body:**  \n- The body of the request contains the data being sent to the server.\n\n**Mode:**  \n- The mode is set to \"raw\", indicating that the body is being sent as a raw JSON string.\n\n**Raw:**  \n- The content of the body is a JSON string: `{\"socketId\": \"socketId\", \"accountId\": \"accountId\"}`. This includes two key-value pairs:\n  - **socketId:** This is a placeholder for the unique identifier of the socket connection being established. It represents the specific socket instance that the server will use to facilitate communication.\n  - **accountId:** This is a placeholder for the unique identifier associated with the user's account. It links the socket connection to a specific user, allowing for personalized interaction.\n\n**Options:**  \n- This section provides additional specifications for the body format.\n\n**Raw Language:**  \n- The language of the raw body is specified as \"json\", indicating that the data is formatted as JSON, which is a common data interchange format used in web APIs."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Disconnect",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/disconnect",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "disconnect"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Disconnect\n\n**Method:** POST  \n**URL:** `http://localhost:3000/api/socket/web/disconnect`\n\n#### Description of Data:\n\n- **name:** This data represents the name of the API endpoint for disconnecting a WebSocket connection. It clearly indicates the action being performed.\n\n- **request:** This encapsulates all the details about the request being made to the API.\n\n  - **method:** This specifies the HTTP method used for the request. In this case, it is a POST request, indicating data is being sent to the server.\n\n  - **url:** This is the endpoint where the request will be sent. It consists of the base URL (`http://localhost:3000`) and the path (`/api/socket/web/disconnect`) specifically designed for handling WebSocket disconnection requests.\n\n  - **headers:** This is an array that can include any HTTP headers you may want to send with the request. Currently, it is empty, suggesting no additional headers are required for this request.\n\n  - **body:** This section contains the data being sent in the request body.\n  \n    - **mode:** This indicates the format of the body data. Here, it is set to \"raw\", meaning the data is being sent as raw text rather than form data or another format.\n\n    - **raw:** This is the actual content that is sent in the body of the request. It is in JSON format and includes two fields:\n      - **socketId:** This is a placeholder for the identifier of the WebSocket connection that needs to be disconnected.\n      - **accountId:** This is a placeholder for the identifier of the account from which the WebSocket connection should be disconnected.\n\n    - **options:** This can provide additional options related to the format of the request body.\n    \n      - **raw:** This component specifies that the language for the raw data is JSON, indicating that the data structure follows JSON syntax.\n\nThis endpoint is specifically designed to handle disconnections from a WebSocket service by requiring both the socket ID and account ID."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/status?socketId=socketId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "socketId",
+              "value": "socketId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Status\n\n**Request Method:**  \n- **GET** - This is a request method used to retrieve data from the server.\n\n**URL:**  \n- `http://localhost:3000/api/socket/web/status?socketId=socketId`  \n  This is the endpoint URL where the request will be sent. The placeholder `socketId` should be replaced with the actual socket ID you want to check the status for.\n\n**Query Parameters:**  \n- **socketId** - This is a required parameter that specifies the unique identifier of the socket connection whose status you wish to retrieve.\n\n**Headers:**  \n- Currently, there are no headers specified for this API request, meaning it does not require any special authentication or metadata beyond the basic GET request.\n\n### Functionality:  \nThis endpoint is designed to check the status of a web socket connection. By providing a valid socket ID, you can obtain the current status of that particular socket, which can help in diagnosing connectivity issues or ensuring that your application maintains a stable socket connection."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/get?socketId=socketId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "socketId",
+              "value": "socketId"
+            }
+          ]
+        },
+        "description": "### Description for API Endpoint: Web - Socket - Get\n\nThis endpoint retrieves information through a WebSocket connection based on a provided socket ID.\n\n- **Name**: Web - Socket - Get\n  - This is the name of the API request, identifying it as a GET request related to WebSocket operations.\n\n- **Request Method**: GET\n  - The HTTP method used to initiate the request. In this case, it is a GET request, which is typically used to retrieve data from a specified resource.\n\n- **URL**: `http://localhost:3000/api/socket/web/get?socketId=socketId`\n  - This is the endpoint URL that the request is sent to. It consists of:\n    - **Base URL**: `http://localhost:3000` - This indicates that the API is hosted locally on port 3000.\n    - **Endpoint Path**: `/api/socket/web/get` - This is the specific path that defines the resource being accessed.\n    - **Query Parameter**: `?socketId=socketId` - This is the query string used to pass the socket ID. The parameter `socketId` should be replaced with the actual socket ID value that you want to use for retrieving data.\n\n- **Headers**: []\n  - This section currently does not include any custom headers. Headers can be used to pass additional information with the request, such as authentication tokens or content-type specifications, but in this instance, no headers are being utilized. \n\nMake sure to replace the placeholder `socketId` in the URL with the actual socket ID value whenever you make a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Delete (Soft)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Delete (Soft)\n\n- **Name:** Web - Socket - Delete (Soft)\n  - This is the name of the API endpoint that indicates its purpose, which is to perform a soft delete operation on a WebSocket connection.\n\n- **Request:**\n  - **Method:** POST\n    - This specifies that the request uses the POST HTTP method, typically used for sending data to the server.\n  \n  - **URL:** http://localhost:3000/api/socket/web/delete\n    - This is the endpoint's URL where the request should be sent. It points to a local server running on port 3000, specifically for the WebSocket soft delete action.\n\n  - **Headers:** \n    - This section is currently empty, indicating that there are no specific headers required for this request. However, headers can be added if authentication or content type specifications are necessary.\n\n  - **Body:**\n    - **Mode:** raw\n      - The body content is sent in a raw format, allowing for custom data to be specified directly.\n      \n    - **Raw:** \n      - The body contains JSON data in string format, specifically:\n        ```json\n        {\n          \"socketId\": \"socketId\"\n        }\n        ```\n      - This indicates that the request should include a JSON object with a `socketId` field, which is intended to identify the specific WebSocket connection that is to be soft deleted. The value \"socketId\" should be replaced with the actual identification string of the WebSocket to be removed.\n\n    - **Options:**\n      - **Raw:**\n        - **Language:** json\n          - This indicates that the raw body content is formatted as JSON, helping any API clients interpret the data correctly.\n\nThis detailed description provides all the necessary information for users to understand the purpose and structure of the API endpoint when using the Postman collection."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Destroy (Permanent)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/destroy",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "destroy"
+          ]
+        },
+        "description": "### Web - Socket - Destroy (Permanent)\n\n**Request Method**: POST  \nThis request uses the POST method to send data to the server.\n\n**Request URL**: http://localhost:3000/api/socket/web/destroy  \nThis is the endpoint where the request will be sent. It is typically used for operations related to socket management, specifically to permanently destroy a web socket connection.\n\n**Headers**:  \nThis request does not include any custom headers. Additional headers may be added if required for authentication or content type specifications.\n\n**Body Parameters**:  \n- **Mode**: raw  \n  This specifies that the data is being sent in its raw format, which allows for sending a custom payload.\n\n- **Raw Data**:  \n  ```json\n  {\n    \"socketId\": \"socketId\"\n  }\n  ```  \n  This is the JSON payload being sent in the request body. It contains a single key-value pair:\n  \n  - **socketId**: This is a placeholder for the unique identifier of the socket connection that you want to destroy. You'll need to replace \"socketId\" with the actual socket ID you wish to terminate.\n\n- **Options**:  \n  - **Raw**:  \n    This indicates that the payload is in raw JSON format. The specified language is set to \"json\" to assist in proper formatting and syntax highlighting."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Undelete",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/undelete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "undelete"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Undelete\n\n- **Name**: Web - Socket - Undelete\n  - This is the identifier for the endpoint, indicating that it is related to websockets and the operation of undeleting a specific entity.\n\n- **Request**: \n  - This section contains details about the HTTP request required to interact with the endpoint.\n\n  - **Method**: \n    - **POST**\n      - This specifies that the request type is POST, which is used to send data to the server to create or update a resource.\n\n  - **URL**: \n    - **http://localhost:3000/api/socket/web/undelete**\n      - This is the endpoint URL where the request is sent. It indicates that the request is directed to a local server running on port 3000 and the specific path for undeleting a web socket.\n\n  - **Headers**: \n    - **[]**\n      - This indicates that there are no custom headers required for this request. Headers are typically used to provide additional information about the request.\n\n  - **Body**: \n    - This section outlines the body of the request, which includes the data being sent to the server.\n\n    - **Mode**: \n      - **raw**\n        - This means that the body of the request will be sent in raw format rather than form data or another format.\n\n    - **Raw**: \n      - **\"{\\\"socketId\\\": \\\"socketId\\\"}\"**\n        - This represents the actual data being sent in the body of the request. In this case, it is a JSON string that includes a property called `socketId`. The value of `socketId` should be replaced with the actual ID of the socket you want to undelete.\n\n    - **Options**: \n      - This defines the format details of the raw data.\n\n      - **Raw**: \n        - This specifies that the raw data will be formatted as JSON.\n\n      - **Language**: \n        - **json**\n          - This indicates that the data being sent is in JSON format, which is a common data interchange format that is easy to read and write for humans and machines."
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "31a1717d-318d-4006-8377-b8a0a8d73565",
+    "name": "ActionDislike",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Dislike - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didDislike\": false,\n    \"isUndo\": false,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dislike/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dislike",
+            "create"
+          ]
+        },
+        "description": "### Action - Dislike - Create\n\n#### Request Details:\n- **Request Type**: This endpoint is for a POST request, used for creating a new \"dislike\" action.\n\n- **Authentication**: The request uses bearer token authentication. This requires the user to provide a valid token in the request header for authorization to access the resource.\n\n#### URL:\n- **Endpoint**: The endpoint to access this action is `http://localhost:3000/api/action/dislike/create`. This should be changed to the appropriate server URL in production.\n\n#### Headers:\n- **Headers**: There are no specific headers set in the request at this time. The default headers are disabled and not in use.\n\n#### Body:\nThe body of the request is sent in raw JSON format and contains the following key-value pairs:\n\n1. **sessionId**: This is a string that identifies the session in which the dislike action is being recorded. It helps in tracking the user's current state or interaction session.\n\n2. **accountId**: This represents the unique identifier for the user account making the dislike action. It is essential for associating the dislike with the correct user.\n\n3. **path**: This is a string that indicates the path of the content being disliked. For example, it points to the location of the video, such as `/live/channel/video123`.\n\n4. **targetType**: Specifies the type of target that the dislike is directed toward. In this case, it is set to `videoId`, indicating that the action pertains to a video.\n\n5. **targetId**: This is the unique identifier of the content that is being disliked. In this example, it is labeled `videoId`, representing the specific video the user is interacting with.\n\n6. **sourceType**: Denotes the type of the source from which the dislike action is being made. It is set to `accountId`, indicating that the action originates from a user account.\n\n7. **sourceId**: This is the unique identifier associated with the source. It is also set to `accountId`, signifying the identity of the user making the dislike action.\n\n8. **didDislike**: A boolean value that indicates whether the user disliked the content or not. Here, it is set to `false`, suggesting that the action is intended to indicate a dislike (i.e., changing from a non-dislike state).\n\n9. **isUndo**: This is another boolean value. If it is set to `true`, it means the user is undoing a previous dislike action. It is set to `false`, indicating that this is a fresh dislike action rather than an undoing of a previous one.\n\n10. **name**: This is an optional field that can hold a name or title related to the dislike action. Currently, it is an empty string, awaiting user-defined input if necessary.\n\n11. **description**: Another optional field, intended for additional information or notes regarding the dislike action. It is currently left empty.\n\n12. **tags**: This optional field allows for additional tagging related to the dislike action. It is also an empty string and can be used to categorize or provide more context if needed.\n\nThis endpoint is designed to create a dislike action against a specific piece of content, capturing relevant information about the user and the disliked item."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Dislike - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didDislike\": true,\n    \"isUndo\": false,\n    \"dislikeId\": \"dislikeId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"tags,sad\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dislike/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dislike",
+            "update"
+          ]
+        },
+        "description": "### Action - Dislike - Update Endpoint Description\n\n- **name**: Indicates the name of the API action. In this case, it is \"Action - Dislike - Update\", which signifies that this endpoint is used to update a dislike action.\n\n- **request**: This section details the specifics of the API request.\n\n  - **auth**: Describes the authentication method utilized for this request.\n  \n    - **type**: Specifies the type of authentication being used. Here, it is \"bearer\".\n    \n    - **bearer**: Contains an array of bearer token objects, which is used to authorize the request.\n    \n      - **key**: The name of the authentication token parameter. In this case, it is \"token\".\n      \n      - **value**: The actual bearer token used for authentication represented as \"BearerToken\".\n      \n      - **type**: Specifies the data type of the token, which is a string.\n\n  - **method**: Refers to the type of HTTP method used for this API call. The method here is \"PUT\", indicating that the request is intended to update existing data.\n\n  - **url**: Provides the endpoint URL where the request is made. The current URL is \"http://localhost:3000/api/action/dislike/update\".\n\n  - **headers**: Lists additional metadata sent with the request.\n\n    - **key**: Represents the name of a specific header, which is \"Client-UUID\". This header usually carries a unique identifier for the client making the request.\n    \n    - **value**: Displays the value assigned to the \"Client-UUID\" header, represented as \"ClientUUID\".\n\n    - **type**: Indicates the type of header. Here it is denoted as \"default\".\n\n  - **body**: Contains the main data sent with the request, specified in JSON format.\n\n    - **mode**: Indicates the format of the body, which is \"raw\". This signifies that the body is sent as raw data rather than as form fields.\n\n    - **raw**: This section consists of the JSON structure representing the data being sent.\n\n      - **sessionId**: A unique identifier for the current user session. Placeholder value is \"sessionId\".\n      \n      - **accountId**: Identifies the account of the user making the request. Placeholder value is \"accountId\".\n      \n      - **path**: The path or URL of the resource being disliked, represented as \"/live/channel/video123\".\n      \n      - **targetType**: Specifies the type of target for the dislike action. In this case, it is set as \"videoId\".\n      \n      - **targetId**: The specific identifier for the target item (e.g., a video) being disliked. Placeholder value is \"videoId\".\n      \n      - **sourceType**: Indicates the type of the source from which the dislike request originates; here it is \"accountId\".\n      \n      - **sourceId**: Identifies the source account initiating the dislike, which is indicated as \"accountId\".\n      \n      - **didDislike**: A boolean value indicating whether the dislike action was successfully performed. It is set to true in this context.\n      \n      - **isUndo**: A boolean indicating whether this request is intended to undo a previous dislike action. It is currently set to false.\n      \n      - **dislikeId**: A unique identifier for the dislike action. The placeholder value is \"dislikeId\".\n      \n      - **name**: An optional field for the name associated with this request, currently left empty.\n      \n      - **description**: An optional field for additional details about the request, currently also left empty.\n      \n      - **tags**: Specifies any relevant tags associated with the dislike, in this case set to \"tags,sad\".\n\n    - **options**: Contains configurations for the body content.\n    \n      - **raw**: Indicates the properties of the raw body data.\n      \n        - **language**: Specifies the language format for the raw content. Here it is \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Dislike - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dislike/get/?dislikeId=dislikeId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dislike",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "dislikeId",
+              "value": "dislikeId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Dislike - Get\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"description\": \"This section defines the authentication method used for the request. A bearer token is required for accessing the API.\"\n      },\n      \"method\": {\n        \"description\": \"This indicates the HTTP method to be used for the request. In this case, it is a GET request, which is typically used to retrieve data.\"\n      },\n      \"url\": {\n        \"description\": \"This is the endpoint URL for the API call. It includes query parameters like dislikeId, sessionId, and accountId, which are necessary for identifying what data to retrieve. Replace dislikeId, sessionId, and accountId with actual values to make a successful request.\"\n      },\n      \"headers\": {\n        \"description\": \"This section is for specifying additional HTTP headers for the request. Currently, it contains an empty key-value pair and is marked as disabled, which means no additional headers are being sent.\"\n      },\n      \"body\": {\n        \"description\": \"This section indicates the body of the request. Since this is a GET request, the body is not used. It is set to 'raw' mode but is left empty.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Dislike - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dislike/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dislike",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Dislike - Get All\n\n**Request Overview:**\nThis endpoint retrieves all records of dislikes associated with a specific user session and account.\n\n**Endpoint Details:**\n\n- **Request Method:** \n  - **GET**: This method is used to request data from the specified resource.\n\n- **URL:**\n  - `http://localhost:3000/api/action/dislike/all/?sessionId=sessionId&accountId=accountId`\n    - The URL is where the API is hosted.\n    - It includes query parameters:\n      - **sessionId**: This parameter represents the unique identifier for the user session.\n      - **accountId**: This parameter indicates the unique identifier of the user's account.\n\n**Authentication:**\n- **Auth Type:**\n  - **Bearer Token**: This is a token-based authentication method.\n    - **Token Structure:**\n      - **Key**: \"token\" - This is the identifier for the token being passed.\n      - **Value**: \"BearerToken\" - This will be replaced with the actual bearer token that authorizes the request.\n      - **Type**: \"string\" - Indicates that the token is a string value.\n\n**Headers:**\n- There are currently no custom headers provided for this request. \n- The header entry is disabled and can be enabled or modified if needed.\n\n**Request Body:**\n- **Body Mode:** \n  - **raw**: Indicates that the body of the request is sent as raw data.\n- **Raw Data:** \n  - The body is empty in this request and does not contain any data. This is typical for GET requests, as they do not usually require a body.\n\nThis endpoint is primarily used to gather all dislike actions tied to a specific user session and account, ensuring the request is properly authenticated using the bearer token provided."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Dislike - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"dislikeId\":\"dislikeId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/dislike/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "dislike",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Dislike - Delete\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"This specifies that the request requires bearer authentication, in which a token is sent to verify the identity of the user making the API call.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"The key used to identify the authentication token.\",\n            \"value\": \"sessionId\": \"This is the variable placeholder representing the actual session ID for authentication, needed to identify the user session.\",\n            \"type\": \"string\": \"This indicates the type of value for the token, which is a string.\"\n          }\n        ]\n      },\n      \"method\": \"POST\": \"This indicates that the HTTP method used for the request is POST, typically used for sending data to the server.\",\n      \"url\": \"http://localhost:3000/api/action/dislike/delete\": \"This is the endpoint URL where the request is sent to, targeting the specific action of deleting a dislike.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"Currently, there are no specific headers defined apart from the default settings.\",\n          \"value\": \"\": \"No value is assigned to the header key.\",\n          \"type\": \"default\": \"This indicates that these are default headers and any custom headers are disabled.\",\n          \"disabled\": true: \"The header settings are disabled and will not be sent with the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"The body of the request is sent in raw format, which means it contains JSON formatted string data.\",\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"dislikeId\\\":\\\"dislikeId\\\"}\": \"This is the actual JSON payload sent with the request, containing three fields: sessionId (for identifying the user session), accountId (for identifying the user's account), and dislikeId (for identifying the specific dislike action to be deleted).\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

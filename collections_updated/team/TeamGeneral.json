@@ -1,0 +1,589 @@
+{
+  "info": {
+    "_postman_id": "b79d4e00-0b96-4412-b7c1-7ed8552fc7e9",
+    "name": "TeamGeneral",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37471241"
+  },
+  "item": [
+    {
+      "name": "Team - General - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"teamId\": \"teamId\",\n    \"title\": \"Nike Shoes\",\n    \"displayName\": \"Nike Shoes\",\n    \"description\": \"This team is my updated team\",\n    \"tags\": \"second,team\",\n    \"profilePhotoUrl\": \"https://example.com/profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/cover.jpg\",\n    \"minimumTipAmount\": 10,\n    \"categoryId\": \"teamCategoryId\",\n    \"subCategoryId\": \"teamSubCategoryId\",\n    \"isGeneralPrivate\": true,\n    \"isTournamentOnly\": false,\n    \"isGeneralDefault\": true,\n    \"isPreLiveTeamAds\": true,\n    \"isPostLiveTeamAds\": true,\n    \"breakPreLiveVideoUrl\": \"https://example.com/break-pre-live.mp4\",\n    \"breakPostLiveVideoUrl\": \"https://example.com/break-post-live.mp4\",\n    \"isTeamPrivate\": false,\n    \"isTeamDefault\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "create"
+          ]
+        },
+        "description": "{\n  \"description\": {\n    \"name\": \"The name of the endpoint action, representing team creation in a general context.\",\n    \"request\": {\n      \"auth\": {\n        \"type\": \"The type of authorization used for this request.\",\n        \"bearer\": [\n          {\n            \"key\": \"Indicates the key for the bearer token used for authentication.\",\n            \"value\": \"The token string used to authorize the request, commonly a JWT.\",\n            \"type\": \"The data type of the token, usually a string.\"\n          }\n        ]\n      },\n      \"method\": \"POST - Specifies that this endpoint creates a new resource.\",\n      \"url\": \"The endpoint URL which points to the local server where the API is running.\",\n      \"headers\": [\n        {\n          \"key\": \"A placeholder for additional headers, currently not being used.\",\n          \"value\": \"The value associated with the key in headers.\",\n          \"type\": \"default - Type of header, indicating it's a standard key-value pair.\",\n          \"disabled\": \"Indicates if the header is currently disabled; true means it's not used.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw - Indicates that raw data is being sent in the body of the request.\",\n        \"raw\": \"{\\n    \\\"sessionId\\\": \\\"sessionId\\\", - Unique identifier for the user's session.\\n    \\\"accountId\\\": \\\"accountId\\\", - Identifier for the user's account associated with the team.\\n    \\\"teamId\\\": \\\"teamId\\\", - Unique identifier for the team being created.\\n    \\\"title\\\": \\\"Nike Shoes\\\", - The official name of the team.\\n    \\\"displayName\\\": \\\"Nike Shoes\\\", - Name displayed to the users, may differ from the title.\\n    \\\"description\\\": \\\"This team is my updated team\\\", - A brief description providing details about the team.\\n    \\\"tags\\\": \\\"second,team\\\", - Comma-separated keywords for tagging or categorizing the team.\\n    \\\"profilePhotoUrl\\\": \\\"https://example.com/profile.jpg\\\", - URL to the profile photo of the team.\\n    \\\"coverPhotoUrl\\\": \\\"https://example.com/cover.jpg\\\", - URL to the cover photo representing the team.\\n    \\\"minimumTipAmount\\\": 10, - The minimum amount for tips related to the team activities.\\n    \\\"categoryId\\\": \\\"teamCategoryId\\\", - Identifier for the team's category in the hierarchy.\\n    \\\"subCategoryId\\\": \\\"teamSubCategoryId\\\", - Identifier for the more specific subcategory of the team.\\n    \\\"isGeneralPrivate\\\": true, - Boolean indicating if the general team is private.\\n    \\\"isTournamentOnly\\\": false, - Boolean indicating if the team is only for tournaments.\\n    \\\"isGeneralDefault\\\": true, - Boolean indicating if this is the default general team.\\n    \\\"isPreLiveTeamAds\\\": true, - Boolean indicating if pre-live advertisements are allowed for the team.\\n    \\\"isPostLiveTeamAds\\\": true, - Boolean indicating if post-live advertisements are allowed for the team.\\n    \\\"breakPreLiveVideoUrl\\\": \\\"https://example.com/break-pre-live.mp4\\\", - URL to the video shown before the live session.\\n    \\\"breakPostLiveVideoUrl\\\": \\\"https://example.com/break-post-live.mp4\\\", - URL to the video shown after the live session.\\n    \\\"isTeamPrivate\\\": false, - Boolean indicating if the team itself is private.\\n    \\\"isTeamDefault\\\": true - Boolean indicating if this team is the default team for certain operations.\\n}\",\n        \"options\": {\n          \"raw\": {\n            \"language\": \"json - Specifies the format of the raw body data.\"\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Create Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"teamId\": \"teamId\",\n    \"title\": \"Nike Shoes\",\n    \"displayName\": \"Nike Shoes\",\n    \"description\": \"This team is my updated team\",\n    \"tags\": \"second,team\",\n    \"profilePhotoUrl\": \"https://example.com/profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/cover.jpg\",\n    \"minimumTipAmount\": 10,\n    \"category\": \"General 1\",\n    \"subCategory\": \"Specific 1\",\n    \"isGeneralPrivate\": true,\n    \"isTournamentOnly\": false,\n    \"isGeneralDefault\": true,\n    \"isPreLiveTeamAds\": true,\n    \"isPostLiveTeamAds\": true,\n    \"breakPreLiveVideoUrl\": \"https://example.com/break-pre-live.mp4\",\n    \"breakPostLiveVideoUrl\": \"https://example.com/break-post-live.mp4\",\n    \"isTeamPrivate\": false,\n    \"isTeamDefault\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "create"
+          ]
+        },
+        "description": "### API Endpoint: Create Team - General\n\n#### Authentication\n- **Type**: Bearer\n  - **Key**: `token`\n  - **Value**: `BearerToken`\n  - **Type**: string\n  - **Description**: This is the authorization token required to access the API. Replace `BearerToken` with a valid token.\n\n#### Request Method\n- **Method**: POST\n  - **Description**: The HTTP method used for this request. This indicates that data is being sent to the server to create a new resource.\n\n#### URL\n- **Endpoint**: `http://localhost:3000/api/team/general/create`\n  - **Description**: This is the URL to which the POST request is sent. It is the endpoint for creating a general team.\n\n#### Headers\n- **Headers**: \n  - **Key**: (Empty)\n  - **Value**: (Empty)\n  - **Type**: Default\n  - **Disabled**: true\n  - **Description**: No additional headers are included in this request. This may be enabled in the future if needed.\n\n#### Request Body\n- **Mode**: Raw\n- **Format**: JSON\n\n##### Body Parameters:\n1. **sessionId**\n   - **Type**: string\n   - **Description**: A unique identifier for the session. Used to track the current user session.\n\n2. **accountId**\n   - **Type**: string\n   - **Description**: Identifier for the user's account. Indicates which account the team is being created under.\n\n3. **teamId**\n   - **Type**: string\n   - **Description**: A unique identifier for the team being created. This is used to refer to the team in future requests.\n\n4. **title**\n   - **Type**: string\n   - **Description**: The title or name of the team. It is important for identifying the team.\n\n5. **displayName**\n   - **Type**: string\n   - **Description**: A user-friendly name for the team that may be displayed in UI.\n\n6. **description**\n   - **Type**: string\n   - **Description**: A descriptive text providing details about the team. Helps in understanding the purpose or focus of the team.\n\n7. **tags**\n   - **Type**: string\n   - **Description**: A comma-separated list of tags associated with the team. Useful for categorization and searchability.\n\n8. **profilePhotoUrl**\n   - **Type**: string\n   - **Description**: URL link to the profile photo of the team. This image may be displayed in user interfaces.\n\n9. **coverPhotoUrl**\n   - **Type**: string\n   - **Description**: URL link to the cover photo for the team. This image appears as a header or background in the team’s profile.\n\n10. **minimumTipAmount**\n    - **Type**: number\n    - **Description**: The minimum amount that can be tipped to the team. It sets the lower limit for monetary contributions.\n\n11. **category**\n    - **Type**: string\n    - **Description**: The general category to which the team belongs. It's a higher-level classification.\n\n12. **subCategory**\n    - **Type**: string\n    - **Description**: A more specific classification under the category. Further narrows down the team's focus.\n\n13. **isGeneralPrivate**\n    - **Type**: boolean\n    - **Description**: Indicates whether the team is private. If true, only invited members can see it.\n\n14. **isTournamentOnly**\n    - **Type**: boolean\n    - **Description**: Specifies if the team is limited to tournament participation. If true, it cannot engage in other team activities.\n\n15. **isGeneralDefault**\n    - **Type**: boolean\n    - **Description**: Indicates if this team is set as a default option in the general category. \n\n16. **isPreLiveTeamAds**\n    - **Type**: boolean\n    - **Description**: Indicates if advertisements can be placed before live events for the team.\n\n17. **isPostLiveTeamAds**\n    - **Type**: boolean\n    - **Description**: Indicates if advertisements can be placed after live events for the team.\n\n18. **breakPreLiveVideoUrl**\n    - **Type**: string\n    - **Description**: URL to a video that may be shown during pre-live events for team promotion.\n\n19. **breakPostLiveVideoUrl**\n    - **Type**: string\n    - **Description**: URL to a video that may be shown after live events for team promotion.\n\n20. **isTeamPrivate**\n    - **Type**: boolean\n    - **Description**: Indicates if the team is a private group, restricting visibility to selected members.\n\n21. **isTeamDefault**\n    - **Type**: boolean\n    - **Description**: Indicates if this team is set as a default option for any associated actions or categories. \n\nThis request is used to create a general team with all its associated data, ensuring proper categorization, visibility options, and promotional media."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"teamId\": \"teamId\",\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"title\": \"Nike Shoes\",\n    \"displayName\": \"Nike Shoes\",\n    \"description\": \"This team is my updated team\",\n    \"tags\": \"second,team\",\n    \"profilePhotoUrl\": \"https://example.com/profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/cover.jpg\",\n    \"minimumTipAmount\": 10,\n    \"categoryId\": \"teamCategoryId\",\n    \"subCategoryId\": \"teamSubCategoryId\",\n    \"isGeneralPrivate\": true,\n    \"isTournamentOnly\": false,\n    \"isGeneralDefault\": true,\n    \"isPreLiveTeamAds\": true,\n    \"isPostLiveTeamAds\": true,\n    \"breakPreLiveVideoUrl\": \"https://example.com/break-pre-live.mp4\",\n    \"breakPostLiveVideoUrl\": \"https://example.com/break-post-live.mp4\",\n    \"isTeamPrivate\": false,\n    \"isTeamDefault\": true\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "update"
+          ]
+        },
+        "description": "### API Endpoint: Team - General - Update\n\n#### Request Method\n- **PUT**: This method is used to update an existing resource on the server.\n\n#### Request URL\n- **http://localhost:3000/api/team/general/update**: This is the endpoint where the request is sent to update the team's general information.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - **Token**: A bearer token is required for authorization. Replace `BearerToken` with the actual token needed for authentication.\n\n#### Headers\n- **Client-UUID**: This header is required for identifying the client making the request. Replace `ClientUUID` with the actual UUID of the client.\n\n#### Request Body\nThe body of the request is sent in JSON format and includes the following parameters:\n\n- **teamId**: A unique identifier for the team being updated. Replace `teamId` with the actual ID of the team.\n  \n- **sessionId**: An identifier for the current session. Replace `sessionId` with the actual session ID.\n  \n- **accountId**: An identifier for the account associated with the team. Replace `accountId` with the actual account ID.\n  \n- **title**: The title of the team. For example, \"Nike Shoes\" represents the name of this team.\n  \n- **displayName**: A user-friendly name for the team that will be displayed to other users. For example, \"Nike Shoes\".\n  \n- **description**: A brief description of the team. In this case, it describes the team as \"This team is my updated team\".\n  \n- **tags**: A comma-separated list of tags associated with the team. Here, it is \"second,team\", which may indicate categories related to the team.\n  \n- **profilePhotoUrl**: A URL link to the profile photo of the team, replacing `https://example.com/profile.jpg` with the actual image URL.\n  \n- **coverPhotoUrl**: A URL link to the cover photo of the team, replacing `https://example.com/cover.jpg` with the actual image URL.\n  \n- **minimumTipAmount**: Indicates the minimum amount for tips related to the team, set to 10 in this example.\n  \n- **categoryId**: The category identifier for classifying the team. Replace `teamCategoryId` with the actual category ID.\n  \n- **subCategoryId**: The subcategory identifier for further classification of the team. Replace `teamSubCategoryId` with the actual subcategory ID.\n  \n- **isGeneralPrivate**: A boolean value indicating if the team is private from general users. Set to `true` in this example.\n  \n- **isTournamentOnly**: A boolean indicating if the team is exclusive to tournaments. Set to `false`, meaning it's not limited to tournaments.\n  \n- **isGeneralDefault**: A boolean indicating if this team is set as the default team. It's `true`, implying it is the default.\n  \n- **isPreLiveTeamAds**: A boolean indicating if team ads can be shown before a live event. This is set to `true` in this example.\n  \n- **isPostLiveTeamAds**: A boolean indicating if team ads can be shown after a live event. This is also set to `true`.\n  \n- **breakPreLiveVideoUrl**: A URL for a video to be played during pre-live breaks. Replace with the actual video URL, currently set to `https://example.com/break-pre-live.mp4`.\n  \n- **breakPostLiveVideoUrl**: A URL for a video to be played during post-live breaks. Replace with the actual video URL, currently set to `https://example.com/break-post-live.mp4`.\n  \n- **isTeamPrivate**: A boolean indicating if the team is private. It's set to `false`, meaning the team is public.\n  \n- **isTeamDefault**: A boolean indicating if this team is the default one. Set to `true`, meaning it is the default team."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Update Auto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"teamId\": \"teamId\",\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"title\": \"Nike Shoes\",\n    \"displayName\": \"Nike Shoes\",\n    \"description\": \"This team is my updated team\",\n    \"tags\": \"second,team\",\n    \"profilePhotoUrl\": \"https://example.com/profile.jpg\",\n    \"coverPhotoUrl\": \"https://example.com/cover.jpg\",\n    \"minimumTipAmount\": 10,\n    \"category\": \"General 2\",\n    \"subCategory\": \"Specific 2\",\n    \"isGeneralPrivate\": true,\n    \"isTournamentOnly\": false,\n    \"isGeneralDefault\": true,\n    \"isPreLiveTeamAds\": true,\n    \"isPostLiveTeamAds\": true,\n    \"breakPreLiveVideoUrl\": \"https://example.com/break-pre-live.mp4\",\n    \"breakPostLiveVideoUrl\": \"https://example.com/break-post-live.mp4\",\n    \"isTeamPrivate\": false,\n    \"isTeamDefault\": true\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description\n\n#### Name\n- **Team - General - Update Auto**: This endpoint is designed for updating general team information.\n\n#### Request Details\n- **Auth**: Authentication is required to access this endpoint, using a bearer token.\n  - **Type**: Bearer\n    - **Token**: A placeholder for the bearer token required for authorization (e.g., \"BearerToken\").\n\n- **Method**: \n  - **PUT**: Indicates that this request will update existing team data.\n\n- **URL**: \n  - `http://localhost:3000/api/team/general/update`: The endpoint URL where the update request will be sent.\n\n#### Headers\n- **Client-UUID**: \n  - This header allows identification of the specific client making the request. It should be populated with the actual client UUID (e.g., \"ClientUUID\").\n\n#### Body\n- **Mode**: \n  - **Raw**: The body of the request will be sent in raw format.\n\n- **Raw Data**: JSON object containing the details of the team to update:\n\n  - **teamId**: \n    - A unique identifier for the team being updated (e.g., \"teamId\").\n\n  - **sessionId**: \n    - Unique identifier for the session associated with the update (e.g., \"sessionId\").\n\n  - **accountId**: \n    - Unique identifier for the account associated with the team (e.g., \"accountId\").\n\n  - **title**: \n    - The title of the team (e.g., \"Nike Shoes\").\n\n  - **displayName**: \n    - The display name for the team, which may be different from the title (e.g., \"Nike Shoes\").\n\n  - **description**: \n    - A brief description of the team; helps in understanding the purpose or content of the team (e.g., \"This team is my updated team\").\n\n  - **tags**: \n    - Comma-separated tags associated with the team for categorization (e.g., \"second,team\").\n\n  - **profilePhotoUrl**: \n    - URL link to the team's profile photo (e.g., \"https://example.com/profile.jpg\").\n\n  - **coverPhotoUrl**: \n    - URL link to the team's cover photo (e.g., \"https://example.com/cover.jpg\").\n\n  - **minimumTipAmount**: \n    - The minimum amount that can be tipped in relation to the team, specified in the appropriate currency (e.g., 10).\n\n  - **category**: \n    - The primary category under which the team falls (e.g., \"General 2\").\n\n  - **subCategory**: \n    - A more specific category under the primary category (e.g., \"Specific 2\").\n\n  - **isGeneralPrivate**: \n    - A boolean indicating whether the team is private to the general public (true/false).\n\n  - **isTournamentOnly**: \n    - A boolean indicating whether the team is exclusive to tournament settings (true/false).\n\n  - **isGeneralDefault**: \n    - A boolean that indicates if this team is a default team for users (true/false).\n\n  - **isPreLiveTeamAds**: \n    - A boolean that indicates whether the team allows advertisements before going live (true/false).\n\n  - **isPostLiveTeamAds**: \n    - A boolean that indicates whether the team allows advertisements after going live (true/false).\n\n  - **breakPreLiveVideoUrl**: \n    - URL for a video played during break time before a live event (e.g., \"https://example.com/break-pre-live.mp4\").\n\n  - **breakPostLiveVideoUrl**: \n    - URL for a video played during break time after a live event (e.g., \"https://example.com/break-post-live.mp4\").\n\n  - **isTeamPrivate**: \n    - A boolean indicating whether the team itself is private (true/false).\n\n  - **isTeamDefault**: \n    - A boolean indicating whether this team setting is the default for new users or accounts (true/false)."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Get By Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/get?name=nike-shoes",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "nike-shoes"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Team - General - Get By Name\n\n- **Name**: The name of this API request is \"Team - General - Get By Name\". This identifies the purpose of the request, which is to retrieve team data based on a specified name.\n\n- **Request**: This section contains the details about how to make the API call.\n  \n  - **Auth**: \n    - **Type**: The authentication method used for this request is \"bearer\". This typically means that you will need to provide a token to access the endpoint.\n    \n    - **Bearer**: This is an array that contains the authentication token needed for access.\n      - **Key**: The key used here is \"token\". This signifies that the following value is the token required for bearer authentication.\n      - **Value**: The placeholder \"BearerToken\" is where you should insert your actual bearer token when making the request.\n      - **Type**: The type of the value is specified as \"string\", indicating that the token is a string value.\n  \n  - **Method**: The HTTP method used for this request is \"GET\". This indicates that the request is meant to retrieve data.\n\n  - **URL**: The endpoint URL is \"http://localhost:3000/api/team/general/get?name=nike-shoes\". This is the address where the API request will be sent. The URL includes a query parameter \"name\" set to \"nike-shoes\", which specifies the name of the team you want to retrieve.\n\n  - **Headers**: \n    - This section is intended for any HTTP headers you might want to send along with the request.\n    - Currently, an entry exists but both the key and value are empty, and it is marked as \"disabled\", meaning it will not be sent with the request.\n\n  - **Body**: \n    - This section outlines the body of the request.\n    - The mode is set to \"raw\", indicating that the body can contain raw data.\n    - The \"raw\" field is empty, meaning there is no additional data being sent along with this GET request. Note that GET requests typically do not have a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Get By Team ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/get?teamId=teamId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "teamId",
+              "value": "teamId"
+            }
+          ]
+        },
+        "description": "### Endpoint Overview\nThis endpoint retrieves general information about a specific team based on its unique ID.\n\n#### Details of the Request Components:\n\n- **Name**: \n  - This is the title of the API request, indicating its purpose: \"Team - General - Get By Team ID\".\n\n- **Request**: \n  - This section outlines how to interact with the API for this particular request.\n\n  - **Authentication**: \n    - **Type**: The method of authentication to be used. Here, it is set to \"bearer\", which means that a token is required for access.\n    - **Bearer**: This specifies the details of the authentication token. It includes:\n      - **Key**: The label for the token parameter, noted simply as \"token\".\n      - **Value**: The actual token that is required to authorize the request, denoted here as \"BearerToken\". This should be replaced with an actual token when making requests.\n      - **Type**: The data type of the token, which is specified as \"string\".\n\n  - **Method**:\n    - The HTTP method used for the request. It is set to \"GET\", which means this request is intended to retrieve data rather than modify it.\n\n  - **URL**:\n    - The endpoint URL for the API request. It is formatted as `http://localhost:3000/api/team/general/get?teamId=teamId`, where `teamId` should be replaced with the actual ID of the team you want to query.\n\n  - **Headers**: \n    - This is where HTTP headers can be defined. In this case, there is an entry indicating an empty key and value, which is marked as disabled. This means that no additional headers are sent with this request by default.\n\n  - **Body**:\n    - **Mode**: This specifies the format of the body content. It is set to \"raw\", implying that the data is sent as plain text.\n    - **Raw**: This field is currently empty, suggesting that no body data is included with the request. \n\n### Usage\nTo use this endpoint, ensure that you replace `teamId` in the URL with the actual ID of the team you wish to retrieve information for. Additionally, replace \"BearerToken\" with a valid bearer token to authenticate the request. No specific headers or body content are necessary for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Get By Short ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/get?shortId=teamShortId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "shortId",
+              "value": "teamShortId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Team - General - Get By Short ID\n\n#### Request Data Description:\n\n- **Name**: This is the identifier for the API endpoint, indicating that it retrieves general information about a team based on a provided short ID.\n\n- **Auth**: This section specifies the authentication required to access the endpoint.\n  - **Type**: Indicates that Bearer token authentication is used.\n  - **Bearer**: Contains the bearer token needed for authorization.\n    - **Key**: This represents the name of the token field, which is labeled as \"token\".\n    - **Value**: The actual token used for authentication, prefixed with \"Bearer\" followed by the actual token value (e.g., \"BearerToken\").\n    - **Type**: Specifies that the token value is treated as a string.\n\n- **Method**: Indicates the HTTP method used for this request, which is \"GET\". This means the request will retrieve data rather than modify it.\n\n- **URL**: This is the endpoint's URL where the request is sent. It consists of:\n  - Base URL: `http://localhost:3000/api/team/general/get`\n  - Query Parameter: `shortId=teamShortId` - This part specifies that the request should include a short ID to identify the team being requested.\n\n- **Headers**: This section allows for additional HTTP headers to be set for the request.\n  - **Key**: The name of the header (currently left empty).\n  - **Value**: The value of the header (currently left empty).\n  - **Type**: Indicates the type of the header, with default type being specified here.\n  - **Disabled**: Set to true, indicating that this header is not currently active and will not be sent with the request.\n\n- **Body**: This section would contain the body of the request, but it is empty in this case.\n  - **Mode**: Specifies the mode of the body. Here it indicates \"raw\" is being used, meaning that the body would normally contain raw data.\n  - **Raw**: Currently has no content, indicating that no body data needs to be sent with this GET request. "
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/all",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "all"
+          ]
+        },
+        "description": "### Endpoint: Team - General - Get All\n\n**Description**: This endpoint retrieves a list of all teams with general information.\n\n#### Request Details:\n\n- **Authentication**: \n  - **Type**: Bearer token is used for authentication.\n  - **Token**: The token is provided in the format `BearerToken`. This token must be included in the request headers for access to the data.\n\n- **Method**: \n  - **Type**: GET\n  - This method is used to request data from the specified endpoint.\n\n- **URL**: \n  - **Endpoint Address**: `http://localhost:3000/api/team/general/all`\n  - This is the address where the request is sent to retrieve all general team data.\n\n- **Headers**: \n  - There are no specific headers required for this request as the header section is currently empty and marked as disabled. \n\n- **Body**: \n  - **Mode**: Raw\n  - The request body is empty as a GET request typically does not include a body.\n\nThis endpoint will return a collection of teams with general details when accessed correctly using a valid Bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Get All By Account ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/all?accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Team - General - Get All By Account ID\n\n- **Name**: This endpoint is designated as \"Team - General - Get All By Account ID\". It is used to retrieve all teams associated with a specific account.\n\n- **Request Method**: The HTTP method employed for this request is **GET**. This method requests data from the server.\n\n- **Request URL**: The request is made to the URL `http://localhost:3000/api/team/general/all?accountId=accountId`. The base URL indicates that the API is hosted locally on port 3000, and it accesses the `team/general/all` endpoint. The query parameter `accountId` is used to specify the unique identifier of the account whose teams need to be retrieved. Replace `accountId` in the URL with the actual ID.\n\n- **Authentication**: The request requires authentication via **Bearer Token**. This is a common method where the client sends a token in the request to authenticate themselves. The authentication details include:\n  - **Type**: The authentication type is **bearer**, indicating that a token is used for authorization.\n  - **Bearer Token**: The token is represented as `\"BearerToken\"` which should be replaced with a valid token string to authenticate the request.\n\n- **Headers**: There is a placeholder for headers in the request:\n  - **Key**: The header key is currently empty.\n  - **Value**: The corresponding header value is also empty.\n  - **Disabled**: This header is marked as disabled, meaning it will not be sent with the request unless it is enabled and filled out.\n\n- **Body**: The request body is structured as follows:\n  - **Mode**: The body mode is set to **raw**, indicating that the body can contain unformatted text or data.\n  - **Raw Content**: The raw content is currently empty, which is typical for a GET request as no additional data is sent in the body.\n\nThis endpoint is essential for fetching all teams linked to a specified account in a system, requiring proper authentication and the account ID for the request to be successful."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Get All By Category ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/all?categoryId=teamCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "categoryId",
+              "value": "teamCategoryId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Team - General - Get All By Category ID\n\n- **Name**: This is the title of the request, indicating that it retrieves all teams based on a specified category ID.\n\n- **Request**: Contains all the details required to make the API call.\n\n  - **Auth**:\n    - **Type**: Specifies the authentication method required for the request. In this case, it uses a bearer token for authorization.\n    - **Bearer**: An array containing authentication details.\n      - **Key**: Identifies the parameter as a token.\n      - **Value**: Represents the actual token that will be used for authentication. It should be replaced with a valid bearer token when executing the request.\n      - **Type**: Specifies the data type of the value, which is a string.\n\n  - **Method**: Indicates the HTTP method for the request. Here, a GET method is used to retrieve data.\n\n  - **URL**: The endpoint URL where the API request is sent. It includes a placeholder for a category ID that should be replaced with the actual ID of the team category you want to query.\n\n  - **Headers**: This section is for any additional information sent with the request. In this case, it is currently empty and disabled, meaning no extra headers are being added to the request.\n\n  - **Body**: Represents the content sent with the request. \n    - **Mode**: Indicates how the body is formulated; here, it is set to \"raw\".\n    - **Raw**: This field is empty, signifying that no data will be sent in the body of the request, as GET requests typically do not have a body. \n\n### Summary:\nThis API endpoint is used to fetch data about teams that belong to a specific category. It requires a valid bearer token for authentication and uses a GET request to retrieve the information from the specified URL. The category ID needs to be provided in the query parameter to filter the results accordingly. The request does not include any additional headers or body content."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Get All By Sub Category ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/all?subCategoryId=teamSubCategoryId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "all"
+          ],
+          "query": [
+            {
+              "key": "subCategoryId",
+              "value": "teamSubCategoryId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Team - General - Get All By Sub Category ID\n\n**HTTP Method:**  \n- **GET**: This endpoint retrieves a list of teams based on a specified sub-category ID.\n\n**URL:**  \n- `http://localhost:3000/api/team/general/all?subCategoryId=teamSubCategoryId`: The endpoint to access the resource. It includes a query parameter `subCategoryId`, which should be replaced with the actual ID of the desired sub-category.\n\n**Authentication:**  \n- **Type:** Bearer token authentication is required to access this endpoint.  \n- **Token:** The bearer token needs to be provided in the request header for authentication. In the request, it is represented as `\"BearerToken\"`, which should be replaced with a valid token string for actual use.\n\n**Headers:**  \n- No additional headers are specified in this request. The header entry is present but disabled, indicating that it is not currently in use.\n\n**Body:**  \n- The body of the request is empty. This indicates that no additional data is sent with the GET request, as typically GET requests do not have a body.\n\n**Query Parameters:**  \n- `subCategoryId`: This is a required query parameter that specifies the ID of the sub-category for which teams are to be retrieved. The placeholder `teamSubCategoryId` should be replaced with the actual sub-category ID when making the request. \n\nThis endpoint is used to efficiently fetch team data filtered by a specific sub-category, requiring proper authentication through a bearer token."
+      },
+      "response": []
+    },
+    {
+      "name": "Team - General - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/team/general/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "team",
+            "general",
+            "delete"
+          ]
+        },
+        "description": "### Endpoint: Team - General - Delete\n\n**Name**: Represents the name of the API endpoint which is designed to delete a general team.\n\n**Request**:\n- **Auth**: This specifies the authentication method required to access the endpoint.\n  - **Type**: Bearer token is used for authentication.\n  - **Bearer**: Contains an array of authentication parameters.\n    - **Key**: Indicates the name of the bearer token field, which is \"token\".\n    - **Value**: Represents the actual value to be provided in the request; in this case, \"sessionId\".\n    - **Type**: Indicates the data type for the value, which is \"string\".\n\n- **Method**: The HTTP method to be used for the request is \"POST\", meaning data will be sent to the server to delete a specified resource.\n\n- **URL**: This is the endpoint where the request will be sent. It consists of:\n  - **Protocol**: HTTP\n  - **Host**: localhost:3000\n  - **Path**: /api/team/general/delete - specifies that the request will delete a team.\n\n- **Headers**: This section can include additional headers for the request. In this case:\n  - **Key**: There are no specific headers set as the key is empty.\n  - **Value**: There are no specific values provided since disabled is set to true.\n  - **Type**: The header is of type \"default\".\n  - **Disabled**: Indicates that this header is not active for the request.\n\n- **Body**: This part of the request contains the data being sent to the server.\n  - **Mode**: Set to \"raw\", indicating the body is sent as raw JSON text.\n  - **Raw**: This will contain the JSON string with key-value pairs:\n    - **sessionId**: Represents the user session ID used for authentication and authorization.\n    - **accountId**: Represents the ID of the account from which the team will be deleted.\n    - **teamId**: Represents the ID of the specific team that is to be deleted. \n\nThis API endpoint is used to delete a specified team by providing the relevant session, account, and team identifiers in the request body."
+      },
+      "response": []
+    }
+  ]
+}

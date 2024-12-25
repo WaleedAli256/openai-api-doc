@@ -1,0 +1,524 @@
+{
+  "info": {
+    "_postman_id": "59f66386-52f5-42d6-ab0e-f115139440a9",
+    "name": "VideoStream",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Video - Stream - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"isPrimaryCamera\":false,\"isPrimaryAudio\":false,\"videoInputName\":\"My MacBook Camera\",\"audioInputName\":\"My macBook Microphone\",\"started\":false,\"paused\":false,\"stopped\":false}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/stream/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "stream",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Video - Stream - Create\n\n**Request Type**: POST  \n**URL**: `http://localhost:3000/api/video/stream/create`  \n\n#### Authorization\n- **Type**: Bearer Token  \n  - **Key**: `token`  \n  - **Value**: `BearerToken`  \n  - **Type**: string  \n  This section is used to authorize the user making the request. The bearer token must be included in the request to access the resource securely.\n\n#### Headers\n- **Key**: (none)  \n- **Value**: (none)  \n- **Type**: default  \n- **Disabled**: true  \nThere are currently no custom headers being used for this request as this part is disabled. \n\n#### Body\n- **Mode**: raw  \n  This indicates that the body of the request will be sent in a raw format. \n\n**Raw JSON Data**:\n```json\n{\n  \"sessionId\": \"sessionId\",\n  \"accountId\": \"accountId\",\n  \"channelId\": \"channelId\",\n  \"videoId\": \"videoId\",\n  \"isPrimaryCamera\": false,\n  \"isPrimaryAudio\": false,\n  \"videoInputName\": \"My MacBook Camera\",\n  \"audioInputName\": \"My macBook Microphone\",\n  \"started\": false,\n  \"paused\": false,\n  \"stopped\": false\n}\n```\n**Field Descriptions**:\n- **sessionId**: Unique identifier for the streaming session. This value should be replaced with the actual session ID.\n- **accountId**: Identifier for the user’s account. It should match the account related to the streaming activity.\n- **channelId**: Identifier for the channel where the video will be streamed. Must correspond to an existing channel.\n- **videoId**: Identifier for the video being streamed. This should be set to the specific video you want to stream.\n- **isPrimaryCamera**: Boolean value (true or false) indicating whether the primary camera is being used for the stream. Default is false.\n- **isPrimaryAudio**: Boolean value (true or false) indicating whether the primary audio source is being used for the stream. Default is false.\n- **videoInputName**: Name of the video input device being used, such as a webcam. Default value is \"My MacBook Camera\".\n- **audioInputName**: Name of the audio input device being used, such as a microphone. Default value is \"My macBook Microphone\".\n- **started**: Boolean value representing whether the stream has started. Default is false.\n- **paused**: Boolean value indicating if the stream is currently paused. Default is false.\n- **stopped**: Boolean value indicating if the stream has stopped. Default is false.\n\nThis endpoint is used for creating a new video stream session with specific configuration details for the video and audio input devices. Be sure to replace placeholder values with actual data before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Stream - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"streamId\":\"streamId\",\"isPrimaryCamera\":false,\"isPrimaryAudio\":false,\"videoInputName\":\"My MacBook Camera\",\"audioInputName\":\"My macBook Microphone\",\"started\":false,\"paused\":false,\"stopped\":false}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/stream/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "stream",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Video - Stream - Update\n\n**Request Method:** PUT  \n**Request URL:** `http://localhost:3000/api/video/stream/update`\n\n#### Authorization\n- **Type:** Bearer\n  - **Key:** `token`\n    - **Value:** BearerToken (Replace this with a valid bearer token)\n    - **Type:** string\n\n#### Headers\n- **Key:** `Client-UUID`\n  - **Value:** ClientUUID (This should be replaced with a valid UUID for the client)\n  - **Type:** default\n\n#### Request Body\n**Body Mode:** Raw  \n**Content Type:** JSON  \n\n**Raw Body:**\n```json\n{\n  \"sessionId\": \"sessionId\",\n  \"accountId\": \"accountId\",\n  \"channelId\": \"channelId\",\n  \"videoId\": \"videoId\",\n  \"streamId\": \"streamId\",\n  \"isPrimaryCamera\": false,\n  \"isPrimaryAudio\": false,\n  \"videoInputName\": \"My MacBook Camera\",\n  \"audioInputName\": \"My macBook Microphone\",\n  \"started\": false,\n  \"paused\": false,\n  \"stopped\": false\n}\n```\n\n#### Body Parameters Description:\n- **sessionId:** (string) Identifier for the current session. Used to track the session during video streaming.\n  \n- **accountId:** (string) Represents the unique ID of the user account associated with the video stream.\n  \n- **channelId:** (string) Identifies the channel where the video stream is being broadcasted.\n  \n- **videoId:** (string) Unique identifier for the specific video being updated.\n  \n- **streamId:** (string) Identifier for the stream. This can be used for managing or referencing the stream.\n  \n- **isPrimaryCamera:** (boolean) Indicates if the primary camera is being used. Set to true if it is the primary camera; otherwise, false.\n  \n- **isPrimaryAudio:** (boolean) Indicates if the primary audio source is currently in use. Set to true if it is the primary audio; otherwise, false.\n  \n- **videoInputName:** (string) Displays the name of the video input device being used, e.g., \"My MacBook Camera\".\n  \n- **audioInputName:** (string) Displays the name of the audio input device being used, e.g., \"My MacBook Microphone\".\n  \n- **started:** (boolean) Indicates if the stream has started. Set to true if streaming has started; otherwise, false.\n  \n- **paused:** (boolean) Indicates if the stream is currently paused. Set to true if the stream is paused; otherwise, false.\n  \n- **stopped:** (boolean) Indicates if the stream has been stopped. Set to true if the stream is stopped; otherwise, false."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Stream - Update - Start Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"streamId\":\"streamId\",\"isPrimaryCamera\":false,\"isPrimaryAudio\":false,\"videoInputName\":\"My MacBook Camera\",\"audioInputName\":\"My macBook Microphone\",\"started\":true,\"paused\":false,\"stopped\":false}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/stream/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "stream",
+            "update"
+          ]
+        },
+        "description": "### Endpoint: Video - Stream - Update - Start Stream\n\n#### Request Authentication\n- **Type**: Bearer\n  - **Key**: `token`\n  - **Value**: `BearerToken` \n  - **Type**: String  \n  This is used for authenticating the request. A valid bearer token must be provided to access this API.\n\n#### Request Method\n- **Method**: PUT  \n  This indicates that the request type is a PUT request, which is used for updating an existing resource.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/video/stream/update`  \n  This is the endpoint where the API is accessed to update the video stream information.\n\n#### Headers\n- **Header Key**: `Client-UUID`  \n  - **Value**: `ClientUUID`  \n  - **Type**: Default  \n  This header is used to identify the client making the request. A unique UUID is required for tracking and managing client-specific operations.\n\n#### Request Body\n- **Mode**: Raw  \n  This specifies that the body of the request is in raw format.\n\n- **Content**: JSON format containing the following fields:\n  - **sessionId**: Represents the unique identifier for the current video streaming session.\n  - **accountId**: This corresponds to the unique identifier for the user account associated with the stream.\n  - **channelId**: This identifies the specific channel where the video stream is hosted.\n  - **videoId**: Represents the unique identifier for the video being streamed.\n  - **streamId**: This identifies the unique stream for the video.\n  - **isPrimaryCamera**: A boolean value stating whether the main camera is the primary input for the stream. \n  - **isPrimaryAudio**: A boolean value indicating if the main audio input is the primary source for the stream.\n  - **videoInputName**: A descriptive name for the video input device being used for the stream, e.g., \"My MacBook Camera\".\n  - **audioInputName**: A descriptive name for the audio input device being used, e.g., \"My MacBook Microphone\".\n  - **started**: A boolean flag that indicates whether the stream has started. Value `true` shows that the stream is active.\n  - **paused**: A boolean flag that indicates whether the stream is currently paused. Value `false` represents that the stream is not paused.\n  - **stopped**: A boolean flag that indicates whether the stream has been stopped. Value `false` means that the stream is still running. \n\n#### Options\n- **Raw**:  \n  - **Language**: JSON  \n  Specifies the format of the raw request body as JSON, ensuring the server correctly interprets the data."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Stream - Update - Pause Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"streamId\":\"streamId\",\"isPrimaryCamera\":false,\"isPrimaryAudio\":false,\"videoInputName\":\"My MacBook Camera\",\"audioInputName\":\"My macBook Microphone\",\"started\":true,\"paused\":true,\"stopped\":false}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/stream/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "stream",
+            "update"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n#### Request Metadata\n- **name**: This is the name of the endpoint action, indicating that it is specifically for updating the state of a video stream by pausing it.\n\n#### Request Object\n- **auth**: This section specifies the authentication method required to access the endpoint.\n  - **type**: Indicates the type of authentication being used. In this case, it is \"bearer,\" which requires a token for authorization.\n  - **bearer**: An array containing authentication details.\n    - **key**: Represents the name of the token field.\n    - **value**: A placeholder for the bearer token, which is necessary to authenticate the request.\n    - **type**: Indicates the data type of the value, which is a string.\n\n- **method**: Specifies the HTTP method used for the request. Here, it is \"PUT,\" which is used to update existing resources.\n\n- **url**: The endpoint URL where the request is sent. In this case, it points to the local server at \"http://localhost:3000/api/video/stream/update\".\n\n- **headers**: This contains key-value pairs that provide additional information to the server about the request.\n  - **key**: This is the name of the header being sent. Here it is \"Client-UUID\".\n  - **value**: A placeholder for the unique identifier of the client making the request.\n  - **type**: Indicates the type of the header, which is default in this instance.\n\n#### Body\n- **mode**: This indicates the format in which the body of the request is sent. Here, it is \"raw\", meaning that the body is sent as a raw JSON string.\n\n- **raw**: Contains the actual payload of the request.\n  - **sessionId**: A unique identifier for the session associated with the stream. It is required to manage the session state.\n  - **accountId**: This is the unique identifier for the user account associated with the video stream.\n  - **channelId**: Represents the identifier for the channel that the video stream belongs to.\n  - **videoId**: This is the unique identifier for the video being streamed.\n  - **streamId**: A unique identifier for the specific stream that is being updated.\n  - **isPrimaryCamera**: A boolean value indicating whether the primary camera is being used. Here it is set to false.\n  - **isPrimaryAudio**: A boolean that signifies whether the primary audio source is active, currently set to false.\n  - **videoInputName**: A string that specifies the name of the video input device, indicating which camera is in use, e.g., \"My MacBook Camera\".\n  - **audioInputName**: A string that indicates the name of the audio input device, specifying the microphone being used, e.g., \"My macBook Microphone\".\n  - **started**: A boolean value indicating whether the streaming session has started. It is set to true here.\n  - **paused**: A boolean value representing whether the stream is currently paused. In this case, it is set to true.\n  - **stopped**: A boolean indicating whether the stream has been stopped. Here, it is set to false.\n\n- **options**: Provides additional options for how the body content is formatted.\n  - **raw**: This indicates the specifics of the raw data being sent.\n    - **language**: Specifies the format of the body content, which is set as \"json\". \n\nThis detailed breakdown should assist users in understanding what data is needed when using this endpoint to pause a video stream."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Stream - Update - Stop Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\",\"streamId\":\"streamId\",\"isPrimaryCamera\":false,\"isPrimaryAudio\":false,\"videoInputName\":\"My MacBook Camera\",\"audioInputName\":\"My macBook Microphone\",\"started\":true,\"paused\":false,\"stopped\":true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/stream/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "stream",
+            "update"
+          ]
+        },
+        "description": "### API Endpoint: Video - Stream - Update - Stop Stream\n\n#### Request Details:\n\n- **Name**: This is the title of the request, indicating the action to update and stop a video stream.\n\n- **Authentication**:\n  - **Type**: Bearer Token\n    - **Key**: `token`\n    - **Value**: `BearerToken`\n    - **Type**: This denotes the type of the authentication token required to access the API endpoint, which is a string format.\n\n- **HTTP Method**: \n  - **PUT**: This indicates that the request will modify existing data on the server.\n\n- **URL**: \n  - `http://localhost:3000/api/video/stream/update`: This is the endpoint where the request is to be sent. It is expected to be a local server running on port 3000.\n\n#### Headers:\n\n- **Client-UUID**:\n  - **Key**: `Client-UUID`\n  - **Value**: `ClientUUID`\n  - **Type**: This header is used to uniquely identify the client making the request. It is typically a UUID (Universally Unique Identifier) string that helps in tracking requests to the server.\n\n#### Request Body: \nThe body of the request is formatted as raw JSON and contains the following fields:\n\n- **sessionId**: \n  - This field is used to specify the unique identifier for the session in which the video stream is running.\n\n- **accountId**: \n  - This field represents the unique identifier of the account associated with the video stream.\n\n- **channelId**: \n  - This field specifies the unique identifier for the channel where the stream is being broadcast.\n\n- **videoId**: \n  - This field is used to provide the unique identifier for the video that is being streamed.\n\n- **streamId**: \n  - This field represents the unique identifier for the stream itself.\n\n- **isPrimaryCamera**: \n  - A boolean value indicating whether the primary video camera is in use. This can be set to `true` or `false`.\n\n- **isPrimaryAudio**: \n  - A boolean value indicating whether the primary audio device is in use. This can be set to `true` or `false`.\n\n- **videoInputName**: \n  - This field specifies the name of the video input device being used, for example, \"My MacBook Camera\".\n\n- **audioInputName**: \n  - This field specifies the name of the audio input device being used, for example, \"My MacBook Microphone\".\n\n- **started**: \n  - A boolean value that indicates if the stream has started. It can be set to `true` or `false`.\n\n- **paused**: \n  - A boolean value indicating whether the stream is currently paused. It can be set to `true` or `false`.\n\n- **stopped**: \n  - A boolean value that indicates if the stream has been stopped. It can be set to `true` or `false`.\n\nThis request format allows the user to update the status of a video stream and provide additional details about the various inputs used during the streaming session."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Stream - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/stream/get/?streamId=streamId&channelId=channelId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "stream",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "streamId",
+              "value": "streamId"
+            },
+            {
+              "key": "channelId",
+              "value": "channelId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Video - Stream - Get\n\n#### Request Details:\n- **Authentication**:\n  - **Type**: Bearer\n    - This indicates that the API requires a bearer token for authentication. You must provide a valid token in the request header.\n    - **Token**:\n      - **Key**: token\n      - **Value**: BearerToken (replace with your actual token)\n      - **Type**: string\n      - The bearer token is used to securely access the API.\n\n- **Method**: GET\n  - This specifies that the request uses the GET HTTP method, which retrieves data from the server.\n\n- **URL**:\n  - **Format**: `http://localhost:3000/api/video/stream/get/?streamId=streamId&channelId=channelId`\n    - You need to replace `streamId` and `channelId` in the URL with the actual values you want to query.\n    - This URL targets the specific endpoint responsible for retrieving video stream data based on the given parameters.\n\n- **Headers**:\n  - This section contains any additional HTTP headers you may need to send with the request.\n  - In this case, no headers are defined (it has an empty key and value), and it is marked as disabled. You can add custom headers if required for your specific use case.\n\n- **Body**:\n  - **Mode**: raw\n    - This indicates that the body of the request is sent in a raw format, but for this GET request, the body is not utilized.\n  - **Raw**: \n    - The raw body content is empty, meaning that no data is being sent in the body of the request. GET requests typically do not include a body.\n\n### Notes:\n- Ensure you have a valid bearer token to access this endpoint.\n- Make sure to correctly replace the placeholders in the URL with real `streamId` and `channelId` values prior to making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Stream - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/stream/all/?channelId=channelId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "stream",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "channelId",
+              "value": "channelId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Video - Stream - Get All\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\"\n        }\n      ]\n    },\n    \"method\": \"GET\",\n    \"url\": \"http://localhost:3000/api/video/stream/all/?channelId=channelId\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"\"\n    }\n  }\n}\n\n### Description:\n\n- **name**: This field specifies the name of the request. In this case, it indicates that the request is related to retrieving all video streams.\n\n- **request**: This is an object that contains all the details of the request being made.\n\n  - **auth**: This section defines the type of authentication needed for this request.\n\n    - **type**: Indicates the authentication method, which is set to \"bearer\" for token-based authentication.\n    \n    - **bearer**: An array that includes the authentication token.\n    \n      - **key**: This is a label for the token value.\n      \n      - **value**: Actual bearer token that needs to be included in the request for authentication. The sample shows a placeholder \"BearerToken\".\n      \n      - **type**: Denotes the data type of the value, in this case, it is a \"string\".\n\n  - **method**: This indicates the HTTP method used to send the request. Here, it is set to \"GET\", meaning the request is intended to retrieve data.\n\n  - **url**: This is the endpoint where the request is being sent. It shows the base URL and includes a query parameter `channelId` that is used to specify the channel for which the video streams are being requested.\n\n  - **headers**: This is an array of headers that may be sent along with the request.\n\n    - **key**: This field is for the name of the header, but in this instance, it is left empty.\n    \n    - **value**: This is the value for the header, but it is also empty, suggesting that no custom headers are being used here.\n    \n    - **type**: Indicates the type of header, which is set to \"default\". \n\n    - **disabled**: A boolean that signifies whether this header is active or not. It is set to true, meaning this header is currently disabled.\n\n  - **body**: This section details the body of the request.\n\n    - **mode**: Specifies the format of the body content. It is set to \"raw\", indicating raw input data can be provided.\n    \n    - **raw**: This field holds the actual content of the body. It is empty in this case, implying that no body content is needed for a GET request.\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Video - Stream - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"streamId\":\"streamId\",\"channelId\":\"channelId\",\"videoId\":\"videoId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/video/stream/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "video",
+            "stream",
+            "delete"
+          ]
+        },
+        "description": "**Description of each data in the endpoint \"Video - Stream - Delete\":**\n\n- **name**: This represents the name of the API request. In this case, it identifies the action to delete a video stream.\n\n- **request**: This key contains all the necessary details required to make the API request.\n\n  - **auth**: This section specifies the authentication method to be used when making the request.\n    - **type**: Indicates the type of authentication. Here it is a bearer token authentication.\n    - **bearer**: An array that holds details about the bearer token.\n      - **key**: The name of the token field used in the authentication header.\n      - **value**: This is a placeholder for the actual token value, denoting it should be replaced with a session ID.\n      - **type**: Specifies that the value should be treated as a string.\n\n  - **method**: This indicates the HTTP method used for the request. Here, it is a POST method, which is typically used to send data to the server.\n\n  - **url**: The endpoint URL where the API request will be sent. In this case, it points to the delete video stream functionality.\n\n  - **headers**: This section can include additional headers for the request.\n    - **key**: The name of the header.\n    - **value**: The value of the header.\n    - **type**: The type of the header; indicated as default in this instance.\n    - **disabled**: A boolean indicating whether this header is currently active. It is set to true, meaning this header will not be sent with the request.\n\n  - **body**: This part of the request provides the data to be sent.\n    - **mode**: Specifies the format of the body content. Here it is set to 'raw', indicating that the data is sent as a raw JSON string.\n    - **raw**: Contains the actual data payload to be sent in the request. This consists of the following fields:\n      - **sessionId**: This should be replaced with the actual session ID for authentication.\n      - **accountId**: A unique identifier for the user's account that owns the video stream.\n      - **streamId**: The identifier of the stream that is intended to be deleted.\n      - **channelId**: The identifier of the channel associated with the stream.\n      - **videoId**: The unique identifier of the video that is linked to the stream being deleted."
+      },
+      "response": []
+    },
+    {
+      "name": "Bitmovin - Create - Stream",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "da9b4135-88b7-43fd-a846-1c4cc7d82b6b",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"test123\",\n    \"description\": \"This is a test 123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.bitmovin.com/v1/streams/live",
+          "protocol": "https",
+          "host": [
+            "api.bitmovin.com"
+          ],
+          "path": [
+            "v1",
+            "streams",
+            "live"
+          ]
+        },
+        "description": "### Endpoint: Bitmovin - Create - Stream\n\n#### Request Details\n\n- **Authentication**:\n  - **Type**: `apikey`\n    - This denotes that the API request requires an API key for authentication.\n    - **API Key Details**:\n      - **Key**: `X-Api-Key`\n        - This is the header field name used to pass the API key.\n      - **Value**: `da9b4135-88b7-43fd-a846-1c4cc7d82b6`\n        - This is the actual API key that authorizes the request. Keep this value secure as it provides access to the API.\n\n- **Request Method**: `POST`\n  - This indicates that the request method is POST, which is typically used for creating new resources in RESTful APIs.\n\n- **Request URL**: `https://api.bitmovin.com/v1/streams/live`\n  - This is the endpoint URL where the request is sent. It points to the live stream creation API of the Bitmovin service.\n\n- **Headers**: \n  - There are no additional headers specified in this request.\n\n- **Body**:\n  - **Mode**: `raw`\n    - This means the body of the request is sent as raw data.\n  - **Raw Content**:\n    - The body contains a JSON formatted string which includes:\n      - **title**: `\"test123\"`\n        - This is a title for the stream being created. It is a string that helps identify the stream.\n      - **description**: `\"This is a test 123\"`\n        - This provides additional information about the stream being created. It is a string that offers more context or details.\n\n- **Options**:\n  - **Raw Options**: \n    - **Language**: `json`\n      - This indicates that the format of the raw body data is JSON, which is commonly used for transmitting data in web APIs. \n\nOverall, this endpoint is designed to create a new live stream on Bitmovin's platform by sending a POST request with required details in the body."
+      },
+      "response": []
+    },
+    {
+      "name": "CloudFlare - Create - Stream",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "J6uYKKFPH5oUcCm3wqurzOy5_sHrASSR9srHUjIQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"defaultCreator\": \"test123\",\n    \"deleteRecordingAfterDays\": null,\n    \"meta\": {},\n    \"recording\": {\n        \"mode\": \"automatic\", \n        \"requireSignedURLs\": false, \n        \"timeoutSeconds\": 0,\n        \"allowedOrigins\": []\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.cloudflare.com/client/v4/accounts/e1e50a59d512cf5ae589e24ea351c5eb/stream/live_inputs",
+          "protocol": "https",
+          "host": [
+            "api.cloudflare.com"
+          ],
+          "path": [
+            "client",
+            "v4",
+            "accounts",
+            "e1e50a59d512cf5ae589e24ea351c5eb",
+            "stream",
+            "live_inputs"
+          ]
+        },
+        "description": "{\n  \"name\": \"CloudFlare - Create - Stream\",\n  \"description\": \"This endpoint is used to create a new live input stream in your Cloudflare account. When making this request, you will need to provide several parameters in the body of the request as described below.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"description\": \"Authentication is done via a Bearer token. Replace the placeholder token (J6uYKKFPH5oUcCm3wqurzOy5_sHrASSR9srHUjIQ) with your actual Cloudflare API token to authenticate the request.\"\n    },\n    \"method\": \"POST\",\n    \"description\": \"This indicates that the request method used to interact with the endpoint is POST. It is used to send data to the server to create a new resource.\",\n    \"url\": \"https://api.cloudflare.com/client/v4/accounts/e1e50a59d512cf5ae589e24ea351c5eb/stream/live_inputs\",\n    \"description\": \"This is the URL for the Cloudflare API endpoint where the request will be sent. It targets the specific account (indicated by the account ID) to create live input streams.\",\n    \"headers\": [],\n    \"description\": \"No additional headers are required for this request, apart from the authentication token as a Bearer.\",\n    \"body\": {\n      \"mode\": \"raw\",\n      \"description\": \"The body of the request is sent in raw format, meaning the data structure is directly written out as a JSON object.\",\n      \"raw\": \"{\\n    \\\"defaultCreator\\\": \\\"test123\\\",\\n    \\\"deleteRecordingAfterDays\\\": null,\\n    \\\"meta\\\": {},\\n    \\\"recording\\\": {\\n        \\\"mode\\\": \\\"automatic\\\", \\n        \\\"requireSignedURLs\\\": false, \\n        \\\"timeoutSeconds\\\": 0,\\n        \\\"allowedOrigins\\\": []\\n    }\\n}\",\n      \"options\": {\n        \"raw\": {\n          \"language\": \"json\"\n        }\n      },\n      \"description\": \"This is the JSON body that contains parameters for the new live input stream. Below are the specific fields defined within the body:\\n      - \\\"defaultCreator\\\": This field specifies the default creator for the stream. It is set to 'test123' in this example.\\n      - \\\"deleteRecordingAfterDays\\\": This field determines how many days to keep the recording before deletion. A null value means there is no automatic deletion.\\n      - \\\"meta\\\": This field is used for any metadata associated with the stream. In the example, it is empty.\\n      - \\\"recording\\\": This section contains settings related to the recording of the stream:\\n        - \\\"mode\\\": Describes how the recording will function; 'automatic' means it will start recording as soon as the stream begins.\\n        - \\\"requireSignedURLs\\\": A boolean value that indicates whether signed URLs are necessary for accessing the stream. Set to false in this example, indicating signed URLs are not required.\\n        - \\\"timeoutSeconds\\\": The duration in seconds that the server will wait before cancelling a request. A value of 0 means there is no timeout.\\n        - \\\"allowedOrigins\\\": An array that specifies which origins are permitted to access the stream; it is empty in the example.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "CloudFlare - Verify - Token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "J6uYKKFPH5oUcCm3wqurzOy5_sHrASSR9srHUjIQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"defaultCreator\": \"test123\",\n    \"deleteRecordingAfterDays\": null,\n    \"meta\": {},\n    \"recording\": {\n        \"mode\": \"automatic\", \n        \"requireSignedURLs\": false, \n        \"timeoutSeconds\": 0,\n        \"allowedOrigins\": []\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.cloudflare.com/client/v4/user/tokens/verify",
+          "protocol": "https",
+          "host": [
+            "api.cloudflare.com"
+          ],
+          "path": [
+            "client",
+            "v4",
+            "user",
+            "tokens",
+            "verify"
+          ]
+        },
+        "description": "{\n  \"name\": \"CloudFlare - Verify - Token\",\n  \"description\": \"This endpoint is used to verify an API token with CloudFlare. The verification process checks whether the provided token is valid and has the necessary permissions for making API calls. It is an essential step for users to ensure that their authentication credentials are correct before proceeding with further actions that require authentication.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"J6uYKKFPH5oUcCm3wqurzOy5_sHrASSR9srHUjIQ\",\n          \"type\": \"string\"\n        }\n      ],\n      \"description\": \"The authorization method used here is a bearer token. This token should be included in the request header to authenticate the user's identity. The provided token in this example is a string that must be replaced with a valid token for successful verification.\"\n    },\n    \"method\": \"GET\",\n    \"description\": \"This method specifies the type of HTTP request to be made. In this case, a GET request is used, which is typically employed for retrieving data from the server. Here, it is utilized to check the validity of the provided token.\",\n    \"url\": \"https://api.cloudflare.com/client/v4/user/tokens/verify\",\n    \"description\": \"This is the URL endpoint for the token verification request. It is the address of the CloudFlare API that processes the request to verify the user's token. Users should ensure they are calling this exact URL for the verification process.\",\n    \"headers\": [],\n    \"description\": \"This section is empty, meaning no additional headers are sent with the request. However, users may add custom headers if required by their specific use case.\"\n  },\n  \"body\": {\n    \"mode\": \"raw\",\n    \"description\": \"The body of the request is sent in raw format, which is useful for specifying complex data structures when necessary. In this case, JSON format is used.\",\n    \"raw\": \"{\\n    \\\"defaultCreator\\\": \\\"test123\\\",\\n    \\\"deleteRecordingAfterDays\\\": null,\\n    \\\"meta\\\": {},\\n    \\\"recording\\\": {\\n        \\\"mode\\\": \\\"automatic\\\", \\n        \\\"requireSignedURLs\\\": false, \\n        \\\"timeoutSeconds\\\": 0,\\n        \\\"allowedOrigins\\\": []\\n    }\\n}\",\n    \"description\": \"This is a JSON structure that contains additional configuration related to the request. It defines parameters like 'defaultCreator', which likely indicates the user creating the token. Other fields include 'deleteRecordingAfterDays' set to null (indicating no deletion time is specified), an empty 'meta' object, and a 'recording' object that establishes settings for recording behavior, such as whether it is automatic and the requirements for signed URLs. The 'allowedOrigins' array is also empty, signifying that no specific origins are permitted at this point.\"\n  },\n  \"options\": {\n    \"raw\": {\n      \"language\": \"json\"\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

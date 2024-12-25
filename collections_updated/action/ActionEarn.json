@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "8a9bc788-da5a-45c0-b1f9-30b4a71852ea",
+    "name": "ActionEarn",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Earn - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didEarn\": false,\n    \"utilityType\": \"points\",\n    \"tokenAmount\": 10,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/earn/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "earn",
+            "create"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Earn - Create\n\n#### Request Details\n- **Method**: `POST`\n  - This request method is used to submit data to the specified endpoint for creating an action related to earning. \n\n- **URL**: `http://localhost:3000/api/action/earn/create`\n  - The endpoint URL that the request is sent to. This is where the action creation request will be processed.\n\n- **Authentication**: \n  - **Type**: `bearer`\n    - Indicates that the request uses bearer token authentication, which requires a token to access the API.\n  - **Bearer Token**:\n    - **Key**: `token`\n      - Represents the identifier for the token being sent.\n    - **Value**: `BearerToken`\n      - A placeholder for the actual bearer token required for authentication. This token should be replaced with a valid one to authorize the request.\n    - **Type**: `string`\n      - Specifies that the value is of string type.\n\n#### Headers\n- **Headers**: \n  - In this request, there are no custom headers set (keys and values are empty), and the header feature is currently disabled. Headers can provide additional context or authentication but are not utilized here.\n\n#### Body\n- **Body Mode**: `raw`\n  - Indicates that the body of the request is being sent in a raw format. \n- **Body Content**:\n  - This section contains the data that will be sent in the request body, formatted as JSON.\n\n##### Body Parameters\n- **sessionId**: `\"sessionId\"`\n  - A unique identifier for the session during which the action is being created. This helps track the user's current operation.\n\n- **accountId**: `\"accountId\"`\n  - The identifier for the account that is associated with the action being created. This is used to link the action to a specific user or entity.\n\n- **path**: `\"/live/channel/video123\"`\n  - The path indicating the live channel or resource associated with this action. This helps relate the action to a specific content resource.\n\n- **targetType**: `\"videoId\"`\n  - Specifies the type of target for the earning action. In this case, it's a video, denoting that the action is related to video content.\n\n- **targetId**: `\"videoId\"`\n  - The identifier of the target resource (in this case, a specific video) that the action is associated with.\n\n- **sourceType**: `\"accountId\"`\n  - Indicates the type of source that is generating the action. This entry suggests that the source is related to the account.\n\n- **sourceId**: `\"accountId\"`\n  - The identifier of the source entity that is earning points. This typically would match or relate to the accountId.\n\n- **didEarn**: `false`\n  - A boolean field indicating whether the action resulted in earning rewards or points. In this case, it is set to false, meaning no points were earned from this action.\n\n- **utilityType**: `\"points\"`\n  - Specifies the type of utility being earned. Here, it indicates that the rewards are in the form of points.\n\n- **tokenAmount**: `10`\n  - The amount of tokens (or points) being associated with this action. This number represents the quantity of points being accountable for the operation.\n\n- **name**: `\"\"`\n  - A placeholder for a name to describe the action further. Currently, it is not filled out and can be provided based on specific use cases.\n\n- **description**: `\"\"`\n  - A placeholder for an optional description of the action. This can be used to provide additional context or information about the purpose of the action being created.\n\n- **tags**: `\"\"`\n  - A placeholder for any tags associated with this action. Tags can help categorize or identify the action but are not specified in this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Earn - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didEarn\": false,\n    \"utilityType\": \"points\",\n    \"tokenAmount\": 20,\n    \"name\": \"update\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"earnId\":\"earnId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/earn/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "earn",
+            "update"
+          ]
+        },
+        "description": "### Action - Earn - Update Endpoint Description\n\n- **Method**: PUT\n  - This specifies that the request is a PUT method, commonly used to update existing resources.\n\n- **URL**: `http://localhost:3000/api/action/earn/update`\n  - This is the endpoint URL where the update request will be sent. It points to the local server and targets the action to earn updates.\n\n- **Authentication**:\n  - **Type**: Bearer Token\n    - This method of authentication uses a bearer token that must be included in the request to access the API securely.\n  - **Bearer Token Structure**:\n    - **Key**: `token`\n      - This is the identifier for the token parameter.\n    - **Value**: `BearerToken`\n      - This is where the actual bearer token value should be placed for authentication purposes.\n    - **Type**: string\n      - Indicates that the token value should be of string type.\n\n- **Headers**:\n  - **Key**: `Client-UUID`\n    - This is a unique identifier for the client making the request.\n  - **Value**: `ClientUUID`\n    - This is the placeholder for the actual Client UUID value that should be used.\n  - **Type**: default\n    - Specifies the default type for the header.\n\n- **Body**:\n  - **Mode**: raw\n    - Indicates that the body of the request will be in raw format, allowing for custom formatting.\n  - **Raw Content**: \n    - The following JSON structure should be sent in the body of the request:\n\n    ```json\n    {\n        \"sessionId\": \"sessionId\",\n        \"accountId\": \"accountId\",\n        \"path\": \"/live/channel/video123\",\n        \"targetType\": \"videoId\",\n        \"targetId\": \"videoId\",\n        \"sourceType\": \"accountId\",\n        \"sourceId\": \"accountId\",\n        \"didEarn\": false,\n        \"utilityType\": \"points\",\n        \"tokenAmount\": 20,\n        \"name\": \"update\",\n        \"description\": \"\",\n        \"tags\": \"\",\n        \"earnId\": \"earnId\"\n    }\n    ```\n\n    - **sessionId**: Represents the identifier for the session associated with the action.\n    - **accountId**: The unique ID for the account that is initiating the earn action.\n    - **path**: The path to the resource, in this case, a live channel video.\n    - **targetType**: Defines the type of target; here it is set as `videoId`.\n    - **targetId**: The specific ID of the target video to update.\n    - **sourceType**: Indicates the type of source being used, which is `accountId`.\n    - **sourceId**: The ID of the source account.\n    - **didEarn**: A boolean indicating whether the earning action has occurred, set to false here.\n    - **utilityType**: Describes the type of utility being used, in this case, it is `points`.\n    - **tokenAmount**: The amount of tokens to be updated, set to 20.\n    - **name**: A label for the update action, which is set as \"update\".\n    - **description**: A field for additional text; currently left empty.\n    - **tags**: A field for categorizing the update; currently left empty.\n    - **earnId**: An identifier for the earning action being updated.\n\nThis endpoint is used for updating earning information related to an account and its associated actions. Ensure all provided values are replaced with actual data before making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Earn - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/earn/get/?earnId=earnId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "earn",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "earnId",
+              "value": "earnId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Earn - Get\n\n#### Name:\n- **Action - Earn - Get**: This is the name of the API action being performed.\n\n#### Request Details:\n- **Auth**: The authentication type used for this request is bearer token authentication.\n  - **Type**: Refers to the method of authentication being used, which in this case is \"bearer\".\n  - **Bearer**: This section holds the details about the bearer token required for authorization.\n    - **Key**: The key for the bearer token, labeled as \"token\".\n    - **Value**: This is where the actual bearer token is placed, here it is represented as \"BearerToken\".\n    - **Type**: Indicates the datatype of the value, which is \"string\".\n\n- **Method**: The HTTP method used for this request is \"GET\", which is used to retrieve data from the server.\n\n- **URL**: This is the endpoint URL where the request is sent.\n  - Structure: `http://localhost:3000/api/action/earn/get/?earnId=earnId&sessionId=sessionId&accountId=accountId`\n  - **earnId**: A query parameter used to identify the specific earning action to retrieve.\n  - **sessionId**: This query parameter represents the session identifier associated with the earning action.\n  - **accountId**: This query parameter is used to specify the account from which the earning action is being retrieved.\n\n- **Headers**: This section includes any headers to be sent with the request.\n  - **Key**: Currently, there are no specific headers being sent, indicated by the empty key.\n  - **Value**: The header value is also left empty.\n  - **Type**: The type is set to \"default\", meaning standard header behavior is used.\n  - **Disabled**: This header is disabled, indicating it will not be included in the request.\n\n- **Body**: This part pertains to the body of the request.\n  - **Mode**: The body mode is set to \"raw\", which allows users to send unformatted data.\n  - **Raw**: In this case, there is no data being sent in the body of the request, as it is left empty.\n\n### Summary:\nThis API action allows users to retrieve earning information based on specific identifiers: earnId, sessionId, and accountId. It requires bearer token authentication to access the data, sends a GET request to the defined URL, and does not utilize additional headers or a request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Earn - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/earn/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "earn",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Earn - Get All\n\n- **Name**: Action - Earn - Get All\n  - This is the designation of the API endpoint which indicates that it is used to retrieve all earned actions.\n\n- **Request**: This section outlines the details of the API request.\n\n  - **Auth**: \n    - **Type**: bearer\n      - Authenticates the request using a bearer token.\n    - **Bearer**: \n      - **Key**: token\n        - The name of the authentication token parameter.\n      - **Value**: BearerToken\n        - Placeholder for the actual bearer token required for authentication to access the endpoint.\n      - **Type**: string\n        - Indicates that the value of the bearer token should be a string type.\n\n  - **Method**: GET\n    - Specifies that this request will use the HTTP GET method, which is primarily used for retrieving data from the server.\n\n  - **URL**: http://localhost:3000/api/action/earn/all/?sessionId=sessionId&accountId=accountId\n    - The complete URL to access the API.\n    - **Base URL**: http://localhost:3000/api/action/earn/all/\n      - The main endpoint to get all earned actions.\n    - **Query Parameters**:\n      - **sessionId**: sessionId\n        - A placeholder for the session ID, used to track user sessions for authentication or state management.\n      - **accountId**: accountId\n        - A placeholder for the account ID, representing the specific user account for which actions are being fetched.\n\n  - **Headers**: \n    - An array of headers to be sent with the request.\n      - **Key**: (empty)\n        - Currently no headers are specified.\n      - **Value**: (empty)\n        - Current lack of a specific value.\n      - **Type**: default\n        - Indicates the standard type of header.\n      - **Disabled**: true\n        - This header is not currently enabled, and thus will not be sent with the request.\n\n  - **Body**: \n    - **Mode**: raw\n      - Indicates that the body of the request is in raw format.\n    - **Raw**: \"\"\n      - Currently, there is no body content being sent with the GET request, as it is typically not required when fetching data.\n\nThis endpoint is designed for fetching all earned actions associated with a particular session and account. It requires proper authentication via a bearer token and appropriate session and account identifiers in the query parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Earn - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"earnId\":\"earnId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/earn/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "earn",
+            "delete"
+          ]
+        },
+        "description": "### Action - Earn - Delete \n\nThis endpoint is used to delete an earnings record associated with an account. Below is a detailed description of each component of the request.\n\n#### Request Components:\n\n- **Authorization:**\n  - **Type:** Bearer\n  - **Bearer Token:** \n    - **Key:** token\n    - **Value:** sessionId\n    - **Type:** string  \n    This section requires a bearer token for authentication. The token should be provided in the header of the request, representing the user's session.\n\n- **Method:** \n  - **HTTP Method:** POST  \n  This endpoint uses the POST method to send data to the server for processing.\n\n- **URL:** \n  - **Endpoint URL:** `http://localhost:3000/api/action/earn/delete`  \n  This URL is the endpoint where the delete request will be sent. It is currently configured to point to a local server.\n\n- **Headers:**\n  - **Key:** (none specified)\n  - **Value:** (none specified)\n  - **Type:** default\n  - **Disabled:** true  \n  Currently, there are no custom headers specified for this request. This section is configured but not active.\n\n- **Body:**\n  - **Mode:** raw  \n  The body of the request is sent in raw format containing JSON data.\n  - **Raw Payload:** \n    ```json\n    {\n      \"sessionId\": \"sessionId\",\n      \"accountId\": \"accountId\",\n      \"earnId\": \"earnId\"\n    }\n    ```  \n    - **sessionId:** Represents the session identifier for the user. It is required to authenticate the request.\n    - **accountId:** This is the unique identifier for the account from which the earnings record will be deleted.\n    - **earnId:** This is the unique identifier of the earnings record that is to be deleted. \n\n### Summary:\nThis request is designed to facilitate the deletion of a specific earnings record by sending the necessary identifiers in the request body while authenticating the user session with a bearer token."
+      },
+      "response": []
+    }
+  ]
+}

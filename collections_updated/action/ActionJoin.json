@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "b22efe15-fd5d-446f-b6bb-649d6b9450fa",
+    "name": "ActionJoin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Join - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didJoin\": true,\n    \"isUndo\": false,\n    \"groupType\": \"team\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/join/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "join",
+            "create"
+          ]
+        },
+        "description": "### Action - Join - Create Endpoint Description\n\nThis endpoint is used to create a join action for a specific session in the application. Below is a detailed description of each data field required in the request:\n\n#### Authentication\n- **Type**: `bearer`\n  - This indicates that the request requires bearer token authentication. \n- **Token**: \n  - **Key**: `token`\n  - **Value**: `BearerToken`\n  - This is where the user's authentication token should be placed for accessing the API.\n\n#### Request Method\n- **Method**: `POST`\n  - This specifies that the request to this endpoint should be made using the POST HTTP method.\n\n#### Endpoint URL\n- **URL**: `http://localhost:3000/api/action/join/create`\n  - This is the endpoint where the request is sent to create a join action in the application.\n\n#### Headers\n- **Headers**: \n  - An empty header object is present but disabled in this request. It can be modified or removed as needed.\n\n#### Request Body\nThe body of the request is in JSON format and contains several fields:\n\n- **sessionId**: \n  - This should contain the unique identifier for the session that the user is attempting to join.\n  \n- **accountId**: \n  - This is the unique identifier for the user’s account.\n\n- **path**: \n  - This field specifies the location of the content (e.g., video channel path) that the user wants to join.\n  \n- **targetType**: \n  - This indicates the type of target the action is directed towards, such as `videoId`.\n\n- **targetId**: \n  - This is the unique identifier of the target that the user is joining (usually corresponds to a video).\n\n- **sourceType**: \n  - Similar to `targetType`, this indicates the origin type of the action. In this case, it should generally be `accountId`.\n\n- **sourceId**: \n  - This is the unique identifier of the source from which the join action is initiated. \n\n- **didJoin**: \n  - A boolean that indicates whether the user has successfully joined the session (`true` if joined).\n\n- **isUndo**: \n  - A boolean that indicates whether this action is an undo of a previous join action. (`true` if it is an undo).\n\n- **groupType**: \n  - This indicates the type of group the user is joining, such as `team`.\n\n- **name**: \n  - This field can be used to provide an optional name for this join action. If not needed, it can be left empty.\n\n- **description**: \n  - An optional field to provide a description of the join action. This can also be left empty if not needed.\n\n- **tags**: \n  - This field allows for optional tags to categorize or label the join action for better identification.\n\nMake sure to fill in the appropriate values for each field as required by your specific application context when using this endpoint.\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Join - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didJoin\": true,\n    \"isUndo\": false,\n    \"groupType\": \"team\",\n    \"name\": \"update\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"joinId\":\"joinId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/join/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "join",
+            "update"
+          ]
+        },
+        "description": "### Action - Join - Update Endpoint Description\n\n**Request Method:** PUT  \n**Request URL:** `http://localhost:3000/api/action/join/update`\n\n**Authentication:**\n- **Type:** Bearer Token  \n  - **Key:** `token`  \n  - **Value:** `BearerToken` (Replace with actual token)  \n  - **Type:** string\n\n**Headers:**\n- **Key:** `Client-UUID`  \n  - **Value:** `ClientUUID` (Replace with actual client UUID)  \n  - **Type:** default\n\n**Request Body:**\nThe body of the request is in JSON format. Here is a breakdown of each field:\n\n- **sessionId:**  \n  Identifies the session associated with the join action. (String)\n\n- **accountId:**  \n  Represents the account that is performing the join operation. (String)\n\n- **path:**  \n  Specifies the path to the resource, in this case, a live video channel. It indicates where the join action is taking place. Example: `/live/channel/video123`.\n\n- **targetType:**  \n  Indicates the type of resource being targeted for the join action. In this example, it is set to `videoId`, meaning the join is related to a specific video.\n\n- **targetId:**  \n  Refers to the unique identifier of the target resource, which is presumably the video being joined. (String)\n\n- **sourceType:**  \n  Specifies the type of source account that is initiating the join action. In this case, it is set to `accountId`.\n\n- **sourceId:**  \n  Specifies the identifier of the source account, which is initiating the action. (String)\n\n- **didJoin:**  \n  A boolean indicating whether the action of joining was successful. It is set to `true` if the join was successful.\n\n- **isUndo:**  \n  A boolean to specify if the join action is being undone. It is set to `false` indicating that this is not an undo action.\n\n- **groupType:**  \n  Defines the type of group related to the join action. In this example, it is set to `team`, indicating that the joining action is associated with a team.\n\n- **name:**  \n  A string that describes the action being performed. In this example, it is labeled as `update`.\n\n- **description:**  \n  This field is for additional details about the join action. It can be left empty or filled with relevant information.\n\n- **tags:**  \n  Allows for tagging the join action for categorization or identification purposes. This field can also be left blank.\n\n- **joinId:**  \n  A unique identifier for the join action, which can be used for tracking or reference purposes. (String)\n\n### Usage\nThis endpoint is used when a client wants to update the action of joining a specific resource, such as a video, in a particular session. Ensure to replace placeholder values with actual data before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Join - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/join/get/?joinId=joinId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "join",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "joinId",
+              "value": "joinId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Action - Join - Get\n\n**Request Method:**  \nThis endpoint uses the HTTP GET method to retrieve information.\n\n**URL:**  \nThe request is made to `http://localhost:3000/api/action/join/get/`. The URL includes three query parameters:\n- `joinId`: This parameter is used to specify the unique identifier for the join action.\n- `sessionId`: This parameter is used to indicate the session associated with the join action.\n- `accountId`: This parameter is used to identify the account related to the join action.\n\n**Authentication:**  \nThe request requires Bearer token authentication. The authentication details are as follows:\n- **Type:** bearer\n- **Token:** A string value which is a placeholder for the actual token required to access this endpoint. Replace \"BearerToken\" with the actual token.\n\n**Headers:**  \nThere are currently no headers specified for this request since the key and value fields are empty and the header is disabled. If needed, headers can be added based on requirements.\n\n**Body:**  \nThe body of the request is set to raw mode but is currently empty. Since this is a GET request, no body content is typically necessary. \n\n### Summary\nUse this endpoint to retrieve join action details based on the provided joinId, sessionId, and accountId, ensuring to include a valid bearer token for authentication. Adjust the query parameters as necessary to fetch the desired information."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Join - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/join/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "join",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Join - Get All\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\",\n        \"bearer\": [\n          {\n            \"key\": \"token\",\n            \"value\": \"BearerToken\",\n            \"type\": \"string\"\n          }\n        ],\n        \"description\": \"Authentication method using a bearer token which is required to access this endpoint. The 'BearerToken' should be replaced with a valid token for authorization.\"\n      },\n      \"method\": \"GET\",\n      \"description\": \"This indicates that the request method is GET, which is used to retrieve data from the server.\"\n      \"url\": \"http://localhost:3000/api/action/join/all/?sessionId=sessionId&accountId=accountId\",\n      \"description\": \"The endpoint URL to access the 'Get All' action. It requires two query parameters: 'sessionId' which identifies the session, and 'accountId' which identifies the user's account. Both should be replaced with actual values.\"\n      \"headers\": [\n        {\n          \"key\": \"\",\n          \"value\": \"\",\n          \"type\": \"default\",\n          \"disabled\": true\n        }\n      ],\n      \"description\": \"This is reserved for potential additional headers, but currently no headers are required for this request. The entry is disabled.\"\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"\",\n        \"description\": \"This part of the request body is empty as GET requests do not typically send a body. This indicates that no additional data needs to be sent with the request.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Join - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"joinId\":\"joinId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/join/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "join",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Join - Delete\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"Indicates that the API request requires a bearer token for authentication. The token should be provided in the authorization header.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This is the key for the token being used. It should be 'token' for this request.\",\n            \"value\": \"sessionId\": \"This represents the actual session identifier that will be used for authentication. It needs to be replaced with the actual session ID.\",\n            \"type\": \"string\": \"Specifies that the value for the token should be a string.\"\n          }\n        ]\n      },\n      \"method\": \"POST\": \"Specifies the HTTP method to be used for this request, which is POST. This indicates that data will be sent to the server.\",\n      \"url\": \"http://localhost:3000/api/action/join/delete\": \"This is the endpoint URL where the API request will be sent. In this case, it points to a local server.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"Currently, there are no additional headers being set for this request, as the key is empty.\",\n          \"value\": \"\": \"The value for any additional headers is also empty.\",\n          \"type\": \"default\": \"The type of the header, but it is unnecessary since no headers are being used.\",\n          \"disabled\": true: \"Indicates that this header is disabled and will not be included in the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"The body of the request contains raw data that is being sent in the request.\",\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"joinId\\\":\\\"joinId\\\"}\": \"This is the JSON structure that holds the data being sent in the body of the request. It includes placeholders for three parameters: sessionId, accountId, and joinId. These should be replaced with actual values before sending the request.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

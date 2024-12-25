@@ -1,44 +1,49 @@
 get:
   tags:
     - EventsCategory
-  summary: Events - Category - Get All
+  summary: Events - Category - Get All By Account ID
   description: >-
-    This endpoint, "Events - Category - Get All", is a GET request used to
-    retrieve all categories of events. This is how each component is used:
+    Here is the detailed description of each element in this endpoint:
 
 
-    1. `name`: This is the title or alias of the endpoint. "Events - Category -
-    Get All" is a human-friendly name referring to the operation serving to
-    fetch all event categories.
+    - `"name"`: This is the name of the endpoint. It's labelled as "Events -
+    Category - Get All By Account ID". It suggests that this endpoint would
+    fetch all the events in a category, filtered by the provided account ID.
 
 
-    2. `auth`: It refers to the method by which the service authenticates the
-    user. This endpoint uses bearer token authentication (`type: "bearer"`). A
-    bearer token is a type of access token that allows the holder of the token
-    to access the API. It is supplied under the `value` key as a string datatype
-    in the `bearer` array. Replace `"BearerToken"` with your actual bearer token
-    when making the request.
+    - `"request"`: This describes the details of the HTTP request that will be
+    made to the specified URL.
 
+      - `"auth"`: This represents the authorization needed for this request.
+      
+        - `"type"`: This indicates the type of authorization which is "Bearer" in this case.
+          
+        - `"bearer"`: This is an array which contains the details of the Bearer token.
+          
+          - `"key"`: This indicates the name of the parameter which is "token".
+            
+          - `"value"`: This contains the value of the parameter. You are supposed to fill "BearerToken" here.
+            
+          - `"type"`: This indicates the datatype. In this case, it's a string.
 
-    3. `method`: Refers to HTTP methods. In this case, "GET" is the HTTP method
-    used. It is used to request data from a specified resource.
+      - `"method"`: This indicates the HTTP method used for the request. Here, it's "GET" which means that data is being fetched from the server.
 
+      - `"url"`: This represents the URL to which the request will be sent. In this case, the base URL is 'http://localhost:3000/api/events/category/all/' with a query parameter 'accountId' where you must provide the 'accountId' with which you want to filter the results.
 
-    4. `url`: This is the Server URL or API's endpoint.
-    "http://localhost:3000/api/events/category/all" is the address we are making
-    the request to. It should be replaced with the actual server's URL when
-    deployed.
+      - `"headers"`: This is an array that contains a list of headers to be sent with the request. No headers are set in this case as the type is "default" and it's disabled.
 
-
-    5. `headers`: In this collection, the headers field has no key-value pair;
-    therefore, it's disabled and does not have any effect on the request.
-
-
-    6. `body`: Here, the body mode is set to "raw" which means that the HTTP
-    request body contains data as a raw string. However, there is no raw data
-    being sent in this request.
+      - `"body"`: This part contains the body of the request. There is no body for this request because it's a GET request and the 'mode' is set to 'raw'.
+      
+    Make sure to replace 'BearerToken' and 'accountId' with actual values while
+    using this endpoint.
   security:
     - bearerAuth: []
+  parameters:
+    - name: accountId
+      in: query
+      schema:
+        type: string
+      example: accountId
   responses:
     '200':
       description: Successful response

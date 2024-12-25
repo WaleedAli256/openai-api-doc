@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationVideos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Videos - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Videos\",\"description\":\"This videos is my second videos\",\"tags\":\"second,videos\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isVideosPrivate\":true,\"isTournamentOnly\":false,\"isVideosDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/videos/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "videos",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Notification - Videos - Create\". It uses the POST method, which is typically a method to send data to the server to create a new resource. It uses the URL `http://localhost:3000/api/notification/videos/create`.\n\nLet's go through the main components of this request data:\n\n1. `auth`: this is for the authentication details of the request. It uses `Bearer` token authentication. You should insert a valid token in the `BearerToken` field, and it should be in the string format.\n\n2. `headers`: this is an array but is empty for this request. It generally contains additional details passed with the HTTP request in key-value pairs.\n\n3. `body`: this is the main data that is to be sent to the server. It's sent in raw format, indicating the data is sent as it is, i.e., without any encoding or encryption. The language of the request body data is JSON.\n\nLet's take a look at specific fields in the `body`:\n\n- `sessionId`: replace it with your session identifier.\n- `accountId`: replace it with your account identifier.\n- `name`: replace `My Second Videos` with your video's title.\n- `description`: replace the description for the video.\n- `tags`: put in some relevant tags separated by commas for your video.\n- `profilePhotoUrl`: specify the URL for the profile photo.\n- `coverPhotoUrl`: specify the URL for the cover photo.\n- `minimumTipAmount`: put the minimum tip amount.\n- `categoryId` and `category`: category identifier and category name respectively.\n- `subCategoryId` and `subCategory`: subcategory identifier and subcategory name respectively.\n- `isVideosPrivate`: indicate with true or false if the video is private.\n- `isTournamentOnly`: indicate with true or false if the video is only for tournaments.\n- `isVideosDefault`: indicate with true or false if this video is set as default video. \n- `isPreLiveNotificationAds`: indicate with true or false if there are ads before the live notification.\n- `isPostLiveNotificationAds`: indicate with true or false if there are ads after the live notification.\n- `breakPreLiveNotificationUrl`: indicate the URL for the ads presented before the live notification.\n- `breakPostLiveNotificationUrl`: indicate the URL for the ads presented after the live notification.\n\nPlease replace all the values in the `body` field as per your requirements before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Videos - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"videosId\":\"videosId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Videos 2.0\",\"description\":\"This videos is my second videos\",\"tags\":\"second,videos\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isVideosPrivate\":true,\"isTournamentOnly\":false,\"isVideosDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/videos/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "videos",
+            "update"
+          ]
+        },
+        "description": "This endpoint, \"Notification - Videos - Update\", makes a PUT request to the \"http://localhost:3000/api/notification/videos/update\" URL, and is used to update the video notification settings.\n\nThe authentication required for this endpoint is the bearer token type. The bearer token to be used should be the string \"BearerToken\".\n\nThe endpoint expects a header with the key \"Client-UUID\" and its value should be \"ClientUUID\".\n\nIn the body of the request, a raw JSON object is sent containing the details of the video notification settings that need to be updated.\n\n- \"videosId\": The unique identifier of the video.\n- \"sessionId\": The session identifier in which the video was created.\n- \"accountId\": The account identifier to which the video belongs.\n- \"name\": The updated name of the video.\n- \"description\": The updated description of the video.\n- \"tags\": The updated tags associated with the video, separated by commas.\n- \"profilePhotoUrl\": The updated URL of the profile photo associated with the video.\n- \"coverPhotoUrl\": The updated URL of the cover photo of the video.\n- \"minimumTipAmount\": The updated minimum tip amount for the video.\n- \"categoryId\": The updated category identifier to which the video belongs.\n- \"category\": The updated category name to which the video belongs.\n- \"subCategoryId\": The updated sub-category identifier associated with the video.\n- \"subCategory\": The updated sub-category name associated with the video.\n- \"isVideosPrivate\": A boolean value indicating whether the video is private (true) or not (false).\n- \"isTournamentOnly\": A boolean value indicating whether the video is only for tournaments (true) or not (false).\n- \"isVideosDefault\": A boolean value indicating whether the video is set as default (true) or not (false).\n- \"isPreLiveNotificationAds\": A boolean value indicating whether pre-live notification ads are enabled (true) or not (false).\n- \"isPostLiveNotificationAds\": A boolean value indicating whether post-live notification ads are enabled (true) or not (false).\n- \"breakPreLiveNotificationUrl\": The URL of any pre-live break notification video.\n- \"breakPostLiveNotificationUrl\": The URL of any post-live break notification video."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Videos - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/videos/get/?videosId=videosId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "videos",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "videosId",
+              "value": "videosId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Notification - Videos - Get\", is set up for you to retrieve video notifications from a specific account.\n\nThere are several details to the data contained within this API call:\n\n1. \"auth\": This field presents the details of the authentication necessary to make the request. The request uses Bearer Authentication, where a bearer token is needed to access this endpoint. The \"key\" is called 'token', and the value would be the unique \"Bearer Token\" provided for your use.\n\n2. \"method\": This details the HTTP method used for the call. In this case, it is a \"GET\" request, which retrieves information from the specified resource.\n\n3. \"url\": This provides the location from where you are retrieving the data. It is a local server mapped to port 3000. There are several query parameters specified here: 'videosId', 'sessionId', and 'accountId'. These are placeholders for the unique ID of the video, the session, and the account respectively.\n\n4. \"headers\": This describes the information to be sent in the header of the request. In the current configuration, there's a header field set up but it's empty and disabled. If there were a need to send additional information in the request header, it could be filled in.\n\n5. \"body\": This section shows the data that will be sent as part of the request body. In this 'GET' request, the \"body\" section is empty. 'Raw' mode is selected, but there's nothing in the 'raw' field, indicating no additional data is being sent in the body of this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Videos - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/videos/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "videos",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is called 'Notification - Videos - Get All'. \n\n1. \"name\": This field provides the name of the endpoint. Here, the value \"Notification - Videos - Get All\" signifies that the endpoint is used to retrieve all video notifications.\n\n2. \"request\": This contains all the necessary data required to make a request to the server.\n\n3. \"auth\": This field contains information about the authentication method used by the endpoint. \n   \n   3.1. \"type\": Defines the type of authentication used. In this case, a 'bearer' type, which means the access token used is a Bearer token. \n   \n   3.2. \"bearer\": This is a subfield containing more details about the bearer token.\n      \n      3.2.1. \"key\": The key refers to the token type, which is a 'token' here.\n      \n      3.2.2. \"value\": The value of the key which has to be of type 'string'. Here it is 'BearerToken'.\n      \n      3.2.3. \"type\": This is the data type of the value. In this case, it is a string.\n\n4. \"method\": Describes the HTTP method used for the request. In this case, it is 'GET', meaning the endpoint requests data from a specified resource.\n\n5. \"url\": This field contains the URL where the request will be sent. The specified parameters in the URL are 'sessionId' and 'accountId'.\n\n6. \"headers\": These are used to provide additional instructions for the request. Currently all the fields are left empty, and it's disabled.\n\n7. \"body\": This contains data that you want to send to the server. \n\n   7.1. \"mode\": Its value is 'raw' implying that the body data is not categorized in any specific format.\n   \n   7.2. \"raw\": It's used when you want to send plain/unformatted body data. Here, it's empty so no data is sent within the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Videos - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videosId\":\"videosId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/videos/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "videos",
+            "delete"
+          ]
+        },
+        "description": "\"Notification - Videos - Delete\" is the name of the API endpoint. This name is significant because it labels what the API endpoint is and what it's for. It indicates the primary functionality of deleting notifications related to videos.\n\nThe `request` field defines the details of the request that will be made to the endpoint. \n\nThe `auth` field within the request is used for authentication. In this case, it makes use of a \"bearer\" type token. This token is passed in the headers with the key name 'token' and its value set to 'sessionId'. The 'sessionId' is unique for each session and as such it is essential for authentication.\n\nThe `method` field indicates the HTTP method that will be used for the request. As it is 'POST', it suggests that the endpoint will process the provided data or changes the state based on the data.\n\nThe `url` field: This points to the location of the endpoint which is \"http://localhost:3000/api/notification/videos/delete\". \n\nIn the `headers` field, there are options for adding additional headers. In this case, the API does not require any extra headers as the value of the key field and the key itself are both empty and it is disabled.\n\nThe 'body' field contains the actual data that we want to send or process. Inside the body field, we have the 'mode' set to 'raw'. This indicates that the body data will be sent as a raw JSON string. In the 'raw' field, there's a JSON string with the keys 'sessionId', 'accountId', 'videosId'. These likely represent the session ID of the user, the account ID of the user, and the IDs of the videos that need to be deleted from the notifications respectively."
+      },
+      "response": []
+    }
+  ]
+}

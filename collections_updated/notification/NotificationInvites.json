@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationInvites",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Invites - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Invites\",\"description\":\"This invites is my second invites\",\"tags\":\"second,invites\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isInvitesPrivate\":true,\"isTournamentOnly\":false,\"isInvitesDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/invites/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "invites",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Notification - Invites - Create\". It's a POST request, which means it's intended to create a new content for notification invites and send the information to the server. \n\nThe endpoint URL is \"http://localhost:3000/api/notification/invites/create\". \n\nIt uses 'Bearer token' authentication. To reach the endpoint, you need to provide a valid 'Bearer token' under the \"token\" key. If you don't, your request will be rejected.\n\nThe request headers are currently empty and disabled by default. They are not required to successfully complete the request.\n\nIn the body of the request, it requires various data:\n\n- `sessionId`: A string that represents the session ID.\n- `accountId`: A string that represents the account ID.\n- `name`: The name of the invite.\n- `description`: A string describing the invite.\n- `tags`: The tags associated with the invite.\n- `profilePhotoUrl`: A URL leading to the profile photo for the invite.\n- `coverPhotoUrl`: A URL leading to the cover photo for the invite.\n- `minimumTipAmount`: The minimum amount required for a tip.\n- `categoryId` & `category`: These represent the category of the invite. \n- `subCategoryId` & `subCategory`: These represent the sub-category of the invite. \n- `isInvitesPrivate`: A boolean variable indicating whether the invite is private (true) or not (false).\n- `isTournamentOnly`: A boolean variable indicating whether the invite is only for a tournament (true) or not (false).\n- `isInvitesDefault`: A boolean variable indicating whether the invite is default (true) or not (false).\n- `isPreLiveNotificationAds`: A boolean variable indicating whether pre-live notification ads are enabled (true) or not (false).\n- `isPostLiveNotificationAds`: A boolean variable indicating whether post-live notification ads are enabled (true) or not (false).\n- `breakPreLiveNotificationUrl`: A URL leading to a notification break before the invite goes live.\n- `breakPostLiveNotificationUrl`: A URL leading to a notification break after the invite goes live.\n\nAll the data should be sent in the raw, JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Invites - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"invitesId\":\"invitesId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Invites 2.0\",\"description\":\"This invites is my second invites\",\"tags\":\"second,invites\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isInvitesPrivate\":true,\"isTournamentOnly\":false,\"isInvitesDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/invites/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "invites",
+            "update"
+          ]
+        },
+        "description": "This endpoint, named \"Notification - Invites - Update\", uses the `PUT` method and is dedicated to updating invite notifications. Here are the details of each field in the context of this API:\n\n- **auth**: The authentication method for this API is bearer token. You have to include a `key` named `token` and its `value` should be the bearer token. The `type` of this value is `string`.\n- **method**: The method used for this request is `PUT`, indicating that it's used to update data.\n- **url**: The URL endpoint to which the request will be sent. The route to update invites notification is: `http://localhost:3000/api/notification/invites/update`.\n- **headers**: The headers contain a `Client-UUID` key with its `value` as `ClientUUID`. It is the unique identifier for a client.\n- **body**: A set of keys included in the raw body of the request. Here's what each key represents:\n  - `invitesId`: The ID of the invites to be updated.\n  - `sessionId`: The ID of the session.\n  - `accountId`: The ID of the account.\n  - `name`: The new name of the invites.\n  - `description`: The new description for the invites.\n  - `tags`: The new tags for the invites.\n  - `profilePhotoUrl`: The new URL of the profile photo.\n  - `coverPhotoUrl`: The new URL of the cover photo.\n  - `minimumTipAmount`: The new minimum tip amount for the invites.\n  - `categoryId` & `category`: The new category ID and name.\n  - `subCategoryId` & `subCategory`: The new sub-category ID and name.\n  - `isInvitesPrivate`: A boolean value. If `true`, the invites are private.\n  - `isTournamentOnly`: A boolean value. If `true`, the invites are tournament only.\n  - `isInvitesDefault`: A boolean value. If `true`, the invites are set as default.\n  - `isPreLiveNotificationAds`: A boolean value. If `true`, pre-live notification ads are enabled.\n  - `isPostLiveNotificationAds`: A boolean value. If `true`, post-live notification ads are enabled.\n  - `breakPreLiveNotificationUrl`: The URL of the pre-live notification break ad.\n  - `breakPostLiveNotificationUrl`: The URL of the post-live notification break ad.\n\nTo use this endpoint, update the required fields with the necessary values under body, headers, and auth accordingly."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Invites - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/invites/get/?invitesId=invitesId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "invites",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "invitesId",
+              "value": "invitesId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is named 'Notification - Invites - Get'. It is designed to retrieve information about invites through a GET request. \n\nAUTHENTICATION\nThe authentication for this endpoint requires a 'bearer' type which means the request requires a bearer token for authorization. The key is 'token' and its associated value is named 'BearerToken' and is a string format. This token is typically generated through an authorization server and is passed in the header of the HTTP request. \n\nMETHOD\nThe HTTP method for this endpoint is 'GET'. A GET request is used to retrieve data from a server.\n\nURL\nThe URL for this endpoint is \"http://localhost:3000/api/notification/invites/get/?invitesId=invitesId&sessionId=sessionId&accountId=accountId\". InvitesId, sessionId and accountId are parameters in the URL.\n\nHEADERS\nA default header is included in the request, but it's disabled and contains no key and value.\n\nBODY\nThe body of the request is in 'raw' mode but contains no data. The raw mode allows you to write down the request body as it is. In this case, no specific data is required by the endpoint.\n\nRemember that the user needs to replace the 'BearerToken', 'invitesId', 'sessionId' and 'accountId' with actual values while making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Invites - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/invites/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "invites",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Notification - Invites - Get All\". It is a GET request and its primary purpose is to retrieve all invites' notifications. \n\nThe request made to this endpoint requires bearer authentication. The Bearer Token should be inserted in the 'token' field to ensure authorized access to this endpoint. This token is a string value and will act as an authorization key.\n\nThe base URL for this endpoint is \"http://localhost:3000/api/notification/invites/all/\". It accepts two parameters which are included in the URL: 'sessionId' and 'accountId'. \n- 'sessionId' is expected to be filled with the reference to the specific session related to the notifications. \n- 'accountId' is to be filled with the account's unique identifier related to the notifications to be fetched. \n\nIn headers, a default key-value pair is given, but it is disabled by default and is not contributing any additional information to the request.\n\nThe body of the request uses the 'raw' mode, but it doesn't contain any data (signified by the 'raw' field being empty). This means no additional data is sent within the request body for this endpoint. \n\nPlease ensure to replace 'BearerToken', 'sessionId', and 'accountId' with your actual bearer token, session id, and account id respectively while making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Invites - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"invitesId\":\"invitesId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/invites/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "invites",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Notification - Invites - Delete\". It is designed to handle the deletion of invite notifications.\n\nLet's break down the contents:\n\n1. **Auth** - The endpoint uses bearer authentication, implying that it requires a token for validation. The key for this token is \"token\" and the value expected is \"sessionId\". The type of the token is specified as a \"string\". You need to provide a valid session ID as your token to access this endpoint.\n\n2. **Method** - The HTTP method used is \"POST\", meaning this endpoint is used to send data to the server to create a new resource.\n\n3. **URL** - The endpoint's URL, where the request is sent, is specified as \"http://localhost:3000/api/notification/invites/delete\". Bear in mind this is a local URL and might be different in production or other environments.\n\n4. **Headers** - Headers can be used to provide additional information about the request. In this case, the key and value are empty, and the type is set as \"default\". Also, this option is currently disabled.\n\n5. **Body** - The request body here is in raw format. This contains the actual information that is to be sent to the server. It's a JSON with the keys \"sessionId\", \"accountId\", and \"invitesId\" which presumably refer to the session, account, and invites identifiers, respectively.\n\nRemember that incorrect auth tokens, URLs or body parameters could lead to unsuccessful requests. Use valid information according to your database to avoid such issues."
+      },
+      "response": []
+    }
+  ]
+}

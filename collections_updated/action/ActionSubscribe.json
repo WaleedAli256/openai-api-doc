@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "6eba3da5-f538-45ad-8d0c-fc05a76201e8",
+    "name": "ActionSubscribe",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Subscribe - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didSubscribe\": true,\n    \"isUndo\": false,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/subscribe/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "subscribe",
+            "create"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n- **name**: This is the name of the API endpoint. It identifies the action being performed, which is to subscribe to a service or item.\n\n- **request**: This section describes the details of the API request.\n\n  - **auth**: This defines the authentication method required for the request.\n    - **type**: Indicates the type of authentication used. In this case, it is \"bearer\", which typically means that a token is required.\n    - **bearer**: Contains the details of the bearer token.\n      - **key**: A label for the bearer token field, here it is simply \"token\".\n      - **value**: The actual token string used for authorization. \"BearerToken\" is a placeholder for a valid token.\n      - **type**: Specifies the data type of the token, which is \"string\".\n\n  - **method**: The HTTP method used for the request. In this case, it is \"POST\", indicating data is being sent to the server.\n\n  - **url**: The URL to which the request is to be sent. Here it is a local endpoint: \"http://localhost:3000/api/action/subscribe/create\".\n\n  - **headers**: This section outlines any HTTP headers that are sent with the request.\n    - **key**: The name of the header. An empty key indicates there are no specific headers being set.\n    - **value**: The value of the header. Again, this is empty as indicated.\n    - **type**: Specifies the type of the header. \"default\" is the type used here.\n    - **disabled**: A boolean that shows if the header is currently disabled (true means it is disabled).\n\n  - **body**: This contains the data sent with the request.\n    - **mode**: Indicates the format of the body content. \"raw\" means the body is sent as raw data.\n    - **raw**: This is the actual content of the body in JSON format. The body parameters are as follows:\n      - **sessionId**: A unique identifier for the session. It's meant to track the current session of the action being requested.\n      - **accountId**: The unique identifier for the user’s account that is making a subscription.\n      - **path**: This specifies the path to the resource being subscribed to, in this case, a specific channel or video.\n      - **targetType**: Specifies the type of target for the subscription, here it indicates it is a \"videoId\".\n      - **targetId**: The unique identifier for the target item (i.e., the specific video).\n      - **sourceType**: Indicates the type of source from which the subscription originates, here it's an \"accountId\".\n      - **sourceId**: This is the unique identifier of the source account.\n      - **didSubscribe**: A boolean flag that indicates whether the subscribe action has been successfully executed.\n      - **isUndo**: A boolean flag that shows if the action is attempting to undo a previous subscription (false means it is not an undo).\n      - **name**: A string field for providing a name related to the subscription, currently empty.\n      - **description**: A string field for providing a description of the subscription, currently empty.\n      - **tags**: A string field to include any tags associated with the subscription, currently empty.\n    - **options**: Additional configuration for the body.\n      - **raw**: This specifies the format of the body being sent, in this case, it is JSON.\n\nThis endpoint aims to create a subscription for a user to a certain resource, using the provided identifiers and metadata."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Subscribe - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"didSubscribe\": true,\n    \"isUndo\": false,\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"subscribeId\":\"subscribeId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/subscribe/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "subscribe",
+            "update"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n#### Name\n- **Action - Subscribe - Update**: The name of the action that indicates this endpoint is meant for updating subscription information.\n\n#### Request\n- **Auth**: Authentication method used to access the endpoint.\n  - **Type**: Specifies the authentication type being used, which is \"bearer\".\n  - **Bearer**: This array contains the authentication details.\n    - **Key**: The name of the authentication key, set as \"token\".\n    - **Value**: The placeholder value for the bearer token, indicating where to insert the actual token.\n    - **Type**: The data type of the value, noted as \"string\".\n\n- **Method**: The HTTP method used for the request, which is \"PUT\". This indicates that the client requests to update existing resources.\n\n- **URL**: The endpoint where the request is sent.\n  - **Value**: \"http://localhost:3000/api/action/subscribe/update\", this is where the update action is performed.\n\n- **Headers**: Additional information included in the request.\n  - **Key**: The name of the header being sent, which is \"Client-UUID\".\n  - **Value**: Placeholder for the client-specific UUID value that identifies the client making the request.\n  - **Type**: The type of the header, noted as \"default\".\n\n- **Body**: This contains the data sent with the request.\n  - **Mode**: Set to \"raw\", indicating that the body content is provided as raw text.\n  - **Raw**: The payload sent in JSON format containing various fields related to the subscription update.\n    - **sessionId**: Unique identifier for the current session.\n    - **accountId**: Identifier for the user’s account involved in the subscription.\n    - **path**: The URL path related to the specific resource being updated, in this case pointing to a video.\n    - **targetType**: Specifies the type of target for the subscription, set to \"videoId\", signifying the content type.\n    - **targetId**: The unique identifier for the target resource, which is the video being subscribed to.\n    - **sourceType**: Indicates the type of source from which the subscription comes, here specified as \"accountId\".\n    - **sourceId**: The unique identifier for the source account associated with the subscription.\n    - **didSubscribe**: A boolean value indicating whether the subscription action is being confirmed or not.\n    - **isUndo**: A boolean that indicates if the action is meant to revert a previous subscription.\n    - **name**: An optional field for providing a name associated with the subscription.\n    - **description**: An optional field for providing a description associated with the subscription.\n    - **tags**: An optional field where tags can be provided to categorize the subscription.\n    - **subscribeId**: A unique identifier for the subscription itself, used for tracking.\n\n- **Options**: Configuration options for the body content.\n  - **Raw**: Specifies that the content is in raw format.\n    - **Language**: Indicates the language used for the raw data, set to \"json\"."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Subscribe - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/subscribe/get/?subscribeId=subscribeId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "subscribe",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "subscribeId",
+              "value": "subscribeId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Action - Subscribe - Get\",\n  \"description\": \"This endpoint retrieves subscription details based on the provided parameters. It uses a GET request method to fetch data regarding a specific subscription.\",\n  \"request\": {\n    \"auth\": {\n      \"type\": \"bearer\",\n      \"description\": \"Authentication is done using a Bearer token. This token must be included in the request header to authorize access to the endpoint.\",\n      \"bearer\": [\n        {\n          \"key\": \"token\",\n          \"value\": \"BearerToken\",\n          \"type\": \"string\",\n          \"description\": \"The Bearer token used for authentication. Replace 'BearerToken' with the actual token value required for accessing the resource.\"\n        }\n      ]\n    },\n    \"method\": \"GET\",\n    \"description\": \"The HTTP method used for this request is GET, which is typically used to retrieve data from the server.\",\n    \"url\": \"http://localhost:3000/api/action/subscribe/get/?subscribeId=subscribeId&sessionId=sessionId&accountId=accountId\",\n    \"description\": \"The URL for the request includes three query parameters: subscribeId, sessionId, and accountId. These parameters are necessary for identifying the specific subscription details to be fetched.\",\n    \"headers\": [\n      {\n        \"key\": \"\",\n        \"value\": \"\",\n        \"type\": \"default\",\n        \"disabled\": true,\n        \"description\": \"No headers are actively set for this request, as this entry is currently disabled. If needed, headers can be enabled and configured according to requirements.\"\n      }\n    ],\n    \"body\": {\n      \"mode\": \"raw\",\n      \"raw\": \"\",\n      \"description\": \"This endpoint does not require a request body, as it uses the GET method. The body is set to raw and empty.\"\n    }\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Subscribe - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/subscribe/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "subscribe",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "```json\n{\n  \"description\": {\n    \"name\": \"Action - Subscribe - Get All\": \"This is the title of the endpoint request used to retrieve a list of all subscriptions for a user or a system action.\",\n    \n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"This indicates that bearer token authentication is being used to authorize the request.\",\n        \n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This is the name of the authentication key used in the request.\",\n            \"value\": \"BearerToken\": \"This represents the actual bearer token that is required to authenticate the request. Users will need to replace 'BearerToken' with a valid token.\",\n            \"type\": \"string\": \"This indicates that the value of the token is of type string.\"\n          }\n        ]\n      },\n      \n      \"method\": \"GET\": \"This specifies that the HTTP method used for the request is GET, which is used to request data from the specified resource.\",\n      \n      \"url\": \"http://localhost:3000/api/action/subscribe/all/?sessionId=sessionId&accountId=accountId\": \"This is the endpoint URL where the GET request is sent. It includes two query parameters: 'sessionId' and 'accountId', which need to be supplied with the actual session ID and account ID for the request to work.\",\n      \n      \"headers\": [\n        {\n          \"key\": \"\": \"This is a placeholder for any additional headers, which are currently empty.\",\n          \"value\": \"\": \"This is the value for the additional headers, which are currently empty.\",\n          \"type\": \"default\": \"This indicates the type of the header, although no headers are currently defined here.\",\n          \"disabled\": true: \"This indicates that the header is disabled and thus will not be included in the request.\"\n        }\n      ],\n      \n      \"body\": {\n        \"mode\": \"raw\": \"This specifies that the body of the request is in raw format.\",\n        \n        \"raw\": \"\": \"This field is currently empty, meaning that there is no body payload required for this GET request.\"\n      }\n    }\n  }\n}\n```"
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Subscribe - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"subscribeId\":\"subscribeId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/subscribe/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "subscribe",
+            "delete"
+          ]
+        },
+        "description": "## Description\n\n### Name\n**Action - Subscribe - Delete**: This is the name of the API request, indicating its function is to delete a subscription action.\n\n### Request\n- **Auth**: This section describes the authentication method used to access the API.\n  - **Type**: The authentication type is set to bearer, which implies that a token is required for authorization.\n  - **Bearer**: This array contains the parameters for the bearer token.\n    - **Key**: This is the identifier for the token parameter, specified as \"token\".\n    - **Value**: The expected value for this key is \"sessionId\", which should be replaced with the actual session token during a real request.\n    - **Type**: The type is set to \"string\", indicating that the value is a string format.\n\n- **Method**: The HTTP method used for this request is POST. This means that the request is intended to send data to the server to perform an action, in this case, deleting a subscription.\n\n- **URL**: The endpoint for this request is \"http://localhost:3000/api/action/subscribe/delete\". This URL is where the request will be sent to process the unsubscribe action.\n\n- **Headers**: This section includes the HTTP headers for the request.\n  - There is an empty header entry present in the configuration, but it is currently disabled. This means no additional custom headers will be sent with the request.\n\n- **Body**: This defines the content of the request.\n  - **Mode**: The body mode is set to \"raw\", indicating that the body content will be sent as raw text rather than through form-encoded data.\n  - **Raw**: The body content is a JSON string that contains the following parameters:\n    - **sessionId**: This key should be replaced with the actual session identifier for the user making the request.\n    - **accountId**: This key should be replaced with the actual account identifier to specify which account is being unsubscribed.\n    - **subscribeId**: This key should be replaced with the actual subscription identifier that needs to be deleted.\n\nThis endpoint is designed to handle requests to unsubscribe users from a particular service or notifications by providing the necessary identifiers in the request body."
+      },
+      "response": []
+    }
+  ]
+}

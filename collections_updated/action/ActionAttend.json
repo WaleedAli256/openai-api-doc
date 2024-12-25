@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "05d0baed-1060-4350-983f-3918e1f05d7c",
+    "name": "ActionAttend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Attend - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 0,\n    \"name\":\"\",\n    \"description\":\"\",\n    \"tags\":\"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/attend/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "attend",
+            "create"
+          ]
+        },
+        "description": "### Endpoint: Action - Attend - Create\n\nThis endpoint allows users to create an attendance action to a specific session or event.\n\n#### Request Overview\n- **Method**: POST\n- **URL**: `http://localhost:3000/api/action/attend/create`\n- **Authentication**: Requires a Bearer token for access.\n\n#### Authentication Details\n- **Type**: bearer\n- **Bearer Token**: A token must be provided in the header for authorization. The placeholder `\"BearerToken\"` should be replaced with a valid token value for access.\n\n#### Headers\n- Currently, no specific headers are required as the entry is disabled. If needed, custom headers can be added by specifying the key and value.\n\n#### Body Parameters\nThis request requires a JSON body formatted as raw data. Below are the necessary fields:\n\n1. **sessionId**: (string) The unique identifier for the session you are attending.\n2. **accountId**: (string) Your unique account identifier that will be linked to the attendance record.\n3. **path**: (string) The URL path available for live content, where the attendance takes place (e.g., `/live/channel/video123`).\n4. **targetType**: (string) The type of target you are attending to, typically a label such as \"videoId.\"\n5. **targetId**: (string) The unique identifier for the target, such as the specific video ID you are attending.\n6. **sourceType**: (string) The type of source from which the attendance originates, usually something like \"accountId.\"\n7. **sourceId**: (string) The unique identifier of the source, which corresponds to your account ID.\n8. **tokenAmount**: (integer) A numerical value representing the amount of any tokens or credits associated with this action. It can be zero if no tokens apply.\n9. **name**: (string) An optional name for the attendance action being created.\n10. **description**: (string) An optional description of the attendance event or action.\n11. **tags**: (string) An optional field for any tags associated with the attendance action for categorization or search purposes.\n\nThe body must be formatted in JSON, and an example is provided that outlines how to structure these parameters correctly. Make sure to replace placeholders with actual values when making a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Attend - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"tournamentId\",\n    \"targetId\": \"tournamentId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"attendId\": \"attendId\",\n    \"tokenAmount\": 0,\n    \"name\": \"update\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/attend/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "attend",
+            "update"
+          ]
+        },
+        "description": "### Endpoint Description: Action - Attend - Update\n\n**Request Type**: PUT\n\n**Request URL**: `http://localhost:3000/api/action/attend/update`\n\n#### Authentication\n- **Auth Type**: Bearer Token\n  - **Key**: `token`\n  - **Value**: `BearerToken` (This is a placeholder where the actual bearer token should be provided.)\n\n#### Headers\n- **Client-UUID**: `ClientUUID`\n  - This header should contain a unique identifier for the client making the request.\n\n#### Request Body\nThe body of the request is formatted in JSON and contains the following fields:\n\n1. **sessionId**:\n   - Represents the unique identifier for the session. This is vital for tracking the session associated with the attendance update.\n\n2. **accountId**:\n   - This field stores the unique identifier of the user's account that is making the update. It helps in identifying which user's attendance is being modified.\n\n3. **path**:\n   - The path to the specific video or resource. In this case, it indicates the location of the video being referenced, e.g., `/live/channel/video123`.\n\n4. **targetType**:\n   - Specifies the type of target associated with the attendance update. Here, it's indicated as `tournamentId`, which signifies that the target is related to a tournament.\n\n5. **targetId**:\n   - Contains the unique identifier of the target entity (e.g., the tournament) that the update relates to.\n\n6. **sourceType**:\n   - Indicates the type of source of the update. In this case, it is set to `accountId`, implying the source is the account ID.\n\n7. **sourceId**:\n   - This is the unique identifier of the source (the user's account) that is linked to the update.\n\n8. **attendId**:\n   - A unique identifier for the attendance entry that is being updated.\n\n9. **tokenAmount**:\n   - Represents the amount of tokens associated with the attendance. Here, it is set to `0`, which may indicate that no tokens are being transferred or used in this update.\n\n10. **name**:\n    - A descriptive name for the attendance update. In this context, it is set to `update`.\n\n11. **description**:\n    - An optional field for providing additional details about the attendance update. Here, it is left empty.\n\n12. **tags**:\n    - This optional field can be used to include tags related to the attendance update, aiding in categorization or searching. It is also empty in this instance.\n\nOverall, this endpoint allows users to update the attendance details associated with a specific session and account, linking it to a target tournament, while providing the flexibility to include metadata such as tokens, names, descriptions, and tags."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Attend - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/attend/get/?attendId=attendId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "attend",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "attendId",
+              "value": "attendId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Attend - Get\n\n- **Name**: Indicates the name of the endpoint, which is \"Action - Attend - Get\". This is used to identify the specific action being performed.\n\n- **Request**: This section contains all the details necessary to make the request to the server.\n\n  - **Auth**: Specifies the authentication method required to access the endpoint.\n  \n    - **Type**: The type of authentication being used, which in this case is \"bearer\". This means that the request requires a bearer token for authorization.\n    \n    - **Bearer**: An array containing details about the bearer token being used for authentication.\n    \n      - **Key**: The key for the token which is labeled as \"token\".\n      \n      - **Value**: The actual token value that is being passed, represented here as \"BearerToken\". This should be replaced with the actual token when making the request.\n      \n      - **Type**: Specifies the type of the value, which is \"string\".\n\n  - **Method**: The HTTP method used for the request, which is \"GET\". This indicates that the endpoint is used to retrieve data.\n\n  - **URL**: The endpoint URL where the request is being sent. It includes the following parameters:\n  \n    - **attendId**: The identifier for the attendance record that you want to retrieve.\n    \n    - **sessionId**: The identifier for the session related to the attendance.\n    \n    - **accountId**: The identifier for the account associated with the attendance record.\n    \n    The example URL provided is: `http://localhost:3000/api/action/attend/get/?attendId=attendId&sessionId=sessionId&accountId=accountId`\n\n  - **Headers**: Contains any additional headers to be sent with the request. In this case:\n  \n    - **Key**: There is no key specified for headers (empty string).\n    \n    - **Value**: There is no value specified (empty string).\n    \n    - **Type**: Marked as \"default\", but this header is currently disabled and will not be included in the request.\n\n  - **Body**: Describes the body of the request, which in this instance:\n  \n    - **Mode**: The body mode is set to \"raw\".\n    \n    - **Raw**: There is no content in the body for this GET request, which is typical since GET requests usually do not send a body."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Attend - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/attend/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "attend",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Attend - Get All\n\n- **Name**: Action - Attend - Get All  \n  This is the title of the API request, indicating its purpose to retrieve all attendance actions.\n\n- **Request**: This section outlines the configuration of the API request.\n\n  - **Auth**: This specifies the authentication method required for the request.\n    - **Type**: Bearer  \n      Indicates that the request uses bearer token authentication.\n    - **Bearer**: \n      - **Key**: \"token\"  \n        This is the identifier for the authentication token.\n      - **Value**: \"BearerToken\"  \n        This represents the actual token value that must be used for authentication. Replace this placeholder with a valid bearer token.\n      - **Type**: String  \n        The data type for the token.\n\n  - **Method**: GET  \n    This indicates that the HTTP method used for the request is GET, which means the request is intended to retrieve data from the specified resource.\n\n  - **URL**: `http://localhost:3000/api/action/attend/all/?sessionId=sessionId&accountId=accountId`  \n    This is the endpoint where the GET request will be sent. It includes query parameters:\n    - **sessionId**: This parameter is used to specify the session identifier. Replace \"sessionId\" with the actual session ID you wish to query.\n    - **accountId**: This parameter indicates the account identifier. Replace \"accountId\" with the actual account ID you wish to query.\n\n  - **Headers**: \n    This section lists any HTTP headers that need to be included in the request.\n    - **Key**: (empty)  \n      This indicates that there are no additional headers specified for this request.\n    - **Value**: (empty)  \n      No value is given since there are no headers to include.\n    - **Type**: Default  \n      Indicates that the header type is default.\n    - **Disabled**: True  \n      This indicates that the header is currently disabled and will not be included in the request.\n\n  - **Body**: \n    This section defines the body content of the request.\n    - **Mode**: Raw  \n      Indicates that the request body is in raw format.\n    - **Raw**: (empty)  \n      This indicates that there is no body content provided for the request, which is typical for a GET request.\n\n### Summary\nThis API request is designed to get all attendance actions associated with a specific session and account. It requires bearer token authentication and uses query parameters to specify the session and account details. No additional headers or body content are needed for this GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Attend - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"attendId\":\"attendId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/attend/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "attend",
+            "delete"
+          ]
+        },
+        "description": "**Endpoint Description: Action - Attend - Delete**\n\n- **Name**: Action - Attend - Delete  \n  This is the identifier of the API request. It signifies that the operation is intended for deleting an attendance action.\n\n- **Request**: This section outlines the details required to make the API call.\n\n  - **Auth**: This specifies the authentication method used for the request. In this case, it is a Bearer token authentication.\n  \n    - **Type**: Bearer  \n      Indicates that the request requires a Bearer token for authentication, which is a common method for securing API endpoints.\n    \n    - **Bearer**: This array contains information regarding the authentication token that must be included in the request.\n    \n      - **Key**: \"token\"  \n        This denotes the name of the token parameter.\n      \n      - **Value**: \"sessionId\"  \n        This represents the actual token placeholder that should be replaced with a valid session ID during the request.\n      \n      - **Type**: string  \n        Specifies that the token value should be a string.\n\n  - **Method**: POST  \n    This indicates the type of HTTP request method used when making the API call. Here, POST is used, which typically suggests that the request is intended to modify resources (in this case, deleting an attendance entry).\n\n  - **URL**: \"http://localhost:3000/api/action/attend/delete\"  \n    This is the endpoint URL where the request should be sent. It indicates that the action is to delete an attendance record in the system.\n\n  - **Headers**: This section outlines any headers that need to be included with the request.\n  \n    - **Key**: \"\" (empty)  \n      There are currently no specific headers included in this request, as the key field is empty.\n    \n    - **Value**: \"\" (empty)  \n      Similarly, there is no value assigned since no headers are being used.\n    \n    - **Type**: default  \n      Indicates the type of header, but here it does not apply as no headers are active (disabled: true).\n\n  - **Body**: This section specifies the format and content of the data being sent with the POST request.\n  \n    - **Mode**: raw  \n      This indicates that the body of the request will be in raw format, allowing for flexible content types like JSON.\n    \n    - **Raw**: \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"attendId\\\":\\\"attendId\\\"}\"  \n      This JSON structure defines the required parameters to be sent in the request body:\n      \n      - **sessionId**: \"sessionId\"  \n        This is a placeholder that should be replaced with an actual session ID to identify the user's session.\n      \n      - **accountId**: \"accountId\"  \n        This is a placeholder for the account ID associated with the attendance record that needs to be deleted.\n      \n      - **attendId**: \"attendId\"  \n        This is a placeholder for the specific attendance ID that corresponds to the record intended for deletion."
+      },
+      "response": []
+    }
+  ]
+}

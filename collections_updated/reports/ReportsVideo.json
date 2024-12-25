@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "ReportsVideo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Reports - Video - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Video\",\"description\":\"This video is my second video\",\"tags\":\"second,video\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isVideoPrivate\":true,\"isTournamentOnly\":false,\"isVideoDefault\":true,\"isPreLiveReportsAds\":true,\"isPostLiveReportsAds\":true,\"breakPreLiveReportsUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveReportsUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/video/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "video",
+            "create"
+          ]
+        },
+        "description": "The endpoint \"Reports - Video - Create\" will allow you to post a request to create a new video report. Following is a detailed description for each data included in the request.\n\n- `auth`: This section handles authorization. It uses the \"bearer\" type which employs a bearer token as an authorization method. There is a key named \"token\" that stores the value of the bearer token as a string.\n\n- `method`: This is the HTTP method for your request. In this case, it is set to \"POST\" which means the API endpoint creates a new resource, a video report, in this case.\n\n- `url`: This is the endpoint to make the request, http://localhost:3000/api/reports/video/create\n\n- `headers`: This field is used to send additional information to the server. Currently, it’s empty and disabled.\n\n- `body`: It contains the data you send to the server. It has different modes, raw in this case. The payload in raw mode is a JSON string that contains the following fields:\n\n  - `sessionId`, `accountId`: They uniquely identify a session and an account respectively.\n  \n  - `name`, `description`, `tags`, `profilePhotoUrl`, `coverPhotoUrl`: These pertain to attributes particular to the video, i.e., name, description, tags, profile photo URL, and cover photo URL. \n  \n  - `minimumTipAmount`: This is the minimum amount set for tips on the video.\n  \n  - `categoryId`, `category`, `subCategoryId`, `subCategory`: They specify the category and sub-category that the video belongs to. Both have their unique Ids and Names.\n  \n  - `isVideoPrivate`, `isTournamentOnly`, `isVideoDefault`, `isPreLiveReportsAds`, `isPostLiveReportsAds`: These are boolean fields indicating whether the video is private, meant for tournament only, is a default video, or whether there will be ads before and after the live reports respectively.\n  \n  - `breakPreLiveReportsUrl`, `breakPostLiveReportsUrl`: These are URLs for the videos that would be played during pre-live and post-live reports breaks respectively.\n\n- `options`: Defined how the body content should be interpreted, in this case, it tells that the body content language is JSON. \n\nThis endpoint requires several information about a video in order to create a valid video report. Please refer to above information while submitting a request."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Video - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"videoId\":\"videoId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Video 2.0\",\"description\":\"This video is my second video\",\"tags\":\"second,video\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isVideoPrivate\":true,\"isTournamentOnly\":false,\"isVideoDefault\":true,\"isPreLiveReportsAds\":true,\"isPostLiveReportsAds\":true,\"breakPreLiveReportsUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveReportsUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/video/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "video",
+            "update"
+          ]
+        },
+        "description": "This is the \"Reports - Video - Update\" endpoint. It uses the PUT method to update the details of a video report. The request is authenticated through a Bearer token system. A valid access token is required for this endpoint, which is provided as a string type in the 'token' key.\n\nThe request is made to an API running at localhost on port 3000 at the path '/api/reports/video/update'. The endpoint requires a UUID, which is a unique identifier used to validate the client. It's specified in the 'Client-UUID' key in the headers.\n\nThe body of the request delivers the payload in raw JSON format and it contains multiple data fields:\n\n1. 'videoId' is the unique identifier for the video being updated.\n2. 'sessionId' is the unique identifier for the ongoing session.\n3. 'accountId' is the unique identifier for the account where the video resides.\n4. 'name' is the updated name of the video.\n5. 'description' provides details about the video.\n6. 'tags' are keywords associated with the video for improved searchability.\n7. 'profilePhotoUrl' and 'coverPhotoUrl' are URLs linking to the updated profile and cover photos respectively for the video.\n8. 'minimumTipAmount' specifies the minimum tip amount that can be attributed to the video.\n9. 'categoryId' and 'category' are identifiers and names respectively for the updated category of the video.\n10. 'subCategoryId' and 'subCategory' are identifiers and names respectively for the updated sub-category of the video.\n11. 'isVideoPrivate' indicates whether the video is private or not. If set to true, the video is private.\n12. 'isTournamentOnly' confirms if the video is only for tournaments. If set to false, the video isn't exclusive to tournaments.\n13. 'isVideoDefault' shows if the video is set as the default video. When marked true, it is the default video.\n14. PRE and POST live report ads flags are represented respectively by 'isPreLiveReportsAds' and 'isPostLiveReportsAds'. These booleans specify whether pre-live and post-live ads are active in the video.\n15. 'breakPreLiveReportsUrl' and 'breakPostLiveReportsUrl' are respective URLs for linking to the break pre-live and break post-live video reports."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Video - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/video/get/?videoId=videoId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "video",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "videoId",
+              "value": "videoId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is titled \"Reports - Video - Get\". The description of each data is as follows:\n\n1. \"name\": This field signifies the title of the endpoint, which is \"Reports - Video - Get\".\n\n2. \"request\": This field encapsulates all the aspects of the HTTP request involved in this endpoint.\n\n3. \"auth\": This field handles the authorization needed to access this endpoint. The type of authorization used here is \"bearer\".\n\n4. \"bearer\": Contains the details needed for bearer token authentication. The \"key\" has the value \"token\" and the \"value\" is where the actual token string \"BearerToken\" goes. The \"type\" defines the data type of the token, which is a string.\n\n5. \"method\": Refers to the HTTP method being used in the request. In this case, it's \"GET\".\n\n6. \"url\": This is the endpoint URL where the request has to be sent. \n\n   It has path parameters that you need to replace with actual values:\n   \n   - videoId: Identifier for a unique video.\n   \n   - sessionId: Identifier for the session.\n   \n   - accountId: Identifier for the user account.\n\n7. \"headers\": This is an array containing the data for HTTP headers to be sent with the request. In this case, the headers are kept blank and are disabled.\n\n8. \"body\": The body of the HTTP request. Since this is a \"GET\" request, the body is kept empty. \"mode\" signifies how the body will be transmitted, and in this case, the body will be sent as is (\"raw\")."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Video - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/video/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "video",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint, named \"Reports - Video - Get All,\" is used to retrieve and display all video reports. Here's a breakdown of each data field present in the endpoint:\n\n- **name**: This is the name of the endpoint. It's labelled as 'Reports - Video - Get All', implying that its purpose is to fetch all video reports.\n\n- **request**: This segment contains all the necessary components to make a request and the method of the request.\n  \n  - **auth**: This section is for authentication purposes. It uses the 'bearer' authentication method. In this case, you will need to provide a valid token (BearerToken) of type 'string'. This token is crucial for authorizing your request.\n\n  - **method**: This defines the HTTP method used for request. For this endpoint, the 'GET' method is used which means it retrieves information.\n\n  - **url**: This is the URL or location where the request will be sent. It specifies the path to retrieve all video reports. It contains parameters `sessionId` and `accountId` which should be replaced with actual session ID and account ID respectively for successful data fetch.\n\n  - **headers**: This part is currently empty and disabled. The 'default' type implies that if it's enabled and provided with a 'key' and 'value', they will be sent with every request. It is used to provide additional information about the request.\n\n  - **body**: The body part signifies the data to be sent along with the request. The 'mode' is currently set to 'raw', meaning any data contained in the 'raw' field will be transmitted as it is. At present, it is empty as it's a 'GET' request which generally doesn't include any body.\n\nBe sure to fill in all necessary fields and replace any placeholders with valid information to ensure the endpoint functions correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Reports - Video - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"videoId\":\"videoId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/reports/video/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "reports",
+            "video",
+            "delete"
+          ]
+        },
+        "description": "This endpoint is named \"Reports - Video - Delete\". It is used to delete videos from the report. \n\nThe request uses the \"POST\" method, indicating it is designed to send information to the server to create a new resource. \n\nYou need to authenticate yourself in order to access this endpoint. The authorization uses the \"bearer\" type, which means that the authentication information is sent in the header of the request. The bearer token, which is a unique key generated for each user, is required for this endpoint. The token is represented by a session ID, which is a string type.\n\nThe URL of the endpoint is `http://localhost:3000/api/reports/video/delete`. This is the location where the request should be sent. The 'localhost' and the port '3000' indicate that the server is running locally in the development environment.\n\nThere is a header field available in this endpoint but it is disabled and contains no key or value.\n\nThe request body contains data that is sent to the server. It uses the \"raw\" mode, which allows you to write directly in the text input. The raw body data includes three parameters which are represented as a JSON object. \n\nThe \"sessionId\" is a string that represents the session ID of the user. It is a unique identifier that points to the session of the authenticated user. \n\nThe \"accountId\" indicates the account ID which may be used to specify the account from which the video should be deleted.\n\nThe \"videoId\" is used to specify the particular video in the report you want to delete. It is a unique identifier for each video in the database. \n\nMake sure to replace \"sessionId\", \"accountId\", and \"videoId\" with real values before sending the request."
+      },
+      "response": []
+    }
+  ]
+}

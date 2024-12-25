@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "82bdebf0-99b6-4356-9e19-d8f8f8383d2a",
+    "name": "ActionRefund",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Refund - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"didRefund\": false,\n    \"reason\": \"null\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/refund/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "refund",
+            "create"
+          ]
+        },
+        "description": "### Action - Refund - Create\n\n#### Request Overview\nThis endpoint is used to create a refund action for a specific session and account. It requires an authentication token and accepts a JSON body containing details about the refund.\n\n#### Authentication\n- **Type**: Bearer\n- **Bearer Token**: This is a placeholder for the actual token needed to authenticate the request. Replace \"BearerToken\" with your valid bearer token.\n\n#### Request Method\n- **Method**: POST\n  - This request method is used to create a new resource or perform an action on the server.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/action/refund/create`\n  - This is the endpoint where the refund action request is sent. It's hosted locally on port 3000.\n\n#### Headers\n- **Headers**: (No headers are defined)\n  - Currently, there are no headers defined in the request. You can modify this to include any necessary headers if required.\n\n#### Request Body\n- **Mode**: Raw\n  - The body of the request is defined in raw format as JSON.\n\n##### JSON Body Parameters\n1. **sessionId**: \n   - **Description**: This represents the unique identifier for the session related to the refund action. Replace \"sessionId\" with the actual session ID.\n\n2. **accountId**: \n   - **Description**: This is the unique identifier for the account that is initiating the refund. Replace \"accountId\" with the actual account ID.\n\n3. **path**: \n   - **Description**: This is the path to the specific content linked to the refund request. For example, it could reference a video or channel.\n\n4. **targetType**: \n   - **Description**: This specifies the type of target for the refund action. In this case, it is set to \"videoId\" indicating the target is a video.\n\n5. **targetId**: \n   - **Description**: This is the unique identifier of the target resource (e.g., video) to which the refund applies. Replace \"videoId\" with the actual target ID.\n\n6. **sourceType**: \n   - **Description**: This specifies the type of source for the refund, indicating where the refund is coming from. It is set to \"accountId\" for account-based refunds.\n\n7. **sourceId**: \n   - **Description**: This is the unique identifier of the source account for the refund. Replace \"accountId\" with the actual source ID.\n\n8. **name**: \n   - **Description**: This field allows you to provide a name for the refund action. It is currently left empty.\n\n9. **description**: \n   - **Description**: This field provides a space for a description of the refund action. It is currently left empty.\n\n10. **tags**: \n    - **Description**: This field can be used to specify tags related to the refund action. It is currently left empty.\n\n11. **didRefund**: \n    - **Description**: A boolean value indicating whether the refund has been processed. It's set to false by default, meaning the refund has not yet occurred.\n\n12. **reason**: \n    - **Description**: This field allows for the inclusion of a reason for the refund. It's set to \"null\", indicating no reason has been provided.\n\n#### Options\n- **Raw Options**: \n  - **Language**: JSON\n    - The request body is formatted in JSON for clarity and ease of use."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Refund - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"videoId\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"tags\": \"\",\n    \"didRefund\": true,\n    \"reason\": \"duplicate charge\",\n    \"refundId\":\"refundId\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/refund/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "refund",
+            "update"
+          ]
+        },
+        "description": "### Action - Refund - Update Endpoint Description\n\n#### Request Structure\n\n1. **Auth**\n   - **Type**: Specifies the authentication method used for the API request.\n     - `bearer`: Indicates that bearer token authentication is required.\n   - **Bearer Token**:\n     - **Key**: `token`\n       - Represents the name of the token used for authorization.\n     - **Value**: `BearerToken`\n       - This should be replaced with the actual bearer token for accessing the API.\n     - **Type**: Specifies the data type of the key.\n       - `string`: Indicates that the token value is a string.\n\n2. **Method**\n   - **Type**: `PUT`\n     - Indicates that this endpoint is used to update existing data.\n\n3. **URL**\n   - **Endpoint**: `http://localhost:3000/api/action/refund/update`\n     - The URL where the API request is sent for updating refund actions.\n\n4. **Headers**\n   - Required headers for the request:\n     - **Key**: `Client-UUID`\n       - A unique identifier for the client making the request.\n     - **Value**: `ClientUUID`\n       - Should be replaced with the actual UUID of the client.\n     - **Type**: `default`\n       - Indicates the header is of the default type.\n\n5. **Body**\n   - Specifies the data that needs to be sent with the request.\n     - **Mode**: `raw`\n       - Indicates that the body content is sent in raw format.\n     - **Raw Content**: JSON formatted string, requires specific fields:\n       - **sessionId**: \n         - The ID for the current session.\n       - **accountId**: \n         - The ID associated with the user's account.\n       - **path**: \n         - The path where the resource (video) is located on the server, e.g., `/live/channel/video123`.\n       - **targetType**: \n         - The type of the target for the action, which in this case is `videoId`.\n       - **targetId**: \n         - The actual ID of the video being referred to.\n       - **sourceType**: \n         - The type of source from which the refund is being processed, set as `accountId`.\n       - **sourceId**: \n         - The ID of the source account initiating the refund.\n       - **name**: \n         - A placeholder for the name associated with the refund action; can be left empty.\n       - **description**: \n         - A placeholder for a description of the refund action; can be left empty.\n       - **tags**: \n         - A placeholder for any tags related to the refund action; can be left empty.\n       - **didRefund**: \n         - A boolean value (true or false) indicating whether the refund has been processed.\n       - **reason**: \n         - A string explaining the reason for the refund; an example provided is `duplicate charge`.\n       - **refundId**: \n         - A unique identifier for this specific refund action.\n\n### Summary\nThis endpoint is a PUT request used to update refund actions. It requires bearer token authentication and requires specific data within the body for processing the refund, including session and account IDs, target and source types, and additional information related to the refund reason and identification."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Refund - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/refund/get/?refundId=refundId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "refund",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "refundId",
+              "value": "refundId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n- **Name**: This is the title of the API request which indicates its purpose. In this case, the endpoint is for fetching refund details, specifically titled \"Action - Refund - Get\".\n\n- **Request**: This section contains all the details required to make the API call.\n\n  - **Auth**: This specifies the type of authentication method used for the API. Here, it uses \"bearer\" authentication, which requires a token to authorize the user's access.\n\n    - **Type**: Indicates that the authentication method is \"bearer\".\n\n    - **Bearer**: This is an array that holds the token information used for authentication.\n\n      - **Key**: This field denotes the name of the token parameter. In this case, it is labeled as \"token\".\n\n      - **Value**: The actual token needed for authorization; here it is a placeholder \"BearerToken\".\n\n      - **Type**: Specifies the data type of the value, which is set as \"string\".\n\n  - **Method**: This indicates the HTTP method used for the request. For this endpoint, the method is \"GET\", which is typically used to retrieve data from the server.\n\n  - **URL**: This is the endpoint to which the request is made. The URL includes query parameters that are essential for the request.\n\n    - **Base URL**: \"http://localhost:3000/api/action/refund/get/\" is the base endpoint.\n\n    - **Query Parameters**:\n      - **refundId**: This is a required parameter that specifies the unique identifier for the refund that is to be retrieved.\n      - **sessionId**: This parameter is used to identify the session related to the refund request.\n      - **accountId**: This parameter indicates the account associated with the refund.\n\n  - **Headers**: This section is usually where custom HTTP headers can be defined for the request. In this instance, no specific headers are set, as indicated by empty key and value fields. The header is marked as disabled.\n\n  - **Body**: This part describes the request body content. For a GET request, it is typically empty, which is reflected here.\n\n    - **Mode**: Indicates the format of the body content. It is set to \"raw\".\n\n    - **Raw**: This field is empty, meaning no body content is sent with the GET request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Refund - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/refund/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "refund",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Refund - Get All\n\n- **Name**: This is the name of the API endpoint which is \"Action - Refund - Get All\". It signifies that this endpoint is used to retrieve all refund actions.\n\n- **Request**: This section describes the details of the HTTP request sent to the server.\n\n  - **Auth**: This describes the authentication method for the request.\n    - **Type**: Specifies that the authentication type is \"bearer\", indicating that the request requires a bearer token for authentication.\n    - **Bearer**: This is an array that holds the authentication token required for access.\n      - **Key**: Identifies the type of authentication token being used, which is \"token\".\n      - **Value**: This is a placeholder for the actual bearer token which is represented as \"BearerToken\". Users should replace this with a valid token when making requests.\n      - **Type**: Indicates the data type of the token, which is a \"string\".\n\n  - **Method**: The HTTP method used for this request is \"GET\". This method is used for retrieving data from the server.\n\n  - **URL**: This is the endpoint URL for the request.\n    - **Base URL**: \"http://localhost:3000/api/action/refund/all/\" is the base URL indicating that this request is made to a local server.\n    - **Query Parameters**: \n      - **sessionId**: This parameter is mandatory and should be replaced with a specific session identifier needed to filter the refunds.\n      - **accountId**: This parameter is also mandatory and must be replaced with the account identifier associated with the refunds.\n\n  - **Headers**: This section is meant for any additional HTTP headers required by the request.\n    - **Key**: This field is currently empty, suggesting no additional headers are needed.\n    - **Value**: Correspondingly, this value is also empty, signifying no additional information is included in the headers.\n    - **Type**: The type is designated as \"default\".\n    - **Disabled**: This property is set to true, indicating that no extra headers are currently being sent with the request.\n\n  - **Body**: This section contains information about the body of the request.\n    - **Mode**: This is set to \"raw\", indicating that the body will consist of raw data format.\n    - **Raw**: The body content is empty, implying that no data needs to be sent in the body for this GET request. \n\nThis endpoint is primarily used to pull a list of all refund actions based on the provided session and account identifiers. Ensure that the bearer token is valid and that the appropriate parameters are supplied in the URL before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Refund - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"refundId\":\"refundId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/refund/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "refund",
+            "delete"
+          ]
+        },
+        "description": "### Action - Refund - Delete\n\n#### Request Summary\nThis endpoint is designed to delete a refund action. It requires a POST request containing specific authentication and body parameters.\n\n#### Authentication\n- **Type**: Bearer\n  - This indicates that the request requires a bearer token for authentication.\n  - **Token Details**:\n    - **Key**: token\n    - **Value**: sessionId\n    - **Type**: string\n  - The sessionId will be used to authenticate the request and verify the user's session.\n\n#### HTTP Method\n- **Method**: POST\n  - This means that the request is intended to submit data to the server for processing.\n\n#### URL\n- **Endpoint URL**: http://localhost:3000/api/action/refund/delete\n  - This is the address where the request should be sent to perform the delete operation for the refund.\n\n#### Headers\n- **Headers**: An empty header is set, currently disabled.\n  - There are no specific headers required for this request, but space is reserved in case additional headers are needed in the future.\n\n#### Request Body\n- **Body Mode**: Raw\n  - The body is sent in raw JSON format.\n  \n- **Raw JSON Structure**:\n  - The body must contain the following key-value pairs:\n    - **sessionId**: Represents the unique session identifier for the user making the request. This is critical for tracking user sessions.\n    - **accountId**: Identifies the user's account associated with the refund. This links the request to a particular user.\n    - **refundId**: Specifies the unique identifier for the refund that is to be deleted. This tells the server which refund action to remove.\n\nUsers should ensure that all the required fields in the body are populated correctly to successfully execute the delete operation."
+      },
+      "response": []
+    }
+  ]
+}

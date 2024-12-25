@@ -1,0 +1,256 @@
+{
+  "info": {
+    "_postman_id": "8602816b-6044-44fe-8e65-1c620c552ad3",
+    "name": "TournamentGeneral",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Tournament - General - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\",\"name\":\"My Second Tournament\",\"description\":\"This tournament is my second attempt to engage a wider audience.\",\"tags\":\"second,tournament,engagement\",\"category\":\"General\",\"subCategory\":\"Specific\",\"scheduleDate\":\"2023-10-15\",\"scheduleTime\":\"14:00:00\",\"streamHours\":4,\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"voteTokenQuantity\":100,\"votingTimeReset\":\"5\",\"voteButtonQuantity\":4,\"voteButtonText1\":\"Option 1\",\"voteButtonText2\":\"Option 2\",\"voteButtonText3\":\"Option 3\",\"voteButtonText4\":\"Option 4\",\"isRewardsEnabled\":true,\"isTournamentPrivate\":false,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":false,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\",\"maxStreamerAmount\":10,\"maxTeamCaptainAmount\":2,\"maxScoreKeeperAmount\":3,\"maxOpponentAmount\":5,\"started\":false,\"paused\":false,\"stopped\":false}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/general/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "general",
+            "create"
+          ]
+        },
+        "description": "**Description of Each Data in the Tournament - General - Create Endpoint:**\n\n- **auth**: \n  - Defines the type of authentication required for this request.\n  \n  - **type**: The authentication method being used. In this case, it is \"bearer\", meaning a bearer token is required for authorization.\n  \n  - **bearer**: A list of bearer token details needed for the request.\n    \n    - **key**: The name of the token being provided, labeled as \"token\".\n    \n    - **value**: Represents the actual bearer token value which will be sent with the request, represented here as \"BearerToken\".\n    \n    - **type**: Indicates the data type of the value, which is \"string\".\n\n- **method**: This specifies the HTTP method used for the request. \"POST\" means that the request is intended to create a new resource.\n\n- **url**: The endpoint URL where the request will be sent. In this case, it is \"http://localhost:3000/api/tournament/general/create\".\n\n- **headers**: This is an array of HTTP headers sent with the request. Currently, it has a disabled header that does not have a key or value.\n\n- **body**: \n  - The content being sent with the request. It is set to be in \"raw\" mode with JSON format.\n  \n  - **mode**: Specifies that the body content type is raw.\n  \n  - **raw**: Contains the actual JSON payload being sent with the request, which includes various fields necessary for tournament creation.\n\n    - **sessionId**: A unique identifier for the session in which the tournament is being created.\n    \n    - **accountId**: The identifier for the account that is creating this tournament.\n    \n    - **teamId**: The identifier for the team participating in the tournament.\n    \n    - **name**: The name of the tournament, in this case, \"My Second Tournament\".\n    \n    - **description**: A brief description of the tournament, providing context and purpose, e.g., \"This tournament is my second attempt to engage a wider audience.\"\n    \n    - **tags**: Keywords associated with the tournament to enhance searchability, e.g., \"second,tournament,engagement\".\n    \n    - **category**: The general classification of the tournament, here labeled as \"General\".\n    \n    - **subCategory**: A more specific classification within the general category, marked as \"Specific\".\n    \n    - **scheduleDate**: The date when the tournament is scheduled to begin, formatted as \"YYYY-MM-DD\", e.g., \"2023-10-15\".\n    \n    - **scheduleTime**: The time when the tournament is set to start, noted in HH:MM:SS format, e.g., \"14:00:00\".\n    \n    - **streamHours**: The number of hours allocated for streaming the tournament, such as \"4\".\n    \n    - **coverPhotoUrl**: A URL linking to the cover photo for the tournament, used for promotional purposes, e.g., \"https://example.com/cover.jpg\".\n    \n    - **voteTokenQuantity**: The total number of voting tokens available for participants, denoted here as \"100\".\n    \n    - **votingTimeReset**: The duration (in minutes) that voting time will reset, in this instance, \"5\".\n    \n    - **voteButtonQuantity**: The number of voting options available to participants, here specified as \"4\".\n    \n    - **voteButtonText1** to **voteButtonText4**: The labels for the voting options presented to users, allowing them to choose between different options.\n    \n    - **isRewardsEnabled**: A boolean indicating whether rewards are enabled for the tournament, set to true.\n    \n    - **isTournamentPrivate**: A boolean indicating whether the tournament is private or public, set to false.\n    \n    - **isPreLiveTournamentAds**: A boolean indicating whether ads will run before the live event starts, set to true.\n    \n    - **isPostLiveTournamentAds**: A boolean indicating whether ads will run after the live event ends, set to false.\n    \n    - **breakPreLiveVideoUrl**: A URL for a video to be shown before the tournament begins, e.g., \"https://example.com/break-pre-live.mp4\".\n    \n    - **breakPostLiveVideoUrl**: A URL for a video to be shown after the tournament ends, e.g., \"https://example.com/break-post-live.mp4\".\n    \n    - **maxStreamerAmount**: The maximum number of streamers allowed in the tournament, specified as \"10\".\n    \n    - **maxTeamCaptainAmount**: The maximum number of team captains permitted, set to \"2\".\n    \n    - **maxScoreKeeperAmount**: The maximum number of scorekeepers allowed to participate, specified as \"3\".\n    \n    - **maxOpponentAmount**: The maximum number of opponents allowed to participate, indicated as \"5\".\n    \n    - **started**: A boolean indicating whether the tournament has started, currently set to false.\n    \n    - **paused**: A boolean indicating whether the tournament is currently paused, also set to false.\n    \n    - **stopped**: A boolean indicating whether the tournament has stopped, set to false."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - General - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"teamId\":\"teamId\",\"tournamentId\":\"tournamentId\",\"name\":\"NikeAdidasTournament\",\"description\":\"This tournament is my second attempt to engage a wider audience.\",\"tags\":\"second,tournament,engagement\",\"category\":\"General\",\"subCategory\":\"Specific\",\"scheduleDate\":\"2023-10-15\",\"scheduleTime\":\"14:00:00\",\"streamHours\":4,\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"voteTokenQuantity\":100,\"votingTimeReset\":\"5\",\"voteButtonQuantity\":4,\"voteButtonText1\":\"Option 1\",\"voteButtonText2\":\"Option 2\",\"voteButtonText3\":\"Option 3\",\"voteButtonText4\":\"Option 4\",\"isRewardsEnabled\":true,\"isTournamentPrivate\":false,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":false,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\",\"maxStreamerAmount\":10,\"maxTeamCaptainAmount\":2,\"maxScoreKeeperAmount\":3,\"maxOpponentAmount\":5,\"started\":false,\"paused\":false,\"stopped\":false}\n"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/general/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "general",
+            "update"
+          ]
+        },
+        "description": "### Description of Endpoint Data\n\n**Endpoint Name**: Tournament - General - Update\n\n**Request Type**: PUT  \nThis endpoint is used to update an existing tournament's general details.\n\n---\n\n#### Headers\n\n1. **Authorization**: \n   - **Type**: Bearer\n   - **Key**: `token` \n   - **Value**: A string representing the Bearer token for authentication.\n\n2. **Client-UUID**: \n   - **Key**: `Client-UUID` \n   - **Value**: A unique identifier for the client making the request. This is used to identify requests coming from different clients.\n\n---\n\n#### Request Body (JSON)\n\n1. **sessionId**: \n   - The identifier for the current session of the tournament. This is used to associate the update with a specific session.\n\n2. **accountId**: \n   - The identifier for the account associated with the tournament. This links the tournament to the correct user account.\n\n3. **teamId**: \n   - The identifier for the team involved in the tournament. This specifies which team is being referenced in the update.\n\n4. **tournamentId**: \n   - The unique identifier for the tournament that is being updated. This is required to fetch and modify the correct tournament details.\n\n5. **name**: \n   - The name of the tournament. For example, \"NikeAdidasTournament\". This is how the tournament will be displayed to users.\n\n6. **description**: \n   - A brief explanation about the tournament. In this case, \"This tournament is my second attempt to engage a wider audience.\" This helps users understand the purpose of the tournament.\n\n7. **tags**: \n   - A comma-separated list of tags related to the tournament, such as \"second,tournament,engagement\". Tags help in categorizing and searching for the tournament.\n\n8. **category**: \n   - The main category of the tournament. In this case, it is \"General\". Categories help in organizing tournaments by theme or type.\n\n9. **subCategory**: \n   - A specific sub-category under the main category, for instance, \"Specific\". This adds further classification to the tournament.\n\n10. **scheduleDate**: \n   - The date when the tournament is scheduled to take place, formatted as \"YYYY-MM-DD\". For example, \"2023-10-15\".\n\n11. **scheduleTime**: \n   - The time when the tournament is scheduled to start, formatted as \"HH:MM:SS\". For example, \"14:00:00\".\n\n12. **streamHours**: \n   - The number of hours allocated for the live streaming of the tournament. For example, `4`.\n\n13. **coverPhotoUrl**: \n   - A URL link to the cover photo for the tournament. It typically displays on the tournament's page, such as \"https://example.com/cover.jpg\".\n\n14. **voteTokenQuantity**: \n   - The total number of voting tokens available for the tournament. This sets the limit on how many votes can be cast, such as `100`.\n\n15. **votingTimeReset**: \n   - The time duration (in minutes) after which the voting options will reset, for example, \"5\".\n\n16. **voteButtonQuantity**: \n   - The number of voting options available; in this case, `4`.\n\n17. **voteButtonText1 - 4**: \n   - Text labels for each voting option button. For example, \"Option 1\", \"Option 2\", \"Option 3\", \"Option 4\".\n\n18. **isRewardsEnabled**: \n   - A boolean value indicating whether rewards are enabled for the tournament. `true` means rewards are applicable.\n\n19. **isTournamentPrivate**: \n   - A boolean indicating if the tournament is private. `false` means it is publicly accessible.\n\n20. **isPreLiveTournamentAds**: \n   - A boolean indicating if advertisements are allowed before the tournament goes live. `true` means ads are permitted.\n\n21. **isPostLiveTournamentAds**: \n   - A boolean indicating if advertisements can be shown after the tournament ends. `false` means ads are not permitted.\n\n22. **breakPreLiveVideoUrl**: \n   - A URL link to a video that plays before the live tournament starts. For example, \"https://example.com/break-pre-live.mp4\".\n\n23. **breakPostLiveVideoUrl**: \n   - A URL link to a video that plays after the tournament concludes. For example, \"https://example.com/break-post-live.mp4\".\n\n24. **maxStreamerAmount**: \n   - The maximum number of streamers allowed to participate in the tournament. This limits participation, such as `10`.\n\n25. **maxTeamCaptainAmount**: \n   - The maximum number of team captains allowed. This restricts the number of leaders in the tournament, for example, `2`.\n\n26. **maxScoreKeeperAmount**: \n   - The maximum number of scorekeepers allowed in the tournament, such as `3`.\n\n27. **maxOpponentAmount**: \n   - The maximum number of opponents a team can compete against, for example, `5`.\n\n28. **started**: \n   - A boolean indicating if the tournament has started. `false` means the tournament is not yet underway.\n\n29. **paused**: \n   - A boolean indicating if the tournament is currently paused. `false` means it is not paused.\n\n30. **stopped**: \n   - A boolean indicating if the tournament has been stopped or concluded. `false` means the tournament is still ongoing."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - General - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/general/get/?tournamentId=tournamentId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "general",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "tournamentId",
+              "value": "tournamentId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Tournament - General - Get\n\nThis endpoint is used to retrieve general information about a specific tournament. Below is a detailed description of each component of the request.\n\n#### Request Details:\n\n- **Auth**:\n  - **Type**: The authorization method used for this request is Bearer Token.\n  - **Bearer**: This specifies the details of the token used for authentication.\n    - **Key**: \"token\" indicates the name of the authorization parameter.\n    - **Value**: \"BearerToken\" serves as a placeholder for the actual bearer token that will be used for authentication. This token must be included in the request to access secured resources.\n    - **Type**: \"string\" indicates that the value of the token is a string.\n\n- **Method**: \n  - \"GET\" is the HTTP method used to retrieve data from the specified endpoint.\n\n- **URL**: \n  - The base URL for the request is `http://localhost:3000/api/tournament/general/get/`. The query parameters in the URL are:\n    - **tournamentId**: This parameter should contain the unique identifier for the specific tournament whose information is to be retrieved.\n    - **sessionId**: This parameter should contain the unique session identifier associated with the tournament.\n    - **accountId**: This parameter should contain the identifier for the user's account making the request.\n\n- **Headers**: \n  - This section includes any HTTP headers that may be sent along with the request. In this case, there are no headers specified, and the header is disabled. Headers can be added if necessary for additional specifications.\n\n- **Body**: \n  - **Mode**: \"raw\" indicates that the body of the request is expected to contain raw data.\n  - **Raw**: This field is empty, meaning there is no request body to send. A GET request typically does not include a body.\n\nThis endpoint is crucial for fetching tournament-related data from the server, making it essential for applications that provide tournament information or functionalities related to tournaments. Make sure to replace the placeholder values in the URL with actual values when making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - General - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/general/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "general",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint: Tournament - General - Get All\n\n**Description:**\nThis API endpoint retrieves all general information related to tournaments.\n\n#### Request Details:\n\n- **Authentication:**\n  - **Type:** Bearer Token\n  - **Bearer Token:**\n    - **Key:** token\n      - This is the name of the authorization key used to pass the bearer token in the request.\n    - **Value:** BearerToken\n      - This should be replaced with the actual bearer token required for authentication. The token must be valid to access the data.\n    - **Type:** string\n      - Indicates that the token value should be a string format.\n\n- **HTTP Method:** \n  - **GET**\n    - This request uses the GET method to fetch data from the API. No data is sent to the server; instead, it retrieves current data.\n\n- **URL:**\n  - `http://localhost:3000/api/tournament/general/all/?sessionId=sessionId&accountId=accountId`\n    - This is the endpoint used to access the tournament data.\n    - **Query Parameters:**\n      - **sessionId:** sessionId\n        - The identifier for the current session, which may be required to fetch relevant tournament data.\n      - **accountId:** accountId\n        - The identifier for the user’s account, necessary for filtering data associated with a particular user.\n\n- **Headers:**\n  - **Key:** (not specified)\n    - No custom headers are being used in this request since the key and value are empty.\n    - **Value:** (not specified)\n    - This header is currently disabled, indicating that it does not play a role in this specific request.\n\n- **Body:**\n  - **Mode:** raw\n    - The body format is set to raw, meaning no specific type of body content is being sent with the request.\n  - **Raw:** \n    - The body is empty as no additional data is transmitted in this GET request. \n\nThis structure allows users to fetch comprehensive tournament details without having to provide additional data in the body. Make sure to replace the session and account IDs with actual values before making the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - General - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"tournamentId\":\"tournamentId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/general/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "general",
+            "delete"
+          ]
+        },
+        "description": "{\n  \"name\": \"Tournament - General - Delete\",\n  \"description\": {\n    \"request\": {\n      \"auth\": {\n        \"type\": \"bearer\": \"Authentication method used to authorize the request. The bearer token is required for access control.\",\n        \"bearer\": [\n          {\n            \"key\": \"token\": \"This field represents the name of the authentication token.\",\n            \"value\": \"sessionId\": \"This is a placeholder for the actual session ID that confirms the user's active session.\",\n            \"type\": \"string\": \"Indicates that the value should be a string, specifically a session ID.\"\n          }\n        ]\n      },\n      \"method\": \"POST\": \"The HTTP method used for this request is POST, indicating that data is being sent to the server to perform an action.\",\n      \"url\": \"http://localhost:3000/api/tournament/general/delete\": \"The endpoint where the request is directed. This is a local server endpoint for deleting a tournament.\",\n      \"headers\": [\n        {\n          \"key\": \"\": \"There are no specific headers included in the request.\",\n          \"value\": \"\": \"No additional headers are assigned.\",\n          \"type\": \"default\": \"The default type is indicated, which usually means no specific header type is set.\",\n          \"disabled\": true: \"This header entry is disabled, meaning it will not be sent with the request.\"\n        }\n      ],\n      \"body\": {\n        \"mode\": \"raw\": \"The body of the request is sent in raw format, allowing for a custom JSON structure.\",\n        \"raw\": \"{\\\"sessionId\\\":\\\"sessionId\\\",\\\"accountId\\\":\\\"accountId\\\",\\\"tournamentId\\\":\\\"tournamentId\\\"}\": \"The body contains JSON data with three fields: sessionId (the ID of the current session), accountId (the ID of the user's account), and tournamentId (the ID of the tournament being deleted). Each ID is represented as a string placeholder.\"\n      }\n    }\n  }\n}"
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+{
+  "info": {
+    "_postman_id": "0dd4ba06-6540-48fc-98a0-dd90915b2efa",
+    "name": "WebSocketMessage",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Web - Socket - Get Message",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/get?socketId=socketId&messageId=messageId&message=1",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "socketId",
+              "value": "socketId"
+            },
+            {
+              "key": "messageId",
+              "value": "messageId"
+            },
+            {
+              "key": "message",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "### Web - Socket - Get Message\n\n**Request Method**: GET  \nThis indicates that the operation is retrieving data from the server and does not modify any existing resources. \n\n**URL**: `http://localhost:3000/api/socket/web/get?socketId=socketId&messageId=messageId&message=1`  \nThe URL consists of the following components:\n\n- **Base URL**: `http://localhost:3000/api/socket/web/get`  \n  This is the endpoint to which the GET request is sent. It indicates that the request is being made to the \"get\" function of the web socket API.\n\n- **Query Parameters**:  \n  - **socketId**: This parameter represents the unique identifier for the socket connection. It is used to specify which socket connection is being referenced when retrieving the message.\n  \n  - **messageId**: This parameter is the identifier of the specific message being requested. It helps in pinpointing the exact message to retrieve from the server.\n  \n  - **message**: This parameter generally indicates the type or status of the message being requested. The value `1` can represent a certain state or condition of the message.\n\n**Headers**:  \nNo headers are specified in this request. Headers are typically used to provide additional information with the request, such as authentication tokens or content types, but in this case, none are included."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Get Thread",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/thread?socketId=socketId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "thread"
+          ],
+          "query": [
+            {
+              "key": "socketId",
+              "value": "socketId"
+            }
+          ]
+        },
+        "description": "## Endpoint: Web - Socket - Get Thread\n\n### Request Method\n- **GET**: This method is used to retrieve information from the specified URL.\n\n### URL\n- **http://localhost:3000/api/socket/web/thread?socketId=socketId**: This is the endpoint that will be called to get the thread information associated with a specific WebSocket connection. The URL includes a query parameter for `socketId` which is required to identify the specific WebSocket connection you want to retrieve the thread information for.\n\n### Query Parameter\n- **socketId**: This parameter is used to pass the unique identifier of the WebSocket connection. It allows the API to fetch the specific thread associated with the provided socket ID. The value for this parameter should be replaced with the actual socket ID when making the request.\n\n### Headers\n- **headers**: There are no specific headers included in this request. This means the request does not require any special authentication or additional information to be sent in the headers.\n\n### Summary\nThis API endpoint is designed to retrieve a thread's information linked to a particular WebSocket connection identified by the `socketId` parameter. It uses the GET method to fetch this information at the specified URL, and does not require any headers in the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Send Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\", \"sessionId\": \"sessionId\", \"message\": \"message\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/message",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "message"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Send Message\n\n- **Name**: Web - Socket - Send Message\n  - This is the title of the API endpoint, which indicates it is used to send messages via a WebSocket connection.\n\n- **Request Object**: This contains the details of the HTTP request that will be made to the endpoint.\n  \n  - **Method**: `POST`\n    - This indicates that the request will use the POST HTTP method, which is typically used to send data to a server.\n\n  - **URL**: `http://localhost:3000/api/socket/web/message`\n    - This is the endpoint to which the request will be made. It is running on the local server (localhost) at port 3000, specifically designed for WebSocket messaging.\n\n  - **Headers**: `[]`\n    - This denotes that no specific headers are being sent with the request. Headers can be used for authentication or to specify content types, but none are required for this call.\n\n  - **Body**: This contains the data being sent to the server in the body of the request.\n    \n    - **Mode**: `raw`\n      - Indicates that the body of the request is being sent in a raw format rather than form-data or URL-encoded data.\n    \n    - **Raw**: \n      - The body content being sent to the server. It is formatted as a JSON string with the following fields:\n      \n      - **socketId**: `socketId`\n        - A placeholder for the unique identifier of the WebSocket connection. It identifies which socket the message will be sent through.\n\n      - **accountId**: `accountId`\n        - A placeholder for the unique identifier of the account associated with the message. This allows the server to understand which account the message is intended for or coming from.\n\n      - **sessionId**: `sessionId`\n        - A placeholder for the unique identifier for the user session. This ties the message to a specific user session.\n\n      - **message**: `message`\n        - A placeholder for the actual message content that is to be sent through the WebSocket connection. This is the main data being transmitted.\n\n    - **Options**: This specifies additional options for the raw body content.\n      \n      - **Raw**: Contains formatting information for the body content.\n        \n        - **Language**: `json`\n          - Indicates that the body content is formatted in JSON. This is important for the server to correctly parse the incoming data.\n\nThis endpoint is used to facilitate real-time messaging over WebSocket connections by sending structured data which includes identifiers and the actual message content."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Update Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\", \"sessionId\": \"sessionId\", \"messageId\": \"messageId\", \"message\": \"message\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/message",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "message"
+          ]
+        },
+        "description": "### Description of the Web - Socket - Update Message Endpoint\n\nThis endpoint is designed to send an update message through a WebSocket connection. Below is a detailed breakdown of each component of the request.\n\n- **Endpoint Name**: Web - Socket - Update Message  \n  This is the title assigned to the endpoint, indicating its purpose related to WebSocket communication.\n\n- **Request Method**: POST  \n  The method used for this request is POST, which is typically used to send data to a server.\n\n- **Request URL**: http://localhost:3000/api/socket/web/message  \n  This is the URL where the request is sent. It points to a local server running on port 3000, specifically to the WebSocket message handling endpoint.\n\n- **Request Headers**:  \n  This array is empty, meaning no specific headers are required for this request. However, headers can be added here if needed for authentication or content type.\n\n- **Request Body**:  \n  The body of the request contains the data being sent in JSON format. It is in \"raw\" mode, allowing for a structured JSON input.\n\n  - **Mode**: raw  \n    Indicates that the body content is being sent as raw text rather than form data or URL-encoded data.\n\n  - **Raw Body**:  \n    This is the actual JSON object being sent in the POST request. It contains the following fields:\n    \n    - **socketId**: \"socketId\"  \n      This represents the identifier for the specific WebSocket connection. It allows the server to identify which connection the message is related to.\n\n    - **accountId**: \"accountId\"  \n      This field holds the unique identifier for the user account that is associated with the WebSocket session. It helps in linking the message to the specific user.\n\n    - **sessionId**: \"sessionId\"  \n      This is the identifier for the current session, allowing the server to track the user's active session state.\n\n    - **messageId**: \"messageId\"  \n      This field is used to uniquely identify the message being sent. It is useful for tracking or referencing specific messages.\n\n    - **message**: \"message\"  \n      This is the actual content of the message that is being transmitted through the WebSocket. It can be any text or data that the user wants to send.\n\n- **Options**:  \n  - **Raw**:  \n    This section specifies the details for handling the raw data. It includes:\n    \n    - **Language**: \"json\"  \n      Indicates that the raw content type is in JSON format, ensuring proper handling and interpretation on the receiving end.\n\nThis endpoint facilitates communication through WebSockets by sending structured data, allowing for real-time updates and interactions between clients and the server."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Remove Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\", \"messageId\": \"messageId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/remove",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "remove"
+          ]
+        },
+        "description": "### Web - Socket - Remove Message\n\n- **Name**: This endpoint is designated for removing messages from a web socket. It is labeled as \"Web - Socket - Remove Message.\"\n\n- **Request**:\n  - **Method**: The HTTP method used for this request is POST. This typically indicates that the request is intended to send data to the server.\n  \n  - **URL**: The URL for this endpoint is `http://localhost:3000/api/socket/web/remove`. This suggests that the API is hosted locally on port 3000, and the endpoint specifically handles removing messages via the web socket.\n\n  - **Headers**: There are no specific headers included in the request. This means the request will use default headers unless specified in an actual implementation.\n  \n  - **Body**: The body of the request is structured in JSON format and includes:\n    - **Mode**: The mode is set to \"raw,\" indicating that the body content is sent as-is without any additional processing or encoding.\n    \n    - **Raw**: The raw body content is a JSON string that contains the following fields:\n      - **socketId**: Represents the unique identifier for the socket connection from which the message is to be removed. It is expected to be replaced with the actual socket ID when making the request.\n      - **accountId**: This field denotes the unique identifier for the user account associated with the message. It should be substituted with the actual account ID.\n      - **messageId**: This is the identifier for the message that needs to be removed. Like the other fields, it should be populated with the actual message ID of the message intended for removal.\n\n  - **Options**:\n    - **Raw**: This further specifies that the language for the raw body content is JSON. This is helpful for indicating the expected format of the input data. \n\nThis endpoint is designed for developers looking to facilitate the removal of messages from a web socket in their applications. Make sure to provide the correct identifiers for the socket connection, user account, and message for successful execution."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Remove Reply Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\", \"messageId\": \"messageId\", \"reply\": true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/remove",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "remove"
+          ]
+        },
+        "description": "## Endpoint: Web - Socket - Remove Reply Message\n\n### Method\n- **POST**: This is a POST request, which means data will be sent to the server for processing.\n\n### URL\n- **http://localhost:3000/api/socket/web/remove**: This is the endpoint where the request will be sent. It is intended for removing a reply message through a WebSocket connection.\n\n### Headers\n- **Headers**: This request does not require any specific headers to be included.\n\n### Body\n- **Body**: The request body is formatted in raw JSON. It contains the following fields:\n\n  - **socketId**: This is a string that represents the unique identifier for the WebSocket connection that is being used. It must be provided to identify the specific connection for which the reply message needs to be removed.\n\n  - **accountId**: This is a string that represents the unique identifier of the account associated with the message. It indicates which user’s message reply is being removed.\n\n  - **messageId**: This is a string that represents the unique identifier of the message that is linked to the response. It is used to specify which reply should be removed.\n\n  - **reply**: This is a boolean value that indicates whether the action pertains to a reply. Setting it to `true` signifies that the request is focused on removing a reply message.\n\n### Options\n- **Options**: The request body options specify that the content is raw JSON format.\n\n  - **Language**: The language is set to \"json\", indicating the format of the body content."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Remove Like Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\", \"messageId\": \"messageId\", \"like\": true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/remove",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "remove"
+          ]
+        },
+        "description": "**Endpoint Name:** Web - Socket - Remove Like Message\n\n**Request Method:** POST  \nThis indicates that this endpoint is intended to accept data for processing, specifically to remove a \"like\" from a message.\n\n**URL:** http://localhost:3000/api/socket/web/remove  \nThis is the endpoint's endpoint for accessing the API. In this case, it is hosted locally, typically for development purposes.\n\n**Headers:**  \nThere are no specific headers included in this request. Headers might be added if required in future implementations for authentication or content-type specification.\n\n**Body:**  \nThis is the main part of the request where data is sent. The body is in raw JSON format. \n\n- **Mode:** raw  \n  This indicates that the body of the request is provided as plain text rather than in a form-encoded format.\n\n- **Raw Data:**  \n  ```json\n  {\n    \"socketId\": \"socketId\",\n    \"accountId\": \"accountId\",\n    \"messageId\": \"messageId\",\n    \"like\": true\n  }\n  ```\n  - **socketId:** This field is intended to hold the identifier for the WebSocket connection. It helps the server identify which WebSocket to communicate with while processing the request.\n  \n  - **accountId:** This field represents the identifier of the user account making the request. This is crucial for associating the like message with the correct user.\n  \n  - **messageId:** This field stores the identifier of the message from which the like is to be removed. It uniquely identifies which message's like status is being altered.\n  \n  - **like:** This boolean field indicates the action being taken. In this case, it's set to true, suggesting that the request is aimed at removing a like from the specified message.\n\n**Options:**  \n- **Raw:**  \n  - **Language:** json  \n    This specifies that the raw data format is JSON, which is a common data interchange format often used in APIs. \n\nThis post request is intended to facilitate the action of removing a like from a message in a WebSocket based application."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Remove Dislike Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\", \"messageId\": \"messageId\", \"dislike\": true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/remove",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "remove"
+          ]
+        },
+        "description": "### Web - Socket - Remove Dislike Message\n\n#### Request Method\n- **Method**: POST  \n  This request utilizes the POST HTTP method to send data to the server.\n\n#### Request URL\n- **URL**: `http://localhost:3000/api/socket/web/remove`  \n  This is the endpoint where the request is sent. It targets the local server running on port 3000 and accesses the `/api/socket/web/remove` route.\n\n#### Request Headers\n- **Headers**:  \n  No specific headers are included in this request. Depending on your implementation, you might need to add headers such as `Content-Type` or authorization tokens.\n\n#### Request Body\n- **Body Mode**: raw  \n  The body of the request is sent in raw format.\n\n- **Raw Body Content**: \n  ```json\n  {\n    \"socketId\": \"socketId\",\n    \"accountId\": \"accountId\",\n    \"messageId\": \"messageId\",\n    \"dislike\": true\n  }\n  ```  \n  This is the data payload sent with the request. The following fields are included:\n\n  - **socketId**: A string representing the unique identifier of the socket connection. This is necessary for identifying which socket connection the dislike action pertains to.\n\n  - **accountId**: A string that indicates the unique identifier of the user account that is performing the action. This helps to verify and log which user is taking the action.\n\n  - **messageId**: A string that represents the unique identifier for the message that is being disliked. This is used to specify which message the dislike action should be removed from.\n\n  - **dislike**: A boolean value set to true. This indicates that the user wants to remove a dislike from the specified message."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Remove Share Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"accountId\": \"accountId\", \"messageId\": \"messageId\", \"share\": true}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/remove",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "remove"
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Remove Share Message\n\n- **Name**: Web - Socket - Remove Share Message\n  - This indicates that the endpoint is designed for handling socket communication to remove a shared message.\n\n- **Request**: \n  - The request section contains details about how to interact with the API endpoint.\n\n  - **Method**: \n    - `POST`: This indicates that the request will send data to the server to remove a shared message.\n\n  - **URL**: \n    - `http://localhost:3000/api/socket/web/remove`: This is the endpoint's URL where the request is sent. `localhost:3000` implies that the server is running on the local machine at port 3000.\n\n  - **Headers**: \n    - `[]`: Currently, there are no specific headers included in the request. Headers may be added in the future if needed.\n\n  - **Body**: \n    - This section describes the data that needs to be sent in the body of the request.\n    \n    - **Mode**: \n      - `raw`: The body is being sent in a raw format without any additional encoding or multipart form data.\n\n    - **Raw**: \n      - `\"{\\\"socketId\\\": \\\"socketId\\\", \\\"accountId\\\": \\\"accountId\\\", \\\"messageId\\\": \\\"messageId\\\", \\\"share\\\": true}\"`: This JSON string specifies the data structure for the request body. It includes:\n        - **socketId**: This represents the unique identifier for the socket connection, which indicates which socket is being manipulated.\n        - **accountId**: This is the unique identifier for the user account, related to the action of sharing or removing a shared message.\n        - **messageId**: This is the unique identifier of the message that is to be removed from the shared list.\n        - **share**: A boolean value (`true` in this case) that indicates whether the action pertains to a shared message.\n\n  - **Options**: \n    - **Raw**: \n      - **Language**: \n        - `json`: This specifies that the raw body content is in JSON format, which helps in understanding how to format the input data correctly. \n\nThis detailed description helps users of the API understand what each field in the request represents and how they should format their requests when using this endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Like Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"messageId\": \"messageId\", \"accountId\": \"accountId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/like",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "like"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Like Message\n\n- **Name**: Web - Socket - Like Message\n  - This is the identifier for the API endpoint used for sending a \"like\" message via a WebSocket connection.\n\n- **Request**:\n  - **Method**: POST\n    - This indicates that the request will send data to the server to create or update a resource.\n  - **URL**: http://localhost:3000/api/socket/web/like\n    - This is the endpoint where the request will be sent. It specifies the protocol (HTTP), the server location (localhost), the port (3000), and the path for the API resource related to liking messages.\n\n- **Headers**: \n  - An array indicating any additional headers that should be sent with the request. In this case, it is empty, meaning no custom headers are being applied.\n\n- **Body**:\n  - **Mode**: raw\n    - This specifies that the body of the request will consist of raw data rather than form-encoded or multipart data.\n  - **Raw**: \n    - The content of the request body is in JSON format. This contains three key-value pairs:\n      - **socketId**: \"socketId\"\n        - This represents the identifier of the WebSocket connection through which the message is being sent.\n      - **messageId**: \"messageId\"\n        - This is the identifier of the message that is being liked, allowing the server to know which message needs to be updated.\n      - **accountId**: \"accountId\"\n        - This represents the identifier of the user or account that is performing the action of liking the message.\n  - **Options**:\n    - **Raw**:\n      - **Language**: json\n        - This indicates that the format of the data within the raw body is JSON, which is a lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. \n\nThis structured information allows users to understand the purpose and requirements for interacting with the endpoint for liking messages through WebSocket."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Dislike Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"messageId\": \"messageId\", \"accountId\": \"accountId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/dislike",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "dislike"
+          ]
+        },
+        "description": "### Web - Socket - Dislike Message\n\n**Request Details:**\n\n- **Method**: POST  \nThis endpoint uses the HTTP POST method to send data to the server.\n\n- **URL**: http://localhost:3000/api/socket/web/dislike  \nThis is the endpoint where the request is sent. It is targeted at the localhost on port 3000, specifically to the `/api/socket/web/dislike` path.\n\n**Headers**:  \nNo specific headers are set for this request. Users may need to include headers depending on their authentication or data format requirements.\n\n**Body**:  \nThe request body is sent in raw JSON format. It includes the following fields:\n\n- **socketId**:  \nThis is a string that represents the unique identifier for the user's socket connection. It is used to identify the instance of the WebSocket connection through which the dislike action is being communicated.\n\n- **messageId**:  \nThis is a string that holds the unique identifier of the message that the user is disliking. This id is essential for the server to recognize which message is being affected by the dislike action.\n\n- **accountId**:  \nThis is a string that indicates the unique identifier associated with the user's account who is sending the dislike. It helps to track which user performed the action.\n\n**Body Format Options**:  \nThe request body is specified in JSON format. \n\n- **Language**: json  \nThis setting indicates that the raw data is formatted as JSON, ensuring that the server can parse it correctly."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Share Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"messageId\": \"messageId\", \"accountId\": \"accountId\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/share",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "share"
+          ]
+        },
+        "description": "### Web - Socket - Share Message\n\n**Endpoint:**  \nThis API endpoint allows you to share a message over a WebSocket connection.\n\n**Request Method:**  \n- **POST**: This method is used to send data to the server to create or update a resource.\n\n**Request URL:**  \n- `http://localhost:3000/api/socket/web/share`: This is the URL where the request will be sent. It is set up to work on a local server running on port 3000.\n\n**Request Headers:**  \n- No specific headers are required for this request, as indicated by the empty headers array. However, if authentication or content type headers are needed, they can be added here.\n\n**Request Body:**  \n- The body of the request is sent in raw JSON format and includes the following fields:\n\n  - **socketId**: This field is used to identify the specific WebSocket connection you want to use for sharing the message. You need to provide the unique identifier for the socket you intend to send the message through. \n\n  - **messageId**: This field represents the unique identifier of the message you want to share over the WebSocket connection. This helps in tracking and managing the specific message being shared.\n\n  - **accountId**: This field indicates the account associated with the message. It is used to identify the user or entity that owns the message, ensuring it is sent to the correct recipient.\n\n**Request Body Format:**  \n- The request body must be in JSON format and should look like this:\n```json\n{\n  \"socketId\": \"socketId\",\n  \"messageId\": \"messageId\",\n  \"accountId\": \"accountId\"\n}\n```\nWhere you replace `\"socketId\"` with the actual socket ID, `\"messageId\"` with the actual message ID, and `\"accountId\"` with the actual account ID.\n\n**Body Options:**  \n- The body has been set to use **raw** mode and the language is specified as **json**, indicating that the data sent to the server should be in JSON format."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Reply Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"socketId\": \"socketId\", \"messageId\": \"messageId\", \"accountId\": \"accountId\", \"message\": \"message\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/reply",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "reply"
+          ]
+        },
+        "description": "### Web - Socket - Reply Message Endpoint Description\n\n**Endpoint Name:** Web - Socket - Reply Message  \nThis endpoint is designed to send a reply message through a WebSocket connection.\n\n**Request Details:**\n\n- **Method:**  \n  This endpoint uses the HTTP POST method to send data to the server.\n\n- **URL:**  \n  The request is sent to the specified local server URL: `http://localhost:3000/api/socket/web/reply`. This URL indicates where the reply message will be processed.\n\n- **Headers:**  \n  There are currently no headers defined for this request. Headers are typically used to provide additional information about the request, such as content type or authentication.\n\n- **Body:**  \n  The body of the request is sent in raw JSON format. It contains the following fields:\n\n  - **socketId:**  \n    This field should contain the unique identifier for the WebSocket connection. It is used to route the message to the correct user or session.\n\n  - **messageId:**  \n    This field should contain the unique identifier for the message being replied to. It allows the recipient to reference the original message for context.\n\n  - **accountId:**  \n    This field should include the unique identifier for the account from which the user is sending the reply. It helps to identify the sender of the message.\n\n  - **message:**  \n    This field contains the content of the reply message itself. The text that the user wishes to send in response to the original message will be placed here.\n\n**Body Format:**  \nThe body is formatted as JSON, where all fields are key-value pairs. The raw body content is structured as follows:\n\n```json\n{\n  \"socketId\": \"socketId\",\n  \"messageId\": \"messageId\",\n  \"accountId\": \"accountId\",\n  \"message\": \"message\"\n}\n```\n\nThis structure ensures that the server receives all necessary information to process the reply appropriately."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Get Likes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/get",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "get"
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Get Likes\n\n- **Name**: This represents the name of the request, which is \"Web - Socket - Get Likes\". It indicates the purpose of the endpoint which is related to obtaining likes through a web socket connection.\n\n- **Request Details**:\n  - **Method**: This indicates the HTTP method used for the request. In this case, it is a \"POST\" request, which is typically used to send data to a server to create or update a resource.\n  \n  - **URL**: The URL for this endpoint is \"http://localhost:3000/api/socket/web/get\". This is where the request is sent. It points to a local server running on port 3000, under the path `/api/socket/web/get`, which suggests that the request interacts with a web socket at this endpoint.\n\n  - **Headers**: This section is currently empty, indicating that no custom headers are being sent with the request. Headers are often used to pass additional information (like authorization tokens) but none are specified here.\n\n  - **Body**: The body of the request contains the data being sent to the server.\n    - **Mode**: The mode is \"raw\", meaning that the body will contain raw data instead of a form-data or URL-encoded format.\n    - **Raw**: The raw data is simply an empty JSON object represented as \"{}\". This suggests that no additional data is being sent with the request.\n    - **Options**: Under the options, the body specifies that the raw data is in \"json\" format. This confirms that the server should interpret the body content as JSON data.\n\nThis endpoint is designed to facilitate the retrieval of likes through a web socket connection using a straightforward POST request without additional parameters."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Get Dislikes",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/get",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "get"
+          ]
+        },
+        "description": "{\n  \"name\": \"Web - Socket - Get Dislikes\",\n  \"description\": {\n    \"request_method\": \"The HTTP method used for this request is POST, which means this endpoint is intended to send data to the server.\",\n    \"url\": \"The URL for this endpoint is http://localhost:3000/api/socket/web/get. This indicates that the request is targeting a local server running on port 3000, specifically accessing the '/api/socket/web/get' route.\",\n    \"headers\": \"No specific headers are included in the request, which suggests that default headers will be used.\",\n    \"body_mode\": \"The body of the request is in raw mode, indicating that the content being sent is not formatted as form data or URL-encoded.\",\n    \"body_content\": \"The raw content of the body is an empty JSON object '{}', meaning no additional parameters or data are being sent with the request.\",\n    \"options\": \"Within the options for the body, the language is specified as JSON, indicating that any raw data should be interpreted as JSON format.\"\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Get Shares",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/get",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "get"
+          ]
+        },
+        "description": "### Endpoint Description\n\n**Name:** Web - Socket - Get Shares\n\n**Request Method:** POST  \nThis indicates that the request method used to interact with the API is POST, which is typically used to create or send data to the server.\n\n**Request URL:** http://localhost:3000/api/socket/web/get  \nThis is the endpoint for the API call. It specifies that the request will be sent to the \"get\" action of the \"web\" socket API located on a local server running on port 3000.\n\n**Headers:**  \nThere are no custom headers specified for this request. Headers are generally used for authentication, content-type specification, and other metadata. In this instance, the absence of headers suggests that the request does not require any special handling.\n\n**Body Mode:** raw  \nThe request body is set to \"raw\", which means that the body content will be sent as plain text, rather than as form data or URL-encoded data.\n\n**Raw Body Content:** {}  \nThe body of the request is an empty JSON object. This indicates that no additional data is being sent with the POST request, and it may be used simply to trigger a response from the server without needing to provide any parameters.\n\n**Options for Raw Body:**  \n- **Language:** json  \nThis specifies that the format of the raw body content is JSON. This setting is primarily for syntax highlighting and formatting in code editors and tools like Postman.\n\nThis overall setup is commonly used to initiate a WebSocket communication to retrieve share information without additional parameters from the client side."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Get Replies",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/get",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "get"
+          ]
+        },
+        "description": "### Description of Each Data in the Endpoint:\n\n- **name**: \n  - This is the title of the API request. It identifies the purpose of the request, which in this case is to retrieve replies through a web socket.\n\n- **request**: \n  - This section contains all the details about how to make the API call.\n\n  - **method**: \n    - The HTTP method used for the request. Here, it is set to \"POST,\" indicating that data may be sent to the server to create or update a resource.\n\n  - **url**: \n    - The endpoint's URL where the request will be sent. In this example, it points to `http://localhost:3000/api/socket/web/get`, which is a local server address.\n\n  - **headers**: \n    - This array is used to specify any HTTP headers that need to be included in the request. In this case, it is empty, meaning no custom headers are being sent.\n\n  - **body**: \n    - This part defines the content sent with the request.\n\n    - **mode**: \n      - Indicates the format of the body content. It is set to \"raw,\" which means the body will contain raw data.\n\n    - **raw**: \n      - This is where the actual data for the POST request is defined. In this case, it is an empty JSON object (`{}`), meaning no specific data is being sent.\n\n    - **options**: \n      - This section provides additional settings for the body format.\n\n      - **raw**: \n        - Configures options specific to raw body input. \n\n        - **language**: \n          - Specifies the programming language or format of the raw data. Here, it is set to \"json,\" indicating that the body is expected to be in JSON format."
+      },
+      "response": []
+    }
+  ]
+}

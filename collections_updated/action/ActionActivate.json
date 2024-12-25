@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "0f3307d5-8fd4-4cdb-ac4f-4fb6b8ef7685",
+    "name": "ActionActivate",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34018343"
+  },
+  "item": [
+    {
+      "name": "Action - Activate - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"activate1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/activate/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "activate",
+            "create"
+          ]
+        },
+        "description": "### Detailed Description of API Endpoint Data\n\n#### Endpoint Name:\n**Action - Activate - Create**  \nThis indicates the purpose of the request, which is to activate an action by creating it via this endpoint.\n\n#### Request:\n\n- **Auth**:  \n  - **Type**: `bearer`  \n    This specifies that the authentication method used to access this endpoint is bearer token authentication.\n  - **Bearer**:  \n    - **Key**: `token`  \n      This is the identifier for the bearer token parameter that is required for authentication.\n    - **Value**: `BearerToken`  \n      This is a placeholder for the actual bearer token that will be used for authentication. It must be replaced with a valid token before making the request.\n    - **Type**: `string`  \n      The data type of the token is a string.\n\n- **Method**: `POST`  \n  This indicates that the request method to interact with the endpoint is POST, which is typically used to create new resources.\n\n- **URL**:  \n  `http://localhost:3000/api/action/activate/create`  \n  This is the endpoint URL where the request is sent. It indicates that the action will be activated by creating a new resource.\n\n- **Headers**:  \n  - **Key**: (empty string)  \n    No specific headers are needed for this request, as the header entry is disabled.\n  - **Value**: (empty string)  \n    Since the key is disabled, there is no associated value.\n\n#### Body:\n\n- **Mode**: `raw`  \n  Indicates that the format of the body content being sent is raw data, specifically in JSON format.\n\n- **Raw**:  \n```json\n{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"activate1\",\n    \"description\": \"\",\n    \"tags\": \"\"\n}\n```\n  This JSON object contains the necessary data for creating and activating an action. \n\n  - **sessionId**: `sessionId`  \n    Identifier for the current session. This is required to link the action to a specific session.\n\n  - **accountId**: `accountId`  \n    Represents the ID of the account associated with this action. This will associate the activated action with the user’s account.\n\n  - **path**: `\"/live/channel/video123\"`  \n    Specifies the path to the resource that is being activated. This typically points to a live channel or media stream.\n\n  - **targetType**: `\"streamer\"`  \n    Indicates the type of target for the action. In this case, it specifies that the target is a streamer.\n\n  - **targetId**: `\"videoId\"`  \n    This represents the identifier of the target, which could be a video ID related to the activation.\n\n  - **sourceType**: `\"accountId\"`  \n    This indicates the type of source from which the action originates. Here, it’s linked to the account.\n\n  - **sourceId**: `\"accountId\"`  \n    This corresponds to the source ID, which in this case is the same as the account ID.\n\n  - **tokenAmount**: `20`  \n    Represents the quantity of tokens involved in this action. This could be a currency or a unit of measure related to the activation.\n\n  - **name**: `\"activate1\"`  \n    A user-defined name for this activation action, useful for identification purposes.\n\n  - **description**: `\"\"`  \n    An optional field for a description of the activation. Currently left empty.\n\n  - **tags**: `\"\"`  \n    This is also an optional field for adding tags to the action, currently left empty.\n\n#### Options:\n- **Raw**:  \n  - **Language**: `json`  \n    This indicates that the raw body content is formatted in JSON."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Activate - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"sessionId\": \"sessionId\",\n    \"accountId\": \"accountId\",\n    \"activateId\":\"activateId\",\n    \"path\": \"/live/channel/video123\",\n    \"targetType\": \"streamer\",\n    \"targetId\": \"videoId\",\n    \"sourceType\": \"accountId\",\n    \"sourceId\": \"accountId\",\n    \"tokenAmount\": 20,\n    \"name\": \"Farooq\",\n    \"description\": \"this is description\",\n    \"tags\": \"xyz\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/activate/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "activate",
+            "update"
+          ]
+        },
+        "description": "### Action - Activate - Update\n\n#### Request Details\n\n- **Auth (Authorization)**:\n  - **Type**: This specifies that the authentication method is using a bearer token.\n  - **Bearer**: This array contains the bearer token information.\n    - **Key**: The key for authentication which is labeled as \"token\".\n    - **Value**: The placeholder for the bearer token which should be replaced with the actual token (e.g., \"BearerToken\").\n    - **Type**: The type is specified as a string, indicating that the token must be formatted as a string.\n\n- **Method**:\n  - **PUT**: This denotes that the request method used to call this endpoint is PUT, which is typically used for updating resources.\n\n- **URL**:\n  - **Endpoint**: The URL is set to `http://localhost:3000/api/action/activate/update`. This is the local endpoint where the API request will be sent.\n\n- **Headers**:\n  - **Client-UUID**: \n    - **Key**: This is the name of the header which identifies the client making the request.\n    - **Value**: This is a placeholder for the UUID value that should uniquely identify the client (e.g., \"ClientUUID\").\n    - **Type**: The type is set as \"default\", which means it doesn't require special handling.\n\n#### Body Details\n\n- **Mode**:\n  - **Raw**: The body of the request will be sent in raw format.\n\n- **Raw (Body Content)**: This is the content of the request body, structured in JSON format. Below are the details of each field within the JSON body:\n\n  - **sessionId**: \n    - A string value representing the ID of the current session initiating the update.\n\n  - **accountId**: \n    - A string value that refers to the ID of the account related to the action.\n\n  - **activateId**: \n    - A string value that signifies the unique ID for the activation action being updated.\n\n  - **path**: \n    - A string indicating the resource path which may relate to a specific video channel (e.g., \"/live/channel/video123\").\n\n  - **targetType**: \n    - This field indicates the type of target that the action is aimed at (e.g., \"streamer\").\n\n  - **targetId**: \n    - A string value that represents the unique identifier for the target, such as the ID of a video.\n\n  - **sourceType**: \n    - This field details the type of source account from which the action is derived (e.g., \"accountId\").\n\n  - **sourceId**: \n    - A string value that signifies the ID of the source account associated with the action.\n\n  - **tokenAmount**: \n    - A numerical value that indicates the amount of tokens being processed or allocated for the action (e.g., 20).\n\n  - **name**: \n    - A string field where the name associated with the action is recorded (e.g., \"Farooq\").\n\n  - **description**: \n    - A string providing additional details regarding the action (e.g., \"this is description\").\n\n  - **tags**: \n    - A string containing tags associated with the action, which may be used for categorization (e.g., \"xyz\")."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Activate - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/activate/get/?activateId=activateId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "activate",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "activateId",
+              "value": "activateId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Activate - Get\n\n- **Name**: Action - Activate - Get\n  - This represents the specific endpoint intended for retrieving activation details based on provided parameters.\n\n- **Request**:\n  - **Auth**:\n    - **Type**: Bearer\n      - This specifies that Bearer token authentication is used for this request.\n    - **Bearer**:\n      - **Key**: token\n        - This refers to the authentication key used to validate access permissions for the API.\n      - **Value**: BearerToken\n        - This is a placeholder value representing the authorization token required to access the endpoint; it should be replaced with a valid token when making real requests.\n      - **Type**: string\n        - This indicates that the value for the token should be a string format.\n\n  - **Method**: GET\n    - This signifies that the request method being used is GET, which is typically used to retrieve data from a server.\n\n  - **URL**: `http://localhost:3000/api/action/activate/get/?activateId=activateId&sessionId=sessionId&accountId=accountId`\n    - This is the endpoint URL where the GET request will be sent.\n    - **Parameters**:\n      - **activateId**: Represents the unique identifier for the activation process that you wish to retrieve.\n      - **sessionId**: Represents the session identifier associated with the action.\n      - **accountId**: Represents the account identifier for which the activation information is being requested.\n    - All the parameters (`activateId`, `sessionId`, and `accountId`) should be substituted with actual values when making the request.\n\n  - **Headers**:\n    - **Key**: (Empty)\n      - No specific header keys are required for this request as it currently stands.\n    - **Value**: (Empty)\n      - No specific header values are provided for this request.\n    - **Type**: Default\n      - Indicates that these headers are of the default type.\n    - **Disabled**: True\n      - This means that any headers listed are currently disabled and won't be sent with the request.\n\n  - **Body**:\n    - **Mode**: Raw\n      - This indicates the format of the body being sent with the request.\n    - **Raw**: \"\"\n      - Represents that there is no body content to send with this GET request, as it is typically not required in a GET operation."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Activate - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/activate/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "activate",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Action - Activate - Get All\n\n#### Request Overview\nThis API endpoint is designed to retrieve all active actions associated with a specific session and account. The following details outline the request parameters and authentication methods required to successfully access this endpoint.\n\n#### Authentication\n- **Auth Type**: Bearer\n  - **Token**: A string value that represents the authentication token. It must be prefixed with \"Bearer\" followed by the actual token value. This token is used to authenticate the request and verify the user's permission to access the resource.\n\n#### Request Method\n- **Method**: GET\n  - This method is used to request data from the server without modifying any resources.\n\n#### URL Structure\n- **Base URL**: `http://localhost:3000/api/action/activate/all/`\n  - This is the endpoint's main address where the request is sent.\n  \n- **Query Parameters**: \n  - **sessionId**: This parameter is required to specify the session from which you want to retrieve actions. It should be replaced with the actual session identifier.\n  - **accountId**: This parameter is required to specify the account associated with the session. It should be replaced with the actual account identifier.\n  \n  Example of the full URL incorporating the parameters could look like:\n  ```\n  http://localhost:3000/api/action/activate/all/?sessionId=12345&accountId=67890\n  ```\n\n#### Headers\n- **Headers**: \n  - Currently, there are no additional headers needed for the request, as the headers section is left empty and disabled. In future implementations, if any custom headers are required, they can be added in this section.\n\n#### Body\n- **Body**:\n  - The body of the request is not used in this GET request method, meaning no data is sent in the request body. It is indicated as empty, which is standard for GET requests.\n\nThis description serves as a reference for users to understand how to utilize the \"Action - Activate - Get All\" endpoint effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Action - Activate - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"activateId\":\"activateId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/action/activate/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "action",
+            "activate",
+            "delete"
+          ]
+        },
+        "description": "### Description of Data in Endpoint \"Action - Activate - Delete\"\n\n- **Name**: This is the name of the request, indicating that it is related to activating a deletion action.\n\n- **Request Object**: This contains all the configurations needed to perform the API request.\n\n  - **Auth**: This section outlines the authentication method used for the request.\n    - **Type**: The authentication type is specified as \"bearer\", which means a token is required for authorization.\n    - **Bearer**: This specifies the details of the bearer token.\n      - **Key**: The key for the token is specified as \"token\".\n      - **Value**: The value is set to \"sessionId\", indicating that a session ID will be used as the token.\n      - **Type**: This denotes that the expected type of the token is a string.\n\n  - **Method**: \"POST\" indicates that this request will send data to the server.\n\n  - **URL**: This is the endpoint where the request will be sent. In this case, it is \"http://localhost:3000/api/action/activate/delete\".\n\n  - **Headers**: This section contains any headers that might be needed for the request.\n    - Here, both the key and value are empty, and the header is marked as disabled.\n\n  - **Body**: This section holds the data that will be sent with the request.\n    - **Mode**: The mode is set to \"raw\", indicating that the body is being sent in its raw format.\n    - **Raw**: The actual data being sent is in JSON format. It includes:\n      - **sessionId**: A placeholder for the user's session ID, which is used for authentication.\n      - **accountId**: A placeholder for the account ID that will be affected by the activation deletion.\n      - **activateId**: A placeholder for the specific ID of the activation that is to be deleted. \n\nThis structure allows users to understand how to properly format their request to activate and delete a particular action based on session and account information."
+      },
+      "response": []
+    }
+  ]
+}

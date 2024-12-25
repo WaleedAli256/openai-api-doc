@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "TournamentPlayer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tournament - Player - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Player\",\"description\":\"This player is my second player\",\"tags\":\"second,player\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isPlayerPrivate\":true,\"isTournamentOnly\":false,\"isPlayerDefault\":true,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/player/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "player",
+            "create"
+          ]
+        },
+        "description": "### Description of Endpoint Data:\n\n- **name**: Identifies the endpoint as \"Tournament - Player - Create,\" indicating that this is used to create a new player for a tournament.\n\n- **request**: Contains details about the request being made to the API.\n\n  - **auth**: Specifies the authentication method used for the request.\n    \n    - **type**: Indicates that the authentication type is \"bearer.\"\n    \n    - **bearer**: An array that holds authentication credentials.\n      \n      - **key**: The designation for the bearer token; labeled as \"token.\"\n      \n      - **value**: The actual bearer token value which is a placeholder here as \"BearerToken.\"\n      \n      - **type**: Specifies that the type of the value is a string.\n\n  - **method**: The HTTP method for the request, which is \"POST,\" indicating that data will be sent to the server.\n\n  - **url**: The endpoint URL where the request is directed, which is \"http://localhost:3000/api/tournament/player/create\".\n\n  - **headers**: An array representing HTTP headers for the request.\n    \n    - **key**: The header key is left empty, and as such, it's not currently utilized.\n    \n    - **value**: The corresponding value for the key is also left empty.\n    \n    - **type**: Categorizes the header type as \"default.\"\n    \n    - **disabled**: A boolean indicating whether this header is currently active; set to true, suggesting it is inactive.\n\n  - **body**: Represents the content included in the request.\n    \n    - **mode**: Specifies the format of the body content, which is \"raw.\"\n\n    - **raw**: A JSON string that contains the details necessary to create the player. The JSON object includes:\n      \n      - **sessionId**: A unique identifier for the session associated with the player.\n      \n      - **accountId**: The identifier for the account under which the player is associated.\n      \n      - **name**: The name given to the player; in this case, \"My Second Player.\"\n      \n      - **description**: A brief description of the player, detailing that this player is the user's second player.\n      \n      - **tags**: A comma-separated list of tags for categorizing the player; here, it includes \"second\" and \"player.\"\n      \n      - **profilePhotoUrl**: A URL pointing to the player's profile photo.\n      \n      - **coverPhotoUrl**: A URL for the player's cover photo.\n      \n      - **minimumTipAmount**: Specifies the minimum amount that can be tipped to the player; set to 10.\n      \n      - **categoryId**: An identifier for the category to which the player belongs; labeled as \"category123.\"\n      \n      - **category**: The name of the category, indicated as \"General.\"\n      \n      - **subCategoryId**: An identifier for the subcategory assigned to the player; labeled as \"subCategory456.\"\n      \n      - **subCategory**: The name of the subcategory, specified as \"Specific.\"\n      \n      - **isPlayerPrivate**: A boolean indicating whether the player's profile is private; set to true.\n      \n      - **isTournamentOnly**: A boolean indicating if the player is available only for tournament play; set to false.\n      \n      - **isPlayerDefault**: A boolean indicating if this player is set as the default player; marked true.\n      \n      - **isPreLiveTournamentAds**: A boolean indicating if ads are allowed during pre-live tournaments; set to true.\n      \n      - **isPostLiveTournamentAds**: A boolean indicating if ads can run after live tournaments; set to true.\n      \n      - **breakPreLiveVideoUrl**: A URL pointing to the video to be played during pre-live breaks.\n      \n      - **breakPostLiveVideoUrl**: A URL pointing to the video to be played during post-live breaks.\n    \n    - **options**: Configuration options for the raw body.\n      \n      - **raw**: Contains specific language settings for the raw format.\n        \n        - **language**: Indicates that the language of the raw content is \"json.\""
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Player - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"playerId\":\"playerId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Player 2.0\",\"description\":\"This player is my second player\",\"tags\":\"second,player\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isPlayerPrivate\":true,\"isTournamentOnly\":false,\"isPlayerDefault\":true,\"isPreLiveTournamentAds\":true,\"isPostLiveTournamentAds\":true,\"breakPreLiveVideoUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveVideoUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/player/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "player",
+            "update"
+          ]
+        },
+        "description": "### Tournament - Player - Update\n\nThis endpoint allows for updating player information within a tournament.\n\n#### Request Authentication\n- **Type**: Bearer Token\n  - **Key**: `token`\n  - **Value**: `BearerToken`\n  - **Type**: String  \n  This is the authentication token required to access the endpoint. Ensure that it is valid and has the necessary permissions.\n\n#### HTTP Method\n- **Method**: PUT  \n  This method indicates that the client is requesting to update data on the server.\n\n#### URL\n- **URL**: `http://localhost:3000/api/tournament/player/update`  \n  This is the endpoint where the update request will be sent.\n\n#### Headers\n- **Client-UUID**\n  - **Key**: `Client-UUID`\n  - **Value**: `ClientUUID`\n  - **Type**: Default  \n  This header is used to identify the client making the request. Ensure that `ClientUUID` is replaced with the actual UUID relevant to the client.\n\n#### Request Body\nThe body of the request contains data in raw JSON format to update player details. Here are the parameters included:\n\n- **playerId**: \n  - Type: String\n  - Description: Unique identifier for the player. Must be provided to specify which player to update.\n\n- **sessionId**: \n  - Type: String\n  - Description: Unique identifier for the session associated with the player. \n\n- **accountId**: \n  - Type: String\n  - Description: Unique identifier for the account linked to the player.\n\n- **name**: \n  - Type: String\n  - Description: The name of the player. This should be a descriptive name that will represent the player.\n\n- **description**: \n  - Type: String\n  - Description: A brief description of the player. This text can provide additional context or details about the player.\n\n- **tags**: \n  - Type: String\n  - Description: Tags related to the player. These can be used for categorization and searchability, formatted as a comma-separated list.\n\n- **profilePhotoUrl**: \n  - Type: String\n  - Description: URL pointing to the player’s profile photo. This should be a publicly accessible link.\n\n- **coverPhotoUrl**: \n  - Type: String\n  - Description: URL for the player’s cover photo. Similar to the profile photo, ensure this link is publicly accessible.\n\n- **minimumTipAmount**: \n  - Type: Number\n  - Description: The minimum amount that can be tipped to the player. This should be a numerical value.\n\n- **categoryId**: \n  - Type: String\n  - Description: Unique identifier for the category under which the player falls.\n\n- **category**: \n  - Type: String\n  - Description: The category name representing the player. This should correlate with the provided `categoryId`.\n\n- **subCategoryId**: \n  - Type: String\n  - Description: Unique identifier for the sub-category related to the player.\n\n- **subCategory**: \n  - Type: String\n  - Description: The name of the sub-category that further classifies the player, linked to the `subCategoryId`.\n\n- **isPlayerPrivate**: \n  - Type: Boolean\n  - Description: Indicates whether the player's information is private. If `true`, the player's details will not be publicly visible.\n\n- **isTournamentOnly**: \n  - Type: Boolean\n  - Description: Specifies if the player is only visible during tournaments. Set to `true` for tournament-specific visibility.\n\n- **isPlayerDefault**: \n  - Type: Boolean\n  - Description: Represents if this player profile is the default profile. Useful in scenarios where multiple profiles exist.\n\n- **isPreLiveTournamentAds**: \n  - Type: Boolean\n  - Description: Indicates if advertisements will run before the live tournament for this player. If `true`, pre-live ads are enabled.\n\n- **isPostLiveTournamentAds**: \n  - Type: Boolean\n  - Description: Specifies whether advertisements will run after the live tournament. Set to `true` to enable post-live ads.\n\n- **breakPreLiveVideoUrl**: \n  - Type: String\n  - Description: URL for the video to be shown during break periods before the live tournament. \n\n- **breakPostLiveVideoUrl**: \n  - Type: String\n  - Description: URL for the video to be shown during break periods after the tournament ends.\n\nMake sure to replace placeholder values (like `playerId`, `sessionId`, etc.) with actual data when sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Player - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/player/get/?playerId=playerId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "player",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "playerId",
+              "value": "playerId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "**Endpoint Name:** Tournament - Player - Get\n\n**Description:**\n\n- **Auth:** \n  - **Type**: Bearer authentication is required for accessing this endpoint.\n  - **Bearer**: \n    - **Key**: \"token\" is the identifier for the authentication token.\n    - **Value**: The token should be prefixed with \"Bearer\" (e.g., \"BearerToken\").\n    - **Type**: The token must be of type string.\n\n- **Method:** \n  - **GET**: This endpoint uses the GET method, which is used to retrieve data from the server.\n\n- **URL:** \n  - **Request URL**: The URL for this request is \"http://localhost:3000/api/tournament/player/get/\". This is the base path for the API endpoint.\n  - **Query Parameters**: \n    - **playerId**: This is a query parameter used to specify the unique identifier for the player whose information is being retrieved.\n    - **sessionId**: This query parameter is used to specify the session under which the player is participating.\n    - **accountId**: This query parameter identifies the account associated with the player.\n\n- **Headers:** \n  - **Key**: The headers array includes a key which is currently empty.\n  - **Value**: The value for the header is also empty.\n  - **Type**: The type is set to default, and the header is disabled, meaning it will not be sent in the request.\n\n- **Body:** \n  - **Mode**: The body mode is set to \"raw\".\n  - **Raw**: The raw body content is empty, indicating that this request does not require a body payload.\n\nThis endpoint is designed to retrieve player information based on their ID, session, and account, secured by a bearer token for authentication."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Player - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/player/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "player",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "### Tournament - Player - Get All Endpoint Description\n\nThis endpoint is designed to retrieve a list of all players participating in a specific tournament. Below is a detailed description of each component involved in this API request.\n\n- **Endpoint Name**: Tournament - Player - Get All\n  - This indicates the purpose of the API call, which is to fetch all players associated with a tournament.\n\n- **Request Type**: GET\n  - The method used to send a request to retrieve data without affecting the server's state.\n\n- **URL**: `http://localhost:3000/api/tournament/player/all/?sessionId=sessionId&accountId=accountId`\n  - This is the endpoint address where the API request is sent. \n  - The base URL is `http://localhost:3000/api/tournament/player/all/`, and it includes query parameters: \n    - **sessionId**: A unique identifier for the session to ensure valid access.\n    - **accountId**: The identifier for the user's account, necessary for retrieving player information.\n\n- **Auth**: \n  - **Type**: bearer\n    - This indicates that the request requires bearer token authentication.\n  - **Bearer**: \n    - A list containing an object with the authentication details:\n      - **Key**: `token`\n        - This represents the parameter's name that holds the authentication token.\n      - **Value**: `BearerToken`\n        - This is a placeholder for the actual bearer token that should be used in a real request for authentication purposes.\n      - **Type**: string\n        - Specifies that the token is a string type.\n\n- **Headers**:\n  - This section defines additional information sent with the request. In this case:\n    - There are no headers specified since the key and value are empty, and it is marked as disabled. This means no custom headers are included in this request.\n\n- **Body**:\n  - **Mode**: raw\n    - Indicates the body format; here it is set to raw, but since it's a GET request, this section is effectively empty as no body is sent with the request.\n  - **Raw**: \n    - The raw body is an empty string, which is typical for GET requests, as most of the data is included in the URL parameters.\n\nThis detailed breakdown provides a clear understanding of how to use the endpoint to get the data needed regarding all players in a specified tournament."
+      },
+      "response": []
+    },
+    {
+      "name": "Tournament - Player - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"playerId\":\"playerId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/tournament/player/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "tournament",
+            "player",
+            "delete"
+          ]
+        },
+        "description": "### Tournament - Player - Delete\n\nThis endpoint is used to delete a player from a tournament. Here is a detailed description of each component of the request:\n\n#### Request Details:\n- **Method**: \n  - `POST`: This indicates that the request is sending data to the server to perform an operation.\n\n- **URL**: \n  - `http://localhost:3000/api/tournament/player/delete`: This is the endpoint where the request is sent to delete a player from a tournament.\n\n#### Authentication:\n- **Auth Type**: \n  - `Bearer`: This indicates that the request requires a bearer token for authentication, which is typically used to verify the identity of the user making the request.\n\n- **Bearer Token Details**:\n  - **Key**: `token`\n  - **Value**: `sessionId`: This is the actual token that is used for authenticating the request. It represents the user's session identifier.\n\n#### Headers:\n- **Headers**: \n  - Currently, there are no additional headers specified. The header entry is disabled, indicating it is not being used in this request.\n\n#### Body:\n- **Body Mode**: \n  - `raw`: This indicates that the body of the request will be sent as a raw JSON string.\n\n- **Body Content**: \n  - The body contains a JSON object with the following fields:\n    - **sessionId**: This represents the user's session identifier, which is needed for authentication and to authorize the operation.\n    - **accountId**: This is the identifier for the user's account that is associated with the tournament.\n    - **playerId**: This is the identifier for the player that is being deleted from the tournament.\n\nThis request should be sent to remove a specific player, identified by the playerId, from the specified tournament while ensuring that the operation is authorized through the provided sessionId and accountId."
+      },
+      "response": []
+    }
+  ]
+}

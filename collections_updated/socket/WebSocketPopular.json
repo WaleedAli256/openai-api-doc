@@ -1,0 +1,444 @@
+{
+  "info": {
+    "_postman_id": "dc869135-3c82-43ad-adbe-6d3959554d28",
+    "name": "WebSocketPopular",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32701717"
+  },
+  "item": [
+    {
+      "name": "Web - Socket - Popular All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/popular?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "popular"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Popular All\n\n- **Name**: This endpoint is labeled as \"Web - Socket - Popular All,\" indicating its purpose is to retrieve a list of popular items through a WebSocket connection.\n\n- **Request**:\n  - **Method**: The HTTP method used for this request is GET. This means that the request is intended to fetch data from the server.\n  \n  - **URL**: The endpoint URL is `http://localhost:3000/api/socket/web/popular?popular=true&limit=limit`. This is where the GET request will be sent. It consists of several components:\n    - **Base URL**: `http://localhost:3000` – This is the base address of the server hosting the API, which, in this instance, is running locally on port 3000.\n    - **Path**: `/api/socket/web/popular` – This specifies the route within the API that is responsible for handling requests about popular items through a WebSocket.\n    - **Query Parameters**:\n      - `popular=true` – This parameter likely indicates that the request is specifically for popular items.\n      - `limit=limit` – This parameter is used to set a limit on the number of items returned in the response. The actual value for \"limit\" should be replaced with a specific number when making the request.\n\n- **Headers**: There are no additional headers included in this request. Headers are often used for purposes like authentication or specifying the type of response desired, but in this case, none are needed."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Channel",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/channel?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "channel"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Popular Channel\n\n- **Name**: Web - Socket - Popular Channel  \n  This endpoint is designed to retrieve a list of popular channels using web sockets.\n\n- **Request Method**: GET  \n  The request method used for this endpoint is GET, which is used to request data from the server. \n\n- **Request URL**: http://localhost:3000/api/socket/web/channel?popular=true&limit=limit  \n  This is the complete URL for accessing the popular channels. It includes query parameters:\n  - `popular=true`: This parameter indicates that the request is specifically for popular channels.\n  - `limit=limit`: This parameter is used to specify the maximum number of channels to be returned; replace \"limit\" with a specific numerical value to set the desired limit.\n\n- **Headers**: []  \n  There are no headers required for this request, which means it can be sent without any additional authentication or data in the headers."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Team",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/team?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "team"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "Here’s a detailed description of each component in the provided data for the endpoint:\n\n**Name**: \n- This is a descriptive label for the endpoint. \"Web - Socket - Popular Team\" indicates that the endpoint is related to web socket functionality and focuses on retrieving information about popular teams.\n\n**Request**: \n- This section outlines the specifics of the HTTP request that will be made to the server.\n\n  - **Method**: \n    - This specifies the HTTP method used for the request. In this case, it is \"GET\", which means the request is intended to retrieve data from the server without altering any resources.\n\n  - **URL**: \n    - This is the endpoint's address where the request will be sent. \n    - `http://localhost:3000/api/socket/web/team?popular=true&limit=limit` indicates that the request is targeting the `/api/socket/web/team` endpoint on a local server running on port `3000`.\n    - The query parameters included are `popular=true`, which likely signifies that only popular teams should be fetched, and `limit=limit`, which indicates a limitation on the number of results returned (the actual value for \"limit\" should be specified when making the request).\n\n  - **Headers**: \n    - This section lists any additional headers that might need to be included in the request. In this case, it is an empty array, suggesting no extra headers are required for this request. \n\nOverall, this endpoint is utilized to get a list of popular teams using a GET request, and it can also limit the number of results returned based on the specified limit."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Loyalty",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/loyalty?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "loyalty"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Popular Loyalty\n\n- **Name**: This identifies the endpoint and represents the purpose of the request, which is to interact with the web socket for popular loyalty features.\n\n- **Request**: This section outlines the details of the HTTP request.\n\n  - **Method**: \n    - **GET**: This indicates that the request is intended to retrieve data from the server.\n\n  - **URL**: \n    - `http://localhost:3000/api/socket/web/loyalty?popular=true&limit=limit`: This is the full address used to make the request. \n      - `http://localhost:3000`: Refers to the server's address where the API is hosted. \n      - `/api/socket/web/loyalty`: Specifies the resource being accessed, in this case, the loyalty information via a web socket.\n      - `?popular=true`: This query parameter indicates that only popular loyalty items should be fetched.\n      - `&limit=limit`: This query parameter specifies the maximum number of items to retrieve. The value for `limit` should be replaced with an actual number when making the request.\n\n  - **Headers**: \n    - This section is empty, which means no additional HTTP headers are included with the request. Headers can be used for various purposes such as authentication, content type specification, etc., but none are specified here."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Support",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/support?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "support"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Popular Support\n\n**Name:** Web - Socket - Popular Support\n\n**Request Method:** GET  \nThis endpoint uses the GET method, which is typically used to retrieve data from a specified resource.\n\n**Request URL:**  \n`http://localhost:3000/api/socket/web/support?popular=true&limit=limit`\n\n- **Base URL:** `http://localhost:3000/api/socket/web/support`  \n   This part of the URL specifies the service being accessed, which is the web socket support endpoint.\n\n- **Query Parameters:**\n  - **popular:** This parameter is set to `true`, which indicates that the user wants to fetch popular support data.\n  - **limit:** This parameter is meant to restrict the number of results returned. It should be replaced with an actual numeric value to define the limit on the number of results returned.\n\n**Headers:**  \nThere are no specific headers included in this request. Headers can be added if required for authentication or to specify content types.\n\n### Summary:\nThis endpoint retrieves popular support data via web sockets. The user can control the amount of data returned using the `limit` query parameter."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Game",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/game?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "game"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "{\n  \"name\": \"Web - Socket - Popular Game\",\n  \"description\": \"This endpoint retrieves a list of popular games using WebSocket technology. The request is sent via the HTTP GET method.\",\n  \"request\": {\n    \"method\": \"GET\",\n    \"description\": \"This specifies that the request method used to access the endpoint is GET, which is typically used to retrieve data from the server.\",\n    \"url\": \"http://localhost:3000/api/socket/web/game?popular=true&limit=limit\",\n    \"description\": \"This is the URL to access the endpoint. It includes the base URL, specifies the API version, and includes query parameters for filtering results. 'popular=true' indicates that only popular games should be fetched. 'limit=limit' allows the user to specify how many game results to return, with 'limit' being a placeholder for an actual number.\",\n    \"headers\": [],\n    \"description\": \"This indicates that there are no specific HTTP headers required for this request.\"\n  }\n}"
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Show",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/show?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "show"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Web - Socket - Popular Show\n\n#### Request\n- **Method**: GET  \n  This request uses the GET method, which is typically used to retrieve data from a specified resource.\n\n- **URL**: `http://localhost:3000/api/socket/web/show?popular=true&limit=limit`  \n  This is the endpoint where the request is sent. It consists of the following components:\n  - **localhost**: This indicates that the server is running on the local machine.\n  - **3000**: This is the port number on which the server is listening for requests.\n  - **/api/socket/web/show**: This is the specific path of the API that handles the request for popular shows.\n  - **Query Parameters**: \n    - `popular=true`: This parameter is used to filter the results to only include shows that are considered popular.\n    - `limit=limit`: This parameter specifies the maximum number of results to return. The actual value for `limit` needs to be replaced with a specific number when making the request. \n\n#### Headers\n- **Headers**:  \n  There are no specific headers defined for this request. However, headers can often be used for providing additional context or data, such as authentication tokens or content types. In this case, none are required for the current request.\n\n### Overview\nThis endpoint is designed to fetch a list of popular shows through a WebSocket connection. The results can be limited based on the specified limit parameter, allowing users to control how many items they retrieve."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Education",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/education?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "education"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Popular Education\n\n- **Name**: This is the name of the API endpoint, indicating that it is related to WebSocket functionality for accessing popular education content.\n\n- **Request**:\n  - **Method**: `GET` - This indicates that the request will retrieve data from the server. The client does not intend to modify any data but simply wants to fetch information.\n  - **URL**: `http://localhost:3000/api/socket/web/education?popular=true&limit=limit`\n    - This is the endpoint where the request is directed. It is designed to obtain popular education-related data through a WebSocket request.\n    - **Parameters**:\n      - **popular**: This parameter is set to `true`, specifying that the request is for popular education content specifically.\n      - **limit**: This parameter (placeholder text \"limit\") should be replaced with a numerical value to specify how many items should be returned in the response.\n\n- **Headers**: An empty array indicates that no additional headers are required for this request to be processed. \n\nThis endpoint is utilized for retrieving a list of popular educational materials via WebSocket based interaction."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Tournament",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/tournament?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "tournament"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Popular Tournament\n\n**Method:** GET  \n**URL:** `http://localhost:3000/api/socket/web/tournament?popular=true&limit=limit`\n\n#### Description of Data:\n\n- **name:** \n  - This field defines the name of the endpoint, which in this case is \"Web - Socket - Popular Tournament\". This label helps users easily identify the purpose of the request in the API collection.\n\n- **request:** \n  - This section outlines details about the HTTP request that will be sent to the server.\n\n  - **method:** \n    - This specifies the type of HTTP method used for the request. \"GET\" indicates that this request is intended to retrieve data from the server without modifying any resources.\n\n  - **url:** \n    - This is the endpoint URL that the GET request will be made to. It consists of the following components:\n      - `http://localhost:3000`: This indicates that the API is hosted locally on port 3000.\n      - `/api/socket/web/tournament`: This path specifies the specific resource being accessed, which is the tournaments related to web sockets.\n      - `?popular=true`: This query parameter filters the results to only include popular tournaments. It is set to true, indicating that the request is looking for tournaments classified as popular.\n      - `&limit=limit`: This query parameter is meant to specify the maximum number of results returned by the API. The actual limit value should be provided when making the request.\n\n  - **headers:** \n    - This section represents the headers to be sent with the request. In this particular case, it is an empty array, meaning that no additional headers are required for this request."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Comments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/comments?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "comments"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Popular Comments\n\n#### Method: GET\nThis endpoint uses the GET method to retrieve data from the server. It is typically used for requesting data without making changes to the existing resources.\n\n#### URL:\n`http://localhost:3000/api/socket/web/comments?popular=true&limit=limit`\n\n- **Base URL**: `http://localhost:3000/` - This indicates that the server is running locally on port 3000.\n- **Path**: `/api/socket/web/comments` - This part of the URL specifies the resource being accessed, which relates to comments on the web.\n- **Query Parameters**:\n  - `popular=true` - This parameter is used to filter the comments, specifically to fetch only those that are marked as popular.\n  - `limit=limit` - This parameter allows the user to specify how many comments to retrieve. Replace `limit` with an actual number to define the maximum count of comments returned.\n\n#### Headers:\n- An empty array indicates that there are no specific headers required for this request. The server might accept requests without any custom headers.\n\nThis endpoint is useful for fetching a list of popular comments from the server, with the ability to control the number of comments returned based on the specified limit."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Chats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/chats?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "chats"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Popular Chats\n\n- **Name**: Web - Socket - Popular Chats\n  - This is the name of the endpoint intended for fetching popular chat data through a WebSocket connection.\n\n- **Request**: \n  - This section outlines the characteristics of the request made to the server.\n\n  - **Method**: GET\n    - Indicates that this request is intended to retrieve data from the server. No data will be modified or submitted.\n\n  - **URL**: \n    - `http://localhost:3000/api/socket/web/chats?popular=true&limit=limit`\n      - This is the endpoint where the request is sent. It consists of:\n        - **Base URL**: `http://localhost:3000/api/socket/web/chats`\n          - This is the main address where the chat data can be accessed.\n        - **Query Parameters**:\n          - **popular=true**\n            - This parameter indicates that only popular chats should be fetched.\n          - **limit=limit**\n            - This parameter is intended to limit the number of results returned. The actual value for `limit` should be replaced with a specific number to define how many popular chats to retrieve.\n\n- **Headers**:\n  - This section is currently empty, indicating there are no additional headers being sent with the request. Headers may be added in the future if necessary for authentication or content type specification."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Votes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/votes?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "votes"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Popular Votes\n\n#### Description of Data:\n\n- **Name**: \n  - The name of the API endpoint is \"Web - Socket - Popular Votes\". This indicates that the endpoint is related to retrieving popular votes via a web socket connection.\n\n- **Request Method**: \n  - The HTTP method used for this request is \"GET\". This method is typically used to retrieve data from a server.\n\n- **URL**: \n  - The URL for the API request is \"http://localhost:3000/api/socket/web/votes?popular=true&limit=limit\". This URL is structured to access the votes from a socket connection, with additional query parameters.\n  \n  - **Base URL**: \n    - \"http://localhost:3000\" is the base URL, indicating that the server is running locally on port 3000.\n\n  - **Path**: \n    - \"/api/socket/web/votes\" is the path that specifies the resource being accessed, which in this case relates to web socket votes.\n\n  - **Query Parameters**: \n    - `popular=true`: This query parameter filters the votes to include only those that are considered popular.\n    - `limit=limit`: This parameter is expected to limit the number of votes returned. The actual value to limit the votes should be specified in place of \"limit\".\n\n- **Headers**: \n  - The headers field is currently empty, meaning no custom headers are specified for this request. Headers can sometimes be used for authentication or to provide additional context for the request, but none are required for this particular call.\n\nThis detailed description should provide users with clear insights into what this API endpoint does and how to use it effectively."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Account",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/account?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "account"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint: Web - Socket - Popular Account\n\n#### Method\n- **GET**: This method is used to retrieve data from the server. In this case, it requests information related to popular accounts via a WebSocket connection.\n\n#### URL\n- **http://localhost:3000/api/socket/web/account?popular=true&limit=limit**: This is the endpoint URL where the request is sent. The components of the URL are as follows:\n  - **http://localhost:3000**: Indicates that the server is running locally on port 3000.\n  - **/api/socket/web/account**: The specific path to access the account information through the WebSocket API.\n  - **?popular=true**: This query parameter indicates that the request is to fetch popular accounts.\n  - **&limit=limit**: This query parameter is expected to define a limit on the number of results returned. Replace \"limit\" with an actual number to specify how many accounts to retrieve.\n\n#### Headers\n- **[]**: There are no custom headers sent with this request. The request will be processed with default settings.\n\n### Purpose\nThis endpoint is designed to fetch a list of accounts that are considered popular using WebSockets, allowing real-time data updates or streaming responses depending on the implementation. Users may want to specify the number of popular accounts they wish to receive by adjusting the limit parameter."
+      },
+      "response": []
+    },
+    {
+      "name": "Web - Socket - Popular Video",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/socket/web/video?popular=true&limit=limit",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "socket",
+            "web",
+            "video"
+          ],
+          "query": [
+            {
+              "key": "popular",
+              "value": "true"
+            },
+            {
+              "key": "limit",
+              "value": "limit"
+            }
+          ]
+        },
+        "description": "### Endpoint Description: Web - Socket - Popular Video\n\n#### Request Information\n- **Method**: GET\n  - This endpoint utilizes the GET method, which is generally used to retrieve data from the server.\n\n- **URL**: `http://localhost:3000/api/socket/web/video?popular=true&limit=limit`\n  - This is the endpoint's URL. It serves to access the popular video data through a web socket. \n  - **Query Parameters**:\n    - `popular=true`: This parameter indicates that the request is specifically for popular videos. Setting this to true filters the results to include only those videos deemed popular.\n    - `limit=limit`: This parameter is a placeholder that specifies the maximum number of video results to return. Replace `limit` with an actual number to set the desired limit on the response.\n\n#### Headers\n- **Headers**: None provided\n  - No custom headers are included in this request. If required, additional headers for authorization or content-type can be added as needed.\n\nThis information should clarify the purpose and usage of the endpoint for anyone working with this Postman collection."
+      },
+      "response": []
+    }
+  ]
+}

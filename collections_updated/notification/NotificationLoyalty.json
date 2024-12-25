@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "ca609f22-51a9-4285-acfc-772f2b97bcf0",
+    "name": "NotificationLoyalty",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Notification - Loyalty - Create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Loyalty\",\"description\":\"This loyalty is my second loyalty\",\"tags\":\"second,loyalty\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isLoyaltyPrivate\":true,\"isTournamentOnly\":false,\"isLoyaltyDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/loyalty/create",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "loyalty",
+            "create"
+          ]
+        },
+        "description": "This endpoint is called \"Notification - Loyalty - Create\". It is used to create a new loyalty notification. The request is set up to be sent as a POST method to the URL \"http://localhost:3000/api/notification/loyalty/create\".\n\nThe request requires Bearer Authentication, which is specified in the auth property. The user must replace the placeholder \"BearerToken\" with a valid authentication token.\n\nThe body of the request contains various properties, which are sent in raw JSON format:\n\n- \"sessionId\": A string representing the unique identifier of the current session.\n- \"accountId\": A string representing the unique identifier of the account.\n- \"name\": The name of the loyalty. \n- \"description\": A brief description of the loyalty. \n- \"tags\": Tags associated with the loyalty.\n- \"profilePhotoUrl\": The URL of the profile photo.\n- \"coverPhotoUrl\": The URL of the cover photo.\n- \"minimumTipAmount\": The minimum tip amount.\n- \"categoryId\": A string representing the unique identifier for the category.\n- \"category\": The name of the category.\n- \"subCategoryId\": A string representing the unique identifier for the subcategory.\n- \"subCategory\": The name of the subcategory.\n- \"isLoyaltyPrivate\": A boolean indicating whether the loyalty is private.\n- \"isTournamentOnly\": A boolean indicating whether the loyalty is only for tournaments.\n- \"isLoyaltyDefault\": A boolean indicating if the loyalty is the default.\n- \"isPreLiveNotificationAds\": A boolean indicating whether pre-live notification ads are enabled.\n- \"isPostLiveNotificationAds\": A boolean indicating whether post-live notification ads are enabled.\n- \"breakPreLiveNotificationUrl\": The URL of the video for pre-live notification break.\n- \"breakPostLiveNotificationUrl\": The URL of the video for post-live notification break.\n\nAll these fields are required and must be filled with appropriate data format before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Loyalty - Update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Client-UUID",
+            "value": "ClientUUID",
+            "type": "default"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"loyaltyId\":\"loyaltyId\", \"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"name\":\"My Second Loyalty 2.0\",\"description\":\"This loyalty is my second loyalty\",\"tags\":\"second,loyalty\",\"profilePhotoUrl\":\"https://example.com/profile.jpg\",\"coverPhotoUrl\":\"https://example.com/cover.jpg\",\"minimumTipAmount\":10,\"categoryId\":\"category123\",\"category\":\"General\",\"subCategoryId\":\"subCategory456\",\"subCategory\":\"Specific\",\"isLoyaltyPrivate\":true,\"isTournamentOnly\":false,\"isLoyaltyDefault\":true,\"isPreLiveNotificationAds\":true,\"isPostLiveNotificationAds\":true,\"breakPreLiveNotificationUrl\":\"https://example.com/break-pre-live.mp4\",\"breakPostLiveNotificationUrl\":\"https://example.com/break-post-live.mp4\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/loyalty/update",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "loyalty",
+            "update"
+          ]
+        },
+        "description": "This API endpoint is named \"Notification - Loyalty - Update\", which utilizes the \"PUT\" method to update data related to loyalty notifications.\n\n1. `auth`: This shows the authorization type used which is \"bearer\". It uses a bearer token to authenticate the user. The key field is \"token\" and the bearer token is provided in the value field as \"BearerToken\".\n\n2. `method`: The method used to send the request is \"PUT\". This method is used to update the existing loyalty notification details.\n\n3. `url`: This field is the address to which the PUT request is sent. The local host URL for the endpoint is \"http://localhost:3000/api/notification/loyalty/update\".\n\n4. `headers`: This contains header information for the request. The given header is Client-UUID with its value as ClientUUID. This is typically used for identifying the client.\n\n5. `body`: Contains the content of the request. \"mode\" is \"raw\" which means the data is in raw format.\n The JSON formatted raw data comprises of several elements:\n\n    - `loyaltyId`: Unique identifier of the loyalty program.\n    - `sessionId`: Session identifier.\n    - `accountId`: Account identifier.\n    - `name`: Name of the loyalty program.\n    - `description`: A brief description of the loyalty program.\n    - `tags`: Tags related to the loyalty program.\n    - `profilePhotoUrl`: URL of the loyalty program's profile photo.\n    - `coverPhotoUrl`: URL of the loyalty program's cover photo.\n    - `minimumTipAmount`: Minimum tip amount set for the loyalty program.\n    - `categoryId`: Unique identifier of the category the program belongs to.\n    - `category`: Name of the main category.\n    - `subCategoryId`: Unique identifier of the sub-category.\n    - `subCategory`: Name of the sub-category.\n    - `isLoyaltyPrivate`: A boolean field to check whether the loyalty is private or not.\n    - `isTournamentOnly`: A boolean field to check whether the loyalty is intended for tournaments only.\n    - `isLoyaltyDefault`: A boolean field to check whether the loyalty is set as default.\n    - `isPreLiveNotificationAds`: A boolean field to check if pre-live notification ads are available.\n    - `isPostLiveNotificationAds`: A boolean field to check if post-live notification ads are available.\n    - `breakPreLiveNotificationUrl`: URL for the pre-live notification break advertisement.\n    - `breakPostLiveNotificationUrl`: URL for the post-live notification break advertisement."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Loyalty - Get",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/loyalty/get/?loyaltyId=loyaltyId&sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "loyalty",
+            "get",
+            ""
+          ],
+          "query": [
+            {
+              "key": "loyaltyId",
+              "value": "loyaltyId"
+            },
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "1. \"name\": This key's value is \"Notification - Loyalty - Get\", which is a title indicating that the endpoint's function is to get loyalty-related notifications.\n\n2. \"request\": This is a top-level key that contains information related to the request being made to the API.\n\n2.1. \"auth\": Indicates the type of authorization/ authentication method that this endpoint is using. \n\n2.1.1. \"type\": The type of authentication used by this API, which is 'bearer' in this case.\n\n2.1.2 \"bearer\": This key contains an array of objects that detail the bearings for this endpoint's authentication, here it uses a bearer token for authorization.\n\n2.1.2.1. \"key\": Key represents the type of authorization, which is Token.\n\n2.1.2.2. \"value\": This is where you put the value of the \"key\", in this case, it's the bearer token.\n\n2.1.2.3. \"type\": This indicates that the value should be sent as a string.\n\n3. \"method\": The HTTP method used by this request, which in this case is \"GET\", it is used to retrieve data from the server.\n\n4. \"url\": The endpoint's URL, which in this case is a localhost URL. Also it has three query parameters - loyaltyID, sessionID and accountID.\n\n5. \"headers\": This is a list of headers to be sent with the request. Currently it's empty and has been marked as disabled.\n\n6. \"body\": This key contains information about the body of the request. \n\n6.1. \"mode\": The mode for body here is \"raw\", which means the body content will be sent as it is written.\n\n6.2. \"raw\": As the mode is \"raw\", this is where the content that will be sent in the request body should be written. Currently, it's empty which means no data is being sent in the request body."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Loyalty - Get All",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "BearerToken",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/loyalty/all/?sessionId=sessionId&accountId=accountId",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "loyalty",
+            "all",
+            ""
+          ],
+          "query": [
+            {
+              "key": "sessionId",
+              "value": "sessionId"
+            },
+            {
+              "key": "accountId",
+              "value": "accountId"
+            }
+          ]
+        },
+        "description": "This endpoint is named \"Notification - Loyalty - Get All\", which suggests it is likely used to retrieve all loyalty notifications.\n\nIn the `request` key, several details about the nature of this API call are specified:\n\n- `auth`: Specifies the type of authentication used. Here, `Bearer` authentication is being used, and the bearer token should be placed in the value of the `token` key. \n\n- `method`: Specifies the HTTP method used, in this case, `GET`, meaning the API call will retrieve data from the server.\n\n- `url`: Specifies the URL the request will be sent to. In this case, it looks like the URL is calling an API locally and is intended to fetch all loyalty notifications. There are two query parameters, `sessionId` and `accountId`, which likely need to be populated with a valid session ID and account ID respectively when calling this API. \n\n- `headers`: Contains information that the client (user's browser, for instance) sends to the server. In this case, it appears that headers are not necessarily required to call the given endpoint as the key and value are empty and the header is disabled.\n\n- `body`: Contains information sent to the server if data needs to be sent along with the `GET` request. For this particular request, no raw data is being sent in the body. The `mode` is set as `raw`, but the `raw` value is an empty string. However, in cases when data needs to be sent, it would likely contain further parameters or JSON objects. \n\nPlease ensure to replace `BearerToken`, `sessionId` and `accountId` with the actual valid data before sending the request."
+      },
+      "response": []
+    },
+    {
+      "name": "Notification - Loyalty - Delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "sessionId",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "default",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sessionId\":\"sessionId\",\"accountId\":\"accountId\",\"loyaltyId\":\"loyaltyId\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/notification/loyalty/delete",
+          "host": [
+            "localhost:3000"
+          ],
+          "path": [
+            "api",
+            "notification",
+            "loyalty",
+            "delete"
+          ]
+        },
+        "description": "This endpoint, named \"Notification - Loyalty - Delete\", is designed to receive a POST request in order to delete a specific loyalty notification. Here are the details:\n\n- **name**: This is simply the name of the endpoint which is \"Notification - Loyalty - Delete\".\n\n- **auth**: It houses information for authentication. It's a bearer type, which means the authorization is based on a bearer token. It holds a key-value pair, where the key is `token` and the value is a `sessionId`.\n\n- **request**: This corresponds to the HTTP request. It contains the authentication, method, url, headers, and body data.\n\n- **method**: It is a `POST` method. This means data will be sent to a server to create a certain resource.\n\n- **url**: This is the URL where the API request will be sent. In this case, the URL is [http://localhost:3000/api/notification/loyalty/delete](http://localhost:3000/api/notification/loyalty/delete).\n\n- **headers**: Holds the headers that are sent alongside the request. Currently, no headers are sent and any existing ones are disabled, hence the empty value and the `disabled` set to `true`.\n\n- **body**: This has the actual data/content you'll send with your API request. The mode is set to `raw`, which means you can enter the data as it is, without any additional encoding.\n\n- **raw**: Contains the raw JSON data that is to be sent in the request body. It contains three strings: `sessionId`, `accountId`, and `loyaltyId`. \n\n  - `sessionId`: This should be replaced with the actual session ID.\n  - `accountId`: Should be replaced with the target account ID of the loyalty scheme.\n  - `loyaltyId`: The identifier for the specific loyalty scheme to be deleted.\n  \nPlease ensure to replace fields with appropriate values when making a request."
+      },
+      "response": []
+    }
+  ]
+}
